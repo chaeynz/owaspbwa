@@ -1,0 +1,1 @@
+/usr/share/pyshared/lazr/uri/tests/__init__.py

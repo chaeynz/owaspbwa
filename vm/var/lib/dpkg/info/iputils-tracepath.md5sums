@@ -1,0 +1,9 @@
+9467efcbad5f081965051df35057cdb5  usr/bin/traceroute6.iputils
+a006dd4d95b65760ed9fdc25259fa9ae  usr/bin/tracepath
+cb03cb1750578e6bcb98938d4803a32d  usr/bin/tracepath6
+e875bb66b24c7d45debedf4cb2074dce  usr/share/lintian/overrides/iputils-tracepath
+8af0bffff357b496b8f4eec99aa6342d  usr/share/doc/iputils-tracepath/copyright
+2025d54e3180956f3df3befa041a26fa  usr/share/doc/iputils-tracepath/RELNOTES.gz
+35ae33d5859466816859274ec265412f  usr/share/doc/iputils-tracepath/changelog.Debian.gz
+511f956b9b47799c98c05667e31b57df  usr/share/man/man8/tracepath.8.gz
+56b0a01c898b7dfe31d2daefc346c7ec  usr/share/man/man8/traceroute6.iputils.8.gz

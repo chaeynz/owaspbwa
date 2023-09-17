@@ -1,0 +1,5 @@
+8923bedf9a37b495f11c0067cd9de61c  usr/share/doc/libnetbeans-cvsclient-java/copyright
+807f1a2a28e6606629a9f1dc9fcf1deb  usr/share/doc/libnetbeans-cvsclient-java/changelog.Debian.gz
+980bfef6759d9a1dbf738e853f5b2e46  usr/share/maven-repo/org/netbeans/lib/cvsclient/20060125/cvsclient-20060125.pom
+c7676600433094752c1b75afabbb7a64  usr/share/maven-repo/org/netbeans/lib/cvsclient/debian/cvsclient-debian.pom
+9919f91fd194e04fee1d4429e47329bf  usr/share/java/cvsclient-6.5.jar

@@ -1,0 +1,17 @@
+Source: db-common-example
+Section: misc
+Priority: optional
+Maintainer: sean finney <seanius@debian.org>
+Build-Depends-Indep: debhelper (>> 3.0.0)
+Standards-Version: 3.5.9
+
+Package: db-test-mysql-frontend
+Architecture: all
+Depends: dbconfig-common
+Recommends: mysql-client
+Suggests: mysql-server
+Description: a package to test dbconfig-common (mysql version)
+ this is a package to test the dbconfig-common package.  
+ .
+ this version is a read-only "frontend" application, and performs
+ configuration/prompting without actually doing the database configuration.

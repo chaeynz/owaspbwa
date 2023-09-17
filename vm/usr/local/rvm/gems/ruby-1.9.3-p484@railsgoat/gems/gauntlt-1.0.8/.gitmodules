@@ -1,0 +1,9 @@
+[submodule "vendor/sslyze"]
+	path = vendor/sslyze
+	url = git://github.com/iSECPartners/sslyze.git
+[submodule "vendor/sqlmap"]
+	path = vendor/sqlmap
+	url = https://github.com/sqlmapproject/sqlmap.git
+[submodule "vendor/Garmr"]
+	path = vendor/Garmr
+	url = git://github.com/mozilla/Garmr.git

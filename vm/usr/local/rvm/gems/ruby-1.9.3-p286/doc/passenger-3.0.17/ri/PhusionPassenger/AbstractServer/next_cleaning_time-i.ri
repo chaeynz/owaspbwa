@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"next_cleaning_time:EFI"8PhusionPassenger::AbstractServer#next_cleaning_time;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JUsed by AbstractServerCollection to remember when this AbstractServer;TI"should be idle cleaned.;T:
+@fileI"-lib/phusion_passenger/abstract_server.rb;TF@

@@ -1,0 +1,14 @@
+Debian Packaging Issues
+***********************
+
+Please read /usr/share/doc/courier-base/README.Debian for more
+information about the packaging of the Courier Mail Server suite.
+
+Default Settings 
+****************
+
+The default value for maximum number of connections from the same
+IP address (MAXPERIP in /etc/courier/imapd) has been raised to 20. 
+This helps to avoid mysterious errors with current IMAP clients
+(e.g., saving sent mails into the Sent folder fails). 
+For example, Mozilla Thunderbird uses 5 connections by default.

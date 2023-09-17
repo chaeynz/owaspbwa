@@ -1,0 +1,12 @@
+64c3dffc5a7a6ffeab43858cdc54b8ae  usr/share/doc/at/changelog.gz
+51f24ca9411988aa4f4cf05f635c592e  usr/share/doc/at/README
+859fcbccf9a06463a3404446b8d69c3b  usr/share/doc/at/copyright
+38c61cea8340b1d2191535464235fd6a  usr/share/doc/at/Problems
+b50ebc782377d6cff36397c7e525e1f9  usr/share/doc/at/changelog.Debian.gz
+835427650f96c79d38687fd5c33a45bd  usr/share/doc/at/timespec
+26d35f089c5193e103ce6dcd47e94a6e  usr/share/man/man1/at.1.gz
+a661b7d13cc45522b33029a8d942b50b  usr/share/man/man5/at.allow.5.gz
+6339ab3342e09e2f21c40b9ced6957c2  usr/share/man/man8/atd.8.gz
+5c32a3f1fb388ea7a0cab84596d5cf4a  usr/bin/at
+03265a0c11d5b695529f629b1e860eb1  usr/bin/batch
+8de86161b873adcd8d06b289092b2226  usr/sbin/atd

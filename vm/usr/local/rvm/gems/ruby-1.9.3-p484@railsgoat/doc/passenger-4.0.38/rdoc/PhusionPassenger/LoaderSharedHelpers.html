@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module PhusionPassenger::LoaderSharedHelpers - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/loader_shared_helpers.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-about_to_abort">#about_to_abort</a>
+    
+    <li><a href="#method-i-advertise_readiness">#advertise_readiness</a>
+    
+    <li><a href="#method-i-advertise_sockets">#advertise_sockets</a>
+    
+    <li><a href="#method-i-after_handling_requests">#after_handling_requests</a>
+    
+    <li><a href="#method-i-after_loading_app_code">#after_loading_app_code</a>
+    
+    <li><a href="#method-i-before_handling_requests">#before_handling_requests</a>
+    
+    <li><a href="#method-i-before_loading_app_code_step1">#before_loading_app_code_step1</a>
+    
+    <li><a href="#method-i-before_loading_app_code_step2">#before_loading_app_code_step2</a>
+    
+    <li><a href="#method-i-check_rvm_using_wrapper_script">#check_rvm_using_wrapper_script</a>
+    
+    <li><a href="#method-i-create_socket_address">#create_socket_address</a>
+    
+    <li><a href="#method-i-dump_all_information">#dump_all_information</a>
+    
+    <li><a href="#method-i-dump_envvars">#dump_envvars</a>
+    
+    <li><a href="#method-i-dump_ruby_environment">#dump_ruby_environment</a>
+    
+    <li><a href="#method-i-dump_system_memory_stats">#dump_system_memory_stats</a>
+    
+    <li><a href="#method-i-init">#init</a>
+    
+    <li><a href="#method-i-run_load_path_setup_code">#run_load_path_setup_code</a>
+    
+    <li><a href="#method-i-sanitize_spawn_options">#sanitize_spawn_options</a>
+    
+    <li><a href="#method-i-to_boolean">#to_boolean</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="../PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="../PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="../PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module PhusionPassenger::LoaderSharedHelpers</h1>
+
+  <div id="description" class="description">
+    
+<p>Provides shared functions for loader and preloader apps.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-about_to_abort" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">about_to_abort</span><span
+            class="method-args">(exception = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>To be called whenever the (pre)loader is about to abort with an error.</p>
+          
+
+          
+          <div class="method-source-code" id="about_to_abort-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">about_to_abort</span>(<span class="ruby-identifier">exception</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">dump_all_information</span>
+        <span class="ruby-comment"># https://code.google.com/p/phusion-passenger/issues/detail?id=1039</span>
+        <span class="ruby-identifier">puts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- about_to_abort-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- about_to_abort-method -->
+
+    
+      <div id="method-i-advertise_readiness" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advertise_readiness</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advertise_readiness-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">advertise_readiness</span>
+        <span class="ruby-comment"># https://code.google.com/p/phusion-passenger/issues/detail?id=1039</span>
+        <span class="ruby-identifier">puts</span>
+
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;!&gt; Ready&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- advertise_readiness-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- advertise_readiness-method -->
+
+    
+      <div id="method-i-advertise_sockets" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advertise_sockets</span><span
+            class="method-args">(output, request_handler)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advertise_sockets-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">advertise_sockets</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">request_handler</span>)
+        <span class="ruby-identifier">request_handler</span>.<span class="ruby-identifier">server_sockets</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">concurrency</span> = <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">advertised_concurrency_level</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:concurrency</span>]
+                <span class="ruby-identifier">output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;!&gt; socket: #{name};#{options[:address]};#{options[:protocol]};#{concurrency}&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- advertise_sockets-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- advertise_sockets-method -->
+
+    
+      <div id="method-i-after_handling_requests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_handling_requests</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>To be called after the request handler main loop is exited. This function
+will fire off necessary events perform necessary cleanup tasks.</p>
+          
+
+          
+          <div class="method-source-code" id="after_handling_requests-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 341</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_handling_requests</span>
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">call_event</span>(<span class="ruby-value">:stopping_worker_process</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_handling_requests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_handling_requests-method -->
+
+    
+      <div id="method-i-after_loading_app_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_loading_app_code</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is to be called after loading the application code but before
+forking a worker process.</p>
+          
+
+          
+          <div class="method-source-code" id="after_loading_app_code-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_loading_app_code</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-comment"># Post-install framework extensions. Possibly preceded by a call to</span>
+        <span class="ruby-comment"># PhusionPassenger.install_framework_extensions!</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>)
+                <span class="ruby-identifier">require</span> <span class="ruby-string">'rails/version'</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_loading_app_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_loading_app_code-method -->
+
+    
+      <div id="method-i-before_handling_requests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_handling_requests</span><span
+            class="method-args">(forked, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>To be called before the request handler main loop is entered, but after the
+app startup file has been loaded. This function will fire off necessary
+events and perform necessary preparation tasks.</p>
+
+<p><code>forked</code> indicates whether the current worker process is forked
+off from an ApplicationSpawner that has preloaded the app code.
+<code>options</code> are the spawn options that were passed.</p>
+          
+
+          
+          <div class="method-source-code" id="before_handling_requests-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_handling_requests</span>(<span class="ruby-identifier">forked</span>, <span class="ruby-identifier">options</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">forked</span>
+                <span class="ruby-comment"># Reseed pseudo-random number generator for security reasons.</span>
+                <span class="ruby-identifier">srand</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;process_title&quot;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;process_title&quot;</span>].<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">$0</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;process_title&quot;</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;app_group_name&quot;</span>]
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">forked</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;analytics_logger&quot;</span>]
+                <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;analytics_logger&quot;</span>].<span class="ruby-identifier">clear_connection</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-comment"># If we were forked from a preloader process then clear or</span>
+        <span class="ruby-comment"># re-establish ActiveRecord database connections. This prevents</span>
+        <span class="ruby-comment"># child processes from concurrently accessing the same</span>
+        <span class="ruby-comment"># database connection handles.</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">forked</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:clear_all_connections!</span>)
+                        <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">clear_all_connections!</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:clear_active_connections!</span>)
+                        <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">clear_active_connections!</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:connected?</span>) <span class="ruby-operator">&amp;&amp;</span>
+                      <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connected?</span>
+                        <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">establish_connection</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-comment"># Fire off events.</span>
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">call_event</span>(<span class="ruby-value">:starting_worker_process</span>, <span class="ruby-identifier">forked</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;pool_account_username&quot;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;pool_account_password_base64&quot;</span>]
+                <span class="ruby-identifier">password</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;pool_account_password_base64&quot;</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'m'</span>).<span class="ruby-identifier">first</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">call_event</span>(<span class="ruby-value">:credentials</span>,
+                        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;pool_account_username&quot;</span>], <span class="ruby-identifier">password</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">call_event</span>(<span class="ruby-value">:credentials</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_handling_requests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_handling_requests-method -->
+
+    
+      <div id="method-i-before_loading_app_code_step1" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_loading_app_code_step1</span><span
+            class="method-args">(startup_file, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prepare an application process using rules for the given spawn options.
+This method is to be called before loading the application code.</p>
+
+<p><code>startup_file</code> is the application type's startup file, e.g.
+"config/environment.rb" for Rails apps and "config.ru" for <a
+href="Rack.html">Rack</a> apps. <code>options</code> are the spawn options
+that were given.</p>
+
+<p>This function may modify <code>options</code>. The modified options are to
+be passed to the request handler.</p>
+          
+
+          
+          <div class="method-source-code" id="before_loading_app_code_step1-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_loading_app_code_step1</span>(<span class="ruby-identifier">startup_file</span>, <span class="ruby-identifier">options</span>)
+        <span class="ruby-constant">DebugLogging</span>.<span class="ruby-identifier">log_level</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;log_level&quot;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;log_level&quot;</span>]
+
+        <span class="ruby-comment"># Instantiate the analytics logger if requested. Can be nil.</span>
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'analytics_logger'</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;analytics_logger&quot;</span>] = <span class="ruby-constant">AnalyticsLogger</span>.<span class="ruby-identifier">new_from_options</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_loading_app_code_step1-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_loading_app_code_step1-method -->
+
+    
+      <div id="method-i-before_loading_app_code_step2" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_loading_app_code_step2</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="before_loading_app_code_step2-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_loading_app_code_step2</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-comment"># Do nothing.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_loading_app_code_step2-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_loading_app_code_step2-method -->
+
+    
+      <div id="method-i-check_rvm_using_wrapper_script" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_rvm_using_wrapper_script</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_rvm_using_wrapper_script-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_rvm_using_wrapper_script</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">ruby</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;ruby&quot;</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ruby</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(/\.?rvm/)</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ruby</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(/bin/ruby$)</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;You've set the `PassengerRuby` (Apache) or `passenger_ruby` (Nginx) option to '#{ruby}'. &quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;However, because you are using RVM, this is not allowed: the option must point to &quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;an RVM wrapper script, not a raw Ruby binary. This is because RVM is implemented &quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;through various environment variables, which are set through the wrapper script.\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;To find out the correct value for `PassengerRuby`/`passenger_ruby`, please read:\n\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-node">&quot;  #{APACHE2_DOC_URL}#PassengerRuby\n\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-node">&quot;  #{NGINX_DOC_URL}#PassengerRuby\n\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;Scroll to section 'RVM helper tool'.\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;\n-------------------------\n&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_rvm_using_wrapper_script-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_rvm_using_wrapper_script-method -->
+
+    
+      <div id="method-i-create_socket_address" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_socket_address</span><span
+            class="method-args">(protocol, address)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_socket_address-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_socket_address</span>(<span class="ruby-identifier">protocol</span>, <span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">protocol</span> <span class="ruby-operator">==</span> <span class="ruby-string">'unix'</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;unix:#{address}&quot;</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">protocol</span> <span class="ruby-operator">==</span> <span class="ruby-string">'tcp'</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;tcp://#{address}&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown protocol '#{protocol}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_socket_address-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_socket_address-method -->
+
+    
+      <div id="method-i-dump_all_information" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump_all_information</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dump_all_information-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dump_all_information</span>
+        <span class="ruby-identifier">dump_ruby_environment</span>
+        <span class="ruby-identifier">dump_envvars</span>
+        <span class="ruby-identifier">dump_system_memory_stats</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dump_all_information-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dump_all_information-method -->
+
+    
+      <div id="method-i-dump_envvars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump_envvars</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dump_envvars-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dump_envvars</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dir</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'PASSENGER_DEBUG_DIR'</span>]
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/envvars&quot;</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key} = #{value}&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span>
+        <span class="ruby-comment"># Don't care.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dump_envvars-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dump_envvars-method -->
+
+    
+      <div id="method-i-dump_ruby_environment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump_ruby_environment</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dump_ruby_environment-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dump_ruby_environment</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dir</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'PASSENGER_DEBUG_DIR'</span>]
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/ruby_info&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;RUBY_VERSION = #{RUBY_VERSION}&quot;</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;RUBY_PLATFORM = #{RUBY_PLATFORM}&quot;</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;RUBY_ENGINE = #{defined?(RUBY_ENGINE) ? RUBY_ENGINE : 'nil'}&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/load_path&quot;</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">path</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/loaded_libs&quot;</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">$LOADED_FEATURES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">filename</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-comment"># We write to these files last because the 'require' calls can fail.</span>
+                <span class="ruby-identifier">require</span> <span class="ruby-string">'rbconfig'</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>)
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/rbconfig&quot;</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{key} = #{value}&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Gem</span>)
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Gem</span>)
+                        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/ruby_info&quot;</span>, <span class="ruby-string">&quot;a&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;RubyGems version = #{Gem::VERSION}&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/activated_gems&quot;</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                                <span class="ruby-keyword">if</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:loaded_specs</span>)
+                                        <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">loaded_specs</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+                                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{name} =&gt; #{spec.version}&quot;</span>
+                                        <span class="ruby-keyword">end</span>
+                                <span class="ruby-keyword">else</span>
+                                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Unable to query this information; incompatible RubyGems API.&quot;</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span>
+        <span class="ruby-comment"># Don't care.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dump_ruby_environment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dump_ruby_environment-method -->
+
+    
+      <div id="method-i-dump_system_memory_stats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump_system_memory_stats</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dump_system_memory_stats-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dump_system_memory_stats</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dir</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'PASSENGER_DEBUG_DIR'</span>]
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{dir}/sysmemory&quot;</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">%x&quot;#{PhusionPassenger.helper_scripts_dir}/system-memory-stats.py&quot;`</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span>
+        <span class="ruby-comment"># Don't care.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dump_system_memory_stats-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dump_system_memory_stats-method -->
+
+    
+      <div id="method-i-init" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>To be called by the (pre)loader as soon as possible.</p>
+          
+
+          
+          <div class="method-source-code" id="init-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 35</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">options</span>)
+                <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">main</span>[<span class="ruby-value">:name</span>] = <span class="ruby-string">&quot;Main thread&quot;</span>
+                <span class="ruby-comment"># We don't dump PATH info because at this point it's</span>
+                <span class="ruby-comment"># unlikely to be changed.</span>
+                <span class="ruby-identifier">dump_ruby_environment</span>
+                <span class="ruby-identifier">check_rvm_using_wrapper_script</span>(<span class="ruby-identifier">options</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">sanitize_spawn_options</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-value">7</span>       <span class="ruby-keyword">end</span></pre>
+          </div><!-- init-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- init-method -->
+
+    
+      <div id="method-i-run_load_path_setup_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_load_path_setup_code</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run_load_path_setup_code-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_load_path_setup_code</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-comment"># rack-preloader.rb depends on the 'rack' library, but the app</span>
+        <span class="ruby-comment"># might want us to use a bundled version instead of a</span>
+        <span class="ruby-comment"># gem/apt-get/yum/whatever-installed version. Therefore we must setup</span>
+        <span class="ruby-comment"># the correct load paths before requiring 'rack'.</span>
+        <span class="ruby-comment">#</span>
+        <span class="ruby-comment"># The most popular tool for bundling dependencies is Bundler. Bundler</span>
+        <span class="ruby-comment"># works as follows:</span>
+        <span class="ruby-comment"># - If the bundle is locked then a file .bundle/environment.rb exists</span>
+        <span class="ruby-comment">#   which will setup the load paths.</span>
+        <span class="ruby-comment"># - If the bundle is not locked then the load paths must be set up by</span>
+        <span class="ruby-comment">#   calling Bundler.setup.</span>
+        <span class="ruby-comment"># - Rails 3's boot.rb automatically loads .bundle/environment.rb or</span>
+        <span class="ruby-comment">#   calls Bundler.setup if that's not available.</span>
+        <span class="ruby-comment"># - Other Rack apps might not have a boot.rb but we still want to setup</span>
+        <span class="ruby-comment">#   Bundler.</span>
+        <span class="ruby-comment"># - Some Rails 2 apps might have explicitly added Bundler support.</span>
+        <span class="ruby-comment">#   These apps call Bundler.setup in their preinitializer.rb.</span>
+        <span class="ruby-comment">#</span>
+        <span class="ruby-comment"># So the strategy is as follows:</span>
+        
+        <span class="ruby-comment"># Our strategy might be completely unsuitable for the app or the</span>
+        <span class="ruby-comment"># developer is using something other than Bundler, so we let the user</span>
+        <span class="ruby-comment"># manually specify a load path setup file.</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;load_path_setup_file&quot;</span>]
+                <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;load_path_setup_file&quot;</span>])
+        
+        <span class="ruby-comment"># The app developer may also override our strategy with this magic file.</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-string">'config/setup_load_paths.rb'</span>)
+                <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'config/setup_load_paths'</span>)
+        
+        <span class="ruby-comment"># Older versions of Bundler use .bundle/environment.rb as the Bundler</span>
+        <span class="ruby-comment"># environment lock file. This has been replaced by Gemfile.lock in later</span>
+        <span class="ruby-comment"># versions, but we still support the older mechanism.</span>
+        <span class="ruby-comment"># If the Bundler environment lock file exists then load that. If it</span>
+        <span class="ruby-comment"># exists then there's a 99.9% chance that loading it is the correct</span>
+        <span class="ruby-comment"># thing to do.</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-string">'.bundle/environment.rb'</span>)
+                <span class="ruby-identifier">running_bundler</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+                        <span class="ruby-identifier">require</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'.bundle/environment'</span>)
+                <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-comment"># If the legacy Bundler environment file doesn't exist then there are two</span>
+        <span class="ruby-comment"># possibilities:</span>
+        <span class="ruby-comment"># 1. Bundler is not used, in which case we don't have to do anything.</span>
+        <span class="ruby-comment"># 2. Bundler *is* used, but either the user is using a newer Bundler versions,</span>
+        <span class="ruby-comment">#    or the gems are not locked. In either case, we're supposed to call</span>
+        <span class="ruby-comment">#    Bundler.setup.</span>
+        <span class="ruby-comment">#</span>
+        <span class="ruby-comment"># The existence of Gemfile indicates whether (2) is true:</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-string">'Gemfile'</span>)
+                <span class="ruby-comment"># In case of Rails 3, config/boot.rb already calls Bundler.setup.</span>
+                <span class="ruby-comment"># However older versions of Rails may not so loading boot.rb might</span>
+                <span class="ruby-comment"># not be the correct thing to do. To be on the safe side we</span>
+                <span class="ruby-comment"># call Bundler.setup ourselves; calling Bundler.setup twice is</span>
+                <span class="ruby-comment"># harmless. If this isn't the correct thing to do after all then</span>
+                <span class="ruby-comment"># there's always the load_path_setup_file option and</span>
+                <span class="ruby-comment"># setup_load_paths.rb.</span>
+                <span class="ruby-identifier">running_bundler</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+                        <span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+                        <span class="ruby-identifier">require</span> <span class="ruby-string">'bundler/setup'</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        
+        
+        <span class="ruby-comment"># !!! NOTE !!!</span>
+        <span class="ruby-comment"># If the app is using Bundler then any dependencies required past this</span>
+        <span class="ruby-comment"># point must be specified in the Gemfile. Like ruby-debug if debugging is on...</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_load_path_setup_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run_load_path_setup_code-method -->
+
+    
+      <div id="method-i-sanitize_spawn_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sanitize_spawn_options</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sanitize_spawn_options-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sanitize_spawn_options</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">defaults</span> = {
+                <span class="ruby-string">&quot;app_type&quot;</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;rack&quot;</span>,
+                <span class="ruby-string">&quot;environment&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;production&quot;</span>,
+                <span class="ruby-string">&quot;print_exceptions&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+        }
+        <span class="ruby-identifier">options</span> = <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;app_group_name&quot;</span>]            = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;app_root&quot;</span>] <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;app_group_name&quot;</span>]
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;print_exceptions&quot;</span>]          = <span class="ruby-identifier">to_boolean</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;print_exceptions&quot;</span>])
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;analytics&quot;</span>]                 = <span class="ruby-identifier">to_boolean</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;analytics&quot;</span>])
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;show_version_in_header&quot;</span>]    = <span class="ruby-identifier">to_boolean</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;show_version_in_header&quot;</span>])
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;log_level&quot;</span>]                 = <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;log_level&quot;</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;log_level&quot;</span>]
+        <span class="ruby-comment"># TODO: smart spawning is not supported when using ruby-debug. We should raise an error</span>
+        <span class="ruby-comment"># in this case.</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;debugger&quot;</span>]     = <span class="ruby-identifier">to_boolean</span>(<span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;debugger&quot;</span>])
+        <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;spawn_method&quot;</span>] = <span class="ruby-string">&quot;direct&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;debugger&quot;</span>]
+        
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sanitize_spawn_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sanitize_spawn_options-method -->
+
+    
+      <div id="method-i-to_boolean" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_boolean</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_boolean-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/loader_shared_helpers.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_boolean</span>(<span class="ruby-identifier">value</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;false&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_boolean-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_boolean-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

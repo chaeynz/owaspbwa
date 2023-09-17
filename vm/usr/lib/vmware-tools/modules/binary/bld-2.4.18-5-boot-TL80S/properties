@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-5BOOT
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment TurboLinux 8.0 Server, 2.4.18-5, Boot
+UtsMachine i386

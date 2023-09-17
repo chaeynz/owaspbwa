@@ -1,0 +1,22 @@
+This package was debianized by Marcus Crafter <crafterm@debian.org> on
+Fri, 27 Aug 2004 19:08:25 +0200.
+
+It was downloaded from http://asm.objectweb.org/
+
+Upstream Authors: Eric Bruneton, Eugene Kuleshov
+
+Copyright: (C) 2003-2008 Eric Bruneton, Eugene Kuleshov
+
+License:
+
+    1. Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+    3. Neither the name of the copyright holders nor the names of its
+       contributors may be used to endorse or promote products derived from
+       this software without specific prior written permission.
+
+ASM is licensed under the BSD license, a complete copy of which is available
+in /usr/share/common-licenses/BSD.

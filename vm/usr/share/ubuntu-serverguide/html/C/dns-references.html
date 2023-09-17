@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">References</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="dns.html" title="Chapter 7. Domain Name Service (DNS)" />
+    <link rel="prev" href="dns-troubleshooting.html" title="Troubleshooting" />
+    <link rel="next" href="security.html" title="Chapter 8. Security" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="dns.html">Domain Name Service (DNS)</a></span> &gt; <span class="breadcrumb-node">References</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="References">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="dns-references"></a>References</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Common Record Types">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="dns-record-types"></a>Common Record Types</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	  This section covers some of the most common DNS record types.
+	  </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>A</em></span> record: This record maps an IP Address to a hostname.
+	      </p>
+                      <pre class="programlisting">
+www      IN    A      192.168.1.12
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>CNAME</em></span> record: Used to create an alias to an existing A record. You cannot create a CNAME record pointing to another CNAME record.
+	      </p>
+                      <pre class="programlisting">
+web     IN    CNAME  www
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>MX</em></span> record: Used to define where email should be sent to. Must point to an A record, not a CNAME.
+	      </p>
+                      <pre class="programlisting">
+        IN    MX  1   mail.example.com.
+mail    IN    A       192.168.1.13
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>NS</em></span> record: Used to define which servers serve copies of a zone. It must point to an A record, not a CNAME.
+	      This is where Primary and Secondary servers are defined.
+	      </p>
+                      <pre class="programlisting">
+        IN    NS     ns.example.com.
+	IN    NS     ns2.example.com.
+ns      IN    A      192.168.1.10
+ns2	IN    A	     192.168.1.11
+</pre>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="More Information">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="dns-more-info"></a>More Information</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          The <a class="ulink" href="http://www.tldp.org/HOWTO/DNS-HOWTO.html" target="_top">DNS HOWTO</a> explains more advanced options for configuring BIND9.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+   	      For in depth coverage of <span class="emphasis"><em>DNS</em></span> and <span class="application"><strong>BIND9</strong></span> see <a class="ulink" href="http://www.bind9.net/" target="_top">Bind9.net</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <a class="ulink" href="http://www.oreilly.com/catalog/dns5/index.html" target="_top">DNS and BIND</a> is a popular book now in it's fifth edition.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+  	      A great place to ask for <span class="application"><strong>BIND9</strong></span> assistance, and get involved with the Ubuntu Server community,
+          is the <span class="emphasis"><em>#ubuntu-server</em></span>  IRC channel on  <a class="ulink" href="http://freenode.net" target="_top">freenode</a>.
+  	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Also, see the <a class="ulink" href="https://help.ubuntu.com/community/BIND9ServerHowto" target="_top">BIND9 Server HOWTO</a> in the Ubuntu Wiki.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="dns-troubleshooting.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="dns.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="security.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Troubleshooting </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 8. Security</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

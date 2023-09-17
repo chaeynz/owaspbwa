@@ -1,0 +1,22 @@
+                        
+
+              commons-pool-1.5.3 RELEASE NOTES
+
+This is a patch release containing a fix for POOL-149, a regression introduced in version 1.5.
+
+Changes in this version include:
+
+
+Fixed Bugs:
+o  POOL-149:  Fix case where a thread could end up waiting indefinitely even if objects
+      were available. Also fixes a couple of leaks in the internal processing
+      object count that could lead to pool exhaustion. Thanks to Shuyang Zhou. 
+
+
+ 
+For complete information on commons-pool, including instructions on how to submit bug reports,
+patches, or suggestions for improvement, see the commons-pool website:
+
+http://commons.apache.org/pool/
+
+

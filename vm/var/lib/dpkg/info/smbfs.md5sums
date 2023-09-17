@@ -1,0 +1,11 @@
+11297f90b4322e015b17aa8583a0efe0  sbin/mount.smbfs
+51aab4804773c2ad8a2ec45dd8691219  sbin/mount.cifs
+27b763f85729609d5b94b0c7384939ea  sbin/umount.cifs
+327ea07aa0989c026321dd6471232545  usr/sbin/cifs.upcall
+af09bace88072807d43b9bc677409af2  usr/share/man/man8/cifs.upcall.8.gz
+ba297dbc8aa7c1b9374e0299d03f0c85  usr/share/man/man8/mount.cifs.8.gz
+5021590f64cd08ec6fa76736027a018c  usr/share/man/man8/umount.cifs.8.gz
+aef77e4b5acac75faa3ad0199e72c507  usr/share/doc/smbfs/copyright
+bbdc21549310fcead3d4584e49e20ecf  usr/share/doc/smbfs/NEWS.Debian.gz
+3c65c21df53159d328b0cab9348c7c29  usr/share/doc/smbfs/README.build.gz
+01817107761b582da6c1ba33467b26b8  usr/share/doc/smbfs/changelog.Debian.gz

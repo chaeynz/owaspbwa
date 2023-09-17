@@ -1,0 +1,6 @@
+# The extensions directory must exist, even if empty
+php5-cli: package-contains-empty-directory usr/lib/php5/20090626+lfs/
+# Not a spelling mistake, just a compilation curiosity
+php5-cli: spelling-error-in-binary * ment meant
+# Not a spelling mistake, tz code for Tahiti
+php5-cli: spelling-error-in-binary * taht that

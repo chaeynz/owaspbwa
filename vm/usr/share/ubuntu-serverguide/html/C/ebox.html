@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">eBox</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="remote-administration.html" title="Chapter 5. Remote Administration" />
+    <link rel="prev" href="openssh-server.html" title="OpenSSH Server" />
+    <link rel="next" href="network-authentication.html" title="Chapter 6. Network Authentication" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="remote-administration.html">Remote Administration</a></span> &gt; <span class="breadcrumb-node">eBox</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="eBox">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="ebox"></a>eBox</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    <span class="application"><strong>eBox</strong></span> is a web framework used to manage server application 
+    configuration. The modular design of eBox allows you to pick and choose which services you 
+    want to configure using eBox.
+    </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ebox-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The different <span class="application"><strong>eBox</strong></span> modules are split into different packages, 
+      allowing you to only install those necessary. One way to view the available packages is 
+      to enter the following from a terminal:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>apt-cache rdepends ebox | uniq</strong></span>
+</pre>
+                <p>
+      To install the <span class="application"><strong>ebox</strong></span> package, which contains the default 
+      modules, enter the following:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install ebox</strong></span>
+</pre>
+                <p>
+      During the installation you will be asked to supply a password for the ebox user. After 
+      installing eBox the web interface can be accessed from: 
+      <span class="emphasis"><em>https://yourserver/ebox</em></span>.
+      </p>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ebox-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      An important thing to remember when using <span class="application"><strong>eBox</strong></span> is that when 
+      configuring most modules there is a <span class="emphasis"><em>Change</em></span> button that implements 
+      the new configuration. After clicking the Change button most, but not all, modules will 
+      then need to be <span class="emphasis"><em>Saved</em></span>. To save the new configuration click on the 
+      <span class="quote">“<span class="quote">Save changes</span>”</span> link in the top right hand corner. 
+      </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Once you make a change that requires a Save, the link will change from green to red. 
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="eBox Modules">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ebox-modules"></a>eBox Modules</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      By default all eBox <span class="emphasis"><em>Modules</em></span> are not enabled, and when a new module 
+      is installed it will not be automatically enabled.
+      </p>
+                <p>
+      To enable a disabled module click on the <span class="emphasis"><em>Module status</em></span> link in the 
+      left hand menu. Then <span class="italic">check</span> which modules you would 
+      like to enable and click the <span class="quote">“<span class="quote">Save</span>”</span> link. 
+      </p>
+                <div class="sect3" title="Default Modules">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="ebox-default-modules"></a>Default Modules</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	This section provides a quick summary of the default <span class="application"><strong>eBox</strong></span> 
+	modules.
+	</p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+	    <span class="emphasis"><em>System:</em></span> contains options allowing configuration of general 
+	    eBox items.
+	    </p>
+                        <div class="itemizedlist">
+                          <ul class="itemizedlist" type="circle">
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>General:</em></span> allows you to set the language, port 
+		number, and contains a change password form.
+		</p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>Disk Usage:</em></span> displays a graph detailing information about 
+		disk usage.
+		</p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>Backup:</em></span> is used to backup <span class="application"><strong>eBox</strong></span> 
+		configuration information, and the <span class="emphasis"><em>Full Backup</em></span> option 
+		allows you to save all eBox information not included in the 
+		<span class="emphasis"><em>Configuration</em></span> option such as log files.
+		</p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>Halt/Reboot:</em></span> will shutdown the system or reboot it.
+		</p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>Bug Report:</em></span> creates a file containing details helpful 
+		when reporting bugs to the eBox developers.
+		</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>Logs:</em></span> allows <span class="application"><strong>eBox</strong></span> logs to be 
+	    queried depending on the purge time configured.
+	    </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	    <span class="emphasis"><em>Events:</em></span> this module has the ability to send alerts through 
+	    rss, jabber, and log file.
+	    </p>
+                        <div class="itemizedlist">
+                          <ul class="itemizedlist" type="circle">
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>Available Events:</em></span>
+		</p>
+                              <div class="itemizedlist">
+                                <ul class="itemizedlist" type="square">
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>Free Storage Space:</em></span> will send alert if free disk 
+		    space drops below a configured percentage, 10% by default.
+		    </p>
+                                  </li>
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>Log Observer:</em></span> sends an alert when a configured logger 
+		    has logged something.
+		    </p>
+                                  </li>
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>RAID:</em></span> will monitor the RAID system and send alerts if 
+		    any issues arise.
+		    </p>
+                                  </li>
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>Service:</em></span> sends alerts if a service restarts multiple 
+		    times in a short time period.
+		    </p>
+                                  </li>
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>State:</em></span> alerts on the state of 
+		    <span class="application"><strong>eBox</strong></span>, either up or down.
+		    </p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li class="listitem">
+                              <p>
+		<span class="emphasis"><em>Dispatchers:</em></span>
+		</p>
+                              <div class="itemizedlist">
+                                <ul class="itemizedlist" type="square">
+                                  <li class="listitem">
+                                    <p>
+                    <span class="emphasis"><em>Log:</em></span> this dispatcher will send event messages to the 
+		    <span class="application"><strong>eBox</strong></span> log file 
+		    <code class="filename">/var/log/ebox/ebox.log</code>.
+		    </p>
+                                  </li>
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>Jabber:</em></span> before enabling this dispatcher you must
+		    first configure it by clicking on the <span class="quote">“<span class="quote">Configure</span>”</span> icon.
+		    </p>
+                                  </li>
+                                  <li class="listitem">
+                                    <p>
+		    <span class="emphasis"><em>RSS:</em></span> once this dispatcher is configured you can 
+		    subscribe to the link in order to view event alerts.
+		    </p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Additional Modules">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ebox-additional-modules"></a>Additional Modules</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Here is a quick description of other available <span class="application"><strong>eBox</strong></span> modules:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Network:</em></span> allows configuration of the server's network options 
+	  through eBox.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Firewall:</em></span> configures firewall options for the eBox host.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>UsersandGroups:</em></span> this module will manage users and groups 
+	  contained in an <span class="application"><strong>OpenLDAP</strong></span> LDAP directory.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>DHCP:</em></span> provides an interface for configuring a DHCP server. 
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>DNS:</em></span> provides <span class="application"><strong>BIND9</strong></span> DNS server 
+	  configuration options.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Objects:</em></span> allow configuration of eBox 
+	  <span class="emphasis"><em>Network Objects</em></span>, which allow you to assign a name to an IP 
+	  address or group of IPs.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Services:</em></span> displays configuration information for services that 
+	  are available to the network.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Squid:</em></span> configuration options for the 
+	  <span class="application"><strong>Squid</strong></span> proxy server.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>CA:</em></span> configures a Certificate Authority for the server.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>NTP:</em></span> set Network Time Protocol options.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Printers:</em></span> allows the configuration of printers.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>Samba:</em></span> configuration options for Samba.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="emphasis"><em>OpenVPN:</em></span> setup options for OpenVPN Virtual Private Network 
+	  application.
+	  </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ebox-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+   	      The <a class="ulink" href="https://help.ubuntu.com/community/eBox" target="_top">eBox Ubuntu Wiki</a> page has more details.
+  	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+   	      For more information also see the <a class="ulink" href="http://ebox-platform.com/" target="_top">eBox Home Page</a>.
+  	      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="openssh-server.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="remote-administration.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="network-authentication.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">OpenSSH Server </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 6. Network Authentication</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

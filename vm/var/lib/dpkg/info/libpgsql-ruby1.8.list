@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/ruby
+/usr/lib/ruby/1.8
+/usr/lib/ruby/1.8/i486-linux
+/usr/lib/ruby/1.8/i486-linux/pg.so
+/usr/share
+/usr/share/doc
+/usr/share/doc/libpgsql-ruby1.8
+/usr/share/doc/libpgsql-ruby1.8/README
+/usr/share/doc/libpgsql-ruby1.8/changelog.gz
+/usr/share/doc/libpgsql-ruby1.8/copyright
+/usr/share/doc/libpgsql-ruby1.8/NEWS.Debian.gz
+/usr/share/doc/libpgsql-ruby1.8/README.ja.gz
+/usr/share/doc/libpgsql-ruby1.8/changelog.Debian.gz

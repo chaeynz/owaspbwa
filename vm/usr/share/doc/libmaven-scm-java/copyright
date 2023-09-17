@@ -1,0 +1,64 @@
+Format-Specification: http://dep.debian.net/deps/dep5/
+Name: Maven SCM
+Maintainer: The Apache Software Foundation
+Source: http://maven.apache.org/scm/
+
+Files: *
+Copyright: 2003-2009, Jason van Zyl <jason@maven.org>
+           2003-2009, Arnaud Heritier <aheritier@apache.org>
+           2003-2009, Benjamin Bentmann <bentmann@apache.org>
+           2003-2009, Brett Porter <brett@apache.org>
+           2003-2009, Brian Fox <brianf@apache.org>
+           2003-2009, Carlos Sanchez <carlos@apache.org>
+           2003-2009, Dennis Lundberg <dennisl@apache.org>
+           2003-2009, Daniel Fabulich <dfabulich@apache.org>
+           2003-2009, Emmanuel Venisse <evenisse@apache.org>
+           2003-2009, Fabrizio Giustina <fgiust@apache.org>
+           2003-2009, Herve Boutemy <hboutemy@apache.org>
+           2003-2009, John Casey <jdcasey@apache.org>
+           2003-2009, Joakim Erdfelt <joakime@apache.org>
+           2003-2009, James Strachan   
+           2003-2009, Ernesto Tolentino Jr. <jtolentino@apache.org>
+           2003-2009, Jesse McConnell <jmcconnell@apache.org>
+           2003-2009, Kenney Westerhof <kenney@apache.org>
+           2003-2009, Lukas Theussl <ltheussl@apache.org>
+           2003-2009, Mike Perham <mperham@gmail.com>
+           2003-2009, Olivier Lamy <olamy@apache.org>
+           2003-2009, Ralph Goers <rgoers@apache.org>
+           2003-2009, Stephane Nicoll <snicoll@apache.org>
+           2003-2009, Trygve Laugstol <trygvis@apache.org>
+           2003-2009, Vincent Massol <vmassol@apache.org>
+           2003-2009, Vincent Siveton <vsiveton@apache.org>
+           2003-2009, Wendy Smoak <wsmoak@apache.org>
+           2003-2009, Daniel Kulp <dkulp@apache.org>
+           2003-2009, Allan Q. Ramirez   
+           2003-2009, Barrie Treloar   
+           2003-2009, Henri Yandell   
+           2003-2009, Fabrice Bellingard   
+           2003-2009, Chris Stevenson   
+           2003-2009, Dan Tran   
+           2003-2009, David Blevins   
+           2003-2009, Daniel Rall   
+           2003-2009, Edwin Punzalan <epunzalan@apache.org>
+           2003-2009, Felipe Leme   
+           2003-2009, Andrew Williams <handyande@apache.org>
+           2003-2009, Jeff Jensen   
+           2003-2009, Milos Kleint   
+           2003-2009, Nicolas De Loof <nicolas@apache.org>
+           2003-2009, Maria Odea B. Ching   
+           2003-2009, Patrick Schneider <pschneider@gmail.com>
+           2003-2009, Petar Tahchiev <ptahchiev@apache.org>
+           2003-2009, Raphaël Piéroni <rafale@apache.org>
+           2003-2009, Rahul Thakur   
+           2003-2009, Shinobu Kuwai   
+           2003-2009, Torbjorn Eikli Smorgrav   
+           2003-2009, Oleg Gusakov   
+License: Apache-2.0
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache-2.0 license in '/usr/share/common-licenses/Apache-2.0'
+
+Files: debian/*
+Copyright: 2009, Ludovic Claude <ludovic.claude@laposte.net>
+License: GPL-2
+  On Debian GNU/Linux system you can find the complete text of the
+  GPL 2 license in '/usr/share/common-licenses/GPL-2'.

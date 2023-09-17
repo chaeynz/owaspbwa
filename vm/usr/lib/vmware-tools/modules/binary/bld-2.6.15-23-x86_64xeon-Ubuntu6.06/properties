@@ -1,0 +1,7 @@
+UtsRelease 2.6.15-23-amd64-xeon
+UtsVersion #1 SMP PREEMPT Tue May 23 14:03:23 UTC 2006
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment Ubuntu6.06, 2.6.15-23, amd64, xeon

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Installing from CD</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="installation.html" title="Chapter 2. Installation" />
+    <link rel="prev" href="preparing-to-install.html" title="Preparing to Install" />
+    <link rel="next" href="installing-upgrading.html" title="Upgrading" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="installation.html">Installation</a></span> &gt; <span class="breadcrumb-node">Installing from CD</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Installing from CD">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="installing-from-cd"></a>Installing from CD</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+	  The basic steps to install Ubuntu Server Edition from CD are the same for installing any operating system from CD.  Unlike
+	  the <span class="emphasis"><em>Desktop Edition</em></span> the <span class="emphasis"><em>Server Edition</em></span> does not include a graphical 
+	  installation program.  Instead the Server Edition uses a console menu based process.
+	  </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p>
+	      First, download and burn the appropriate ISO file from the <a class="ulink" href="http://www.ubuntu.com/getubuntu/download" target="_top">
+	      Ubuntu web site</a>.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      Boot the system from the CD-ROM drive.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      At the boot prompt you will be asked to select the language.
+	      Afterwards the installation process begins by asking for your keyboard layout.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      From the main boot menu there are some additional options to install Ubuntu Server Edition.  You can install a
+          basic Ubuntu Server, or install Ubuntu Server as part of a <span class="emphasis"><em>Ubuntu Enterprise Cloud</em></span>.
+          For more information on UEC see <a class="xref" href="uec.html" title="UEC">the section called “UEC”</a>.  The rest of this section will cover the basic
+          Ubuntu Server install.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      The installer then discovers your hardware configuration, and configures the 
+	      network settings using DHCP.  If you do not wish to use DHCP at the next screen
+          choose "Go Back", and you have the option to "Configure the network manually".
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      Next, the installer asks for the system's hostname and Time Zone. 
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      You can then choose from several options to configure the hard drive layout.
+          For advanced disk options see <a class="xref" href="advanced-installation.html" title="Advanced Installation">the section called “Advanced Installation”</a>.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	     The Ubuntu base system is then installed.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      A new user is setup, this user will have <span class="emphasis"><em>root</em></span> access
+	      through the <span class="application"><strong>sudo</strong></span> utility.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+          After the user is setup, you will be asked to encrypt your 
+          <code class="filename">home</code> directory. 
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+          The next step in the installation process is to decide how you want to update the system.
+          There are three options: 
+	      </p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" type="circle">
+                        <li class="listitem">
+                          <p>
+                    <span class="emphasis"><em>No automatic updates</em></span>: this requires an administrator to log into
+                    the machine and manually install updates.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                    <span class="emphasis"><em>Install security updates Automatically</em></span>: will install the 
+                    <span class="application"><strong>unattended-upgrades</strong></span> package, which will install security updates without the intervention
+                    of an administrator.  For more details see <a class="xref" href="automatic-updates.html" title="Automatic Updates">the section called “Automatic Updates”</a>.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                    <span class="emphasis"><em>Manage the system with Landscape</em></span>: Landscape is a paid service provided
+                    by Canonical to help manage your Ubuntu machines.  See the 
+                    <a class="ulink" href="http://www.canonical.com/projects/landscape" target="_top">Landscape</a> site for details.
+                    </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      You now have the option to install, or not install, several package tasks.  See 
+	      <a class="xref" href="installing-from-cd.html#install-tasks" title="Package Tasks">the section called “Package Tasks”</a> for details.  Also, there is an option to launch
+          <span class="application"><strong>aptitude</strong></span> to choose specific packages to install.  For more
+          information see <a class="xref" href="aptitude.html" title="Aptitude">the section called “Aptitude”</a>.
+	      </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+	      Finally, the last step before rebooting is to set the clock to UTC.
+	      </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="../../libs/admon/note.png" />
+                    </td>
+                    <th align="left"></th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+            If at any point during installation you are not satisfied by the default setting, use the "Go Back" function at 
+            any prompt to be brought to a detailed installation menu that will allow you to modify the default settings.
+	    </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <p>
+          At some point during the installation process you may want to
+          read the help screen provided by the installation system. To
+          do this, press F1.
+          </p>
+              <p>
+	  Once again, for detailed instructions see the <a class="ulink" href="https://help.ubuntu.com/10.04 LTS/installation-guide/" target="_top">
+	  Ubuntu Installation Guide</a>.
+	  </p>
+              <div class="sect2" title="Package Tasks">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="install-tasks"></a>Package Tasks</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	    During the Server Edition installation you have the option of installing additional packages from the CD.  The packages
+	    are grouped by the type of service they provide. 
+	    </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+		    Cloud computing: Walrus storage service
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		    Cloud computing: all-in-one cluster
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		    Cloud computing: Cluster controller
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		    Cloud computing: Node controller
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		    Cloud computing: Storage controller
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		    Cloud computing: top-level cloud controller
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		DNS server: Selects the BIND DNS server and its documentation.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		LAMP server: Selects a ready-made Linux/Apache/MySQL/PHP server.	
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		Mail server: This task selects a variety of package useful for a general purpose mail  server system.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		OpenSSH server: Selects packages needed for an OpenSSH server.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		PostgreSQL database: This task selects client and server packages for the PostgreSQL database.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		Print server: This task sets up your system to be a print server.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		Samba File server: This task sets up your system to be a Samba file server, which is 
+		especially suitable in networks with both Windows and Linux systems.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		Tomcat server: Installs the Apache Tomcat and needed dependencies Java, gcj, etc.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		Virtual machine host: Includes packages needed to run KVM virtual machines.
+	        </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		    Manually select packages: Executes <span class="application"><strong>apptitude</strong></span> allowing you to individually select packages.
+	        </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+	    Installing the package groups is accomplished using the <span class="application"><strong>tasksel</strong></span> utility.  
+	    One of the important difference between Ubuntu (or Debian) and other GNU/Linux distribution is that, when 
+            installed, a package is also configured to reasonable defaults, eventually prompting you for additional required 
+            information. Likewise, when installing a task, the packages are not only installed, but also configured to provided
+            a fully integrated service.
+	    </p>
+                <p>
+        For more information on the <span class="emphasis"><em>Cloud Computing</em></span> tasks see <a class="xref" href="uec.html" title="UEC">the section called “UEC”</a>.
+        </p>
+                <p>
+            Once the installation process has finished you can view a list of available tasks by entering the following from a 
+            terminal prompt:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>tasksel --list-tasks</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	      The output will list tasks from other Ubuntu based distributions such as Kubuntu and Edubuntu.
+	      Note that you can also invoke the <span class="command"><strong>tasksel</strong></span> command by itself, which will bring up a menu 
+              of the different tasks available.
+	      </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+	    You can view a list of which packages are installed with each task using the <span class="emphasis"><em>--task-packages</em></span> option. 
+	    For example, to list the packages installed with the <span class="emphasis"><em>DNS Server</em></span> task enter the following:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>tasksel --task-packages dns-server</strong></span>
+</pre>
+                <p>
+	    The output of the command should list:
+	    </p>
+                <pre class="programlisting">
+bind9-doc 
+bind9utils 
+bind9
+</pre>
+                <p>
+	    Also, if you did not install one of the tasks during the installation process, but for example you decide to make your new LAMP server 
+	    a DNS server as well.  Simply insert the installation CD and from a terminal:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>sudo tasksel install dns-server</strong></span>
+</pre>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="preparing-to-install.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="installation.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="installing-upgrading.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Preparing to Install </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Upgrading</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

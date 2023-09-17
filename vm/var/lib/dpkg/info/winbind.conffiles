@@ -1,0 +1,3 @@
+/etc/logrotate.d/winbind
+/etc/default/winbind
+/etc/init.d/winbind

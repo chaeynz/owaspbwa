@@ -1,0 +1,7 @@
+ce56a5bc85b064e9ba6c30b0b396e8fb  usr/bin/ltrace
+05ab5c94b264b56c5ed7d19ec8c1d72a  usr/share/doc/ltrace/README
+d363c5470bcd71abeca6f0475159c9ea  usr/share/doc/ltrace/TODO
+116f29f2adc072c3e2a878dba883918f  usr/share/doc/ltrace/BUGS
+dea65f4e4f198c6fc3633e2f18d37567  usr/share/doc/ltrace/copyright
+310e6a637c72c68457fe1891eeb7c65b  usr/share/doc/ltrace/changelog.Debian.gz
+dcebbadc89517d634bb1d4176a01fcc8  usr/share/man/man1/ltrace.1.gz

@@ -1,0 +1,52 @@
+2023-09-14 17:01:32 EDT LOG:  database system was shut down at 2015-08-02 23:41:02 EDT
+2023-09-14 17:01:32 EDT LOG:  database system is ready to accept connections
+2023-09-14 17:01:32 EDT LOG:  autovacuum launcher started
+2023-09-14 17:01:32 EDT LOG:  incomplete startup packet
+2023-09-15 01:55:42 EDT LOG:  database system was interrupted; last known up at 2023-09-14 17:01:32 EDT
+2023-09-15 01:55:42 EDT LOG:  database system was not properly shut down; automatic recovery in progress
+2023-09-15 01:55:42 EDT LOG:  record with zero length at 0/67E780
+2023-09-15 01:55:42 EDT LOG:  redo is not required
+2023-09-15 01:55:42 EDT LOG:  database system is ready to accept connections
+2023-09-15 01:55:42 EDT LOG:  autovacuum launcher started
+2023-09-15 01:55:42 EDT LOG:  incomplete startup packet
+2023-09-14 23:56:28 EDT LOG:  incomplete startup packet
+2023-09-14 23:56:28 EDT LOG:  received fast shutdown request
+2023-09-14 23:56:28 EDT LOG:  aborting any active transactions
+2023-09-14 23:56:28 EDT LOG:  autovacuum launcher shutting down
+2023-09-14 23:56:28 EDT LOG:  shutting down
+2023-09-14 23:56:28 EDT LOG:  database system is shut down
+2023-09-14 23:56:41 EDT LOG:  database system was shut down at 2023-09-14 23:56:28 EDT
+2023-09-14 23:56:41 EDT LOG:  database system is ready to accept connections
+2023-09-14 23:56:41 EDT LOG:  autovacuum launcher started
+2023-09-14 23:56:41 EDT LOG:  incomplete startup packet
+2023-09-15 00:04:31 EDT LOG:  incomplete startup packet
+2023-09-15 00:04:31 EDT LOG:  received fast shutdown request
+2023-09-15 00:04:31 EDT LOG:  aborting any active transactions
+2023-09-15 00:04:31 EDT LOG:  autovacuum launcher shutting down
+2023-09-15 00:04:31 EDT LOG:  shutting down
+2023-09-15 00:04:31 EDT LOG:  database system is shut down
+2023-09-15 00:04:43 EDT LOG:  database system was shut down at 2023-09-15 00:04:31 EDT
+2023-09-15 00:04:43 EDT LOG:  database system is ready to accept connections
+2023-09-15 00:04:43 EDT LOG:  autovacuum launcher started
+2023-09-15 00:04:43 EDT LOG:  incomplete startup packet
+2023-09-15 00:29:40 EDT LOG:  incomplete startup packet
+2023-09-15 00:29:40 EDT LOG:  received fast shutdown request
+2023-09-15 00:29:40 EDT LOG:  aborting any active transactions
+2023-09-15 00:29:40 EDT LOG:  autovacuum launcher shutting down
+2023-09-15 00:29:40 EDT LOG:  shutting down
+2023-09-15 00:29:40 EDT LOG:  database system is shut down
+2023-09-15 14:28:29 EDT LOG:  database system was shut down at 2023-09-15 00:29:40 EDT
+2023-09-15 14:28:29 EDT LOG:  database system is ready to accept connections
+2023-09-15 14:28:29 EDT LOG:  autovacuum launcher started
+2023-09-15 14:28:29 EDT LOG:  incomplete startup packet
+2023-09-15 14:44:35 EDT LOG:  incomplete startup packet
+2023-09-15 14:44:35 EDT LOG:  received fast shutdown request
+2023-09-15 14:44:35 EDT LOG:  aborting any active transactions
+2023-09-15 14:44:35 EDT LOG:  autovacuum launcher shutting down
+2023-09-15 14:44:35 EDT LOG:  shutting down
+2023-09-15 14:44:35 EDT LOG:  database system is shut down
+2023-09-15 14:44:53 EDT LOG:  database system was shut down at 2023-09-15 14:44:35 EDT
+2023-09-15 14:44:53 EDT LOG:  database system is ready to accept connections
+2023-09-15 14:44:53 EDT LOG:  autovacuum launcher started
+2023-09-15 14:44:53 EDT LOG:  incomplete startup packet
+2023-09-15 16:39:55 EDT LOG:  incomplete startup packet

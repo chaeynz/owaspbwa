@@ -1,0 +1,5 @@
+32a79b956238aaa5d733798327b2e8a2  usr/lib/libneon-gnutls.so.27.2.0
+eac77b6a5921ab01055b05aa77aacb0a  usr/share/lintian/overrides/libneon27-gnutls
+a84ee507735863b610961cde687db00d  usr/share/doc/libneon27-gnutls/changelog.gz
+9005b709ae4d259088d5c23e36b61fc6  usr/share/doc/libneon27-gnutls/copyright
+ff904a7a590c4393fec113471221d003  usr/share/doc/libneon27-gnutls/changelog.Debian.gz

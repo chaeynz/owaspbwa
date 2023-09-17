@@ -1,0 +1,2 @@
+iputils-arping binary: setuid-binary usr/bin/arping 4755 root/root
+

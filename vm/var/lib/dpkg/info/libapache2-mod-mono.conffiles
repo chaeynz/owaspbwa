@@ -1,0 +1,4 @@
+/etc/apache2/mods-available/mod_mono.load
+/etc/apache2/mods-available/mod_mono.conf
+/etc/apache2/mods-available/mod_mono_auto.load
+/etc/apache2/mods-available/mod_mono_auto.conf

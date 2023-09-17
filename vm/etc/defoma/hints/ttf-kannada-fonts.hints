@@ -1,0 +1,85 @@
+category truetype
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/Malige-i.ttf
+ Family = Malige
+ FontName = Malige
+ Encoding = Unicode
+ Location = Kannada
+ Charset = ISO10646-1
+ GeneralFamily = Serif
+ Weight = Book
+ Width = Variable
+ Shape = Italic
+ Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/Malige-t.ttf
+ Family = Malige
+ FontName = Malige
+ Encoding = Unicode
+ Location = Kannada
+ Charset = ISO10646-1
+ GeneralFamily = Serif
+ Weight = Bold
+ Width = Variable
+ Shape = Italic
+ Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/Kedage-n.ttf
+ Family = Kedage
+ FontName = Kedage
+ Encoding = Unicode
+ Location = Kannada
+ Charset = ISO10646-1
+ GeneralFamily = SansSerif
+ Weight = Book
+ Width = Variable
+ Shape = Upright
+ Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/Kedage-b.ttf
+ Family = Kedage
+ FontName = Kedage
+ Encoding = Unicode
+ Location = Kannada
+ Charset = ISO10646-1
+ GeneralFamily = SansSerif
+ Weight = Bold
+ Width = Variable
+ Shape = Upright
+ Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/Kedage-i.ttf
+ Family = Kedage
+ FontName = Kedage
+ Encoding = Unicode
+ Location = Kannada
+ Charset = ISO10646-1
+ GeneralFamily = SansSerif
+ Weight = Book
+ Width = Variable
+ Shape = Italic
+ Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/Kedage-t.ttf
+ Family = Kedage
+ FontName = Kedage
+ Encoding = Unicode
+ Location = Kannada
+ Charset = ISO10646-1
+ GeneralFamily = SansSerif
+ Weight = Bold
+ Width = Variable
+ Shape = Italic
+ Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-kannada-fonts/lohit_kn.ttf
+ Family = Lohit-Kannada
+ FontName = Lohit-Kannada
+ Encoding = Unicode
+ Location = English Kannada
+ Charset = ISO10646-1
+ GeneralFamily = Kannada
+ Weight = Book
+ Width = Variable
+ Shape = Upright
+ Priority = 30
+end

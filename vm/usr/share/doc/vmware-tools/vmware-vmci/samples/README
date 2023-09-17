@@ -1,0 +1,136 @@
+
+README file for Virtual Machine Communication Interface (VMCI)
+==============================================================
+
+A. How to enable VMCI on your machine:
+--------------------------------------
+
+If you want to use VMCI on your host machine you do not have to do anything
+special. Continue reading this section on how to enable VMCI in your
+virtual machine, otherwise skip to the next section (section B).
+
+In your virtual machine config file (.vmx file) add the following two lines:
+
+# The following line is REQUIRED.
+vmci0.present = "TRUE"
+# The following line is OPTIONAL.
+vmci0.id = "num"
+
+where num is a positive integer that is unique for each virtual machine on your
+host. That is you can use any of 1, 2, 3, and so on for your virtual machine,
+but must use a unique number. You should not have two virtual machines
+with the same value for vmci0.id.
+
+Next install VMware Tools in your virtual machine.
+
+For a Windows virtual machine, choose "Custom Installation"
+and enable the VMCI driver to be installed from the list of VMware
+drivers. This should install the vmci guest driver for a Windows
+virtual machine. You may have to reboot the virtual machine to use vmci.
+
+On a Linux virtual machine, you should turn on experimental features while
+installing Tools to enable VMCI. Run the vmware-config-tools.pl script.
+It will ask if you want to install the
+VMCI device. Answer "yes" and it will install the vmci device driver on your
+Linux virtual machine and create the "/dev/vmci" device node.
+
+
+
+B. Common files for Linux and Windows:
+--------------------------------------
+1. sharedMemApp.c - uses VMCI Shared Memory API.
+2. datagramApp.c - uses VMCI Datagram API.
+
+Both these applications also use the VMCI Discovery Service API.
+
+
+
+C. App description:
+-------------------
+
+Both apps have two components - client and server.
+
+1. sharedMemApp - The server creates a shared memory region, and writes the
+machine's current time in that shared memory every 1 second. The client
+attaches to the shared memory region and can read the server machine's time.
+
+2. datagramApp - The server creates a datagram handle and waits for a datagram.
+The client sends a datagram to the server, and the server sends a datagram
+back in a ping-pong fashion.
+
+For both the apps, the server's resource handle is registered under a well
+known name that the client uses to look it up. Also, the server allows the
+public group to access its resource handles. All contexts (host and guests) are
+members of this public group and hence they can access the server's resource
+handle (send datagrams or attach shared memory).
+
+
+
+
+D. To build your app:
+---------------------
+
+
+On Linux:
+---------
+
+1. Build the app (where app is datagramApp or sharedMemApp)
+$ gcc -o <app>{,.c} `pkg-config --cflags --libs vmci`
+
+On Windows:
+-----------
+
+(Assuming your current working directory contains the VMCI SDK library and
+header files.)
+
+1. Build the app (where app is datagramApp or sharedMemApp)
+cmd> cl.exe <app>.c vmci.lib
+
+
+
+
+E. To run your app:
+-------------------
+
+Run the app and it will print a usage information.
+
+On Linux:
+$ ./<app>
+
+On Windows:
+cmd> .\<app>
+
+Run the server-side of the app as follows:
+
+On Linux:
+$ ./<app> -d <vmci-device-name> -s
+
+On Windows:
+cmd> .\<app> -d <vmci-device-name> -s
+
+Run the client-side of the app as follows:
+
+On Linux:
+$ ./<app> -d <vmci-device-name> -c
+
+On Windows:
+cmd> .\<app> -d <vmci-device-name> -c
+
+
+
+F. VMCI device names:
+---------------------
+
+The following table enumerates the VMCI device name on each platform.
+If you do not specify the '-d' option when running the apps, this is what
+they will default to trying.
+
+-----------------------------------------------------
+|   OS Type   |   Host machine |   Guest machine    |
+=====================================================
+|   Windows   |   \\.\vmx86    |   \\.\VMCI         |
+-----------------------------------------------------
+|   Linux     |   /dev/vmmon   |   /dev/vmci        |
+-----------------------------------------------------
+
+

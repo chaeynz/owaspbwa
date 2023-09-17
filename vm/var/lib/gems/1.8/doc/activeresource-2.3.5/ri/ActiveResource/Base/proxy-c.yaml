@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Gets the \proxy variable if a proxy is required
+full_name: ActiveResource::Base::proxy
+is_singleton: true
+name: proxy
+params: ()
+visibility: public

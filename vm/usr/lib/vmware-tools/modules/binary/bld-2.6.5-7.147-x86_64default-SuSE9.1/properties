@@ -1,0 +1,6 @@
+UtsRelease 2.6.5-7.147-default
+ModVersion yes
+SMP no
+PageOffset 0000010000000000
+Comment SuSE9.1, kernel update 2.6.5-7.147, x86_64 default
+UtsMachine x86_64

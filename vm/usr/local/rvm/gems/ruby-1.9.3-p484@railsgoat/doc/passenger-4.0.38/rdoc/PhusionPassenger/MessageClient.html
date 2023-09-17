@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::MessageClient - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/message_client.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Utils.html">PhusionPassenger::Utils</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-check_security_response">#check_security_response</a>
+    
+    <li><a href="#method-i-close">#close</a>
+    
+    <li><a href="#method-i-connected-3F">#connected?</a>
+    
+    <li><a href="#method-i-helper_agent_backtraces">#helper_agent_backtraces</a>
+    
+    <li><a href="#method-i-helper_agent_requests">#helper_agent_requests</a>
+    
+    <li><a href="#method-i-logging_agent_status">#logging_agent_status</a>
+    
+    <li><a href="#method-i-pool_detach_process">#pool_detach_process</a>
+    
+    <li><a href="#method-i-pool_detach_process_by_key">#pool_detach_process_by_key</a>
+    
+    <li><a href="#method-i-pool_status">#pool_status</a>
+    
+    <li><a href="#method-i-pool_xml">#pool_xml</a>
+    
+    <li><a href="#method-i-read">#read</a>
+    
+    <li><a href="#method-i-read_scalar">#read_scalar</a>
+    
+    <li><a href="#method-i-recv_io">#recv_io</a>
+    
+    <li><a href="#method-i-restart_app_group">#restart_app_group</a>
+    
+    <li><a href="#method-i-write">#write</a>
+    
+    <li><a href="#method-i-write_scalar">#write_scalar</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="../PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="../PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="../PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::MessageClient</h1>
+
+  <div id="description" class="description">
+    
+<p>A convenience class for communicating with MessageServer servers, for
+example the ApplicationPool server.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(username, password, address = "unix:</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Connect to the given server. By default it connects to the current
+generation’s helper server.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">password</span>, <span class="ruby-identifier">address</span> = <span class="ruby-node">&quot;unix:#{Utils.passenger_tmpdir}/socket&quot;</span>)
+        <span class="ruby-ivar">@socket</span> = <span class="ruby-identifier">connect_to_server</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-ivar">@channel</span> = <span class="ruby-constant">MessageChannel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@socket</span>)
+                
+                <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">read</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-value">2</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;version&quot;</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">IOError</span>, <span class="ruby-string">&quot;The message server didn't sent a valid version identifier&quot;</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;1&quot;</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">IOError</span>, <span class="ruby-node">&quot;Unsupported message server protocol version #{result[1]}&quot;</span>
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">write_scalar</span>(<span class="ruby-identifier">username</span>)
+                <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">write_scalar</span>(<span class="ruby-identifier">password</span>)
+        
+                <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">read</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;ok&quot;</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">SecurityError</span>, <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>]
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+                <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">close</span>
+                <span class="ruby-identifier">raise</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_security_response" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_security_response</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_security_response-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">read</span>
+        <span class="ruby-keyword">rescue</span>
+                <span class="ruby-identifier">auto_disconnect</span>
+                <span class="ruby-identifier">raise</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;Passed security&quot;</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">SecurityError</span>, <span class="ruby-identifier">result</span>[<span class="ruby-value">0</span>]
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_security_response-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_security_response-method -->
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>
+        <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@socket</span>
+        <span class="ruby-ivar">@channel</span> = <span class="ruby-ivar">@socket</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-method -->
+
+    
+      <div id="method-i-connected-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">connected?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="connected-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">connected?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@channel</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- connected-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- connected-3F-method -->
+
+    
+      <div id="method-i-helper_agent_backtraces" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">helper_agent_backtraces</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HelperAgent BacktracesServer methods ###</p>
+          
+
+          
+          <div class="method-source-code" id="helper_agent_backtraces-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">helper_agent_backtraces</span>
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;backtraces&quot;</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">read_scalar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- helper_agent_backtraces-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- helper_agent_backtraces-method -->
+
+    
+      <div id="method-i-helper_agent_requests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">helper_agent_requests</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="helper_agent_requests-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">helper_agent_requests</span>
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;requests&quot;</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">read_scalar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- helper_agent_requests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- helper_agent_requests-method -->
+
+    
+      <div id="method-i-logging_agent_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">logging_agent_status</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>LoggingAgent AdminServer methods ###</p>
+          
+
+          
+          <div class="method-source-code" id="logging_agent_status-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">logging_agent_status</span>
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;status&quot;</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">read_scalar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- logging_agent_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- logging_agent_status-method -->
+
+    
+      <div id="method-i-pool_detach_process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool_detach_process</span><span
+            class="method-args">(pid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HelperAgent methods ###</p>
+          
+
+          
+          <div class="method-source-code" id="pool_detach_process-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pool_detach_process</span>(<span class="ruby-identifier">pid</span>)
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;detach_process&quot;</span>, <span class="ruby-identifier">pid</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">read</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;true&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pool_detach_process-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pool_detach_process-method -->
+
+    
+      <div id="method-i-pool_detach_process_by_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool_detach_process_by_key</span><span
+            class="method-args">(detach_key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pool_detach_process_by_key-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pool_detach_process_by_key</span>(<span class="ruby-identifier">detach_key</span>)
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;detach_process_by_key&quot;</span>, <span class="ruby-identifier">detach_key</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">read</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;true&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pool_detach_process_by_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pool_detach_process_by_key-method -->
+
+    
+      <div id="method-i-pool_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool_status</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pool_status-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pool_status</span>(<span class="ruby-identifier">options</span> = {})
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;inspect&quot;</span>, *<span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">flatten</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">read_scalar</span>
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">auto_disconnect</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pool_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pool_status-method -->
+
+    
+      <div id="method-i-pool_xml" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pool_xml</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pool_xml-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pool_xml</span>
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;toXml&quot;</span>, <span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">read_scalar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pool_xml-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pool_xml-method -->
+
+    
+      <div id="method-i-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Low level I/O methods ###</p>
+          
+
+          
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">read</span>
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">auto_disconnect</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- read-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- read-method -->
+
+    
+      <div id="method-i-read_scalar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_scalar</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="read_scalar-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read_scalar</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">read_scalar</span>
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">auto_disconnect</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- read_scalar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- read_scalar-method -->
+
+    
+      <div id="method-i-recv_io" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recv_io</span><span
+            class="method-args">(klass = IO, negotiate = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recv_io-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recv_io</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-constant">IO</span>, <span class="ruby-identifier">negotiate</span> = <span class="ruby-keyword">true</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">recv_io</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">negotiate</span>)
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">auto_disconnect</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recv_io-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recv_io-method -->
+
+    
+      <div id="method-i-restart_app_group" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restart_app_group</span><span
+            class="method-args">(app_group_name, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="restart_app_group-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restart_app_group</span>(<span class="ruby-identifier">app_group_name</span>, <span class="ruby-identifier">options</span> = {})
+        <span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;restart_app_group&quot;</span>, <span class="ruby-identifier">app_group_name</span>, *<span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">flatten</span>)
+        <span class="ruby-identifier">check_security_response</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">read</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">EOFError</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;true&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- restart_app_group-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- restart_app_group-method -->
+
+    
+      <div id="method-i-write" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">write</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">auto_disconnect</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write-method -->
+
+    
+      <div id="method-i-write_scalar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_scalar</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write_scalar-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/message_client.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_scalar</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-ivar">@channel</span>.<span class="ruby-identifier">write_scalar</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">auto_disconnect</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_scalar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_scalar-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,11 @@
+feadbaee6a8a97d879fa871c059adbab  usr/share/maven-repo/javax/xml/jaxp-api/1.3/jaxp-api-1.3.pom
+95645de1e13606183e6a97854abaacb3  usr/share/maven-repo/javax/xml/jaxp-api/1.3/jaxp-api-1.3.jar
+5dabdc0c325928525d9251a4432d2865  usr/share/maven-repo/javax/xml/jaxp-api/debian/jaxp-api-debian.pom
+01cfe35e86d6fbeef67c0e66ac0c3813  usr/share/maven-repo/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom
+7a1ac4f9dfb2f2d0b3fdc46c406304d7  usr/share/maven-repo/xml-apis/xml-apis/debian/xml-apis-debian.pom
+95645de1e13606183e6a97854abaacb3  usr/share/java/xml-apis-1.3.04.jar
+8d86fb50180d371740a52d06eb943b97  usr/share/doc/libjaxp1.3-java/README.dom.txt
+745439951397609bec515ab636bdb855  usr/share/doc/libjaxp1.3-java/README.sax.txt
+d6fb5a041b2408a2bf063510b01a6d47  usr/share/doc/libjaxp1.3-java/NOTICE
+a06612f6f64df2fea4388181d1e22dea  usr/share/doc/libjaxp1.3-java/copyright
+a5e56822d028b8182ad1c46ad56d4457  usr/share/doc/libjaxp1.3-java/changelog.Debian.gz

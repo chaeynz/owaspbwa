@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/up2date_mirrors_info.py

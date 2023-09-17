@@ -1,0 +1,6 @@
+Mon, 17 Mar 2014 01:25:07 -0400
+lib/daemon_controller.rb	Mon, 17 Mar 2014 01:24:34 -0400
+lib/daemon_controller/version.rb	Mon, 17 Mar 2014 01:24:34 -0400
+lib/daemon_controller/packaging.rb	Mon, 17 Mar 2014 01:24:34 -0400
+lib/daemon_controller/spawn.rb	Mon, 17 Mar 2014 01:24:34 -0400
+lib/daemon_controller/lock_file.rb	Mon, 17 Mar 2014 01:24:34 -0400

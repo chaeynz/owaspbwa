@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Data_Model xtest_id="datamodel-1">
+   <Databases xtest_id="dbs">
+      <Database ext_name="Gis" int_name="gis" xtest_id="db-1">
+         <Tables xtest_id="db-1-tables">
+            <Table ext_name="001 Flurstück" int_name="alk_flurstueck" xtest_id="">
+               <Fields xtest_id="db-1-table-1">
+                  <Field ext_name="Folie" int_name="folie" type="char" xtest_id="db-1-table-1-field-1" />
+                  <Field ext_name="OS" int_name="os" type="char" xtest_id="db-1-table-1-field-2" />
+                  <Field ext_name="Objekttyp" int_name="objekttyp" type="char" xtest_id="db-1-table-1-field-3" />
+                  <Field ext_name="Flurst. Nr. (Zähler)" int_name="flst_nr_zaehler" type="char" xtest_id="db-1-table-1-field-4" />
+                  <Field ext_name="Flurst. Nr. (Nenner)" int_name="flst_nr_nenner" type="char" xtest_id="db-1-table-1-field-1" />
+               </Fields>
+            </Table xtest_id="db-1-table-2">
+            <Table ext_name="001 Flurstück Ausgestaltung" int_name="alk_flurstueck_ausg" xtest_id="">
+               <Fields xtest_id="">
+                  <Field ext_name="Objektnummer" int_name="objektnummer" type="char" xtest_id="" />
+                  <Field ext_name="Flurstück" int_name="flurstueck" type="foreign_key" xtest_id="" />
+                  <Field ext_name="Geometrie" int_name="geometrie" type="geometry" xtest_id="" />
+                  <Field ext_name="Key Value" int_name="m_magie_key" type="key" xtest_id="" />
+               </Fields>
+            </Table>
+         </Tables>
+      </Database>
+   </Databases>
+</Data_Model>  
+

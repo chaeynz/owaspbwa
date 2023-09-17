@@ -1,0 +1,6 @@
+nunit.core 2.4.7.0__96d09a1eb7f44a77 libnunit2.4-cil (>= 2.4.7)
+nunit.core.interfaces 2.4.7.0__96d09a1eb7f44a77 libnunit2.4-cil (>= 2.4.7)
+nunit.core.extensions 2.4.7.0__96d09a1eb7f44a77 libnunit2.4-cil (>= 2.4.7)
+nunit.framework 2.4.7.0__96d09a1eb7f44a77 libnunit2.4-cil (>= 2.4.7)
+nunit.mocks 2.4.7.0__96d09a1eb7f44a77 libnunit2.4-cil (>= 2.4.7)
+nunit.util 2.4.7.0__96d09a1eb7f44a77 libnunit2.4-cil (>= 2.4.7)

@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Mailman</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="email-services.html" title="Chapter 14. Email Services" />
+    <link rel="prev" href="dovecot-server.html" title="Dovecot Server" />
+    <link rel="next" href="mail-filtering.html" title="Mail Filtering" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="email-services.html">Email Services</a></span> &gt; <span class="breadcrumb-node">Mailman</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Mailman">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="mailman"></a>Mailman</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+          Mailman is an open source program for managing electronic mail
+          discussions and e-newsletter lists. Many open source mailing
+          lists (including all the <a class="ulink" href="http://lists.ubuntu.com" target="_top">Ubuntu mailing lists</a>) use
+          Mailman as their mailing list software. It is powerful and easy
+          to install and maintain.
+          </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="mailman-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+			Mailman provides a web interface for the administrators and users,
+			using an external mail server to send and receive emails. It works
+			perfectly with the following mail servers:
+            </p>
+                <p>
+            </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc" compact="compact">
+                    <li class="listitem">
+                      <p>
+                        <span class="application">
+                          <strong>Postfix</strong>
+                        </span>
+                      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                        <span class="application">
+                          <strong>Exim</strong>
+                        </span>
+                      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                        <span class="application">
+                          <strong>Sendmail</strong>
+                        </span>
+                      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                        <span class="application">
+                          <strong>Qmail</strong>
+                        </span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+            </p>
+                <p>
+            We will see how to install and configure Mailman with, the Apache web server,
+            and either the Postfix or Exim mail server. If you wish to install Mailman
+            with a different mail server, please refer to the references
+            section. 
+            </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+		You only need to install one mail server and <span class="application"><strong>Postfix</strong></span> is the default Ubuntu Mail Transfer Agent.
+	       </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="sect3" title="Apache2">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-apache2"></a>Apache2</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                To install apache2 you refer to <a class="ulink" href="./web-servers.xml#http-installation" target="_top">HTTPD
+                Installation</a> section for details.
+              </p>
+                </div>
+                <div class="sect3" title="Postfix">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-postfix"></a>Postfix</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	    For instructions on installing and configuring Postfix refer to <a class="xref" href="postfix.html" title="Postfix">the section called “Postfix”</a>
+	    </p>
+                </div>
+                <div class="sect3" title="Exim4">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-exim4"></a>Exim4</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+              To install Exim4 refer to <a class="xref" href="exim4.html" title="Exim4">the section called “Exim4”</a>.
+	      </p>
+                  <p>
+	      Once exim4 is installed, the configuration files are stored in
+	      the <code class="filename">/etc/exim4</code> directory. In Ubuntu, by default, the exim4 configuration files are
+	      split across different files. You can change this behavior by changing
+	      the following variable in the <code class="filename">/etc/exim4/update-exim4.conf</code> file:
+
+              </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc" compact="compact">
+                      <li class="listitem">
+                        <p>
+                          <span class="application">
+                            <strong>dc_use_split_config='true'</strong>
+                          </span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+              </p>
+                </div>
+                <div class="sect3" title="Mailman">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-mailman"></a>Mailman</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+              To install <span class="application"><strong>Mailman</strong></span>, run following command at a terminal prompt:
+	      </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo apt-get install mailman</strong></span> 
+</pre>
+                  <p>
+	     It copies the installation files in
+	     <span class="application"><strong>/var/lib/mailman</strong></span> directory. It installs the
+	     CGI scripts in <span class="application"><strong>/usr/lib/cgi-bin/mailman</strong></span>
+	     directory.  It creates <span class="emphasis"><em>list</em></span> linux
+	     user. It creates the <span class="emphasis"><em>list</em></span> linux
+ 	     group. The mailman process will be owned by this user. 
+             </p>
+                </div>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="mailman-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            This section assumes you have successfully installed
+            <span class="application"><strong>mailman</strong></span>,
+            <span class="application"><strong>apache2</strong></span>, and
+	    <span class="application"><strong>postfix</strong></span> or <span class="application"><strong>exim4</strong></span>. Now you just need
+            to configure them. 
+            </p>
+                <div class="sect3" title="Apache2">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-apache2"></a>Apache2</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	      An example Apache configuration file comes with <span class="application"><strong>Mailman</strong></span> and is placed
+	      in <code class="filename">/etc/mailman/apache.conf</code>. In order for Apache to use the config file it needs
+	      to be copied to <code class="filename">/etc/apache2/sites-available</code>:
+	      </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo cp /etc/mailman/apache.conf /etc/apache2/sites-available/mailman.conf</strong></span>
+</pre>
+                  <p>
+	      This will setup a new Apache <span class="emphasis"><em>VirtualHost</em></span> for the Mailman administration site.
+	      Now enable the new configuration and restart Apache:
+	      </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo a2ensite mailman.conf</strong></span>
+<span class="command"><strong>sudo /etc/init.d/apache2 restart</strong></span>
+</pre>
+                  <p>
+	      Mailman uses apache2 to render its CGI scripts. The mailman CGI scripts
+	      are installed in the <span class="application"><strong>/usr/lib/cgi-bin/mailman</strong></span>
+	      directory. So, the mailman url will be
+	      http://hostname/cgi-bin/mailman/. You can make changes to the
+	      <code class="filename">/etc/apache2/sites-available/mailman.conf</code> file if you wish to
+	      change this behavior.
+              </p>
+                </div>
+                <div class="sect3" title="Postfix">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-postfix"></a>Postfix</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	    For <span class="application"><strong>Postfix</strong></span> integration, we will associate the domain lists.example.com with the mailing lists.
+	    Please replace <span class="emphasis"><em>lists.example.com</em></span> with the domain of your choosing.
+	    </p>
+                  <p>
+	    You can use the postconf command to add the necessary configuration to <code class="filename">/etc/postfix/main.cf</code>:
+	    </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo postconf -e 'relay_domains = lists.example.com'</strong></span>
+<span class="command"><strong>sudo postconf -e 'transport_maps = hash:/etc/postfix/transport'</strong></span>
+<span class="command"><strong>sudo postconf -e 'mailman_destination_recipient_limit = 1'</strong></span>
+</pre>
+                  <p>
+	  In <code class="filename">/etc/postfix/master.cf</code> double check that you have the following transport:
+	  </p>
+                  <pre class="programlisting">
+mailman   unix  -       n       n       -       -       pipe
+  flags=FR user=list argv=/usr/lib/mailman/bin/postfix-to-mailman.py
+  ${nexthop} ${user}
+</pre>
+                  <p>
+	  It calls the <span class="emphasis"><em>postfix-to-mailman.py</em></span> script when a mail is delivered to a list.
+	  </p>
+                  <p>
+	  Associate the domain lists.example.com to the Mailman transport with the transport map. Edit the file <code class="filename">/etc/postfix/transport</code>: 
+	  </p>
+                  <pre class="programlisting">
+lists.example.com      mailman:
+</pre>
+                  <p>
+	  Now have <span class="application"><strong>Postfix</strong></span> build the transport map by entering the following from a terminal prompt:
+	  </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo postmap -v /etc/postfix/transport</strong></span>
+</pre>
+                  <p>
+	  Then restart Postfix to enable the new configurations:
+	  </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/postfix restart</strong></span>
+</pre>
+                </div>
+                <div class="sect3" title="Exim4">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-exim4"></a>Exim4</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+              Once Exim4 is installed, you can start the Exim server using the following
+              command from a terminal prompt:
+	      </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/exim4 start</strong></span>
+</pre>
+                  <p>
+In order to make mailman work with Exim4, you need to configure Exim4.
+As mentioned earlier, by default, Exim4 uses multiple configuration
+files of different types. For details, please refer to the <a class="ulink" href="http://www.exim.org" target="_top">Exim</a> web site.  To run mailman, we
+should add new a configuration file to the following configuration
+types: 
+              </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc" compact="compact">
+                      <li class="listitem">
+                        <p>Main</p>
+                      </li>
+                      <li class="listitem">
+                        <p>Transport</p>
+                      </li>
+                      <li class="listitem">
+                        <p>Router</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+              Exim creates a master configuration file by sorting all
+              these mini configuration files. So, the order of these
+              configuration files is very important.
+              </p>
+                </div>
+                <div class="sect3" title="Main">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-main"></a>Main</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+              All the configuration files belonging to the main type are
+              stored in the
+              <code class="filename">/etc/exim4/conf.d/main/</code> directory. You can add
+              the following content to a new file, named <code class="filename">04_exim4-config_mailman</code>:
+
+</p>
+                  <pre class="programlisting">
+# start
+# Home dir for your Mailman installation -- aka Mailman's prefix
+# directory.
+# On Ubuntu this should be "/var/lib/mailman"
+# This is normally the same as ~mailman
+MM_HOME=/var/lib/mailman
+#
+# User and group for Mailman, should match your --with-mail-gid
+# switch to Mailman's configure script.  Value is normally "mailman"
+MM_UID=list
+MM_GID=list
+#
+# Domains that your lists are in - colon separated list
+# you may wish to add these into local_domains as well
+domainlist mm_domains=hostname.com
+#
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#
+# These values are derived from the ones above and should not need
+# editing unless you have munged your mailman installation
+#
+# The path of the Mailman mail wrapper script
+MM_WRAP=MM_HOME/mail/mailman
+#
+# The path of the list config file (used as a required file when
+# verifying list addresses)
+MM_LISTCHK=MM_HOME/lists/${lc::$local_part}/config.pck
+# end
+</pre>
+                  <p>
+          </p>
+                </div>
+                <div class="sect3" title="Transport">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-transport"></a>Transport</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+All the configuration files belonging to transport type are stored in
+the <code class="filename">/etc/exim4/conf.d/transport/</code> directory. You
+can add the following content to a new file named <code class="filename">
+40_exim4-config_mailman</code>:
+
+</p>
+                  <pre class="programlisting">
+  mailman_transport:
+   driver = pipe
+   command = MM_WRAP \
+               '${if def:local_part_suffix \
+                     {${sg{$local_part_suffix}{-(\\w+)(\\+.*)?}{\$1}}} \
+                     {post}}' \
+               $local_part
+    current_directory = MM_HOME
+    home_directory = MM_HOME
+    user = MM_UID
+    group = MM_GID
+</pre>
+                  <p>
+              </p>
+                </div>
+                <div class="sect3" title="Router">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-router"></a>Router</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+All the configuration files belonging to router type are stored in the
+<code class="filename">/etc/exim4/conf.d/router/</code> directory. You can add the following content
+in to a new file named <code class="filename">101_exim4-config_mailman</code>:
+</p>
+                  <pre class="programlisting">
+  mailman_router:
+   driver = accept
+   require_files = MM_HOME/lists/$local_part/config.pck
+   local_part_suffix_optional
+   local_part_suffix = -bounces : -bounces+* : \
+                       -confirm+* : -join : -leave : \
+                       -owner : -request : -admin
+   transport = mailman_transport
+</pre>
+                  <p>
+
+              </p>
+                  <div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Warning">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Warning]" src="../../libs/admon/warning.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+The order of main and transport configuration files can be in any order.
+But, the order of router configuration files must be the same.
+This particular file must appear before the
+<span class="application"><strong>200_exim4-config_primary</strong></span> file.
+These two configuration files contain same type of information. The
+first file takes the precedence. For more details, please refer to the
+references section.
+</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="Mailman">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="mailman-conf-mailman"></a>Mailman</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	      Once mailman is installed, you can run it using the following command:
+	      </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/mailman start</strong></span>
+</pre>
+                  <p>
+	      Once mailman is installed, you should create the default mailing list.
+	      Run the following command to create the mailing list:
+	      </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo /usr/sbin/newlist mailman</strong></span>
+</pre>
+                  <pre class="programlisting">
+  Enter the email address of the person running the list: bhuvan at ubuntu.com
+  Initial mailman password:
+  To finish creating your mailing list, you must edit your <code class="filename">/etc/aliases</code> (or
+  equivalent) file by adding the following lines, and possibly running the
+  `newaliases' program:
+
+  ## mailman mailing list
+  mailman:              "|/var/lib/mailman/mail/mailman post mailman"
+  mailman-admin:        "|/var/lib/mailman/mail/mailman admin mailman"
+  mailman-bounces:      "|/var/lib/mailman/mail/mailman bounces mailman"
+  mailman-confirm:      "|/var/lib/mailman/mail/mailman confirm mailman"
+  mailman-join:         "|/var/lib/mailman/mail/mailman join mailman"
+  mailman-leave:        "|/var/lib/mailman/mail/mailman leave mailman"
+  mailman-owner:        "|/var/lib/mailman/mail/mailman owner mailman"
+  mailman-request:      "|/var/lib/mailman/mail/mailman request mailman"
+  mailman-subscribe:    "|/var/lib/mailman/mail/mailman subscribe mailman"
+  mailman-unsubscribe:  "|/var/lib/mailman/mail/mailman unsubscribe mailman"
+
+  Hit enter to notify mailman owner...
+
+  # 
+</pre>
+                  <p>
+	     We have configured either Postfix or Exim4 to recognize all emails from mailman. So, it is
+	     not mandatory to make any new entries in
+	     <code class="filename">/etc/aliases</code>.  If you have made any changes
+	     to the configuration files, please ensure that you restart those
+	     services before continuing to next section.
+	     </p>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+         The Exim4 does not use the above aliases to forward mails to
+         Mailman, as it uses a <span class="emphasis"><em>discover</em></span> approach. To
+         suppress the aliases while creating the list, you can add
+         <span class="emphasis"><em>MTA=None</em></span> line in Mailman configuration
+         file, <code class="filename">/etc/mailman/mm_cfg.py</code>.
+         </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Administration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="mailman-admin"></a>Administration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+We assume you have a default installation. The
+mailman cgi scripts are still in the
+<span class="application"><strong>/usr/lib/cgi-bin/mailman/</strong></span> directory.  Mailman
+provides a web based administration facility. To access this page, point
+your browser to the following url: 
+
+</p>
+                <p>
+http://hostname/cgi-bin/mailman/admin
+</p>
+                <p>
+The default mailing list, <span class="emphasis"><em>mailman</em></span>,
+will appear in this screen. If you click the mailing list name, it
+will ask for your authentication password.  If you enter the correct
+password, you will be able to change administrative settings of this
+mailing list.
+
+You can create a new mailing list using the command line utility
+(<span class="command"><strong>/usr/sbin/newlist</strong></span>).
+Alternatively, you can create a new mailing list using the web interface. 
+</p>
+              </div>
+              <div class="sect2" title="Users">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="mailman-users"></a>Users</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+Mailman provides a web based interface for users. To access this page,
+point your browser to the following url:
+</p>
+                <p>
+http://hostname/cgi-bin/mailman/listinfo
+</p>
+                <p>
+The default mailing list, <span class="emphasis"><em>mailman</em></span>,
+will appear in this screen. If you
+click the mailing list name, it will display the subscription form. You
+can enter your email address, name (optional), and password to subscribe.
+An email invitation will be sent to you. You can follow the
+instructions in the email to subscribe.
+</p>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="mailman-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+<a class="ulink" href="http://www.list.org/mailman-install/index.html" target="_top"> GNU Mailman
+- Installation Manual</a>
+</p>
+                <p>
+<a class="ulink" href="http://www.exim.org/howto/mailman21.html" target="_top">HOWTO - Using Exim
+4 and Mailman 2.1 together</a>
+</p>
+                <p>
+          Also, see the <a class="ulink" href="https://help.ubuntu.com/community/Mailman" target="_top">Mailman Ubuntu Wiki</a> page.
+          </p>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="dovecot-server.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="email-services.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="mail-filtering.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Dovecot Server </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Mail Filtering</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

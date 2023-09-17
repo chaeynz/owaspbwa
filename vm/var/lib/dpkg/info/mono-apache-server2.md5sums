@@ -1,0 +1,15 @@
+3ed4e63ec2a6d23fa3c645e3e65f50ed  usr/bin/mod-mono-server2
+d70562d1f89e9800d95501b2dd7f190d  usr/share/doc/mono-apache-server2/changelog.gz
+8a027c6ac3a7856d2fbf6b91f7900e0d  usr/share/doc/mono-apache-server2/NEWS.gz
+a6b4115e0ab1af6bc9cd0f154c356820  usr/share/doc/mono-apache-server2/README
+43c634c520093b11c815e4abd634cfc0  usr/share/doc/mono-apache-server2/AUTHORS
+874f3c5d80671e15f2897d1cb27a1cf6  usr/share/doc/mono-apache-server2/README.Debian
+40142da769d9981ad2984609013bfc04  usr/share/doc/mono-apache-server2/copyright
+9ffc71907e54e3b8755beae826b6ae07  usr/share/doc/mono-apache-server2/changelog.Debian.gz
+c99e480f8ccb8981043f54aefe30900e  usr/share/man/man8/update-mono-server2.8.gz
+5710f1b66046d37a0d3e4710fb4889e1  usr/share/man/man8/mono-server2-admin.8.gz
+c99e480f8ccb8981043f54aefe30900e  usr/share/man/man8/mono-server2-update.8.gz
+fb81671e1353709706c6502c6f47c67c  usr/share/man/man1/mod-mono-server2.1.gz
+c3ba6572f83e45ee50e5af9b70891d2d  usr/lib/mono/gac/mod-mono-server2/2.4.3.0__0738eb9f132ed756/mod-mono-server2.exe
+cf5b7d79efdefcde7cee65764fea3e7d  usr/sbin/mono-server2-admin
+39bb10fe8510af4abf78077972414b3b  usr/sbin/mono-server2-update

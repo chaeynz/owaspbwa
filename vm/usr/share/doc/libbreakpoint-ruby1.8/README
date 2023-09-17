@@ -1,0 +1,43 @@
+= ruby-breakpoint 0.5.1 README
+
+ruby-breakpoint lets you inspect and modify state at run time. This allows you
+to diagnose bugs, patch applications and more all via IRB by simply doing a
+method call at the place you want to investigate.
+
+ruby-breakpoint is integrated into the popular RubyOnRails and Nitro web
+development frameworks. In the past it has also been a part of the Ruby
+dev-utils Project.
+
+ruby-breakpoint is available from http://ruby-breakpoint.rubyforge.org/ --
+that web site also is a good place for discussing new features, filing bug
+reports and so on.
+
+See the NEWS file for the changes that were done in this release.
+
+
+== Requirements
+
+* Ruby >= 1.8.2
+* DRb, IRB (usually shipped with Ruby, but not on Debian)
+
+
+== Installation
+
+De-compress archive and enter its top directory. Then type:
+
+  ($ su)
+  # ruby setup.rb
+
+This simple step installs this program under the default location of Ruby
+libraries. You can also install files into your favorite directory by supplying
+setup.rb with some options. Try "ruby setup.rb --help".
+
+
+== License
+
+Dual licensed under GPL and Ruby's custom license. See COPYING.
+
+
+== Author
+
+Florian Gross, flgr@ccan.de

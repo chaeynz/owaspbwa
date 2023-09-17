@@ -1,0 +1,66 @@
+#!/bin/sh -e
+#
+# $Id: dhcp3-client.postrm,v 1.1.1.1 2002/05/21 00:07:44 peloy Exp $
+#
+
+# Undo removal of a no-longer used conffile
+undo_rm_conffile()
+{
+    CONFFILE="$1"
+
+    if [ ! -e "$CONFFILE" ]; then
+	if [ -e "$CONFFILE".dpkg-bak ]; then
+	    echo "Restoring modified conffile $CONFFILE"
+	    mv -f "$CONFFILE".dpkg-bak "$CONFFILE"
+	elif [ -e "$CONFFILE".dpkg-obsolete ]; then
+	    mv -f "$CONFFILE".dpkg-obsolete "$CONFFILE"
+	fi
+    fi
+}
+
+# Finish removal of a no-longer used conffile
+finish_rm_conffile()
+{
+    CONFFILE="$1"
+
+    if [ -e "$CONFFILE".dpkg-bak ]; then
+	rm -f "$CONFFILE".dpkg-bak
+    fi
+}
+
+case "$1" in
+    purge)
+	# Remove lease database
+	rm -f /var/lib/dhcp3/dhclient.leases*
+
+	# Try to remove directory
+	if [ -d /var/lib/dhcp3 ]; then
+		rmdir --ignore-fail-on-non-empty /var/lib/dhcp3/
+	fi
+
+	if [ -e /etc/dhcp3/dhclient-script ]; then
+		rm /etc/dhcp3/dhclient-script
+		rmdir --ignore-fail-on-non-empty /etc/dhcp3
+	fi
+
+	rm -f /etc/apparmor.d/force-complain/sbin.dhclient3 >/dev/null 2>&1 || true
+
+	if dpkg --compare-versions "$2" lt-nl 3.1.2-1ubuntu7; then
+		finish_rm_conffile /etc/network/if-pre-up.d/dhclient3-apparmor
+	fi
+	;;
+
+    abort-install|abort-upgrade)
+	if dpkg --compare-versions "$2" lt-nl 3.1.2-1ubuntu7; then
+		undo_rm_conffile /etc/network/if-pre-up.d/dhclient3-apparmor
+	fi
+	;;
+esac
+
+# Automatically added by dh_installdebconf
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+

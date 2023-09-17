@@ -1,0 +1,193 @@
+exslt.lo: exslt.c ../libexslt/libexslt.h ../config.h \
+ ../libxslt/xsltconfig.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlversion.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlexports.h \
+ ../libxslt/extensions.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xpath.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlerror.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/parser.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/tree.h \
+ /usr/include/stdio.h /usr/include/features.h /usr/include/bits/predefs.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-32.h \
+ /usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlstring.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlregexp.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/dict.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/hash.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/valid.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/list.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlautomata.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/entities.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/encoding.h \
+ /usr/include/iconv.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlIO.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/globals.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/SAX.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/xlocale.h /usr/include/sys/types.h /usr/include/time.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xlink.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/SAX2.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlmemory.h \
+ /usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/threads.h \
+ ../libxslt/xsltexports.h ../libxslt/xsltInternals.h ../libxslt/xslt.h \
+ ../libxslt/xsltlocale.h /usr/include/locale.h /usr/include/bits/locale.h \
+ ../libxslt/numbersInternals.h exsltconfig.h exslt.h exsltexports.h \
+ ../libexslt/exsltconfig.h
+
+../libexslt/libexslt.h:
+
+../config.h:
+
+../libxslt/xsltconfig.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlversion.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlexports.h:
+
+../libxslt/extensions.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xpath.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlerror.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/parser.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include/stdarg.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/tree.h:
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-32.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.4.3/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlstring.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlregexp.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/dict.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/hash.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/valid.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/list.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlautomata.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/entities.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/encoding.h:
+
+/usr/include/iconv.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlIO.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/globals.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/SAX.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xlink.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/SAX2.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/xmlmemory.h:
+
+/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml/threads.h:
+
+../libxslt/xsltexports.h:
+
+../libxslt/xsltInternals.h:
+
+../libxslt/xslt.h:
+
+../libxslt/xsltlocale.h:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+../libxslt/numbersInternals.h:
+
+exsltconfig.h:
+
+exslt.h:
+
+exsltexports.h:
+
+../libexslt/exsltconfig.h:

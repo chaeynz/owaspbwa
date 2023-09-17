@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/2.0
+/usr/lib/mono/gac
+/usr/lib/mono/gac/Mono.Posix
+/usr/lib/mono/gac/Mono.Posix/2.0.0.0__0738eb9f132ed756
+/usr/lib/mono/gac/Mono.Posix/2.0.0.0__0738eb9f132ed756/Mono.Posix.dll
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-posix2.0-cil
+/usr/share/doc/libmono-posix2.0-cil/copyright
+/usr/share/doc/libmono-posix2.0-cil/changelog.Debian.gz
+/usr/lib/mono/2.0/Mono.Posix.dll

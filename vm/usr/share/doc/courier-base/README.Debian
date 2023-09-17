@@ -1,0 +1,56 @@
+Debian-specific Changes
+***********************
+
+I renamed some binaries because their names are way to generic:
+
+/usr/sbin/showconfig => /usr/sbin/courier-mtaconfig
+
+Patches
+*******
+
+I added a patch from Piotr Roszatycki <Piotr_Roszatycki@netia.net.pl>
+to enable LDAP passwords with and without {crypt}.
+
+To avoid an unneeded dependency on FAM messages about failed connections
+to FAM have been suppressed.
+
+Vpopmail
+********
+
+There is no support for vpopmail in the Debian packages, because
+this would cause Courier to be removed from the main distribution.
+See Debian bugs #182040 and #248319 for more information.
+
+Maildir setup
+*************
+
+All the mail servers integrated into the Courier suite are using
+the maildir storage format instead of the mbox format (refer to
+the maildir(5) manual page for more information).
+
+The default maildir for a given user is ~/Maildir, although you
+can change it by editing /etc/default/courier or running
+dpkg-reconfigure -plow courier-base.
+
+To create a maildir, just run as the email user:
+racke@linuxia.de:~# maildirmake Maildir
+
+Postfix
+=======
+
+See http://www.postfix.org/faq.html#maildir for information about
+how to advise Postfix to deliver into maildir's.
+
+Virtual Users
+*************
+
+For virtual users specified in userdb, SQL or LDAP the following
+values are required: home,uid,gid and password.
+
+History
+*******
+
+0.44.2-1
+========
+
+moved courierauthtest to courier-base and removed courier-debug package

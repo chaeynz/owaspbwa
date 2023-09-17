@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Aptitude</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="package-management.html" title="Chapter 3. Package Management" />
+    <link rel="prev" href="apt-get.html" title="Apt-Get" />
+    <link rel="next" href="automatic-updates.html" title="Automatic Updates" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="package-management.html">Package Management</a></span> &gt; <span class="breadcrumb-node">Aptitude</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Aptitude">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="aptitude"></a>Aptitude</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+        <span class="application"><strong>Aptitude</strong></span> is a menu-driven, text-based front-end to the <span class="emphasis"><em>Advanced Packaging Tool</em></span> (APT) system. Many of the common package management functions, such as installation, removal, and upgrade, are performed in <span class="application"><strong>Aptitude</strong></span> with single-key commands, which are typically lowercase letters.
+        </p>
+              <p>
+        <span class="application"><strong>Aptitude</strong></span> is best suited for use in a non-graphical terminal environment to ensure proper functioning of the command keys.  You may start <span class="application"><strong>Aptitude</strong></span> 
+as a normal user with the following command at a terminal prompt:
+</p>
+              <pre class="screen">
+<span class="command"><strong>sudo aptitude</strong></span>
+</pre>
+              <p>
+        </p>
+              <p>
+        When <span class="application"><strong>Aptitude</strong></span> starts, you will see a menu bar at the top of the screen and two panes below the menu bar.  The top pane contains package categories, such as <span class="italics">New Packages</span> and <span class="italics">Not Installed Packages</span>. The bottom pane contains information related to the packages and package categories.
+        </p>
+              <p>Using <span class="application"><strong>Aptitude</strong></span> for package management is relatively straightforward, and the user interface makes common tasks simple to perform.  The following are examples of common package management functions as performed in <span class="application"><strong>Aptitude</strong></span>:
+        </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p><span class="bold"><strong>Install Packages</strong></span>: To install a package, locate the package via the Not Installed Packages package category, for example, by using the keyboard arrow keys and the <span class="keycap"><strong>ENTER</strong></span> key, and highlight the package you wish to install.  After highlighting the package you wish to install, press the <span class="keycap"><strong>+</strong></span> key, and the package entry should turn <span class="italics">green</span>, indicating it has been marked for installation. Now press <span class="keycap"><strong>g</strong></span> to be presented with a summary of package actions.  Press <span class="keycap"><strong>g</strong></span> again, and you will be prompted to become root to complete the installation. Press <span class="keycap"><strong>ENTER</strong></span> which will result in a Password: prompt.  Enter your user password to become root. Finally, press <span class="keycap"><strong>g</strong></span> once more and you'll be prompted to download the package.  Press <span class="keycap"><strong>ENTER</strong></span> on the <span class="italics">Continue</span> prompt, and downloading and installation of the package will commence.
+                </p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="bold"><strong>Remove Packages</strong></span>: To remove a package, locate the package via the Installed Packages package category, for example, by using the keyboard arrow keys and the <span class="keycap"><strong>ENTER</strong></span> key, and highlight the package you wish to remove.  After highlighting the package you wish to install, press the <span class="keycap"><strong>-</strong></span> key, and the package entry should turn <span class="italics">pink</span>, indicating it has been marked for removal. Now press <span class="keycap"><strong>g</strong></span> to be presented with a summary of package actions.  Press <span class="keycap"><strong>g</strong></span> again, and you will be prompted to become root to complete the installation. Press <span class="keycap"><strong>ENTER</strong></span> which will result in a Password: prompt.  Enter your user password to become root. Finally, press <span class="keycap"><strong>g</strong></span> once more, and you'll be prompted to download the package.  Press <span class="keycap"><strong>ENTER</strong></span> on the <span class="italics">Continue</span> prompt, and removal of the package will commence.
+                </p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="bold"><strong>Update Package Index</strong></span>: To update the package index, simply press the <span class="keycap"><strong>u</strong></span> key and you will be prompted to become root to complete the update. Press <span class="keycap"><strong>ENTER</strong></span> which will result in a Password: prompt.  Enter your user password to become root. Updating of the package index will commence.  Press <span class="keycap"><strong>ENTER</strong></span> on the OK prompt when the download dialog is presented to complete the process.
+                </p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="bold"><strong>Upgrade Packages</strong></span>: To upgrade packages, perform the update of the package index as detailed above, and then press the <span class="keycap"><strong>U</strong></span> key to mark all packages with updates. Now press <span class="keycap"><strong>g</strong></span> whereby you'll be presented with a summary of package actions.  Press <span class="keycap"><strong>g</strong></span> again, and you will be prompted to become root to complete the installation. Press <span class="keycap"><strong>ENTER</strong></span> which will result in a Password: prompt.  Enter your user password to become root. Finally, press <span class="keycap"><strong>g</strong></span> once more, and you'll be prompted to download the packages.  Press <span class="keycap"><strong>ENTER</strong></span> on the <span class="italics">Continue</span> prompt, and upgrade of the packages will commence.
+                </p>
+                  </li>
+                </ul>
+              </div>
+              <p>The first column of information displayed in the package list in the top pane, when actually viewing packages lists the current state of the package, and uses the following key to describe the state of the package:
+        </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>i</strong></span>: Installed package
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>c</strong></span>: Package not installed, but package configuration remains on system
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>p</strong></span>: Purged from system
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>v</strong></span>: Virtual package
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>B</strong></span>: Broken package
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>u</strong></span>: Unpacked files, but package not yet configured
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>C</strong></span>: Half-configured - Configuration failed and requires fix
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="bold"><strong>H</strong></span>: Half-installed - Removal failed and requires fix
+        </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+        </p>
+              <p>To exit Aptitude, simply press the <span class="keycap"><strong>q</strong></span> key and confirm you wish to exit. Many other functions are available from the Aptitude menu by pressing the <span class="keycap"><strong>F10</strong></span> key.
+        </p>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="apt-get.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="package-management.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="automatic-updates.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Apt-Get </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Automatic Updates</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

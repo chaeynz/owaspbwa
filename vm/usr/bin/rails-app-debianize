@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Add links to Debian's rails libraries to a rails app
+
+if [ ! -e vendor ]; then
+  echo "Please change to the root directory of your rails application,"
+  echo "possibly create the vendor/ directory there and re-execute this"
+  echo "script"
+else
+  cd vendor
+  ln -s /usr/share/rails
+  for lib in `ls /usr/share/rails`; do
+    ln -s /usr/share/rails/$lib
+  done
+fi

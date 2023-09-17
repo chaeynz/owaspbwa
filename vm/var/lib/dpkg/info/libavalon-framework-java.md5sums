@@ -1,0 +1,9 @@
+98676cbd56fb9e5b90bab1cb10613932  usr/share/java/avalon-framework-4.2.0.jar
+4946bb24ca4b54c2e370730ac9aa7fb1  usr/share/maven-repo/org/apache/avalon/avalon-framework/4.2.0/avalon-framework-4.2.0.pom
+bf71404efbe846b37858a8452bd0f08e  usr/share/maven-repo/org/apache/avalon/avalon-framework/debian/avalon-framework-debian.pom
+471b3bd286cf3ad03e89622d1827cc8c  usr/share/maven-repo/org/apache/avalon/framework/avalon-framework-api/4.2.0/avalon-framework-api-4.2.0.pom
+7d20b46acf8e0991633dfacf80227931  usr/share/maven-repo/org/apache/avalon/framework/avalon-framework-api/debian/avalon-framework-api-debian.pom
+c80dacb38dd06b86ba87f8b91646dafb  usr/share/maven-repo/org/apache/avalon/framework/avalon-framework-impl/4.2.0/avalon-framework-impl-4.2.0.pom
+4be5c1055bafd9042de5af04f1cef5f3  usr/share/maven-repo/org/apache/avalon/framework/avalon-framework-impl/debian/avalon-framework-impl-debian.pom
+cd255fab791ac12159bb72354ae6bbd2  usr/share/doc/libavalon-framework-java/copyright
+ffd3ddcac8db4f292628765fc7793766  usr/share/doc/libavalon-framework-java/changelog.Debian.gz

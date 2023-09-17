@@ -1,0 +1,10 @@
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/lockfile-check
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/lockfile-create
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/lockfile-remove
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/lockfile-touch
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/mail-lock
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/mail-touchlock
+c120cfd33ee00a10119a5f4789cc01e4  usr/bin/mail-unlock
+c0bda97f67edeb24b560a4dc86634ae9  usr/share/man/man1/lockfile-progs.1.gz
+0e265f47a1ed6ac233e445dc4d896b32  usr/share/doc/lockfile-progs/copyright
+d2761b7f926828c75630c371ae111567  usr/share/doc/lockfile-progs/changelog.gz

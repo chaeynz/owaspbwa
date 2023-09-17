@@ -1,0 +1,16 @@
+a6c5e996e4e5371941218c3885258537  usr/lib/ruby/1.8/daemons.rb
+6c93a621348e45cdd078aac8b8cf4dcf  usr/lib/ruby/1.8/daemons/application.rb
+1912754ed9f4ea559d1bd0514835381c  usr/lib/ruby/1.8/daemons/application_group.rb
+fc94add0aa5fc1dc0c13e530571852fd  usr/lib/ruby/1.8/daemons/cmdline.rb
+46f84b5750e5789242a09e36583057de  usr/lib/ruby/1.8/daemons/controller.rb
+29ecced7aee994d554e2c9421bbe37a5  usr/lib/ruby/1.8/daemons/daemonize.rb
+123512a28184dc252efc398051e39897  usr/lib/ruby/1.8/daemons/exceptions.rb
+8989600ced6c6091a7e5dade6f5a81c1  usr/lib/ruby/1.8/daemons/monitor.rb
+0e22a2500a7fc613e34bba6aa9ec0aa9  usr/lib/ruby/1.8/daemons/pid.rb
+0f70f8412c4cef88fef6e60e3ba24ce0  usr/lib/ruby/1.8/daemons/pidfile.rb
+bd8116a97d9eb5bd158c483542023457  usr/lib/ruby/1.8/daemons/pidmem.rb
+b9cee76ca5bd057d999bba5a4c86b437  usr/lib/ruby/1.8/daemonize.rb
+536dcb939272a7feeb4cbff4bd1c59de  usr/share/doc/libdaemons-ruby1.8/TODO
+c835ad20e3f55e5ca79da17a9b60fa9b  usr/share/doc/libdaemons-ruby1.8/copyright
+b671ff5a2ffb9dddbec3f30d8e42a677  usr/share/doc/libdaemons-ruby1.8/README.gz
+0286fcd8365c49f3e1f640d1a7f5d822  usr/share/doc/libdaemons-ruby1.8/changelog.Debian.gz

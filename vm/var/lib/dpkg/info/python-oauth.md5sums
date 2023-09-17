@@ -1,0 +1,12 @@
+9662eb675a5d6250914c8ad2008e7a73  usr/share/doc/python-oauth/copyright
+b6f3f3a64574c6fd2f0b757f73252e91  usr/share/doc/python-oauth/examples/server.py.gz
+31d434f8c890a287ab7900e04903eb6f  usr/share/doc/python-oauth/examples/client.py.gz
+0a43537822f2dbb6dcd075a826224265  usr/share/doc/python-oauth/changelog.Debian.gz
+d41d8cd98f00b204e9800998ecf8427e  usr/share/pyshared/oauth/__init__.py
+862a2149b17c17c0f76b15461f8f3d86  usr/share/pyshared/oauth/oauth.py
+c065924622dea1ab150e63e1618275bc  usr/share/pyshared/oauth-1.0a.egg-info/PKG-INFO
+68b329da9893e34099c7d8ad5cb9c940  usr/share/pyshared/oauth-1.0a.egg-info/zip-safe
+b20fb7d5f1cf29d0dde2da284b6ee305  usr/share/pyshared/oauth-1.0a.egg-info/top_level.txt
+68b329da9893e34099c7d8ad5cb9c940  usr/share/pyshared/oauth-1.0a.egg-info/dependency_links.txt
+50dd05c903ce076d4bc078bf4aaf971a  usr/share/pyshared/oauth-1.0a.egg-info/SOURCES.txt
+7f9414a7f9b9bd05ddf0a97dc86921b1  usr/share/pyshared-data/python-oauth

@@ -1,0 +1,114 @@
+###
+### some global variables etc
+###
+dbc_go(){
+	local need_admin_pw dumpfile nowtime rmscript rmsql purgescript purgesql tsubstfile
+
+	. /usr/share/dbconfig-common/dpkg/common
+	_dbc_debug "(prerm) dbc_go() $@"
+
+	dbc_config $@
+
+	###
+	### get all the settings we need
+	###
+	dbc_read_package_config
+	# and re-run config for db-specific settings
+	dbc_set_dbtype_defaults $dbc_dbtype
+
+	if echo "$dbc_authenticated_dbtypes" | grep -q "$dbc_dbtype"; then
+		need_admin_pw="yup"
+	else
+		need_admin_pw=""
+	fi 
+
+	if [ "$dbc_command" = "remove" ] && [ ! "$dbc_frontend" ]; then
+		###
+		### if they didn't want our help installing,  we should assume
+		### they don't want our help removing either
+		###
+		if [ "$dbc_install" != "true" ]; then return 0; fi
+
+		###
+		### ask the admin if we should help with removal
+		###
+		if [ "$dbc_remove" ]; then 
+			db_set $dbc_package/dbconfig-remove "$dbc_remove"
+		fi
+		db_fset $dbc_package/dbconfig-remove seen false
+		db_input high $dbc_package/dbconfig-remove || true
+		db_go || true
+		db_get $dbc_package/dbconfig-remove && dbc_remove="$RET"
+
+		if [ "$dbc_remove" != "true" ]; then
+			return 0;
+		fi
+
+		###
+		###	package removal hooks
+		###
+		rmscript=/usr/share/dbconfig-common/scripts/$dbc_package/remove/$dbc_dbtype
+		rmsql=/usr/share/dbconfig-common/data/$dbc_package/remove/$dbc_dbtype
+		# run the script if it exists
+		if [ -f "$rmscript" ]; then
+			dbc_logpart "running maintainer removal script hook... "
+			if ! sh -c "$rmscript \"$@\""; then
+				dbc_error="$rmscript existed with non-zero status"
+				dbc_remove_error "running maintainer removal hook"
+			fi
+			dbc_logline "done"
+		fi
+		# run the sql if it exists
+		if [ -f "$rmsql" ]; then
+			dbc_logpart "running maintainer removal sql hook... "
+			if [ ! "$dbc_sql_substitutions" ]; then
+				$dbc_sqlfile_cmd $rmsql || dbc_remove_error "running maintainer removal sql hook"
+			else
+				tsubstfile=`dbc_mktemp`
+				/usr/sbin/dbconfig-generate-include -f template -o template_infile=$rmsql $dbc_packageconfig > $tsubstfile
+				$dbc_sqlfile_cmd $tsubstfile || dbc_remove_error "running maintainer removal sql hook"
+				rm -f $tsubstfile
+			fi
+			dbc_logline "done"
+		fi
+
+		###
+		### ask the admin if the database should be purged
+		###
+		db_input high $dbc_package/purge || true
+		db_go || true
+		db_get $dbc_package/purge
+		dbc_purge="$RET"
+
+		if [ "$dbc_dbtype" = "pgsql" ] && \
+		   [ "$dbc_authmethod_admin" = "ident" ]; 
+		then
+			need_admin_pw=""
+		fi
+
+		if [ "$dbc_purge" = "true" ]; then
+			# get the admin user password
+			if [ "$need_admin_pw" ]; then
+				dbc_get_admin_pass
+			fi
+
+			# dump the database into a temporary file
+			nowtime=`date +%Y-%m-%d-%H.%M`
+			if [ ! `dirname /var/tmp/$dbc_package` = /var/tmp ]; then
+				mkdir -p `dirname /var/tmp/$dbc_package`
+			fi
+			dumpfile=`mktemp /var/tmp/$dbc_package.$dbc_dbname.$nowtime.$dbc_dbtype.XXXXXX`
+			if [ ! -f $dumpfile ]; then
+				dbc_remove_error "creating temporary file for database dump"
+			fi
+			dbc_logline "dbconfig-common: dumping $dbc_dbtype database $dbc_dbname to $dumpfile"
+			$dbc_dump_cmd $dumpfile || dbc_remove_error "dumping database"
+			dbc_logline "dbconfig-common: dropping $dbc_dbtype database $dbc_dbname"
+			$dbc_dropdb_cmd || dbc_remove_error "dropping database"
+			[ "$dbc_tried_again" ] && return 0
+
+			dbc_logline "dbconfig-common: revoking privileges for user $dbc_dbuser on $dbc_dbname"
+			$dbc_dropuser_cmd
+		fi
+	fi
+}

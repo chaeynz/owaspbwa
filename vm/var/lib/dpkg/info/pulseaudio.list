@@ -1,0 +1,12 @@
+/etc
+/etc/default
+/etc/default/pulseaudio
+/etc/init.d
+/etc/init.d/pulseaudio
+/etc/pulse
+/etc/pulse/default.pa
+/etc/pulse/system.pa
+/etc/pulse/daemon.conf
+/etc/X11
+/etc/X11/Xsession.d
+/etc/X11/Xsession.d/70pulseaudio

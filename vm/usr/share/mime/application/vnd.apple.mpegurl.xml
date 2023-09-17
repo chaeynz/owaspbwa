@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.apple.mpegurl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>HTTP Live Streaming playlist</comment>
+  <comment xml:lang="cs">Seznam skladeb HTTP Live Streaming</comment>
+  <comment xml:lang="en_GB">HTTP Live Streaming playlist</comment>
+  <comment xml:lang="es">Lista de reproducción de emisión HTTP en directo</comment>
+  <comment xml:lang="fr">liste de lecture de flux HTTP Live</comment>
+  <comment xml:lang="hu">HTTP élő lejátszólista</comment>
+  <comment xml:lang="it">Scaletta Live Steaming HTTP</comment>
+  <comment xml:lang="ja">HTTP ライブストリーミング演奏リスト</comment>
+  <comment xml:lang="kk">HTTP тірі ағым ойнау тізімі</comment>
+  <comment xml:lang="oc">lista de lectura de fluxes HTTP Live</comment>
+  <comment xml:lang="pl">Lista odtwarzania strumieniowego na żywo HTTP</comment>
+  <comment xml:lang="pt_BR">Lista de reprodução de streaming HTTP ao vivo</comment>
+  <comment xml:lang="ro">Listă de redare difuzată ca flux HTTP</comment>
+  <comment xml:lang="uk">список відтворення HTTP Live Streaming</comment>
+  <glob pattern="*.m3u"/>
+  <glob pattern="*.m3u8"/>
+</mime-type>

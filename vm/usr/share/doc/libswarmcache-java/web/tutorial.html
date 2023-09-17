@@ -1,0 +1,184 @@
+<html>
+ <head>
+ <title>SwarmCache - Cluster-aware Caching for Java</title>
+ <link rel="stylesheet" href="styles.css" type="text/css">
+ <LINK REL="icon" HREF="favicon.gif" TYPE="image/gif">
+ <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</html>
+<body>
+<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+<tr>
+ <!-- Top Left Image -->
+ <td class="border" width="100" height="100"><img src="img/swarm.jpg" border="0"/></td>
+ <!-- Title Bar -->
+ <td class="border" height="100">
+  <table>
+   <tr><td height="10"></td></tr>
+   <tr><td class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwarmCache</td></tr>
+   <tr><td class="subtitle">Cluster-aware Caching for Java</td></tr>
+  </table>
+ </td>
+</tr>
+<tr>
+ <!-- Menu Bar -->
+ <td id="menu" class="border" width="100" valign="top">
+ <table width="100%" cellpadding="0" cellspacing="0">
+ <tr><td height="25"/></tr>
+ <tr><td class="menuitem"><a href="index.html">Home</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="http://sourceforge.net/project/showfiles.php?group_id=78637&release_id=193220">Download</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="tutorial.html">Tutorial</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="documentation.html">Documentation</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="api/index.html">Javadocs</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="http://sf.net/projects/swarmcache">Project Page</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="http://sourceforge.net/forum/forum.php?forum_id=268479">Help Forums</a></td></tr>
+ </table>
+ </td>
+ <!-- Content Area -->
+ <td valign="top">
+ <table class="contentTable" height="100%" cellspacing="5">
+ <tr>
+  <td class="content">
+<!-- --------------------------- CONTENT BEGIN --------------------------- -->
+<span class="heading">How It Works</span><br>
+The concept behind SwarmCache is fairly simple. Each server instantiates its own <i>manager</i>. For each type of object that the server wishes to cache, it instantiates a cache and adds it to the manager. The manager joins a multicast group and communicates with other managers in the group. Whenever an object is removed from a cache, the manager notifies all other managers in the group. Those managers then ensure that the object is removed from their respective caches. The result is that a server will not have in its cache a stale version of an object that has been updated or deleted on another server.
+<p>
+Note that the managers only need to communicate when an object is <i>removed</i> from a cache. This only happens when an object is updated or deleted. The managers do not co-operate beyond this. This means that the amount of inter-server communications is proportional to the amount of updates/deletes of the application. As the communications is multicast, it is <b>not</b> proportional to the number of caching hosts. Also notice that there is no "server"; all hosts are equal peers and they can come and go from the cache group as they please without affecting other group members. Thus the operation of the distributed cache is very robust.
+<p>
+<span class="heading">Basic Usage</span><br>
+SwarmCache is designed to be integrated in to the persistence layer of a database-driven Java application. However, it could be useful for other types of applications. Once built in to the persistence engine, SwarmCache should be transparent to higher layers of the software. SwarmCache does not directly support transaction management. This can be accomplished by wrapping the cached objects and storing some additional transaction data. This will described and possibly implemented at a later date.
+<p>
+Swarmcache requires that <code>swarmcache.jar</code>, <code>jgroups-all.jar</code>, <code>commons-collections.jar</code>, and <code>commons-logging.jar</code> (included in the download) be in your classpath.
+<p>
+For most applications, it is sufficient to make use of the <code>CacheFactory</code> class to configure and use SwarmCache. Here is an example:
+
+<pre>
+import net.sf.swarmcache.*;
+
+...
+
+CacheFactory cacheFactory;
+
+...
+
+// Configure and Initialize the cache manager
+CacheConfiguration conf = new CacheConfiguration();
+conf.setCacheType(CacheConfiguration.TYPE_LRU);
+cacheFactory = new CacheFactory(conf);
+
+...
+
+// Create a new cache, using a name that describes
+//  what kind of object we will store
+ObjectCache cache = cacheFactory.createCache("People");
+
+...
+
+// Store something in the cache
+String key = "0001";
+String person = "John Watkinson";
+cache.put(key, person);
+
+...
+
+// Retrieve something from the cache
+String person = (String)cache.get("0001");
+System.out.println(person);
+
+...
+
+// Clear an object from the cache
+// (This results in the sending of a 
+//  multicast message to other caching hosts)
+cache.clear("0001");
+String person = (String)cache.get("0001");
+// The following will print 'null'
+System.out.println(person);
+</pre>
+
+The example is simple, but running this same code on multiple machines in a network will result in their caches being consistent.
+<p>
+Note that the keys used must be serializable objects-- they must implement <code>java.io.Serializable</code>. The objects themselves that are stored in the cache need not be serializable. And of course, the keys should not be large objects for transmission efficiency purposes.
+<p>
+In order to keep keys distinct, it is usually preferred to have one cache per type of object stored. In that case, it makes sense to follow the convention that the cache be named after the fully-qualified class name of the object type to be stored.
+<p>
+<span class="heading">Usage in a Persistence Engine</span><br>
+Here is some skeleton code that demonstrates how SwarmCache could be integrated in to a persistence engine. The following class is responsible for persisting an object of type <code>Person</code>:
+<pre>
+public class PersonEntity extends GenericEntity {
+
+	ObjectCache cache;
+	
+	public PersonEntity(CacheFactory cacheFactory) {
+		cache = cacheFactory.createCache("Person");
+		// * Other initialization here
+	}
+
+	...
+	
+	public Person get(long key) {
+		Long cacheKey = new Long(key);
+		Person person = (Person)cache.get(cachekey);
+		if (person == null) {
+			// * Get the object from the database			
+			if (person != null) {
+				// Put it in the cache
+				cache.put(cacheKey, person);
+			}
+		}
+		return person;
+	}
+	
+	...
+	
+	public void insert(Person person) {
+		// * Do database insert
+		// Add new object to cache
+		Long cacheKey = new Long(person.getKey());
+		cache.put(cacheKey, person);
+	}
+	
+	...
+	
+	public void update(Person person) {
+		// * Do database update
+		// Remove object from cache
+		// (This causes all caches in the group to be notified)
+		Long cacheKey = new Long(person.getKey());
+		cache.clear(cacheKey);
+		// Re-add the object to the cache
+		cache.put(cacheKey, person);
+	}
+	
+	...
+	
+	public void delete(long key) {
+		// * Do database delete
+		// Remove object from cache
+		// (This causes all caches in the group to be notified)
+		Long cacheKey = new Long(key);
+		cache.clear(cacheKey);		
+	}
+	
+	...
+	
+}
+</pre>
+
+<!-- ---------------------------- CONTENT END ---------------------------- --> 
+  </td>
+ </tr>
+ <tr>
+  <td class="copyright">&copy;2003 <a href="http://tronics.org/watkinson">John Watkinson</a></td>
+ </tr>
+ </table>
+ </td>
+</tr>
+</table>
+</body>
+</html> 

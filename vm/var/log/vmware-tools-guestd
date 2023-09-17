@@ -1,0 +1,8 @@
+Thu Sep 14 15:01:36 EDT 2023 : Executing '/etc/vmware-tools/poweron-vm-default'
+Fri Sep 15 01:55:44 EDT 2023 : Executing '/etc/vmware-tools/poweron-vm-default'
+Thu Sep 14 23:56:23 EDT 2023 : Executing '/etc/vmware-tools/poweroff-vm-default'
+Thu Sep 14 23:56:43 EDT 2023 : Executing '/etc/vmware-tools/poweron-vm-default'
+Fri Sep 15 00:29:35 EDT 2023 : Executing '/etc/vmware-tools/poweroff-vm-default'
+Fri Sep 15 14:28:32 EDT 2023 : Executing '/etc/vmware-tools/poweron-vm-default'
+Fri Sep 15 14:44:31 EDT 2023 : Executing '/etc/vmware-tools/poweroff-vm-default'
+Fri Sep 15 14:44:56 EDT 2023 : Executing '/etc/vmware-tools/poweron-vm-default'

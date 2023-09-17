@@ -1,0 +1,7 @@
+43586fe52bae8c442c05ffc29602e6cb  usr/share/doc/libcommons-cli-java/README.txt
+27e8c5f959bbbfa2fa55ec1018365167  usr/share/doc/libcommons-cli-java/RELEASE-NOTES.txt
+35b719e0e6cdcb656d0e703d2e35c174  usr/share/doc/libcommons-cli-java/copyright
+7a937bf2079e7bf786470240b7296fef  usr/share/doc/libcommons-cli-java/changelog.Debian.gz
+954fdb2f83ae9ce62641893112f0c990  usr/share/maven-repo/commons-cli/commons-cli/1.2/commons-cli-1.2.pom
+d41bacd968acc4da00bf33e2954f3063  usr/share/maven-repo/commons-cli/commons-cli/debian/commons-cli-debian.pom
+7b15223b1533aa1668b8651756ac6ad0  usr/share/java/commons-cli-1.2.jar

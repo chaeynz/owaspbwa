@@ -1,0 +1,15 @@
+
+Things that DO NOT WORK, and we already know about them:
+
+1) Anything that is a peer of the root node of the document (comments, PIs).
+
+2) Some functions:
+	position()
+	id(object)
+	normalize-space(string?)
+	translate(string,string,string)
+	lang(string)
+
+3) Positional predicates
+
+All else *should* be working (all axes, filter-exprs, predicates, etc)

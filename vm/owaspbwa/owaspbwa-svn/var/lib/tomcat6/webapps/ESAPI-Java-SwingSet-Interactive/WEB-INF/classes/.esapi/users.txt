@@ -1,0 +1,4 @@
+# This is the user file associated with the ESAPI library from http://www.owasp.org
+# account id | account name | hashed password | roles | lockout | status | old password hashes | last hostname | last change | last login | last failed | expiration | failed
+
+1287918426169998008 | admin | /5QDaxsgDOGXMQdPwUR7r+yKf8IS8ydlbjKVXWy+30ic8By/4rc0uSA1E5QVnHYudEPF6l33yL2LkWBRhDQr8Q== |  | unlocked | enabled |  | unknown | 0 | 0 | 0 | 9223372036854775807 | 0

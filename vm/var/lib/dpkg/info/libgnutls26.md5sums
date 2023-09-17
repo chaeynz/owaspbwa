@@ -1,0 +1,10 @@
+c566a06a181a309ef923cded6e48f528  usr/share/doc/libgnutls26/README
+fe73559e4b0fd67388c77c2eda178738  usr/share/doc/libgnutls26/THANKS.gz
+d715ca222283600b6721e4299a57176d  usr/share/doc/libgnutls26/NEWS.Debian.gz
+5e7d7b6c3b4af941aa02920fcdda1148  usr/share/doc/libgnutls26/copyright
+7fbb5dc6f251b257452a9f658135e715  usr/share/doc/libgnutls26/NEWS.gz
+995b11a11a901f3aa358501b3eb185ce  usr/share/doc/libgnutls26/AUTHORS.gz
+910334c692a7fd6f20ebe7d83636754a  usr/share/doc/libgnutls26/changelog.Debian.gz
+2d8928a1b105161da7b8b40d29f4d69d  usr/lib/libgnutls.so.26.14.12
+08bb845a0baa86f77958dd17854e3940  usr/lib/libgnutls-extra.so.26.14.12
+e16b356f1f539866a9ebd02214e27508  usr/lib/libgnutls-openssl.so.26.14.12

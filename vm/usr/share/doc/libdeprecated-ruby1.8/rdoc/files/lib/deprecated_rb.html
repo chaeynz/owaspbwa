@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: deprecated.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>deprecated.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/deprecated.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Sun Jul 27 00:34:05 +0000 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="../../classes/Deprecated.html">Deprecated</a> - handle deprecating
+and executing deprecated code
+</p>
+<table>
+<tr><td valign="top">Version:</td><td>2.0.1
+
+</td></tr>
+<tr><td valign="top">Author:</td><td>Erik Hollensbe
+
+</td></tr>
+<tr><td valign="top">License:</td><td>BSD
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright (c) 2006 Erik Hollensbe
+
+</td></tr>
+<tr><td valign="top">Contact:</td><td>erik@hollensbe.org
+
+</td></tr>
+</table>
+<p>
+<a href="../../classes/Deprecated.html">Deprecated</a> is intended to ease
+the programmer&#8216;s control over deprecating and handling deprecated
+code.
+</p>
+<p>
+Usage is simple:
+</p>
+<pre>
+  # require 'rubygems' if need be
+  require 'deprecated'
+
+  class Foo
+    private
+    # rename the original function and make it private
+    def monkey
+      do stuff...
+    end
+    # deprecate the function, this will create a 'monkey' method
+    # that will call the deprecate warnings
+    deprecate :monkey, :private
+  end
+</pre>
+<p>
+The &#8216;deprecated&#8217; call is injected into the &#8216;Module&#8217;
+class at require-time. This allows all classes that are newly-created to
+access the &#8216;deprecate&#8217; functionality. The deprecate definition
+must follow the method definition. You may only define one deprecated
+function per call.
+</p>
+<p>
+Methods deprecated default to &#8216;public&#8217;. This is due to a
+limitation in how Ruby handles permission definition. If you&#8216;re aware
+of a workaround to this problem, please let me know.
+</p>
+<p>
+You can however change this by providing an optional trailing parameter to
+the &#8216;deprecate&#8217; call:
+</p>
+<ul>
+<li>:public - set the created method to be public
+
+</li>
+<li>:protected - set the created method to be protected
+
+</li>
+<li>:private - set the created method to be private
+
+</li>
+</ul>
+<p>
+Note: It&#8216;s highly recommended that you make your original methods
+private so that they cannot be accessed by outside code.
+</p>
+<p>
+<a href="../../classes/Deprecated.html#M000003">Deprecated.set_action</a>
+can change the default action (which is a warning printed to stderr) if you
+prefer. This is ideal for code sweeps where deprecated calls have to be
+removed. Please see the documentation for this method to get an idea of the
+options that are available.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Deprecate</td>
+          <td>=</td>
+          <td class="context-item-value">Deprecated</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

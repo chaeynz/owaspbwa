@@ -1,0 +1,39 @@
+velocity for Debian
+-------------------
+
+velocity.jar is installed to /usr/share/java. Please set CLASSPATH to
+following files:
+	/usr/share/java/xercesImpl.jar
+	/usr/share/java/jdom0.jar
+	/usr/share/java/logkit.jar
+	/usr/share/java/log4j-1.2.jar
+	/usr/share/java/commons-collections.jar
+	/usr/share/java/velocity.jar
+
+Their symlinks are created to /usr/share/ant/lib.
+
+ -- Takashi Okamoto <tora@debian.org>, Wed, 15 Aug 2001 08:57:18 +0900
+
+velocity.jar provides the following Ant tasks: anakia and texen.
+Those Ant tasks are made available under the following Antlib namespace:
+xmlns:velocity="antlib:org.apache.velocity"
+
+The following project is an example using the anakia task:
+
+<project name="myproject" xmlns:velocity="antlib:org.apache.velocity">
+
+  <taskdef uri="antlib:org.apache.velocity" classpath="/usr/share/java/velocity.jar" />
+
+  <!-- example use of the anakia task -->
+  <velocity:anakia basedir="xdocs/docs" destdir="build/docs"
+         extension=".html" style="site.vsl"
+         projectFile="../stylesheets/project.xml"
+         includes="**/*.xml"
+         lastModifiedCheck="true"
+         templatePath="xdocs/stylesheets">
+    </velocity:anakia>
+</project>
+
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Tue, 07 Jul 2009 13:24:03 +0100
+

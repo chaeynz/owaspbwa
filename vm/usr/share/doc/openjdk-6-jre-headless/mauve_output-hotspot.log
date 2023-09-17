@@ -1,0 +1,63 @@
+process 3313: D-Bus library appears to be incorrectly set up; failed to read machine uuid: Failed to open "/var/lib/dbus/machine-id": No such file or directory
+See the manual page for dbus-uuidgen to correct this issue.
+Window manager warning: 0 stored in GConf key /desktop/gnome/peripherals/mouse/cursor_size is out of range 1 to 128
+Window manager warning: Failed to load theme "Clearlooks": Failed to find a valid file for theme Clearlooks
+
+FAIL: javax.swing.text.BoxView.spans
+  line 56:  [5] -- boolean passed to check was false
+  line 61:  [6] -- boolean passed to check was false
+  line 67:  [8] -- boolean passed to check was false
+FAIL: javax.swing.border.TitledBorder.setTitlePosition
+  line 42:  [1] -- got 0 but expected 2
+FAIL: javax.swing.border.TitledBorder.constructors
+  line 80: (Border) [5] -- got 0 but expected 2
+  line 101: (Border, String) [5] -- got 0 but expected 2
+  line 205: (String) [5] -- got 0 but expected 2
+FAIL: javax.swing.border.TitledBorder.getTitlePosition
+  line 42:  [1] -- got 0 but expected 2
+javax.swing.event.ListDataEvent[type=1,index0=0,index1=0]
+FAIL: javax.swing.JTextArea.preferredSize
+  line 54:  [6] -- boolean passed to check was false
+  line 55:  [7] -- boolean passed to check was false
+  line 57:  [8] -- boolean passed to check was false
+  line 58:  [9] -- boolean passed to check was false
+  line 60:  [10] -- boolean passed to check was false
+  line 61:  [11] -- boolean passed to check was false
+FAIL: java.lang.Integer.parseInt
+  line 117: Leading '+' does not throw NumberFormatException [1] -- forced fail
+sun.misc.Launcher$AppClassLoader@601bb1
+FAIL: java.text.DecimalFormat.format
+  line 386: locale: GERMANY [1] -- Objects were not equal.  Use -debug for more information.
+  line 391: locale: ITALY [1] -- Objects were not equal.  Use -debug for more information.
+Jul 27, 2010 11:48:49 AM java.util.prefs.FileSystemPreferences$2 run
+INFO: Created user preferences directory.
+FAIL: java.util.Currency.Taiwan
+  line 57: Currency fraction digits retrieval check (2). [1] -- got 2 but expected 0
+Exception in thread "Timer-1" java.lang.RuntimeException: eat it!!!
+	at gnu.testlet.java.util.Timer.taskException$1.run(taskException.java:47)
+	at java.util.TimerThread.mainLoop(Timer.java:534)
+	at java.util.TimerThread.run(Timer.java:484)
+300
+240
+-780
+-720
+0
+-60
+1. ERROR in /build/buildd/openjdk-6-6b18-1.8.1/build/mauve-hotspot/gnu/testlet/java/awt/image/ColorModel/MyColorModel.java  line 64:
+	coerceDataWorker(raster, isAlphaPremultiplied);
+	^^^^^^^^^^^^^^^^
+  The method coerceDataWorker(WritableRaster, boolean) is undefined for the type MyColorModel
+1 problem (1 error)FAIL: java.awt.Panel.TestPanelRepaint
+  Test timed out.  Use -timeout [millis] option to change the timeout value.
+Window manager warning: Invalid WM_TRANSIENT_FOR window 0x800046 specified for 0x80004b ( ).
+FAIL: java.awt.Container.setLayout
+  line 86: invalidate [8] -- boolean passed to check was false
+  line 89: invalidate [9] -- boolean passed to check was false
+Position: 26, Limit: 26
+Position: 26, Limit: 26
+true
+
+TEST RESULTS:
+10 of 2567 tests failed.  20 total calls to harness.check() failed.
+537.08user 54.12system 10:44.25elapsed 91%CPU (0avgtext+0avgdata 0maxresident)k
+11520inputs+28936outputs (18major+343175minor)pagefaults 0swaps

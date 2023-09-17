@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module PhusionPassenger::SharedConstants - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/constants.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="../PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="../PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="../PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module PhusionPassenger::SharedConstants</h1>
+
+  <div id="description" class="description">
+    
+<p>Constants shared between the C++ and Ruby codebase. The C++ Constants.h is
+automatically generated by the build system from the following definitions.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="APACHE2_DOC_URL">APACHE2_DOC_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="DEB_APACHE_MODULE_PACKAGE">DEB_APACHE_MODULE_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="DEB_DEV_PACKAGE">DEB_DEV_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="DEB_MAIN_PACKAGE">DEB_MAIN_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="DEB_NGINX_PACKAGE">DEB_NGINX_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_ANALYTICS_LOG_GROUP">DEFAULT_ANALYTICS_LOG_GROUP
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_ANALYTICS_LOG_PERMISSIONS">DEFAULT_ANALYTICS_LOG_PERMISSIONS
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_ANALYTICS_LOG_USER">DEFAULT_ANALYTICS_LOG_USER
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_CONCURRENCY_MODEL">DEFAULT_CONCURRENCY_MODEL
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_LOG_LEVEL">DEFAULT_LOG_LEVEL
+        
+        <dd class="description"><p>Default config values</p>
+        
+      
+        <dt id="DEFAULT_MAX_POOL_SIZE">DEFAULT_MAX_POOL_SIZE
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_NODEJS">DEFAULT_NODEJS
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_POOL_IDLE_TIME">DEFAULT_POOL_IDLE_TIME
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_PYTHON">DEFAULT_PYTHON
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_RUBY">DEFAULT_RUBY
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_START_TIMEOUT">DEFAULT_START_TIMEOUT
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_THREAD_COUNT">DEFAULT_THREAD_COUNT
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_UNION_STATION_GATEWAY_ADDRESS">DEFAULT_UNION_STATION_GATEWAY_ADDRESS
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_UNION_STATION_GATEWAY_PORT">DEFAULT_UNION_STATION_GATEWAY_PORT
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_WEB_APP_USER">DEFAULT_WEB_APP_USER
+        
+        <dd class="description">
+        
+      
+        <dt id="ENTERPRISE_URL">ENTERPRISE_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="FEEDBACK_FD">FEEDBACK_FD
+        
+        <dd class="description"><p>Misc</p>
+        
+      
+        <dt id="INDEX_DOC_URL">INDEX_DOC_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="MESSAGE_SERVER_MAX_PASSWORD_SIZE">MESSAGE_SERVER_MAX_PASSWORD_SIZE
+        
+        <dd class="description">
+        
+      
+        <dt id="MESSAGE_SERVER_MAX_USERNAME_SIZE">MESSAGE_SERVER_MAX_USERNAME_SIZE
+        
+        <dd class="description"><p>Size limits</p>
+        
+      
+        <dt id="NGINX_DOC_URL">NGINX_DOC_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="PASSENGER_VERSION">PASSENGER_VERSION
+        
+        <dd class="description"><p>Versions</p>
+        
+      
+        <dt id="POOL_HELPER_THREAD_STACK_SIZE">POOL_HELPER_THREAD_STACK_SIZE
+        
+        <dd class="description">
+        
+      
+        <dt id="PROCESS_SHUTDOWN_TIMEOUT">PROCESS_SHUTDOWN_TIMEOUT
+        
+        <dd class="description"><p>Time limits</p>
+        
+      
+        <dt id="PROCESS_SHUTDOWN_TIMEOUT_DISPLAY">PROCESS_SHUTDOWN_TIMEOUT_DISPLAY
+        
+        <dd class="description">
+        
+      
+        <dt id="PROGRAM_NAME">PROGRAM_NAME
+        
+        <dd class="description">
+        
+      
+        <dt id="RPM_APACHE_MODULE_PACKAGE">RPM_APACHE_MODULE_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="RPM_DEV_PACKAGE">RPM_DEV_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="RPM_MAIN_PACKAGE">RPM_MAIN_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="RPM_NGINX_PACKAGE">RPM_NGINX_PACKAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="SERVER_INSTANCE_DIR_GENERATION_STRUCTURE_MAJOR_VERSION">SERVER_INSTANCE_DIR_GENERATION_STRUCTURE_MAJOR_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="SERVER_INSTANCE_DIR_GENERATION_STRUCTURE_MINOR_VERSION">SERVER_INSTANCE_DIR_GENERATION_STRUCTURE_MINOR_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="SERVER_INSTANCE_DIR_STRUCTURE_MAJOR_VERSION">SERVER_INSTANCE_DIR_STRUCTURE_MAJOR_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="SERVER_INSTANCE_DIR_STRUCTURE_MINOR_VERSION">SERVER_INSTANCE_DIR_STRUCTURE_MINOR_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="STANDALONE_DOC_URL">STANDALONE_DOC_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="STANDALONE_NGINX_CONFIGURE_OPTIONS">STANDALONE_NGINX_CONFIGURE_OPTIONS
+        
+        <dd class="description">
+        
+      
+        <dt id="SUPPORT_URL">SUPPORT_URL
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

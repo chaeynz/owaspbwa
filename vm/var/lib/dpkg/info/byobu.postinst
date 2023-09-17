@@ -1,0 +1,31 @@
+#!/bin/sh -e
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+PKG="byobu"
+
+db_get byobu/launch-by-default
+if [ "$RET" = true ]; then
+	ln -sf /usr/bin/$PKG-launch /etc/profile.d/Z98-$PKG.sh
+else
+	rm -f /etc/profile.d/Z98-$PKG.sh
+fi
+
+# The target of the diversion somehow disappeared which will cause
+# the divert removal to fail; we don't want that to happen
+[ -e "/usr/bin/screen.real" ] && [ ! -e "/usr/bin/screen" ] && cp -a /usr/bin/screen.real /usr/bin/screen
+
+# Notify users that they should reload their profile
+DIR="/var/run/screen"
+if [ -d "$DIR" ]; then
+	for d in "$DIR"/*; do
+		[ -d "$d" ] || continue
+		touch "$d/$PKG.reload-required"
+		u=$(echo "$d" | sed "s:^.*/S-::")
+		chown $u "$d/$PKG.reload-required"
+		chmod 700 "$d/$PKG.reload-required"
+	done
+fi
+
+

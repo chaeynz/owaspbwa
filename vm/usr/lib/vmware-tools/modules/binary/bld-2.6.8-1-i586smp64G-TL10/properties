@@ -1,0 +1,6 @@
+UtsRelease 2.6.8-1smp64G
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment TurboLinux10, 2.6.8-1smp64G, i586, smp
+UtsMachine i386

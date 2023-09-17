@@ -1,0 +1,158 @@
+[2023/09/14 15:02:08,  1] winbindd/idmap.c:438(idmap_init_passdb_domain)
+  Could not init passdb idmap domain
+[2023/09/14 15:02:08,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/14 15:02:08,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/14 15:02:08,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/14 15:02:08,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/14 15:02:08,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/14 15:02:08,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/14 15:02:08,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/14 15:05:11,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/14 15:05:11,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/14 15:05:11,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/14 15:05:11,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/14 15:05:11,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/14 15:05:11,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/14 15:15:57,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/14 15:15:57,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/14 15:15:57,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/14 15:15:57,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/14 15:15:57,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/14 15:15:57,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 00:03:57,  1] winbindd/idmap.c:438(idmap_init_passdb_domain)
+  Could not init passdb idmap domain
+[2023/09/15 00:03:57,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 00:03:57,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 00:03:57,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 00:03:57,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 00:03:57,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 00:03:57,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 00:03:57,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 00:04:31,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)
+[2023/09/15 00:06:39,  1] winbindd/idmap.c:438(idmap_init_passdb_domain)
+  Could not init passdb idmap domain
+[2023/09/15 00:06:39,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 00:06:39,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 00:06:39,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 00:06:39,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 00:06:39,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 00:06:39,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 00:06:39,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 00:12:19,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 00:12:19,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 00:12:19,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 00:12:19,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 00:12:19,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 00:12:19,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 00:28:26,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 00:28:26,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 00:28:26,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 00:28:26,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 00:28:26,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 00:28:26,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 00:29:40,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)
+[2023/09/15 14:28:45,  1] winbindd/idmap.c:438(idmap_init_passdb_domain)
+  Could not init passdb idmap domain
+[2023/09/15 14:28:45,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 14:28:45,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 14:28:45,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 14:28:45,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 14:28:45,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 14:28:45,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 14:28:45,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 14:34:54,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 14:34:54,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 14:34:54,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 14:34:54,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 14:34:54,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 14:34:54,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 14:44:35,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)
+[2023/09/15 15:17:18,  1] winbindd/idmap.c:438(idmap_init_passdb_domain)
+  Could not init passdb idmap domain
+[2023/09/15 15:17:18,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 15:17:18,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 15:17:18,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 15:17:18,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 15:17:18,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 15:17:18,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 15:17:18,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!
+[2023/09/15 16:37:17,  0] winbindd/idmap.c:201(smb_register_idmap_alloc)
+  idmap_alloc module tdb already registered!
+[2023/09/15 16:37:17,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module passdb already registered!
+[2023/09/15 16:37:17,  0] winbindd/idmap.c:149(smb_register_idmap)
+  Idmap module nss already registered!
+[2023/09/15 16:37:17,  1] winbindd/idmap_tdb.c:214(idmap_tdb_load_ranges)
+  idmap uid missing
+[2023/09/15 16:37:17,  0] winbindd/idmap_tdb.c:341(idmap_tdb_alloc_init)
+  idmap will be unable to map foreign SIDs: NT_STATUS_UNSUCCESSFUL
+[2023/09/15 16:37:17,  0] winbindd/idmap.c:589(idmap_alloc_init)
+  ERROR: Initialization failed for alloc backend, deferred!

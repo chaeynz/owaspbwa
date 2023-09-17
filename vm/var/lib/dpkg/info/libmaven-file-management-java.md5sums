@@ -1,0 +1,5 @@
+f8349432517c1986320578190b07b1c4  usr/share/doc/libmaven-file-management-java/copyright
+479986cec8c1e4efbb086e23d04c9fc1  usr/share/doc/libmaven-file-management-java/changelog.Debian.gz
+cfc7b9f6188bd117d6660c94b0bb0c5e  usr/share/maven-repo/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.pom
+2e0d1ce4fc6f68e9e30e640e8d662c9c  usr/share/maven-repo/org/apache/maven/shared/file-management/debian/file-management-debian.pom
+678ad988ea4ba6ab1091f1dbe2658ef8  usr/share/java/file-management-1.2.1.jar

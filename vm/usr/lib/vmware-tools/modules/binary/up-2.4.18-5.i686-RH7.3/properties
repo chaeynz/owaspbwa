@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-5
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Red Hat 7.3 for i686 systems.
+UtsMachine i386

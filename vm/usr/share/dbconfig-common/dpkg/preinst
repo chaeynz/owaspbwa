@@ -1,0 +1,10 @@
+###
+### what happens in this script:
+###
+### nothing.  unfortunately we can't reliably be run out of a package's
+### preinst script without pre-dependencies, and we don't really need
+### to anyway.
+###	
+dbc_go(){
+	dbc_logline "W: use of dbc preinst hooks is now unnecesary and deprecated"
+}

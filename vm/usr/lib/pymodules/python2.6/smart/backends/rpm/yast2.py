@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/backends/rpm/yast2.py

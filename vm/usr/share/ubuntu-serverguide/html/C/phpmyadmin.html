@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">phpMyAdmin</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="lamp-applications.html" title="Chapter 12. LAMP Applications" />
+    <link rel="prev" href="mediawiki.html" title="MediaWiki" />
+    <link rel="next" href="file-servers.html" title="Chapter 13. File Servers" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="lamp-applications.html">LAMP Applications</a></span> &gt; <span class="breadcrumb-node">phpMyAdmin</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="phpMyAdmin">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="phpmyadmin"></a>phpMyAdmin</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    <span class="application"><strong>phpMyAdmin</strong></span> is a LAMP application specifically written for administering 
+    <span class="application"><strong>MySQL</strong></span> servers.  Written in <span class="application"><strong>PHP</strong></span>, and accessed through a 
+    web browser, phpMyAdmin provides a graphical interface for database administration tasks. 
+    </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="phpmyadmin-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Before installing <span class="application"><strong>phpMyAdmin</strong></span> you will need access to a <span class="application"><strong>MySQL</strong></span>
+      database either on the same host as that phpMyAdmin is installed on, or on a host accessible over the network.
+      For more information see <a class="xref" href="mysql.html" title="MySQL">the section called “MySQL”</a>. From a terminal prompt enter:  
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install phpmyadmin</strong></span>
+</pre>
+                <p>
+      At the prompt choose which web server to be configured for <span class="application"><strong>phpMyAdmin</strong></span>.  The rest of 
+      this section will use <span class="application"><strong>Apache2</strong></span> for the web server.
+      </p>
+                <p>
+      In a browser go to <span class="emphasis"><em>http://servername/phpmyadmin</em></span>, replacing <span class="italic">serveranme</span>
+      with the server's actual hostname.  At the login, page enter <span class="emphasis"><em>root</em></span> for the <span class="emphasis"><em>username</em></span>,
+      or another <span class="application"><strong>MySQL</strong></span> user if you any setup, and enter the <span class="application"><strong>MySQL</strong></span> user's 
+      password.
+      </p>
+                <p>
+      Once logged in you can reset the <span class="emphasis"><em>root</em></span> password if needed, create users, create/destroy databases and tables, etc.
+      </p>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="phpmyadmin-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The configuration files for <span class="application"><strong>phpMyAdmin</strong></span> are located in <code class="filename">/etc/phpmyadmin</code>.  The main 
+      configuration file is <code class="filename">/etc/phpmyadmin/config.inc.php</code>.  This file contains configuration options that apply 
+      globally to <span class="application"><strong>phpMyAdmin</strong></span>.  
+      </p>
+                <p>
+      To use <span class="application"><strong>phpMyAdmin</strong></span> to administer a MySQL database hosted on another server, adjust the 
+      following in <code class="filename">/etc/phpmyadmin/config.inc.php</code>:
+      </p>
+                <pre class="programlisting">
+$cfg['Servers'][$i]['host'] = 'db_server';
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Replace <span class="italic">db_server</span> with the actual remote database server name or IP address.  
+        Also, be sure that the <span class="application"><strong>phpMyAdmin</strong></span> host has permissions to access the remote database.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      Once configured, log out of <span class="application"><strong>phpMyAdmin</strong></span> and back in, and you should be accessing the new server.
+      </p>
+                <p>
+      The <code class="filename">config.header.inc.php</code> and <code class="filename">config.footer.inc.php</code> files are used to add a HTML 
+      header and footer to <span class="application"><strong>phpMyAdmin</strong></span>.
+      </p>
+                <p>
+      Another important configuration file is <code class="filename">/etc/phpmyadmin/apache.conf</code>, this file is symlinked to 
+      <code class="filename">/etc/apache2/conf.d/phpmyadmin.conf</code>, and is used to configure <span class="application"><strong>Apache2</strong></span> 
+      to serve the <span class="application"><strong>phpMyAdmin</strong></span> site. The file contains directives for loading 
+      <span class="application"><strong>PHP</strong></span>, directory permissions, etc.  For more information on configuring 
+      <span class="application"><strong>Apache2</strong></span> see <a class="xref" href="httpd.html" title="HTTPD - Apache2 Web Server">the section called “HTTPD - Apache2 Web Server”</a>.
+      </p>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="phpmyadmin-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          The <span class="application"><strong>phpMyAdmin</strong></span> documentation comes installed with the package and can be accessed from the
+          <span class="emphasis"><em>phpMyAdmin Documentation</em></span> link (a question mark with a box around it) under the phpMyAdmin logo.
+          The official docs can also be access on the <a class="ulink" href="http://www.phpmyadmin.net/home_page/docs.php" target="_top">phpMyAdmin</a> site.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Also, <a class="ulink" href="http://www.packtpub.com/phpmyadmin-3rd-edition/book" target="_top">Mastering phpMyAdmin</a> is a great resource.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          A third resource is the <a class="ulink" href="https://help.ubuntu.com/community/phpMyAdmin" target="_top">phpMyAdmin Ubuntu Wiki</a> page.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="mediawiki.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="lamp-applications.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="file-servers.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">MediaWiki </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 13. File Servers</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

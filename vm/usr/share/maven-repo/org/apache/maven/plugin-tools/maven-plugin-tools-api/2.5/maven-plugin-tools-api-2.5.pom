@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.plugin-tools</groupId>
+	<artifactId>maven-plugin-tools-api</artifactId>
+	<version>2.5</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.plugin-tools</groupId>
+		<artifactId>maven-plugin-tools</artifactId>
+		<version>2.5</version>
+	</parent>
+	<properties>
+		<debian.originalVersion>2.5</debian.originalVersion>
+		<debian.package>libmaven-plugin-tools-java</debian.package>
+	</properties>
+	
+	<name>Maven Plugin Tools APIs</name>
+	<description>The Maven Plugin Tools API provides an API to extract information from and generate documentation for Maven Plugins.</description>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/maven/plugin-tools/tags/maven-plugin-tools-2.5/maven-plugin-tools-api</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/plugin-tools/tags/maven-plugin-tools-2.5/maven-plugin-tools-api</developerConnection>
+		<url>http://svn.apache.org/viewvc/maven/plugin-tools/tags/maven-plugin-tools-2.5/maven-plugin-tools-api</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-project</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.reporting</groupId>
+			<artifactId>maven-reporting-api</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-descriptor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jtidy</groupId>
+			<artifactId>jtidy</artifactId>
+			<version>debian</version>
+		</dependency>
+	</dependencies>
+</project>

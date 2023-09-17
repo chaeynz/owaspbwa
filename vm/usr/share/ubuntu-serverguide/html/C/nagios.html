@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Nagios</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="monitoring.html" title="Chapter 9. Monitoring" />
+    <link rel="prev" href="monitoring-overview.html" title="Overview" />
+    <link rel="next" href="munin.html" title="Munin" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="monitoring.html">Monitoring</a></span> &gt; <span class="breadcrumb-node">Nagios</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Nagios">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="nagios"></a>Nagios</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="nagios-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      First, on <span class="emphasis"><em>server01</em></span> install the <span class="application"><strong>nagios</strong></span> package.  In a terminal
+      enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install nagios3 nagios-nrpe-plugin</strong></span>
+</pre>
+                <p>
+      You will be asked to enter a password for the <span class="emphasis"><em>nagiosadmin</em></span> user.  The user's credentials are
+      stored in <code class="filename">/etc/nagios3/htpasswd.users</code>.  To change the <span class="emphasis"><em>nagiosadmin</em></span> password, or
+      add additional users to the Nagios CGI scripts, use the <span class="application"><strong>htpasswd</strong></span> that is part of the 
+      <span class="application"><strong>apache2-utils</strong></span> package.
+      </p>
+                <p>
+      For example, to change the password for the <span class="emphasis"><em>nagiosadmin</em></span> user enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo htpasswd /etc/nagios3/htpasswd.users nagiosadmin</strong></span>
+</pre>
+                <p>
+      To add a user:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo htpasswd /etc/nagios3/htpasswd.users steve</strong></span>
+</pre>
+                <p>
+      Next, on <span class="emphasis"><em>server02</em></span> install the <span class="application"><strong>nagios-nrpe-server</strong></span> package.  From a terminal on 
+      server02 enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install nagios-nrpe-server</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        <span class="application"><strong>NRPE</strong></span> allows you to execute local checks on remote hosts.  There are other ways of accomplishing
+        this through other Nagios plugins as well as other checks.  
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="Configuration Overview">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="nagios-configuration-overview"></a>Configuration Overview</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      There are a couple of directories containing <span class="application"><strong>Nagios</strong></span> configuration and check files.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <code class="filename">/etc/nagios3</code>: contains configuration files for the operation of the <span class="application"><strong>nagios</strong></span>
+          daemon, CGI files, hosts, etc.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <code class="filename">/etc/nagios-plugins</code>: houses configuration files for the service checks. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <code class="filename">/etc/nagios</code>: on the remote host contains the <span class="application"><strong>nagios-nrpe-server</strong></span> configuration files. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <code class="filename">/usr/lib/nagios/plugins/</code>: where the check binaries are stored.  To see the options of a check use the
+          <span class="emphasis"><em>-h</em></span> option.  
+          </p>
+                      <p>   
+          For example: <span class="command"><strong>/usr/lib/nagios/plugins/check_dhcp -h</strong></span>
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      There are a plethora of checks <span class="application"><strong>Nagios</strong></span> can be configured to execute for any given host.  For this example Nagios
+      will be configured to check disk space, DNS, and a MySQL hostgroup.  The DNS check will be on <span class="emphasis"><em>server02</em></span>, and the 
+      MySQL hostgroup will include both <span class="emphasis"><em>server01</em></span> and <span class="emphasis"><em>server02</em></span>.
+      </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        See <a class="xref" href="httpd.html" title="HTTPD - Apache2 Web Server">the section called “HTTPD - Apache2 Web Server”</a> for details on setting up Apache, <a class="xref" href="dns.html" title="Chapter 7. Domain Name Service (DNS)">Chapter 7, <i>Domain Name Service (DNS)</i></a> for DNS, and <a class="xref" href="mysql.html" title="MySQL">the section called “MySQL”</a> for MySQL.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      Additionally, there are some terms that once explained will hopefully make understanding Nagios configuration easier:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Host</em></span>: a server, workstation, network device, etc that is being monitored.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Host Group</em></span>: a group of similar hosts.  For example, you could group all web servers, file server, etc.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Service</em></span>: the service being monitored on the host.  Such as HTTP, DNS, NFS, etc.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Service Group</em></span>: allows you to group multiple services together.  This is useful for grouping multiple HTTP
+          for example.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Contact</em></span>: person to be notified when an event takes place.  Nagios can be configured to send emails, SMS messages, etc.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      By default Nagios is configured to check HTTP, disk space, SSH, current users, processes, and load on the <span class="emphasis"><em>localhost</em></span>.
+      Nagios will also <span class="application"><strong>ping</strong></span> check the <span class="emphasis"><em>gateway</em></span>.
+      </p>
+                <p>
+      Large Nagios installations can be quite complex to configure.  It is usually best to start small, one or two hosts, get things configured the way you like
+      then expand.
+      </p>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="nagios-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <div class="procedure">
+                        <ol class="procedure" type="1">
+                          <li class="step" title="Step 1">
+                            <p>
+              First, create a <span class="emphasis"><em>host</em></span> configuration file for <span class="emphasis"><em>server02</em></span>.  In a terminal enter:
+             </p>
+                            <pre class="screen">
+<span class="command"><strong>sudo cp /etc/nagios3/conf.d/localhost_nagios2.cfg /etc/nagios3/conf.d/server02.cfg</strong></span>
+</pre>
+                            <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                <tr>
+                                  <td rowspan="2" align="center" valign="top" width="25">
+                                    <img alt="[Note]" src="../../libs/admon/note.png" />
+                                  </td>
+                                  <th align="left"></th>
+                                </tr>
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <p>
+               In the above and following command examples, replace <span class="emphasis"><em>"server01"</em></span>, <span class="emphasis"><em>"server02"</em></span>
+               <span class="emphasis"><em>172.18.100.100</em></span>, and <span class="emphasis"><em>172.18.100.101</em></span> with the host names and IP addresses
+               of your servers.
+               </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </li>
+                          <li class="step" title="Step 2">
+                            <p>
+             Next, edit <code class="filename">/etc/nagios3/conf.d/server02.cfg</code>:
+             </p>
+                            <pre class="programlisting">
+define host{
+        use                     generic-host            ; Name of host template to use
+        host_name               server02
+        alias                   Server 02
+        address                 172.18.100.101
+}
+
+# check DNS service.
+define service {
+        use                             generic-service
+        host_name                       server02
+        service_description             DNS
+        check_command                   check_dns!172.18.100.101
+}
+</pre>
+                          </li>
+                          <li class="step" title="Step 3">
+                            <p>
+             Restart the <span class="application"><strong>nagios</strong></span> daemon to enable the new configuration:
+             </p>
+                            <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/nagios3 restart</strong></span>
+</pre>
+                          </li>
+                        </ol>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <div class="procedure">
+                        <ol class="procedure" type="1">
+                          <li class="step" title="Step 1">
+                            <p>
+             Now add a service definition for the MySQL check by adding the following to <code class="filename">/etc/nagios3/conf.d/services_nagios2.cfg</code>:
+             </p>
+                            <pre class="programlisting">
+# check MySQL servers.
+define service {
+        hostgroup_name                  mysql-servers
+        service_description             MySQL
+        check_command                   check_mysql_cmdlinecred!nagios!secret!$HOSTADDRESS
+        use                             generic-service
+        notification_interval           0 ; set &gt; 0 if you want to be renotified
+}
+</pre>
+                          </li>
+                          <li class="step" title="Step 2">
+                            <p>
+             A <span class="emphasis"><em>mysqsl-servers</em></span> hostgroup now needs to be defined.  Edit 
+             <code class="filename">/etc/nagios3/conf.d/hostgroups_nagios2.cfg</code> adding:
+             </p>
+                            <pre class="programlisting">
+# MySQL hostgroup.
+define hostgroup {
+        hostgroup_name  mysql-servers
+                alias           MySQL servers
+                members         localhost, server02
+        }
+</pre>
+                          </li>
+                          <li class="step" title="Step 3">
+                            <p>
+             The Nagios check needs to authenticate to MySQL.  To add a <span class="emphasis"><em>nagios</em></span> user to MySQL enter:
+             </p>
+                            <pre class="screen">
+<span class="command"><strong>mysql -u root -p -e "create user nagios identified by 'secret';"</strong></span>
+</pre>
+                            <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                <tr>
+                                  <td rowspan="2" align="center" valign="top" width="25">
+                                    <img alt="[Note]" src="../../libs/admon/note.png" />
+                                  </td>
+                                  <th align="left"></th>
+                                </tr>
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <p>
+               The <span class="emphasis"><em>nagios</em></span> user will need to be added all hosts in the <span class="emphasis"><em>mysql-servers</em></span> hostgroup.
+               </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </li>
+                          <li class="step" title="Step 4">
+                            <p>
+             Restart <span class="application"><strong>nagios</strong></span> to start checking the MySQL servers.
+             </p>
+                            <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/nagios3 restart</strong></span>
+</pre>
+                          </li>
+                        </ol>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <div class="procedure">
+                        <ol class="procedure" type="1">
+                          <li class="step" title="Step 1">
+                            <p>
+             Lastly configure NRPE to check the disk space on <span class="emphasis"><em>server02</em></span>.
+             </p>
+                            <p>
+             On <span class="emphasis"><em>server01</em></span> add the
+             service check to <code class="filename">/etc/nagios3/conf.d/server02.cfg</code>:
+             </p>
+                            <pre class="programlisting">
+# NRPE disk check.
+define service {
+        use                             generic-service
+        host_name                       server02
+        service_description             nrpe-disk
+        check_command                   check_nrpe_1arg!check_all_disks!172.18.100.101
+}
+</pre>
+                          </li>
+                          <li class="step" title="Step 2">
+                            <p>
+             Now on <span class="emphasis"><em>server02</em></span> edit <code class="filename">/etc/nagios/nrpe.cfg</code> changing:
+             </p>
+                            <pre class="programlisting">
+allowed_hosts=172.18.100.100
+</pre>
+                            <p>
+             And below in the command definition area add:
+             </p>
+                            <pre class="programlisting">
+command[check_all_disks]=/usr/lib/nagios/plugins/check_disk -w 20% -c 10% -e
+</pre>
+                          </li>
+                          <li class="step" title="Step 3">
+                            <p>
+             Finally, restart <span class="application"><strong>nagios-nrpe-server</strong></span>:
+             </p>
+                            <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/nagios-nrpe-server restart</strong></span>
+</pre>
+                          </li>
+                          <li class="step" title="Step 4">
+                            <p>
+             Also, on <span class="emphasis"><em>server01</em></span> restart <span class="application"><strong>nagios</strong></span>:
+             </p>
+                            <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/nagios3 restart</strong></span>
+</pre>
+                          </li>
+                        </ol>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      You should now be able to see the host and service checks in the Nagios CGI files.  To access them point a 
+      browser to http://server01/nagios3.  You will then be prompted for the <span class="emphasis"><em>nagiosadmin</em></span> username 
+      and password.
+      </p>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="nagios-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      This section has just scratched the surface of Nagios' features.  The <span class="application"><strong>nagios-plugins-extra</strong></span> and 
+      <span class="application"><strong>nagios-snmp-plugins</strong></span> contain many more service checks.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          For more information see <a class="ulink" href="http://www.nagios.org/" target="_top">Nagios</a> website.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Specifically the <a class="ulink" href="http://nagios.sourceforge.net/docs/3_0/" target="_top">Online Documentation</a> site.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          There is also a list of <a class="ulink" href="http://www.nagios.org/propaganda/books/" target="_top">books</a> related to Nagios
+          and network monitoring:
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          The <a class="ulink" href="https://help.ubuntu.com/community/Nagios" target="_top">Nagios Ubuntu Wiki</a> page also has more details.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="monitoring-overview.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="monitoring.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="munin.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Overview </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Munin</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

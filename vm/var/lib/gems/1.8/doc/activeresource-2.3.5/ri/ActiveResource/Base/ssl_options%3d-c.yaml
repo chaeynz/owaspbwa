@@ -1,0 +1,42 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Options that will get applied to an SSL connection.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:key</tt> - An OpenSSL::PKey::RSA or OpenSSL::PKey::DSA object.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:cert</tt> - An OpenSSL::X509::Certificate object as client certificate
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:ca_file</tt> - Path to a CA certification file in PEM format. The file can contrain several CA certificates.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:ca_path</tt> - Path of a CA certification directory containing certifications in PEM format.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:verify_mode</tt> - Flags for server the certification verification at begining of SSL/TLS session. (OpenSSL::SSL::VERIFY_NONE or OpenSSL::SSL::VERIFY_PEER is acceptable)
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:verify_callback</tt> - The verify callback for the server certification verification.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:verify_depth</tt> - The maximum depth for the certificate chain verification.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:cert_store</tt> - OpenSSL::X509::Store to verify peer certificate.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:ssl_timeout</tt> -The SSL timeout in seconds.
+  type: :BULLET
+full_name: ActiveResource::Base::ssl_options=
+is_singleton: true
+name: ssl_options=
+params: (opts={})
+visibility: public

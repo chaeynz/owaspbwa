@@ -1,0 +1,6 @@
+UtsRelease 2.4.9-e.9.30mlenterprise
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Miracle Linux Standard Edition V2.1
+UtsMachine i386

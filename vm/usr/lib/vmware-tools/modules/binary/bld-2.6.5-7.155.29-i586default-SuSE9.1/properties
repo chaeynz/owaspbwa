@@ -1,0 +1,6 @@
+UtsRelease 2.6.5-7.155.29-default
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment SuSE9.1 SP1, kernel 2.6.5-7.155.29, default
+UtsMachine i386

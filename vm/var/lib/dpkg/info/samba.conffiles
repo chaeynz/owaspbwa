@@ -1,0 +1,5 @@
+/etc/ufw/applications.d/samba
+/etc/logrotate.d/samba
+/etc/init/smbd.conf
+/etc/init/nmbd.conf
+/etc/cron.daily/samba

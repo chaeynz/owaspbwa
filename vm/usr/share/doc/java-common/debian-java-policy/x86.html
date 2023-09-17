@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>Java programs</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="Debian policy for Java"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Policy"
+HREF="c36.html"><LINK
+REL="PREVIOUS"
+TITLE="Java compilers"
+HREF="x73.html"><LINK
+REL="NEXT"
+TITLE="Java libraries"
+HREF="x105.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Debian policy for Java</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x73.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. Policy</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x105.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="policy-programs"
+>2.3. Java programs</A
+></H1
+><P
+>&#13;	Programs <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>must</I
+></SPAN
+> have executable(s) in
+	<TT
+CLASS="filename"
+>/usr/bin</TT
+> and be executable. They can be Java
+	classes (using binfmt_misc) or wrappers. In any case, they <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>must</I
+></SPAN
+> run
+	without specific environment variables (see
+	<A
+HREF="http://www.debian.org/doc/debian-policy/ch-opersys.html#s10.9"
+TARGET="_top"
+>Policy
+	  10.9</A
+>), for instance CLASSPATH. They <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>must</I
+></SPAN
+> respect the Policy
+	rules for executables (for instance a manual page per executable, see
+	<A
+HREF="http://www.debian.org/doc/debian-policy/ch-docs.html#s13.1"
+TARGET="_top"
+>&#13;	  Policy 13.1</A
+>).
+      </P
+><P
+>&#13;        If they have their own auxiliary classes, they
+	<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>must</I
+></SPAN
+> be in a jar file in <TT
+CLASS="filename"
+>/usr/share/java</TT
+>. The
+        name of the jar <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>should</I
+></SPAN
+> follow the same naming conventions as for
+        libraries.
+      </P
+><P
+>&#13;        Programs <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>must</I
+></SPAN
+> depend on <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>java-virtual-machine</I
+></SPAN
+> and the needed
+	runtime environment (<SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>java1-runtime</I
+></SPAN
+> and/or <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>java2-runtime</I
+></SPAN
+>).
+      </P
+><P
+>&#13;        There is no naming rules for programs, they are ordinary programs,
+	from the user point of view.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x73.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x105.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Java compilers</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c36.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Java libraries</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

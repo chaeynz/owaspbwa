@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.avalon.framework</groupId>
+	<artifactId>avalon-framework-impl</artifactId>
+	<version>4.2.0</version>
+	<packaging>bundle</packaging>
+	<properties>
+		<debian.originalVersion>4.2.0</debian.originalVersion>
+		<debian.package>libavalon-framework-java</debian.package>
+	</properties>
+	
+	<name>Avalon Framework Implementation</name>
+	<description>Avalon Framework Implementation</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.avalon.framework</groupId>
+			<artifactId>avalon-framework-api</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<artifactId>commons-logging</artifactId>
+			<groupId>commons-logging</groupId>
+			<scope>provided</scope>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<artifactId>log4j</artifactId>
+			<groupId>log4j</groupId>
+			<scope>provided</scope>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.avalon.logkit</groupId>
+			<artifactId>avalon-logkit</artifactId>
+			<scope>provided</scope>
+			<version>debian</version>
+		</dependency>
+	</dependencies>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/excalibur/trunk/framework/impl</connection>
+		<url>http://svn.apache.org/viewcvs.cgi/excalibur/trunk/framework/impl</url>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/excalibur/trunk/avalon-framework/avalon-framework-impl</developerConnection>
+	</scm>
+</project>

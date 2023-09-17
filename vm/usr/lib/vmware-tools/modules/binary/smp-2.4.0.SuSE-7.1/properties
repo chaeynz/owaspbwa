@@ -1,0 +1,6 @@
+UtsRelease 2.4.0-64GB-SMP
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment SuSE 7.1 smp with 2.4.0 kernel
+UtsMachine i386

@@ -1,0 +1,5 @@
+e42b4363d14c7eeb8c1acf76cefb928a  usr/share/doc/libmaven-dependency-tree-java/copyright
+3f625976051137457a7390a4eb244d12  usr/share/doc/libmaven-dependency-tree-java/changelog.Debian.gz
+dc45a6013744a5deea1590b621073431  usr/share/maven-repo/org/apache/maven/shared/maven-dependency-tree/1.2/maven-dependency-tree-1.2.pom
+1afd7d03ed8e45d5cc95337d3b47ee68  usr/share/maven-repo/org/apache/maven/shared/maven-dependency-tree/debian/maven-dependency-tree-debian.pom
+1abaa073cbf6ae460590d297901308b2  usr/share/java/maven-dependency-tree-1.2.jar

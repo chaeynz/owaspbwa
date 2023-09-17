@@ -1,0 +1,6 @@
+nunit.core, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77
+nunit.core.extensions, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77
+nunit.core.interfaces, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77
+nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77
+nunit.mocks, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77
+nunit.util, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77

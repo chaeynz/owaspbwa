@@ -1,0 +1,5 @@
+22e11fbbb0a7d4125d66d3665e6587b7  usr/share/doc/libplexus-build-api-java/copyright
+a110cc458b3ea2f1d9ce776a44f03db2  usr/share/doc/libplexus-build-api-java/changelog.Debian.gz
+9163098cd168f4bf70ea5680d6ca4f6c  usr/share/maven-repo/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+3b93835c41903384412d775ec420bab1  usr/share/maven-repo/org/sonatype/plexus/plexus-build-api/debian/plexus-build-api-debian.pom
+a9c988a3606722ddd01f05645110f45e  usr/share/java/plexus-build-api-0.0.4.jar

@@ -1,0 +1,6 @@
+/etc/init/apport.conf
+/etc/logrotate.d/apport
+/etc/default/apport
+/etc/cron.daily/apport
+/etc/bash_completion.d/apport_completion
+/etc/apport/blacklist.d/apport

@@ -1,0 +1,64 @@
+have_func: checking for random()... -------------------- yes
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/i686-linux -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1 -I. -I/usr/include  -D_FILE_OFFSET_BITS=64  -I/usr/local/rvm/usr/include -fPIC conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/lib -Wl,-R/usr/lib -L. -L/usr/local/rvm/usr/lib -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/i686-linux -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1 -I. -I/usr/include  -D_FILE_OFFSET_BITS=64  -I/usr/local/rvm/usr/include -fPIC conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/lib -Wl,-R/usr/lib -L. -L/usr/local/rvm/usr/lib -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))random; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for srandom()... -------------------- yes
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/i686-linux -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1 -I. -I/usr/include  -D_FILE_OFFSET_BITS=64  -I/usr/local/rvm/usr/include -fPIC conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/lib -Wl,-R/usr/lib -L. -L/usr/local/rvm/usr/lib -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))srandom; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rand()... -------------------- yes
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/i686-linux -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1 -I. -I/usr/include  -D_FILE_OFFSET_BITS=64  -I/usr/local/rvm/usr/include -fPIC conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/lib -Wl,-R/usr/lib -L. -L/usr/local/rvm/usr/lib -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rand; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for srand()... -------------------- yes
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/i686-linux -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1 -I. -I/usr/include  -D_FILE_OFFSET_BITS=64  -I/usr/local/rvm/usr/include -fPIC conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/lib -Wl,-R/usr/lib -L. -L/usr/local/rvm/usr/lib -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))srand; return 0; }
+/* end */
+
+--------------------
+

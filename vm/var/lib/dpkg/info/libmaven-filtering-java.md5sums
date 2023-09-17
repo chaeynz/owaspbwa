@@ -1,0 +1,5 @@
+ac6bc9ee4a75a7081d3f67759391b68d  usr/share/doc/libmaven-filtering-java/copyright
+eb060b15c1cfd6e48ef01e929e8a49c2  usr/share/doc/libmaven-filtering-java/changelog.Debian.gz
+a1df5ca617e065198b23585e5433dd6d  usr/share/maven-repo/org/apache/maven/shared/maven-filtering/1.0-beta-2/maven-filtering-1.0-beta-2.pom
+31b4b20fea762ea2f1b7565202675001  usr/share/maven-repo/org/apache/maven/shared/maven-filtering/debian/maven-filtering-debian.pom
+07b13f604e1d2988750bc0d8300102e0  usr/share/java/maven-filtering-1.0-beta-2.jar

@@ -1,0 +1,23 @@
+Jakarta ORO for Debian
+----------------------
+
+- Original Jakarta-ORO package is built by JDK's javac, javadoc, and jar.
+  But this debian's version package is built by jikes, doc++, and
+  Kaffe VM's jar.   
+
+- For more information about Jakarta ORO please take a look at the
+  API Document or Jakarta ORO home page at
+  http://jakarta.apache.org/oro/index.html.
+
+issue:
+
+- API document should be compiled by doc++ instead of SUN's javadoc.
+  But doc++ in sid has problems and API document can't be compiled by
+  doc++. The problems are	
+	
+	1. doc++ spend huge time.
+	2. doc++ create separated file by each method.
+
+  Remove comments at debian/rules when problems will be fixed.
+
+Takashi Okamoto <tora@debian.org>  Mon, 12 Feb 2001 09:55:18 +0900

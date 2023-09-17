@@ -1,0 +1,945 @@
+Package: cuneiform
+Priority: optional
+Section: multiverse/graphics
+Installed-Size: 4108
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: i386
+Version: 0.7.0+dfsg-5ubuntu0.1
+Depends: libc6 (>= 2.11), libgcc1 (>= 1:4.1.1), libmagick++2 (>= 7:6.5.7.8), libstdc++6 (>= 4.2.1), cuneiform-common
+Filename: pool/multiverse/c/cuneiform/cuneiform_0.7.0+dfsg-5ubuntu0.1_i386.deb
+Size: 1842600
+MD5sum: 9b32a69fa8c54e615c169404b3de2ac6
+SHA1: 2e68c7ae1de3d15a6768734334fe06f0883f10df
+SHA256: 5fb55d3e104f77469c152782630bd53c8708d5fd168efcb25fa70e8c1645c21e
+Description: multi-language OCR system
+ Cuneiform is an OCR system. In addition to text recognition it also does layout
+ analysis and text format recognition. Cuneiform supports several languages.
+Homepage: http://launchpad.net/cuneiform-linux/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: cuneiform-common
+Priority: optional
+Section: multiverse/graphics
+Installed-Size: 51376
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Architecture: all
+Source: cuneiform
+Version: 0.7.0+dfsg-5ubuntu0.1
+Filename: pool/multiverse/c/cuneiform/cuneiform-common_0.7.0+dfsg-5ubuntu0.1_all.deb
+Size: 26382816
+MD5sum: 5de74f2f487e89b00d6f6bc4c1633247
+SHA1: 0d1687cc616582d7ac844b69aaf8363e4b60006c
+SHA256: 33f5221738bc6921bd493f8ccaf402e5eafe6c0e9b10825a64e18965c2fc0c4e
+Description: multi-language OCR system (common)
+ Cuneiform is an OCR system. In addition to text recognition it also does layout
+ analysis and text format recognition. Cuneiform supports several languages.
+ .
+ This package contains the common files.
+Homepage: http://launchpad.net/cuneiform-linux/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: dssi-vst
+Priority: extra
+Section: multiverse/sound
+Installed-Size: 696
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Samuel Mimram <smimram@debian.org>
+Architecture: i386
+Version: 0.8-2ubuntu2
+Depends: libasound2 (>> 1.0.22), libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libjack0 (>= 0.118+svn3796), liblo7 (>= 0.26~repack), libstdc++6 (>= 4.1.1), wine1.0
+Filename: pool/multiverse/d/dssi-vst/dssi-vst_0.8-2ubuntu2_i386.deb
+Size: 176342
+MD5sum: 2e5a71563c53234c537dc2b4890f3c1e
+SHA1: 31f0e42a04b33e1bb64b63d116e77b68dff808ea
+SHA256: 7bf91a2eb398dd8d07d9ee2d74a25a9da945584dc0c214b15790f9a25fff9444
+Description: Adapter for VST an VSTi audio plugins
+ dssi-vst is an adapter that allows users of Linux audio software to take VST
+ and VSTi audio effects and instrument plugins compiled for Windows, and load
+ them into native LADSPA or DSSI plugin hosts. Plugins run at full speed for
+ most audio processing, although their user interfaces are slower because of
+ the Windows emulation.
+Homepage: http://breakfastquay.com/dssi-vst/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: ec2-ami-tools
+Priority: extra
+Section: multiverse/admin
+Installed-Size: 624
+Maintainer: Soren Hansen <soren@ubuntu.com>
+Architecture: all
+Version: 1.3-45758-0ubuntu1.1
+Depends: ruby, libopenssl-ruby, curl
+Filename: pool/multiverse/e/ec2-ami-tools/ec2-ami-tools_1.3-45758-0ubuntu1.1_all.deb
+Size: 78254
+MD5sum: 10530887baffb9985359442248a67bd5
+SHA1: 2078c6246a1ae4fa3d0ec84f6c4db58aae30f4f1
+SHA256: 3cea277997d666ea7c61f7a62fae4f2c11bee478c5b44195fe655cb7d20b1997
+Description: Amazon EC2 AMI tools
+ The Amazon EC2 AMI Tools are command-line utilities to help bundle an
+ Amazon Machine Image (AMI), create an AMI from an existing machine or
+ installed volume, and upload a bundled AMI to Amazon S3.
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: flashplugin-installer
+Priority: optional
+Section: multiverse/web
+Installed-Size: 116
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Bart Martens <bartm@knars.be>
+Architecture: i386
+Source: flashplugin-nonfree
+Version: 11.2.202.280ubuntu0.10.04.1
+Replaces: flashplugin (<< 6), flashplugin-nonfree
+Provides: flashplugin-nonfree
+Depends: debconf | debconf-2.0, wget, libgtk2.0-0, fontconfig, libxt6, libxext6, libatk1.0-0, libc6, libcairo2, libexpat1, libfontconfig1, libfreetype6, libglib2.0-0, libice6, libpango1.0-0, libpng12-0, libsm6, libx11-6, libxau6, libxcursor1, libxdmcp6, libxfixes3, libxi6, libxinerama1, libxrandr2, libxrender1, zlib1g, libnss3-1d (>= 3.12.0~beta3), libnspr4-0d (>= 4.7.1~beta2)
+Recommends: libasound2-plugins (>= 1.0.16)
+Suggests: firefox, xulrunner-1.9, firefox-3.0, konqueror-nsplugins, x-ttcidfont-conf, msttcorefonts, ttf-bitstream-vera | ttf-dejavu, ttf-xfree86-nonfree, xfs (>= 1:1.0.1-5)
+Conflicts: flashplayer-mozilla, flashplugin (<< 6), flashplugin-nonfree (<< 10.0.22.87ubuntu2~), libflashsupport, xfs (<< 1:1.0.1-5)
+Filename: pool/multiverse/f/flashplugin-nonfree/flashplugin-installer_11.2.202.280ubuntu0.10.04.1_i386.deb
+Size: 20958
+MD5sum: a2da225646d1b383f2d6323e85afde3f
+SHA1: fb114b47483676e5c5cd9024013678667f2f18a7
+SHA256: 4a2294bf0674d419ed84a332c1c9a9048e05af966e9d189a06907589991c3013
+Description: Adobe Flash Player plugin installer
+ Downloads and Installs the Adobe Flash Player plugin. The Adobe Flash Player
+ plugin supports playing of media and other dynamic content online.
+ .
+ The Adobe Flash Player plugin will work with a range of web-browsers including,
+ limited to:
+  * Firefox
+  * Chromium
+  * SeaMonkey
+  * Iceweasel
+  * Iceape
+  * Galeon
+  * Epiphany
+  * Konqueror
+ .
+ WARNING: Installing this Ubuntu package causes the Adobe Flash Player plugin to
+ be downloaded from the Canonical partner archive. The distribution license of
+ the Adobe Flash Player plugin is available at www.adobe.com. Installing this
+ Ubuntu package implies that you have accepted the terms of that license.
+Homepage: http://www.adobe.com/products/flashplayer.html
+Npp-Applications: ec8030f7-c20a-464f-9b0e-13a3a9e97384, 92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a, aa5ca914-c309-495d-91cf-3141bbb04115
+Npp-Description: Adobe Flash SWF Player (http://www.adobe.com)
+Npp-File: libflashplayer.so
+Npp-Mimetype: application/x-shockwave-flash
+Npp-Name: Adobe Flash Player (installer)
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: flashplugin-nonfree
+Priority: optional
+Section: multiverse/web
+Installed-Size: 48
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Bart Martens <bartm@knars.be>
+Architecture: i386
+Version: 11.2.202.280ubuntu0.10.04.1
+Depends: flashplugin-installer
+Filename: pool/multiverse/f/flashplugin-nonfree/flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1_i386.deb
+Size: 2124
+MD5sum: 12de11dda4985c15d8faa3868d2f9f7d
+SHA1: c794dea6b29f4bd1caa10855a6728ef1ad2a5ea1
+SHA256: 565afb6d37de5c8ca019aa9632d67181e411eaa0f83e9e8641fc1fdb0b114d66
+Description: Adobe Flash Player plugin installer (transitional package)
+ This package is a transitional package that can safely be removed after you installed
+ flashplugin-installer.
+Homepage: http://www.adobe.com/products/flashplayer.html
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: gecko-mediaplayer
+Priority: optional
+Section: multiverse/graphics
+Installed-Size: 672
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Cesare Tirabassi <norsetto@ubuntu.com>
+Architecture: i386
+Version: 0.9.9.2-1ubuntu0.10.04.2
+Depends: libc6 (>= 2.4), libdbus-1-3 (>= 1.0.2), libdbus-glib-1-2 (>= 0.78), libgcc1 (>= 1:4.1.1), libgconf2-4 (>= 2.27.0), libglib2.0-0 (>= 2.14), libstdc++6 (>= 4.1.1), gconf2 (>= 2.10.1-2), gnome-mplayer (>= 0.9.9.2), iceweasel | firefox | firefox-3.5 | iceape-browser | epiphany-browser | galeon | midbrowser | xulrunner | xulrunner-1.9 | konqueror (>= 4:4) | opera (>= 9.50) | chromium-browser (>> 4.0)
+Filename: pool/multiverse/g/gecko-mediaplayer/gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2_i386.deb
+Size: 202108
+MD5sum: 8bb4b69f64867a878ba4a0628673c9a7
+SHA1: 75b23b57989e7e6e22dfc16cff99a6ad06031f5b
+SHA256: 5303d8b4d19374cdb1725e739f9d18d348191efecc2424b61886046604d57f25
+Description: Multimedia plug-in for Gecko browsers
+ Gecko Media Player is a browser plug-in that uses GNOME MPlayer
+ and Mplayer to play media in a browser.
+ It uses the NS4 API and is therefore compatible with all NS4 derived browsers:
+ Iceweasel, Firefox, Iceape, Epiphany, Galeon, Midbrowser, Xulrunner, etc.
+ .
+ It is the modern replacement for mplayerplug-in (from the same author).
+Homepage: http://kdekorte.googlepages.com/gecko-mediaplayer
+Npp-Applications: ec8030f7-c20a-464f-9b0e-13a3a9e97384, 92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a, aa5ca914-c309-495d-91cf-3141bbb04115
+Npp-Description: Play media off the net using the gnome-mplayer
+Npp-File: gecko-mediaplayer
+Npp-Mimetype: video/mpeg, audio/mpeg, video/x-mpeg, video/x-mpeg2, audio/x-mpeg, audio/mpeg2, audio/x-mpeg2, audio/mpeg3, audio/x-mpeg3, audio/mp3, audio/x-mpegurl, video/mp4, application/x-ogg, audio/ogg, application/ogg, video/fli, video/x-fli, video/vnd.vivo, application/x-nsv-vp3-mp3, audio/basic, audio/x-basic, audio/x-scpls, video/divx, video/vnd.divx, audio/midi, video/quicktime, video/x-quicktime, image/x-quicktime, video/quicktime, video/quicktime, application/x-quicktimeplayer, application/asx, video/x-ms-asf-plugin, video/x-msvideo, video/msvideo, application/x-mplayer2, application/x-ms-wmv, video/x-ms-asf, video/x-ms-wm, video/x-ms-wmv, audio/x-ms-wmv, video/x-ms-wmp, video/x-ms-wvx, audio/x-ms-wax, audio/x-ms-wma, application/x-drm-v2, audio/wav, audio/x-wav, audio/x-pn-realaudio, application/vnd.rn-realmedia, application/vnd.rn-realaudio, video/vnd.rn-realvideo, audio/x-realaudio, audio/x-pn-realaudio-plugin, application/smil, audio/x-mod
+Npp-Name: Gecko Media Player
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: gs-aladdin
+Priority: extra
+Section: multiverse/text
+Installed-Size: 80
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: all
+Source: ghostscript
+Version: 8.71.dfsg.1-0ubuntu5.7
+Depends: ghostscript, ghostscript-x
+Filename: pool/multiverse/g/ghostscript/gs-aladdin_8.71.dfsg.1-0ubuntu5.7_all.deb
+Size: 37638
+MD5sum: cfaa449e2553a9010a728f5d2fefa1a7
+SHA1: e6669072dfc2437497004da39db8944d2f016825
+SHA256: 73a3e07972179bf067831e79bf708d7373153f8c232b198aa817ef42115dc815
+Description: Transitional package
+ This dummy package is provided for a smooth transition from the
+ previous  gs-aladdin package (the package is replaced by ghostscript).
+ It may safely be removed after installation.
+Homepage: http://www.ghostscript.com/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: gstreamer0.10-plugins-ugly-multiverse
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 180
+Maintainer: Sebastian Dröge <slomo@ubuntu.com>, Onkar Shinde <onkarshinde@ubuntu.com>
+Architecture: i386
+Source: gst-plugins-ugly-multiverse0.10
+Version: 0.10.14-0ubuntu2
+Replaces: gstreamer0.10-plugins-bad-multiverse (<< 0.10.13)
+Provides: gstreamer0.10-lame
+Depends: libc6 (>= 2.3.6-6~), libglib2.0-0 (>= 2.14.0), libgstreamer-plugins-base0.10-0 (>= 0.10.26), libgstreamer0.10-0 (>= 0.10.26), libmp3lame0, libx264-85, libxml2 (>= 2.6.27)
+Filename: pool/multiverse/g/gst-plugins-ugly-multiverse0.10/gstreamer0.10-plugins-ugly-multiverse_0.10.14-0ubuntu2_i386.deb
+Size: 62468
+MD5sum: 0bfe5e65a7ad782423257e8858bf0af3
+SHA1: 00e5b563d23a0604ffd11ca321dce4ddc272ad78
+SHA256: 5f610c8313bb12ea4938117eba5c9761f4c88d2283590175c663062b29246601
+Description: GStreamer plugins from the "ugly" set (Multiverse Variant)
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains plugins from the "ugly" set, a set of
+ good-quality plug-ins that might pose distribution problems.
+Gstreamer-Elements: lame, lamemp3enc, x264enc
+Gstreamer-Encoders: audio/mpeg, mpegversion=(int)1, layer=(int)3; video/x-h264, stream-format=(string){ byte-stream, avc }
+Gstreamer-Version: 0.10
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: gstreamer0.10-plugins-ugly-multiverse-dbg
+Priority: extra
+Section: multiverse/libdevel
+Installed-Size: 236
+Maintainer: Sebastian Dröge <slomo@ubuntu.com>, Onkar Shinde <onkarshinde@ubuntu.com>
+Architecture: i386
+Source: gst-plugins-ugly-multiverse0.10
+Version: 0.10.14-0ubuntu2
+Depends: gstreamer0.10-plugins-ugly-multiverse (= 0.10.14-0ubuntu2)
+Filename: pool/multiverse/g/gst-plugins-ugly-multiverse0.10/gstreamer0.10-plugins-ugly-multiverse-dbg_0.10.14-0ubuntu2_i386.deb
+Size: 60880
+MD5sum: 741fcd6b9adf29b7963a2a1edae8caa5
+SHA1: 171d966f14016e1d92a455424ee21a8a713a7e1f
+SHA256: b378fbf06d5c94c7ebac4bec5a79af72aed8fffd4e2248198acd1b6ae2767331
+Description: GStreamer plugins from the "ugly" set (Multiverse Variant)
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains unstripped shared libraries. It is provided primarily
+ to provide a backtrace with names in a debugger, this makes it somewhat
+ easier to interpret core dumps. The libraries are installed in
+ /usr/lib/debug and are automatically used by gdb.
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavcodec-extra-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 10904
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: ffmpeg (<< 4:0.5.1-1), libavcodec-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavcodec52
+Depends: libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.7), libdirac-encoder0, libfaad2, libgsm1 (>= 1.0.13), libmp3lame0, libopenjpeg2, libschroedinger-1.0-0 (>= 1.0.0), libspeex1 (>= 1.2~beta3-1), libtheora0 (>= 0.0.0.alpha7.dfsg), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libx264-85, libxvidcore4 (>= 1.2.2), zlib1g (>= 1:1.1.4)
+Suggests: libfaad0
+Conflicts: libavcodec-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavcodec52
+Filename: pool/multiverse/f/ffmpeg-extra/libavcodec-extra-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 4029324
+MD5sum: ff11f0bd648f69f9d94e5fdc09aedb46
+SHA1: 7becf61ee61732f9f4948cab3575a6232c18b787
+SHA256: 143245c8d196a6c0f96b87c58d9daebe0e6a262a6eb4975d2474f8c7d7fa136f
+Description: ffmpeg codec library
+ This is the codec library from the ffmpeg project. It supports most existing
+ encoding formats (MPEG, DivX, MPEG4, AC3, DV...).
+ .
+ This package contains a unrestricted version of the libavcodec shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavcodec-unstripped-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavcodec-extra-52 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavcodec-unstripped-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43644
+MD5sum: aff04d7e5062d9ab8ab5c39f327cf0ac
+SHA1: 3023ea96941f4b8613f07085f79ad278fbd21d71
+SHA256: 8b508a4e6f526ddcf74675aa7d3238730374a25d9ad0ee05f8f950341354f9d8
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavdevice-extra-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 188
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavdevice-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavdevice52
+Depends: libasound2 (>> 1.0.22), libavcodec-extra-52 (>= 4:0.5.9), libavcodec-extra-52 (<< 4:0.5.9-99), libavformat-extra-52 (>= 4:0.5.9), libavformat-extra-52 (<< 4:0.5.9-99), libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.7), libdc1394-22, libx11-6 (>= 0), libxext6 (>= 0)
+Conflicts: libavdevice-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavdevice52
+Filename: pool/multiverse/f/ffmpeg-extra/libavdevice-extra-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 78006
+MD5sum: e8de901e9fce35ca7a8f85e4e94407ec
+SHA1: 9b77975e1cf60b7748da428b0e12efd075c91138
+SHA256: cbf53fd92178d010871a84fe1f30c79f82411412e37bdd99c7de64dee8fb241e
+Description: ffmpeg device handling library
+ This is the device handling library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libavdevice shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavdevice-unstripped-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavdevice-extra-52 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavdevice-unstripped-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43648
+MD5sum: 66273e3acf60428516d6db6dd5561583
+SHA1: b2e5113f71638e3465a0220ea629456cbcbd1a4a
+SHA256: 272f8423e753796c2d2fc9c2097ed8b6e3b045a0355d9fd27f6d482128d77c64
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavfilter-extra-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 148
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavfilter-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libavfilter0
+Depends: libavcodec-extra-52 (>= 4:0.5.9), libavcodec-extra-52 (<< 4:0.5.9-99), libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.3.6-6~)
+Conflicts: libavfilter-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libavfilter0
+Filename: pool/multiverse/f/ffmpeg-extra/libavfilter-extra-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 53416
+MD5sum: e378f0e51711813e44f5f10cc8b45335
+SHA1: b7427e4dc56e4cf5866c3ad43451eec6a1751741
+SHA256: b1d57948b870cdb9fead5cc809a14647320b481e4d477e6752c28a769896d05f
+Description: ffmpeg video filtering library
+ This is the video filtering library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libavfilter shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavfilter-unstripped-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavfilter0
+Depends: libavfilter-extra-0 (= 4:0.5.9-0ubuntu0.10.04.3)
+Conflicts: libavfilter0
+Filename: pool/multiverse/f/ffmpeg-extra/libavfilter-unstripped-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43660
+MD5sum: 8058913d97b6622b55515358d6e398e2
+SHA1: ff2903f880ca52c16d30d0113d0c1146f3be215b
+SHA256: edb6c6f4c24a66380d2fdad6c6469df8905ef8cab020a1752649abd267a19dbd
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavformat-extra-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 1524
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavformat-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavformat52
+Depends: libavcodec-extra-52 (>= 4:0.5.9), libavcodec-extra-52 (<< 4:0.5.9-99), libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libbz2-1.0, libc6 (>= 2.7), zlib1g (>= 1:1.1.4)
+Conflicts: libavformat-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavformat52
+Breaks: libavcodec51
+Filename: pool/multiverse/f/ffmpeg-extra/libavformat-extra-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 723360
+MD5sum: 1d525758251c5eeb063d070d995b41a3
+SHA1: 7ffb13cfbdb0f7889b947e90f949168c736e17f1
+SHA256: 60cd2601c4ba731a8ba8e02ec811d6a9c27ae020db65a1cadddfc93ad744fe82
+Description: ffmpeg file format library
+ This is the demuxer library from the ffmpeg project. It supports most
+ existing file formats (AVI, MPEG, OGG, Matroska, ASF...).
+ .
+ This package contains a unrestricted version of the libavformat shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavformat-unstripped-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavformat-extra-52 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavformat-unstripped-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43640
+MD5sum: 195a74fa97fdc2d4c0c9bc388e5b44d4
+SHA1: 5cdb49a15eba0d70c226b30629a233ab1225ffe1
+SHA256: 18472dc11dc03cf0b1adbb709241124cdb22b785de076b3c299ad92c2d808843
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavutil-extra-49
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 220
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavutil-unstripped-49 (<< 4:0.5.9-0ubuntu0.10.04.3), libavutil49
+Depends: libc6 (>= 2.4)
+Conflicts: libavutil-unstripped-49 (<< 4:0.5.9-0ubuntu0.10.04.3), libavutil49
+Filename: pool/multiverse/f/ffmpeg-extra/libavutil-extra-49_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 102850
+MD5sum: b3afd0479b784e3e694381e9a559b4b5
+SHA1: c8c881c6653be09fde09d24ca51efd79023bdde2
+SHA256: 1e887142b5b9bf130955ce82e494345cce3048ea0552a9dcaeb636e60731a8a7
+Description: ffmpeg utility library
+ This is the common utility library from the ffmpeg project. It is required
+ by all other ffmpeg libraries.
+ .
+ This package contains a unrestricted version of the libavutil shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavutil-unstripped-49
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavutil-extra-49 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavutil-unstripped-49_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43650
+MD5sum: 59256175867aa73b66a9f1b050fa253b
+SHA1: 80207db9991861f6f35461871fb1858356ca134d
+SHA256: 09a0c0e6bed347f9b6e0172e97714794e35bc02ac9da15a03c5ce5be190a4be8
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libpostproc-extra-51
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 588
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libpostproc-unstripped-51 (<< 4:0.5.9-0ubuntu0.10.04.3), libpostproc51
+Depends: libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.4)
+Conflicts: libpostproc-unstripped-51 (<< 4:0.5.9-0ubuntu0.10.04.3), libpostproc51
+Filename: pool/multiverse/f/ffmpeg-extra/libpostproc-extra-51_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 193216
+MD5sum: 0b166b942f89387e984328042330d419
+SHA1: f4fb710ef40c196e4a31530f3d5f8c0caa04e50c
+SHA256: c09630f8bfd15d400eca85b1402cf830de7b90646fbedc051cbde8861b56dd6e
+Description: ffmpeg video postprocessing library
+ This is the video postprocessing library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libpostproc shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libpostproc-unstripped-51
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libpostproc-extra-51 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libpostproc-unstripped-51_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43642
+MD5sum: baf6aebfe0a33791f86a72a63ef5e9a4
+SHA1: 2135fe4e48ca4f57c2f42992a03709a4b31c0777
+SHA256: 9336bdc2c97571edd02c6272b03017ae017c201f63a58d5abc72d3ea07d1a16a
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libswscale-extra-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 696
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libswscale-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libswscale0
+Depends: libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.3.6-6~)
+Conflicts: libswscale-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libswscale0
+Filename: pool/multiverse/f/ffmpeg-extra/libswscale-extra-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 232824
+MD5sum: e7ea7ba25369d99cde7ad38ceadf7a6b
+SHA1: 19b0bd16e0ad63450219b23344d6cddf30a4acf8
+SHA256: 6786e25b212fd577d62552ebe2f3c6505c380dd665f490f98db8e57502007fa2
+Description: ffmpeg video scaling library
+ This is the video scaling library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libswscale shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libswscale-unstripped-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libswscale-extra-0 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libswscale-unstripped-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43640
+MD5sum: 93a0ad52b1deac6f89012719bea13b67
+SHA1: d2fce6549a97a2d0d82bef0d0e52b40c4ccea507
+SHA256: f8833228c4044e07ef35cf49497ce14f63eba6dde93e5a360765a322ef16511c
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: linux-firmware-nonfree
+Priority: optional
+Section: multiverse/kernel
+Installed-Size: 8044
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Architecture: all
+Version: 1.8ubuntu1
+Replaces: linux-firmware (<< 1.17)
+Conflicts: linux-firmware (<< 1.17)
+Filename: pool/multiverse/l/linux-firmware-nonfree/linux-firmware-nonfree_1.8ubuntu1_all.deb
+Size: 3487358
+MD5sum: 44ec7a058483ed7f55c9a8b55f36b244
+SHA1: 317dd1f581534129dadd122ea7a4e1e49bb304d6
+SHA256: d538b1608e08e52de58dd7210af1b0f1ce2cf3c7ed19f1a4a052cfca87729d50
+Description: Non-free firmware for Linux kernel drivers
+ This package provides non-free firmware used by Linux kernel drivers.
+ .
+ This currently contains firmware for DVB cards.
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: linux-rt
+Priority: optional
+Section: multiverse/metapackages
+Installed-Size: 32
+Maintainer: Alessio Igor Bogani <abogani@ubuntu.com>
+Architecture: i386
+Source: linux-meta-rt
+Version: 2.6.31.11.13
+Depends: linux-image-rt (= 2.6.31.11.13), linux-headers-rt (= 2.6.31.11.13)
+Filename: pool/multiverse/l/linux-meta-rt/linux-rt_2.6.31.11.13_i386.deb
+Size: 2942
+MD5sum: 32ad4fe0edb37659c5556560b29274c4
+SHA1: 353aeb65097af59f83041235fcce9861a99eef3c
+SHA256: 356f5d077931322ff475ea8505063c644fae34016032671fe538c1ed329a3611
+Description: complete Realtime (RT) Linux kernel
+ This package will always depend on the latest complete Realtime Linux
+ kernel available.
+ .
+ See http://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch
+ for more information on this implementation of a real-time Linux
+ kernel.
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mencoder
+Priority: extra
+Section: multiverse/graphics
+Installed-Size: 3480
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: mplayer
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Depends: mplayer, libasound2 (>> 1.0.22), libavcodec52 (>= 4:0.5.1-1) | libavcodec-extra-52 (>= 4:0.5.1-1), libavformat52 (>= 4:0.5.1-1) | libavformat-extra-52 (>= 4:0.5.1-1), libavutil49 (>= 4:0.5.1-1) | libavutil-extra-49 (>= 4:0.5.1-1), libc6 (>= 2.11), libcdparanoia0 (>= 3.10.2+debian), libdvdread4, libenca0 (>= 1.9), libfontconfig1 (>= 2.8.0), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:4.1.1), libgif4 (>= 4.1.4), libjpeg62, liblircclient0, liblzo2-2, libmp3lame0, libmpcdec3, libncurses5 (>= 5.6+20071006-3), libogg0 (>= 1.0rc3), libpng12-0 (>= 1.2.13-4), libpostproc51 (>= 4:0.5.1-1) | libpostproc-extra-51 (>= 4:0.5.1-1), libsmbclient (>= 3.0.24), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 4.1.1), libswscale0 (>= 4:0.5.1-1) | libswscale-extra-0 (>= 4:0.5.1-1), libtheora0 (>= 0.0.0.alpha7.dfsg), libx264-85, libxvidcore4 (>= 1.2.2), zlib1g (>= 1:1.1.4)
+Suggests: mplayer-doc, ttf-freefont, bzip2, fontconfig
+Filename: pool/multiverse/m/mplayer/mencoder_1.0~rc3+svn20090426-1ubuntu16.1_i386.deb
+Size: 1598414
+MD5sum: 7d2c1f6456c3f1d361acc0bd80094747
+SHA1: 888a72f712c9d28f181f707040a2a0f575313908
+SHA256: 3a2fc25e7f32c92f8f9b42d58dfcf9ef5864d9dbb1112415d26a927fc221240c
+Description: MPlayer's Movie Encoder
+ MPlayer plays most MPEG, VOB, AVI, Ogg/OGM, VIVO,
+ ASF/WMA/WMV, QT/MOV/MP4, FLI, RM, NuppelVideo, yuv4mpeg, FILM, RoQ, PVA files,
+ supported by many native, XAnim, RealPlayer, and Win32 DLL codecs. It can
+ also play VideoCD, SVCD, DVD, 3ivx, RealMedia, and DivX movies.
+ .
+ This package contains menconder, a simple movie encoder, designed to
+ encode MPlayer-playable movies
+ (AVI/ASF/OGG/DVD/VCD/VOB/MPG/MOV/VIV/FLI/RM/NUV/NET) to other
+ MPlayer-playable formats. It can encode with various codecs, like DivX4
+ (1 or 2 passes), libavcodec, PCM/MP3/VBRMP3 audio. Also has stream
+ copying and video resizing abilities.
+Homepage: http://www.mplayerhq.hu/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mplayer
+Priority: extra
+Section: multiverse/graphics
+Installed-Size: 5548
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Replaces: mencoder (<< 2:1.0~rc3+svn20090426-1ubuntu14), mplayer-doc (<< 2:1.0~rc3+svn20090426-1ubuntu14), mplayer-nogui (<< 2:1.0~rc3+svn20090426-1ubuntu16)
+Depends: libaa1 (>= 1.4p5), libasound2 (>> 1.0.22), libaudio2, libavcodec52 (>= 4:0.5.1-1) | libavcodec-extra-52 (>= 4:0.5.1-1), libavformat52 (>= 4:0.5.1-1) | libavformat-extra-52 (>= 4:0.5.1-1), libavutil49 (>= 4:0.5.1-1) | libavutil-extra-49 (>= 4:0.5.1-1), libc6 (>= 2.11), libcaca0 (>= 0.99.beta15-1), libcdparanoia0 (>= 3.10.2+debian), libdirectfb-1.2-0, libdvdread4, libenca0 (>= 1.9), libesd0 (>= 0.2.35), libfontconfig1 (>= 2.8.0), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:4.1.1), libgif4 (>= 4.1.4), libgl1-mesa-glx | libgl1, libjack0 (>= 0.118+svn3796), libjpeg62, liblircclient0, liblzo2-2, libmp3lame0, libmpcdec3, libncurses5 (>= 5.6+20071006-3), libogg0 (>= 1.0rc3), libopenal1, libpng12-0 (>= 1.2.13-4), libpostproc51 (>= 4:0.5.1-1) | libpostproc-extra-51 (>= 4:0.5.1-1), libpulse0 (>= 0.9.16), libsdl1.2debian (>= 1.2.10-1), libsmbclient (>= 3.0.24), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 4.1.1), libsvga1, libswscale0 (>= 4:0.5.1-1) | libswscale-extra-0 (>= 4:0.5.1-1), libtheora0 (>= 0.0.0.alpha7.dfsg), libx11-6 (>= 0), libx264-85, libxext6 (>= 0), libxinerama1, libxt6, libxv1, libxvidcore4 (>= 1.2.2), libxvmc1, libxxf86dga1, libxxf86vm1, zlib1g (>= 1:1.1.4)
+Suggests: mplayer-doc, ttf-freefont, netselect | fping, bzip2, fontconfig
+Filename: pool/multiverse/m/mplayer/mplayer_1.0~rc3+svn20090426-1ubuntu16.1_i386.deb
+Size: 3017760
+MD5sum: 825dad804b198ae888b07d10bb623bbd
+SHA1: d92bd77b5ed4c0aa2bf261825f8c58b9c784f4a0
+SHA256: bf98b395b676eb781523d8c0ab1cc48a79228b6fc796e917c833792a1fcb09f9
+Description: movie player for Unix-like systems
+ MPlayer plays most MPEG, VOB, AVI, Ogg/OGM, VIVO,
+ ASF/WMA/WMV, QT/MOV/MP4, FLI, RM, NuppelVideo, yuv4mpeg, FILM, RoQ, PVA files,
+ supported by many native, XAnim, RealPlayer, and Win32 DLL codecs. It can
+ also play VideoCD, SVCD, DVD, 3ivx, RealMedia, and DivX movies.
+ .
+ Another big feature of MPlayer is the wide range of supported output
+ drivers. It works with X11, Xv, DGA, OpenGL, SVGAlib, fbdev,
+ DirectFB, but also SDL (plus all its drivers) and some
+ low level card-specific drivers (for Matrox, 3Dfx and Radeon, Mach64
+ and Permedia3). Most of them support software or hardware scaling,
+ therefore allowing fullscreen display.  MPlayer is also able
+ to use some hardware MPEG decoder boards, such as the DVB
+ and DXR3/Hollywood+.
+ .
+ Not all of the upstream code is distributed in the source tarball.
+ See the README.Debian and copyright files for details.
+ .
+ Version without the GUI in GTK
+Homepage: http://www.mplayerhq.hu/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mplayer-dbg
+Priority: extra
+Section: multiverse/debug
+Installed-Size: 11124
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: mplayer
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Depends: mplayer, mencoder
+Recommends: ffmpeg-dbg
+Filename: pool/multiverse/m/mplayer/mplayer-dbg_1.0~rc3+svn20090426-1ubuntu16.1_i386.deb
+Size: 4430670
+MD5sum: 04c976a455d58d1e14a9752321e392a2
+SHA1: 2dbe46a561aa1dce888008caffd43058c3327a02
+SHA256: 09fa1c9488c4215b482a8a1e3d0b620c260dbebd1afd00c2cbb48035a187b37f
+Description: debugging symbols for MPlayer
+ This package contains the debugging symbols for MPlayer, a movie
+ player for Unix-like systems. You only need these if you want to
+ generate debugging backtraces.
+Homepage: http://www.mplayerhq.hu/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mplayer-doc
+Priority: extra
+Section: multiverse/graphics
+Installed-Size: 11920
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: all
+Source: mplayer
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Replaces: mplayer (<< 2:1.0~rc3+svn20090426-1)
+Recommends: mplayer
+Filename: pool/multiverse/m/mplayer/mplayer-doc_1.0~rc3+svn20090426-1ubuntu16.1_all.deb
+Size: 2224246
+MD5sum: 28d0c4e4f8933877dbd18c683607cd64
+SHA1: 4d9c7d43a2ff6643c272c946606a887e60c358c4
+SHA256: dfd50716efb1a7d42201fd6dd0347deb976019e3c4c18a05bcff71174d5e954f
+Description: documentation for MPlayer
+ This package contains the documentation for MPlayer, a movie player for
+ Unix-like systems.
+Homepage: http://www.mplayerhq.hu/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mplayer-gui
+Priority: optional
+Section: multiverse/video
+Installed-Size: 4684
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: mplayer
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Replaces: mplayer (<< 2:1.0~rc3+svn20090426-1ubuntu14), mplayer-doc (<< 2:1.0~rc3+svn20090426-1ubuntu14)
+Depends: mplayer-skin, mplayer, libaa1 (>= 1.4p5), libasound2 (>> 1.0.22), libatk1.0-0 (>= 1.29.3), libaudio2, libavcodec52 (>= 4:0.5.1-1) | libavcodec-extra-52 (>= 4:0.5.1-1), libavformat52 (>= 4:0.5.1-1) | libavformat-extra-52 (>= 4:0.5.1-1), libavutil49 (>= 4:0.5.1-1) | libavutil-extra-49 (>= 4:0.5.1-1), libc6 (>= 2.11), libcaca0 (>= 0.99.beta15-1), libcairo2 (>= 1.2.4), libcdparanoia0 (>= 3.10.2+debian), libdirectfb-1.2-0, libdvdread4, libenca0 (>= 1.9), libesd0 (>= 0.2.35), libfontconfig1 (>= 2.8.0), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:4.1.1), libgif4 (>= 4.1.4), libgl1-mesa-glx | libgl1, libglib2.0-0 (>= 2.12.0), libgtk2.0-0 (>= 2.8.0), libjack0 (>= 0.118+svn3796), libjpeg62, liblircclient0, liblzo2-2, libmp3lame0, libmpcdec3, libncurses5 (>= 5.6+20071006-3), libogg0 (>= 1.0rc3), libopenal1, libpango1.0-0 (>= 1.14.0), libpng12-0 (>= 1.2.13-4), libpostproc51 (>= 4:0.5.1-1) | libpostproc-extra-51 (>= 4:0.5.1-1), libpulse0 (>= 0.9.16), libsdl1.2debian (>= 1.2.10-1), libsmbclient (>= 3.0.24), libspeex1 (>= 1.2~beta3-1), libstdc++6 (>= 4.1.1), libsvga1, libswscale0 (>= 4:0.5.1-1) | libswscale-extra-0 (>= 4:0.5.1-1), libtheora0 (>= 0.0.0.alpha7.dfsg), libx11-6 (>= 0), libx264-85, libxext6 (>= 0), libxinerama1, libxt6, libxv1, libxvidcore4 (>= 1.2.2), libxvmc1, libxxf86dga1, libxxf86vm1, zlib1g (>= 1:1.1.4)
+Suggests: mplayer-doc, ttf-freefont, netselect | fping, bzip2, fontconfig
+Filename: pool/multiverse/m/mplayer/mplayer-gui_1.0~rc3+svn20090426-1ubuntu16.1_i386.deb
+Size: 2114102
+MD5sum: df7c9f7ef757e0eed2081ea9f3da3e9d
+SHA1: c6feabed8ffadd9098049b962ad6a1ba4676eeb3
+SHA256: 724be69a17f285213ebc9f91d9a36cfa602a6f03b75aa6cc35bfa87effb4d85e
+Description: movie player for Unix-like systems
+ MPlayer plays most MPEG, VOB, AVI, Ogg/OGM, VIVO,
+ ASF/WMA/WMV, QT/MOV/MP4, FLI, RM, NuppelVideo, yuv4mpeg, FILM, RoQ, PVA files,
+ supported by many native, XAnim, RealPlayer, and Win32 DLL codecs. It can
+ also play VideoCD, SVCD, DVD, 3ivx, RealMedia, and DivX movies.
+ .
+ Another big feature of MPlayer is the wide range of supported output
+ drivers. It works with X11, Xv, DGA, OpenGL, SVGAlib, fbdev,
+ DirectFB, but also SDL (plus all its drivers) and some
+ low level card-specific drivers (for Matrox, 3Dfx and Radeon, Mach64
+ and Permedia3). Most of them support software or hardware scaling,
+ therefore allowing fullscreen display.  MPlayer is also able
+ to use some hardware MPEG decoder boards, such as the DVB
+ and DXR3/Hollywood+.
+ .
+ Not all of the upstream code is distributed in the source tarball.
+ See the README.Debian and copyright files for details.
+Homepage: http://www.mplayerhq.hu/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mplayer-nogui
+Priority: extra
+Section: multiverse/graphics
+Installed-Size: 116
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: all
+Source: mplayer
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Depends: mplayer
+Filename: pool/multiverse/m/mplayer/mplayer-nogui_1.0~rc3+svn20090426-1ubuntu16.1_all.deb
+Size: 73212
+MD5sum: c6491987caeae206ba42a9c712129e09
+SHA1: d371c8c5bd902021cbdb8b4b437c922107bd1c11
+SHA256: 7197a3b4fdd0305503f9432cb56ae8b36b5109716ab2847b1a93205d1dd0a4ac
+Description: movie player for Unix-like systems (transitional package)
+ This is a transitional package to assist with upgrading from older
+ versions of mplayer. It can be safely removed.
+Homepage: http://www.mplayerhq.hu/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: mplayerthumbs
+Priority: optional
+Section: multiverse/graphics
+Installed-Size: 224
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Architecture: i386
+Source: kdemultimedia
+Version: 4:4.4.5-0ubuntu1
+Depends: kdebase-runtime (>= 4:4.4.5), kdelibs5 (>= 4:4.4.5), libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libqtcore4 (>= 4:4.6.1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.1.1), mplayer-nogui | mplayer
+Filename: pool/multiverse/k/kdemultimedia/mplayerthumbs_4.4.5-0ubuntu1_i386.deb
+Size: 53248
+MD5sum: de9dcf5fc113cfe4f4e7d4b03ddbc919
+SHA1: d26746678a926f1572e8a086e719dd4f47928cea
+SHA256: 32923a60a6430a6f3c4255fc44e7d3e785bc9cdbd4021eae3437018685539fb4
+Description: video thumbnail generator for KDE 4
+ MPlayerThumbs is a video thumbnail generator for KDE 4 file managers
+ like Dolphin and Konqueror.  It enables them to show preview images
+ of video files.
+ .
+ This package is part of the KDE 4 multimedia module.
+Homepage: http://www.kde.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: nspluginwrapper
+Priority: extra
+Section: multiverse/utils
+Installed-Size: 500
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Rob Andrews <rob@choralone.org>
+Architecture: i386
+Version: 1.2.2-0ubuntu6.10.04.1
+Depends: libatk1.0-0 (>= 1.29.3), libc6 (>= 2.7), libcairo2 (>= 1.2.4), libcurl3-gnutls (>= 7.16.2-1), libfontconfig1 (>= 2.8.0), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:4.1.1), libglib2.0-0 (>= 2.16.0), libgtk2.0-0 (>= 2.18.0), libpango1.0-0 (>= 1.14.0), libx11-6 (>= 0), libxt6
+Filename: pool/multiverse/n/nspluginwrapper/nspluginwrapper_1.2.2-0ubuntu6.10.04.1_i386.deb
+Size: 179280
+MD5sum: 174bbfc10000332cacd3db3e97f555fc
+SHA1: beae42db642f5c8378143c02750fc643b4080ad5
+SHA256: 062ba638e92e84434b26652786124953d9e1dc7b173db204512b6e14f09c8ff4
+Description: A wrapper to run Netscape plugins on other architectures
+ nspluginwrapper is an Open Source compatibility plugin for Netscape 4
+ (NPAPI) plugins. That is, it enables you to use plugins on platforms
+ they were not built for.
+ .
+ This package is built to run i386 plugins, since there are no known
+ binary-only plugins built for any other architecture.
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: ttf-mscorefonts-installer
+Priority: optional
+Section: multiverse/x11
+Installed-Size: 216
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Thijs Kinkhorst <thijs@debian.org>
+Architecture: all
+Source: msttcorefonts
+Version: 3.2ubuntu0.1
+Replaces: msttcorefonts (<< 2.6)
+Provides: msttcorefonts
+Depends: wget, cabextract, xfonts-utils, defoma, debconf (>= 0.5) | debconf-2.0
+Recommends: ttf-liberation, x-ttcidfont-conf
+Conflicts: msttcorefonts (<< 2.6)
+Filename: pool/multiverse/m/msttcorefonts/ttf-mscorefonts-installer_3.2ubuntu0.1_all.deb
+Size: 40218
+MD5sum: 3ee7b78959aa261b09dfb4af472b38b0
+SHA1: e525c55bdfd3bac55fdbe1775648857935034c86
+SHA256: 8576466a37571a2fdf782131f0c54ac02a5bab3f865515edf11ce38c4ceff026
+Description: Installer for Microsoft TrueType core fonts
+ This package allows for easy installation of the Microsoft True Type
+ Core Fonts for the Web including:
+ .
+   Andale Mono
+   Arial Black
+   Arial (Bold, Italic, Bold Italic)
+   Comic Sans MS (Bold)
+   Courier New (Bold, Italic, Bold Italic)
+   Georgia (Bold, Italic, Bold Italic)
+   Impact
+   Times New Roman (Bold, Italic, Bold Italic)
+   Trebuchet (Bold, Italic, Bold Italic)
+   Verdana (Bold, Italic, Bold Italic)
+   Webdings
+ .
+ You will need an Internet connection to download these fonts if you
+ don't already have them.
+ .
+ NOTE: the package ttf-liberation contains free variants of the Times,
+ Arial and Courier fonts. It's better to use those instead unless you
+ specifically need one of the other fonts from this package.
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: wine-gecko
+Priority: optional
+Section: multiverse/otherosfs
+Installed-Size: 64
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Scott Ritchie <scottritchie@ubuntu.com>
+Architecture: all
+Source: wine1.2
+Version: 1.2.2-0ubuntu2~lucid1
+Depends: wine1.2-gecko
+Filename: pool/multiverse/w/wine1.2/wine-gecko_1.2.2-0ubuntu2~lucid1_all.deb
+Size: 40496
+MD5sum: 67c3a9c30554dae28c90e6b1b07947d1
+SHA1: 822b557a4a9f7ede17f94899214614a49b129a7f
+SHA256: 08454736f5d919e5d08af77cc51fd9b9ca5db119020ca3010cbad78a2d227aa1
+Description: Microsoft Windows Compatibility Layer (dummy package)
+ This package is to ease upgrades for users of older Wine packages.
+ It can be safely removed.
+Homepage: http://www.winehq.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+

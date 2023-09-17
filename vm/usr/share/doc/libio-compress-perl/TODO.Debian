@@ -1,0 +1,6 @@
+remove transitional dummy packages after squeeze and close the following bugs:
+#542686
+#542691
+#542694
+#542696
+

@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# kvm-ok - check whether the CPU we're running on supports KVM acceleration
+# Copyright (C) 2008-2010 Canonical Ltd.
+#
+# Authors: Dustin Kirkland <kirkland@canonical.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3,
+# as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+set -e
+
+verdict() {
+	# Print verdict
+	if [ "$1" = "0" ]; then
+		echo "KVM acceleration can be used"
+		exit 0
+	else
+		echo "KVM acceleration can NOT be used"
+		exit 1
+	fi
+}
+
+# First, check cpu flags
+if egrep "^flags.*:.*(svm|vmx)" /proc/cpuinfo > /dev/null; then
+	echo "INFO: Your CPU supports KVM extensions"
+else
+	echo "INFO: Your CPU does not support KVM extensions"
+	verdict 1
+fi
+
+# Check for bios messages in dmesg
+# BUG: Checking dmesg is the best we can do in userspace at this time.
+#      Ideally, the kernel would improve it's reporting by setting a
+#      flag such as svm_disabled|vmx_disabled in /proc/cpuinfo's flags.
+if dmesg | grep -qs "kvm: disabled by bios"; then
+	echo "INFO: KVM is disabled by your BIOS"
+	echo "HINT: Enter your BIOS setup and enable Virtualization Technology (VT),"
+	echo "      and then hard poweroff/poweron your system"
+	verdict 1
+fi
+
+# Now, check that the device exists
+if [ -e /dev/kvm ]; then
+	echo "INFO: /dev/kvm exists"
+else
+	echo "INFO: /dev/kvm does not exist"
+	grep -qs "^flags.*:.*vmx" /proc/cpuinfo && brand="intel" || brand="amd"
+	echo "HINT: sudo modprobe kvm_$brand"
+	verdict 1
+fi
+
+verdict 0

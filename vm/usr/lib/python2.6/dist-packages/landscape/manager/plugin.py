@@ -1,0 +1,1 @@
+../../../../../share/pyshared/landscape/manager/plugin.py

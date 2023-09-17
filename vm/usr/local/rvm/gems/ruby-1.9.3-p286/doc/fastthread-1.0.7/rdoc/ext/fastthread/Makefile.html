@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Makefile - fastthread-1.0.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../ext/fastthread/Makefile.html">Makefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ConditionVariable.html">ConditionVariable</a>
+  
+    <li><a href="../../Mutex.html">Mutex</a>
+  
+    <li><a href="../../Queue.html">Queue</a>
+  
+    <li><a href="../../SizedQueue.html">SizedQueue</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>DESTDIR =  MAJOR = 1 MINOR = 9 TEENY = 1 PATCHLEVEL = 286 INSTALL =
+/usr/bin/install -c EXEEXT =  prefix =
+/usr/local/rvm/rubies/ruby-1.9.3-p286 ruby_install_name = ruby
+RUBY_INSTALL_NAME = ruby RUBY_SO_NAME = ruby exec = exec ruby_pc =
+ruby-1.9.pc PACKAGE = ruby BUILTIN_TRANSSRCS =  newline.c USE_RUBYGEMS =
+YES MANTYPE = doc NROFF = /usr/bin/nroff vendorhdrdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/vendor_ruby
+sitehdrdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1/site_ruby
+rubyhdrdir = /usr/local/rvm/rubies/ruby-1.9.3-p286/include/ruby-1.9.1
+UNIVERSAL_INTS =  UNIVERSAL_ARCHNAMES =  configure_args =  ‘–enable-shared’
+‘–disable-install-doc’ ‘–prefix=/usr/local/rvm/rubies/ruby-1.9.3-p286’
+‘–with-readline’ ‘–with-opt-dir=/usr’ ‘CFLAGS=-I/usr/local/rvm/usr/include’
+‘LDFLAGS=-L/usr/local/rvm/usr/lib’ vendordir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/vendor_ruby sitedir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/site_ruby ruby_version =
+1.9.1 sitearch = i686-linux arch = i686-linux RI_BASE_NAME = ri ridir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/ri rubylibprefix =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby MAKEFILES = <a
+href="Makefile.html">Makefile</a> THREAD_MODEL = pthread SYMBOL_PREFIX = 
+EXPORT_PREFIX =  COMMON_HEADERS =  COMMON_MACROS =  COMMON_LIBS =  MAINLIBS
+=  ENABLE_SHARED = yes DLDLIBS =  -lc SOLIBS = -lpthread -lrt -ldl -lcrypt
+-lm  LIBRUBYARG_SHARED = -Wl,-R
+-Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib
+-L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby LIBRUBYARG_STATIC =
+-Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib
+-L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby-static LIBRUBYARG =
+-Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.3-p286/lib
+-L/usr/local/rvm/rubies/ruby-1.9.3-p286/lib -lruby LIBRUBY =
+libruby.so.1.9.1 LIBRUBY_ALIASES = libruby.so.1.9 libruby.so LIBRUBY_SO =
+libruby.so.1.9.1 LIBRUBY_A = libruby-static.a RUBYW_INSTALL_NAME = 
+rubyw_install_name =  LIBRUBY_DLDFLAGS = -Wl,-soname,libruby.so.1.9
+LIBRUBY_LDSHARED = gcc -shared warnflags = -Wall -Wextra
+-Wno-unused-parameter -Wno-parentheses -Wno-long-long
+-Wno-missing-field-initializers -Werror=pointer-arith -Werror=write-strings
+-Werror=declaration-after-statement -Werror=implicit-function-declaration
+debugflags = -ggdb optflags = -O3 cxxflags =  -O3 -ggdb -Wall -Wextra
+-Wno-unused-parameter -Wno-parentheses -Wno-long-long
+-Wno-missing-field-initializers -Werror=pointer-arith -Werror=write-strings
+-Werror=declaration-after-statement -Werror=implicit-function-declaration
+cflags =  -O3 -ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses
+-Wno-long-long -Wno-missing-field-initializers -Werror=pointer-arith
+-Werror=write-strings -Werror=declaration-after-statement
+-Werror=implicit-function-declaration cppflags =  NULLCMD = : INSTALLDOC =
+nodoc CAPITARGET = nodoc RDOCTARGET = nodoc EXECUTABLE_EXTS =  ARCHFILE = 
+LIBRUBY_RELATIVE = no EXTOUT = .ext PREP = miniruby TEST_RUNNABLE = yes
+setup = Setup EXTSTATIC =  STRIP = strip -S -x TRY_LINK =  LIBPATHENV =
+LD_LIBRARY_PATH RPATHFLAG =  -Wl,-R%1$-s LIBPATHFLAG =  -L%1$-s LINK_SO = 
+LIBEXT = a DLEXT2 =  DLEXT = so LDSHAREDXX = g++ -shared LDSHARED = gcc
+-shared CCDLFLAGS = -fPIC STATIC =  ARCH_FLAG =  DLDFLAGS =  ALLOCA = 
+WERRORFLAG = -Werror CHDIR = cd -P RMALL = rm -fr RMDIRS = rmdir
+–ignore-fail-on-non-empty -p RMDIR = rmdir –ignore-fail-on-non-empty CP =
+cp RM = rm -f PKG_CONFIG = pkg-config DOXYGEN =  DOT =  MAKEDIRS =
+/bin/mkdir -p MKDIR_P = /bin/mkdir -p INSTALL_DATA = /usr/bin/install -c -m
+644 INSTALL_SCRIPT = /usr/bin/install -c INSTALL_PROGRAM = /usr/bin/install
+-c SET_MAKE =  LN_S = ln -s NM = nm DLLWRAP =  WINDRES =  OBJCOPY = objcopy
+OBJDUMP = objdump ASFLAGS =  AS = as AR = ar RANLIB = ranlib try_header = 
+COUTFLAG = -o  OUTFLAG = -o  CPPOUTFILE = -o conftest.i GNU_LD = yes GCC =
+yes EGREP = /bin/grep -E GREP = /bin/grep CPP = gcc -E CXXFLAGS =  -O3
+-ggdb -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long
+-Wno-missing-field-initializers -Werror=pointer-arith -Werror=write-strings
+-Werror=declaration-after-statement -Werror=implicit-function-declaration
+CXX = g++ OBJEXT = o CPPFLAGS =  -D_FILE_OFFSET_BITS=64  LDFLAGS = -L.
+-L/usr/local/rvm/usr/lib -rdynamic -Wl,-export-dynamic CFLAGS =
+-I/usr/local/rvm/usr/include -fPIC CC = gcc target_os = linux target_vendor
+= pc target_cpu = i686 target = i686-pc-linux-gnu host_os = linux-gnu
+host_vendor = pc host_cpu = i686 host = i686-pc-linux-gnu RUBYW_BASE_NAME =
+rubyw RUBY_BASE_NAME = ruby build_os = linux-gnu build_vendor = pc
+build_cpu = i686 build = i686-pc-linux-gnu RUBY_RELEASE_DATE = 2012-10-12
+RUBY_PROGRAM_VERSION = 1.9.3 BASERUBY = ruby target_alias =  host_alias = 
+build_alias =  LIBS = -lpthread -lrt -ldl -lcrypt -lm  ECHO_T =  ECHO_N =
+-n ECHO_C =  DEFS = -D_FILE_OFFSET_BITS=64 mandir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/man localedir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/locale libdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib psdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/doc/ruby pdfdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/doc/ruby dvidir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/doc/ruby htmldir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/doc/ruby infodir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/info docdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share/doc/ruby oldincludedir =
+/usr/include includedir = /usr/local/rvm/rubies/ruby-1.9.3-p286/include
+localstatedir = /usr/local/rvm/rubies/ruby-1.9.3-p286/var sharedstatedir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/com sysconfdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/etc datadir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share datarootdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/share libexecdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/libexec sbindir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/sbin bindir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/bin exec_prefix =
+/usr/local/rvm/rubies/ruby-1.9.3-p286 PACKAGE_URL =  PACKAGE_BUGREPORT = 
+PACKAGE_STRING =  PACKAGE_VERSION =  PACKAGE_TARNAME =  PACKAGE_NAME = 
+PATH_SEPARATOR = : SHELL = /bin/bash rubylibdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1 archdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/i686-linux sitelibdir
+= /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/site_ruby/1.9.1
+sitearchdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/site_ruby/1.9.1/i686-linux
+vendorlibdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/vendor_ruby/1.9.1
+vendorarchdir =
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/vendor_ruby/1.9.1/i686-linux
+topdir = /usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/i686-linux</p>
+
+<p>RUBYARCHDIR =
+/usr/local/rvm/gems/ruby-1.9.3-p286/gems/fastthread-1.0.7/lib$(target_prefix)</p>
+
+<p>default:</p>
+
+<p>install:</p>
+
+<pre>mkdir -p $(RUBYARCHDIR)
+touch $(RUBYARCHDIR)/fastthread.rb</pre>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

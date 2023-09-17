@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.presentation-flat-xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODP presentation (Flat XML)</comment>
+  <comment xml:lang="ca">Presentació ODP (XML pla)</comment>
+  <comment xml:lang="en_GB">ODP presentation (Flat XML)</comment>
+  <comment xml:lang="es">Presentación ODP (XML plano)</comment>
+  <comment xml:lang="fr">présentation ODP (XML plat)</comment>
+  <comment xml:lang="hu">ODP-prezentáció (egyszerű XML)</comment>
+  <comment xml:lang="it">Presentazione ODP (XML semplice)</comment>
+  <comment xml:lang="ja">ODP プレゼンテーション (Flat XML)</comment>
+  <comment xml:lang="kk">ODP презентациясы (Тек XML)</comment>
+  <comment xml:lang="oc">presentacion ODP (XML plat)</comment>
+  <comment xml:lang="pt_BR">Apresentação ODP  (XML plano)</comment>
+  <comment xml:lang="ro">Prezentare ODP (XML simplu)</comment>
+  <comment xml:lang="uk">презентація ODP (Flat XML)</comment>
+  <acronym>FODP</acronym>
+  <expanded-acronym>OpenDocument Presentation (Flat XML)</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-presentation"/>
+  <glob pattern="*.fodp"/>
+</mime-type>

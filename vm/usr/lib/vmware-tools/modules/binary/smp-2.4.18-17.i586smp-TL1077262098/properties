@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-17smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Turbolinux
+UtsMachine i386

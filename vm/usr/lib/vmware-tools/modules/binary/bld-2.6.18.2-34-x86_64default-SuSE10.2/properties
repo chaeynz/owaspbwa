@@ -1,0 +1,7 @@
+UtsRelease 2.6.18.2-34-default
+UtsVersion #1 Mon Nov 27 18:17:43 UTC 2006
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment openSuSE10.2, 2.6.18.2-34, x86_64, default

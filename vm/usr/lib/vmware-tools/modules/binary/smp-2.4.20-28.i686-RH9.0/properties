@@ -1,0 +1,6 @@
+UtsRelease 2.4.20-28.9smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Red Hat 9.0
+UtsMachine i386

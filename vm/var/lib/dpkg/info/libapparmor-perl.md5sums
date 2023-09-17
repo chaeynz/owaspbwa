@@ -1,0 +1,5 @@
+122ea3c0526337132645f3b506817812  usr/lib/perl5/auto/LibAppArmor/LibAppArmor.so
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/perl5/auto/LibAppArmor/LibAppArmor.bs
+95a589176bb1798a9828ead4e67f147f  usr/lib/perl5/LibAppArmor.pm
+343183cf2405c2948c0a4b16a5d39c25  usr/share/doc/libapparmor-perl/copyright
+8db51a8c8576363a3f01c8d58127956d  usr/share/doc/libapparmor-perl/changelog.Debian.gz

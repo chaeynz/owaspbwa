@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::Standalone::RuntimeInstaller - passenger-4.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/standalone/runtime_installer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-after_install">#after_install</a>
+    
+    <li><a href="#method-i-before_install">#before_install</a>
+    
+    <li><a href="#method-i-dependencies">#dependencies</a>
+    
+    <li><a href="#method-i-run_steps">#run_steps</a>
+    
+    <li><a href="#method-i-users_guide">#users_guide</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions.html">PhusionPassenger::Rails3Extensions</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../../Exception.html">Exception</a>
+  
+    <li><a href="../../GC.html">GC</a>
+  
+    <li><a href="../../IO.html">IO</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::Standalone::RuntimeInstaller</h1>
+
+  <div id="description" class="description">
+    
+<p>Installs the Phusion Passenger <a href="../Standalone.html">Standalone</a>
+runtime by downloading and compiling Nginx, compiling the Phusion Passenger
+support binaries, and storing the results in the designated directories.
+This installer is entirely non-interactive.</p>
+
+<p>The following option must be given:</p>
+<ul><li>
+<p>targets: An array containing at least one of:</p>
+<ul><li>
+<p>:nginx - to indicate that you want to compile and install Nginx.</p>
+</li><li>
+<p>:support_binaries - to indicate that you want to compile and install the</p>
+
+<pre>Phusion Passenger support binary files.</pre>
+</li><li>
+<p>:ruby - to indicate that you want to compile and install the Ruby</p>
+
+<pre>extension files.</pre>
+</li></ul>
+</li></ul>
+
+<p>If ‘targets’ contains :nginx, then you must also specify these options:</p>
+<ul><li>
+<p>nginx_dir: Nginx will be installed into this directory.</p>
+</li><li>
+<p>support_dir: Path to the Phusion Passenger support binary files.</p>
+</li><li>
+<p>nginx_version (optional): The Nginx version to download. If not given then
+a hardcoded version number will be used.</p>
+</li><li>
+<p>nginx_tarball (optional): The location to the Nginx tarball. This tarball
+<strong>must</strong> contain the Nginx version as specified by
+<code>version</code>. If <code>tarball</code> is given then Nginx will not
+be downloaded; it will be extracted from this tarball instead.</p>
+</li></ul>
+
+<p>If targets contains ‘:support_binaries’, then you must also specify this
+options:</p>
+<ul><li>
+<p>support_dir: The support binary files will be installed here.</p>
+</li></ul>
+
+<p>If targets contains ‘:ruby’, then you must also specify this option:</p>
+<ul><li>
+<p>ruby_dir: The support binary files will be installed here.</p>
+</li></ul>
+
+<p>Other optional options:</p>
+<ul><li>
+<p>download_binaries: If true then <a
+href="RuntimeInstaller.html">RuntimeInstaller</a> will attempt to download
+precompiled Nginx binaries and precompiled Phusion Passenger support binary
+files from the network, if they exist for the current platform. The default
+is false.</p>
+</li><li>
+<p>binaries_url_root: The URL on which to look for the aforementioned
+binaries. The default points to the Phusion website.</p>
+</li></ul>
+
+<p>Please note that <a href="RuntimeInstaller.html">RuntimeInstaller</a> will
+try to avoid compiling/installing things that don’t need to be
+compiled/installed. This is done by checking whether some key files exist,
+and concluding that something doesn’t need to be compiled/installed if they
+do. This quick check is of course not perfect; if you want to force a
+recompilation/reinstall then you should remove <code>nginx_dir</code> and
+<code>support_dir</code> before starting this installer.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-after_install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_install</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="after_install-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/standalone/runtime_installer.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_install</span>
+        <span class="ruby-keyword">super</span>
+        <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">remove_entry_secure</span>(<span class="ruby-ivar">@working_dir</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@working_dir</span>
+        <span class="ruby-ivar">@plugin</span>.<span class="ruby-identifier">call_hook</span>(<span class="ruby-value">:runtime_installer_cleanup</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@plugin</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_install-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_install-method -->
+
+    
+      <div id="method-i-before_install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_install</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="before_install-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/standalone/runtime_installer.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_install</span>
+        <span class="ruby-keyword">super</span>
+        <span class="ruby-ivar">@plugin</span>.<span class="ruby-identifier">call_hook</span>(<span class="ruby-value">:runtime_installer_start</span>, <span class="ruby-keyword">self</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@plugin</span>
+        <span class="ruby-ivar">@working_dir</span> = <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">mktmpdir</span>(<span class="ruby-string">&quot;passenger.&quot;</span>, <span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">tmpexedir</span>)
+        <span class="ruby-ivar">@download_binaries</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@download_binaries</span>)
+        <span class="ruby-ivar">@binaries_url_root</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">STANDALONE_BINARIES_URL_ROOT</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_install-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_install-method -->
+
+    
+      <div id="method-i-dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dependencies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dependencies-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/standalone/runtime_installer.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dependencies</span>
+        <span class="ruby-identifier">specs</span> = [
+                <span class="ruby-string">'depcheck_specs/compiler_toolchain'</span>,
+                <span class="ruby-string">'depcheck_specs/ruby'</span>,
+                <span class="ruby-string">'depcheck_specs/gems'</span>,
+                <span class="ruby-string">'depcheck_specs/libs'</span>,
+                <span class="ruby-string">'depcheck_specs/utilities'</span>
+        ]
+        <span class="ruby-identifier">ids</span> = [
+                <span class="ruby-string">'gcc'</span>,
+                <span class="ruby-string">'g++'</span>,
+                <span class="ruby-string">'gmake'</span>,
+                <span class="ruby-string">'download-tool'</span>,
+                <span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">passenger_needs_ruby_dev_header?</span> <span class="ruby-operator">?</span> <span class="ruby-string">'ruby-dev'</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+                <span class="ruby-string">'ruby-openssl'</span>,
+                <span class="ruby-string">'rubygems'</span>,
+                <span class="ruby-string">'rake'</span>,
+                <span class="ruby-string">'rack'</span>,
+                <span class="ruby-string">'libcurl-dev'</span>,
+                <span class="ruby-string">'openssl-dev'</span>,
+                <span class="ruby-string">'zlib-dev'</span>,
+                <span class="ruby-string">'pcre-dev'</span>,
+                <span class="ruby-string">'daemon_controller &gt;= 1.1.0'</span>
+        ].<span class="ruby-identifier">compact</span>
+        <span class="ruby-keyword">return</span> [<span class="ruby-identifier">specs</span>, <span class="ruby-identifier">ids</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dependencies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dependencies-method -->
+
+    
+      <div id="method-i-run_steps" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_steps</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run_steps-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/standalone/runtime_installer.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_steps</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@support_dir</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@nginx_dir</span>
+                <span class="ruby-identifier">show_welcome_screen</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">check_dependencies</span>(<span class="ruby-keyword">false</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>)
+        <span class="ruby-identifier">puts</span>
+        
+        <span class="ruby-identifier">phase</span> = <span class="ruby-value">1</span>
+        <span class="ruby-identifier">total_phases</span> = <span class="ruby-value">0</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">binary_support_files_should_be_installed?</span>
+                <span class="ruby-identifier">check_whether_we_can_write_to</span>(<span class="ruby-ivar">@support_dir</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">total_phases</span> <span class="ruby-operator">+=</span> <span class="ruby-value">4</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ruby_extension_should_be_installed?</span>
+                <span class="ruby-identifier">check_whether_we_can_write_to</span>(<span class="ruby-ivar">@ruby_dir</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">total_phases</span> <span class="ruby-operator">+=</span> <span class="ruby-value">2</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">nginx_needs_to_be_installed?</span>
+                <span class="ruby-identifier">check_whether_we_can_write_to</span>(<span class="ruby-ivar">@nginx_dir</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-identifier">total_phases</span> <span class="ruby-operator">+=</span> <span class="ruby-value">4</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">binary_support_files_should_be_installed?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">should_download_binaries?</span>
+                <span class="ruby-identifier">download_and_extract_binary_support_files</span>(<span class="ruby-ivar">@support_dir</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>, <span class="ruby-string">&quot;Extracting Passenger binaries...&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ruby_extension_should_be_installed?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">should_download_binaries?</span>
+                <span class="ruby-identifier">download_and_extract_ruby_extension</span>(<span class="ruby-ivar">@ruby_dir</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>, <span class="ruby-string">&quot;Extracting Ruby extension...&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">nginx_needs_to_be_installed?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">should_download_binaries?</span>
+                <span class="ruby-identifier">download_and_extract_nginx_binaries</span>(<span class="ruby-ivar">@nginx_dir</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>, <span class="ruby-string">&quot;Extracting Nginx binaries...&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">nginx_needs_to_be_installed?</span>
+                <span class="ruby-identifier">nginx_source_dir</span> = <span class="ruby-identifier">download_and_extract_nginx_sources</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">phase</span>, <span class="ruby-identifier">total_phases</span>, <span class="ruby-string">&quot;Extracting...&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">phase</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">nginx_source_dir</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-identifier">puts</span>
+                        <span class="ruby-identifier">show_possible_solutions_for_download_and_extraction_problems</span>
+                        <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ruby_extension_should_be_installed?</span>
+                <span class="ruby-identifier">phase</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">install_ruby_extension</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">subphase</span>, <span class="ruby-identifier">status_text</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">phase</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">subphase</span>, <span class="ruby-identifier">total_phases</span>, <span class="ruby-identifier">status_text</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">binary_support_files_should_be_installed?</span>
+                <span class="ruby-identifier">install_binary_support_files</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">subphase</span>, <span class="ruby-identifier">status_text</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">subphase</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                                <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">phase</span>, <span class="ruby-identifier">total_phases</span>, <span class="ruby-identifier">status_text</span>)
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">phase</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">phase</span> <span class="ruby-operator">+</span> <span class="ruby-value">3</span>, <span class="ruby-identifier">total_phases</span>, <span class="ruby-identifier">status_text</span>)
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">phase</span> <span class="ruby-operator">+=</span> <span class="ruby-value">4</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">nginx_needs_to_be_installed?</span>
+                <span class="ruby-identifier">install_nginx_from_source</span>(<span class="ruby-identifier">nginx_source_dir</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">status_text</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">show_progress</span>(<span class="ruby-identifier">progress</span>, <span class="ruby-identifier">total</span>, <span class="ruby-identifier">phase</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">phase</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">total_phases</span>, <span class="ruby-identifier">status_text</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">phase</span> <span class="ruby-operator">+=</span> <span class="ruby-value">3</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-identifier">puts</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;green&gt;&lt;b&gt;All done!&lt;/b&gt;&lt;/green&gt;&quot;</span>
+        <span class="ruby-identifier">puts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_steps-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run_steps-method -->
+
+    
+      <div id="method-i-users_guide" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users_guide</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="users_guide-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/standalone/runtime_installer.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">users_guide</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{PhusionPassenger.doc_dir}/Users guide Standalone.html&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- users_guide-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- users_guide-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

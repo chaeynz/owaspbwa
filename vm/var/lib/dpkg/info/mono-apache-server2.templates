@@ -1,0 +1,35 @@
+Template: monoserver2/monoserver2_restartapache
+Type: boolean
+Default: true
+Description: Let mono-apache-server2 restart Apache?
+ The Debian version of mono-apache-server2 includes a
+ mono-server2-update script that creates a configuration file for
+ apache to start the ASP.NET applications, and mono-server2-update can
+ restart apache if there's a new configuration file
+ (/etc/mono-server2/mono-server2-hosts.conf). If this is true, then apache will be restarted when there is a new mono-server-hosts.conf file.
+Description-cs.UTF-8: Má mono-apache-server2 restartovat Apache?
+ mono-apache-server2 v Debianu obsahuje skript mono-server2-update, který slouží pro vytvoření konfiguračního souboru pro Apache, aby mohl Apache spouštět aplikace v ASP.NET. Skript mono-server2-update umí rozpoznat, zda je vytvořen nový konfigurační soubor /etc/mono-server2/mono-server2-hosts.conf a případně  restartovat Apache, aby se změny projevily. Chcete restartovat Apache v případě nového konfiguračního souboru mono-server-hosts.conf?
+Description-de.UTF-8: Soll mono-apache-server2 Apache neustarten?
+ Die Debian-Version von mono-apache-server2 enthält ein Skript mono-server2-update, das eine Konfigurationsdatei für Apache erstellt, um die ASP.NET-Anwendungen zu starten und mono-server2-update kann Apache neustarten, falls es eine neue Konfigurationsdatei (/etc/mono-server2/mono-server2-hosts.conf) gibt. Falls dies stimmt, dann wird Apache neu gestartet, wenn es eine neue mono-server-hosts.conf-Datei gibt.
+Description-es.UTF-8: ¿Desea permitir a mono-apache-server reiniciar Apache?
+ La versión debian de mono-apache-server contiene el script «mono-server-update» que crea un archivo de configuración para apache cuando se inician aplicaciones de ASP.NET, y «mono-server-update» puede reiniciar apache si hay un nuevo archivo de configuración («/etc/mono-server/mono-server-host.conf»). Si esto es correcto, apache se reiniciará cuando haya un nuevo archivo de configuración «mono-server-hosts.conf».
+Description-eu.UTF-8: Utzi mono-apache-server2-ri Apache berrabiarazten?
+ Debianeko mono-apache-server2 bertsioak apache-rentzat konfigurazio fitxategi bat sortzen duen mono-server2-update script-a dakar, ASP.NET aplikazioak abiarazteko. Script honek apache berrabiaraz dezake konfigurazio fitxategi berria baldin badago (/etc/mono-server2/mono-server2-hosts.conf). Hau onartzen baduzu, apache berrabiaraziko da mono-server-hosts.conf fitxategi berri bat dagoenean.
+Description-fi.UTF-8: Saako mono-apache-server2 käynnistää Apachen uudelleen?
+ Paketin mono-apache-server2 Debian-versio sisältää komentosarjan mono-server2-update, joka luo Apachelle asetustiedoston ASP.NET-ohjelmien käynnistämistä varten. Komentosarja mono-server2-update voi käynnistää Apachen uudelleen, kun asetustiedosto (/etc/mono-server2/mono-server2-hosts.conf) uudistuu. Valitse tämä, jos haluat, että Apache käynnistetään tällöin uudelleen.
+Description-fr.UTF-8: Faut-il laisser mono-apache-server2 redémarrer Apache ?
+ La version Debian de mono-apache-server2 comporte le script mono-server2-update qui crée un fichier de configuration pour Apache, servant à lancer les applications ASP.NET. Ce script peut redémarrer Apache s'il existe un nouveau fichier de configuration /etc/mono-server2/mono-server2-hosts.conf.
+Description-ja.UTF-8: mono-apache-server2 によって Apache を再起動させますか?
+ Debian 版の mono-apache-server2 は、apache で ASP.NET アプリケーションを起動させるための設定ファイルを作成する mono-server2-update スクリプトを含んでおり、新しい設定ファイル (/etc/mono-server2/mono-server-hosts.conf) がある場合には mono-server2-update は apache を再起動できます。これを有効にすると、新しい mono-server-hosts.conf ファイルがある場合に apache が再起動されます。
+Description-nl.UTF-8: Wilt u mono-apache-server2 Apache laten herstarten?
+ De Debian-versie van mono-apache-server2 bevat het script mono-server2-update. Dit script maakt een configuratiebestand aan voor apache dat de ASP.NET-applicaties start, en kan apache herstarten als er een nieuw configuratiebestand is (/etc/mono-server2/mono-server2-hosts.conf). Als u hier aanvaard wordt apache herstart wanneer er een nieuw 'mono-server-hosts.conf'-bestand aanwezig is.
+Description-pt.UTF-8: Permitir que o mono-apache-server2 reinicie o Apache?
+ A versão Debian do mono-apache-server2 inclui um script mono-server-update que cria um ficheiro de configuração para o apache iniciar as aplicações ASP.NET, e o mono-server-update pode reiniciar o apache se existir um novo ficheiro de configuração (/etc/mono-server/mono-server2-hosts.conf). Se isto for verdade, então o apache irá ser reiniciado quando existir um novo ficheiro mono-server-hosts.conf.
+Description-ru.UTF-8: Позволять mono-apache-server2 перезапускать Apache?
+ Debian-версия mono-apache-server2 включает сценарий mono-server2-update, который создаёт файл настройки apache для запуска приложений ASP.NET, а mono-server2-update позволяет перезапускать apache, если появляется новый файл настройки (/etc/mono-server2/mono-server2-hosts.conf). Если вы ответите утвердительно, то apache будет перезапущен при появлении нового файла mono-server-hosts.conf.
+Description-sl.UTF-8: Dovolim ponovni zagon Apache zaradi mono-apache-server2?
+ Debian-ova verzija mono-apache-server2 vsebuje mono-server2-update skripto, ki ustvari konfiguracijsko datoteko za apache za zagon ASP.NET aplikacij, in mono-server2-update, ki lahko resetira apache v primeru nove oziroma spremenjene konfiguracijske datoteke (/etc/mono-server2/mono-server2-hosts.conf). V tem primeru je nato apache resetiran, ko so novosti v konfiguracijski datoteki
+Description-sv.UTF-8: Ska mono-apache-server2 starta om Apache?
+ Debian-versionen av mono-apache-server2 inkluderar ett skript, mono-server2-update som skapar en konfigurationsfil för apache för att starta ASP.NET-applikationer. Skriptet mono-server2-update kan starta om Apache om det finns en ny konfigurationsfil (/etc/mono-server/mono-server2-hosts.conf). Vill du starta om Apache om det finns en ny mono-server-hosts2.conf fil?
+Description-vi.UTF-8: Cho phép mono-apache-server2 khởi chạy lại Apache ?
+ Phiên bản Debian của trình phục vụ mono-apache-server2 bao gồm một văn lệnh nâng cấp mono-server2-update mà tạo một tập tin cấu hình cho apache để khởi chạy các ứng dụng ASP.NET, và mono-server2-update cũng có thể khởi chạy lại apache nếu có một tập tin cấu hình mới (/etc/mono-server2/mono-server2-hosts.conf). Có thì apache được khởi chạy lại khi nào có một tập tin cấu hình mono-server-hosts mới.

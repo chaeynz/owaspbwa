@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmysqlclient16
+/usr/share/doc/libmysqlclient16/copyright
+/usr/share/doc/libmysqlclient16/EXCEPTIONS-CLIENT.gz
+/usr/share/doc/libmysqlclient16/changelog.Debian.gz
+/usr/share/doc/libmysqlclient16/changelog.gz
+/usr/lib
+/usr/lib/libmysqlclient.so.16.0.0
+/usr/lib/libmysqlclient_r.so.16.0.0
+/usr/lib/libmysqlclient.so.16
+/usr/lib/libmysqlclient_r.so.16

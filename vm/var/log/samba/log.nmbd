@@ -1,0 +1,45 @@
+[2023/09/14 17:01:31,  0] nmbd/nmbd.c:854(main)
+  nmbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/14 23:56:46,  0] nmbd/nmbd.c:854(main)
+  nmbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/14 23:57:09,  0] nmbd/nmbd_become_lmb.c:395(become_local_master_stage2)
+  *****
+  
+  Samba name server OWASPBWA is now a local master browser for workgroup WORKGROUP on subnet 10.55.0.14
+  
+  *****
+[2023/09/15 00:04:26,  0] nmbd/nmbd.c:71(terminate)
+  Got SIGTERM: going down...
+[2023/09/15 00:04:47,  0] nmbd/nmbd.c:854(main)
+  nmbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 00:05:11,  0] nmbd/nmbd_become_lmb.c:395(become_local_master_stage2)
+  *****
+  
+  Samba name server OWASPBWA is now a local master browser for workgroup WORKGROUP on subnet 10.55.0.14
+  
+  *****
+[2023/09/15 00:29:35,  0] nmbd/nmbd.c:71(terminate)
+  Got SIGTERM: going down...
+[2023/09/15 14:28:29,  0] nmbd/nmbd.c:854(main)
+  nmbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 14:28:54,  0] nmbd/nmbd_become_lmb.c:395(become_local_master_stage2)
+  *****
+  
+  Samba name server OWASPBWA is now a local master browser for workgroup WORKGROUP on subnet 10.55.0.14
+  
+  *****
+[2023/09/15 14:44:31,  0] nmbd/nmbd.c:71(terminate)
+  Got SIGTERM: going down...
+[2023/09/15 14:44:53,  0] nmbd/nmbd.c:854(main)
+  nmbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 14:45:18,  0] nmbd/nmbd_become_lmb.c:395(become_local_master_stage2)
+  *****
+  
+  Samba name server OWASPBWA is now a local master browser for workgroup WORKGROUP on subnet 10.55.0.14
+  
+  *****

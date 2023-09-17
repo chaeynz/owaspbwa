@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.wagon</groupId>
+	<artifactId>wagon-ssh</artifactId>
+	<version>1.0-beta-6</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.wagon</groupId>
+		<artifactId>wagon-providers</artifactId>
+		<version>1.0-beta-6</version>
+	</parent>
+	<properties>
+		<debian.originalVersion>1.0-beta-6</debian.originalVersion>
+		<debian.package>libwagon-java</debian.package>
+	</properties>
+	
+	<name>Maven Wagon SSH Provider</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.jcraft</groupId>
+			<artifactId>jsch</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-ssh-common</artifactId>
+		</dependency>
+	</dependencies>
+</project>

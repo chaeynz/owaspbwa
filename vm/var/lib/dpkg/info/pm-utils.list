@@ -1,0 +1,6 @@
+/etc
+/etc/pm
+/etc/pm/config.d
+/etc/pm/config.d/00sleep_module
+/etc/logrotate.d
+/etc/logrotate.d/pm-utils

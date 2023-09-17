@@ -1,0 +1,16 @@
+09dbc3702038b30f3ca58e1a59f4cf90  usr/share/python-support/private/movemodules
+2fd67e8fc0e3dbcf4e8f5ce86dfc497f  usr/share/python-support/private/parseversions
+03c4c0943b0254ce80dddc706c9cd2ea  usr/share/python-support/private/pysupport.py
+a088b88deb941befa0217bc2f7983da7  usr/share/python-support/python-support.private
+d686d881440a0c687d38ba53cfb04bdd  usr/share/doc/python-support/copyright
+c11e02e18b632af5cc26b6bb8b312473  usr/share/doc/python-support/README.gz
+29f59e14c832aebef00c9627f91ad76e  usr/share/doc/python-support/changelog.gz
+823645c0b14e0d2fe7c44d6a6ace0308  usr/share/man/man8/update-python-modules.8.gz
+43d00ef247b49962683b78be9467f7f1  usr/share/man/man1/dh_pysupport.1.gz
+6c65050582d45c9162e0e36fb5f4b151  usr/share/debhelper/autoscripts/postinst-python-support
+d4ad28aa5da07dfbf1899a25257e7bd4  usr/share/debhelper/autoscripts/prerm-python-support
+ae054baff5c7bfa356621f3189c47407  usr/share/python/runtime.d/python-support.rtinstall
+54bd66249464983c1d51095cfbbd937d  usr/share/python/runtime.d/python-support.rtremove
+7b25e735d75102581ceb5cfdefa9dce4  usr/share/python/runtime.d/python-support.rtupdate
+8df8a9135aa51ecb524204d289b13945  usr/sbin/update-python-modules
+c00c8efec921999aa7faabc375123399  usr/bin/dh_pysupport

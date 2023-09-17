@@ -1,0 +1,6 @@
+UtsRelease 2.4.20-13.8
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Red Hat 8.0
+UtsMachine i386

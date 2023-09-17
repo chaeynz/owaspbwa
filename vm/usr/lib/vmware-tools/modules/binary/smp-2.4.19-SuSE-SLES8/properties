@@ -1,0 +1,7 @@
+UtsRelease 2.4.19-4GB-SMP
+UtsVersion #1 SMP Mon Oct 21 18:44:17 UTC 2002
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment SuSE SLES 8 smp with 2.4.19 kernel
+UtsMachine i386

@@ -1,0 +1,4 @@
+unix
+winbind
+smbpasswd-migrate
+consolekit

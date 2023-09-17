@@ -1,0 +1,33 @@
+This module contains the Java Access Bridge for GNOME, 
+which connects the built-in accessibility support in
+Java Swing apps to the GNOME Accessibility framework,
+specifically the Assistive Technology Service Provider
+Interface (AT-SPI).   Version 1.26.2
+
+Contents:
+
+bridge: directory contains the Java Bridge component which is 
+        automatically loaded into each JVM invocation because 
+        of an entry in the accessibility.properties file in 
+        $JRE_HOME/lib.
+
+        ($JRE_HOME is usually $JDK_HOME/jre).
+
+idlgen: directory into which the auto-generated java wrappers
+        for the org.gnome.Accessibility and org.gnome.Bonobo
+        IDL are written by the Java IDL compiler, 'idlj'.
+
+impl:   directory where the implementation code for the 
+        Java Accessibility Bridge for GNOME resides.  This
+        code implements the Java Accessibility API AT-SPI
+        interfaces on behalf of Java programs which implement
+        the Java Accessibility API (JAAPI) internally; 
+	i.e. this implementation code wraps the JAAPI 
+        accessibility implementation and exports it via CORBA
+	to the bonobo-based GNOME Accessibility
+	Assistive Technology Service Provider Interface (AT-SPI).
+
+test:   (nothing here yet).
+
+
+

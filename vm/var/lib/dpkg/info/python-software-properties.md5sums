@@ -1,0 +1,16 @@
+39784dfc442d3232b91c6da22450d134  usr/bin/add-apt-repository
+6ff0bedc540baa621b8ef9ccc212039b  usr/share/doc/python-software-properties/README
+dd5bbca91225f9394188adfce26242ba  usr/share/doc/python-software-properties/TODO
+d452acfcbbca9f831a00db7deb82bbab  usr/share/doc/python-software-properties/AUTHORS
+e5a659f4838efb7a4894871956e4457f  usr/share/doc/python-software-properties/BUGS
+c4a52dbcd4545f975c9789c8356a3746  usr/share/doc/python-software-properties/copyright
+35cc5068e9cc0852f7f636a316fde50e  usr/share/doc/python-software-properties/changelog.gz
+bc54598d4c413e2a2e521dd2d7cee7e3  usr/share/man/man1/add-apt-repository.1.gz
+30a7e616c5680588af4142d33cd062a8  usr/share/pyshared/softwareproperties/__init__.py
+7896486969d9704fec8d85c95b309a6f  usr/share/pyshared/softwareproperties/AptAuth.py
+47f553265d869f16bd74ce8e0aff6572  usr/share/pyshared/softwareproperties/CountryInformation.py
+2362d74d21a1af443b44595abe3315b6  usr/share/pyshared/softwareproperties/distro.py
+925bf77963f85453ae9167c8e18fcafd  usr/share/pyshared/softwareproperties/MirrorTest.py
+f711a449407c2c67e6230afd1b3d3adc  usr/share/pyshared/softwareproperties/ppa.py
+0aeef35791e9d23dcaf1547cd877da12  usr/share/pyshared/softwareproperties/SoftwareProperties.py
+55d40911ed50b5851a97a13b2b9514b0  usr/share/pyshared-data/python-software-properties

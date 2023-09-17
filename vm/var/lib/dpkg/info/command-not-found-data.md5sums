@@ -1,0 +1,10 @@
+46d953e5f54ca8f7b3c9f0eb34367daf  usr/share/command-not-found/programs.d/all-main.db
+29f7737258e6859092d056162aa8043d  usr/share/command-not-found/programs.d/all-multiverse.db
+fe068758b7e1a723a96e901c4f8c7b4a  usr/share/command-not-found/programs.d/all-universe.db
+16468ea926f44d033e7e437aef9d50a7  usr/share/command-not-found/programs.d/i386-main.db
+eca3eb57337f8e2e863b19bb4286cc67  usr/share/command-not-found/programs.d/i386-multiverse.db
+84c672b641a15f26d6b9ffd273e42165  usr/share/command-not-found/programs.d/i386-restricted.db
+f2b29fab040f21d2a8b1f7d972efe016  usr/share/command-not-found/programs.d/i386-universe.db
+36c4f7cce1d551721ce818b5c599650c  usr/share/command-not-found/priority.txt
+8789645b5ee879f1b4e14c9f03a7d39a  usr/share/doc/command-not-found-data/copyright
+94d4e623793367eab2fd592bc2fbd646  usr/share/doc/command-not-found-data/changelog.gz

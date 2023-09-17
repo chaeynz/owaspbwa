@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-xz">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XZ archive</comment>
+  <comment xml:lang="bg">Архив — XZ</comment>
+  <comment xml:lang="ca">Arxiu XZ</comment>
+  <comment xml:lang="cs">Archiv XZ</comment>
+  <comment xml:lang="de">XZ-Archiv</comment>
+  <comment xml:lang="en_GB">XZ archive</comment>
+  <comment xml:lang="es">archivo XZ</comment>
+  <comment xml:lang="eu">XZ artxiboa</comment>
+  <comment xml:lang="fr">archive XZ</comment>
+  <comment xml:lang="hu">XZ-archívum</comment>
+  <comment xml:lang="it">Archivio XZ</comment>
+  <comment xml:lang="ja">XZ アーカイブ</comment>
+  <comment xml:lang="kk">XZ архиві</comment>
+  <comment xml:lang="lt">XZ archyvas</comment>
+  <comment xml:lang="nl">XZ-archief</comment>
+  <comment xml:lang="oc">archiu XZ</comment>
+  <comment xml:lang="pl">Archiwum XZ</comment>
+  <comment xml:lang="pt_BR">Arquivo XZ</comment>
+  <comment xml:lang="ro">Arhivă XZ</comment>
+  <comment xml:lang="ru">архив XZ</comment>
+  <comment xml:lang="sv">XZ-arkiv</comment>
+  <comment xml:lang="uk">архів XZ</comment>
+  <generic-icon name="package-x-generic"/>
+  <glob pattern="*.xz"/>
+</mime-type>

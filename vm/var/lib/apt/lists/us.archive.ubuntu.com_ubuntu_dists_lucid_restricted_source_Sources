@@ -1,0 +1,207 @@
+Package: bcmwl
+Binary: bcmwl-kernel-source, bcmwl-modaliases
+Version: 5.60.48.36+bdcom-0ubuntu3
+Priority: optional
+Section: restricted/admin
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Alberto Milone <alberto.milone@canonical.com>
+Build-Depends: debhelper (>= 5), cdbs
+Architecture: i386 amd64 lpia
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/restricted/b/bcmwl
+Files:
+ f8b87dbd126cba47df89fcb24b51d634 1261 bcmwl_5.60.48.36+bdcom-0ubuntu3.dsc
+ ba0fc0b9cac8184e6ad3d8dc37246d53 1702834 bcmwl_5.60.48.36+bdcom.orig.tar.gz
+ 7b93d62eefa97149149e148f18ee79f8 11191 bcmwl_5.60.48.36+bdcom-0ubuntu3.diff.gz
+Vcs-Bzr: https://code.launchpad.net/~broadcom-sta-hackers/broadcom-sta/ubuntu
+Checksums-Sha1: 
+ ba3b2e318eb2616ac05c1b070825e117c0ce0fa1 1702834 bcmwl_5.60.48.36+bdcom.orig.tar.gz
+ 3c094aca2aebee184c24c5848a4ebdabd4fb53ac 11191 bcmwl_5.60.48.36+bdcom-0ubuntu3.diff.gz
+Checksums-Sha256: 
+ b71042733b19438997239cc14049f9751f9e34c4f01ade028f25dcd4ed96e76c 1702834 bcmwl_5.60.48.36+bdcom.orig.tar.gz
+ 3bf0710e80cd1ec895c264d66e17ec66d6b8dbcf455b5ea2231bc2a6ca666d42 11191 bcmwl_5.60.48.36+bdcom-0ubuntu3.diff.gz
+
+Package: fglrx-installer
+Binary: fglrx, fglrx-dev, fglrx-amdcccle, fglrx-modaliases, xorg-driver-fglrx, fglrx-kernel-source
+Version: 2:8.723.1-0ubuntu3
+Priority: optional
+Section: restricted/misc
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 7), libxext6, libxrandr2, libice6, libsm6, libfontconfig1, libxi6, libxcursor1, fakeroot, libdrm2, libgl1-mesa-glx, libxinerama1, libqtgui4, execstack
+Architecture: amd64 i386
+Standards-Version: 3.8.3
+Format: 1.0
+Directory: pool/restricted/f/fglrx-installer
+Files:
+ 98dc644beb2feb9cb23292794ef22ab4 1458 fglrx-installer_8.723.1-0ubuntu3.dsc
+ c5bed046747747b8f8e66f0338c81907 60437662 fglrx-installer_8.723.1.orig.tar.gz
+ 18d7ee5fa4b154855893e941068c0bfc 27542 fglrx-installer_8.723.1-0ubuntu3.diff.gz
+Uploaders: Mario Limonciello <superm1@ubuntu.com>, Alberto Milone <albertomilone@alice.it>
+Homepage: http://ati.amd.com/support/driver.html
+Checksums-Sha1: 
+ 8fefcda2b2482ad80c9c6379724a530e4e03ff09 60437662 fglrx-installer_8.723.1.orig.tar.gz
+ 53e07e5a3806f6f6ac8e767eacca87986e13a82c 27542 fglrx-installer_8.723.1-0ubuntu3.diff.gz
+Checksums-Sha256: 
+ 01ada33bb47a6cc90b7c7b098ba18b02d02947527d555ab668f13eb24948d937 60437662 fglrx-installer_8.723.1.orig.tar.gz
+ 3626edd93e3c2428e0794a9802a9932285ade44a83c4da9abfa7f42e48afad1d 27542 fglrx-installer_8.723.1-0ubuntu3.diff.gz
+
+Package: lpia-linux-restricted-modules
+Binary: linux-restricted-modules-2.6.28-2-lpia, linux-restricted-modules-2.6.28-2-lpiacompat
+Version: 2.6.28-2.1
+Section: restricted/misc
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Build-Depends: debhelper (>= 4.0.0), kernel-wedge (>= 2.05ubuntu2), module-init-tools, linux-headers-2.6.28-2-lpia [lpia], linux-headers-2.6.28-2-lpiacompat [lpia]
+Architecture: lpia
+Standards-Version: 3.6.1
+Format: 1.0
+Directory: pool/restricted/l/lpia-linux-restricted-modules
+Files:
+ 71d5b46b88a26ae0fb22170705f0135b 1032 lpia-linux-restricted-modules_2.6.28-2.1.dsc
+ 6229b175198b27f7c7e51d159874ca3e 4882880 lpia-linux-restricted-modules_2.6.28-2.1.tar.gz
+Checksums-Sha1: 
+ fb85a0c3e46f2a8b01205849d8b4162f420a27e4 4882880 lpia-linux-restricted-modules_2.6.28-2.1.tar.gz
+Checksums-Sha256: 
+ d2bb232de7649c971085e7288bdcccce72909cda62229973f326896f0722c89f 4882880 lpia-linux-restricted-modules_2.6.28-2.1.tar.gz
+
+Package: nvidia-graphics-drivers
+Binary: nvidia-current, nvidia-current-dev, nvidia-current-modaliases, nvidia-glx-185, nvidia-glx-185-dev, nvidia-185-kernel-source, nvidia-185-modaliases, nvidia-185-libvdpau, nvidia-185-libvdpau-dev
+Version: 195.36.15-0ubuntu2
+Priority: optional
+Section: restricted/misc
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 6.0.7~), sed (>> 3.0), libxext6, bzip2, xserver-xorg-dev (>= 2:1.4), execstack, cdbs, libc6
+Architecture: i386 amd64 lpia
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/restricted/n/nvidia-graphics-drivers
+Files:
+ 50bd957a52ce750e3bdf437521d6a8e0 1434 nvidia-graphics-drivers_195.36.15-0ubuntu2.dsc
+ bb285e1ab630a2b76d368e737db2bdb4 64246042 nvidia-graphics-drivers_195.36.15.orig.tar.gz
+ d41d22f43d5a59556df9cf51fad02cdd 37487 nvidia-graphics-drivers_195.36.15-0ubuntu2.diff.gz
+Checksums-Sha1: 
+ 838fd581146522b71d69ae9132ae454beddb8286 64246042 nvidia-graphics-drivers_195.36.15.orig.tar.gz
+ 15bc36046fa34147794a553a5a2cfb117406262c 37487 nvidia-graphics-drivers_195.36.15-0ubuntu2.diff.gz
+Checksums-Sha256: 
+ 7b65ab976a6392a279abc5381b2d239f7c209bf73d54aaacc9ba1818e86b685b 64246042 nvidia-graphics-drivers_195.36.15.orig.tar.gz
+ 6f68260e4a59e27f000d12436fdac007196a40dbc19a324dba8812a937508d37 37487 nvidia-graphics-drivers_195.36.15-0ubuntu2.diff.gz
+
+Package: nvidia-graphics-drivers-173
+Binary: nvidia-173, nvidia-173-dev, nvidia-173-modaliases, nvidia-glx-173, nvidia-glx-173-dev, nvidia-173-kernel-source
+Version: 173.14.22-0ubuntu11
+Priority: optional
+Section: restricted/misc
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>> 4.0.0), sed (>> 3.0), libxext6, bzip2, xserver-xorg-dev (>= 2:1.4), execstack, cdbs
+Architecture: i386 amd64 lpia
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/restricted/n/nvidia-graphics-drivers-173
+Files:
+ 797af93ca426ceb649b8bbe8742edd77 1377 nvidia-graphics-drivers-173_173.14.22-0ubuntu11.dsc
+ c1ed8976313f8984a8b9638a1cbec48e 28791287 nvidia-graphics-drivers-173_173.14.22.orig.tar.gz
+ 6c27c4bed14d726d39fe965d0d5fe2e0 33282 nvidia-graphics-drivers-173_173.14.22-0ubuntu11.diff.gz
+Checksums-Sha1: 
+ 44d26cf11680c51fc7fd57a353672833465ce318 28791287 nvidia-graphics-drivers-173_173.14.22.orig.tar.gz
+ 6ee4f485d45b00d7db3b7780fd987dbafc5b127f 33282 nvidia-graphics-drivers-173_173.14.22-0ubuntu11.diff.gz
+Checksums-Sha256: 
+ 6a77d9a462eca933c51b21f4b356834e2a8d63d63ae6847c5ccb797fff155490 28791287 nvidia-graphics-drivers-173_173.14.22.orig.tar.gz
+ e3a8c8d675b2ecbefe195aaad3b68168e5d68554024cfbb4df037a98a2287396 33282 nvidia-graphics-drivers-173_173.14.22-0ubuntu11.diff.gz
+
+Package: nvidia-graphics-drivers-180
+Binary: nvidia-glx-185, nvidia-glx-185-dev, nvidia-185-kernel-source, nvidia-185-modaliases, nvidia-185-libvdpau, nvidia-185-libvdpau-dev, nvidia-glx-180, nvidia-glx-180-dev, nvidia-180-kernel-source, nvidia-180-modaliases, nvidia-180-libvdpau, nvidia-180-libvdpau-dev
+Version: 185.18.36-0ubuntu9
+Priority: optional
+Section: restricted/misc
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian NVIDIA Maintainers <pkg-nvidia-devel@lists.alioth.debian.org>
+Build-Depends: debhelper (>> 4.0.0), sed (>> 3.0), libxext6, bzip2, xserver-xorg-dev (>= 2:1.4), execstack
+Architecture: i386 amd64 lpia
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/restricted/n/nvidia-graphics-drivers-180
+Files:
+ 86a31fec1da19fda46548689147e835e 1814 nvidia-graphics-drivers-180_185.18.36-0ubuntu9.dsc
+ 5713a9b4f5645faf068a7ef919a78a1a 43682699 nvidia-graphics-drivers-180_185.18.36.orig.tar.gz
+ d0694e57b6507030a855b37186c3c444 34750 nvidia-graphics-drivers-180_185.18.36-0ubuntu9.diff.gz
+Uploaders: Randall Donald <rdonald@debian.org>
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-nvidia/packages/nvidia-graphics-drivers
+Vcs-Svn: svn://svn.debian.org/svn/pkg-nvidia/packages/nvidia-graphics-drivers
+Checksums-Sha1: 
+ c943cbf4e5422b307c582f0178e230b6e5b2865d 43682699 nvidia-graphics-drivers-180_185.18.36.orig.tar.gz
+ 0ac2a114236a5eb1ec37b1f12f78615b06bd6b71 34750 nvidia-graphics-drivers-180_185.18.36-0ubuntu9.diff.gz
+Checksums-Sha256: 
+ 3be2648497e51ccbb7d6b4e86f32de2b817558996e25e38dbb1a3251bf8b3e90 43682699 nvidia-graphics-drivers-180_185.18.36.orig.tar.gz
+ 588fbd2547f43da0cd89923f81e6f25ed0ab1d8b686a1c548df214d0e13bc6b1 34750 nvidia-graphics-drivers-180_185.18.36-0ubuntu9.diff.gz
+
+Package: nvidia-graphics-drivers-96
+Binary: nvidia-96, nvidia-96-dev, nvidia-96-modaliases, nvidia-glx-96, nvidia-glx-96-dev, nvidia-96-kernel-source
+Version: 96.43.17-0ubuntu1
+Priority: optional
+Section: restricted/misc
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>> 4.0.0), sed (>> 3.0), libxext6, bzip2, xserver-xorg-dev (>= 2:1.4), execstack, cdbs
+Architecture: i386 amd64 lpia
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/restricted/n/nvidia-graphics-drivers-96
+Files:
+ 5c9bbbb63f1b85dcdbbc6b7c33daba0c 1353 nvidia-graphics-drivers-96_96.43.17-0ubuntu1.dsc
+ 8ba34079b2386a653b973d6cf7904ea1 20237877 nvidia-graphics-drivers-96_96.43.17.orig.tar.gz
+ 583e44e2fc5f528836faa7c3a6b6222e 32218 nvidia-graphics-drivers-96_96.43.17-0ubuntu1.diff.gz
+Checksums-Sha1: 
+ ece56a8a550060c72aaa0f6605b89d230c4c5548 20237877 nvidia-graphics-drivers-96_96.43.17.orig.tar.gz
+ e32af43fa234eb331f58fce8fba15e7b950fe0d0 32218 nvidia-graphics-drivers-96_96.43.17-0ubuntu1.diff.gz
+Checksums-Sha256: 
+ 4a75132720dba403ec64c52bf0e7b9da3ac3ae91b56d4394fb737c023ace8946 20237877 nvidia-graphics-drivers-96_96.43.17.orig.tar.gz
+ 54d9bd9e5d4a0d1c3e9d023831ec3745ac2481ce3efb5b33d1878714c86e3393 32218 nvidia-graphics-drivers-96_96.43.17-0ubuntu1.diff.gz
+
+Package: nvidia-kernel-common
+Binary: nvidia-kernel-common
+Version: 20080825+1ubuntu2
+Priority: optional
+Section: restricted/misc
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian NVIDIA Maintainers <pkg-nvidia-devel@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 7)
+Architecture: all
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/restricted/n/nvidia-kernel-common
+Files:
+ 80890ce728ac6f8f882c5723cb9c428a 968 nvidia-kernel-common_20080825+1ubuntu2.dsc
+ f9072a4271324c6af5970b9daab4dcda 4735 nvidia-kernel-common_20080825+1ubuntu2.tar.gz
+Uploaders: Randall Donald <rdonald@debian.org>
+Checksums-Sha1: 
+ 852c646cf06cbd21e21efc0f5310e71ce288ed8f 4735 nvidia-kernel-common_20080825+1ubuntu2.tar.gz
+Checksums-Sha256: 
+ 8aad3de0eb09be94c5d74acbff0a351f7a490d1ff926f4ceea1d39fadfa053af 4735 nvidia-kernel-common_20080825+1ubuntu2.tar.gz
+
+Package: sl-modem
+Binary: sl-modem-source, sl-modem-daemon
+Version: 2.9.11~20100303-2
+Priority: optional
+Section: restricted/misc
+Maintainer: أحمد المحمودي (Ahmed El-Mahmoudy) <aelmahmoudy@users.sourceforge.net>
+Build-Depends: debhelper (>= 7.0.50~), bzip2, libasound2-dev (>> 1.0.6) [i386], lib32asound2-dev [amd64], libc6-dev-i386 [amd64] | lib32c-dev [amd64], gcc-multilib [amd64], po-debconf, execstack
+Architecture: i386 amd64
+Standards-Version: 3.8.4
+Format: 3.0 (quilt)
+Directory: pool/restricted/s/sl-modem
+Files:
+ 8176000808a102e878b0a73495f6031a 1606 sl-modem_2.9.11~20100303-2.dsc
+ 212172a4bae67c3ccf9665fdec8c9f8e 1003502 sl-modem_2.9.11~20100303.orig.tar.gz
+ 8f56798d2ccacb6b56d3494ee7d8ab3e 31914 sl-modem_2.9.11~20100303-2.debian.tar.gz
+Uploaders: Maurizio Avogadro <mavoga@gmail.com>, Rolf Leggewie <foss@rolf.leggewie.biz>
+Dm-Upload-Allowed: yes
+Homepage: http://linmodems.technion.ac.il/packages/smartlink/
+Vcs-Browser: http://git.debian.org/?p=collab-maint/sl-modem.git
+Vcs-Git: git://git.debian.org/git/collab-maint/sl-modem.git
+Checksums-Sha1: 
+ a721f5d035e47965730f13a4240fabbdb9d6afce 1003502 sl-modem_2.9.11~20100303.orig.tar.gz
+ 4fdb2e8eb8e604b5fe8178417368ded1a72ebec7 31914 sl-modem_2.9.11~20100303-2.debian.tar.gz
+Checksums-Sha256: 
+ f4f353722d7d019e0806c3e00fb5932bbaa4d7b6b83dacfaf162cc11b807c292 1003502 sl-modem_2.9.11~20100303.orig.tar.gz
+ 9002f9026d8383a26e5f42074f83ba7eef81c3ef565c59ec6b3a1c2042f36b6d 31914 sl-modem_2.9.11~20100303-2.debian.tar.gz
+Autobuild: yes
+

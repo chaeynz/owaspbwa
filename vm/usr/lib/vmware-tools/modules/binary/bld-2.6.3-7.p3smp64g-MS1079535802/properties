@@ -1,0 +1,6 @@
+UtsRelease 2.6.3-7mdk-p3-smp-64GB
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Mandrake, 2.6.3-7mdk, p3-smp-64GB
+UtsMachine i386

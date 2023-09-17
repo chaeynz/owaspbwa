@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Mocha::API</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Mocha::API</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mocha/api_rb.html">
+                lib/mocha/api.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Methods added to <a
+href="../Test/Unit/TestCase.html">Test::Unit::TestCase</a> or equivalent.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000020">mock</a>&nbsp;&nbsp;
+      <a href="#M000023">sequence</a>&nbsp;&nbsp;
+      <a href="#M000024">states</a>&nbsp;&nbsp;
+      <a href="#M000021">stub</a>&nbsp;&nbsp;
+      <a href="#M000022">stub_everything</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="ParameterMatchers.html">ParameterMatchers</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name"> mock(name, &block) &rarr; mock object<br />
+mock(expected_methods = {}, &block) &rarr; mock object<br />
+mock(name, expected_methods = {}, &block) &rarr; mock object<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="API.html#M000020">mock</a> object.
+</p>
+<p>
+<tt>name</tt> is a <tt><a href="../String.html">String</a></tt> identifier
+for the <a href="API.html#M000020">mock</a> object.
+</p>
+<p>
+<tt>expected_methods</tt> is a <tt><a href="../Hash.html">Hash</a></tt>
+with expected method name symbols as keys and corresponding return values
+as values.
+</p>
+<p>
+Note that (contrary to expectations set up by <a
+href="API.html#M000021">stub</a>) these expectations <b>must</b> be
+fulfilled during the test.
+</p>
+<pre>
+  def test_product
+    product = mock('ipod_product', :manufacturer =&gt; 'ipod', :price =&gt; 100)
+    assert_equal 'ipod', product.manufacturer
+    assert_equal 100, product.price
+    # an error will be raised unless both Product#manufacturer and Product#price have been called
+  end
+</pre>
+<p>
+<tt>block</tt> is an optional block to be evaluated against the <a
+href="API.html#M000020">mock</a> object instance, giving an alernative way
+to set up expectations &amp; stubs.
+</p>
+<pre>
+  def test_product
+    product = mock('ipod_product') do
+      expects(:manufacturer).returns('ipod')
+      expects(:price).returns(100)
+    end
+    assert_equal 'ipod', product.manufacturer
+    assert_equal 100, product.price
+    # an error will be raised unless both Product#manufacturer and Product#price have been called
+  end
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mocha/api.rb, line 40</span>
+40:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mock</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+41:       <span class="ruby-identifier">name</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+42:       <span class="ruby-identifier">expectations</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> {}
+43:       <span class="ruby-identifier">mock</span> = <span class="ruby-identifier">name</span> <span class="ruby-value">? </span><span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">named_mock</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">unnamed_mock</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+44:       <span class="ruby-identifier">mock</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-identifier">expectations</span>)
+45:       <span class="ruby-identifier">mock</span>
+46:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="#M000023" class="method-signature">
+          <span class="method-name"> sequence(name) &rarr; sequence<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new <a href="API.html#M000023">sequence</a> that is used to
+constrain the order in which expectations can occur.
+</p>
+<p>
+Specify that an expected invocation must occur in within a named <tt><a
+href="API.html#M000023">sequence</a></tt> by using <a
+href="Expectation.html#M000178">Expectation#in_sequence</a>.
+</p>
+<p>
+See also <a href="Expectation.html#M000178">Expectation#in_sequence</a>.
+</p>
+<pre>
+  breakfast = sequence('breakfast')
+
+  egg = mock('egg')
+  egg.expects(:crack).in_sequence(breakfast)
+  egg.expects(:fry).in_sequence(breakfast)
+  egg.expects(:eat).in_sequence(breakfast)
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mocha/api.rb, line 122</span>
+122:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sequence</span>(<span class="ruby-identifier">name</span>)
+123:       <span class="ruby-constant">Sequence</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
+124:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="#M000024" class="method-signature">
+          <span class="method-name"> states(name) &rarr; state_machine<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new <tt>state_machine</tt> that is used to constrain the order in
+which expectations can occur.
+</p>
+<p>
+Specify the initial <tt>state</tt> of the <tt>state_machine</tt> by using
+<a href="StateMachine.html#M000048">StateMachine#starts_as</a>.
+</p>
+<p>
+Specify that an expected invocation should change the <tt>state</tt> of the
+<tt>state_machine</tt> by using <a
+href="Expectation.html#M000176">Expectation#then</a>.
+</p>
+<p>
+Specify that an expected invocation should be constrained to occur within a
+particular <tt>state</tt> by using <a
+href="Expectation.html#M000177">Expectation#when</a>.
+</p>
+<p>
+A test can contain multiple <tt>state_machines</tt>.
+</p>
+<p>
+See also <a href="Expectation.html#M000176">Expectation#then</a>, <a
+href="Expectation.html#M000177">Expectation#when</a> and <a
+href="StateMachine.html">StateMachine</a>.
+</p>
+<pre>
+  power = states('power').starts_as('off')
+
+  radio = mock('radio')
+  radio.expects(:switch_on).then(power.is('on'))
+  radio.expects(:select_channel).with('BBC Radio 4').when(power.is('on'))
+  radio.expects(:adjust_volume).with(+5).when(power.is('on'))
+  radio.expects(:select_channel).with('BBC World Service').when(power.is('on'))
+  radio.expects(:adjust_volume).with(-5).when(power.is('on'))
+  radio.expects(:switch_off).then(power.is('off'))
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mocha/api.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">states</span>(<span class="ruby-identifier">name</span>)
+149:       <span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">new_state_machine</span>(<span class="ruby-identifier">name</span>)
+150:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name"> stub(name, &block) &rarr; mock object<br />
+stub(stubbed_methods = {}, &block) &rarr; mock object<br />
+stub(name, stubbed_methods = {}, &block) &rarr; mock object<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="API.html#M000020">mock</a> object.
+</p>
+<p>
+<tt>name</tt> is a <tt><a href="../String.html">String</a></tt> identifier
+for the <a href="API.html#M000020">mock</a> object.
+</p>
+<p>
+<tt>stubbed_methods</tt> is a <tt><a href="../Hash.html">Hash</a></tt> with
+stubbed method name symbols as keys and corresponding return values as
+values. Note that (contrary to expectations set up by <a
+href="API.html#M000020">mock</a>) these expectations <b>need not</b> be
+fulfilled during the test.
+</p>
+<pre>
+  def test_product
+    product = stub('ipod_product', :manufacturer =&gt; 'ipod', :price =&gt; 100)
+    assert_equal 'ipod', product.manufacturer
+    assert_equal 100, product.price
+    # an error will not be raised even if Product#manufacturer and Product#price have not been called
+  end
+</pre>
+<p>
+<tt>block</tt> is an optional block to be evaluated against the <a
+href="API.html#M000020">mock</a> object instance, giving an alernative way
+to set up expectations &amp; stubs.
+</p>
+<pre>
+  def test_product
+    product = stub('ipod_product') do
+      stubs(:manufacturer).returns('ipod')
+      stubs(:price).returns(100)
+    end
+    assert_equal 'ipod', product.manufacturer
+    assert_equal 100, product.price
+    # an error will not be raised even if Product#manufacturer and Product#price have not been called
+  end
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/mocha/api.rb, line 75</span>
+75:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stub</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+76:       <span class="ruby-identifier">name</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+77:       <span class="ruby-identifier">expectations</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> {}
+78:       <span class="ruby-identifier">stub</span> = <span class="ruby-identifier">name</span> <span class="ruby-value">? </span><span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">named_mock</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">unnamed_mock</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+79:       <span class="ruby-identifier">stub</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-identifier">expectations</span>)
+80:       <span class="ruby-identifier">stub</span>
+81:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="#M000022" class="method-signature">
+          <span class="method-name"> stub_everything(name, &block) &rarr; mock object<br />
+stub_everything(stubbed_methods = {}, &block) &rarr; mock object<br />
+stub_everything(name, stubbed_methods = {}, &block) &rarr; mock object<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="API.html#M000020">mock</a> object that accepts calls to
+any method.
+</p>
+<p>
+By default it will return <tt>nil</tt> for any method call.
+</p>
+<p>
+<tt>block</tt> is a block to be evaluated against the <a
+href="API.html#M000020">mock</a> object instance, giving an alernative way
+to set up expectations &amp; stubs.
+</p>
+<p>
+<tt>name</tt> and <tt>stubbed_methods</tt> work in the same way as for <a
+href="API.html#M000021">stub</a>.
+</p>
+<pre>
+  def test_product
+    product = stub_everything('ipod_product', :price =&gt; 100)
+    assert_nil product.manufacturer
+    assert_nil product.any_old_method
+    assert_equal 100, product.price
+  end
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/mocha/api.rb, line 100</span>
+100:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stub_everything</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+101:       <span class="ruby-identifier">name</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+102:       <span class="ruby-identifier">expectations</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> {}
+103:       <span class="ruby-identifier">stub</span> = <span class="ruby-identifier">name</span> <span class="ruby-value">? </span><span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">named_mock</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Mockery</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">unnamed_mock</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+104:       <span class="ruby-identifier">stub</span>.<span class="ruby-identifier">stub_everything</span>
+105:       <span class="ruby-identifier">stub</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-identifier">expectations</span>)
+106:       <span class="ruby-identifier">stub</span>
+107:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

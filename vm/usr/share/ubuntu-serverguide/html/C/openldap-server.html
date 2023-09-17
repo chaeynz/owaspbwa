@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">OpenLDAP Server</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="network-authentication.html" title="Chapter 6. Network Authentication" />
+    <link rel="prev" href="network-authentication.html" title="Chapter 6. Network Authentication" />
+    <link rel="next" href="samba-ldap.html" title="Samba and LDAP" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="network-authentication.html">Network Authentication</a></span> &gt; <span class="breadcrumb-node">OpenLDAP Server</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="OpenLDAP Server">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="openldap-server"></a>OpenLDAP Server</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+	 LDAP is an acronym for Lightweight Directory Access Protocol, it is a simplified
+         version of the X.500 protocol. The directory setup in this section will 
+	 be used for authentication. Nevertheless, LDAP can be
+         used in numerous ways: authentication, shared directory (for mail
+         clients), address book, etc.
+         </p>
+              <p>
+         To describe LDAP quickly,  all information is stored in a tree structure. With 
+	 <span class="application"><strong>OpenLDAP</strong></span> you have freedom to determine 
+	 the directory arborescence (the Directory Information Tree: the DIT) yourself.
+	 We will begin with a basic tree containing two nodes below the root:
+         </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p>"People" node where your users will be stored</p>
+                  </li>
+                  <li class="listitem">
+                    <p>"Groups" node where your groups will be stored</p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+         Before beginning, you should determine what the root of your LDAP directory
+	 will be. By default, your tree will be determined by your Fully Qualified 
+	 Domain Name (FQDN). If your domain is example.com (which we will use in this 
+         example), your root node will be dc=example,dc=com. 
+        </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-server-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	First, install the <span class="application"><strong>OpenLDAP</strong></span> server daemon 
+	<span class="application"><strong>slapd</strong></span> and <span class="application"><strong>ldap-utils</strong></span>, 
+	a package containing LDAP management utilities:
+	</p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install slapd ldap-utils</strong></span>
+</pre>
+                <p>
+        By default <span class="application"><strong>slapd</strong></span> is configured with minimal options needed 
+        to run the <span class="application"><strong>slapd</strong></span> daemon.
+	</p>
+                <p>
+        The configuration example in the following sections will match the domain name of the server.
+        For example, if the machine's Fully Qualified Domain Name (FQDN) is 
+        ldap.example.com, the default suffix will be <span class="emphasis"><em>dc=example,dc=com</em></span>.
+	</p>
+              </div>
+              <div class="sect2" title="Populating LDAP">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-server-populate"></a>Populating LDAP</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+        <span class="application"><strong>OpenLDAP</strong></span> uses a separate directory which contains the 
+        <span class="emphasis"><em>cn=config</em></span> Directory Information Tree (DIT).  The
+        <span class="emphasis"><em>cn=config</em></span> DIT is used to dynamically configure the 
+        <span class="application"><strong>slapd</strong></span> daemon, allowing the modification of schema 
+        definitions, indexes, ACLs, etc without stopping the service.
+        </p>
+                <p>
+	The backend <span class="emphasis"><em>cn=config</em></span> directory has only a minimal configuration and will 
+        need additional configuration options in order to populate the frontend directory.  The frontend will be populated
+        with a "classical" scheme that will be compatible with address book applications and with Unix Posix 
+        accounts.  Posix accounts will allow authentication to various applications, such as web 
+	applications, email Mail Transfer Agent (MTA) applications, etc.
+	</p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	  For external applications to authenticate using LDAP they will each need to be 
+	  specifically configured to do so.  Refer to the individual application 
+	  documentation for details.	 
+	  </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+          Remember to change <span class="emphasis"><em>dc=example,dc=com</em></span> in the following examples to match your LDAP configuration.
+	  </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+        First, some additional schema files need to be loaded.  In a terminal enter:
+        </p>
+                <pre class="screen">
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/cosine.ldif</strong></span>
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/nis.ldif</strong></span>
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/inetorgperson.ldif</strong></span>
+</pre>
+                <p>
+	Next, copy the following example LDIF file, naming it
+	<code class="filename">backend.example.com.ldif</code>, somewhere on your system:
+	</p>
+                <pre class="programlisting">
+# Load dynamic backend modules
+dn: cn=module,cn=config
+objectClass: olcModuleList
+cn: module
+olcModulepath: /usr/lib/ldap
+olcModuleload: back_hdb
+
+# Database settings
+dn: olcDatabase=hdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {1}hdb
+olcSuffix: dc=example,dc=com
+olcDbDirectory: /var/lib/ldap
+olcRootDN: cn=admin,dc=example,dc=com
+olcRootPW: secret
+olcDbConfig: set_cachesize 0 2097152 0
+olcDbConfig: set_lk_max_objects 1500
+olcDbConfig: set_lk_max_locks 1500
+olcDbConfig: set_lk_max_lockers 1500
+olcDbIndex: objectClass eq
+olcLastMod: TRUE
+olcDbCheckpoint: 512 30
+olcAccess: to attrs=userPassword by dn="cn=admin,dc=example,dc=com" write by anonymous auth by self write by * none
+olcAccess: to attrs=shadowLastChange by self write by * read
+olcAccess: to dn.base="" by * read
+olcAccess: to * by dn="cn=admin,dc=example,dc=com" write by * read
+
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+          Change <span class="emphasis"><em>olcRootPW: secret</em></span> to a password of your choosing.
+          </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+	Now add the LDIF to the directory:
+	</p>
+                <pre class="screen">
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f backend.example.com.ldif</strong></span>
+</pre>
+                <p>
+        The frontend directory is now ready to be populated.  Create a <code class="filename">frontend.example.com.ldif</code> 
+        with the following contents:
+        </p>
+                <pre class="programlisting">
+# Create top-level object in domain
+dn: dc=example,dc=com
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: Example Organization
+dc: Example
+description: LDAP Example 
+
+# Admin user.
+dn: cn=admin,dc=example,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword: secret
+
+dn: ou=people,dc=example,dc=com
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=example,dc=com
+objectClass: organizationalUnit
+ou: groups
+
+dn: uid=john,ou=people,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: john
+sn: Doe
+givenName: John
+cn: John Doe
+displayName: John Doe
+uidNumber: 1000
+gidNumber: 10000
+userPassword: password
+gecos: John Doe
+loginShell: /bin/bash
+homeDirectory: /home/john
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 8
+shadowMax: 999999
+shadowLastChange: 10877
+mail: john.doe@example.com
+postalCode: 31000
+l: Toulouse
+o: Example
+mobile: +33 (0)6 xx xx xx xx
+homePhone: +33 (0)5 xx xx xx xx
+title: System Administrator
+postalAddress: 
+initials: JD
+
+dn: cn=example,ou=groups,dc=example,dc=com
+objectClass: posixGroup
+cn: example
+gidNumber: 10000
+</pre>
+                <p>
+	In this example the directory structure, a user, and a 
+	group have been setup. In other examples you might see the 
+	<span class="emphasis"><em>objectClass: top</em></span> added in every entry, but that is the 
+	default behaviour so you do not have to add it explicitly.
+	</p>
+                <p>
+	Add the entries to the LDAP directory:
+	</p>
+                <pre class="screen">
+<span class="command"><strong>sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f frontend.example.com.ldif</strong></span>
+</pre>
+                <p>
+	We can check that the content has been correctly added with the
+	<span class="application"><strong>ldapsearch</strong></span> utility. Execute a search of the LDAP directory:
+	</p>
+                <pre class="screen">
+<span class="command"><strong>ldapsearch -xLLL -b "dc=example,dc=com" uid=john sn givenName cn</strong></span>
+<code class="computeroutput">
+dn: uid=john,ou=people,dc=example,dc=com
+cn: John Doe
+sn: Doe
+givenName: John
+</code>
+</pre>
+                <p>
+	Just a quick explanation:
+	</p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+		<span class="emphasis"><em>-x:</em></span> will not use SASL authentication 
+		method, which is the default.
+		</p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		<span class="emphasis"><em>-LLL:</em></span> disable printing LDIF schema information.
+		</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="Further Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-configuration"></a>Further Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+          The <span class="emphasis"><em>cn=config</em></span> tree can be manipulated using the utilities in the 
+          <span class="application"><strong>ldap-utils</strong></span> package.  For example:
+          </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+              Use <span class="application"><strong>ldapsearch</strong></span> to view the tree, entering the admin 
+              password set during installation or reconfiguration:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapsearch -LLL -Y EXTERNAL -H ldapi:/// -b cn=config dn</strong></span>
+</pre>
+                      <pre class="screen">
+<code class="computeroutput">
+SASL/EXTERNAL authentication started
+SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+SASL SSF: 0
+dn: cn=config
+
+dn: cn=module{0},cn=config
+
+dn: cn=schema,cn=config
+
+dn: cn={0}core,cn=schema,cn=config
+
+dn: cn={1}cosine,cn=schema,cn=config
+
+dn: cn={2}nis,cn=schema,cn=config
+
+dn: cn={3}inetorgperson,cn=schema,cn=config
+
+dn: olcDatabase={-1}frontend,cn=config
+
+dn: olcDatabase={0}config,cn=config
+
+dn: olcDatabase={1}hdb,cn=config
+</code>
+</pre>
+                      <p>
+              The output above is the current configuration options for the <span class="emphasis"><em>cn=config</em></span>
+              backend database.  Your output may be vary.  
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              As an example of modifying the <span class="emphasis"><em>cn=config</em></span> tree, add another attribute 
+              to the index list using <span class="application"><strong>ldapmodify</strong></span>:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapmodify -Y EXTERNAL -H ldapi:///</strong></span>
+</pre>
+                      <pre class="screen">
+<code class="computeroutput">
+SASL/EXTERNAL authentication started
+SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+SASL SSF: 0
+<strong class="userinput"><code>dn: olcDatabase={1}hdb,cn=config
+add: olcDbIndex
+olcDbIndex: uidNumber eq</code></strong>
+
+modifying entry "olcDatabase={1}hdb,cn=config"
+</code>
+</pre>
+                      <p>
+              Once the modification has completed, press <span class="emphasis"><em>Ctrl+D</em></span> to exit the utility.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              <span class="application"><strong>ldapmodify</strong></span> can also read the changes from a file.  Copy and paste
+              the following into a file named <code class="filename">uid_index.ldif</code>:              
+              </p>
+                      <pre class="programlisting">
+dn: olcDatabase={1}hdb,cn=config
+add: olcDbIndex
+olcDbIndex: uid eq,pres,sub
+</pre>
+                      <p>
+              Then execute <span class="application"><strong>ldapmodify</strong></span>:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapmodify -Y EXTERNAL -H ldapi:/// -f uid_index.ldif</strong></span>
+</pre>
+                      <pre class="screen">
+<code class="computeroutput">
+SASL/EXTERNAL authentication started
+SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+SASL SSF: 0
+modifying entry "olcDatabase={1}hdb,cn=config"
+</code>
+</pre>
+                      <p>
+              The file method is very useful for large changes.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              Adding additional <span class="emphasis"><em>schemas</em></span> to <span class="application"><strong>slapd</strong></span> requires the
+              schema to be converted to LDIF format.  The <code class="filename">/etc/ldap/schema</code>
+              directory contains some schema files already converted to LDIF format as demonstrated in the previous section.
+              Fortunately, the <span class="application"><strong>slapd</strong></span> program can be used to automate the conversion.  
+              The following example will add the <span class="emphasis"><em>dyngoup.schema</em></span>:
+              </p>
+                      <div class="procedure">
+                        <ol class="procedure" type="1">
+                          <li class="step" title="Step 1">
+                            <p>                  
+                  First, create a conversion <code class="filename">schema_convert.conf</code> file containing the 
+                  following lines:
+                  </p>
+                            <pre class="programlisting">
+include /etc/ldap/schema/core.schema
+include /etc/ldap/schema/collective.schema
+include /etc/ldap/schema/corba.schema
+include /etc/ldap/schema/cosine.schema
+include /etc/ldap/schema/duaconf.schema
+include /etc/ldap/schema/dyngroup.schema
+include /etc/ldap/schema/inetorgperson.schema
+include /etc/ldap/schema/java.schema
+include /etc/ldap/schema/misc.schema
+include /etc/ldap/schema/nis.schema
+include /etc/ldap/schema/openldap.schema
+include /etc/ldap/schema/ppolicy.schema
+</pre>
+                          </li>
+                          <li class="step" title="Step 2">
+                            <p>
+                  Next, create a temporary directory to hold the output:
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>mkdir /tmp/ldif_output</strong></span>
+</pre>
+                          </li>
+                          <li class="step" title="Step 3">
+                            <p>
+                  Now using <span class="application"><strong>slapcat</strong></span> convert the schema files to LDIF:
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>slapcat -f schema_convert.conf -F /tmp/ldif_output -n0 -s "cn={5}dyngroup,cn=schema,cn=config" &gt; /tmp/cn=dyngroup.ldif</strong></span>
+</pre>
+                            <p>
+                  Adjust the configuration file name and temporary directory names if yours are different.
+                  Also, it may be worthwhile to keep the <code class="filename">ldif_output</code> directory around
+                  in case you want to add additional schemas in the future.
+                  </p>
+                          </li>
+                          <li class="step" title="Step 4">
+                            <p>
+                  Edit the <code class="filename">/tmp/cn\=dyngroup.ldif</code> file, changing the following attributes:
+                  </p>
+                            <pre class="programlisting">
+dn: cn=dyngroup,cn=schema,cn=config
+...
+cn: dyngroup
+</pre>
+                            <p>
+                  And remove the following lines from the bottom of the file:
+                  </p>
+                            <pre class="programlisting">
+structuralObjectClass: olcSchemaConfig
+entryUUID: 10dae0ea-0760-102d-80d3-f9366b7f7757
+creatorsName: cn=config
+createTimestamp: 20080826021140Z
+entryCSN: 20080826021140.791425Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20080826021140Z
+</pre>
+                            <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                <tr>
+                                  <td rowspan="2" align="center" valign="top" width="25">
+                                    <img alt="[Note]" src="../../libs/admon/note.png" />
+                                  </td>
+                                  <th align="left"></th>
+                                </tr>
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <p>
+                    The attribute values will vary, just be sure the attributes are removed.
+                    </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </li>
+                          <li class="step" title="Step 5">
+                            <p>
+                  Finally, using the <span class="application"><strong>ldapadd</strong></span> utility, add the new schema to the 
+                  directory:
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /tmp/cn\=dyngroup.ldif</strong></span>
+</pre>
+                          </li>
+                        </ol>
+                      </div>
+                      <p>
+              There should now be a <span class="emphasis"><em>dn: cn={4}dyngroup,cn=schema,cn=config</em></span> entry in the cn=config tree.
+              </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="LDAP Replication">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-server-replication"></a>LDAP Replication</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	LDAP often quickly becomes a highly critical service to the network.  Multiple systems 
+        will come to depend on LDAP for authentication, authorization, configuration, etc. It is a good idea to 
+        setup a redundant system through replication. 
+	</p>
+                <p>
+	Replication is achieved using the <span class="emphasis"><em>Syncrepl</em></span> engine. Syncrepl allows the
+	changes to be synced using a <span class="emphasis"><em>consumer</em></span>, <span class="emphasis"><em>provider</em></span> model.
+        A provider sends directory changes to consumers.
+	</p>
+                <div class="sect3" title="Provider Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="openldap-provider-configuration"></a>Provider Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	  The following is an example of a <span class="emphasis"><em>Single-Master</em></span> configuration.  In this configuration one
+      OpenLDAP server is configured as a <span class="emphasis"><em>provider</em></span> and another as a <span class="emphasis"><em>consumer</em></span>. 
+	  </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+            First, configure the provider server.  Copy the following to a 
+            file named <code class="filename">provider_sync.ldif</code>:
+            </p>
+                        <pre class="programlisting">
+# Add indexes to the frontend db.
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+add: olcDbIndex
+olcDbIndex: entryCSN eq
+-
+add: olcDbIndex
+olcDbIndex: entryUUID eq
+
+#Load the syncprov and accesslog modules.
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: syncprov
+-
+add: olcModuleLoad
+olcModuleLoad: accesslog
+
+# Accesslog database definitions
+dn: olcDatabase={2}hdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {2}hdb
+olcDbDirectory: /var/lib/ldap/accesslog
+olcSuffix: cn=accesslog
+olcRootDN: cn=admin,dc=example,dc=com
+olcDbIndex: default eq
+olcDbIndex: entryCSN,objectClass,reqEnd,reqResult,reqStart
+
+# Accesslog db syncprov.
+dn: olcOverlay=syncprov,olcDatabase={2}hdb,cn=config
+changetype: add
+objectClass: olcOverlayConfig
+objectClass: olcSyncProvConfig
+olcOverlay: syncprov
+olcSpNoPresent: TRUE
+olcSpReloadHint: TRUE
+
+# syncrepl Provider for primary db
+dn: olcOverlay=syncprov,olcDatabase={1}hdb,cn=config
+changetype: add
+objectClass: olcOverlayConfig
+objectClass: olcSyncProvConfig
+olcOverlay: syncprov
+olcSpNoPresent: TRUE
+
+# accesslog overlay definitions for primary db
+dn: olcOverlay=accesslog,olcDatabase={1}hdb,cn=config
+objectClass: olcOverlayConfig
+objectClass: olcAccessLogConfig
+olcOverlay: accesslog
+olcAccessLogDB: cn=accesslog
+olcAccessLogOps: writes
+olcAccessLogSuccess: TRUE
+# scan the accesslog DB every day, and purge entries older than 7 days
+olcAccessLogPurge: 07+00:00 01+00:00
+</pre>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+            The <span class="application"><strong>AppArmor</strong></span> profile for <span class="application"><strong>slapd</strong></span> will need to be adjusted for the 
+            accesslog database location.  Edit <code class="filename">/etc/apparmor.d/usr.sbin.slapd</code> adding:
+            </p>
+                        <pre class="programlisting">
+  /var/lib/ldap/accesslog/ r,
+  /var/lib/ldap/accesslog/** rwk,
+</pre>
+                        <p>
+            Then create the directory, reload the <span class="application"><strong>apparmor</strong></span> profile, and copy 
+            the <code class="filename">DB_CONFIG</code> file:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo -u openldap mkdir /var/lib/ldap/accesslog</strong></span>
+<span class="command"><strong>sudo -u openldap cp /var/lib/ldap/DB_CONFIG /var/lib/ldap/accesslog/</strong></span>
+<span class="command"><strong>sudo /etc/init.d/apparmor reload</strong></span>
+</pre>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+              Using the <span class="emphasis"><em>-u openldap</em></span> option with the <span class="application"><strong>sudo</strong></span> commands above
+              removes the need to adjust permissions for the new directory later.
+              </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+            Edit the file and change the <span class="emphasis"><em>olcRootDN</em></span> to match your directory:
+            </p>
+                        <pre class="programlisting">
+olcRootDN: cn=admin,dc=example,dc=com
+</pre>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+            Next, add the LDIF file using the <span class="application"><strong>ldapadd</strong></span> utility:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f provider_sync.ldif</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+            Restart <span class="application"><strong>slapd</strong></span>:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/slapd restart</strong></span>
+</pre>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+        The <span class="emphasis"><em>Provider</em></span> server is now configured, and it is time to configure a <span class="emphasis"><em>Consumer</em></span>
+        server. 
+        </p>
+                </div>
+                <div class="sect3" title="Consumer Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="openldap-consumer-configuration"></a>Consumer Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+            On the <span class="emphasis"><em>Consumer</em></span> server configure it the same as the <span class="emphasis"><em>Provider</em></span> except for the 
+            <span class="emphasis"><em>Syncrepl</em></span> configuration steps.
+            </p>
+                        <p>
+            Add the additional schema files:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/cosine.ldif</strong></span>
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/nis.ldif</strong></span>
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/inetorgperson.ldif</strong></span>
+</pre>
+                        <p>
+            Also, create, or copy from the provider server, the <code class="filename">backend.example.com.ldif</code>
+            </p>
+                        <pre class="programlisting">
+# Load dynamic backend modules
+dn: cn=module,cn=config
+objectClass: olcModuleList
+cn: module
+olcModulepath: /usr/lib/ldap
+olcModuleload: back_hdb
+
+# Database settings
+dn: olcDatabase=hdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {1}hdb
+olcSuffix: dc=example,dc=com
+olcDbDirectory: /var/lib/ldap
+olcRootDN: cn=admin,dc=example,dc=com
+olcRootPW: secret
+olcDbConfig: set_cachesize 0 2097152 0
+olcDbConfig: set_lk_max_objects 1500
+olcDbConfig: set_lk_max_locks 1500
+olcDbConfig: set_lk_max_lockers 1500
+olcDbIndex: objectClass eq
+olcLastMod: TRUE
+olcDbCheckpoint: 512 30
+olcAccess: to attrs=userPassword by dn="cn=admin,dc=example,dc=com" write by anonymous auth by self write by * none
+olcAccess: to attrs=shadowLastChange by self write by * read
+olcAccess: to dn.base="" by * read
+olcAccess: to * by dn="cn=admin,dc=example,dc=com" write by * read
+</pre>
+                        <p>
+            And add the LDIF by entering:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo ldapadd -Y EXTERNAL -H ldapi:/// -f backend.example.com.ldif</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+            Do the same with the <code class="filename">frontend.example.com.ldif</code> file listed above, and add it:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo ldapadd -x -D cn=admin,dc=example,dc=com -W -f frontend.example.com.ldif</strong></span>
+</pre>
+                        <p>
+            The two severs should now have the same configuration except for the <span class="emphasis"><em>Syncrepl</em></span>
+            options.
+            </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+            Now create a file named <code class="filename">consumer_sync.ldif</code> containing:
+            </p>
+                        <pre class="programlisting">
+#Load the syncprov module.
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: syncprov
+
+# syncrepl specific indices
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+add: olcDbIndex
+olcDbIndex: entryUUID eq
+-
+add: olcSyncRepl
+olcSyncRepl: rid=0 provider=ldap://ldap01.example.com bindmethod=simple binddn="cn=admin,dc=example,dc=com" 
+ credentials=secret searchbase="dc=example,dc=com" logbase="cn=accesslog" 
+ logfilter="(&amp;(objectClass=auditWriteObject)(reqResult=0))" schemachecking=on 
+ type=refreshAndPersist retry="60 +" syncdata=accesslog
+-
+add: olcUpdateRef
+olcUpdateRef: ldap://ldap01.example.com
+</pre>
+                        <p>
+            You will probably want to change the following attributes:
+            </p>
+                        <div class="itemizedlist">
+                          <ul class="itemizedlist" type="disc">
+                            <li class="listitem">
+                              <p><span class="emphasis"><em>ldap01.example.com</em></span> to your server's hostname.</p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                                <span class="emphasis">
+                                  <em>binddn</em>
+                                </span>
+                              </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                                <span class="emphasis">
+                                  <em>credentials</em>
+                                </span>
+                              </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                                <span class="emphasis">
+                                  <em>searchbase</em>
+                                </span>
+                              </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                                <span class="emphasis">
+                                  <em>olcUpdateRef:</em>
+                                </span>
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+            Add the LDIF file to the configuration tree:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo ldapadd -c -Y EXTERNAL -H ldapi:/// -f consumer_sync.ldif</strong></span>
+</pre>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+        The frontend database should now sync between servers.  You can add additional servers using the 
+        steps above as the need arises. 
+        </p>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+          The <span class="application"><strong>slapd</strong></span> daemon will send log information to <code class="filename">/var/log/syslog</code>
+          by default.  So if all does <span class="emphasis"><em>not</em></span> go well check there for errors and other troubleshooting information.
+          Also, be sure that each server knows it's Fully Qualified Domain Name (FQDN).  This is configured in <code class="filename">/etc/hosts</code>
+          with a line similar to: </p>
+                          <pre class="programlisting">127.0.0.1	ldap01.example.com ldap01</pre>
+                          <p>.
+          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Setting up ACL">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-server-acl"></a>Setting up ACL</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	Authentication requires access to the password field, that should be not
+	accessible by default. Also, in order for users to change their own password,
+	using <span class="command"><strong>passwd</strong></span> or other utilities, <span class="emphasis"><em>shadowLastChange</em></span> 
+        needs to be accessible once a user has authenticated.  
+	</p>
+                <p>
+        To view the Access Control List (ACL), use the <span class="application"><strong>ldapsearch</strong></span> utility:
+        </p>
+                <pre class="screen">
+<span class="command"><strong>ldapsearch -xLLL -b cn=config -D cn=admin,cn=config -W olcDatabase=hdb olcAccess</strong></span>
+</pre>
+                <pre class="screen">
+<code class="computeroutput">Enter LDAP Password: 
+dn: olcDatabase={1}hdb,cn=config
+olcAccess: {0}to attrs=userPassword,shadowLastChange by dn="cn=admin,dc=exampl
+ e,dc=com" write by anonymous auth by self write by * none
+olcAccess: {1}to dn.base="" by * read
+olcAccess: {2}to * by dn="cn=admin,dc=example,dc=com" write by * read
+</code>
+</pre>
+              </div>
+              <div class="sect2" title="TLS and SSL">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-tls"></a>TLS and SSL</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+          When authenticating to an OpenLDAP server it is best to do so using an encrypted session.  This can be accomplished using Transport
+          Layer Security (TLS) and/or Secure Sockets Layer (SSL).
+          </p>
+                <p>
+          The first step in the process is to obtain or create a <span class="emphasis"><em>certificate</em></span>.  Because <span class="application"><strong>slapd</strong></span> 
+          is compiled using the <span class="application"><strong>gnutls</strong></span> library, the <span class="application"><strong>certtool</strong></span> utility will be 
+          used to create certificates.
+          </p>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+              First, install <span class="application"><strong>gnutls-bin</strong></span> by entering the following in a terminal:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo apt-get install gnutls-bin</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+              Next, create a private key for the <span class="emphasis"><em>Certificate Authority</em></span> (CA):
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo sh -c "certtool --generate-privkey &gt; /etc/ssl/private/cakey.pem"</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+              Create a <code class="filename">/etc/ssl/ca.info</code> details file to self-sign the CA certificate containing:
+              </p>
+                      <pre class="programlisting">
+cn = Example Company
+ca
+cert_signing_key
+</pre>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+              Now create the self-signed CA certificate:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo certtool --generate-self-signed --load-privkey /etc/ssl/private/cakey.pem \ 
+ --template  /etc/ssl/ca.info --outfile /etc/ssl/certs/cacert.pem</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 5">
+                      <p>
+              Make a private key for the server:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo sh -c "certtool --generate-privkey &gt; /etc/ssl/private/ldap01_slapd_key.pem"</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+                Replace <span class="emphasis"><em>ldap01</em></span> in the filename with your server's hostname.  Naming the certificate and key for the host
+                and service that will be using them will help keep filenames and paths straight.
+                </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 6">
+                      <p>
+              To sign the server's certificate with the CA, create the <code class="filename">/etc/ssl/ldap01.info</code> info file containing:
+              </p>
+                      <pre class="programlisting">
+organization = Example Company
+cn = ldap01.example.com
+tls_www_server
+encryption_key
+signing_key
+</pre>
+                    </li>
+                    <li class="step" title="Step 7">
+                      <p>
+              Create the server's certificate:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo certtool --generate-certificate --load-privkey /etc/ssl/private/x01-test_slapd_key.pem \
+ --load-ca-certificate /etc/ssl/certs/cacert.pem --load-ca-privkey /etc/ssl/private/cakey.pem \
+ --template /etc/ssl/x01-test.info --outfile /etc/ssl/certs/x01-test_slapd_cert.pem</strong></span>
+</pre>
+                    </li>
+                  </ol>
+                </div>
+                <p>
+          Once you have a certificate, key, and CA cert installed, use <span class="application"><strong>ldapmodify</strong></span> to add the new 
+          configuration options:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo ldapmodify -Y EXTERNAL -H ldapi:///</strong></span>
+</pre>
+                <pre class="screen">
+<code class="computeroutput">Enter LDAP Password:
+<strong class="userinput"><code>dn: cn=config
+add: olcTLSCACertificateFile
+olcTLSCACertificateFile: /etc/ssl/certs/cacert.pem
+-
+add: olcTLSCertificateFile
+olcTLSCertificateFile: /etc/ssl/certs/ldap01_slapd_cert.pem
+-
+add: olcTLSCertificateKeyFile
+olcTLSCertificateKeyFile: /etc/ssl/private/ldap01_slapd_key.pem</code></strong>
+
+modifying entry "cn=config"
+</code>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            Adjust the <code class="filename">ldap01_slapd_cert.pem</code>, <code class="filename">ldap01_slapd_key.pem</code>, and 
+            <code class="filename">cacert.pem</code> names if yours are different. 
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+          Next, edit <code class="filename">/etc/default/slapd</code> uncomment the <span class="emphasis"><em>SLAPD_SERVICES</em></span> option:
+          </p>
+                <pre class="programlisting">
+SLAPD_SERVICES="ldap:/// ldapi:/// ldaps:///"
+</pre>
+                <p>
+          Now the <span class="emphasis"><em>openldap</em></span> user needs access to the certificate:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo adduser openldap ssl-cert</strong></span>
+<span class="command"><strong>sudo chgrp ssl-cert /etc/ssl/private/ldap01_slapd_key.pem</strong></span>
+<span class="command"><strong>sudo chmod g+r /etc/ssl/private/ldap01_slapd_key.pem</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            If the <code class="filename">/etc/ssl/private</code> and <code class="filename">/etc/ssl/private/server.key</code> have
+            different permissions, adjust the commands appropriately.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+          Finally, restart <span class="application"><strong>slapd</strong></span>:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/slapd restart</strong></span>
+</pre>
+                <p>
+          The <span class="application"><strong>slapd</strong></span> daemon should now be listening for LDAPS connections and be able to use STARTTLS during
+          authentication.
+          </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>If you run into troubles with the server not starting,
+	      check the /var/log/syslog. If you see errors like 
+	      main: TLS init def ctx failed: -1,
+	      it is likely there is a configuration problem.
+	      Check that the certificate is signed by the authority from 
+	      in the files configured, and that the ssl-cert group
+	      has read permissions on the private key.
+	    </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="sect3" title="TLS Replication">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="openldap-tls-replication"></a>TLS Replication</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+            If you have setup <span class="application"><strong>Syncrepl</strong></span> between servers, it is prudent to encrypt the replication traffic 
+            using <span class="emphasis"><em>Transport Layer Security (TLS)</em></span>.  For details on setting up replication see 
+            <a class="xref" href="openldap-server.html#openldap-server-replication" title="LDAP Replication">the section called “LDAP Replication”</a>.
+            </p>
+                  <p>
+            Assuming you have followed the above instructions and created a CA certificate and server certificate on the 
+            <span class="emphasis"><em>Provider</em></span> server.  Follow the following instructions to create a certificate and key for the 
+            <span class="emphasis"><em>Consumer</em></span> server.
+            </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+                Create a new key for the Consumer server:
+                </p>
+                        <pre class="screen">
+<span class="command"><strong>mkdir ldap02-ssl</strong></span>
+<span class="command"><strong>cd ldap02-ssl</strong></span>
+<span class="command"><strong>certtool --generate-privkey &gt; ldap02_slapd_key.pem</strong></span>
+</pre>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+                  Creating a new directory is not strictly necessary, but it will help keep things organized and make it easier to copy the 
+                  files to the Consumer server.
+                  </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+                Next, create an info file, <code class="filename">ldap02.info</code> for the Consumer server, changing the attributes to match your 
+                locality and server:
+                </p>
+                        <pre class="programlisting">
+country = US
+state = North Carolina
+locality = Winston-Salem
+organization = Example Company
+cn = ldap02.salem.edu
+tls_www_client
+encryption_key
+signing_key
+</pre>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+                Create the certificate:
+                </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo certtool --generate-certificate --load-privkey ldap02_slapd_key.pem \
+ --load-ca-certificate /etc/ssl/certs/cacert.pem --load-ca-privkey /etc/ssl/private/cakey.pem \
+ --template ldap02.info --outfile ldap02_slapd_cert.pem</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+                Copy the <code class="filename">cacert.pem</code> to the dicretory:
+                </p>
+                        <pre class="screen">
+<span class="command"><strong>cp /etc/ssl/certs/cacert.pem .</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+                The only thing left is to copy the <code class="filename">ldap02-ssl</code> directory to the Consumer server, then copy 
+                <code class="filename">ldap02_slapd_cert.pem</code> and <code class="filename">cacert.pem</code> to <code class="filename">/etc/ssl/certs</code>,
+                and copy <code class="filename">ldap02_slapd_key.pem</code> to <code class="filename">/etc/ssl/private</code>.
+                </p>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+                Once the files are in place adjust the <span class="emphasis"><em>cn=config</em></span> tree by entering:
+                </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo ldapmodify -Y EXTERNAL -H ldapi:///</strong></span>
+</pre>
+                        <pre class="screen">
+<code class="computeroutput">Enter LDAP Password:
+<strong class="userinput"><code>dn: cn=config
+add: olcTLSCACertificateFile
+olcTLSCACertificateFile: /etc/ssl/certs/cacert.pem
+-
+add: olcTLSCertificateFile
+olcTLSCertificateFile: /etc/ssl/certs/ldap02_slapd_cert.pem
+-
+add: olcTLSCertificateKeyFile
+olcTLSCertificateKeyFile: /etc/ssl/private/ldap02_slapd_key.pem</code></strong>
+
+modifying entry "cn=config"
+</code>
+</pre>
+                      </li>
+                      <li class="step" title="Step 7">
+                        <p>
+                As with the Provider you can now edit <code class="filename">/etc/default/slapd</code> and add the <span class="emphasis"><em>ldaps:///</em></span>
+                parameter to the <span class="emphasis"><em>SLAPD_SERVICES</em></span> option.
+                </p>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+            Now that <span class="emphasis"><em>TLS</em></span> has been setup on each server, once again modify the <span class="emphasis"><em>Consumer</em></span> server's
+            <span class="emphasis"><em>cn=config</em></span> tree by entering the following in a terminal:
+            </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo ldapmodify -Y EXTERNAL -H ldapi:///</strong></span>
+</pre>
+                  <pre class="screen">
+<code class="computeroutput">SASL/EXTERNAL authentication started
+SASL username: gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth
+SASL SSF: 0
+<strong class="userinput"><code>
+dn: olcDatabase={1}hdb,cn=config
+replace: olcSyncrepl
+olcSyncrepl: {0}rid=0 provider=ldap://ldap01.example.com bindmethod=simple binddn="cn=ad
+ min,dc=example,dc=com" credentials=secret searchbase="dc=example,dc=com" logbas
+ e="cn=accesslog" logfilter="(&amp;(objectClass=auditWriteObject)(reqResult=0))" s
+ chemachecking=on type=refreshAndPersist retry="60 +" syncdata=accesslog starttls=yes</code></strong>
+
+modifying entry "olcDatabase={1}hdb,cn=config"
+</code>
+</pre>
+                  <p>
+            If the LDAP server hostname does not match the Fully Qualified Domain Name (FQDN) in the certificate, you may have to edit 
+            <code class="filename">/etc/ldap/ldap.conf</code> and add the following TLS options:
+            </p>
+                  <pre class="programlisting">
+TLS_CERT /etc/ssl/certs/ldap02_slapd_cert.pem
+TLS_KEY /etc/ssl/private/ldap02_slapd_key.pem
+TLS_CACERT /etc/ssl/certs/cacert.pem
+</pre>
+                  <p>
+              Finally, restart <span class="application"><strong>slapd</strong></span> on each of the servers:
+              </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/slapd restart</strong></span>
+</pre>
+                </div>
+              </div>
+              <div class="sect2" title="LDAP Authentication">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-auth-config"></a>LDAP Authentication</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+          Once you have a working LDAP server, the <span class="application"><strong>auth-client-config</strong></span> and <span class="application"><strong>libnss-ldap</strong></span> 
+          packages take the pain out of configuring an Ubuntu client to authenticate using LDAP.  To install the packages from, a terminal 
+          prompt enter:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install libnss-ldap</strong></span>
+</pre>
+                <p>
+         During the install a menu dialog will ask you connection details about your LDAP server.
+         </p>
+                <p>
+         If you make a mistake when entering your information you can execute the dialog again using:
+         </p>
+                <pre class="screen">
+<span class="command"><strong>sudo dpkg-reconfigure ldap-auth-config</strong></span>
+</pre>
+                <p>
+         The results of the dialog can be seen in <code class="filename">/etc/ldap.conf</code>.  If your server requires options not covered in the menu 
+         edit this file accordingly.
+         </p>
+                <p>
+         Now that <span class="application"><strong>libnss-ldap</strong></span> is configured enable the <span class="application"><strong>auth-client-config</strong></span> LDAP profile by 
+         entering:
+         </p>
+                <pre class="screen">
+<span class="command"><strong>sudo auth-client-config -t nss -p lac_ldap</strong></span>
+</pre>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>-t:</em></span> only modifies <code class="filename">/etc/nsswitch.conf</code>.
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>-p:</em></span> name of the profile to enable, disable, etc.
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      <span class="emphasis"><em>lac_ldap:</em></span> the <span class="application"><strong>auth-client-config</strong></span> profile that is part of the 
+              <span class="application"><strong>ldap-auth-config</strong></span> package.
+	      </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+          Using the <span class="application"><strong>pam-auth-update</strong></span> utility, configure the system to use LDAP for authentication:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo pam-auth-update</strong></span>
+</pre>
+                <p>
+          From the <span class="application"><strong>pam-auth-update</strong></span> menu, choose LDAP and any other authentication mechanisms you need.
+          </p>
+                <p>
+          You should now be able to login using user credentials stored in the LDAP directory.
+          </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            If you are going to use LDAP to store Samba users you will need to configure the server to authenticate using LDAP.
+            See <a class="xref" href="samba-ldap.html" title="Samba and LDAP">the section called “Samba and LDAP”</a> for details.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="User and Group Management">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ldap-usergroup-management"></a>User and Group Management</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+          The <span class="application"><strong>ldap-utils</strong></span> package comes with multiple utilities to manage the directory, but the long 
+          string of options needed, can make them a burden to use. The <span class="application"><strong>ldapscripts</strong></span> package contains 
+          configurable scripts to easily manage LDAP users and groups.
+          </p>
+                <p>
+          To install the package, from a terminal enter:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install ldapscripts</strong></span>
+</pre>
+                <p> 
+          Next, edit the config file <code class="filename">/etc/ldapscripts/ldapscripts.conf</code> uncommenting and changing the following to 
+          match your environment:
+          </p>
+                <pre class="programlisting">
+SERVER=localhost
+BINDDN='cn=admin,dc=example,dc=com'
+BINDPWDFILE="/etc/ldapscripts/ldapscripts.passwd"
+SUFFIX='dc=example,dc=com'
+GSUFFIX='ou=Groups'
+USUFFIX='ou=People'
+MSUFFIX='ou=Computers'
+GIDSTART=10000
+UIDSTART=10000
+MIDSTART=10000
+</pre>
+                <p>
+          Now, create the <code class="filename">ldapscripts.passwd</code> file to allow authenticated access to the directory:
+          </p>
+                <pre class="screen">
+<span class="command"><strong>sudo sh -c "echo -n 'secret' &gt; /etc/ldapscripts/ldapscripts.passwd"</strong></span>
+<span class="command"><strong>sudo chmod 400 /etc/ldapscripts/ldapscripts.passwd</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            Replace <span class="quote">“<span class="quote">secret</span>”</span> with the actual password for your LDAP admin user.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+          The <span class="application"><strong>ldapscripts</strong></span> are now ready to help manage your directory.  The following are some examples
+          of how to use the scripts:
+          </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	      Create a new user:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapadduser george example</strong></span>
+</pre>
+                      <p>
+              This will create a user with uid <span class="italic">george</span> and set the user's primary group (gid) to
+              <span class="italic">example</span>
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Change a user's password:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapsetpasswd george</strong></span>
+<code class="computeroutput">Changing password for user uid=george,ou=People,dc=example,dc=com</code>
+<strong class="userinput"><code>New Password: </code></strong>
+<strong class="userinput"><code>New Password (verify): </code></strong>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Delete a user:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapdeleteuser george</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Add a group:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapaddgroup qa</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Delete a group:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapdeletegroup qa</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Add a user to a group:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapaddusertogroup george qa</strong></span>
+</pre>
+                      <p>
+              You should now see a <span class="emphasis"><em>memberUid</em></span> attribute for the <span class="italic">qa</span> group with 
+              a value of <span class="italic">george</span>.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Remove a user from a group:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapdeleteuserfromgroup george qa</strong></span>
+</pre>
+                      <p>
+              The <span class="emphasis"><em>memberUid</em></span> attribute should now be removed from the <span class="italic">qa</span>
+              group.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      The <span class="application"><strong>ldapmodifyuser</strong></span> script allows you to add, remove, or replace a user's attributes.  
+              The script uses the same syntax as the <span class="application"><strong>ldapmodify</strong></span> utility.  For example:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo ldapmodifyuser george</strong></span>
+<code class="computeroutput"># About to modify the following entry :
+dn: uid=george,ou=People,dc=example,dc=com
+objectClass: account
+objectClass: posixAccount
+cn: george
+uid: george
+uidNumber: 1001
+gidNumber: 1001
+homeDirectory: /home/george
+loginShell: /bin/bash
+gecos: george
+description: User account
+userPassword:: e1NTSEF9eXFsTFcyWlhwWkF1eGUybVdFWHZKRzJVMjFTSG9vcHk=
+
+# Enter your modifications here, end with CTRL-D.
+dn: uid=george,ou=People,dc=example,dc=com</code>
+<strong class="userinput"><code>replace: gecos
+gecos: George Carlin</code></strong>
+</pre>
+                      <p>
+              The user's <span class="emphasis"><em>gecos</em></span> should now be <span class="quote">“<span class="quote">George Carlin</span>”</span>.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Another great feature of <span class="application"><strong>ldapscripts</strong></span>, is the template system.  Templates
+              allow you to customize the attributes of user, group, and machine objectes.  For example, to enable
+              the <span class="emphasis"><em>user</em></span> template edit <code class="filename">/etc/ldapscripts/ldapscripts.conf</code> 
+              changing:
+	      </p>
+                      <pre class="programlisting">
+UTEMPLATE="/etc/ldapscripts/ldapadduser.template"
+</pre>
+                      <p>
+              There are <span class="italic">sample</span> templates in the <code class="filename">/etc/ldapscripts</code> directory.
+              Copy or rename the <code class="filename">ldapadduser.template.sample</code> file to 
+              <code class="filename">/etc/ldapscripts/ldapadduser.template</code>:
+              </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo cp /etc/ldapscripts/ldapadduser.template.sample /etc/ldapscripts/ldapadduser.template</strong></span>
+</pre>
+                      <p>
+              Edit the new template to add the desired attributes.  The following will create new user's as with an 
+              <span class="emphasis"><em>objectClass</em></span> of <span class="emphasis"><em>inetOrgPerson</em></span>:
+              </p>
+                      <pre class="programlisting">
+dn: uid=&lt;user&gt;,&lt;usuffix&gt;,&lt;suffix&gt;
+objectClass: inetOrgPerson
+objectClass: posixAccount
+cn: &lt;user&gt;
+sn: &lt;ask&gt;
+uid: &lt;user&gt;
+uidNumber: &lt;uid&gt;
+gidNumber: &lt;gid&gt;
+homeDirectory: &lt;home&gt;
+loginShell: &lt;shell&gt;
+gecos: &lt;user&gt;
+description: User account
+title: Employee
+</pre>
+                      <p>
+              Notice the <span class="emphasis"><em>&lt;ask&gt;</em></span> option used for the <span class="emphasis"><em>cn</em></span> value.  Using &lt;ask&gt; 
+              will configure <span class="application"><strong>ldapadduser</strong></span> to prompt you for the attribute value during user creation.
+              </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+          There are more useful scripts in the package, to see a full list enter: <span class="command"><strong>dpkg -L ldapscripts | grep bin</strong></span>
+          </p>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="openldap-server-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	      The <a class="ulink" href="https://help.ubuntu.com/community/OpenLDAPServer" target="_top">OpenLDAP Ubuntu Wiki</a> page has more details.
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      For more information see <a class="ulink" href="http://www.openldap.org/" target="_top">OpenLDAP Home Page</a>
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Though starting to show it's age, a great source for in depth LDAP information is 
+	      O'Reilly's <a class="ulink" href="http://www.oreilly.com/catalog/ldapsa/" target="_top">LDAP System Administration</a>
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              Packt's <a class="ulink" href="http://www.packtpub.com/OpenLDAP-Developers-Server-Open-Source-Linux/book" target="_top">Mastering OpenLDAP</a>
+              is a great reference covering newer versions of OpenLDAP.
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              For more information on <span class="application"><strong>auth-client-config</strong></span> see the man page: <span class="command"><strong>man auth-client-config</strong></span>.
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              For more details regarding the <span class="application"><strong>ldapscripts</strong></span> package see the man pages: <span class="command"><strong>man ldapscripts</strong></span>,
+              <span class="command"><strong>man ldapadduser</strong></span>, <span class="command"><strong>man ldapaddgroup</strong></span>, etc.
+	      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="network-authentication.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="network-authentication.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="samba-ldap.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 6. Network Authentication </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Samba and LDAP</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

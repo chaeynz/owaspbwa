@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Best practices for packaging database applications - Database Applications</title>
+
+<link href="index.html" rel="start">
+<link href="index.html" rel="prev">
+<link href="index.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch-dbapps.html" rel="chapter" title="1 Database Applications">
+<link href="ch-dbapps.html#s-scope" rel="section" title="1.1 Scope">
+<link href="ch-dbapps.html#s-terminology" rel="section" title="1.2 Terminology">
+<link href="ch-dbapps.html#s-placement" rel="section" title="1.3 Placement of databases">
+<link href="ch-dbapps.html#s-installationissues" rel="section" title="1.4 Installation related issues">
+<link href="ch-dbapps.html#s-tools" rel="section" title="1.5 Build-time and run-time tools">
+<link href="ch-dbapps.html#s-related" rel="section" title="1.6 Related threads/discussions">
+<link href="ch-dbapps.html#s-preconfiguration" rel="subsection" title="1.4.1 Automatic Database Configuration/Prompting">
+<link href="ch-dbapps.html#s-installation" rel="subsection" title="1.4.2 Database Installation">
+<link href="ch-dbapps.html#s-upgrading" rel="subsection" title="1.4.3 Database Upgrading">
+<link href="ch-dbapps.html#s-removing" rel="subsection" title="1.4.4 Database Removal">
+<link href="ch-dbapps.html#s-dbc" rel="subsection" title="1.5.1 <code>dbconfig-common</code>">
+
+</head>
+
+<body>
+
+<p><a name="ch-dbapps"></a></p>
+<hr>
+
+<p>
+[ <a href="index.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ 1 ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Best practices for packaging database applications
+<br>Chapter 1 - Database Applications
+</h1>
+
+<hr>
+
+<h2><a name="s-scope"></a>1.1 Scope</h2>
+
+<p>
+In this document a &quot;database application&quot; is any program that relies
+on some form of data storage outside the scope of the program's execution.
+This is primarily intended to encompass applications which rely on a relational
+database server or their own persistent storage mechanism, though effectively
+is a much larger set of applications.  In the future this scope may have to be
+narrowed to avoid ambiguity and be more effective as a policy.
+</p>
+
+<hr>
+
+<h2><a name="s-terminology"></a>1.2 Terminology</h2>
+
+<p>
+For the purposes of this document, there are two types of databases:
+<em>persistent</em> and <em>cached</em>.
+</p>
+
+<p>
+<em>Persistent</em> databases contain data that can not be entirely
+reconstituted in the case that the database is removed.  Also included are
+databases that if removed would cause serious denial of service (making a
+system unstable/unusable) or security concerns.  Applications using this
+category of databases are the primary focus of this document.  Examples:
+</p>
+<ul>
+<li>
+<p>
+relational database servers providing storage to other applications.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+web applications using a relational database
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+openldap's slapd databases
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+rrd files containing accumulated/historical data.
+</p>
+</li>
+</ul>
+
+<p>
+<em>Cached</em> databases are a specific group of databases which upon their
+removal could be sufficiently regenerated, and could be removed without causing
+serious denial of service or security concerns.  Examples include:
+</p>
+<ul>
+<li>
+<p>
+debconf responses
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+locate database
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+caching nameserver data
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+apt's list of available packages
+</p>
+</li>
+</ul>
+
+<hr>
+
+<h2><a name="s-placement"></a>1.3 Placement of databases</h2>
+
+<p>
+Both persistent and cached databases fall under already defined guidelines in
+the FHS; persistent data must be placed under
+<code>/var/lib/packagename</code>, and cached data under
+<code>/var/cache/packagename</code>, respectively [<a href="footnotes.html#f1"
+name="fr1">1</a>].  The remainder of this document primarily addresses the
+former.
+</p>
+
+<hr>
+
+<h2><a name="s-installationissues"></a>1.4 Installation related issues</h2>
+
+<p>
+The following descriptions are divided into different parts, based on the
+action being performed.  For each process, the acceptable behavior of database
+application packages is outlined.
+</p>
+
+<hr>
+
+<h3><a name="s-preconfiguration"></a>1.4.1 Automatic Database Configuration/Prompting</h3>
+
+<p>
+It must always be assumed that the local admin knows more than any automated
+system.  He/She must be given the ability to opt out of any
+&quot;assistance&quot; on the part of the package maintainer.  Packages
+providing any such automated assistance may do so by default if and only if the
+opt-out debconf prompt is equal to or greater than priority high.  With this in
+mind, directions for manually installing (and upgrading if relevant) the
+database must be included in the documentation for the package.
+</p>
+
+<hr>
+
+<h3><a name="s-installation"></a>1.4.2 Database Installation</h3>
+
+<p>
+For packages providing automated assistance, database
+installation/configuration should be considered as part of the package
+installation process.  A failure to install a database should be considered a
+failure to install the package and should result in an error value returned by
+the relevant maintainer script.  Packages may provide a &quot;try again&quot;
+option to re-attempt configuration.  Any such &quot;try again&quot; features
+here or elsewhere mentioned in this document must have a default negative
+response value, otherwise infinite loops could occur for noninteractive
+installs.
+</p>
+
+<p>
+To properly handle package reinstallation and reconfiguration, any automated
+assistance must allow for a package to be reinstalled at the same version
+without removing or overwriting existing application data.  Package
+reconfiguration may do so.
+</p>
+
+<hr>
+
+<h3><a name="s-upgrading"></a>1.4.3 Database Upgrading</h3>
+
+<p>
+Occasionally a new upstream version of an application will require
+modifications to be made to the application's underlying database.  If an
+automated system is to assist in such an upgrade, it should be considered as a
+part of the package upgrade process; failure to upgrade the database should be
+considered a failure to upgrade the package.  This is the only way to safely
+guarantee the chance to reattempt the upgrade with respect to the underlying
+database.
+</p>
+
+<p>
+Furthermore, any automated system that makes modifications to a database during
+upgrade must provide the ability to back-up the database before proceeding.
+Packages may perform such backups automatically, or prompt the admin via
+debconf.  Failure to back up the database should also be considered a failure
+in the upgrade process of the whole package.  As in the case of installation,
+automated assistance may provide a &quot;try-again&quot; feature to re-attempt
+the upgrade, but ultimately in the case of failure should cause a non-zero exit
+value to be returned to dpkg.
+</p>
+
+<p>
+<em>Note</em>: if the database in question supports transactional operations,
+it is recommended to do so.
+</p>
+
+<hr>
+
+<h3><a name="s-removing"></a>1.4.4 Database Removal</h3>
+
+<p>
+A package should consider databases in a spirit similar to configuration files
+or log files; they are something to which the administrator may have some need
+even when the software that created it is no longer present.
+</p>
+
+<p>
+Packages may provide support for removing underlying databases, but it is
+highly recommended that the administrator is prompted with a chance to preserve
+the data before doing so.
+</p>
+
+<hr>
+
+<h2><a name="s-tools"></a>1.5 Build-time and run-time tools</h2>
+
+<p>
+while not essential, a set of common tools for packaging and configuring these
+applications can make the life of the maintainer as well as the administrator
+much easier.
+</p>
+
+<hr>
+
+<h3><a name="s-dbc"></a>1.5.1 <code>dbconfig-common</code></h3>
+
+<p>
+<code>dbconfig-common</code> is a common framework for packaging database
+applications.  more information can be found at the <code><a
+href="http://people.debian.org/~seanius/policy/dbconfig-common.html">dbconfig-common
+homepage</a></code>, or in various formats under
+<code>/usr/share/doc/dbconfig-common</code>.
+</p>
+
+<hr>
+
+<h2><a name="s-related"></a>1.6 Related threads/discussions</h2>
+<ul>
+<li>
+<p>
+<code><a href="http://lists.debian.org/debian-devel/2004/10/msg00340.html">RFC:
+best practice creating database</a></code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code><a href="http://lists.debian.org/debian-devel/2004/10/msg00962.html">RFC:
+common database policy/infrastracture</a></code>
+</p>
+</li>
+</ul>
+
+<hr>
+
+<p>
+[ <a href="index.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ 1 ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Best practices for packaging database applications
+</p>
+
+<address>
+$Revision$<br>
+<br>
+Sean Finney<br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

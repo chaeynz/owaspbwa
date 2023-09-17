@@ -1,0 +1,849 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian GNU/Linux Java FAQ. - Status of Java in Debian GNU/Linux 3.0 (Woody)</title>
+
+<link href="index.html" rel="start">
+<link href="ch2.html" rel="prev">
+<link href="ch-debian-java-sarge.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch1.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Introduction to Java">
+<link href="ch-debian-java-woody.html" rel="chapter" title="3 Status of Java in Debian GNU/Linux 3.0 (Woody)">
+<link href="ch-debian-java-sarge.html" rel="chapter" title="4 Status of Java in Debian GNU/Linux 3.1 (Sarge)">
+<link href="ch-debian-java-etch.html" rel="chapter" title="5 Status of Java in Debian GNU/Linux 4.0 (Etch)">
+<link href="ch6.html" rel="chapter" title="6 Java Development">
+<link href="ch7.html" rel="chapter" title="7 Java Compilers">
+<link href="ch8.html" rel="chapter" title="8 Java Virtual Machines (JVM)">
+<link href="ch-browser-java.html" rel="chapter" title="9 Java Plugins for Browsers">
+<link href="ch10.html" rel="chapter" title="10 Java Servlets">
+<link href="ch11.html" rel="chapter" title="11 Java Policy">
+<link href="ch12.html" rel="chapter" title="12 Other Java alternatives for Debian">
+<link href="apA.html" rel="appendix" title="A Older Debian GNU/Linux versions">
+<link href="ch1.html#s1.1" rel="section" title="1.1 Introduction to this FAQ">
+<link href="ch1.html#s1.2" rel="section" title="1.2 Location of this FAQ">
+<link href="ch1.html#s-bugs" rel="section" title="1.3 Sending bugs on this FAQ">
+<link href="ch1.html#s-moreinfo" rel="section" title="1.4 Complementary information">
+<link href="ch1.html#s-pending" rel="section" title="1.5 Uncovered issues">
+<link href="ch2.html#s2.1" rel="section" title="2.1 What is Java?">
+<link href="ch2.html#s2.2" rel="section" title="2.2 Why would I be interested in Java?">
+<link href="ch2.html#s2.3" rel="section" title="2.3 What is a JIT?">
+<link href="ch2.html#s2.4" rel="section" title="2.4 Where can I read more about Java?">
+<link href="ch2.html#s2.5" rel="section" title="2.5 Where can I ask questions about Java on Debian?">
+<link href="ch-debian-java-woody.html#s3.1" rel="section" title="3.1 Where is Debian Java going?">
+<link href="ch-debian-java-woody.html#s3.2" rel="section" title="3.2 Is there a Java1 compiler (.java to .class)?">
+<link href="ch-debian-java-woody.html#s3.3" rel="section" title="3.3 Is there a Java1 JVM or JIT?">
+<link href="ch-debian-java-woody.html#s3.4" rel="section" title="3.4 Is there a Java1 native compiler?">
+<link href="ch-debian-java-woody.html#s3.5" rel="section" title="3.5 Does Debian have Java2 foundation libraries?">
+<link href="ch-debian-java-woody.html#s3.6" rel="section" title="3.6 Is there a Java Debugger (jdb equivalent)?">
+<link href="ch-debian-java-woody.html#s3.7" rel="section" title="3.7 Is there an Appletviewer tool?">
+<link href="ch-debian-java-woody.html#s3.8" rel="section" title="3.8 Is there a Jar tool?">
+<link href="ch-debian-java-woody.html#s3.9" rel="section" title="3.9 Is there a Javadoc tool?">
+<link href="ch-debian-java-woody.html#s3.10" rel="section" title="3.10 Does Debian do Enterprise Java Beans (EJB)?">
+<link href="ch-debian-java-woody.html#s3.11" rel="section" title="3.11 What is JAIN?">
+<link href="ch-debian-java-woody.html#s3.12" rel="section" title="3.12 What is Jini?">
+<link href="ch-debian-java-woody.html#s3.13" rel="section" title="3.13 Is there a full list of packages?">
+<link href="ch-debian-java-sarge.html#s4.1" rel="section" title="4.1 Are there many changes?">
+<link href="ch-debian-java-etch.html#s5.1" rel="section" title="5.1 Which Java package are currently in main?">
+<link href="ch-debian-java-etch.html#s5.2" rel="section" title="5.2 What keeps Java packages out of main?">
+<link href="ch-debian-java-etch.html#s5.3" rel="section" title="5.3 What can I expect in future releases?">
+<link href="ch6.html#s6.1" rel="section" title="6.1 What full-fledged Java development platforms are available in Debian?">
+<link href="ch6.html#s-free" rel="section" title="6.2 What free platforms are there and how can I contribute?">
+<link href="ch6.html#s-license-concerns" rel="section" title="6.3 Questions on platforms and license concerns">
+<link href="ch6.html#s-sect:dfsg-compliant-gui" rel="section" title="6.4 How can I make a DFSG compliant Java GUI program?">
+<link href="ch6.html#s6.5" rel="section" title="6.5 Making Debian packages for Java progams.">
+<link href="ch7.html#s7.1" rel="section" title="7.1 What Java compilers are available in Debian?">
+<link href="ch8.html#s8.1" rel="section" title="8.1 What jvms work in Debian?">
+<link href="ch8.html#s8.2" rel="section" title="8.2 What free JVMs are available in Debian?">
+<link href="ch8.html#s8.3" rel="section" title="8.3 What API do these JVMs provide?">
+<link href="ch8.html#s8.4" rel="section" title="8.4 Are there known problems?">
+<link href="ch8.html#s8.5" rel="section" title="8.5 Do I need a JVM to run a Java program in Debian?">
+<link href="ch-browser-java.html#s9.1" rel="section" title="9.1 Can I use any JVM as a Java Plugin?">
+<link href="ch-browser-java.html#s-konqueror-java" rel="section" title="9.2 Can I use Java in Konqueror?">
+<link href="ch-browser-java.html#s-netscape-java" rel="section" title="9.3 Can I use Java in Netscape 6.x/7.x?">
+<link href="ch-browser-java.html#s9.4" rel="section" title="9.4 Can I use Java in Mozilla?">
+<link href="ch10.html#s10.1" rel="section" title="10.1 How can I make Java servlets work?">
+<link href="ch10.html#s10.2" rel="section" title="10.2 Do servlets work with kaffe?">
+<link href="ch10.html#s10.3" rel="section" title="10.3 Do I need non-free Java in order to run servlets?">
+<link href="ch11.html#s11.1" rel="section" title="11.1 Is there a Java policy for Debian?">
+<link href="ch11.html#s11.2" rel="section" title="11.2 Are there holes in the Java Policy?">
+<link href="ch12.html#s-blackdown-pack" rel="section" title="12.1 How can I get Debian packages from Blackdown?">
+<link href="ch12.html#s12.2" rel="section" title="12.2 How can I integrate Sun's J2SE SDK with Debian 3.1?">
+<link href="ch12.html#s12.3" rel="section" title="12.3 How can I integrate Sun's J2SE SDK with Debian 3.0?">
+<link href="ch12.html#s12.4" rel="section" title="12.4 Java programs not yet available on Debian">
+<link href="apA.html#sA.1" rel="section" title="A.1 Debian 2.2 'potato'">
+<link href="apA.html#sA.2" rel="section" title="A.2 Debian 2.1 'slink'">
+<link href="apA.html#sA.3" rel="section" title="A.3 Debian 2.0 'hamm'">
+<link href="apA.html#sA.4" rel="section" title="A.4 Debian 1.3.1 'bo'">
+<link href="ch-debian-java-woody.html#s3.4.1" rel="subsection" title="3.4.1 Java2 native compiler">
+<link href="ch-debian-java-woody.html#s3.6.1" rel="subsection" title="3.6.1 What free edit-interactive/graphical debugging tools are available on Debian?">
+<link href="ch-debian-java-woody.html#s3.6.2" rel="subsection" title="3.6.2 Known problems">
+<link href="ch6.html#s-java56" rel="subsection" title="6.3.1 Java 5 and 6">
+<link href="ch6.html#s6.3.2" rel="subsection" title="6.3.2 Sun's OpenJDK">
+<link href="ch6.html#s6.3.3" rel="subsection" title="6.3.3 Java 2 SE (aka JDK1.2)">
+<link href="ch6.html#s6.3.3.1" rel="subsection" title="6.3.3.1 Why is Sun's Java 2 SE (aka jdk 1.2) not available?">
+<link href="ch6.html#s-scsl" rel="subsection" title="6.3.3.2 What are the problems with Suns' new license?">
+<link href="ch6.html#s6.3.3.3" rel="subsection" title="6.3.3.3 What is the SCSL?">
+<link href="ch6.html#s6.3.3.4" rel="subsection" title="6.3.3.4 Can I use jdk1.2 while working with the free Java implementations?">
+<link href="ch6.html#s6.3.3.5" rel="subsection" title="6.3.3.5 Why is (some) free software not implementing Java2?">
+<link href="ch6.html#s-ibm-jdk" rel="subsection" title="6.3.4 IBM's Developer Kit for Linux">
+<link href="ch6.html#s6.3.4.1" rel="subsection" title="6.3.4.1 Can Debian distribute IBM's jdk?">
+<link href="ch6.html#s6.3.4.2" rel="subsection" title="6.3.4.2 Is it possible to obtain a licence for Debian?">
+<link href="ch6.html#s6.3.5" rel="subsection" title="6.3.5 JRE">
+<link href="ch6.html#s6.3.5.1" rel="subsection" title="6.3.5.1 Can Debian distribute JRE?">
+<link href="ch6.html#s6.3.6" rel="subsection" title="6.3.6 GPL or LGPL?">
+<link href="ch6.html#s6.4.1" rel="subsection" title="6.4.1 Do swing-based programs work in Debian?">
+<link href="ch6.html#s6.5.1" rel="subsection" title="6.5.1 Can the package go into main?">
+<link href="ch6.html#s6.5.2" rel="subsection" title="6.5.2 What virtual packages could I use?">
+<link href="ch6.html#s6.5.3" rel="subsection" title="6.5.3 Is there a good example Debian package?">
+<link href="ch6.html#s6.5.4" rel="subsection" title="6.5.4 What tools are available to make maintaining a Java packages easier?">
+<link href="ch8.html#s8.5.1" rel="subsection" title="8.5.1 How do I compile to native code?">
+<link href="ch8.html#s8.5.2" rel="subsection" title="8.5.2 Are there any successes using this approach?">
+<link href="ch8.html#s8.5.3" rel="subsection" title="8.5.3 Are there any problems with this approach?">
+<link href="ch8.html#s8.5.4" rel="subsection" title="8.5.4 Does these work for architectures different than i386?">
+<link href="ch12.html#s-swing-run" rel="subsection" title="12.1.1 Making swing work in Debian">
+<link href="ch12.html#s12.1.2" rel="subsection" title="12.1.2 Making Java 2 work in Debian">
+<link href="apA.html#sA.2.1" rel="subsection" title="A.2.1 I've installed the latest jde package...what I have to do to let Emacs enter jde-mode automatically when loading a Java source file?">
+
+</head>
+
+<body>
+
+<p><a name="ch-debian-java-woody"></a></p>
+<hr>
+
+<p>
+[ <a href="ch2.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ 3 ]
+[ <a href="ch-debian-java-sarge.html">4</a> ]
+[ <a href="ch-debian-java-etch.html">5</a> ]
+[ <a href="ch6.html">6</a> ]
+[ <a href="ch7.html">7</a> ]
+[ <a href="ch8.html">8</a> ]
+[ <a href="ch-browser-java.html">9</a> ]
+[ <a href="ch10.html">10</a> ]
+[ <a href="ch11.html">11</a> ]
+[ <a href="ch12.html">12</a> ]
+[ <a href="apA.html">A</a> ]
+[ <a href="ch-debian-java-sarge.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian GNU/Linux Java FAQ.
+<br>Chapter 3 - Status of Java in Debian GNU/Linux 3.0 (Woody)
+</h1>
+
+<hr>
+
+<h2><a name="s3.1"></a>3.1 Where is Debian Java going?</h2>
+
+<p>
+The first thing you should understand about the design strategy of Debian is
+that our goal is to produce a 100% Free Software platform.  In that sense, some
+of the Java tools available [<a href="footnotes.html#f1" name="fr1">1</a>] are
+not available in the standard Debian distribution for licensing reasons, not
+for any technical motivation (see <a
+href="ch6.html#s-license-concerns">Questions on platforms and license concerns,
+Section 6.3</a>).
+</p>
+
+<p>
+That said, basically all of the technologies you might ask about can be or are
+available for Debian immediately.  In order to usefully answer your questions,
+however, here you have a status from an Open Source availability perspective.
+</p>
+
+<p>
+If you are <em>really</em> interested, read the following: <code><a
+href="http://lists.debian.org/debian-java/1999/debian-java-199912/msg00015.html">http://lists.debian.org/debian-java/1999/debian-java-199912/msg00015.html</a></code>
+and <code><a
+href="http://lists.debian.org/debian-java/1999/debian-java-199910/msg00017.html">http://lists.debian.org/debian-java/1999/debian-java-199910/msg00017.html</a></code>.
+This section is a summary of the information therein.  (<em>Note</em>: this
+information might not be fully updated at this point in time, it was written
+around 1999)
+</p>
+
+<hr>
+
+<h2><a name="s3.2"></a>3.2 Is there a Java1 compiler (.java to .class)?</h2>
+
+<p>
+There is the Kopi Java Compiler written in Java.  And the super fast Jikes
+written in C++.
+</p>
+
+<p>
+Gcj can also compile .java to .class.  CVS version currently does handle inner
+classes, as well as any other jdk 1.1 constructs, but might not be able to
+compile a complicated program like the XSL processor xt.  It is written in C,
+so is reasonably fast.  It generates reasonably good bytecode.  And of course
+being able to use the same compiler for .java to .class and .java to native has
+its advantages.
+</p>
+
+<hr>
+
+<h2><a name="s3.3"></a>3.3 Is there a Java1 JVM or JIT?</h2>
+
+<p>
+Kaffe 1.0.5 is largely feature complete and now includes support for RMI.  It
+is not clear as to whether Kaffe's serialization is &quot;binary
+compatible&quot; with Sun's implementation in all cases so there may be
+interoperation issues in some casses.  Kaffe comes with a big class library.
+</p>
+
+<p>
+libgcj (the run-time library for gcj) now includes an interpreter and
+ClassLoader.
+</p>
+
+<p>
+tya, a JIT compiler, is also available.
+</p>
+
+<hr>
+
+<h2><a name="s3.4"></a>3.4 Is there a Java1 native compiler?</h2>
+
+<p>
+GCC, the Gnu Compiler Collection comes with GCJ, the Gnu Compiler for Java
+</p>
+
+<hr>
+
+<h3><a name="s3.4.1"></a>3.4.1 Java2 native compiler</h3>
+
+<p>
+It is unclear whether native compiler refers to the adaptive JIT capabilities
+in Java2 or to a compiler that understands Java2 semantics.  In either case,
+Kaffe's JIT strategy is not adaptive but performs correctly, and improving, it
+is believed IBM's Jikes compiler understands Java2 concepts such as weak
+references.
+</p>
+
+<hr>
+
+<h2><a name="s3.5"></a>3.5 Does Debian have Java2 foundation libraries?</h2>
+
+<p>
+Many of these components have been cloned under a Free Software license.  Kaffe
+provides many of these routines, including an up-to-date RMI implementation.
+There are, however, definitely shortcomings.  Swing, as far as we know, has not
+been cloned.
+</p>
+
+<hr>
+
+<h2><a name="s3.6"></a>3.6 Is there a Java Debugger (jdb equivalent)?</h2>
+
+<p>
+<code>jswat</code>
+</p>
+
+<p>
+Gdb can debug native code produced by Gcj.  Stuart Grossman (Cygnus) also wrote
+support for Gdb to debug other VMs using JVMDI.  This has not been released,
+because the Gdb internals were changed at the same time, and no-one has had
+time to re-integrate the changes.  We can probably get Cygnus to release the
+old code, if someone wants to look into getting this stuff working with the
+current Gdb internals.  (A non-trivial job.)
+</p>
+
+<p>
+See <code><a
+href="http://sourceware.cygnus.com/java/gdb.html">http://sourceware.cygnus.com/java/gdb.html</a></code>
+on how to debug gcj-compiled Java programs.
+</p>
+
+<hr>
+
+<h3><a name="s3.6.1"></a>3.6.1 What free edit-interactive/graphical debugging tools are available on Debian?</h3>
+
+<p>
+jde, ddd, more?
+</p>
+
+<p>
+One of the some nice features of jde are autoindention and syntax highlighting,
+but it also supports debugging and compilation.
+</p>
+
+<hr>
+
+<h3><a name="s3.6.2"></a>3.6.2 Known problems</h3>
+
+<p>
+My version of <code>jdb</code> (jdb version 98/01/06) terminates after a
+program finishes execution, and I have to reset every breakpoint if I want to
+run through the program again.  This makes using jdb extremely frustrating.
+Jdb also can't (easily) print the values in an array which is more than three
+elements long.  Ddd lets me work around both of these annoyances.
+</p>
+
+<p>
+<code>ddd</code> 3.1 and earlier would &quot;hang&quot; when receiving certain
+prompts with wierd thread names from jdb.  This made it very hard to use ddd
+with jdb.  This has been fixed in ddd 3.2.  It doesn't look like ddd 3.2 has
+been packaged yet.  I suspect the current packaged version of ddd won't work
+well with jdb.
+</p>
+
+<hr>
+
+<h2><a name="s3.7"></a>3.7 Is there an Appletviewer tool?</h2>
+
+<p>
+There are some alternatives for an appletviewer tool:
+</p>
+<ul>
+<li>
+<p>
+Blackdown's appletviewer (in jdk1.1).
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Kaffe's appletviewer.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Ibm's appletviewer (in ibm-jdk).
+</p>
+</li>
+</ul>
+
+<hr>
+
+<h2><a name="s3.8"></a>3.8 Is there a Jar tool?</h2>
+
+<p>
+<code>FastJar</code> which is indeed very fast.  <code>Kaffe</code> also has a
+jar tool.
+</p>
+
+<hr>
+
+<h2><a name="s3.9"></a>3.9 Is there a Javadoc tool?</h2>
+
+<p>
+<code>doc++</code> can work with C++ and Java.  Additionally, there are the
+<code>gjdoc</code> and <code>gjdoc-native</code> packages.
+</p>
+
+<hr>
+
+<h2><a name="s3.10"></a>3.10 Does Debian do Enterprise Java Beans (EJB)?</h2>
+
+<p>
+There is activity in this area, the most noteworthy being the Open Source EJB
+implementation from Bull in France called Jonas.  I have done some work with
+this system and it provides a good start towards a full EJB feature set.  In
+particular, it provides a transaction monitor and a container based persistance
+implementation.  I have used this system on Linux with free databases such as
+Postgresql.  I have not been able to get the system fully operational on Kaffe.
+Additionally, the system depends on many Sun APIs which have not been cloned
+(JTA, JNDI, and EJB itself).
+</p>
+
+<hr>
+
+<h2><a name="s3.11"></a>3.11 What is JAIN?</h2>
+
+<p>
+It seems to be a system for controlling large scale, integrated communications
+infrastructures and modeling events with such networks via the JavaBeans API.
+The scale of this effort seems very large and encompasses the work of many
+organizations.  The work is very new and seems to tie into Sun's SCSL strategy,
+which leads us me to believe that there is not much in the way of Open Source
+options in this area.  However, some protocols such as H.323 are genuinely open
+and are even cloned so it is possible that chunks of the JAIN system may exist
+in a scattered manner.  We have no knowledge of a serious Free Software
+implementation of RTP or the H.323 infrastructures in Java.
+</p>
+
+<hr>
+
+<h2><a name="s3.12"></a>3.12 What is Jini?</h2>
+
+<p>
+Jini presents an especially pronounced Free Software problem.  Jini is only
+available as source from Sun and that source is only available under the SCSL.
+The SCSL is not compatible in any sense with either the legal mechanics or the
+political spirit of Free Software.  The SCSL also makes cloning the API of an
+SCSL implementation illegal which precludes even a clean room replication of
+Jini.  If you are interested in tuple space type implementations there are Open
+Source options.
+</p>
+
+<hr>
+
+<h2><a name="s3.13"></a>3.13 Is there a full list of packages?</h2>
+
+<p>
+Below is a list given on packages that can be found in Debian 3.0 (aka Woody).
+The list does not display which of these packages can be found in main, and
+which is contrib or non-free.
+</p>
+<ul>
+<li>
+<p>
+Runtime environments/Virtual Machines
+</p>
+<ul>
+<li>
+<p>
+<code>jdk1.1</code> (Sun's JDK 1.1.8)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+IBM 's JDK 1.1.8 (installer package)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>kaffe</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>kissme</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>sablevm</code>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Tools
+</p>
+<ul>
+<li>
+<p>
+Compilers
+</p>
+<ul>
+<li>
+<p>
+<code>jikes</code> (also <code>jikes-1.14</code>, <code>jikes-gij</code>,
+<code>jikes-kaffe</code>)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>jdk1.1</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>gcj</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>tya</code> (JIT compiler)
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Debuggers/Testing
+</p>
+<ul>
+<li>
+<p>
+<code>jswat</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>junit</code>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+IDE/Editors
+</p>
+<ul>
+<li>
+<p>
+<code>jedit</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>jde</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Build tools
+</p>
+<ul>
+<li>
+<p>
+<code>ant</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>jmk</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>mmake</code>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Other
+</p>
+<ul>
+<li>
+<p>
+<code>fastjar</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>jad</code> (decompiler)
+</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Ant
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Libraries
+</p>
+<ul>
+<li>
+<p>
+<code>lib-dom-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>lib-gnu.getopt-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>lib-gnu.regexp-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>lib-saxon-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libavalon-excalibur-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libavalon-framework-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libbcel-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libbsf-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libcrimson-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libcommons-beanutils-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libcommons-collections-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libcommons-digester-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libjdom-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libjunitperf-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libldap-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>liblog4j</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>liblogkit-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libnbio-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>liboro-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libpgjava</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libreadline-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libregexp-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libservlet2.3-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libservlet2.2-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libsoap-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libtomcat4-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libxalan-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libxalan2-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libxerces-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libxerces2-java</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>libxt-java</code>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<p>
+[ <a href="ch2.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ 3 ]
+[ <a href="ch-debian-java-sarge.html">4</a> ]
+[ <a href="ch-debian-java-etch.html">5</a> ]
+[ <a href="ch6.html">6</a> ]
+[ <a href="ch7.html">7</a> ]
+[ <a href="ch8.html">8</a> ]
+[ <a href="ch-browser-java.html">9</a> ]
+[ <a href="ch10.html">10</a> ]
+[ <a href="ch11.html">11</a> ]
+[ <a href="ch12.html">12</a> ]
+[ <a href="apA.html">A</a> ]
+[ <a href="ch-debian-java-sarge.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian GNU/Linux Java FAQ.
+</p>
+
+<address>
+$Revision: 1.57 $ 20 January 2010Sunday, 4th November<br>
+<br>
+Javier Fernández-Sanguino Peña <code><a href="mailto:jfs@debian.org">jfs@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

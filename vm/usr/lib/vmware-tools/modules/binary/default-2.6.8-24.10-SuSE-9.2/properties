@@ -1,0 +1,6 @@
+UtsRelease 2.6.8-24.10-default
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment SuSE 9.2 Kernel Update 2
+UtsMachine i386

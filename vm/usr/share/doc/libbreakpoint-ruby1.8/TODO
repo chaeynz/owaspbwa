@@ -1,0 +1,35 @@
+= TODO
+
+* Factor out remote breakpoint support to a separate file so it can be loaded
+  on-demand. This would allow the local breakpoint functionality to work even
+  when DRb is not available. (E.g. on Debian)
+
+= Done
+
+* breakpoint_client ought to handle the case that Options is already defined
+  so that RubyOnRails and other frameworks that might want to ship
+  ruby-breakpoint directly can overwrite the default options easily.
+
+* Do further research on the write SecurityError.
+  See ruby-core for more information.
+  * This seems to have been a bug in Ruby 1.8.1 and early snapshots in Ruby 1.8.2.
+    The problem can be fixed by updating to a more current Ruby. More information
+    regarding this is available at the Wiki:
+
+    http://ruby-breakpoint.rubyforge.org/wiki/wiki.pl?FrequentlyAskedQuestions
+
+* Find out whether we need to add Windows and Linux wrappers to the bin/ directory
+  * This is handled correctly by RubyGems. setup.rb only copies the .rb file to a
+    suitable directory, but that should work in the usual case.
+
+* breakpoint_client needs logic for detecting the default client uri based on the
+  server uri:
+  * drbunix:/foo/bar => drbunix:#{File.join(Dir.tmpdir, "#{random}.breakpoint")}
+    (require 'tmpdir')
+  * druby://localhost:port => druby://localhost:#{rand_port}
+
+* Mention available ressources (especially the FAQ) in breakpoint_client --help
+
+* Document drbunix:/ uris and how they are more secure than druby:// with ACLs.
+  Suggest that this be used in environments where there are lots of users sharing
+  the same system. (E.g. web hosters)

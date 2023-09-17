@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-it87">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>IT 8.7 color calibration file</comment>
+  <comment xml:lang="cs">Soubor kalibrace barev IT 8.7</comment>
+  <comment xml:lang="en_GB">IT 8.7 colour calibration file</comment>
+  <comment xml:lang="es">Archivo de calibración de color IT 8.7</comment>
+  <comment xml:lang="fr">fichier de calibration couleur IT 8.7</comment>
+  <comment xml:lang="hu">IT 8.7 színkalibrációs fájl</comment>
+  <comment xml:lang="it">File calibrazione colore IT 8.7</comment>
+  <comment xml:lang="ja">IT 8.7 カラーキャリブレーションファイル</comment>
+  <comment xml:lang="kk">IT 8.7 түс баптау файлы</comment>
+  <comment xml:lang="oc">fichièr de calibracion color IT 8.7</comment>
+  <comment xml:lang="pl">Plik kalibracji kolorów IT 8.7</comment>
+  <comment xml:lang="pt_BR">Arquivo de calibração de cores IT 8.7</comment>
+  <comment xml:lang="ro">Fișier de calibrare a culorii IT 8.7</comment>
+  <comment xml:lang="uk">файл калібрування кольорів IT 8.7</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+  <glob pattern="*.it87"/>
+</mime-type>

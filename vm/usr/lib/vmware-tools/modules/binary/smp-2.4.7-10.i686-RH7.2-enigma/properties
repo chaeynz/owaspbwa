@@ -1,0 +1,6 @@
+UtsRelease 2.4.7-10smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Red Hat 7.2 smp enigma for i686 systems.
+UtsMachine i386

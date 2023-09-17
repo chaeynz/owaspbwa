@@ -1,0 +1,6 @@
+UtsRelease 2.4.9-13smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Red Hat 7.2 smp for i686 systems kernel upgrade.
+UtsMachine i386

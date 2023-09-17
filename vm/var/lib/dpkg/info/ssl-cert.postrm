@@ -1,0 +1,20 @@
+#!/bin/sh -e
+
+# We're being removed; change this back
+chgrp root /etc/ssl/private
+chmod g-x /etc/ssl/private
+
+if [ "$1" = purge ] ; then
+	rm -f /etc/ssl/certs/ssl-cert-snakeoil.pem \
+	      /etc/ssl/certs/ssl-cert-snakeoil.pem.broken \
+              /etc/ssl/private/ssl-cert-snakeoil.key \
+	      /etc/ssl/private/ssl-cert-snakeoil.key.broken
+fi
+
+# Automatically added by dh_installdebconf
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+

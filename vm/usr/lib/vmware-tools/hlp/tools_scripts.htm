@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN" "http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+<html xmlns="http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Using Scripts</title>
+  </head>
+  <body style="">
+    <table align="right">
+      <tr>
+        <td style="text-align: left; font-size: 16px; font-weight:bold">VMware Tools Help</td>
+      </tr>
+    </table>
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="toc.htm"><img src="images/toc.gif" alt="Table of Contents" border="0"></a>
+          </td>
+          <td>
+            <a href="tools_devices.htm"><img src="images/prev.gif" alt="Previous" border="0"></a>
+          </td>
+          <td>
+            <a href="tools_shrink.htm"><img src="images/next.gif" alt="Next" border="0"></a>
+          </td>
+          <td>
+            <a href="ix.htm"><img src="images/index.gif" alt="Index" border="0"></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br clear="all">
+    <br>
+    <div style="text-align: left;">Using Scripts</div>
+    <hr align="left">
+    <blockquote>
+      <p align="Left">
+        <font size="4" face="Arial, Sans-Serif" color="#000000"><strong><a name="1001197">Using S</a>cripts</strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1031043">VMware Tools scripts can help automate guest operating system operations when </a>you change the virtual machine’s power state. If VMware Tools is installed in the guest operating system, and if you configure a virtual machine’s power controls to use the “guest” options, one or more default scripts run on the guest whenever you change the power state of the virtual machine. </font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1031051">For example, when you power off the virtual machine, the </a><font face="&quot;Courier New&quot;">poweroff-vm-</font><font face="&quot;Courier New&quot;">default</font> script runs in the following situations:</font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1046811">In VMware Fusion, this script runs if you use the default power-off option, which </a>is called <font face="Arial, Sans-Serif"><strong>Shut Down Guest</strong></font>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1046815">In other VMware products, this script runs if you set the virtual machine to shut </a>down the guest rather than abruptly power off.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1001484">On the </a><font face="Arial, Sans-Serif"><strong>Scripts</strong></font> tab you can enable, disable, and run scripts that are associated with changing a virtual machine’s power state.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1001895">On a Windows host, provided the virtual machine is configured to use DHCP, the </a>script that executes when you suspend a virtual machine releases the IP address of the virtual machine. The script that executes when you resume a virtual machine renews the IP address of the virtual machine. </font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005468">On a Linux host, the script that executes when you suspend a virtual machine stops </a>networking for the virtual machine. The script that executes when you resume a virtual machine starts networking for the virtual machine.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027825">To run one of these scripts at some time other than during a power state change, </a>select the script you want from the <font face="Arial, Sans-Serif"><strong>Script Event</strong></font> list, select <font face="Arial, Sans-Serif"><strong>Use Script</strong></font>, and click <font face="Arial, Sans-Serif"><strong>Run </strong></font><font face="Arial, Sans-Serif"><strong>Now</strong></font>.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1002719">To disable a script, select the action associated with the script from the </a><font face="Arial, Sans-Serif"><strong>Script Event</strong></font> list and clear the <font face="Arial, Sans-Serif"><strong>Use Script</strong></font> check box.</font>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1002737">Default scripts for suspending and resuming are written to work together. If </a>you disable the script of one of these actions, disable the script for the other action as well.</font></p>
+      <p align="Left">
+        <font size="3" face="Arial, Sans-Serif" color="#000000"><strong><a name="1005303">Using Default Scripts</a></strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048155">One or more default scripts for each power state are included in VMware Tools. These </a>scripts are located in the guest operating system in<font face="&quot;Courier New&quot;">/etc/vmware-tools</font>.</font>
+      </p>
+      <table summary="" border="2" cellpadding="6" cellspacing="0" bordercolor="#C0C0C0" width="409">
+        <caption>
+        <tr>
+          <td bgcolor="#B0C4DE" cellpadding="4" border="1" bordercolor="#000000" valign="top" width="116">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048158"><font face="&quot;Myriad Pro Light&quot;">Script Name</font></a></font>
+            </p>
+          </td>
+          <td bgcolor="#B0C4DE" cellpadding="4" border="1" bordercolor="#000000" valign="top" width="292">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048160"><font face="&quot;Myriad Pro Light&quot;">Description</font></a></font>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048958"><font face="&quot;Courier New&quot;">suspend-vm-default</font></a></font>
+            </p>
+          </td>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049025">If you configured the suspend operation to suspend the guest, this script </a>runs when the virtual machine is being suspended.</font>
+            </p>
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049027">On Linux, FreeBSD, and Solaris guests, this script stops networking for the </a>virtual machine.</font>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048967"><font face="&quot;Courier New&quot;">resume-vm-default</font></a></font>
+            </p>
+          </td>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048995">If you configured the power-on operation to start the guest, or the reset </a>operation to restart the guest, this script runs when the virtual machine is resumed after it was suspended.</font>
+            </p>
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048997">On Linux, FreeBSD, and Solaris guests, this script starts networking for the </a>virtual machine.</font>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048976"><font face="&quot;Courier New&quot;">poweroff-vm-default</font></a></font>
+            </p>
+          </td>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049009">If you configured the power-off operation to shut down the guest, this script </a>runs when the virtual machine is being powered off.</font>
+            </p>
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049010">If you configured the reset operation to restart the guest, this script runs </a>when the virtual machine is being reset.</font>
+            </p>
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049011">This script has no effect on networking for the virtual machine.</a></font>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1048989"><font face="&quot;Courier New&quot;">poweron-vm-default</font></a></font>
+            </p>
+          </td>
+          <td cellpadding="4" border="1" bordercolor="#000000" valign="top">
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049017">If you configured the power-on operation to start the guest, this script runs </a>when the virtual machine is being powered on rather than resumed. </font>
+            </p>
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049018">If you configured the reset operation to restart the guest, this script runs after </a>virtual machine restarts.</font>
+            </p>
+            <p align="Left">
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049019">This script has no effect on networking for the virtual machine.</a></font>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p align="Left">
+        <font size="3" face="Arial, Sans-Serif" color="#000000"><strong><a name="1004293">Using Your Own Scripts</a></strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004309">You can use the default script or you can substitute a script you create for each power </a>state change. In addition, if you are logged in as root, you can test a script or disable the running of a script. </font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1028511">To use a custom script</a></font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>1.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027861">In the </a><font face="Arial, Sans-Serif"><strong>Script Event</strong></font> list, select the power operation with which to associate the script.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>2.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027862">Do one of the following:</a></font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="12">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027863">To select a different script, click </a><font face="Arial, Sans-Serif"><strong>Custom Script</strong></font>, click <font face="Arial, Sans-Serif"><strong>Browse</strong></font>, and select the new script.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="12">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027864">To edit a script, click </a><font face="Arial, Sans-Serif"><strong>Edit</strong></font>. The script opens in your default editor. Make your changes there.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1050014">To edit scripts from the </a><font face="Arial, Sans-Serif"><strong>Scripts</strong></font> tab, <font face="&quot;Courier New&quot;">xterm</font> and <font face="&quot;Courier New&quot;">vi</font> must be installed in the guest operating system. The user trying to edit the script must be a root user and must have <font face="&quot;Courier New&quot;">vi</font> and <font face="&quot;Courier New&quot;">xterm</font> in his or her PATH. Otherwise, scripts can be edited manually in any text editor.</font></p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="12">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027865">To test the script, click </a><font face="Arial, Sans-Serif"><strong>Run Now</strong></font>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1050020">If you plan to test scripts in a Turbolinux 7.0 guest operating system, </a>you need to update the Turbolinux guest operating system. This is a known issue with Turbolinux. Go to <a href="ftp://ftp.turbolinux.com/pub/TurboLinux/stable/tested/Workstation/7/i586/initscripts-7.0.0-18.i586.rpm" target="_window"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff"><em>ftp://ftp.turbolinux.com/pub/TurboLinux/stable/tested/Workstation/7/i586/initscripts-7.0.0-18.i586.rpm</em></font></a>.</font></p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="12">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027866">To disable the running of a script, clear the </a><font face="Arial, Sans-Serif"><strong>Use Script</strong></font> check box.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>3.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027867">Click </a><font face="Arial, Sans-Serif"><strong>Apply</strong></font> to save your settings. </font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027494">&nbsp;</a></font>
+      </p>
+    </blockquote>
+    <hr align="left">
+    <table align="right" summary="">
+      <tr>
+        <td style="text-align: left; font-size: 16px ; font-weight: bold">VMware Tools Help</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+This package was debianized by Torsten Werner <twerner@debian.org> on
+Fri Apr 20 14:51:53 CEST 2007.
+
+It was downloaded from http://commons.apache.org/configuration/
+
+Upstream Authors: Daniel Rall <dlr@finemaltcoding.com>,
+                  Jason van Zyl <jason@zenplex.com>,
+                  Martin Poeschl <mpoeschl@marmot.at>,
+                  dIon Gillard <dion@multitask.com.au>,
+                  Henning P. Schmiedehausen <hps@intermeta.de>,
+                  Eric Pugh <epugh@upstate.com>,
+                  Brian E. Dunbar <bdunbar@dunbarconsulting.org>,
+                  Emmanuel Bourg <ebourg@apache.org>,
+                  Oliver Heger <oheger@apache.org>,
+                  Jörg Schaible <joerg.schaible@gmx.de>,
+                  Konstantin Shaposhnikov <ksh@scand.com>,
+                  Jamie M. Guillemette <JMGuillemette@gmail.com>,
+                  Jorge Ferrer <jorge.ferrer@gmail.com>,
+                  Gabriele Garuglieri <gabriele.garuglieri@infoblu.it>,
+                  Nicolas De Loof <nicolas.deloof@gmail.com>
+
+Copyright: © 2001-2008 The Apache Software Foundation
+
+License: Apache 2.0
+
+On Debian systems the full text of the Apache License can be found
+in `/usr/share/common-licenses/Apache-2.0'.
+
+The Debian packaging is (C) 2007, Torsten Werner <twerner@debian.org> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+

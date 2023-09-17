@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::AbstractServer - passenger-3.0.17 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/abstract_server.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Utils.html">PhusionPassenger::Utils</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-before_fork">#before_fork</a>
+    
+    <li><a href="#method-i-connect">#connect</a>
+    
+    <li><a href="#method-i-define_message_handler">#define_message_handler</a>
+    
+    <li><a href="#method-i-define_signal_handler">#define_signal_handler</a>
+    
+    <li><a href="#method-i-fileno_of">#fileno_of</a>
+    
+    <li><a href="#method-i-finalize_server">#finalize_server</a>
+    
+    <li><a href="#method-i-initialize_server">#initialize_server</a>
+    
+    <li><a href="#method-i-server_pid">#server_pid</a>
+    
+    <li><a href="#method-i-start">#start</a>
+    
+    <li><a href="#method-i-start_synchronously">#start_synchronously</a>
+    
+    <li><a href="#method-i-started-3F">#started?</a>
+    
+    <li><a href="#method-i-stop">#stop</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractRequestHandler.html">PhusionPassenger::AbstractRequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer.html">PhusionPassenger::AbstractServer</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/InvalidPassword.html">PhusionPassenger::AbstractServer::InvalidPassword</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/ServerAlreadyStarted.html">PhusionPassenger::AbstractServer::ServerAlreadyStarted</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/ServerError.html">PhusionPassenger::AbstractServer::ServerError</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/ServerNotStarted.html">PhusionPassenger::AbstractServer::ServerNotStarted</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/UnknownMessage.html">PhusionPassenger::AbstractServer::UnknownMessage</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServerCollection.html">PhusionPassenger::AbstractServerCollection</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/AppInitError.html">PhusionPassenger::AppInitError</a>
+  
+    <li><a href="../PhusionPassenger/AppProcess.html">PhusionPassenger::AppProcess</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ApplicationSpawner.html">PhusionPassenger::ClassicRails::ApplicationSpawner</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ApplicationSpawner/Error.html">PhusionPassenger::ClassicRails::ApplicationSpawner::Error</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/FrameworkSpawner.html">PhusionPassenger::ClassicRails::FrameworkSpawner</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/FrameworkSpawner/Error.html">PhusionPassenger::ClassicRails::FrameworkSpawner::Error</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/RequestHandler.html">PhusionPassenger::ClassicRails::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions.html">PhusionPassenger::ClassicRailsExtensions</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACBaseExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACBaseExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACBenchmarkingExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACBenchmarkingExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACRescueExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACRescueExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ARAbstractAdapterExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ARAbstractAdapterExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/AVBenchmarkHelperExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::AVBenchmarkHelperExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/CacheStoreExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::CacheStoreExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ConcreteCacheStoreExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ConcreteCacheStoreExtension</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/Dependency.html">PhusionPassenger::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/FrameworkInitError.html">PhusionPassenger::FrameworkInitError</a>
+  
+    <li><a href="../PhusionPassenger/HTMLTemplate.html">PhusionPassenger::HTMLTemplate</a>
+  
+    <li><a href="../PhusionPassenger/InitializationError.html">PhusionPassenger::InitializationError</a>
+  
+    <li><a href="../PhusionPassenger/InvalidPath.html">PhusionPassenger::InvalidPath</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ApplicationSpawner.html">PhusionPassenger::Rack::ApplicationSpawner</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ApplicationSpawner/Error.html">PhusionPassenger::Rack::ApplicationSpawner::Error</a>
+  
+    <li><a href="../PhusionPassenger/Rack/RequestHandler.html">PhusionPassenger::Rack::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions.html">PhusionPassenger::Rails3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/SpawnManager.html">PhusionPassenger::SpawnManager</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/UnknownError.html">PhusionPassenger::UnknownError</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/Kernel.html">PhusionPassenger::Utils::Kernel</a>
+  
+    <li><a href="../PhusionPassenger/Utils/PseudoIO.html">PhusionPassenger::Utils::PseudoIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/RewindableInput.html">PhusionPassenger::Utils::RewindableInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/RewindableInput/Tempfile.html">PhusionPassenger::Utils::RewindableInput::Tempfile</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../PhusionPassenger/VersionNotFound.html">PhusionPassenger::VersionNotFound</a>
+  
+    <li><a href="../PhusionPassenger/WSGI.html">PhusionPassenger::WSGI</a>
+  
+    <li><a href="../PhusionPassenger/WSGI/ApplicationSpawner.html">PhusionPassenger::WSGI::ApplicationSpawner</a>
+  
+    <li><a href="../ConditionVariable.html">ConditionVariable</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Process.html">Process</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::AbstractServer</h1>
+
+  <div id="description" class="description">
+    
+<p>An abstract base class for a server that has the following properties:</p>
+<ul><li>
+<p>The server listens on a password protected Unix socket.</p>
+</li><li>
+<p>The server is multithreaded and handles one client per thread.</p>
+</li><li>
+<p>The server is owned by one or more processes. If all processes close their
+reference to the server, then the server will quit.</p>
+</li><li>
+<p>The server’s main loop may be run in a child process (and so is
+asynchronous from the parent process).</p>
+</li><li>
+<p>One can communicate with the server through discrete <a
+href="MessageChannel.html">MessageChannel</a> messages, as opposed to byte
+streams.</p>
+</li><li>
+<p>The server can pass file descriptors (<a href="../IO.html">IO</a> objects)
+back to the client.</p>
+</li></ul>
+
+<p>The server will also reset all signal handlers. That is, it will respond to
+all signals in the default manner. The only exception is SIGHUP, which is
+ignored. One may define additional signal handlers using <a
+href="AbstractServer.html#method-i-define_signal_handler">#define_signal_handler</a>().</p>
+
+<p>Before an <a href="AbstractServer.html">AbstractServer</a> can be used, it
+must first be started by calling start(). When it is no longer needed,
+stop() should be called.</p>
+
+<p>Here’s an example on using AbstractServer:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyServer</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">AbstractServer</span>
+   <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+      <span class="ruby-keyword">super</span>()
+      <span class="ruby-identifier">define_message_handler</span>(:<span class="ruby-identifier">hello</span>, :<span class="ruby-identifier">handle_hello</span>)
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">def</span> <span class="ruby-identifier">hello</span>(<span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">last_name</span>)
+      <span class="ruby-identifier">connect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">channel</span><span class="ruby-operator">|</span>
+         <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">'hello'</span>, <span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">last_name</span>)
+         <span class="ruby-identifier">reply</span>, <span class="ruby-identifier">pointless_number</span> = <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">read</span>
+         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;The server said: #{reply}&quot;</span>
+         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;In addition, it sent this pointless number: #{pointless_number}&quot;</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">private</span>
+   <span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_hello</span>(<span class="ruby-identifier">channel</span>, <span class="ruby-identifier">first_name</span>, <span class="ruby-identifier">last_name</span>)
+      <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;Hello #{first_name} #{last_name}, how are you?&quot;</span>, <span class="ruby-value">1234</span>)
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">MyServer</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">server</span>.<span class="ruby-identifier">start</span>
+<span class="ruby-identifier">server</span>.<span class="ruby-identifier">hello</span>(<span class="ruby-string">&quot;Joe&quot;</span>, <span class="ruby-string">&quot;Dalton&quot;</span>)
+<span class="ruby-identifier">server</span>.<span class="ruby-identifier">stop</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-ignore_password_errors" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ignore_password_errors</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-max_idle_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">max_idle_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The maximum time that this <a href="AbstractServer.html">AbstractServer</a>
+may be idle. Used by <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> to
+determine when this object should be cleaned up. nil or 0 indicate that
+this object should never be idle cleaned.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-next_cleaning_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">next_cleaning_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Used by <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> to
+remember when this <a href="AbstractServer.html">AbstractServer</a> should
+be idle cleaned.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-password" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">password</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(socket_filename = nil, password = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">socket_filename</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">password</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-ivar">@socket_filename</span> = <span class="ruby-identifier">socket_filename</span>
+        <span class="ruby-ivar">@password</span> = <span class="ruby-identifier">password</span>
+        <span class="ruby-ivar">@socket_filename</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{passenger_tmpdir}/spawn-server/socket.#{Process.pid}.#{object_id}&quot;</span>
+        <span class="ruby-ivar">@password</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">generate_random_id</span>(<span class="ruby-value">:base64</span>)
+        
+        <span class="ruby-ivar">@message_handlers</span> = {}
+        <span class="ruby-ivar">@signal_handlers</span> = {}
+        <span class="ruby-ivar">@orig_signal_handlers</span> = {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-connect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">connect</span><span
+            class="method-args">() { |channel| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Connects to the server and yields a channel for communication. The first
+message’s name must match a handler name. The connection can only be used
+for a single handler cycle; after the handler is done, the connection will
+be closed.</p>
+
+<pre class="ruby"><span class="ruby-identifier">server</span>.<span class="ruby-identifier">connect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">channel</span><span class="ruby-operator">|</span>
+   <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;a message&quot;</span>)
+   <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Raises: SystemCallError, IOError, SocketError</p>
+          
+
+          
+          <div class="method-source-code" id="connect-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">connect</span>
+        <span class="ruby-identifier">channel</span> = <span class="ruby-constant">MessageChannel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@socket_filename</span>))
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write_scalar</span>(<span class="ruby-ivar">@password</span>)
+                <span class="ruby-keyword">yield</span> <span class="ruby-identifier">channel</span>
+        <span class="ruby-keyword">ensure</span>
+                <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- connect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- connect-method -->
+
+    
+      <div id="method-i-server_pid" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">server_pid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the PID of the started server. This is only valid if <a
+href="AbstractServer.html#method-i-start">start</a> has been called.</p>
+          
+
+          
+          <div class="method-source-code" id="server_pid-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">server_pid</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@pid</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- server_pid-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- server_pid-method -->
+
+    
+      <div id="method-i-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start the server. This method does not block since the server runs
+asynchronously from the current process.</p>
+
+<p>You may only call this method if the server is not already started.
+Otherwise, a <a
+href="AbstractServer/ServerAlreadyStarted.html">ServerAlreadyStarted</a>
+will be raised.</p>
+
+<p>Derived classes may raise additional exceptions.</p>
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">started?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ServerAlreadyStarted</span>, <span class="ruby-string">&quot;Server is already started&quot;</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span>(<span class="ruby-ivar">@socket_filename</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">server_socket</span> = <span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@socket_filename</span>)
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-value">0700</span>, <span class="ruby-ivar">@socket_filename</span>)
+        
+        <span class="ruby-identifier">before_fork</span>
+        <span class="ruby-ivar">@pid</span> = <span class="ruby-identifier">fork</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pid</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">has_exception</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-identifier">a</span>.<span class="ruby-identifier">close</span>
+                        
+                        <span class="ruby-comment"># During Passenger's early days, we used to close file descriptors based</span>
+                        <span class="ruby-comment"># on a white list of file descriptors. That proved to be way too fragile:</span>
+                        <span class="ruby-comment"># too many file descriptors are being left open even though they shouldn't</span>
+                        <span class="ruby-comment"># be. So now we close file descriptors based on a black list.</span>
+                        <span class="ruby-comment">#</span>
+                        <span class="ruby-comment"># Note that STDIN, STDOUT and STDERR may be temporarily set to</span>
+                        <span class="ruby-comment"># different file descriptors than 0, 1 and 2, e.g. in unit tests.</span>
+                        <span class="ruby-comment"># We don't want to close these either.</span>
+                        <span class="ruby-identifier">file_descriptors_to_leave_open</span> = [<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">2</span>,
+                                <span class="ruby-identifier">b</span>.<span class="ruby-identifier">fileno</span>, <span class="ruby-identifier">server_socket</span>.<span class="ruby-identifier">fileno</span>,
+                                <span class="ruby-identifier">fileno_of</span>(<span class="ruby-constant">STDIN</span>), <span class="ruby-identifier">fileno_of</span>(<span class="ruby-constant">STDOUT</span>), <span class="ruby-identifier">fileno_of</span>(<span class="ruby-constant">STDERR</span>)
+                        ].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">uniq</span>
+                        <span class="ruby-constant">NativeSupport</span>.<span class="ruby-identifier">close_all_file_descriptors</span>(<span class="ruby-identifier">file_descriptors_to_leave_open</span>)
+                        <span class="ruby-comment"># In addition to closing the file descriptors, one must also close</span>
+                        <span class="ruby-comment"># the associated IO objects. This is to prevent IO.close from</span>
+                        <span class="ruby-comment"># double-closing already closed file descriptors.</span>
+                        <span class="ruby-identifier">close_all_io_objects_for_fds</span>(<span class="ruby-identifier">file_descriptors_to_leave_open</span>)
+                        
+                        <span class="ruby-comment"># At this point, RubyGems might have open file handles for which</span>
+                        <span class="ruby-comment"># the associated file descriptors have just been closed. This can</span>
+                        <span class="ruby-comment"># result in mysterious 'EBADFD' errors. So we force RubyGems to</span>
+                        <span class="ruby-comment"># clear all open file handles.</span>
+                        <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">clear_paths</span>
+                        
+                        <span class="ruby-comment"># Reseed pseudo-random number generator for security reasons.</span>
+                        <span class="ruby-identifier">srand</span>
+                        
+                        <span class="ruby-identifier">start_synchronously</span>(<span class="ruby-ivar">@socket_filename</span>, <span class="ruby-ivar">@password</span>, <span class="ruby-identifier">server_socket</span>, <span class="ruby-identifier">b</span>)
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+                        <span class="ruby-comment"># Do nothing.</span>
+                        <span class="ruby-identifier">has_exception</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                        <span class="ruby-identifier">has_exception</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-identifier">print_exception</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">e</span>)
+                <span class="ruby-keyword">ensure</span>
+                        <span class="ruby-identifier">exit!</span>(<span class="ruby-identifier">has_exception</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">server_socket</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-identifier">b</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-ivar">@owner_socket</span> = <span class="ruby-identifier">a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-method -->
+
+    
+      <div id="method-i-start_synchronously" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_synchronously</span><span
+            class="method-args">(socket_filename, password, server_socket, owner_socket)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start the server, but in the current process instead of in a child process.
+This method blocks until the server’s main loop has ended.</p>
+
+<p>All hooks will be called, except <a
+href="AbstractServer.html#method-i-before_fork">#before_fork</a>().</p>
+          
+
+          
+          <div class="method-source-code" id="start_synchronously-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_synchronously</span>(<span class="ruby-identifier">socket_filename</span>, <span class="ruby-identifier">password</span>, <span class="ruby-identifier">server_socket</span>, <span class="ruby-identifier">owner_socket</span>)
+        <span class="ruby-ivar">@owner_socket</span> = <span class="ruby-identifier">owner_socket</span>
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">reset_signal_handlers</span>
+                <span class="ruby-identifier">initialize_server</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-identifier">server_main_loop</span>(<span class="ruby-identifier">password</span>, <span class="ruby-identifier">server_socket</span>)
+                <span class="ruby-keyword">ensure</span>
+                        <span class="ruby-identifier">finalize_server</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+                <span class="ruby-comment"># Do nothing</span>
+        <span class="ruby-keyword">ensure</span>
+                <span class="ruby-ivar">@owner_socket</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-identifier">revert_signal_handlers</span>
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span>(<span class="ruby-identifier">socket_filename</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+                <span class="ruby-identifier">server_socket</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start_synchronously-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start_synchronously-method -->
+
+    
+      <div id="method-i-started-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">started?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return whether the server has been started.</p>
+          
+
+          
+          <div class="method-source-code" id="started-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">started?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@owner_socket</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- started-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- started-3F-method -->
+
+    
+      <div id="method-i-stop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Stop the server. The server will quit as soon as possible. This method
+waits until the server has been stopped.</p>
+
+<p>When calling this method, the server must already be started. If not, a <a
+href="AbstractServer/ServerNotStarted.html">ServerNotStarted</a> will be
+raised.</p>
+          
+
+          
+          <div class="method-source-code" id="stop-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stop</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">started?</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ServerNotStarted</span>, <span class="ruby-string">&quot;Server is not started&quot;</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-ivar">@owner_socket</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;x&quot;</span>)
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EPIPE</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@owner_socket</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-ivar">@owner_socket</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span>(<span class="ruby-ivar">@socket_filename</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+        
+        <span class="ruby-comment"># Wait at most 4 seconds for server to exit. If it doesn't do that,</span>
+        <span class="ruby-comment"># we kill it forcefully with SIGKILL.</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Process</span>.<span class="ruby-identifier">timed_waitpid</span>(<span class="ruby-ivar">@pid</span>, <span class="ruby-value">4</span>)
+                <span class="ruby-constant">Process</span>.<span class="ruby-identifier">kill</span>(<span class="ruby-string">'SIGKILL'</span>, <span class="ruby-ivar">@pid</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+                <span class="ruby-constant">Process</span>.<span class="ruby-identifier">timed_waitpid</span>(<span class="ruby-ivar">@pid</span>, <span class="ruby-value">1</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stop-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-before_fork" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_fork</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A hook which is called when the server is being started, just before
+forking a new process. The default implementation does nothing, this method
+is supposed to be overrided by child classes.</p>
+          
+
+          
+          <div class="method-source-code" id="before_fork-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_fork</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_fork-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_fork-method -->
+
+    
+      <div id="method-i-define_message_handler" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">define_message_handler</span><span
+            class="method-args">(message_name, handler)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define a handler for a message. <em>message_name</em> is the name of the
+message to handle, and <em>handler</em> is the name of a method to be
+called (this may either be a String or a Symbol).</p>
+
+<p>A message is just a list of strings, and so <em>handler</em> will be called
+with the message as its arguments, excluding the first element. See also
+the example in the class description.</p>
+          
+
+          
+          <div class="method-source-code" id="define_message_handler-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">define_message_handler</span>(<span class="ruby-identifier">message_name</span>, <span class="ruby-identifier">handler</span>)
+        <span class="ruby-ivar">@message_handlers</span>[<span class="ruby-identifier">message_name</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">handler</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- define_message_handler-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- define_message_handler-method -->
+
+    
+      <div id="method-i-define_signal_handler" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">define_signal_handler</span><span
+            class="method-args">(signal, handler)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define a handler for a signal.</p>
+          
+
+          
+          <div class="method-source-code" id="define_signal_handler-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">define_signal_handler</span>(<span class="ruby-identifier">signal</span>, <span class="ruby-identifier">handler</span>)
+        <span class="ruby-ivar">@signal_handlers</span>[<span class="ruby-identifier">signal</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">handler</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- define_signal_handler-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- define_signal_handler-method -->
+
+    
+      <div id="method-i-fileno_of" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fileno_of</span><span
+            class="method-args">(io)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fileno_of-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fileno_of</span>(<span class="ruby-identifier">io</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">fileno</span>
+<span class="ruby-keyword">rescue</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fileno_of-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fileno_of-method -->
+
+    
+      <div id="method-i-finalize_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finalize_server</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A hook which is called when the server is being stopped. This is called in
+the child process, after the main loop has been left. The default
+implementation does nothing, this method is supposed to be overrided by
+child classes.</p>
+          
+
+          
+          <div class="method-source-code" id="finalize_server-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 291</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finalize_server</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finalize_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- finalize_server-method -->
+
+    
+      <div id="method-i-initialize_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize_server</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A hook which is called when the server is being started. This is called in
+the child process, before the main loop is entered. The default
+implementation does nothing, this method is supposed to be overrided by
+child classes.</p>
+          
+
+          
+          <div class="method-source-code" id="initialize_server-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize_server</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- initialize_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- initialize_server-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

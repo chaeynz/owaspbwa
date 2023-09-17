@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"error_log:EFI"EPhusionPassenger::PlatformInfo::ApacheDetector::Result#error_log;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"[This may be nil. It depends on how well we can infer information from the config file.;T:
+@fileI";lib/phusion_passenger/platform_info/apache_detector.rb;TF@

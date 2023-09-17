@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-27.8.0
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Red Hat 8.0 kernel update.
+UtsMachine i386

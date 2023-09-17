@@ -1,0 +1,7 @@
+UtsRelease 2.4.19-4GB
+UtsVersion #1 Thu Mar 20 15:22:42 UTC 2003
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment SuSE 8.1 up with 2.4.19 kernel update
+UtsMachine i386

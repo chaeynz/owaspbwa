@@ -1,0 +1,62 @@
+Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=59
+Name: groovy
+Packager: Marcus Crafter <crafterm@debian.org>
+Source: http://groovy.codehaus.org/
+X-Upstream-Authors: Groovy Development Team, dev@groovy.codehaus.org
+
+Files: *
+Copyright: © 2003-2007 the original author or authors
+License: Apache-2.0
+ On Debian systems the full text of the Apache-2.0 license can be found in
+ the /usr/share/common-licenses/Apache-2.0 file.
+
+Files: src/main/org/codehaus/groovy/jsr223/*
+Copyright: © 2006 Sun Microsystems, Inc.
+License: BSD
+ On Debian systems the full text of the BSD license can be found in
+ the /usr/share/common-licenses/BSD file.
+
+Files: debian/*
+Copyright: © 2009 Varun Hiremath <varun@debian.org>
+	   © 2009 Torsten Werner <twerner@debian.org> 
+	   © 2009 Ludovic Claude <ludovic.claude@laposte.net>
+License: GPL-2
+ On Debian systems the full text of the GPL Version 2 license can be
+ found in the /usr/share/common-licenses/GPL-2 file.
+
+Copyright:
+    Copyright 2003-2009 The respective authors and developers
+    Portions Copyright 2003 (C) James Strachan and Bob Mcwhirter
+    Some JSR223 support code Copyright 1997-2006 by Sun Microsystems, Inc.
+    Some classgen support code Copyright (c) 2004 IBM Corporation and others
+    Some antlr/treewalker support code Copyright 2005-2007 (C) Jeremy Rayner
+    checkstyle-frames.xsl: Copyright (c) 2002 The Apache Software Foundation
+    src/test/groovy/text/TemplateTest.java Copyright 2003 (C) Sam Pullara
+    src/test/groovy/lang/ScriptTest.java Copyright 2003 (C) Guillaume Laforge
+    src/test/org/codehaus/groovy/ant/ files Copyright (C) 2008 Russel Winder
+    some files under experimental/ Copyright 2005 John G. Wilson
+
+Upstream Authors: Groovy Development Team, dev@groovy.codehaus.org
+
+License:
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+ 
+         http://www.apache.org/licenses/LICENSE-2.0
+ 
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+On Debian GNU/Linux and Ubuntu systems, the complete text of the Apache 2.0
+License can be found in the /usr/share/common-licenses/Apache-2.0 file.
+
+config/checkstyle/checkstyle-frames.xsl,
+some files under src/main/org/codehaus/groovy/jsr223/
+some files under src/examples/groovy/
+some files under src/test/
+are still licensed under those terms:

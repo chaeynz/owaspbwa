@@ -1,0 +1,6 @@
+35343781bdf52fb6ccc51e0985418707  usr/share/doc/libxdmcp-dev/copyright
+d3b68d9f5b17de4479177f23c4ceff62  usr/share/doc/libxdmcp-dev/changelog.gz
+7d087af194cb391ae3ea837d42c44b5d  usr/share/doc/libxdmcp-dev/changelog.Debian.gz
+ce5189d855b661b347ad6d4478d42172  usr/include/X11/Xdmcp.h
+a5c6d134032f4927ccc81ae2a41dc2b7  usr/lib/libXdmcp.a
+73cf835cd093508abc71980768336ec8  usr/lib/pkgconfig/xdmcp.pc

@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/bin
+/usr/bin/gacutil2
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/2.0
+/usr/lib/mono/2.0/gacutil.exe
+/usr/share
+/usr/share/doc
+/usr/share/doc/mono-2.0-gac
+/usr/share/doc/mono-2.0-gac/copyright
+/usr/share/doc/mono-2.0-gac/changelog.Debian.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/gacutil2.1.gz

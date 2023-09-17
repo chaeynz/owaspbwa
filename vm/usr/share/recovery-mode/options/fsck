@@ -1,0 +1,16 @@
+#!/bin/sh
+
+. /usr/share/recovery-mode/l10n.sh
+
+set -e
+
+if [ "$1" = "test" ]; then
+  echo $(eval_gettext "Reboot into file system check")
+  exit 0
+fi
+
+# forcefsck will trigger a fsck by mountall on the next 
+# reboot
+touch /forcefsck
+reboot
+

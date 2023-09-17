@@ -1,0 +1,21 @@
+This package was debianized by Dylan R. E. Moonfire
+<debian@mfgames.com> on Wed, 07 Dec 2005 09:52:51 -0600.
+
+It was downloaded from:
+http://www.mono-project.com/
+
+Upstream authors: 
+Daniel Lopez Ridruejo <daniel@rawbyte.com>
+Gonzalo Paniagua Javuer <gonzalo@ximian.com>
+
+Copyright:
+(c) 2002 Daniel Lopez Ridruejo
+(c) 2002-2006 Novell, Inc.
+
+License:
+
+   mod-mono is free software; you can redistribute it and/or modify it
+   under the terms of the Apache 2.0 license.
+
+   On Debian systems, the complete text of the Apache 2.0 License can
+   be found in /usr/share/common-licenses/Apache-2.0

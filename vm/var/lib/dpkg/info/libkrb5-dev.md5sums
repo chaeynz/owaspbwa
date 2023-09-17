@@ -1,0 +1,6 @@
+e47b10d18fe18479ed40cac3fce149e5  usr/share/aclocal/ac_check_krb5.m4
+5753e25f663f44248176b9aee3178495  usr/share/man/man1/krb5-config.1.gz
+7e936a5ba409ae87002f91d80bfd6de4  usr/share/doc/libkrb5-dev/NEWS.Debian.gz
+1d592b61381f4c221776d8e32cf81638  usr/share/doc/libkrb5-dev/copyright
+50894cf9d9819c7f5579f2d699c962ee  usr/share/doc/libkrb5-dev/changelog.Debian.gz
+bc9360379c91989f29f49bb9cb9c560c  usr/bin/krb5-config

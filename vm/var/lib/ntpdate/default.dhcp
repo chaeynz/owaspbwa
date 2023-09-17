@@ -1,0 +1,2 @@
+# NTP server entries received from DHCP server
+NTPSERVERS='10.55.255.254'

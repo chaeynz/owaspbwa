@@ -1,0 +1,6 @@
+UtsRelease 2.6.3-7mdkenterprise
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment MandrakeSoft (i586)
+UtsMachine i386

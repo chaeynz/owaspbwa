@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libgdiplus.so.0.0.0
+/usr/lib/pkgconfig
+/usr/lib/pkgconfig/libgdiplus.pc
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgdiplus
+/usr/share/doc/libgdiplus/changelog.gz
+/usr/share/doc/libgdiplus/copyright
+/usr/share/doc/libgdiplus/changelog.Debian.gz
+/usr/lib/libgdiplus.so
+/usr/lib/libgdiplus.so.0

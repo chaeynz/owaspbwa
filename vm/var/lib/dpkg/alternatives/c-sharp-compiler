@@ -1,0 +1,9 @@
+auto
+/usr/bin/cli-csc
+cli-csc.1.gz
+/usr/share/man/man1/cli-csc.1.gz
+
+/usr/bin/mono-csc
+10
+/usr/share/man/man1/csc.1.gz
+

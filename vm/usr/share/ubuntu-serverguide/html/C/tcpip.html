@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">TCP/IP</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="networking.html" title="Chapter 4. Networking" />
+    <link rel="prev" href="network-configuration.html" title="Network Configuration" />
+    <link rel="next" href="dhcp.html" title="Dynamic Host Configuration Protocol (DHCP)" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="networking.html">Networking</a></span> &gt; <span class="breadcrumb-node">TCP/IP</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="TCP/IP">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="tcpip"></a>TCP/IP</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+            The Transmission Control Protocol and Internet Protocol (TCP/IP) is a standard 
+			set of protocols developed in the late 1970s by the Defense Advanced Research 
+			Projects Agency (DARPA) as a means of communication between different types of 
+			computers and computer networks. TCP/IP is the driving force of the Internet, 
+			and thus it is the most popular set of network protocols on Earth. 
+          </p>
+              <div class="sect2" title="TCP/IP Introduction">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="tcpip-introduction"></a>TCP/IP Introduction</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            The two protocol components of TCP/IP deal with different aspects of computer networking.
+            <span class="emphasis"><em>Internet Protocol</em></span>, the "IP" of TCP/IP is a 
+			connectionless protocol which deals only with network packet routing using the <span class="italics">IP Datagram</span> as the basic unit of networking information.  The 
+			IP Datagram consists of a header followed by a message.  The <span class="emphasis"><em>
+			Transmission Control Protocol</em></span> is the "TCP" of TCP/IP and enables network hosts 
+			to establish connections which may be used to exchange data streams.  TCP also guarantees 
+			that the data between connections is delivered and that it arrives at one network host in 
+			the same order as sent from another network host.
+          </p>
+              </div>
+              <div class="sect2" title="TCP/IP Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="tcpip-configuration"></a>TCP/IP Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            The TCP/IP protocol configuration consists of several elements which must be set by 
+			editing the appropriate configuration files, or deploying solutions such as the Dynamic 
+			Host Configuration Protocol (DHCP) server which in turn, can be configured to provide the 
+			proper TCP/IP configuration settings to network clients automatically. These 
+			configuration values must be set correctly in order to facilitate the proper network 
+			operation of your Ubuntu system.
+            </p>
+                <p>
+            The common configuration elements of TCP/IP and their purposes are as follows:
+            </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+                  <span class="bold"><strong>IP address</strong></span> The IP address is a unique
+                  identifying string expressed as four decimal numbers ranging from zero (0)
+                  to two-hundred and fifty-five (255), separated by periods,
+                  with each of the four numbers representing eight (8) bits of the address for a
+                  total length of thirty-two (32) bits for the whole address. This format is called
+                  <span class="emphasis"><em>dotted quad
+                  notation</em></span>.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                  <span class="bold"><strong>Netmask</strong></span> The Subnet Mask (or simply,
+                  <span class="emphasis"><em>netmask</em></span>) is a local bit mask, or set of flags
+                  which separate the portions of an IP address significant to the network from the
+                  bits significant to the <span class="emphasis"><em>subnetwork</em></span>.  For example,
+                  in a Class C network, the standard netmask is 255.255.255.0 which masks the first
+                  three bytes of the IP address and allows the last byte of the IP address to
+                  remain available for specifying hosts on the subnetwork.
+                  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                  <span class="bold"><strong>Network Address</strong></span> The Network Address represents the
+                  bytes comprising the network portion of an IP address.  For example, the host 12.128.1.2
+                  in a Class A network would use 12.0.0.0 as the network address, where twelve (12)
+                  represents the first byte of the IP address, (the network part) and zeroes (0) 
+                  in all of the remaining three bytes to represent the potential host values.  A network
+                  host using the private IP address 192.168.1.100
+                  would in turn use a Network Address of 192.168.1.0, which specifies the first three
+                  bytes of the Class C 192.168.1 network and a zero (0) for all the possible hosts on the
+                  network.
+                  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                  <span class="bold"><strong>Broadcast Address</strong></span> The Broadcast Address is an IP address
+                  which allows network data to be sent simultaneously to all hosts on a given subnetwork rather
+                  than specifying a particular host.  The standard general broadcast address for IP networks is
+                  255.255.255.255, but this broadcast address cannot be used to send a broadcast message to
+                  every host on the Internet because routers block it.  A more appropriate broadcast address
+                  is set to match a specific subnetwork.  For example, on the private Class C IP network,
+                  192.168.1.0, the broadcast address is 192.168.1.255. Broadcast messages are
+                  typically produced by network protocols such as the Address Resolution Protocol (ARP) and the 
+                  Routing Information Protocol (RIP).             
+                  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                  <span class="bold"><strong>Gateway Address</strong></span> A Gateway Address is the IP address through which
+                  a particular network, or host on a network, may be reached.  If one network host wishes to communicate
+                  with another network host, and that host is not located on the same network, then a 
+                  <span class="emphasis"><em>gateway</em></span> must be used. In many cases, the Gateway Address will be that
+                  of a router on the same network, which will in turn pass traffic on to other networks or hosts, such as
+                  Internet hosts.  The value of the Gateway Address setting must be correct, or your system will not be able
+                  to reach any hosts beyond those on the same network.                  
+                  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                  <span class="bold"><strong>Nameserver Address</strong></span> Nameserver Addresses represent the IP addresses of
+                  Domain Name Service (DNS) systems, which resolve network hostnames into IP addresses.  There are three levels of
+                  Nameserver Addresses, which may be specified in order of precedence: The 
+                  <span class="emphasis"><em>Primary</em></span>
+                  Nameserver, the <span class="emphasis"><em>Secondary</em></span> Nameserver, and the 
+                  <span class="emphasis"><em>Tertiary</em></span>
+                  Nameserver. In order for your system to be able to resolve network hostnames into their
+                  corresponding IP addresses, you must specify valid Nameserver Addresses which you are authorized to use
+                  in your system's TCP/IP configuration.  In many cases these addresses can and will be provided by your
+                  network service provider, but many free and publicly accessible nameservers are available for use, such as
+                  the Level3 (Verizon) servers with IP addresses from
+                  4.2.2.1 to 4.2.2.6. </p>
+                      <div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Tip">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Tip]" src="../../libs/admon/tip.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+                        The IP address, Netmask, Network Address, Broadcast Address, and Gateway Address
+                        are typically specified via the appropriate directives in the file  <code class="filename">/etc/network/interfaces</code>. The Nameserver Addresses are typically specified via  <span class="emphasis"><em>nameserver</em></span> 
+                        directives in the file <code class="filename">/etc/resolv.conf</code>. For more information, 
+                        view the system manual page for <code class="filename">interfaces</code> or <code class="filename">resolv.conf</code> respectively, with the following commands typed at a terminal prompt:
+                        </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <p>
+                    Access the system manual page for <code class="filename">interfaces</code> with the following command:
+                    </p>
+                      <p>
+</p>
+                      <pre class="screen">
+<span class="command"><strong>man interfaces</strong></span>
+</pre>
+                      <p>
+                    </p>
+                      <p>
+                    Access the system manual page for <code class="filename">resolv.conf</code> with the following command:
+                    </p>
+                      <p>
+</p>
+                      <pre class="screen">
+                        <span class="command">
+                          <strong>man resolv.conf</strong>
+                        </span>
+                      </pre>
+                      <p>
+                    </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+            </p>
+              </div>
+              <div class="sect2" title="IP Routing">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ip-routing"></a>IP Routing</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+              IP routing is a means of specifying and discovering paths in a TCP/IP network along which
+              network data may be sent.  Routing uses a set of <span class="emphasis"><em>routing tables</em></span>
+              to direct the forwarding of network data packets from their source to the destination, often
+              via many intermediary network nodes known as <span class="emphasis"><em>routers</em></span>.
+              There are two primary forms of
+              IP routing: <span class="emphasis"><em>Static Routing</em></span> and 
+              <span class="emphasis"><em>Dynamic Routing.</em></span>
+            </p>
+                <p>
+            Static routing involves manually adding IP routes to the system's routing table, and this is usually
+            done by manipulating the routing table with the <span class="application"><strong>route</strong></span> command. Static routing enjoys
+            many advantages over dynamic routing, such as simplicity of implementation on smaller networks, 
+            predictability (the routing table is always computed in advance, and thus the route is precisely the 
+            same each time it is used), and low overhead on other routers and network links due to the lack of a
+            dynamic routing protocol.  However, static routing does present some disadvantages as well.  For example,
+            static routing is limited to small networks and does not scale well.  Static routing also fails completely
+            to adapt to network outages and failures along the route due to the fixed nature of the route. 
+            </p>
+                <p>
+            Dynamic routing depends on large networks with multiple possible IP routes from a source to a destination
+            and makes use of special routing protocols, such as the Router Information Protocol (RIP), which handle
+            the automatic adjustments in routing tables that make dynamic routing possible.  Dynamic routing
+            has several advantages over static routing, such as superior scalability and the ability to adapt
+            to failures and outages along network routes. Additionally, there is less manual configuration of the
+            routing tables, since routers learn from one another about their existence and available routes. This trait
+            also eliminates the possibility of introducing mistakes in the routing tables via human error.
+            Dynamic routing is not perfect, however, and presents disadvantages such as heightened complexity and
+            additional network overhead from router communications, which does not immediately benefit the end users,
+            but still consumes network bandwidth.
+            </p>
+              </div>
+              <div class="sect2" title="TCP and UDP">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="tcp-and-udp"></a>TCP and UDP</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+              TCP is a connection-based protocol, offering error correction and guaranteed delivery of
+              data via what is known as <span class="emphasis"><em>flow control</em></span>. Flow control
+              determines when the flow of a data stream needs to be stopped, and previously sent data
+              packets should to be re-sent due to problems such as <span class="emphasis"><em>collisions</em></span>,
+              for example, thus ensuring complete and accurate delivery of the data.  TCP is typically
+              used in the exchange of important information such as database transactions. 
+            </p>
+                <p>
+              The User Datagram Protocol (UDP), on the other hand, is a <span class="emphasis"><em>connectionless</em></span>
+              protocol which seldom deals with the transmission of important data because it lacks flow
+              control or any other method to ensure reliable delivery of the data.  UDP is commonly used
+              in such applications as audio and video streaming, where it is considerably faster than
+              TCP due to the lack of error correction and flow control, and where the loss of a few packets
+			  is not generally catastrophic.
+            </p>
+              </div>
+              <div class="sect2" title="ICMP">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="icmp"></a>ICMP</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+              The Internet Control Messaging Protocol (ICMP) is an extension to the Internet Protocol (IP) as defined
+              in the Request For Comments (RFC) #792 and supports network packets containing control, error, and
+              informational messages.  ICMP is used by such network applications as the <span class="application"><strong>ping</strong></span>
+              utility, which can determine the availability of a network host or device.  Examples of some error messages
+              returned by ICMP which are useful to both network hosts and devices such as routers, include 
+              <span class="emphasis"><em>Destination Unreachable</em></span> and <span class="emphasis"><em>Time Exceeded</em></span>.
+            </p>
+              </div>
+              <div class="sect2" title="Daemons">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="daemons"></a>Daemons</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+              Daemons are special system applications which typically execute continuously in the background and
+              await requests for the functions they provide from other applications.  Many daemons are network-centric; that is,
+              a large number of daemons executing in the background on an Ubuntu system may provide network-related functionality.
+              Some examples of such network daemons include the <span class="emphasis"><em>Hyper Text Transport Protocol Daemon</em></span> 
+              (httpd), which provides web server functionality; the <span class="emphasis"><em>Secure SHell Daemon</em></span> (sshd), which
+              provides secure remote login shell and file transfer capabilities; and the <span class="emphasis"><em>Internet Message Access 
+              Protocol Daemon</em></span> (imapd), which provides E-Mail services.
+            </p>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="tcpip-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+              There are man pages for <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man7/tcp.7.html" target="_top">TCP</a> and
+              <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/man7/ip.7.html" target="_top">IP</a> that contain more useful information.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              Also, see the <a class="ulink" href="http://www.redbooks.ibm.com/abstracts/gg243376.html" target="_top">TCP/IP Tutorial and Technical Overview</a>
+              IBM Redbook.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              Another resource is O'Reilly's <a class="ulink" href="http://oreilly.com/catalog/9780596002978/" target="_top">TCP/IP Network Administration</a>.
+              </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="network-configuration.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="networking.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="dhcp.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Network Configuration </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Dynamic Host Configuration Protocol (DHCP)</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

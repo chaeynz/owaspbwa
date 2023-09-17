@@ -1,0 +1,6 @@
+UtsRelease 2.6.5-7.147-debug
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment SuSE9.1, 2.6.5-7.147, debug
+UtsMachine i386

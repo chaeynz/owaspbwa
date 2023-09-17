@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libdb-4.8.a
+/usr/lib/libdb-4.8.la
+/usr/include
+/usr/include/db.h
+/usr/include/db_185.h
+/usr/share
+/usr/share/doc
+/usr/share/doc/libdb4.8-dev
+/usr/share/doc/libdb4.8-dev/copyright
+/usr/share/doc/libdb4.8-dev/changelog.Debian.gz
+/usr/lib/libdb.a
+/usr/lib/libdb-4.so
+/usr/lib/libdb.so

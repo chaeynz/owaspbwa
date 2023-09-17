@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">libvirt</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="virtualization.html" title="Chapter 19. Virtualization" />
+    <link rel="prev" href="virtualization.html" title="Chapter 19. Virtualization" />
+    <link rel="next" href="jeos-and-vmbuilder.html" title="JeOS and vmbuilder" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="virtualization.html">Virtualization</a></span> &gt; <span class="breadcrumb-node">libvirt</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="libvirt">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="libvirt"></a>libvirt</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    The <span class="application"><strong>libvirt</strong></span> library is used to interface with different
+    virtualization technologies.  
+    Before getting started with <span class="application"><strong>libvirt</strong></span> it is best to make sure your hardware supports the necessary 
+    virtualization extensions for <span class="application"><strong>KVM</strong></span>.  Enter the following from a terminal prompt:
+    </p>
+              <pre class="screen"> 
+<span class="command"><strong>kvm-ok</strong></span>
+</pre>
+              <p>
+    A message will be printed informing you if your CPU <span class="emphasis"><em>does</em></span> or <span class="emphasis"><em>does not</em></span> support hardware virtualization.
+    </p>
+              <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="../../libs/admon/note.png" />
+                    </td>
+                    <th align="left"></th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+      On most computer whose processor supports virtualization, it is
+      necessary to activate an option in the BIOS to enable it. 
+      </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="sect2" title="Virtual Networking">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="virtual-networking"></a>Virtual Networking</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      There are a few different ways to allow a virtual machine access to the external network.  The default virtual network configuration is 
+      <span class="emphasis"><em>usermode</em></span> networking, which uses the SLIRP protocol and traffic is NATed through the host interface to the outside network.
+      </p>
+                <p>
+      To enable external hosts to directly access services on virtual machines a <span class="emphasis"><em>bridge</em></span> needs to be configured.  This allows
+      the virtual interfaces to connect to the outside network through the physical interface, making them appear as normal hosts to the rest 
+      of the network. For information on setting up a bridge see <a class="xref" href="network-configuration.html#bridging" title="Bridging">the section called “Bridging”</a>.
+      </p>
+              </div>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="libvirt-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      To install the necessary packages, from a terminal prompt enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install kvm libvirt-bin</strong></span>
+</pre>
+                <p>
+      After installing <span class="application"><strong>libvirt-bin</strong></span>, the user used to manage virtual machines will need to be added to 
+      the <span class="emphasis"><em>libvirtd</em></span> group.  Doing so will grant the user access to the advanced networking options.  
+      </p>
+                <p>
+      In a terminal enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo adduser $USER libvirtd</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	If the user chosen is the current user, you will need to log out and back in for the new group membership to take effect.
+	</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      You are now ready to install a <span class="emphasis"><em>Guest</em></span> operating system.  Installing a virtual machine follows the same
+      process as installing the operating system directly on the hardware.  You either need a way to automate the installation, or 
+      a keyboard and monitor will need to be attached to the physical machine.  
+      </p>
+                <p>
+      In the case of virtual machines a Graphical User Interface (GUI) is analogous to using a physical keyboard and mouse.  Instead of installing
+      a GUI the <span class="application"><strong>virt-viewer</strong></span> application can be used to connect to a virtual machine's console using <span class="application"><strong>VNC</strong></span>.  
+      See <a class="xref" href="libvirt.html#libvirt-virt-viewer" title="Virtual Machine Viewer">the section called “Virtual Machine Viewer”</a> for more information.
+      </p>
+                <p>
+      There are several ways to automate the Ubuntu installation process, for example using 
+      preseeds, kickstart, etc.  Refer to the <a class="ulink" href="https://help.ubuntu.com/10.04 LTS/installation-guide/" target="_top">Ubuntu Installation Guide</a> for details.
+      </p>
+                <p>
+      Yet another way to install an Ubuntu virtual machine is to use <span class="application"><strong>ubuntu-vm-builder</strong></span>.  <span class="application"><strong>ubuntu-vm-builder</strong></span> 
+      allows you to setup advanced partitions, execute custom post-install scripts, etc.  For details see <a class="xref" href="jeos-and-vmbuilder.html" title="JeOS and vmbuilder">the section called “JeOS and vmbuilder”</a>
+      </p>
+              </div>
+              <div class="sect2" title="virt-install">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="libvirt-virt-install"></a>virt-install</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      <span class="application"><strong>virt-install</strong></span> is part of the <span class="application"><strong>python-virtinst</strong></span> package.  To install it, from a terminal prompt enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install python-virtinst</strong></span>
+</pre>
+                <p>
+      There are several options available when using <span class="application"><strong>virt-install</strong></span>.  For example:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo virt-install -n web_devel -r 256 -f web_devel.img \
+-s 4 -c jeos.iso --accelerate \
+--connect=qemu:///system --vnc \
+--noautoconsole -v</strong></span>
+</pre>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-n web_devel:</em></span> the name of the new virtual machine will be <span class="emphasis"><em>web_devel</em></span> in this example.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-r 256:</em></span> specifies the amount of memory the virtual machine will use.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-f web_devel.img:</em></span> indicates the path to the virtual disk which can be a file, partition, or logical volume.
+          In this example a file named <code class="filename">web_devel.img</code>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-s 4:</em></span> the size of the virtual disk.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-c jeos.iso:</em></span> file to be used as a virtual CDROM.  The file can be either an ISO file or the path to the
+          host's CDROM device.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>--accelerate:</em></span> enables the kernel's acceleration technologies. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>--vnc:</em></span> exports the guest's virtual console using VNC. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>--noautoconsole:</em></span> will not automatically connect to the virtual machine's console. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-v:</em></span> creates a fully virtualized guest. 
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      After launching <span class="application"><strong>virt-install</strong></span> you can connect to the virtual machine's console either locally
+      using a GUI or with the <span class="application"><strong>virt-viewer</strong></span> utility.
+      </p>
+              </div>
+              <div class="sect2" title="virt-clone">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="libvirt-virt-clone"></a>virt-clone</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The <span class="application"><strong>virt-clone</strong></span> application can be used to copy one virtual machine to another.  For example:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo virt-clone -o web_devel -n database_devel -f /path/to/database_devel.img --connect=qemu:///system</strong></span> 
+</pre>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-o:</em></span> original virtual machine.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-n:</em></span> name of the new virtual machine.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>-f:</em></span> path to the file, logical volume, or partition to be used by the new virtual machine.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>--connect:</em></span> specifies which hypervisor to connect to.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      Also, use <span class="emphasis"><em>-d</em></span> or <span class="emphasis"><em>--debug</em></span> option to help troubleshoot problems with 
+      <span class="application"><strong>virt-clone</strong></span>.
+      </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	Replace <span class="emphasis"><em>web_devel</em></span> and <span class="emphasis"><em>database_devel</em></span> with appropriate virtual machine names.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="Virtual Machine Management">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="libvirt-management"></a>Virtual Machine Management</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="sect3" title="virsh">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="virsh"></a>virsh</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        There are several utilities available to manage virtual machines and <span class="application"><strong>libvirt</strong></span>.  
+        The <span class="application"><strong>virsh</strong></span> utility can be used from the command line.  Some examples: 
+        </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+    	    To list running virtual machines:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system list</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+  	    To start a virtual machine:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system start web_devel</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+  	    Similarly, to start a virtual machine at boot:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system autostart web_devel</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+ 	    Reboot a virtual machine with:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system reboot web_devel</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+  	    The <span class="emphasis"><em>state</em></span> of virtual machines can be saved to a file in order to be restored later.  The
+            following will save the virtual machine state into a file named according to the date:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system save web_devel web_devel-022708.state</strong></span>
+</pre>
+                        <p>
+            Once saved the virtual machine will no longer be running.
+            </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	    A saved virtual machine can be restored using:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system restore web_devel-022708.state</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	    To shutdown a virtual machine do:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system shutdown web_devel</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	    A CDROM device can be mounted in a virtual machine by entering:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>virsh -c qemu:///system attach-disk web_devel /dev/cdrom /media/cdrom</strong></span>
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+          In the above examples replace <span class="emphasis"><em>web_devel</em></span> with the appropriate virtual machine name, and 
+  	  <code class="filename">web_devel-022708.state</code> with a descriptive file name.
+          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="Virtual Machine Manager">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="virt-manager"></a>Virtual Machine Manager</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        The <span class="application"><strong>virt-manager</strong></span> package contains a graphical utility to manage local and remote virtual machines.
+        To install virt-manager enter:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo apt-get install virt-manager</strong></span>
+</pre>
+                  <p>
+        Since <span class="application"><strong>virt-manager</strong></span> requires a Graphical User Interface (GUI) environment it is recommended to be 
+	installed on a workstation or test machine instead of a production server.  To connect to the local 
+        <span class="application"><strong>libvirt</strong></span> service enter:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>virt-manager -c qemu:///system</strong></span>
+</pre>
+                  <p>
+	You can connect to the <span class="application"><strong>libvirt</strong></span> service running on another host by entering the following in a terminal prompt:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>virt-manager -c qemu+ssh://virtnode1.mydomain.com/system</strong></span>
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+          The above example assumes that <span class="application"><strong>SSH</strong></span> connectivity between the management system and virtnode1.mydomain.com 
+          has already been configured, and uses SSH keys for authentication.  SSH <span class="emphasis"><em>keys</em></span> are needed because 
+          <span class="application"><strong>libvirt</strong></span> sends the password prompt to another process.  For details on configuring 
+	  <span class="application"><strong>SSH</strong></span> see <a class="xref" href="openssh-server.html" title="OpenSSH Server">the section called “OpenSSH Server”</a>
+          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Virtual Machine Viewer">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="libvirt-virt-viewer"></a>Virtual Machine Viewer</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The <span class="application"><strong>virt-viewer</strong></span> application allows you to connect to a virtual machine's console.  
+      <span class="application"><strong>virt-viewer</strong></span> does require a Graphical User Interface (GUI) to interface with the virtual machine. 
+      </p>
+                <p>  
+      To install <span class="application"><strong>virt-viewer</strong></span> from a terminal enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install virt-viewer</strong></span>
+</pre>
+                <p>
+      Once a virtual machine is installed and running you can connect to the virtual machine's console by using:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>virt-viewer -c qemu:///system web_devel</strong></span>
+</pre>
+                <p>
+      Similar to <span class="application"><strong>virt-manager</strong></span>, <span class="application"><strong>virt-viewer</strong></span> can connect to a remote host using 
+      <span class="emphasis"><em>SSH</em></span> with key authentication, as well:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>virt-viewer -c qemu+ssh://virtnode1.mydomain.com/system web_devel</strong></span>
+</pre>
+                <p>
+      Be sure to replace <span class="italic">web_devel</span> with the appropriate virtual machine name.
+      </p>
+                <p>
+      If configured to use a <span class="emphasis"><em>bridged</em></span> network interface you can also setup <span class="application"><strong>SSH</strong></span> access
+      to the virtual machine.  See <a class="xref" href="openssh-server.html" title="OpenSSH Server">the section called “OpenSSH Server”</a> and <a class="xref" href="network-configuration.html#bridging" title="Bridging">the section called “Bridging”</a> for more details.
+      </p>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="libvirt-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+     	  See the <a class="ulink" href="http://kvm.qumranet.com/kvmwiki" target="_top">KVM</a> home page for more details.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+     	  For more information on <span class="application"><strong>libvirt</strong></span> see the <a class="ulink" href="http://libvirt.org/" target="_top">libvirt home page</a> 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+     	  The <a class="ulink" href="http://virt-manager.et.redhat.com/" target="_top">Virtual Machine Manager</a> site has more information on 
+          <span class="application"><strong>virt-manager</strong></span> development.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Also, stop by the <span class="emphasis"><em>#ubuntu-virt</em></span> IRC channel on <a class="ulink" href="http://freenode.net/" target="_top">freenode</a> to 
+          discuss virtualization technology in Ubuntu.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Another good resource is the <a class="ulink" href="https://help.ubuntu.com/community/KVM" target="_top">Ubuntu Wiki KVM</a> page.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="virtualization.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="virtualization.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="jeos-and-vmbuilder.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 19. Virtualization </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> JeOS and vmbuilder</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+c93f263e600af8883ff47743a5cd1aaf  usr/share/apport/package-hooks/ureadahead.py
+7df0250dc0f9b39299c4dbf371377055  usr/share/man/man8/ureadahead.8.gz
+7fd8a126b990180f5e14602bd24291fd  usr/share/doc/ureadahead/copyright
+474609d155c8be6d28c8c45cded5e759  usr/share/doc/ureadahead/changelog.Debian.gz
+6eac9da1952bf87e3514d1d85e69a5e6  sbin/ureadahead

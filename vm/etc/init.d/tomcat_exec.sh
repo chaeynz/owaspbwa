@@ -1,0 +1,2 @@
+#!/bin/bash
+set -a; JAVA_HOME="/usr/lib/jvm/java-6-openjdk"; source "/etc/default/tomcat6"; 		CATALINA_HOME="/usr/share/tomcat6"; 		CATALINA_BASE="/var/lib/tomcat6"; 		JAVA_OPTS="-Djava.awt.headless=true -Xmx128M"; 		CATALINA_PID="/var/run/tomcat6.pid"; 		CATALINA_TMPDIR="/tmp/tomcat6-tmp"; 		LANG="en_US.UTF-8"; JSSE_HOME="/usr/lib/jvm/java-6-openjdk/jre/"; 		cd "/var/lib/tomcat6"; 		"/usr/share/tomcat6/bin/catalina.sh" start

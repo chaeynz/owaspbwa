@@ -1,0 +1,6 @@
+UtsRelease 2.6.11.4-21.7-bigsmp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment SuSE9.3 U1, 2.6.11.4-21.7, i586 bigsmp
+UtsMachine i386

@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/Mono.Data.Tds
+/usr/lib/mono/gac/Mono.Data.Tds/2.0.0.0__0738eb9f132ed756
+/usr/lib/mono/gac/Mono.Data.Tds/2.0.0.0__0738eb9f132ed756/Mono.Data.Tds.dll
+/usr/lib/mono/2.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-data-tds2.0-cil
+/usr/share/doc/libmono-data-tds2.0-cil/copyright
+/usr/share/doc/libmono-data-tds2.0-cil/changelog.Debian.gz
+/usr/lib/mono/2.0/Mono.Data.Tds.dll

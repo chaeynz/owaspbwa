@@ -1,0 +1,5 @@
+f1915608ab0d2a13cad1f24cdfe3c2b6  usr/share/doc/libmaven-reporting-impl-java/copyright
+a29bd8fd2201b5c073a3d3064280aac9  usr/share/doc/libmaven-reporting-impl-java/changelog.Debian.gz
+f79810a0e107a0dca056ccc4f7859e5f  usr/share/maven-repo/org/apache/maven/reporting/maven-reporting-impl/2.0.4.2/maven-reporting-impl-2.0.4.2.pom
+aa52b51f902a2371553559c574338d87  usr/share/maven-repo/org/apache/maven/reporting/maven-reporting-impl/debian/maven-reporting-impl-debian.pom
+ddf8dbf4bafc076ca013528a0014484b  usr/share/java/maven-reporting-impl-2.0.4.2.jar

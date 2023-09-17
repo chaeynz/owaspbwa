@@ -1,0 +1,27 @@
+Tue, 23 Oct 2012 23:05:01 -0400
+lib/journey/nodes/node.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/parser.y	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/visitors.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/formatter.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/route.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/nfa/simulator.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/nfa/builder.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/nfa/dot.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/nfa/transition_table.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/router.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/backwards.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/gtg/simulator.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/gtg/builder.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/gtg/transition_table.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/router/utils.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/router/strexp.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/core-ext/hash.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/parser.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/routes.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/scanner.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/parser_extras.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey/path/pattern.rb	Tue, 23 Oct 2012 23:03:09 -0400
+lib/journey.rb	Tue, 23 Oct 2012 23:03:09 -0400
+Manifest.txt	Tue, 23 Oct 2012 23:03:09 -0400
+CHANGELOG.rdoc	Tue, 23 Oct 2012 23:03:09 -0400
+README.rdoc	Tue, 23 Oct 2012 23:03:09 -0400

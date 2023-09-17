@@ -1,0 +1,12 @@
+ec239fc9a63984b13402aee937bb6edf  usr/share/man/man8/ntfs-3g.usermap.8.gz
+79c650c7d8babceb99d2181c89064cde  usr/share/man/man8/ntfs-3g.secaudit.8.gz
+4185b3842bc477f3457cb6c9be86ee81  usr/share/man/man8/ntfs-3g.8.gz
+f717c87f50eb0d411279e6228449e4c9  usr/share/man/man8/ntfs-3g.probe.8.gz
+157b5ae960f857ca35298eba522ce1fd  usr/share/initramfs-tools/hooks/ntfs_3g
+834d8fb7abc65f0f951e4d28aae79bfa  usr/share/initramfs-tools/scripts/local-premount/ntfs_3g
+13f4298ab76e8dc84e22f7a221693c52  usr/share/initramfs-tools/scripts/local-bottom/ntfs_3g
+63ca5abcc18a3a8748de01344696f6a6  usr/share/hal/fdi/policy/20thirdparty/25-ntfs-3g-policy.fdi
+8657a3d622e7d571ea17e15a9e45760e  bin/ntfs-3g.probe
+1b292757e5ea3bb2a928c9d56eb087dd  bin/ntfs-3g.usermap
+3131fffaa5ee5d37502d81a7cb542c1d  bin/ntfs-3g.secaudit
+df75707e47f7a44035c101dd9b5d1332  bin/ntfs-3g

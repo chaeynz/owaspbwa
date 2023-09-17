@@ -1,0 +1,23 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=59
+Maintainer: Randy J. Ray
+Source: http://search.cpan.org/dist/RPC-XML/
+Name: RPC-XML
+
+Files: *
+Copyright: (c) 2001-2009 Randy J. Ray
+License: Artistic or LGPL-2.1
+ This module and the code within are released under the terms of the Artistic
+ License 2.0 (http://www.opensource.org/licenses/artistic-license-2.0.php).
+ This code may be redistributed under either the Artistic License or the GNU
+ Lesser General Public License (LGPL) version 2.1
+ (http://www.opensource.org/licenses/lgpl-2.1.php).
+ .
+ On Debian GNU/Linux systems, the complete text of the Artistic Licence and
+ the LGPL v 2.1 can be found in `/usr/share/common-licenses/Artistic' and
+ `/usr/share/common-licenses/LGPL-2.1' respectively.
+
+Files: debian/*
+Copyright:
+ 2003-2005, Ivan Kohler <ivan-debian@420.am>
+ 2006-2009, various members of the Debian Perl Group, cf. debian/changelog
+License: Artistic or LGPL-2.1 or GPL-1+

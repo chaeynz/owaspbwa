@@ -1,0 +1,13 @@
+2dd818c8a0569fd524e6d367dee9a5f3  usr/lib/ruby/1.8/i486-linux/ncurses_bin.so
+a843580a7c03d33dc0e00ca051fee9dd  usr/lib/ruby/1.8/ncurses.rb
+953880aab89a725ab5e1562d16080302  usr/share/doc/libncurses-ruby1.8/TODO
+4b8ab357c582ec2f3a9b7e626bd3b28c  usr/share/doc/libncurses-ruby1.8/THANKS
+070d4b8fbc95d732b8891ce39d820783  usr/share/doc/libncurses-ruby1.8/copyright
+ec8366c538aff3e80ec73653beec9904  usr/share/doc/libncurses-ruby1.8/examples/example.rb
+fc0e60ccf24e61dcf582e468a375914d  usr/share/doc/libncurses-ruby1.8/examples/hello_ncurses.rb
+f793331e6916488fcb684d9a6e98468d  usr/share/doc/libncurses-ruby1.8/examples/rain.rb
+2b1107702bbb4fa51958e31d394f4eac  usr/share/doc/libncurses-ruby1.8/examples/read_line.rb
+54a9f0112b7d3df315098e05b653e2f0  usr/share/doc/libncurses-ruby1.8/examples/tclock.rb
+34541e697690ed3fba1a53b95387b56f  usr/share/doc/libncurses-ruby1.8/examples/test_scanw.rb
+8027bb417bd047e28146c7b9d5141203  usr/share/doc/libncurses-ruby1.8/README.gz
+c4dd12b08d27a2d3e8c1414f4a846544  usr/share/doc/libncurses-ruby1.8/changelog.Debian.gz

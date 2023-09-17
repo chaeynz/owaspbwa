@@ -1,0 +1,68 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Upstream-Author: Paul Marquess <pmqs@cpan.org>
+Packaged-By: Bas Zoetekouw <bas@debian.org>
+Packaged-Date: Wed May 21 2008 15:08:19 +0200
+Original-Source-Location: http://search.cpan.org/dist/Compress-Raw-Bzip2
+
+Files: *
+Copyright: Copyright © 2005-2007 by Paul Marquess <pmqs@cpan.org>
+License: GPL-1+ | Artistic
+  This program is free software; you can redistribute it and/or
+  modify it under the same terms as Perl itself.
+
+Files: debian/*
+Copyright: Copyright © 2008 by Bas Zoetekouw <bas@debian.org>
+License: BSD-2
+
+Files: bzip2-src/*
+Copyright: Copyright © 1996-2007 Julian R Seward <jseward@bzip.org>
+License: BSD-other
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+  .
+  1. Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  .
+  2. The origin of this software must not be misrepresented; you must 
+  not claim that you wrote the original software.  If you use this 
+  software in a product, an acknowledgment in the product 
+  documentation would be appreciated but is not required.
+  .
+  3. Altered source versions must be plainly marked as such, and must
+  not be misrepresented as being the original software.
+  .
+  4. The name of the author may not be used to endorse or promote 
+  products derived from this software without specific prior written 
+  permission.
+  .
+  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+  OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: bzip2-src/dlltest.c
+Copyright: Copyright © by Yoshioka Tsuneo <tsuneo@rr.iij4u.or.jp>
+License: PD
+
+Files: t/Test/*
+Copyright: Copyright © 2002, 2004 by chromatic <chromatic@wgz.org> and Michael G Schwern <schwern@pobox.com>
+License: GPL-1+ | Artistic
+
+Files: t/Test/Builder.pm
+Copyright: Copyright © 2002, 2004 by chromatic <chromatic@wgz.org> and Michael G Schwern <schwern@pobox.com>
+License: GPL-1+ | Artistic
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public
+License can be found in `/usr/share/common-licenses/GPL' and the complete text
+of the Artistic License be found in `/usr/share/common-licenses/Artistic'.
+The complete copyright of the perl package can be found in
+`/usr/share/doc/perl/copyright'.
+

@@ -1,0 +1,14 @@
+#! /bin/sh -e
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
+    update-alternatives --quiet --remove java /usr/bin/gij-4.3
+    update-alternatives --quiet --remove rmiregistry /usr/bin/grmiregistry-4.3
+    update-alternatives --quiet --remove keytool /usr/bin/gkeytool-4.3
+    update-alternatives --quiet --remove orbd /usr/bin/gorbd-4.3
+    update-alternatives --quiet --remove rmid /usr/bin/grmid-4.3
+    update-alternatives --quiet --remove serialver /usr/bin/gserialver-4.3
+fi
+
+
+
+exit 0

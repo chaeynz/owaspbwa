@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Module: Rake::AltSystem</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Module</span><br />Rake::AltSystem</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/rake/alt_system_rb.html">lib/rake/alt_system.rb</a>
+        </td>
+      </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+Alternate implementations of <a href="AltSystem.html#M000035">system</a>()
+and <a href="AltSystem.html#M000036">backticks</a> `` on Windows for
+ruby-1.8 and earlier.
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000036">backticks</a></li>
+  <li><a href="#M000032">define_module_function</a></li>
+  <li><a href="#M000034">find_runnable</a></li>
+  <li><a href="#M000033">repair_command</a></li>
+  <li><a href="#M000035">system</a></li>
+  </ul>
+
+
+
+
+  <div class="sectiontitle">Constants</div>
+  <table border='0' cellpadding='5'>
+  <tr valign='top'>
+    <td class="attr-name">WINDOWS</td>
+    <td>=</td>
+    <td class="attr-value">Config::CONFIG[&quot;host_os&quot;] =~ %r!(msdos|mswin|djgpp|mingw)!</td>
+  </tr>
+  <tr valign='top'>
+    <td class="attr-name">RUNNABLE_EXTS</td>
+    <td>=</td>
+    <td class="attr-value">%w[com exe bat cmd]</td>
+  </tr>
+  <tr valign='top'>
+    <td class="attr-name">RUNNABLE_PATTERN</td>
+    <td>=</td>
+    <td class="attr-value">%r!\.(#{RUNNABLE_EXTS.join('|')})\Z!i</td>
+  </tr>
+  </table>
+
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000032"></a><b>define_module_function</b>(name, &amp;block)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000032_source')" id="l_M000032_source">show source</a> ]</p>
+  <div id="M000032_source" class="dyn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rake/alt_system.rb, line 35</span>
+35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_module_function</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+36:       <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+37:       <span class="ruby-identifier">module_function</span>(<span class="ruby-identifier">name</span>)
+38:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000036"></a><b>backticks</b>(cmd)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000036_source')" id="l_M000036_source">show source</a> ]</p>
+  <div id="M000036_source" class="dyn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rake/alt_system.rb, line 97</span>
+97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">backticks</span>(<span class="ruby-identifier">cmd</span>)
+98:       <span class="ruby-identifier">kernel_backticks</span>(<span class="ruby-identifier">repair_command</span>(<span class="ruby-identifier">cmd</span>))
+99:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000034"></a><b>find_runnable</b>(file)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000034_source')" id="l_M000034_source">show source</a> ]</p>
+  <div id="M000034_source" class="dyn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rake/alt_system.rb, line 70</span>
+70:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_runnable</span>(<span class="ruby-identifier">file</span>)
+71:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RUNNABLE_PATTERN</span>
+72:         <span class="ruby-identifier">file</span>
+73:       <span class="ruby-keyword kw">else</span>
+74:         <span class="ruby-constant">RUNNABLE_EXTS</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span>
+75:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">test</span> = <span class="ruby-node">&quot;#{file}.#{ext}&quot;</span>)
+76:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">test</span>
+77:           <span class="ruby-keyword kw">end</span>
+78:         }
+79:         <span class="ruby-keyword kw">nil</span>
+80:       <span class="ruby-keyword kw">end</span>
+81:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000033"></a><b>repair_command</b>(cmd)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000033_source')" id="l_M000033_source">show source</a> ]</p>
+  <div id="M000033_source" class="dyn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rake/alt_system.rb, line 50</span>
+50:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">repair_command</span>(<span class="ruby-identifier">cmd</span>)
+51:       <span class="ruby-value str">&quot;call &quot;</span> <span class="ruby-operator">+</span> (
+52:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cmd</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">%r!\A\s*\&quot;.*?\&quot;!</span>
+53:           <span class="ruby-comment cmt"># already quoted</span>
+54:           <span class="ruby-identifier">cmd</span>
+55:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">match</span> = <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">%r!\A\s*(\S+)!</span>)
+56:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">%r!/!</span>
+57:             <span class="ruby-comment cmt"># avoid x/y.bat interpretation as x with option /y</span>
+58:             <span class="ruby-node">%Q!&quot;#{match[1]}&quot;!</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">match</span>.<span class="ruby-identifier">post_match</span>
+59:           <span class="ruby-keyword kw">else</span>
+60:             <span class="ruby-comment cmt"># a shell command will fail if quoted</span>
+61:             <span class="ruby-identifier">cmd</span>
+62:           <span class="ruby-keyword kw">end</span>
+63:         <span class="ruby-keyword kw">else</span>
+64:           <span class="ruby-comment cmt"># empty or whitespace</span>
+65:           <span class="ruby-identifier">cmd</span>
+66:         <span class="ruby-keyword kw">end</span>
+67:       )
+68:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000035"></a><b>system</b>(cmd, *args)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000035_source')" id="l_M000035_source">show source</a> ]</p>
+  <div id="M000035_source" class="dyn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rake/alt_system.rb, line 83</span>
+83:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">system</span>(<span class="ruby-identifier">cmd</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+84:       <span class="ruby-identifier">repaired</span> = (
+85:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+86:           [<span class="ruby-identifier">repair_command</span>(<span class="ruby-identifier">cmd</span>)]
+87:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">runnable</span> = <span class="ruby-identifier">find_runnable</span>(<span class="ruby-identifier">cmd</span>)
+88:           [<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">runnable</span>), <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>]
+89:         <span class="ruby-keyword kw">else</span>
+90:           <span class="ruby-comment cmt"># non-existent file</span>
+91:           [<span class="ruby-identifier">cmd</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>]
+92:         <span class="ruby-keyword kw">end</span>
+93:       )
+94:       <span class="ruby-identifier">kernel_system</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">repaired</span>)
+95:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

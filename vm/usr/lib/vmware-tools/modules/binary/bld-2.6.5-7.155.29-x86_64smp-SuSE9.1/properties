@@ -1,0 +1,6 @@
+UtsRelease 2.6.5-7.155.29-smp
+ModVersion yes
+SMP yes
+PageOffset 0000010000000000
+Comment SuSE9.1 SP1, kernel 2.6.5-7.155.29, x86_64 smp 
+UtsMachine x86_64

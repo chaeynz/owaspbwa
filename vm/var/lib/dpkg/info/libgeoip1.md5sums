@@ -1,0 +1,13 @@
+ba06c98a1c346f1561abbe1adb032e79  usr/share/doc/libgeoip1/README.Debian-source
+859a0ecb663aff6f43b9d347b37ba21a  usr/share/doc/libgeoip1/TODO
+027febae8e88b922997cf12aeee52ff5  usr/share/doc/libgeoip1/AUTHORS
+1b6b548bda8e888cd3e56e1786971347  usr/share/doc/libgeoip1/README.Debian
+4ea64ebc7f804e9969d33728935b9557  usr/share/doc/libgeoip1/copyright
+441e029ad4348c6a31b910cc27af5804  usr/share/doc/libgeoip1/examples/geolitecityupdate.sh
+2d5ca5c547b8cd862c01b7dc44086654  usr/share/doc/libgeoip1/examples/geoliteasnum.sh
+aa7aee5bf60b73892747a86ed7e6b25d  usr/share/doc/libgeoip1/examples/geolitecountryv4.sh
+a7349160c07a27dc5f8e155cc3e15fa4  usr/share/doc/libgeoip1/examples/geolitecountryv6.sh
+fd3111dc6a97f9fd9ce2153879f5076e  usr/share/doc/libgeoip1/README.gz
+7cea3b2eeb555ce0a995b7e4c7a87c76  usr/share/doc/libgeoip1/changelog.Debian.gz
+8eac25080ae88364b3fc48b2f4cf692b  usr/lib/libGeoIP.so.1.4.6
+9ab5e42a4ef83a1b62eef35dea1f723a  usr/lib/libGeoIPUpdate.so.0.0.0

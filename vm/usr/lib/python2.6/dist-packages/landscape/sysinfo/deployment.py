@@ -1,0 +1,1 @@
+../../../../../share/pyshared/landscape/sysinfo/deployment.py

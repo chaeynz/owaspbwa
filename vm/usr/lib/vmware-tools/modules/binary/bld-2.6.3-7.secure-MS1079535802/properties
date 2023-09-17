@@ -1,0 +1,6 @@
+UtsRelease 2.6.3-7mdksecure
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Mandrake 10.0, 2.6.3-7mdk, secure
+UtsMachine i386

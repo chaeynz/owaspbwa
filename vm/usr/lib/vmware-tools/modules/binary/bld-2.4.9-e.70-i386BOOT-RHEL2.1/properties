@@ -1,0 +1,6 @@
+UtsRelease 2.4.9-e.70BOOT
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment RHEL2.1, 2.4.9-e.70, i386, BOOT
+UtsMachine i386

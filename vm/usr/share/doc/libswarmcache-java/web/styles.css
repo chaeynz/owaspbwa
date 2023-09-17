@@ -1,0 +1,117 @@
+BODY {
+  background-color: #FFFFFF;
+  margin: 0pt 0pt 0pt 0pt;
+  border: 0pt 0pt 0pt 0pt;
+  padding:0pt 0pt 0pt 0pt;
+}
+
+BODY, P, DIV, SPAN, TD, LI {
+  font: 10pt Arial, Helvetica, serif;
+  color: #000000;
+}
+
+A {
+  color: #6B81B8;
+  text-decoration: none;
+}
+
+A:hover {
+  color: #6B81B8;
+  text-decoration: underline;
+}
+
+TABLE {
+  margin: 0pt;
+  border: 0pt;
+  padding: 0pt;
+  spacing: 0pt;
+}
+
+.border {
+  background-color: #B2B2B2;
+}
+
+.title {
+  font: 36pt Arial, Helvetica, SansSerif;
+  /*font-weight: bold;*/
+  color: #FFFFFF;
+  line-height: 80%;
+  /*word-spacing: -0.1em;*/
+}
+
+.subtitle {
+  font: 11pt Arial, Helvetica, serif;
+  font-style: italic;
+  color: #000000;
+  text-align: right;
+}
+
+.menuitem {
+  background-color: #929292;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+#menu A {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#menu A:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.contentTable {
+  border-right: 1px dashed #929292;
+  width: 600px;
+}
+
+.content {
+  background-color: #FFFFFF;
+  padding: 2px;
+  vertical-align: top;
+}
+
+.heading {
+  font: 16pt Arial, Helvetica, serif;
+  color: #000000;
+  font-weight: bold;
+}
+
+.subheading {
+  font: 11pt Arial, Helvetica, serif;
+  color: #000000;
+  font-weight: bold;
+}
+
+.copyright {
+  background-color: #FFFFFF;
+  padding: 2px;
+  text-align: right;
+  vertical-align: bottom;
+  font: 8pt Arial, Helvetica, serif;
+  font-style: italic;
+}
+
+.newstable {  
+  border-top: 1px solid #929292;
+  width: 100%;
+}
+
+.newsdate {
+  color: #929292;
+  font: 10pt Arial, Helvetica, serif;
+  font-style: italic;  
+  text-align: right;
+}
+
+.newsheading {
+  color: #000000;
+  font: 10pt Arial, Helvetica, serif;
+  font-weight: bold;
+}
+
+.newstext {
+  padding-left: 10px;
+}

@@ -1,0 +1,1 @@
+/usr/share/pyshared/mod_python/publisher.py

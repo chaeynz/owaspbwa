@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/irb
+/usr/share/doc/irb/copyright
+/usr/share/doc/irb/changelog.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/bin
+/usr/share/man/man1/irb.1.gz
+/usr/bin/irb

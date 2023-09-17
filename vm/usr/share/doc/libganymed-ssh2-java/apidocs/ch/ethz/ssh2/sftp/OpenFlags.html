@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE html PUBLIC "-//gnu.org///DTD XHTML 1.1 plus Target 1.0//EN" "../../../../resources/xhtml11-target10.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>OpenFlags</title><script src="../../../../resources/gjdoc.js" type="text/javascript"><!-- this comment required for konqueror 3.2.2 --></script><meta http-equiv="Content-Type" content="text/html; charset=US-ASCII"/><meta name="generator" content="GNU Gjdoc Standard Doclet"/><meta name="keywords" content="ch.ethz.ssh2.sftp.OpenFlags class"/><meta name="keywords" content="SSH_FXF_ACCESS_DISPOSITION"/><meta name="keywords" content="SSH_FXF_CREATE_NEW"/><meta name="keywords" content="SSH_FXF_CREATE_TRUNCATE"/><meta name="keywords" content="SSH_FXF_OPEN_EXISTING"/><meta name="keywords" content="SSH_FXF_OPEN_OR_CREATE"/><meta name="keywords" content="SSH_FXF_TRUNCATE_EXISTING"/><meta name="keywords" content="SSH_FXF_ACCESS_APPEND_DATA"/><meta name="keywords" content="SSH_FXF_ACCESS_APPEND_DATA_ATOMIC"/><meta name="keywords" content="SSH_FXF_ACCESS_TEXT_MODE"/><meta name="keywords" content="SSH_FXF_ACCESS_BLOCK_READ"/><meta name="keywords" content="SSH_FXF_ACCESS_BLOCK_WRITE"/><meta name="keywords" content="SSH_FXF_ACCESS_BLOCK_DELETE"/><meta name="keywords" content="SSH_FXF_ACCESS_BLOCK_ADVISORY"/><meta name="keywords" content="SSH_FXF_ACCESS_NOFOLLOW"/><meta name="keywords" content="SSH_FXF_ACCESS_DELETE_ON_CLOSE"/><link rel="stylesheet" type="text/css" href="../../../../resources/gjdochtml-clean-layout.css" title="GNU Clean"/><link rel="stylesheet" type="text/css" href="../../../../resources/gjdochtml-clean-color1.css" title="GNU Clean"/></head><body class="content class" onload="if(parent.contentPageLoaded)parent.contentPageLoaded(document.title)"><table class="navbar div top"><tr><td class="navbar div top"><div class="navbar div top"><span class="navbar item enabled"><a href="../../../../overview-summary.html">Overview</a></span> <span class="navbar item enabled"><a href="package-summary.html">Package</a></span> <span class="navbar item enabled"><a href="tree.html">Tree</a></span> <span class="navbar item enabled"><a href="../../../../alphaindex.html">Index</a></span> <span class="navbar item enabled"><a href="../../../../deprecated.html">Deprecated</a></span> <span class="navbar item enabled"><a href="../../../../about.html">About</a></span></div></td></tr><tr><td class="navi"><a href="../../../../ch/ethz/ssh2/sftp/ErrorCodes.html">Prev Class</a> | <a href="../../../../ch/ethz/ssh2/sftp/Packet.html">Next Class</a></td><td class="navi"><a href="../../../../index.html" title="Show in a frameset" target="_top">Frames</a> | <a href="OpenFlags.html" title="Show without frames" target="_top">No Frames</a> </td></tr><tr><td class="navi">Summary: Nested | <a href="#summary-fields">Field</a> | Method | Constr</td><td class="navi">Detail: Nested | <a href="#detail-fields">Field</a> | Method | Constr</td></tr></table><div class="class title outer"><h3 class="class title-package">ch.ethz.ssh2.sftp</h3><h1 class="class title-class">Class OpenFlags</h1></div><div class="class inheritance-tree"><ul class="inheritance 0"><li class="inheritance 0"><code>java.lang.Object</code></li><li><ul class="inheritance 1"><li class="inheritance 1"><code>ch.ethz.ssh2.sftp.OpenFlags</code></li><li></li></ul></li></ul></div><hr/><div class="class synopsis outer"><div class="class synopsis declaration"><code>public class <b class="class synopsis name">OpenFlags</b></code></div><div class="class synopsis superclass"><code>extends java.lang.Object</code></div></div><hr/><div class="class description">
+ SFTP Open Flags.
+ 
+ The following table is provided to assist in mapping POSIX semantics
+ to equivalent SFTP file open parameters:
+ <p/>
+ TODO: This comment should be moved to the open method.
+ <p/>
+ <ul><li>O_RDONLY
+ <ul></ul></li><li>desired-access = READ_DATA | READ_ATTRIBUTES</li></ul>
+ 
+ 
+ <ul><li>O_WRONLY
+ <ul></ul></li><li>desired-access = WRITE_DATA | WRITE_ATTRIBUTES</li></ul>
+ 
+ 
+ <ul><li>O_RDWR
+ <ul></ul></li><li>desired-access = READ_DATA | READ_ATTRIBUTES | WRITE_DATA | WRITE_ATTRIBUTES</li></ul>
+ 
+ 
+ <ul><li>O_APPEND
+ <ul></ul></li><li>desired-access = WRITE_DATA | WRITE_ATTRIBUTES | APPEND_DATA</li><li>flags = SSH_FXF_ACCESS_APPEND_DATA and or SSH_FXF_ACCESS_APPEND_DATA_ATOMIC</li></ul>
+ 
+ 
+ <ul><li>O_CREAT
+ <ul></ul></li><li>flags = SSH_FXF_OPEN_OR_CREATE</li></ul>
+ 
+ 
+ <ul><li>O_TRUNC
+ <ul></ul></li><li>flags = SSH_FXF_TRUNCATE_EXISTING</li></ul>
+ 
+ 
+ <ul><li>O_TRUNC|O_CREATE
+ <ul></ul></li><li>flags = SSH_FXF_CREATE_TRUNCATE</li></ul>
+ 
+ 
+</div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><a name="summary-fields" id="summary-fields"/><dl class="table container"><dd><table class="class summary" border="1" width="100%"><tr class="table header"><td colspan="2"><h2 class="table header">Field Summary</h2></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_APPEND_DATA">SSH_FXF_ACCESS_APPEND_DATA</a></code></dt><dd class="description"> Data is always written at the end of the file.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_APPEND_DATA_ATOMIC">SSH_FXF_ACCESS_APPEND_DATA_ATOMIC</a></code></dt><dd class="description"> Data is always written at the end of the file.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_BLOCK_ADVISORY">SSH_FXF_ACCESS_BLOCK_ADVISORY</a></code></dt><dd class="description"> If this bit is set, the above BLOCK modes are advisory.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_BLOCK_DELETE">SSH_FXF_ACCESS_BLOCK_DELETE</a></code></dt><dd class="description"> The server MUST guarantee that no other handle has been opened
+ with ACE4_DELETE access, opened with the
+ SSH_FXF_ACCESS_DELETE_ON_CLOSE flag set, and that no other handle
+ will be opened with ACE4_DELETE access or with the
+ SSH_FXF_ACCESS_DELETE_ON_CLOSE flag set, and that the file itself
+ is not deleted in any other way until the client closes the handle.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_BLOCK_READ">SSH_FXF_ACCESS_BLOCK_READ</a></code></dt><dd class="description"> The server MUST guarantee that no other handle has been opened
+ with ACE4_READ_DATA access, and that no other handle will be
+ opened with ACE4_READ_DATA access until the client closes the
+ handle.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_BLOCK_WRITE">SSH_FXF_ACCESS_BLOCK_WRITE</a></code></dt><dd class="description"> The server MUST guarantee that no other handle has been opened
+ with ACE4_WRITE_DATA or ACE4_APPEND_DATA access, and that no other
+ handle will be opened with ACE4_WRITE_DATA or ACE4_APPEND_DATA
+ access until the client closes the handle.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_DELETE_ON_CLOSE">SSH_FXF_ACCESS_DELETE_ON_CLOSE</a></code></dt><dd class="description"> The file should be deleted when the last handle to it is closed.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_DISPOSITION">SSH_FXF_ACCESS_DISPOSITION</a></code></dt><dd class="description"> Disposition is a 3 bit field that controls how the file is opened.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_NOFOLLOW">SSH_FXF_ACCESS_NOFOLLOW</a></code></dt><dd class="description"> If the final component of the path is a symlink, then the open
+ MUST fail, and the error SSH_FX_LINK_LOOP MUST be returned.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_ACCESS_TEXT_MODE">SSH_FXF_ACCESS_TEXT_MODE</a></code></dt><dd class="description"> Indicates that the server should treat the file as text and
+ convert it to the canonical newline convention in use.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_CREATE_NEW">SSH_FXF_CREATE_NEW</a></code></dt><dd class="description"> A new file is created; if the file already exists, the server
+ MUST return status SSH_FX_FILE_ALREADY_EXISTS.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_CREATE_TRUNCATE">SSH_FXF_CREATE_TRUNCATE</a></code></dt><dd class="description"> A new file is created; if the file already exists, it is opened
+ and truncated.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_OPEN_EXISTING">SSH_FXF_OPEN_EXISTING</a></code></dt><dd class="description"> An existing file is opened.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_OPEN_OR_CREATE">SSH_FXF_OPEN_OR_CREATE</a></code></dt><dd class="description"> If the file exists, it is opened.</dd></dl></td></tr><tr><td class="left" valign="top"><code class="synopsis">static int</code></td><td class="right"><dl class="list"><dt class="synopsis"><code><a href="#SSH_FXF_TRUNCATE_EXISTING">SSH_FXF_TRUNCATE_EXISTING</a></code></dt><dd class="description"> An existing file is opened and truncated.</dd></dl></td></tr></table></dd></dl><a name="detail-fields" id="detail-fields"/><h2 class="section header">Field Details</h2><div class="section"><a name="SSH_FXF_ACCESS_APPEND_DATA" id="SSH_FXF_ACCESS_APPEND_DATA"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_APPEND_DATA</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_APPEND_DATA</pre><blockquote class="member detail name"><div class="member detail description"> Data is always written at the end of the file. The offset field
+ of the SSH_FXP_WRITE requests are ignored.
+ <p/>
+ Data is not required to be appended atomically. This means that
+ if multiple writers attempt to append data simultaneously, data
+ from the first may be lost. However, data MAY be appended
+ atomically.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">8</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_APPEND_DATA_ATOMIC" id="SSH_FXF_ACCESS_APPEND_DATA_ATOMIC"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_APPEND_DATA_ATOMIC</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_APPEND_DATA_ATOMIC</pre><blockquote class="member detail name"><div class="member detail description"> Data is always written at the end of the file. The offset field
+ of the SSH_FXP_WRITE requests are ignored.
+ <p/>
+ Data MUST be written atomically so that there is no chance that
+ multiple appenders can collide and result in data being lost.
+ <p/>
+ If both append flags are specified, the server SHOULD use atomic
+ append if it is available, but SHOULD use non-atomic appends
+ otherwise. The server SHOULD NOT fail the request in this case.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">16</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_BLOCK_ADVISORY" id="SSH_FXF_ACCESS_BLOCK_ADVISORY"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_BLOCK_ADVISORY</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_BLOCK_ADVISORY</pre><blockquote class="member detail name"><div class="member detail description"> If this bit is set, the above BLOCK modes are advisory. In advisory
+ mode, only other accesses that specify a BLOCK mode need be
+ considered when determining whether the BLOCK can be granted,
+ and the server need not prevent I/O operations that violate the
+ block mode.
+ <p/>
+ The server MAY perform mandatory locking even if the BLOCK_ADVISORY
+ bit is set.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">512</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_BLOCK_DELETE" id="SSH_FXF_ACCESS_BLOCK_DELETE"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_BLOCK_DELETE</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_BLOCK_DELETE</pre><blockquote class="member detail name"><div class="member detail description"> The server MUST guarantee that no other handle has been opened
+ with ACE4_DELETE access, opened with the
+ SSH_FXF_ACCESS_DELETE_ON_CLOSE flag set, and that no other handle
+ will be opened with ACE4_DELETE access or with the
+ SSH_FXF_ACCESS_DELETE_ON_CLOSE flag set, and that the file itself
+ is not deleted in any other way until the client closes the handle.
+ <p/>
+ If there is a conflicting lock the server MUST return
+ SSH_FX_LOCK_CONFLICT.  If the server cannot make the locking
+ guarantee, it MUST return SSH_FX_OP_UNSUPPORTED.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">256</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_BLOCK_READ" id="SSH_FXF_ACCESS_BLOCK_READ"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_BLOCK_READ</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_BLOCK_READ</pre><blockquote class="member detail name"><div class="member detail description"> The server MUST guarantee that no other handle has been opened
+ with ACE4_READ_DATA access, and that no other handle will be
+ opened with ACE4_READ_DATA access until the client closes the
+ handle. (This MUST apply both to other clients and to other
+ processes on the server.)
+ <p/>
+ If there is a conflicting lock the server MUST return
+ SSH_FX_LOCK_CONFLICT.  If the server cannot make the locking
+ guarantee, it MUST return SSH_FX_OP_UNSUPPORTED.
+ <p/>
+ Other handles MAY be opened for ACE4_WRITE_DATA or any other
+ combination of accesses, as long as ACE4_READ_DATA is not included
+ in the mask.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">64</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_BLOCK_WRITE" id="SSH_FXF_ACCESS_BLOCK_WRITE"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_BLOCK_WRITE</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_BLOCK_WRITE</pre><blockquote class="member detail name"><div class="member detail description"> The server MUST guarantee that no other handle has been opened
+ with ACE4_WRITE_DATA or ACE4_APPEND_DATA access, and that no other
+ handle will be opened with ACE4_WRITE_DATA or ACE4_APPEND_DATA
+ access until the client closes the handle. (This MUST apply both
+ to other clients and to other processes on the server.)
+ <p/>
+ If there is a conflicting lock the server MUST return
+ SSH_FX_LOCK_CONFLICT. If the server cannot make the locking
+ guarantee, it MUST return SSH_FX_OP_UNSUPPORTED.
+ <p/>
+ Other handles MAY be opened for ACE4_READ_DATA or any other
+ combination of accesses, as long as neither ACE4_WRITE_DATA nor
+ ACE4_APPEND_DATA are included in the mask.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">128</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_DELETE_ON_CLOSE" id="SSH_FXF_ACCESS_DELETE_ON_CLOSE"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_DELETE_ON_CLOSE</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_DELETE_ON_CLOSE</pre><blockquote class="member detail name"><div class="member detail description"> The file should be deleted when the last handle to it is closed.
+ (The last handle may not be an sftp-handle.)  This MAY be emulated
+ by a server if the OS doesn't support it by deleting the file when
+ this handle is closed.
+ <p/>
+ It is implementation specific whether the directory entry is
+ removed immediately or when the handle is closed.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">2048</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_DISPOSITION" id="SSH_FXF_ACCESS_DISPOSITION"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_DISPOSITION</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_DISPOSITION</pre><blockquote class="member detail name"><div class="member detail description"> Disposition is a 3 bit field that controls how the file is opened.
+ The server MUST support these bits (possible enumaration values:
+ SSH_FXF_CREATE_NEW, SSH_FXF_CREATE_TRUNCATE, SSH_FXF_OPEN_EXISTING,
+ SSH_FXF_OPEN_OR_CREATE or SSH_FXF_TRUNCATE_EXISTING).
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">7</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_NOFOLLOW" id="SSH_FXF_ACCESS_NOFOLLOW"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_NOFOLLOW</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_NOFOLLOW</pre><blockquote class="member detail name"><div class="member detail description"> If the final component of the path is a symlink, then the open
+ MUST fail, and the error SSH_FX_LINK_LOOP MUST be returned.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">1024</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_ACCESS_TEXT_MODE" id="SSH_FXF_ACCESS_TEXT_MODE"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_ACCESS_TEXT_MODE</h3><pre class="member detail synopsis">public static final int SSH_FXF_ACCESS_TEXT_MODE</pre><blockquote class="member detail name"><div class="member detail description"> Indicates that the server should treat the file as text and
+ convert it to the canonical newline convention in use.
+ (See Determining Server Newline Convention in section 5.3 in the
+ SFTP standard draft).
+ <p/>
+ When a file is opened with this flag, the offset field in the read
+ and write functions is ignored.
+ <p/>
+ Servers MUST process multiple, parallel reads and writes correctly
+ in this mode.  Naturally, it is permissible for them to do this by
+ serializing the requests.
+ <p/>
+ Clients SHOULD use the SSH_FXF_ACCESS_APPEND_DATA flag to append
+ data to a text file rather then using write with a calculated offset.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">32</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_CREATE_NEW" id="SSH_FXF_CREATE_NEW"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_CREATE_NEW</h3><pre class="member detail synopsis">public static final int SSH_FXF_CREATE_NEW</pre><blockquote class="member detail name"><div class="member detail description"> A new file is created; if the file already exists, the server
+ MUST return status SSH_FX_FILE_ALREADY_EXISTS.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">0</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_CREATE_TRUNCATE" id="SSH_FXF_CREATE_TRUNCATE"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_CREATE_TRUNCATE</h3><pre class="member detail synopsis">public static final int SSH_FXF_CREATE_TRUNCATE</pre><blockquote class="member detail name"><div class="member detail description"> A new file is created; if the file already exists, it is opened
+ and truncated.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">1</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_OPEN_EXISTING" id="SSH_FXF_OPEN_EXISTING"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_OPEN_EXISTING</h3><pre class="member detail synopsis">public static final int SSH_FXF_OPEN_EXISTING</pre><blockquote class="member detail name"><div class="member detail description"> An existing file is opened.  If the file does not exist, the
+ server MUST return SSH_FX_NO_SUCH_FILE. If a directory in the
+ path does not exist, the server SHOULD return
+ SSH_FX_NO_SUCH_PATH. It is also acceptable if the server
+ returns SSH_FX_NO_SUCH_FILE in this case.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">2</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_OPEN_OR_CREATE" id="SSH_FXF_OPEN_OR_CREATE"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_OPEN_OR_CREATE</h3><pre class="member detail synopsis">public static final int SSH_FXF_OPEN_OR_CREATE</pre><blockquote class="member detail name"><div class="member detail description"> If the file exists, it is opened. If the file does not exist,
+ it is created.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">3</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div><hr/><a name="SSH_FXF_TRUNCATE_EXISTING" id="SSH_FXF_TRUNCATE_EXISTING"/><div class="member detail outer"><h3 class="member detail name">SSH_FXF_TRUNCATE_EXISTING</h3><pre class="member detail synopsis">public static final int SSH_FXF_TRUNCATE_EXISTING</pre><blockquote class="member detail name"><div class="member detail description"> An existing file is opened and truncated. If the file does not
+ exist, the server MUST return the same error codes as defined
+ for SSH_FXF_OPEN_EXISTING.
+</div><div class="member detail thrown list"><dl><dt class="member detail thrown header"><b>Field Value:</b></dt><dd class="member detail thrown item">4</dd></dl></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div><div class="taglet"></div></blockquote></div></div><p class="navbar bottom spacer"> </p><table class="navbar div bottom"><tr><td><div class="navbar div top"><span class="navbar item enabled"><a href="../../../../overview-summary.html">Overview</a></span> <span class="navbar item enabled"><a href="package-summary.html">Package</a></span> <span class="navbar item enabled"><a href="tree.html">Tree</a></span> <span class="navbar item enabled"><a href="../../../../alphaindex.html">Index</a></span> <span class="navbar item enabled"><a href="../../../../deprecated.html">Deprecated</a></span> <span class="navbar item enabled"><a href="../../../../about.html">About</a></span></div></td></tr></table></body></html>

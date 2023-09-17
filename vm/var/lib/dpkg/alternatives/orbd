@@ -1,0 +1,12 @@
+auto
+/usr/bin/orbd
+orbd.1.gz
+/usr/share/man/man1/orbd.1.gz
+
+/usr/bin/gorbd-4.3
+43
+/usr/share/man/man1/gorbd-4.3.1.gz
+/usr/lib/jvm/java-6-openjdk/jre/bin/orbd
+1061
+/usr/lib/jvm/java-6-openjdk/jre/man/man1/orbd.1.gz
+

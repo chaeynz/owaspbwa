@@ -1,0 +1,5 @@
+c3b716d8d93f280bc435f678580f865e  usr/share/doc/libselinux1/changelog.gz
+9a2fc6c7d8b81fd4546331c2410681ad  usr/share/doc/libselinux1/copyright
+4913e2ef7e738ba545249af3d8b24f56  usr/share/doc/libselinux1/changelog.Debian.gz
+650f5a365356b195258fe6a3a15bfb65  usr/share/lintian/overrides/libselinux1
+59b101f34180a599a1575b01271f8435  lib/libselinux.so.1

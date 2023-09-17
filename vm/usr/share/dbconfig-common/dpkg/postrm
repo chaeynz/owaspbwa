@@ -1,0 +1,26 @@
+###
+### source common stuff
+###
+dbc_go(){
+	. /usr/share/dbconfig-common/dpkg/common
+	local cfg
+	_dbc_debug "(postrm) dbc_go() $@"
+	dbc_config $@
+
+	if [ "$dbc_command" = "upgrade" ]; then
+		dbc_read_package_config
+		dbc_preseed_package_debconf
+	elif [ "$dbc_command" = "purge" ]; then
+		# remove the dbc configuration file
+		rm -f /etc/dbconfig-common/$dbc_package.conf || true
+		if which ucf >/dev/null 2>&1; then
+			cfg="/etc/dbconfig-common/$dbc_package.conf"
+			ucf -p "$cfg" || true
+			ucfr -p "$dbc_package" "$cfg"
+		fi
+		# forget everything we ever new related to debconf+dbc
+		for t in $dbc_register_templates; do
+			db_unregister $dbc_package/$t || true
+		done
+	fi
+}

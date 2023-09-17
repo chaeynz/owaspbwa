@@ -1,0 +1,30 @@
+README for courier-webadmin, web-based administration tool for the Courier Mail Server
+
+COURIER CONFIGURATION AND WEB-BASED ADMINISTRATION
+
+Courier uses several configuration files which are located in
+/etc/courier. Some configuration files can be replaced by a subdirectory 
+where all files insides this directory are concatenated and considered 
+to be a single, consolidated, configuration file.
+
+To control and administer the Courier configuration through the
+web-based administration frontend provided by the courier-webadmin
+package, the directories and files need to be readable and writable by
+the user daemon.
+
+Furthermore, the frontend relies on configuration directories instead of 
+configuration files. If you agreed to the corresponding question on 
+initial setup, any directories needed for the web-based
+administration tool will be created unless there is already a
+plain file in place. Otherwise, the frontend won't work very well.
+
+ACCESSING COURIER-WEBADMIN
+
+If your web server has been installed and configured according the
+Debian policy, the administration tool can be accessed with the
+following URL:
+
+	http://localhost/cgi-bin/courierwebadmin
+
+
+

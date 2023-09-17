@@ -1,0 +1,6 @@
+UtsRelease 2.6.0-test5_2smp
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment TurboLinux 10 Desktop, 2.6.0-test5-2, SMP
+UtsMachine i386

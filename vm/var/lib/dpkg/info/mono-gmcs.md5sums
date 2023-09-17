@@ -1,0 +1,6 @@
+de4b515f6e46d3e4b509188df2c1a373  usr/bin/gmcs
+aac633d3d477510781ae0cd82a65f368  usr/lib/mono/2.0/gmcs.exe
+bfa4113e50921a641c85254cf6d81d75  usr/lib/mono/2.0/gmcs.exe.config
+179bf0a3c9b40dbae9061590f7efd0c5  usr/share/doc/mono-gmcs/copyright
+623da1c6dd023680ea9babd7409a17b7  usr/share/doc/mono-gmcs/changelog.Debian.gz
+c4cec14da7d5852fdc8621f65c4aba75  usr/share/man/man1/gmcs.1.gz

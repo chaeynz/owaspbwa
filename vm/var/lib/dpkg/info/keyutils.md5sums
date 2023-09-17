@@ -1,0 +1,8 @@
+85a92f33ebe98b3c160b677c87c44095  bin/keyctl
+ec73f4d6d2880844f2c07e19c56e9c39  sbin/request-key
+738c1d4c2c763040c6e47e5b19861292  usr/share/keyutils/request-key-debug.sh
+6ebe959bf09294710ac5667eb39c8d1b  usr/share/man/man1/keyctl.1.gz
+8f0229c545b883c2f54121c920a4543d  usr/share/man/man5/request-key.conf.5.gz
+d5b81a28da50725d2b69b9f943577f49  usr/share/man/man8/request-key.8.gz
+50226c1614fc2d47f57b30d381e13576  usr/share/doc/keyutils/copyright
+ffc8776bebc9595595e2288444e177f6  usr/share/doc/keyutils/changelog.Debian.gz

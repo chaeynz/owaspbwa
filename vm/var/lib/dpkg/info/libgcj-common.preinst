@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    install|upgrade)
+	if [ -L /usr/share/doc/libgcj-common ]; then
+	    rm -f /usr/share/doc/libgcj-common
+	fi
+	;;
+    abort-upgrade)
+	;;
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+# Automatically added by dh_pycentral
+case "$1" in
+    install|upgrade)
+	mkdir -p /var/lib/pycentral
+	echo '# the presence of this file allows calling pkgremove on upgrade' \
+	    > /var/lib/pycentral/libgcj-common.pkgremove
+esac
+# End automatically added section
+
+
+exit 0

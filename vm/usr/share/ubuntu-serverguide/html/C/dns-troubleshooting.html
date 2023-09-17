@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Troubleshooting</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="dns.html" title="Chapter 7. Domain Name Service (DNS)" />
+    <link rel="prev" href="dns-configuration.html" title="Configuration" />
+    <link rel="next" href="dns-references.html" title="References" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="dns.html">Domain Name Service (DNS)</a></span> &gt; <span class="breadcrumb-node">Troubleshooting</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Troubleshooting">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="dns-troubleshooting"></a>Troubleshooting</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+	This section covers ways to help determine the cause when problems happen with DNS and <span class="application"><strong>BIND9</strong></span>. 
+	</p>
+              <div class="sect2" title="Testing">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="dns-testing"></a>Testing</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="sect3" title="resolv.conf">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="dns-resolv.conf"></a>resolv.conf</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	    The first step in testing <span class="application"><strong>BIND9</strong></span> is to add the nameserver's IP Address to a hosts resolver.
+	    The Primary nameserver should be configured as well as another host to double check things.
+	    Simply edit <code class="filename">/etc/resolv.conf</code> and add the following:
+	    </p>
+                  <pre class="programlisting">
+nameserver	192.168.1.10
+nameserver	192.168.1.11
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+	      You should also add the IP Address of the Secondary nameserver in case the Primary becomes unavailable.
+	      </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="dig">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="dns-testing-dig"></a>dig</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	    If you installed the <span class="application"><strong>dnsutils</strong></span> package you can test your setup using the DNS lookup utility
+	    <span class="application"><strong>dig</strong></span>: 
+	    </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+	        After installing <span class="application"><strong>BIND9</strong></span> use <span class="application"><strong>dig</strong></span> against the
+	        loopback interface to make sure it is listening on port 53.  From a terminal prompt:
+	        </p>
+                        <pre class="screen">
+<span class="command"><strong>dig -x 127.0.0.1</strong></span>
+</pre>
+                        <p>
+	        You should see lines similar to the following in the command output:
+	        </p>
+                        <pre class="programlisting">
+;; Query time: 1 msec
+;; SERVER: 192.168.1.10#53(192.168.1.10)
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+		If you have configured <span class="application"><strong>BIND9</strong></span> as a <span class="emphasis"><em>Caching</em></span> nameserver "dig" an outside
+	        domain to check the query time:
+	        </p>
+                        <pre class="screen">
+<span class="command"><strong>dig ubuntu.com</strong></span>
+</pre>
+                        <p>
+	        Note the query time toward the end of the command output:
+	        </p>
+                        <pre class="programlisting">
+;; Query time: 49 msec
+</pre>
+                        <p>
+	        After a second dig there should be improvement:
+	        </p>
+                        <pre class="programlisting">
+;; Query time: 1 msec
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sect3" title="ping">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="dns-testing-ping"></a>ping</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+            Now to demonstrate how applications make use of DNS to resolve a host name use the
+ 	    <span class="application"><strong>ping</strong></span> utility to send an ICMP echo request.  From a terminal prompt enter:
+	    </p>
+                  <pre class="screen">
+<span class="command"><strong>ping example.com</strong></span>
+</pre>
+                  <p>
+	    This tests if the nameserver can resolve the name <span class="emphasis"><em>ns.example.com</em></span> to an IP Address.
+	    The command output should resemble:
+	    </p>
+                  <pre class="programlisting">
+PING ns.example.com (192.168.1.10) 56(84) bytes of data.
+64 bytes from 192.168.1.10: icmp_seq=1 ttl=64 time=0.800 ms
+64 bytes from 192.168.1.10: icmp_seq=2 ttl=64 time=0.813 ms
+</pre>
+                </div>
+                <div class="sect3" title="named-checkzone">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="dns-testing-configuration"></a>named-checkzone</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	    A great way to test your zone files is by using the <span class="application"><strong>named-checkzone</strong></span> utility installed with the 
+	    <span class="application"><strong>bind9</strong></span> package.  This utility allows you to make sure the configuration is correct
+	    before restarting <span class="application"><strong>BIND9</strong></span> and making the changes live.
+	    </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+	        To test our example Forward zone file enter the following from a command prompt:
+	        </p>
+                        <pre class="screen">
+<span class="command"><strong>named-checkzone example.com /etc/bind/db.example.com</strong></span>
+</pre>
+                        <p>
+	        If everything is configured correctly you should see output similar to:
+	        </p>
+                        <pre class="programlisting">
+zone example.com/IN: loaded serial 6
+OK
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	        Similarly, to test the Reverse zone file enter the following:
+	        </p>
+                        <pre class="screen">
+<span class="command"><strong>named-checkzone example.com /etc/bind/db.192</strong></span>
+</pre>
+                        <p>
+	        The output should be similar to:
+	        </p>
+                        <pre class="programlisting">
+zone example.com/IN: loaded serial 3
+OK
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+	     The <span class="emphasis"><em>Serial Number</em></span> of your zone file will probably be different.
+	     </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Logging">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="dns-logging"></a>Logging</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	  <span class="application"><strong>BIND9</strong></span> has a wide variety of logging configuration options available. There are two main options.  The 
+	  <span class="emphasis"><em>channel</em></span> option configures where logs go, and the <span class="emphasis"><em>category</em></span> option determines what information to log.
+	  </p>
+                <p>
+	  If no logging option is configured the default option is: 
+	  </p>
+                <pre class="programlisting">
+logging {
+     category default { default_syslog; default_debug; };
+     category unmatched { null; };
+};
+</pre>
+                <p>
+	  This section covers configuring <span class="application"><strong>BIND9</strong></span> to send <span class="emphasis"><em>debug</em></span> messages related to DNS queries to a separate file. 
+	  </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	      First, we need to configure a channel to specify which file to send the messages to. Edit <code class="filename">/etc/bind/named.conf.local</code>
+	      and add the following: 
+	      </p>
+                      <pre class="programlisting">
+logging {
+    channel query.log {      
+        file "/var/log/query.log";
+        severity debug 3; 
+    }; 
+};
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Next, configure a category to send all DNS queries to the query file:
+	      </p>
+                      <pre class="programlisting">
+logging {
+    channel query.log {      
+        file "/var/log/query.log"; 
+        severity debug 3; 
+    }; 
+    <span class="emphasis"><em>category queries { query.log; };</em></span> 
+};
+</pre>
+                    </li>
+                  </ul>
+                </div>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	    Note: the <span class="emphasis"><em>debug</em></span> option can be set from 1 to 3. If a level isn't specified level 1 is the default.
+	    </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	      Since the <span class="emphasis"><em>named daemon</em></span> runs as the <span class="emphasis"><em>bind</em></span> user the <code class="filename">/var/log/query.log</code>
+	      file must be created and the ownership changed:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo touch /var/log/query.log</strong></span>
+<span class="command"><strong>sudo chown bind /var/log/query.log</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Before <span class="application"><strong>named</strong></span> daemon can write to the new log file the <span class="application"><strong>AppArmor</strong></span>
+	      profile must be updated.  First, edit <code class="filename">/etc/apparmor.d/usr.sbin.named</code> and add:
+	      </p>
+                      <pre class="programlisting">
+/var/log/query.log w,
+</pre>
+                      <p>
+	      Next, reload the profile:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>cat /etc/apparmor.d/usr.sbin.named | sudo apparmor_parser -r</strong></span>
+</pre>
+                      <p>
+               For more information on <span class="application"><strong>AppArmor</strong></span> see <a class="xref" href="apparmor.html" title="AppArmor">the section called “AppArmor”</a>
+	      </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	      Now restart <span class="application"><strong>BIND9</strong></span> for the changes to take effect:
+	      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/bind9 restart</strong></span>
+</pre>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+	  You should see the file <code class="filename">/var/log/query.log</code> fill with query information. This is a simple example of the 
+	  <span class="application"><strong>BIND9</strong></span> logging options.  For coverage of advanced options see <a class="xref" href="dns-references.html#dns-more-info" title="More Information">the section called “More Information”</a>.
+	  </p>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="dns-configuration.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="dns.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="dns-references.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Configuration </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> References</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::AnalyticsLogger::Log - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/analytics_logger.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-begin_measure">#begin_measure</a>
+    
+    <li><a href="#method-i-close">#close</a>
+    
+    <li><a href="#method-i-closed-3F">#closed?</a>
+    
+    <li><a href="#method-i-end_measure">#end_measure</a>
+    
+    <li><a href="#method-i-measure">#measure</a>
+    
+    <li><a href="#method-i-measured_time_points">#measured_time_points</a>
+    
+    <li><a href="#method-i-message">#message</a>
+    
+    <li><a href="#method-i-null-3F">#null?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="../../PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="../../PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="../../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../../Exception.html">Exception</a>
+  
+    <li><a href="../../GC.html">GC</a>
+  
+    <li><a href="../../IO.html">IO</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::AnalyticsLogger::Log</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-txn_id" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">txn_id</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(connection = nil, txn_id = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">connection</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">txn_id</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">connection</span>
+                <span class="ruby-ivar">@connection</span> = <span class="ruby-identifier">connection</span>
+                <span class="ruby-ivar">@txn_id</span> = <span class="ruby-identifier">txn_id</span>
+                <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">ref</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-begin_measure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">begin_measure</span><span
+            class="method-args">(name, extra_info = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="begin_measure-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">begin_measure</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">extra_info</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra_info</span>
+                <span class="ruby-identifier">extra_info_base64</span> = [<span class="ruby-identifier">extra_info</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;m&quot;</span>)
+                <span class="ruby-identifier">extra_info_base64</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&quot;&quot;</span>)
+                <span class="ruby-identifier">extra_info_base64</span>.<span class="ruby-identifier">strip!</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">extra_info_base64</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">times</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">NativeSupportUtils</span>.<span class="ruby-identifier">process_times</span>
+        <span class="ruby-identifier">message</span> <span class="ruby-node">&quot;BEGIN: #{name} (#{current_timestamp.to_s(36)},#{times.utime.to_s(36)},#{times.stime.to_s(36)}) #{extra_info_base64}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- begin_measure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- begin_measure-method -->
+
+    
+      <div id="method-i-close" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">close</span><span
+            class="method-args">(flush_to_disk = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="close-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">close</span>(<span class="ruby-identifier">flush_to_disk</span> = <span class="ruby-keyword">false</span>)
+        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">connected?</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-comment"># We need an ACK here. See thread_handler.rb finalize_request.</span>
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;closeTransaction&quot;</span>, <span class="ruby-ivar">@txn_id</span>,
+                                <span class="ruby-constant">AnalyticsLogger</span>.<span class="ruby-identifier">timestamp_string</span>, <span class="ruby-keyword">true</span>)
+                        <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">channel</span>.<span class="ruby-identifier">read</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">!=</span> [<span class="ruby-string">&quot;ok&quot;</span>]
+                                <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Expected logging agent to respond with 'ok', but got #{result.inspect} instead&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">flush_to_disk</span>
+                                <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;flush&quot;</span>)
+                                <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">channel</span>.<span class="ruby-identifier">read</span>
+                                <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">!=</span> [<span class="ruby-string">&quot;ok&quot;</span>]
+                                        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid logging agent response #{result.inspect} to the 'flush' command&quot;</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span>, <span class="ruby-constant">IOError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">disconnect</span>
+                        <span class="ruby-constant">DebugLogging</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Error communicating with the logging agent: #{e.message}&quot;</span>)
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">disconnect</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-keyword">ensure</span>
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">unref</span>
+                        <span class="ruby-ivar">@connection</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@connection</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- close-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- close-method -->
+
+    
+      <div id="method-i-closed-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">closed?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="closed-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">closed?</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@connection</span>
+                <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">connected?</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- closed-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- closed-3F-method -->
+
+    
+      <div id="method-i-end_measure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">end_measure</span><span
+            class="method-args">(name, error_encountered = false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="end_measure-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_measure</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">error_encountered</span> = <span class="ruby-keyword">false</span>)
+        <span class="ruby-identifier">times</span> = <span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">NativeSupportUtils</span>.<span class="ruby-identifier">process_times</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">error_encountered</span>
+                <span class="ruby-identifier">message</span> <span class="ruby-node">&quot;FAIL: #{name} (#{current_timestamp.to_s(36)},#{times.utime.to_s(36)},#{times.stime.to_s(36)})&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">message</span> <span class="ruby-node">&quot;END: #{name} (#{current_timestamp.to_s(36)},#{times.utime.to_s(36)},#{times.stime.to_s(36)})&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- end_measure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- end_measure-method -->
+
+    
+      <div id="method-i-measure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">measure</span><span
+            class="method-args">(name, extra_info = nil) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="measure-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">measure</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">extra_info</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">begin_measure</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">extra_info</span>)
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-keyword">yield</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+                <span class="ruby-identifier">error</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-identifier">is_closed</span> = <span class="ruby-identifier">closed?</span>
+                <span class="ruby-identifier">raise</span>
+        <span class="ruby-keyword">ensure</span>
+                <span class="ruby-identifier">end_measure</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">error</span>) <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_closed</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- measure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- measure-method -->
+
+    
+      <div id="method-i-measured_time_points" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">measured_time_points</span><span
+            class="method-args">(name, begin_time, end_time, extra_info = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="measured_time_points-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">measured_time_points</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">begin_time</span>, <span class="ruby-identifier">end_time</span>, <span class="ruby-identifier">extra_info</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra_info</span>
+                <span class="ruby-identifier">extra_info_base64</span> = [<span class="ruby-identifier">extra_info</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;m&quot;</span>)
+                <span class="ruby-identifier">extra_info_base64</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&quot;&quot;</span>)
+                <span class="ruby-identifier">extra_info_base64</span>.<span class="ruby-identifier">strip!</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">extra_info_base64</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">begin_timestamp</span> = <span class="ruby-identifier">begin_time</span>.<span class="ruby-identifier">to_i</span> * <span class="ruby-value">1_000_000</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">begin_time</span>.<span class="ruby-identifier">usec</span>
+        <span class="ruby-identifier">end_timestamp</span> = <span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">to_i</span> * <span class="ruby-value">1_000_000</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">end_time</span>.<span class="ruby-identifier">usec</span>
+        <span class="ruby-identifier">message</span> <span class="ruby-node">&quot;BEGIN: #{name} (#{begin_timestamp.to_s(36)}) #{extra_info_base64}&quot;</span>
+        <span class="ruby-identifier">message</span> <span class="ruby-node">&quot;END: #{name} (#{end_timestamp.to_s(36)})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- measured_time_points-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- measured_time_points-method -->
+
+    
+      <div id="method-i-message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">message</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="message-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">message</span>(<span class="ruby-identifier">text</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@connection</span>
+                <span class="ruby-identifier">timestamp_string</span> = <span class="ruby-constant">AnalyticsLogger</span>.<span class="ruby-identifier">timestamp_string</span>
+                <span class="ruby-constant">DebugLogging</span>.<span class="ruby-identifier">trace</span>(<span class="ruby-value">3</span>, <span class="ruby-node">&quot;[Union Station log to null] #{@txn_id} #{timestamp_string} #{text}&quot;</span>)
+                <span class="ruby-keyword">return</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">connected?</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-identifier">timestamp_string</span> = <span class="ruby-constant">AnalyticsLogger</span>.<span class="ruby-identifier">timestamp_string</span>
+                        <span class="ruby-constant">DebugLogging</span>.<span class="ruby-identifier">trace</span>(<span class="ruby-value">3</span>, <span class="ruby-node">&quot;[Union Station log] #{@txn_id} #{timestamp_string} #{text}&quot;</span>)
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write</span>(<span class="ruby-string">&quot;log&quot;</span>, <span class="ruby-ivar">@txn_id</span>, <span class="ruby-identifier">timestamp_string</span>)
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">channel</span>.<span class="ruby-identifier">write_scalar</span>(<span class="ruby-identifier">text</span>)
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span>, <span class="ruby-constant">IOError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">disconnect</span>
+                        <span class="ruby-constant">DebugLogging</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Error communicating with the logging agent: #{e.message}&quot;</span>)
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">disconnect</span>
+                        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- message-method -->
+
+    
+      <div id="method-i-null-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">null?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="null-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/analytics_logger.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">null?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@connection</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">connected?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- null-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- null-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

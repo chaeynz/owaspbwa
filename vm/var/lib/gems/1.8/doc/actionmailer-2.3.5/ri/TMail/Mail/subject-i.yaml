@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: quoted_subject
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the subject of the mail instance.
+- !ruby/struct:SM::Flow::P 
+  body: If the subject field does not exist, returns nil by default or you can pass in as the parameter for what you want the default value to be.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail = TMail::Mail.new\n mail.subject #=&gt; nil\n mail.subject(&quot;&quot;) #=&gt; &quot;&quot;\n mail.subject = &quot;Hello&quot;\n mail.subject #=&gt; &quot;Hello&quot;\n"
+full_name: TMail::Mail#subject
+is_singleton: false
+name: subject
+params: ( default = nil )
+visibility: public

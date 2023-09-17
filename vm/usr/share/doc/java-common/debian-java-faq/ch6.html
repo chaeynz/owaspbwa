@@ -1,0 +1,854 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian GNU/Linux Java FAQ. - Java Development</title>
+
+<link href="index.html" rel="start">
+<link href="ch-debian-java-etch.html" rel="prev">
+<link href="ch7.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch1.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Introduction to Java">
+<link href="ch-debian-java-woody.html" rel="chapter" title="3 Status of Java in Debian GNU/Linux 3.0 (Woody)">
+<link href="ch-debian-java-sarge.html" rel="chapter" title="4 Status of Java in Debian GNU/Linux 3.1 (Sarge)">
+<link href="ch-debian-java-etch.html" rel="chapter" title="5 Status of Java in Debian GNU/Linux 4.0 (Etch)">
+<link href="ch6.html" rel="chapter" title="6 Java Development">
+<link href="ch7.html" rel="chapter" title="7 Java Compilers">
+<link href="ch8.html" rel="chapter" title="8 Java Virtual Machines (JVM)">
+<link href="ch-browser-java.html" rel="chapter" title="9 Java Plugins for Browsers">
+<link href="ch10.html" rel="chapter" title="10 Java Servlets">
+<link href="ch11.html" rel="chapter" title="11 Java Policy">
+<link href="ch12.html" rel="chapter" title="12 Other Java alternatives for Debian">
+<link href="apA.html" rel="appendix" title="A Older Debian GNU/Linux versions">
+<link href="ch1.html#s1.1" rel="section" title="1.1 Introduction to this FAQ">
+<link href="ch1.html#s1.2" rel="section" title="1.2 Location of this FAQ">
+<link href="ch1.html#s-bugs" rel="section" title="1.3 Sending bugs on this FAQ">
+<link href="ch1.html#s-moreinfo" rel="section" title="1.4 Complementary information">
+<link href="ch1.html#s-pending" rel="section" title="1.5 Uncovered issues">
+<link href="ch2.html#s2.1" rel="section" title="2.1 What is Java?">
+<link href="ch2.html#s2.2" rel="section" title="2.2 Why would I be interested in Java?">
+<link href="ch2.html#s2.3" rel="section" title="2.3 What is a JIT?">
+<link href="ch2.html#s2.4" rel="section" title="2.4 Where can I read more about Java?">
+<link href="ch2.html#s2.5" rel="section" title="2.5 Where can I ask questions about Java on Debian?">
+<link href="ch-debian-java-woody.html#s3.1" rel="section" title="3.1 Where is Debian Java going?">
+<link href="ch-debian-java-woody.html#s3.2" rel="section" title="3.2 Is there a Java1 compiler (.java to .class)?">
+<link href="ch-debian-java-woody.html#s3.3" rel="section" title="3.3 Is there a Java1 JVM or JIT?">
+<link href="ch-debian-java-woody.html#s3.4" rel="section" title="3.4 Is there a Java1 native compiler?">
+<link href="ch-debian-java-woody.html#s3.5" rel="section" title="3.5 Does Debian have Java2 foundation libraries?">
+<link href="ch-debian-java-woody.html#s3.6" rel="section" title="3.6 Is there a Java Debugger (jdb equivalent)?">
+<link href="ch-debian-java-woody.html#s3.7" rel="section" title="3.7 Is there an Appletviewer tool?">
+<link href="ch-debian-java-woody.html#s3.8" rel="section" title="3.8 Is there a Jar tool?">
+<link href="ch-debian-java-woody.html#s3.9" rel="section" title="3.9 Is there a Javadoc tool?">
+<link href="ch-debian-java-woody.html#s3.10" rel="section" title="3.10 Does Debian do Enterprise Java Beans (EJB)?">
+<link href="ch-debian-java-woody.html#s3.11" rel="section" title="3.11 What is JAIN?">
+<link href="ch-debian-java-woody.html#s3.12" rel="section" title="3.12 What is Jini?">
+<link href="ch-debian-java-woody.html#s3.13" rel="section" title="3.13 Is there a full list of packages?">
+<link href="ch-debian-java-sarge.html#s4.1" rel="section" title="4.1 Are there many changes?">
+<link href="ch-debian-java-etch.html#s5.1" rel="section" title="5.1 Which Java package are currently in main?">
+<link href="ch-debian-java-etch.html#s5.2" rel="section" title="5.2 What keeps Java packages out of main?">
+<link href="ch-debian-java-etch.html#s5.3" rel="section" title="5.3 What can I expect in future releases?">
+<link href="ch6.html#s6.1" rel="section" title="6.1 What full-fledged Java development platforms are available in Debian?">
+<link href="ch6.html#s-free" rel="section" title="6.2 What free platforms are there and how can I contribute?">
+<link href="ch6.html#s-license-concerns" rel="section" title="6.3 Questions on platforms and license concerns">
+<link href="ch6.html#s-sect:dfsg-compliant-gui" rel="section" title="6.4 How can I make a DFSG compliant Java GUI program?">
+<link href="ch6.html#s6.5" rel="section" title="6.5 Making Debian packages for Java progams.">
+<link href="ch7.html#s7.1" rel="section" title="7.1 What Java compilers are available in Debian?">
+<link href="ch8.html#s8.1" rel="section" title="8.1 What jvms work in Debian?">
+<link href="ch8.html#s8.2" rel="section" title="8.2 What free JVMs are available in Debian?">
+<link href="ch8.html#s8.3" rel="section" title="8.3 What API do these JVMs provide?">
+<link href="ch8.html#s8.4" rel="section" title="8.4 Are there known problems?">
+<link href="ch8.html#s8.5" rel="section" title="8.5 Do I need a JVM to run a Java program in Debian?">
+<link href="ch-browser-java.html#s9.1" rel="section" title="9.1 Can I use any JVM as a Java Plugin?">
+<link href="ch-browser-java.html#s-konqueror-java" rel="section" title="9.2 Can I use Java in Konqueror?">
+<link href="ch-browser-java.html#s-netscape-java" rel="section" title="9.3 Can I use Java in Netscape 6.x/7.x?">
+<link href="ch-browser-java.html#s9.4" rel="section" title="9.4 Can I use Java in Mozilla?">
+<link href="ch10.html#s10.1" rel="section" title="10.1 How can I make Java servlets work?">
+<link href="ch10.html#s10.2" rel="section" title="10.2 Do servlets work with kaffe?">
+<link href="ch10.html#s10.3" rel="section" title="10.3 Do I need non-free Java in order to run servlets?">
+<link href="ch11.html#s11.1" rel="section" title="11.1 Is there a Java policy for Debian?">
+<link href="ch11.html#s11.2" rel="section" title="11.2 Are there holes in the Java Policy?">
+<link href="ch12.html#s-blackdown-pack" rel="section" title="12.1 How can I get Debian packages from Blackdown?">
+<link href="ch12.html#s12.2" rel="section" title="12.2 How can I integrate Sun's J2SE SDK with Debian 3.1?">
+<link href="ch12.html#s12.3" rel="section" title="12.3 How can I integrate Sun's J2SE SDK with Debian 3.0?">
+<link href="ch12.html#s12.4" rel="section" title="12.4 Java programs not yet available on Debian">
+<link href="apA.html#sA.1" rel="section" title="A.1 Debian 2.2 'potato'">
+<link href="apA.html#sA.2" rel="section" title="A.2 Debian 2.1 'slink'">
+<link href="apA.html#sA.3" rel="section" title="A.3 Debian 2.0 'hamm'">
+<link href="apA.html#sA.4" rel="section" title="A.4 Debian 1.3.1 'bo'">
+<link href="ch-debian-java-woody.html#s3.4.1" rel="subsection" title="3.4.1 Java2 native compiler">
+<link href="ch-debian-java-woody.html#s3.6.1" rel="subsection" title="3.6.1 What free edit-interactive/graphical debugging tools are available on Debian?">
+<link href="ch-debian-java-woody.html#s3.6.2" rel="subsection" title="3.6.2 Known problems">
+<link href="ch6.html#s-java56" rel="subsection" title="6.3.1 Java 5 and 6">
+<link href="ch6.html#s6.3.2" rel="subsection" title="6.3.2 Sun's OpenJDK">
+<link href="ch6.html#s6.3.3" rel="subsection" title="6.3.3 Java 2 SE (aka JDK1.2)">
+<link href="ch6.html#s6.3.3.1" rel="subsection" title="6.3.3.1 Why is Sun's Java 2 SE (aka jdk 1.2) not available?">
+<link href="ch6.html#s-scsl" rel="subsection" title="6.3.3.2 What are the problems with Suns' new license?">
+<link href="ch6.html#s6.3.3.3" rel="subsection" title="6.3.3.3 What is the SCSL?">
+<link href="ch6.html#s6.3.3.4" rel="subsection" title="6.3.3.4 Can I use jdk1.2 while working with the free Java implementations?">
+<link href="ch6.html#s6.3.3.5" rel="subsection" title="6.3.3.5 Why is (some) free software not implementing Java2?">
+<link href="ch6.html#s-ibm-jdk" rel="subsection" title="6.3.4 IBM's Developer Kit for Linux">
+<link href="ch6.html#s6.3.4.1" rel="subsection" title="6.3.4.1 Can Debian distribute IBM's jdk?">
+<link href="ch6.html#s6.3.4.2" rel="subsection" title="6.3.4.2 Is it possible to obtain a licence for Debian?">
+<link href="ch6.html#s6.3.5" rel="subsection" title="6.3.5 JRE">
+<link href="ch6.html#s6.3.5.1" rel="subsection" title="6.3.5.1 Can Debian distribute JRE?">
+<link href="ch6.html#s6.3.6" rel="subsection" title="6.3.6 GPL or LGPL?">
+<link href="ch6.html#s6.4.1" rel="subsection" title="6.4.1 Do swing-based programs work in Debian?">
+<link href="ch6.html#s6.5.1" rel="subsection" title="6.5.1 Can the package go into main?">
+<link href="ch6.html#s6.5.2" rel="subsection" title="6.5.2 What virtual packages could I use?">
+<link href="ch6.html#s6.5.3" rel="subsection" title="6.5.3 Is there a good example Debian package?">
+<link href="ch6.html#s6.5.4" rel="subsection" title="6.5.4 What tools are available to make maintaining a Java packages easier?">
+<link href="ch8.html#s8.5.1" rel="subsection" title="8.5.1 How do I compile to native code?">
+<link href="ch8.html#s8.5.2" rel="subsection" title="8.5.2 Are there any successes using this approach?">
+<link href="ch8.html#s8.5.3" rel="subsection" title="8.5.3 Are there any problems with this approach?">
+<link href="ch8.html#s8.5.4" rel="subsection" title="8.5.4 Does these work for architectures different than i386?">
+<link href="ch12.html#s-swing-run" rel="subsection" title="12.1.1 Making swing work in Debian">
+<link href="ch12.html#s12.1.2" rel="subsection" title="12.1.2 Making Java 2 work in Debian">
+<link href="apA.html#sA.2.1" rel="subsection" title="A.2.1 I've installed the latest jde package...what I have to do to let Emacs enter jde-mode automatically when loading a Java source file?">
+
+</head>
+
+<body>
+
+<p><a name="ch6"></a></p>
+<hr>
+
+<p>
+[ <a href="ch-debian-java-etch.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch-debian-java-woody.html">3</a> ]
+[ <a href="ch-debian-java-sarge.html">4</a> ]
+[ <a href="ch-debian-java-etch.html">5</a> ]
+[ 6 ]
+[ <a href="ch7.html">7</a> ]
+[ <a href="ch8.html">8</a> ]
+[ <a href="ch-browser-java.html">9</a> ]
+[ <a href="ch10.html">10</a> ]
+[ <a href="ch11.html">11</a> ]
+[ <a href="ch12.html">12</a> ]
+[ <a href="apA.html">A</a> ]
+[ <a href="ch7.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian GNU/Linux Java FAQ.
+<br>Chapter 6 - Java Development
+</h1>
+
+<hr>
+
+<hr>
+
+<h2><a name="s6.1"></a>6.1 What full-fledged Java development platforms are available in Debian?</h2>
+
+<p>
+If you are looking for an integrated, java virtual machine, compiler and
+runtime environment Debian does provide them.  Of course that would depend on
+the Debian GNU/Linux version you are using, generally speaking they would be:
+</p>
+<ul>
+<li>
+<p>
+Sun's jdk 1.4 (port made by Blackdown, see <a
+href="ch12.html#s-blackdown-pack">How can I get Debian packages from
+Blackdown?, Section 12.1</a> or go to <code><a
+href="http://www.blackdown.org">http://www.blackdown.org</a></code>)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>kaffe</code>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Sun's Java 5 jdk, available in the Debian 4.0 <em>etch</em> release in the
+<em>non-free</em> section.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Sun's Java 6 jdk, available in Debian <em>lenny</em> (unreleased, currently
+testing) and Debian <em>sid</em>, also as packages in the <em>non-free</em>.
+</p>
+</li>
+</ul>
+
+<p>
+Previous release of Debian included an installer package for IBM's Java
+Development Kit, but that is not longer available.
+</p>
+
+<p>
+Since the Debian 3.1 'sarge' release, Debian provides the
+<code>free-java-sdk</code> package which makes up a free Java Software
+Development Kit (SDK).  All software it depends on are DFSG compliant.
+</p>
+
+<hr>
+
+<h2><a name="s-free"></a>6.2 What free platforms are there and how can I contribute?</h2>
+
+<p>
+Please help one of the Free Java implementations if you want to use Java in
+Debian.  There are a lot of projects that you can choose from:
+</p>
+<ul>
+<li>
+<p>
+kaffe: <code><a href="http://www.kaffe.org">http://www.kaffe.org</a></code>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+gcj and libgcj: <code><a
+href="http://sourceware.cygnus.com/java/">http://sourceware.cygnus.com/java/</a></code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+jikes: <code><a
+href="http://www.research.ibm.com/jikes/">http://www.research.ibm.com/jikes/</a></code>.
+A fast compiler written in C++ (check also <code><a
+href="http://www10.software.ibm.com/developerworks/opensource/jikes/">http://www10.software.ibm.com/developerworks/opensource/jikes/</a></code>).
+(The new license seems to be finally really free)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+kopi: <code><a
+href="http://www.dms.at/kjc/">http://www.dms.at/kjc/</a></code>.Yet Another
+Free Java Compiler, this time written in Java, and GPL.  Included in Kaffe
+since release 1.0.5.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+FastJar <code><a
+href="http://fastjar.sourceforge.net/">http://fastjar.sourceforge.net/</a></code>,
+as a jar tool.  (this link seems to be broken, anyone?)
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Classpath <code><a
+href="http://www.gnu.org/software/classpath/">http://www.gnu.org/software/classpath/</a></code>
+or <code><a
+href="http://www.classpath.org">http://www.classpath.org</a></code>.  Most of
+the Standard classes for Java 1.2 (except Swing and RMI) are implemented by the
+ClassPath project, it tries to build an alternative to jdk's 1.2 core classes.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Most of the RMI classes are implemented by NinjaRMI <code><a
+href="http://www.cs.berkeley.edu/~mdw/proj/ninja/ninjarmi.html">http://www.cs.berkeley.edu/~mdw/proj/ninja/ninjarmi.html</a></code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Autoconf macros <code><a
+href="http://www.internatif.org/bortzmeyer/autoconf-Java/">http://www.internatif.org/bortzmeyer/autoconf-Java/</a></code>
+helps easy recompilation of Java programs.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Mauve <code><a
+href="http://sourceware.cygnus.com/mauve/">http://sourceware.cygnus.com/mauve/</a></code>
+is a free suite to test if these tools are 'compliant'.
+</p>
+</li>
+</ul>
+
+<p>
+Most free Java development is grouped under the <code><a
+href="http://www.gnu.org/software/java/">Free Java Project</a></code>.  There
+is a list on free Java at <code><a
+href="http://www.lists.deus.net/mailman/listinfo/free-java">http://www.lists.deus.net/mailman/listinfo/free-java</a></code>.
+</p>
+
+<hr>
+
+<h2><a name="s-license-concerns"></a>6.3 Questions on platforms and license concerns</h2>
+
+<hr>
+
+<h3><a name="s-java56"></a>6.3.1 Java 5 and 6</h3>
+
+<p>
+There are binary packages available for the Java 5 platform for both Debian
+'lenny' (currently, the <em>testing</em> distribution) and Debian Sid, and
+binary packages for Java 6.  These packages are available in the
+<em>non-free</em> section, so you have to configure your apt sources
+appropiately.  If you have the following in your
+<code>/etc/apt/sources.list</code>:
+</p>
+
+<pre>
+     deb http://ftp.debian.org/debian etch main
+</pre>
+
+<p>
+you need to change it to:
+</p>
+
+<pre>
+     deb http://ftp.debian.org/debian etch main contrib non-free
+</pre>
+
+<p>
+Once this is done and you have updated your package database.  You can either
+install the Java development kit:
+</p>
+
+<pre>
+     apt-get install sun-java6-jdk
+</pre>
+
+<p>
+or the Java runtime environment:
+</p>
+
+<pre>
+     apt-get install sun-java6-jre
+</pre>
+
+<p>
+If you are using the Debian 4.0 'etch' release you will find Java 5 instead.
+Similarly, you can install the Java development kit:
+</p>
+
+<pre>
+     apt-get install sun-java5-jdk
+</pre>
+
+<p>
+or the Java runtime environment:
+</p>
+
+<pre>
+     apt-get install sun-java5-jre
+</pre>
+
+<p>
+Sun recommends you update the alternatives system to have Sun's tools as the
+default:
+</p>
+
+<pre>
+     update-java-alternatives -s java-6-sun
+</pre>
+
+<p>
+Or for java 5:
+</p>
+
+<pre>
+     update-java-alternatives -s java-1.5.0-sun
+</pre>
+
+<hr>
+
+<h3><a name="s6.3.2"></a>6.3.2 Sun's OpenJDK</h3>
+
+<p>
+Sun adopted in november 2006 the GPL library for almost all of the virtual
+machine and GPL v2 + the <em>Classpath exception</em>[<a
+href="footnotes.html#f2" name="fr2">2</a>]for the class libraries and those
+parts of the virtual machine that expose public APIs.
+</p>
+
+<p>
+As a consequence, the free OpenJDK code might be available in Debian in next
+releases.
+</p>
+
+<p>
+For more information see <code><a
+href="http://www.sun.com/software/opensource/java/faq.jsp">Free and Open Source
+Java</a></code>.
+</p>
+
+<hr>
+
+<h3><a name="s6.3.3"></a>6.3.3 Java 2 SE (aka JDK1.2)</h3>
+
+<hr>
+
+<h4><a name="s6.3.3.1"></a>6.3.3.1 Why is Sun's Java 2 SE (aka jdk 1.2) not available?</h4>
+
+<p>
+Due to license problems.  Clause 2 of the <code><a
+href="http://www.sun.com/software/communitysource/java2/license.html">license</a></code>
+(check also the <code><a
+href="http://www.sun.com/software/communitysource/faq.html">FAQ</a></code>)
+that comes with is says:
+</p>
+
+<pre>
+     Software is confidential and copyrighted. Title to Software and all
+     associated intellectual property rights is retained by Sun and/or its
+     licensors.  Except as specifically authorized in any Supplemental License
+     Terms, you may not make copies of Software, other than a single copy of
+     Software for archival purposes.
+</pre>
+
+<hr>
+
+<h4><a name="s-scsl"></a>6.3.3.2 What are the problems with Suns' new license?</h4>
+
+<p>
+Sun has moved to a new license the <em>Sun Community License</em>, like the GPL
+it is a viral license, but making all it touches subject to Sun licensing fee.
+The SCSL even goes so far as to define any implementation of a Sun
+specification as a &quot;Modified Work&quot;.  Basically, this means that if
+you implement any part of the new 1.2 API or Jini API, even from scratch, Sun
+will &quot;own&quot; your implementation and you will have to pay them for the
+right to use it.
+</p>
+
+<pre>
+     13.  &quot;Modification(s)&quot; means (i) any change to Covered Code;
+          (ii) any new file or other representation of computer
+          program statements that contains any portion of Covered
+          Code; and/or (iii) any new Source Code implementing any
+          portion of the Specifications.
+</pre>
+
+<hr>
+
+<h4><a name="s6.3.3.3"></a>6.3.3.3 What is the SCSL?</h4>
+
+<p>
+The SCSL is the &quot;Sun Community Software License&quot; that can be found
+<code><a
+href="http://java.sun.com/communitysource/">http://java.sun.com/communitysource/</a></code>.
+It is not compatible with Free Software for several reasons, and agreeing to
+this license (e.g.  by downloading source covered by the SCSL) will make it
+impossible for you to contribute to free software clean-room implementations.
+According to Sun, this includes using documentation and API specifications
+available only under SCSL.
+</p>
+
+<p>
+To quote one open source developer, the SCSL is &quot;about as free as the
+former Soviet Union&quot;.
+</p>
+
+<p>
+However, if you have never agreed to the SCSL, then it is still permissible,
+barring any patents that Sun has for the technology, for you to create your own
+clean room version of the 1.2 API.  It is important that you never agree to the
+license, even for the documentation.  For example, if you buy a printed book
+which describes the API, there is a long legal history (in the US at least),
+that prohibits attaching these kinds of contracts to books.
+</p>
+
+<hr>
+
+<h4><a name="s6.3.3.4"></a>6.3.3.4 Can I use jdk1.2 while working with the free Java implementations?</h4>
+
+<p>
+Clause 1 of the Supplemental License Terms says:
+</p>
+
+<pre>
+      [You] may not create, or authorize your licensees to create
+      additional classes, interfaces, or subpackages that are contained in
+      the &quot;java&quot; or &quot;sun&quot; packages or similar as specified by Sun in any
+      class file naming convention;
+</pre>
+
+<p>
+Which seems to prevent one from making his own implementation of the standard
+Java classes using the JDK.
+</p>
+
+<p>
+However, it is unclear whether or not the word `additional' includes
+reimplementations of existing classes, or whether it applies only to classes
+with new names.
+</p>
+
+<hr>
+
+<h4><a name="s6.3.3.5"></a>6.3.3.5 Why is (some) free software not implementing Java2?</h4>
+
+<p>
+Sun has made public statements in connection with their legal strategy in the
+Sun-Microsoft lawsuit that indicate that the company considers the published
+specifications of Java2 to be intellectual property that can not legally be
+used by persons involved in efforts to create Java2 clean-room implementations.
+For this reason, some open source projects have decided to not implement Java2
+any time soon.  One example is Kaffe.  Some projects (like the Classpath
+project) have decided to challenge Sun's legal position and are going ahead
+with Java2.
+</p>
+
+<hr>
+
+<h3><a name="s-ibm-jdk"></a>6.3.4 IBM's Developer Kit for Linux</h3>
+
+<hr>
+
+<h4><a name="s6.3.4.1"></a>6.3.4.1 Can Debian distribute IBM's jdk?</h4>
+
+<p>
+No, as its license does not allow redistribution.  Actually, older releases
+(version 1.1) even restricted use of the jdk to specific distributions (and
+Debian was not included in the list).
+</p>
+
+<p>
+You can still download it and use it in Debian yourself even Debian is not in
+the list of tested (or supported) platforms, see <code><a
+href="http://www.ibm.com/developerworks/java/jdk/linux/">http://www.ibm.com/developerworks/java/jdk/linux/</a></code>.
+</p>
+
+<hr>
+
+<h4><a name="s6.3.4.2"></a>6.3.4.2 Is it possible to obtain a licence for Debian?</h4>
+
+<p>
+It would still be non-free, because of item 8 in the <code><a
+href="http://www.debian.org/social_contract#guidelines">Debian Free Software
+Guidelines</a></code>: &quot;License Must Not Be Specific to Debian&quot;.
+</p>
+
+<hr>
+
+<h3><a name="s6.3.5"></a>6.3.5 JRE</h3>
+
+<hr>
+
+<h4><a name="s6.3.5.1"></a>6.3.5.1 Can Debian distribute JRE?</h4>
+
+<p>
+(Quoted from Gene McCulley <code><a
+href="http://lists.debian.org/debian-java/1999/debian-java-199908/msg00021.html">http://lists.debian.org/debian-java/1999/debian-java-199908/msg00021.html</a></code>)
+I don't think we can or want to distribute the JRE with Debian.  The
+supplemental license terms of the JRE has a few very nasty clauses:
+</p>
+
+<pre>
+      1. License to Distribute. You are granted a royalty-free right to
+       reproduce and distribute the Software provided that you: (i)distribute
+       the Software complete and unmodified, only as part of, and for the
+       sole purpose of running, your Java applet or application (&quot;Program&quot;)
+       into which the Software is incorporated;
+</pre>
+
+<p>
+We might get away with this one since we distribute it together with Java
+applications bundled with Debian.  But we also do want to allow people to
+download only the jre package.
+</p>
+
+<pre>
+       (ii) do not distribute additional software intended to replace any
+       component(s) of the Software;
+</pre>
+
+<p>
+But we cannot agree to this one.  We want to distribute Kaffe, Japhar,
+Classpath, Gcj, Kopi, Fastjar, etc which are intended to replace the JRE with a
+Free version.  Even if we don't consider non-free part of Debian (the JRE would
+not go into main :) I think we should not encourage software that tries to
+prevent Free replacements.
+</p>
+
+<pre>
+       [...] (v) may not create, or authorize your licensees to create additional
+       classes, interfaces, or subpackages that are contained in the &quot;java&quot; or
+       &quot;sun&quot; packages or similar as specified by Sun in any class file naming
+       convention;
+</pre>
+
+<p>
+My example why this is a bad clause was not so good since someone pointed out
+that you do not want to create something that is non standard.  I do agree that
+we want a standard implementation of the core classes, but I also think that
+you should have the freedom to create non-standard classes.  (Or fix bugs or
+stupid mistakes in the standard classes.)
+</p>
+
+<pre>
+       [...] and(vii) agree to indemnify, hold harmless, and defend Sun and its
+       licensors from and against any claims or lawsuits, including attorneys'
+       fees, that arise or result from the use or distribution of the Program.
+</pre>
+
+<p>
+And I don't think that Debian (or SPI) can or wants to do that.
+</p>
+
+<p>
+So I am afraid that we also cannot distribute the Sun or Blackdown JRE.  This
+isn't that bad since it is non-free software, but it is annoying.  As I said
+before please help one of the (many) Free Java projects out there if you want
+to see a Free JVM, Standard Classes, Compiler, etc.  in Debian.  They are far
+from complete but they do work for most purposes
+</p>
+
+<hr>
+
+<h3><a name="s6.3.6"></a>6.3.6 GPL or LGPL?</h3>
+
+<p>
+Java uses dynamic linking at runtime.  Using the reflection API and class
+loading, the linking can be completely data driven, specifying classes and
+methods by name.  This moves the legal issues of using GPL'ed Java code into
+the user's hands, as a violation of the GPL can not be proven from the
+executable itself.  Unlike plugins, Java classes do not even have to have a
+specific structure to be used in such ways.  By using native methods and
+selecting DLL's at runtime, this problem might also affect native code.
+</p>
+
+<p>
+Example: a GPL'ed Java dependency checker using the reflection API.  Java's
+runtime linkage, in particular the reflection API, blurrs the lines between
+code and data even more than e.g.  native plugins.
+</p>
+
+<p>
+If you want to write Java code that can be used without the user having to
+worry about licensing issues, consider using the Lesser GPL (LPGL).  If you
+want to avoid seeing your classes and packages being used by non-free software,
+consider using the GPL license.
+</p>
+
+<hr>
+
+<h2><a name="s-sect:dfsg-compliant-gui"></a>6.4 How can I make a DFSG compliant Java GUI program?</h2>
+
+<p>
+Many Java programs use the Swing library for GUI development.  For this there
+is the <code>libswing-java</code>.  Most programs will compile against this
+library, but that does not garantee it to work.  Not always are all classes
+implemented or implemented well.
+</p>
+
+<p>
+An alternative to the Swing library is the Standard Widget Toolkit (SWT,
+<code>libswt-java</code>) which is based on the GTK+ library.
+</p>
+
+<p>
+A third alternative is the use the GUI functionality from either KDE or Gnome.
+For KDE, the kdebindings tar.gz does the job (is there a deb package too?).
+For Gnome there is the <code>libgnome0-java</code>.
+</p>
+
+<hr>
+
+<h3><a name="s6.4.1"></a>6.4.1 Do swing-based programs work in Debian?</h3>
+
+<p>
+Swing does work and can be installed, please note that 1.2 and 1.3 jvms include
+swing, otherwise you need to download it for your particular jvm.  See later on
+<a href="ch12.html#s-swing-run">Making swing work in Debian, Section 12.1.1</a>
+how to make it work.
+</p>
+
+<hr>
+
+<h2><a name="s6.5"></a>6.5 Making Debian packages for Java progams.</h2>
+
+<hr>
+
+<h3><a name="s6.5.1"></a>6.5.1 Can the package go into main?</h3>
+
+<p>
+Yes, <em>but only if</em> it can be build and run with Java programs/tools in
+main, and if it has a Debian compliant open source license.  If it needs
+programs from contrib or non-free, then is <em>must</em> go into contrib or
+non-free, depending on the license of the program itself.
+</p>
+
+<p>
+More specifically, if the program can be build and run with
+<code>free-java-sdk</code>, then it only depends on Debian packages from main.
+The <code>free-java-sdk</code> description states: &quot;Just install this
+package, set JAVA_HOME to /usr/lib/fjsdk and try to rebuild your Java packages.
+If it works - a package from contrib section can be moved to main.&quot;
+</p>
+
+<hr>
+
+<h3><a name="s6.5.2"></a>6.5.2 What virtual packages could I use?</h3>
+<ul>
+<li>
+<p>
+<code>java-common</code>.  It is the Mother Of All Java Packages, in the
+proposed policy.  It contains the text of the Policy (Docbook), as well as
+utilities scripts (for instance to build a CLASSPATH from a list of jars
+(submissions welcome).
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>java-virtual-machine</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>java-compiler</code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>java-compiler-dummy</code>.It is a small tool useful for the transition
+to the new Policy.  Until all compilers comply with the Policy,
+java-compiler-dummy provides the following services:
+</p>
+<ul>
+<li>
+<p>
+Provides: java-compiler so upper packages are happy,
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+set CLASSPATH before calling the real compiler.
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+<code>java-virtual-machine-dummy</code>.It is a small tool useful for the
+transition to the new Policy.  Until all virtual machines comply with the
+Policy, java-virtual-machine-dummy provides the following services:
+</p>
+<ul>
+<li>
+<p>
+Provides: java-virtual-machine so upper packages are happy,
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+set CLASSPATH before calling the real VM.
+</p>
+</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<h3><a name="s6.5.3"></a>6.5.3 Is there a good example Debian package?</h3>
+
+<p>
+There are many Debian packages of both Java applications and libraries.  These
+may serve as an good starting point, as it can serve as an example for making a
+new Debian package.
+</p>
+
+<p>
+A good start would be to check out the pkg-java project on Alioth: <code><a
+href="http://pkg-java.alioth.debian.org/">http://pkg-java.alioth.debian.org/</a></code>.
+</p>
+
+<p>
+Note that there are many ways to make a Debian package, making use of Ant or
+Makefiles does not really matter.  But, some tips for good practice are given
+on the pkg-java page: <code><a
+href="http://pkg-java.alioth.debian.org/developers.html#rules">http://pkg-java.alioth.debian.org/developers.html#rules</a></code>
+and <code><a
+href="http://pkg-java.alioth.debian.org/building.html">http://pkg-java.alioth.debian.org/building.html</a></code>.
+</p>
+
+<hr>
+
+<h3><a name="s6.5.4"></a>6.5.4 What tools are available to make maintaining a Java packages easier?</h3>
+
+<p>
+At this moment, there is dh_javadoc, which is a tool in the <code>gjdoc</code>
+package in Debian unstable.  And, there are tools in <code>cdbs</code> which
+can help build packages with <code>ant</code>.
+</p>
+
+<hr>
+
+<p>
+[ <a href="ch-debian-java-etch.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch-debian-java-woody.html">3</a> ]
+[ <a href="ch-debian-java-sarge.html">4</a> ]
+[ <a href="ch-debian-java-etch.html">5</a> ]
+[ 6 ]
+[ <a href="ch7.html">7</a> ]
+[ <a href="ch8.html">8</a> ]
+[ <a href="ch-browser-java.html">9</a> ]
+[ <a href="ch10.html">10</a> ]
+[ <a href="ch11.html">11</a> ]
+[ <a href="ch12.html">12</a> ]
+[ <a href="apA.html">A</a> ]
+[ <a href="ch7.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian GNU/Linux Java FAQ.
+</p>
+
+<address>
+$Revision: 1.57 $ 20 January 2010Sunday, 4th November<br>
+<br>
+Javier Fernández-Sanguino Peña <code><a href="mailto:jfs@debian.org">jfs@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

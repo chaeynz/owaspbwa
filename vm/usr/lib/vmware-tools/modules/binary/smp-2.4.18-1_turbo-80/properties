@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-1smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Turbo Linux Workstation 8.0 SMP
+UtsMachine i386

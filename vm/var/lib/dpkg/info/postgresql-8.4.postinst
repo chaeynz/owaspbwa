@@ -1,0 +1,34 @@
+#!/bin/sh -e
+
+VERSION=8.4
+
+
+if [ "$1" = configure ]; then
+    # fix init script stop priority on upgrades
+    if dpkg --compare-versions "$2" le-nl "8.4~rc2-1"; then
+        echo "Fixing init script priorities..."
+        for l in 0 1 6; do
+            old=/etc/rc$l.d/K19postgresql-8.4
+            new=/etc/rc$l.d/K21postgresql-8.4
+            if [ -e $old ] && ! [ -e $new ]; then
+                mv $old $new
+            fi
+        done
+    fi
+
+    . /usr/share/postgresql-common/maintscripts-functions
+
+    configure_version $VERSION "$2"
+fi
+
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/postgresql-8.4" ]; then
+	update-rc.d postgresql-8.4 defaults 19 21 >/dev/null
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d postgresql-8.4 start || exit $?
+	else
+		/etc/init.d/postgresql-8.4 start || exit $?
+	fi
+fi
+# End automatically added section
+

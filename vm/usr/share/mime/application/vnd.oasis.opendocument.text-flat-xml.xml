@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.text-flat-xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODT document (Flat XML)</comment>
+  <comment xml:lang="ca">Document ODT (XML pla)</comment>
+  <comment xml:lang="en_GB">ODT document (Flat XML)</comment>
+  <comment xml:lang="es">Documento ODT (XML plano)</comment>
+  <comment xml:lang="fr">document ODT (XML plat)</comment>
+  <comment xml:lang="hu">ODT-dokumentum (egyszerű XML)</comment>
+  <comment xml:lang="it">Documento ODT (XML semplice)</comment>
+  <comment xml:lang="ja">ODT ドキュメント (Flat XML)</comment>
+  <comment xml:lang="kk">ODT құжаты (Тек XML)</comment>
+  <comment xml:lang="oc">document ODT (XML plat)</comment>
+  <comment xml:lang="pt_BR">Documento ODT (XML plano)</comment>
+  <comment xml:lang="ro">Document ODT (XML simplu)</comment>
+  <comment xml:lang="uk">документ ODT (Flat XML)</comment>
+  <acronym>FODT</acronym>
+  <expanded-acronym>OpenDocument Text (Flat XML)</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-document"/>
+  <glob pattern="*.fodt"/>
+</mime-type>

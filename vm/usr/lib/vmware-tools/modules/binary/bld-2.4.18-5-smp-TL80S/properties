@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-5smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment TurboLinux 8.0 Server, 2.4.18-5, SMP
+UtsMachine i386

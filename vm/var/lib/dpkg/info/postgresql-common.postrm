@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+if [ "$1" = purge ]; then
+    # remove socket directory
+    rm -rf /var/run/postgresql
+
+    # remove SSL keys
+    rm -rf /etc/postgresql-common/root.crt 
+
+    [ -d /etc/postgresql-common ] && rmdir --ignore-fail-on-non-empty /etc/postgresql-common || true
+
+    rm -rf /var/cache/postgresql
+fi
+
+# Automatically added by dh_installdebconf
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+
+

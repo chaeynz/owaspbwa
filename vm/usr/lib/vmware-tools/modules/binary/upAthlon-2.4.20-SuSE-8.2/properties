@@ -1,0 +1,7 @@
+UtsRelease 2.4.20-4GB-athlon
+UtsVersion #1 Mon Mar 17 17:56:47 UTC 2003
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment SuSE 8.2 up Athlon
+UtsMachine i386

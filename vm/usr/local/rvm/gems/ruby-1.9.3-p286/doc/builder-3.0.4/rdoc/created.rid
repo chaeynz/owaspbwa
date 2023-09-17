@@ -1,0 +1,16 @@
+Tue, 23 Oct 2012 23:04:50 -0400
+lib/builder.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/builder/version.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/builder/xmlevents.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/builder/xmlmarkup.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/builder/xmlbase.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/builder/xchar.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/builder/blankslate.rb	Tue, 23 Oct 2012 23:03:08 -0400
+lib/blankslate.rb	Tue, 23 Oct 2012 23:03:08 -0400
+CHANGES	Tue, 23 Oct 2012 23:03:08 -0400
+MIT-LICENSE	Tue, 23 Oct 2012 23:03:08 -0400
+Rakefile	Tue, 23 Oct 2012 23:03:08 -0400
+README.rdoc	Tue, 23 Oct 2012 23:03:08 -0400
+doc/releases/builder-1.2.4.rdoc	Tue, 23 Oct 2012 23:03:08 -0400
+doc/releases/builder-2.0.0.rdoc	Tue, 23 Oct 2012 23:03:08 -0400
+doc/releases/builder-2.1.1.rdoc	Tue, 23 Oct 2012 23:03:08 -0400

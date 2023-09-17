@@ -1,0 +1,351 @@
+mysqld_multi log file version 2.16; run: Tue Jun 23 23:26:16 2015
+
+Starting MySQL servers
+
+150623 23:26:16 [Note] Plugin 'FEDERATED' is disabled.
+150623 23:26:16 [Note] Plugin 'FEDERATED' is disabled.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+150623 23:26:16  InnoDB: Retrying to lock the first data file
+150623 23:26:16  InnoDB: Started; log sequence number 0 6427866
+150623 23:26:16 [Warning] 'db' entry 'isp kbloom@localhost' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+150623 23:26:16 [Warning] 'db' entry 'proxy webmaster@localhost' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+150623 23:26:16 [Warning] 'db' entry 'hex hex@localhost' had database in mixed case that has been forced to lowercase because lower_case_table_names is set. It will not be possible to remove this privilege using REVOKE.
+150623 23:26:16 [Note] Event Scheduler: Loaded 1 event
+150623 23:26:16 [Note] /usr/sbin/mysqld: ready for connections.
+Version: '5.1.41-3ubuntu12.6-log'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu)
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+InnoDB: Unable to lock ./ibdata1, error: 11
+InnoDB: Check that you do not already have another mysqld process
+InnoDB: using the same InnoDB data or log files.
+150623 23:27:56  InnoDB: Unable to open the first data file
+InnoDB: Error in opening ./ibdata1
+150623 23:27:56  InnoDB: Operating system error number 11 in a file operation.
+InnoDB: Error number 11 means 'Resource temporarily unavailable'.
+InnoDB: Some operating system error numbers are described at
+InnoDB: http://dev.mysql.com/doc/refman/5.1/en/operating-system-error-codes.html
+InnoDB: Could not open or create data files.
+InnoDB: If you tried to add new data files, and it failed here,
+InnoDB: you should now edit innodb_data_file_path in my.cnf back
+InnoDB: to what it was, and remove the new ibdata files InnoDB created
+InnoDB: in this failed attempt. InnoDB only wrote those files full of
+InnoDB: zeros, but did not yet use them in any way. But be careful: do not
+InnoDB: remove old data files which contain your precious data!
+150623 23:27:56 [ERROR] Plugin 'InnoDB' init function returned error.
+150623 23:27:56 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+150623 23:27:56 [ERROR] Can't start server: Bind on TCP/IP port: Address already in use
+150623 23:27:56 [ERROR] Do you already have another mysqld server running on port: 3307 ?
+150623 23:27:56 [ERROR] Aborting
+
+150623 23:27:56 [Note] /usr/sbin/mysqld: Shutdown complete
+
+mysqld_multi log file version 2.16; run: Tue Jun 23 23:29:07 2015
+
+Stopping MySQL servers
+
+/usr/bin/mysqladmin: connect to server at 'localhost' failed
+error: 'Access denied for user 'root'@'localhost' (using password: NO)'
+150623 23:59:27 [Note] /usr/sbin/mysqld: Normal shutdown
+
+150623 23:59:27 [Note] Event Scheduler: Purging the queue. 0 events
+150623 23:59:27  InnoDB: Starting shutdown...
+150623 23:59:28  InnoDB: Shutdown completed; log sequence number 0 6475089
+150623 23:59:28 [Note] /usr/sbin/mysqld: Shutdown complete
+

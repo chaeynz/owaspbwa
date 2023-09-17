@@ -1,0 +1,6 @@
+UtsRelease 2.4.21-215-smp
+ModVersion yes
+SMP yes
+PageOffset 0000010000000000
+Comment UnitedLinux (SLES8)
+UtsMachine x86_64

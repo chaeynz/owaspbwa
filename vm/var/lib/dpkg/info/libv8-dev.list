@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/include
+/usr/include/v8-debug.h
+/usr/include/v8.h
+/usr/share
+/usr/share/doc
+/usr/share/doc/libv8-dev
+/usr/share/doc/libv8-dev/copyright
+/usr/lib/libv8.so
+/usr/share/doc/libv8-dev/AUTHORS
+/usr/share/doc/libv8-dev/changelog.gz
+/usr/share/doc/libv8-dev/changelog.Debian.gz

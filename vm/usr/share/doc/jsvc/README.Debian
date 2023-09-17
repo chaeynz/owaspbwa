@@ -1,0 +1,10 @@
+commons-daemon for Debian
+-------------------------
+
+While jsvc has support for various Java virtual machines, not all of
+them can be enabled at build time. The Debian version supports the
+JVMs from the java-gcj-compat and sun-java5-jre packages, but we had
+to disable support for Kaffe and SableVM. We hope that this
+shortcoming can be fixed in the future.
+
+ -- Marcus Better <marcus@better.se>, Wed, 29 Nov 2006 14:50:27 +0100

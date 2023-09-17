@@ -1,0 +1,25 @@
+This package was debianized by Arnaud Vandyck <avdyk@debian.org> on 3-April-2007.
+The source code was downloaded from http://sourceforge.net/projects/c3p0
+
+Authors:
+
+ Steve Waldman <swaldman@users.sourceforge.net>
+
+Copyright: © 2001-2007 Machinery For Change, Inc.
+
+  This library is free software; you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License version
+  2.1, as published by the Free Software Foundation.
+
+  This software is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this software; see the file LICENSE.  If not, write to the
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  Boston, MA 02110-1301 USA.
+
+On Debian systems the full text of the Lesser General Public License,
+LGPL, can be found at /usr/share/common-licenses/LGPL-2.1

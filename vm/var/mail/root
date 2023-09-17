@@ -1,0 +1,66 @@
+From root@brokenwebapps.localdomain  Wed Jul  3 06:53:00 2013
+Return-Path: <root@brokenwebapps.localdomain>
+X-Original-To: root
+Delivered-To: root@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix, from userid 0)
+	id 0460B23685; Wed,  3 Jul 2013 06:52:59 -0400 (EDT)
+From: root@brokenwebapps.localdomain (Cron Daemon)
+To: root@brokenwebapps.localdomain
+Subject: Cron <root@owaspbwa> test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+Content-Type: text/plain; charset=ANSI_X3.4-1968
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin>
+X-Cron-Env: <HOME=/root>
+X-Cron-Env: <LOGNAME=root>
+Message-Id: <20130703105300.0460B23685@brokenwebapps.localdomain>
+Date: Wed,  3 Jul 2013 06:50:35 -0400 (EDT)
+
+/etc/cron.daily/logrotate:
+[Wed Jul 03 06:50:34 2013] [warn] worker http://localhost:8008/ already used by another worker
+[Wed Jul 03 06:50:34 2013] [warn] worker http://localhost:8008/ already used by another worker
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+
+From root@brokenwebapps.localdomain  Sun Jul  7 06:46:48 2013
+Return-Path: <root@brokenwebapps.localdomain>
+X-Original-To: root
+Delivered-To: root@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix, from userid 0)
+	id ACB5E23685; Sun,  7 Jul 2013 06:46:48 -0400 (EDT)
+From: root@brokenwebapps.localdomain (Cron Daemon)
+To: root@brokenwebapps.localdomain
+Subject: Cron <root@owaspbwa> test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+Content-Type: text/plain; charset=ANSI_X3.4-1968
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin>
+X-Cron-Env: <HOME=/root>
+X-Cron-Env: <LOGNAME=root>
+Message-Id: <20130707104648.ACB5E23685@brokenwebapps.localdomain>
+Date: Sun,  7 Jul 2013 06:45:51 -0400 (EDT)
+
+/etc/cron.daily/logrotate:
+[Sun Jul 07 06:45:51 2013] [warn] worker http://localhost:8008/ already used by another worker
+[Sun Jul 07 06:45:51 2013] [warn] worker http://localhost:8008/ already used by another worker
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+
+From root@brokenwebapps.localdomain  Thu Jul 11 06:40:53 2013
+Return-Path: <root@brokenwebapps.localdomain>
+X-Original-To: root
+Delivered-To: root@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix, from userid 0)
+	id 005E723685; Thu, 11 Jul 2013 06:40:52 -0400 (EDT)
+From: root@brokenwebapps.localdomain (Cron Daemon)
+To: root@brokenwebapps.localdomain
+Subject: Cron <root@owaspbwa> test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+Content-Type: text/plain; charset=ANSI_X3.4-1968
+X-Cron-Env: <SHELL=/bin/sh>
+X-Cron-Env: <PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin>
+X-Cron-Env: <HOME=/root>
+X-Cron-Env: <LOGNAME=root>
+Message-Id: <20130711104053.005E723685@brokenwebapps.localdomain>
+Date: Thu, 11 Jul 2013 06:39:18 -0400 (EDT)
+
+/etc/cron.daily/logrotate:
+[Thu Jul 11 06:39:18 2013] [warn] worker http://localhost:8008/ already used by another worker
+[Thu Jul 11 06:39:18 2013] [warn] worker http://localhost:8008/ already used by another worker
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+

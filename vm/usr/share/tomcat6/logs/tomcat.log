@@ -1,0 +1,930 @@
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:22:49,536 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:22:49,541 http-8080-1 utils.Validate - Session has no credentials
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:22:49,605 http-8080-1 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:06,350 http-8080-2 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:06,355 http-8080-2 utils.Validate - Session has no credentials
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:06,411 http-8080-2 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:10,824 http-8080-5 servlets.Login - **** servlets.Login ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:10,826 http-8080-5 servlets.Login - Getting ApplicationRoot
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:10,828 http-8080-5 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:10,829 http-8080-5 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:10,829 http-8080-5 dbProcs.Getter - userName = admin
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,026 http-8080-5 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,027 http-8080-5 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,027 http-8080-5 dbProcs.Getter - User Found
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,029 http-8080-5 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,039 http-8080-5 dbProcs.Getter - Opening Result Set from authUser
+ERROR 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,044 http-8080-5 dbProcs.Getter - Login Failure: java.sql.SQLException: Illegal operation on empty result set.
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,045 http-8080-5 dbProcs.Getter - $$$ End authUser $$$
+ERROR 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:11,045 http-8080-5 servlets.Login - Could not Find User: java.lang.NullPointerException
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:13,054 http-8080-5 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,150 http-8080-5 servlets.Login - **** servlets.Login ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,152 http-8080-5 servlets.Login - Getting ApplicationRoot
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,152 http-8080-5 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,153 http-8080-5 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,153 http-8080-5 dbProcs.Getter - userName = admin
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,192 http-8080-5 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,193 http-8080-5 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,193 http-8080-5 dbProcs.Getter - User Found
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,195 http-8080-5 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,205 http-8080-5 dbProcs.Getter - Opening Result Set from authUser
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,206 http-8080-5 dbProcs.Getter - User 'admin' has logged in
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:24:24,206 http-8080-5 servlets.Login - Creating new session for admin admin
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,953 http-8080-5 servlets.Login - userClassId = null
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,953 http-8080-5 servlets.Login - Setting CSRF cookie
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,958 http-8080-5 utils.Hash - Generated String = 47324988497887516272834417034404979352
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,958 http-8080-5 servlets.Login - Temporary Password Detected, user will be prompted to change
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,962 http-8080-5 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,962 http-8080-5 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,964 http-8080-5 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,973 http-8080-5 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,976 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,977 http-8080-5 dbProcs.Getter - Lesson List returned
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,978 http-8080-5 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,978 http-8080-5 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,991 http-8080-5 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:04,992 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:05,001 http-8080-5 dbProcs.Getter - Appending End tags
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:05,003 http-8080-5 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:05,168 http-8080-5 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,463 http-8080-5 servlets.ChangePassword - *** servlets.ChangePassword ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,464 http-8080-5 servlets.ChangePassword - Current User: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,467 http-8080-5 servlets.ChangePassword - Getting Parameters
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,468 http-8080-5 servlets.ChangePassword - Validating Parameters
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,469 http-8080-5 dbProcs.Getter - *** Getter.isUserLocked ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,482 http-8080-5 dbProcs.Getter - Gathering userLocked ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,483 http-8080-5 dbProcs.Getter - Opening Result Set from userLocked
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,484 http-8080-5 dbProcs.Getter - *** END isUserLocked ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,484 http-8080-5 servlets.ChangePassword - Validating Current Password
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,484 http-8080-5 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,485 http-8080-5 dbProcs.Getter - userName = admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,491 http-8080-5 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,491 http-8080-5 dbProcs.Getter - Opening Result Set from userFind
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,491 http-8080-5 dbProcs.Getter - User Found
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,495 http-8080-5 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,505 http-8080-5 dbProcs.Getter - Opening Result Set from authUser
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,506 http-8080-5 dbProcs.Getter - User 'admin' has logged in
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,506 http-8080-5 servlets.ChangePassword - User Credentials were good! Password Change gets the go ahead
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,508 http-8080-5 dbProcs.Setter - *** Setter.updatePassword ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,518 http-8080-5 dbProcs.Setter - Preparing userPasswordChange call
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,520 http-8080-5 dbProcs.Setter - Executing userPasswordChange
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,546 http-8080-5 dbProcs.Setter - *** END updatePassword ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,546 http-8080-5 servlets.ChangePassword - *** END ChangePassword ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,550 http-8080-5 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,550 http-8080-5 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,550 http-8080-5 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,558 http-8080-5 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,559 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,560 http-8080-5 dbProcs.Getter - Lesson List returned
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,560 http-8080-5 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,560 http-8080-5 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,567 http-8080-5 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,568 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,573 http-8080-5 dbProcs.Getter - Appending End tags
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,574 http-8080-5 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,644 http-8080-5 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,731 http-8080-5 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,731 http-8080-5 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,732 http-8080-5 utils.ShepherdLogManager - Thread Parameter = aGl59cbE/ukUWsW0nB5sCQ==
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:28,732 http-8080-5 utils.ShepherdLogManager - Thread Cookie Value = aGl59cbE/ukUWsW0nB5sCQ==
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:42,245 http-8080-5 servlets.admin.moduleManagement.OpenWebModules - &&& servlets.module.OpenWebModules &&&
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:42,245 http-8080-5 dbProcs.Setter - *** Setter.openOnlyWebCategories ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:42,277 http-8080-5 dbProcs.Setter - Web Levels have been opened
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:42,286 http-8080-5 dbProcs.Setter - Mobile Levels have been closed
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:42,286 http-8080-5 dbProcs.Setter - *** END openOnlyWebCategories ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:42,286 http-8080-5 servlets.admin.moduleManagement.OpenWebModules - &&& END servlets.module.OpenWebModules &&&
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:48,120 http-8080-5 servlets.admin.moduleManagement.OpenAllModules - &&& servlets.module.OpenAllModules &&&
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:48,121 http-8080-5 dbProcs.Setter - *** Setter.openAllModules ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:48,133 http-8080-5 dbProcs.Setter - All modules Set to open
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:48,133 http-8080-5 dbProcs.Setter - *** END setModuleStatusOpen ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:25:48,133 http-8080-5 servlets.admin.moduleManagement.OpenAllModules - &&& END servlets.module.OpenAllModules &&&
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:07,924 http-8080-5 utils.ShepherdLogManager - DEBUG: addPlayers.jsp *************************
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:07,926 http-8080-5 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:07,927 http-8080-5 dbProcs.Getter - *** Getter.getClassInfo (All Classes) ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:07,932 http-8080-5 dbProcs.Getter - Gathering classesGetData ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:07,932 http-8080-5 dbProcs.Getter - Returning Result Set from classesGetData
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:07,933 http-8080-5 dbProcs.Getter - *** END getClassInfo
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:18,173 http-8080-5 servlets.Logout - **** servlets.Logout ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:18,174 http-8080-5 servlets.Logout - Current User: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:18,175 http-8080-5 servlets.Logout - User Logged Out
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:18,176 http-8080-5 servlets.Logout - *** END Logout ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:18,199 http-8080-5 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:21,520 http-8080-5 utils.ShepherdLogManager - DEBUG: register.jsp *************************
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:21,520 http-8080-5 utils.Hash - Generated String = -149616645475341600787977396963756191013
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,484 http-8080-5 servlets.Register - **** servlets.Register ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,484 http-8080-5 servlets.Register - Getting ApplicationRoot
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,484 http-8080-5 servlets.Register - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,484 http-8080-5 servlets.Register - Ensuring not a CSRF
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,484 http-8080-5 servlets.Register - Getting Registration Parameters
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,485 http-8080-5 servlets.Register - userName = usera
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,488 http-8080-5 servlets.Register - passWord retrieved
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,488 http-8080-5 servlets.Register - passWordConfirm retrieved
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,489 http-8080-5 servlets.Register - userAddress = 
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,489 http-8080-5 servlets.Register - userAddressCnf = 
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,489 http-8080-5 servlets.Register - Checking for nulls
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,489 http-8080-5 servlets.Register - Ensuring strings are not empty
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,489 http-8080-5 servlets.Register - Validating passwords
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,489 http-8080-5 servlets.Register - Validating addresses
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,492 http-8080-5 servlets.Register - Adding player to database, with null classId
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,492 http-8080-5 dbProcs.Setter - *** Setter.userCreate ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,492 http-8080-5 dbProcs.Setter - classId = null
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,492 http-8080-5 dbProcs.Setter - userNameusera
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,493 http-8080-5 dbProcs.Setter - userRoleplayer
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,493 http-8080-5 dbProcs.Setter - userAddress
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,497 http-8080-5 dbProcs.Setter - Executing userCreate procedure on Database
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,546 http-8080-5 dbProcs.Setter - Opening result set
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,547 http-8080-5 dbProcs.Setter - Register Success
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,548 http-8080-5 dbProcs.Setter - *** END userCreate ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,548 http-8080-5 servlets.Register - *** Register END ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,556 http-8080-5 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:26:55,572 http-8080-5 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,830 http-8080-5 servlets.Login - **** servlets.Login ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,831 http-8080-5 servlets.Login - Getting ApplicationRoot
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,831 http-8080-5 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,831 http-8080-5 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,832 http-8080-5 dbProcs.Getter - userName = usera
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,854 http-8080-5 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,855 http-8080-5 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,855 http-8080-5 dbProcs.Getter - User Found
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,857 http-8080-5 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,868 http-8080-5 dbProcs.Getter - Opening Result Set from authUser
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,868 http-8080-5 dbProcs.Getter - User 'usera' has logged in
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,868 http-8080-5 servlets.Login - Creating new session for player usera
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,868 http-8080-5 servlets.Login - userClassId = null
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,868 http-8080-5 servlets.Login - Setting CSRF cookie
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,869 http-8080-5 utils.Hash - Generated String = -97316409832144253124349556095030271654
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,872 http-8080-5 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,872 http-8080-5 utils.ShepherdLogManager - Accessed by: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,873 http-8080-5 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,878 http-8080-5 dbProcs.Getter - Gathering lessonInfo ResultSet for user 8d92219c1f08033fda0f42fe8d465a09a6d47481
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,879 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,879 http-8080-5 dbProcs.Getter - Lesson List returned
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,879 http-8080-5 dbProcs.Getter - *** END getLesson() ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,880 http-8080-5 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,885 http-8080-5 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,886 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,890 http-8080-5 dbProcs.Getter - Appending End tags
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,891 http-8080-5 dbProcs.Getter - *** END getChallenges() ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,960 http-8080-2 utils.ShepherdLogManager - Accessed by: usera
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,986 http-8080-5 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,986 http-8080-5 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,987 http-8080-5 utils.ShepherdLogManager - Thread Parameter = LKowdMWMdg/gZlFcmR03gw==
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:05,987 http-8080-5 utils.ShepherdLogManager - Thread Cookie Value = LKowdMWMdg/gZlFcmR03gw==
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,594 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,595 http-8080-4 servlets.module.GetModule - Current User: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,596 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,596 http-8080-4 servlets.module.GetModule - moduleId = ef6496892b8e48ac2f349cdd7c8ecb889fc982af
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,596 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,596 http-8080-4 servlets.module.GetModule - userId = 8d92219c1f08033fda0f42fe8d465a09a6d47481
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,597 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,614 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,615 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,615 http-8080-4 dbProcs.Getter - Module Broken Crypto Found
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,616 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,617 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,626 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,632 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,633 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,634 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;911fa7f4232e096d6a74a0623842c4157e29b9bcc44e8a827be3bb7e58c9a212.jsp
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,642 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,722 http-8080-4 utils.ShepherdLogManager - What is Mobile Broken Crypto? Accessed
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:12,723 http-8080-4 utils.ShepherdLogManager - What is Mobile Broken Crypto? has been accessed by usera
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,912 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,912 http-8080-4 servlets.module.GetModule - Current User: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,912 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,912 http-8080-4 servlets.module.GetModule - moduleId = 408610f220b4f71f7261207a17055acbffb8a747
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,913 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,913 http-8080-4 servlets.module.GetModule - userId = 8d92219c1f08033fda0f42fe8d465a09a6d47481
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,913 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,917 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,918 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,918 http-8080-4 dbProcs.Getter - Module SQL Injection Found
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,919 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,919 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,924 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,929 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,930 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,930 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;e881086d4d8eb2604d8093d93ae60986af8119c4f643894775433dbfb6faa594.jsp
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:20,930 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:21,005 http-8080-4 utils.ShepherdLogManager - SQL Injection Lesson Accessed
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:21,006 http-8080-4 utils.ShepherdLogManager - SQL Injection Lesson has been accessed by usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,643 http-8080-4 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,672 http-8080-4 servlets.module.lesson.SqlInjectionLesson - User Submitted - 
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,673 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,683 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,683 http-8080-4 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,684 http-8080-4 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is null
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:26,684 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,507 http-8080-4 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,508 http-8080-4 servlets.module.lesson.SqlInjectionLesson - User Submitted - user
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,508 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,521 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,522 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 0: User ID = 12345
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,522 http-8080-4 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,522 http-8080-4 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is 12345
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,522 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding table
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,522 http-8080-4 servlets.module.lesson.SqlInjectionLesson - outputLength = 10
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,522 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User user
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:32,523 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,657 http-8080-4 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,658 http-8080-4 servlets.module.lesson.SqlInjectionLesson - User Submitted - user' OR '1'='1
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,658 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,672 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,672 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 0: User ID = 12345
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,673 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 1: User ID = 12346
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,673 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 2: User ID = 12543
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,673 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 3: User ID = 14232
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,674 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 4: User ID = 61523
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,674 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 5: User ID = 82642
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,674 http-8080-4 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,675 http-8080-4 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is 12345
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,675 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding table
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,676 http-8080-4 servlets.module.lesson.SqlInjectionLesson - outputLength = 10
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,676 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User user
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,677 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User OR 1 &#x3d; 1
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,677 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User Fred Mtenzi
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,677 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User Mark Denihan
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,677 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User Cloud
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,678 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User qw&#x21;dshs&#x40;ab
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:42,678 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:53,918 http-8080-4 servlets.Logout - **** servlets.Logout ***
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:53,919 http-8080-4 servlets.Logout - Current User: usera
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:53,920 http-8080-4 servlets.Logout - User Logged Out
+DEBUG usera at 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:53,920 http-8080-4 servlets.Logout - *** END Logout ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 19 Jun 00:27:53,929 http-8080-4 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:18,042 http-8080-6 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+ERROR 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:18,047 http-8080-6 utils.Validate - CSRF Cookie Token was modified in some manor: java.lang.NumberFormatException: Zero length BigInteger
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:18,047 http-8080-6 utils.Validate - Session has no credentials
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:18,089 http-8080-6 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:41,172 http-8080-4 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+ERROR 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:41,174 http-8080-4 utils.Validate - CSRF Cookie Token was modified in some manor: java.lang.NumberFormatException: Zero length BigInteger
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:41,174 http-8080-4 utils.Validate - Session has no credentials
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:41,191 http-8080-4 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,838 http-8080-4 servlets.Login - **** servlets.Login ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,848 http-8080-4 servlets.Login - Getting ApplicationRoot
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,851 http-8080-4 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,851 http-8080-4 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,853 http-8080-4 dbProcs.Getter - userName = admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,984 http-8080-4 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,985 http-8080-4 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,985 http-8080-4 dbProcs.Getter - User Found
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,987 http-8080-4 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,997 http-8080-4 dbProcs.Getter - Opening Result Set from authUser
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,997 http-8080-4 dbProcs.Getter - User 'admin' has logged in
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:46,997 http-8080-4 servlets.Login - Creating new session for admin admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,002 http-8080-4 servlets.Login - userClassId = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,003 http-8080-4 servlets.Login - Setting CSRF cookie
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,003 http-8080-4 utils.Hash - Generated String = 100894266684686318665259574981725877968
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,003 http-8080-4 servlets.Login - Temporary Password Detected, user will be prompted to change
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,007 http-8080-4 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,008 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,009 http-8080-4 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,020 http-8080-4 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,021 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,022 http-8080-4 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,023 http-8080-4 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,023 http-8080-4 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,030 http-8080-4 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,032 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,042 http-8080-4 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,043 http-8080-4 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:47,194 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,152 http-8080-4 servlets.ChangePassword - *** servlets.ChangePassword ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,153 http-8080-4 servlets.ChangePassword - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,154 http-8080-4 servlets.ChangePassword - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,154 http-8080-4 servlets.ChangePassword - Validating Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,154 http-8080-4 dbProcs.Getter - *** Getter.isUserLocked ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,182 http-8080-4 dbProcs.Getter - Gathering userLocked ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,183 http-8080-4 dbProcs.Getter - Opening Result Set from userLocked
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,184 http-8080-4 dbProcs.Getter - *** END isUserLocked ***
+ERROR admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,185 http-8080-4 servlets.ChangePassword - No password Change Detected
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,185 http-8080-4 servlets.ChangePassword - *** END ChangePassword ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,190 http-8080-4 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,190 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,190 http-8080-4 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,196 http-8080-4 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,197 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,197 http-8080-4 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,198 http-8080-4 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,198 http-8080-4 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,206 http-8080-4 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,207 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,212 http-8080-4 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,213 http-8080-4 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:37:56,319 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:01,482 http-8080-4 utils.ShepherdLogManager - DEBUG: scoreboard.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:01,482 http-8080-4 utils.ShepherdLogManager - Scoreboard accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:01,573 http-8080-4 servlets.admin.moduleManagement.GetFeedback - Scoreboard accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:08,844 http-8080-4 utils.ShepherdLogManager - DEBUG: addPlayers.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:08,844 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:08,845 http-8080-4 dbProcs.Getter - *** Getter.getClassInfo (All Classes) ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:08,856 http-8080-4 dbProcs.Getter - Gathering classesGetData ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:08,857 http-8080-4 dbProcs.Getter - Returning Result Set from classesGetData
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:08,857 http-8080-4 dbProcs.Getter - *** END getClassInfo
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,263 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,264 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,264 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,264 http-8080-4 servlets.module.GetModule - moduleId = 1506f22cd73d14d8a73e0ee32006f35d4f234799
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,264 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,264 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,265 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,274 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,275 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,275 http-8080-4 dbProcs.Getter - Module Unintended Data Leakage Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,275 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,276 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,282 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,290 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,290 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,290 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;392c20397c535845d93c32fd99b94f70afe9cca3f78c1e4766fee1cc08c035ec.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,290 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,340 http-8080-4 utils.ShepherdLogManager - What is Mobile Unintended Data Leakage? Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:16,340 http-8080-4 utils.ShepherdLogManager - What is Mobile Unintended Data Leakage? has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,614 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,614 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,614 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,615 http-8080-4 servlets.module.GetModule - moduleId = 408610f220b4f71f7261207a17055acbffb8a747
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,615 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,615 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,615 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,621 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,622 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,622 http-8080-4 dbProcs.Getter - Module SQL Injection Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,622 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,622 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,631 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,636 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,636 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,636 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;e881086d4d8eb2604d8093d93ae60986af8119c4f643894775433dbfb6faa594.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,636 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,712 http-8080-4 utils.ShepherdLogManager - SQL Injection Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:24,712 http-8080-4 utils.ShepherdLogManager - SQL Injection Lesson has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,080 http-8080-4 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,081 http-8080-4 servlets.module.lesson.SqlInjectionLesson - User Submitted - 
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,081 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,086 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,086 http-8080-4 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,086 http-8080-4 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:27,086 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,348 http-8080-4 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,349 http-8080-4 servlets.module.lesson.SqlInjectionLesson - User Submitted - asdf
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,357 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,366 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,367 http-8080-4 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,367 http-8080-4 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:32,367 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,629 http-8080-4 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,629 http-8080-4 servlets.module.lesson.SqlInjectionLesson - User Submitted - asdf' OR '1'='1
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,630 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,644 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,645 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 0: User ID = 12345
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,645 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 1: User ID = 12346
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,646 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 2: User ID = 12543
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,646 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 3: User ID = 14232
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,648 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 4: User ID = 61523
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,649 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Row 5: User ID = 82642
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,649 http-8080-4 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,649 http-8080-4 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is 12345
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,650 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding table
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,650 http-8080-4 servlets.module.lesson.SqlInjectionLesson - outputLength = 10
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,650 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User user
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,651 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User OR 1 &#x3d; 1
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,651 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User Fred Mtenzi
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,651 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User Mark Denihan
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,652 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User Cloud
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,652 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Adding User qw&#x21;dshs&#x40;ab
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:42,652 http-8080-4 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,812 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,812 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,813 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,813 http-8080-4 servlets.module.GetModule - moduleId = ef6496892b8e48ac2f349cdd7c8ecb889fc982af
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,813 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,813 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,814 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,822 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,825 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,826 http-8080-4 dbProcs.Getter - Module Broken Crypto Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,826 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,826 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,831 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,847 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,848 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,848 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;911fa7f4232e096d6a74a0623842c4157e29b9bcc44e8a827be3bb7e58c9a212.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,848 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,892 http-8080-4 utils.ShepherdLogManager - What is Mobile Broken Crypto? Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:47,892 http-8080-4 utils.ShepherdLogManager - What is Mobile Broken Crypto? has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,859 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,860 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,860 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,861 http-8080-4 servlets.module.GetModule - moduleId = 9533e21e285621a676bec58fc089065dec1f59f5
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,861 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,861 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,862 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,875 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,877 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,877 http-8080-4 dbProcs.Getter - Module Broken Session Management Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,878 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,878 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,890 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,904 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,904 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,904 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;b8c19efd1a7cc64301f239f9b9a7a32410a0808138bbefc98986030f9ea83806.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,904 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,950 http-8080-4 utils.ShepherdLogManager - Session Management Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:38:50,950 http-8080-4 utils.ShepherdLogManager - Session Management Lesson has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,543 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,543 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,543 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,543 http-8080-4 servlets.module.GetModule - moduleId = f40b0cd5d45327c9426675313f581cf70c7c7c28
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,544 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,544 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,544 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,548 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,549 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,549 http-8080-4 dbProcs.Getter - Module Unintended Data Leakage 1 Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,549 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,549 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,553 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,581 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,581 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,581 http-8080-4 servlets.module.GetModule - Returning: challenges&#x2f;517622a535ff89f7d90674862740b48f53aad7b41390fe46c6f324fee748d136.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,581 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,628 http-8080-4 utils.ShepherdLogManager - Mobile Unintended Data Leakage 1 Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:02,628 http-8080-4 utils.ShepherdLogManager - Mobile Unintended Data Leakage 1 has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:14,326 http-8080-4 utils.ShepherdLogManager - DEBUG: scoreboard.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:14,327 http-8080-4 utils.ShepherdLogManager - Scoreboard accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:14,421 http-8080-4 servlets.admin.moduleManagement.GetFeedback - Scoreboard accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:17,036 http-8080-4 servlets.Logout - **** servlets.Logout ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:17,036 http-8080-4 servlets.Logout - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:17,037 http-8080-4 servlets.Logout - User Logged Out
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:17,038 http-8080-4 servlets.Logout - *** END Logout ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:17,056 http-8080-4 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,000 http-8080-4 servlets.Login - **** servlets.Login ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,001 http-8080-4 servlets.Login - Getting ApplicationRoot
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,001 http-8080-4 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,001 http-8080-4 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,002 http-8080-4 dbProcs.Getter - userName = admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,012 http-8080-4 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,013 http-8080-4 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,013 http-8080-4 dbProcs.Getter - User Found
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,014 http-8080-4 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,024 http-8080-4 dbProcs.Getter - Opening Result Set from authUser
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,025 http-8080-4 dbProcs.Getter - User 'admin' has logged in
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,025 http-8080-4 servlets.Login - Creating new session for admin admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,025 http-8080-4 servlets.Login - userClassId = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,025 http-8080-4 servlets.Login - Setting CSRF cookie
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,025 http-8080-4 utils.Hash - Generated String = 161068462489111548428881604110992849057
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,025 http-8080-4 servlets.Login - Temporary Password Detected, user will be prompted to change
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,031 http-8080-4 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,031 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,031 http-8080-4 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,036 http-8080-4 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,038 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,039 http-8080-4 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,039 http-8080-4 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,039 http-8080-4 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,044 http-8080-4 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,045 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,051 http-8080-4 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,051 http-8080-4 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:28,123 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,434 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,434 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,434 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,434 http-8080-4 servlets.module.GetModule - moduleId = 20e755179a5840be5503d42bb3711716235005ea
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,434 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,435 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,435 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,439 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,440 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,440 http-8080-4 dbProcs.Getter - Module CSRF 1 Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,440 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,440 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,446 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,515 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,516 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,516 http-8080-4 servlets.module.GetModule - Returning: challenges&#x2f;s74a796e84e25b854906d88f622170c1c06817e72b526b3d1e9a6085f429cf52.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,516 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,606 http-8080-4 utils.ShepherdLogManager - CSRF Challenge 1 Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,606 http-8080-4 utils.ShepherdLogManager - CSRF Challenge 1 has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,606 http-8080-4 dbProcs.Getter - *** Getter.getModuleIdFromHash ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,607 http-8080-4 dbProcs.Getter - Getting ID from Hash: s74a796e84e25b854906d88f622170c1c06817e72b526b3d1e9a6085f429cf52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,614 http-8080-4 dbProcs.Getter - Gathering moduleGetIdFromHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,614 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetIdFromHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,614 http-8080-4 dbProcs.Getter - *** END getModuleIdFromHash ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,615 http-8080-4 dbProcs.Getter - *** Setter.isCsrfLevelComplete ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,618 http-8080-4 dbProcs.Getter - Preparing csrfLevelComplete call
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,619 http-8080-4 dbProcs.Getter - moduleId: 20e755179a5840be5503d42bb3711716235005ea
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,619 http-8080-4 dbProcs.Getter - userId: c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,620 http-8080-4 dbProcs.Getter - Executing csrfLevelComplete
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,620 http-8080-4 dbProcs.Getter - *** END isCsrfLevelComplete ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,620 http-8080-4 dbProcs.Getter - *** Getter.getModuleIdFromHash ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,620 http-8080-4 dbProcs.Getter - Getting ID from Hash: s74a796e84e25b854906d88f622170c1c06817e72b526b3d1e9a6085f429cf52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,624 http-8080-4 dbProcs.Getter - Gathering moduleGetIdFromHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,624 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetIdFromHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,625 http-8080-4 dbProcs.Getter - *** END getModuleIdFromHash ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,625 http-8080-4 dbProcs.Getter - *** Getter.getCsrfForum ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,625 http-8080-4 dbProcs.Getter - Getting stored messages from class: null
+ERROR admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,628 http-8080-4 dbProcs.Getter - User with Null Class detected
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:35,628 http-8080-4 dbProcs.Getter - *** END getCsrfForum ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,644 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,645 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,645 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,645 http-8080-4 servlets.module.GetModule - moduleId = 52c5394cdedfb2e95b3ad8b92d0d6c9d1370ea9a
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,645 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,645 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,645 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,650 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,650 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,650 http-8080-4 dbProcs.Getter - Module Failure to Restrict URL Access Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,651 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,651 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,655 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,685 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,686 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,687 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;oed23498d53ad1d965a589e257d8366d74eb52ef955e103c813b592dba0477e3.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,687 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,767 http-8080-4 utils.ShepherdLogManager - Failure to Restrict URL Access Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:39:39,768 http-8080-4 utils.ShepherdLogManager - Failure to Restrict URL Access Lesson has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,884 http-8080-4 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,885 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,886 http-8080-4 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,902 http-8080-4 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,904 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,905 http-8080-4 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,906 http-8080-4 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,906 http-8080-4 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,911 http-8080-4 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,912 http-8080-4 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,916 http-8080-4 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:07,917 http-8080-4 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:08,001 http-8080-4 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,739 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,739 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,739 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,739 http-8080-4 servlets.module.GetModule - moduleId = 335440fef02d19259254ed88293b62f31cccdd41
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,739 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,739 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,740 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,744 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,745 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,745 http-8080-4 dbProcs.Getter - Module Client Side Injection Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,745 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,745 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,749 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,755 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,755 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,756 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;f758a97011ec4452cc0707e546a7c0f68abc6ef2ab747ea87e0892767152eae1.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,756 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,801 http-8080-4 utils.ShepherdLogManager - Client Side Injection Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:12,801 http-8080-4 utils.ShepherdLogManager - Client Side Injection Lesson has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,869 http-8080-4 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,870 http-8080-4 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,870 http-8080-4 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,870 http-8080-4 servlets.module.GetModule - moduleId = 0dbea4cb5811fff0527184f99bd5034ca9286f11
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,870 http-8080-4 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,870 http-8080-4 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,870 http-8080-4 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,875 http-8080-4 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,875 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,875 http-8080-4 dbProcs.Getter - Module Insecure Direct Object References Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,876 http-8080-4 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,876 http-8080-4 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,880 http-8080-4 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,885 http-8080-4 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,886 http-8080-4 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,886 http-8080-4 servlets.module.GetModule - Returning: lessons&#x2f;fdb94122d0f032821019c7edf09dc62ea21e25ca619ed9107bcc50e4a8dbc100.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,886 http-8080-4 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,960 http-8080-4 utils.ShepherdLogManager - Insecure Direct Object References Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:18,960 http-8080-4 utils.ShepherdLogManager - Insecure Direct Object References Lesson has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:22,281 http-8080-4 servlets.module.lesson.DirectObjectLesson - Insecure Direct Object Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:22,281 http-8080-4 servlets.module.lesson.DirectObjectLesson - User Submitted - guest
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:22,281 http-8080-4 servlets.module.lesson.DirectObjectLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:22,281 http-8080-4 servlets.module.lesson.DirectObjectLesson - Guest Profile Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:22,282 http-8080-4 servlets.module.lesson.DirectObjectLesson - Outputting HTML
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:27,046 http-8080-4 servlets.module.lesson.DirectObjectLesson - Insecure Direct Object Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:27,046 http-8080-4 servlets.module.lesson.DirectObjectLesson - User Submitted - guest
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:27,046 http-8080-4 servlets.module.lesson.DirectObjectLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:27,046 http-8080-4 servlets.module.lesson.DirectObjectLesson - Guest Profile Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 19 Jun 00:41:27,047 http-8080-4 servlets.module.lesson.DirectObjectLesson - Outputting HTML
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:23,973 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:24,007 http-8080-1 utils.ShepherdLogManager - DEBUG(index.jsp): tokenCookie Error:java.lang.NullPointerException
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:24,008 http-8080-1 utils.Validate - Session has no credentials
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:24,078 http-8080-1 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:33,802 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:33,803 http-8080-1 utils.Validate - Session has no credentials
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:33,807 http-8080-1 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:41,984 http-8080-1 servlets.Login - **** servlets.Login ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:41,986 http-8080-1 servlets.Login - Getting ApplicationRoot
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:41,987 http-8080-1 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:41,988 http-8080-1 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:41,989 http-8080-1 dbProcs.Getter - userName = admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,240 http-8080-1 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,241 http-8080-1 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,241 http-8080-1 dbProcs.Getter - User Found
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,245 http-8080-1 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,263 http-8080-1 dbProcs.Getter - Opening Result Set from authUser
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,264 http-8080-1 dbProcs.Getter - User 'admin' has logged in
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,264 http-8080-1 servlets.Login - Creating new session for admin admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,399 http-8080-1 servlets.Login - userClassId = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,400 http-8080-1 servlets.Login - Setting CSRF cookie
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,400 http-8080-1 utils.Hash - Generated String = -128193415550517080417314756235518197149
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,400 http-8080-1 servlets.Login - Temporary Password Detected, user will be prompted to change
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,404 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,405 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,406 http-8080-1 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,420 http-8080-1 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,421 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,423 http-8080-1 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,424 http-8080-1 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,424 http-8080-1 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,434 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,436 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,445 http-8080-1 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,446 http-8080-1 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:42,603 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,659 http-8080-1 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,660 http-8080-1 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,660 http-8080-1 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,660 http-8080-1 servlets.module.GetModule - moduleId = ef6496892b8e48ac2f349cdd7c8ecb889fc982af
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,660 http-8080-1 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,660 http-8080-1 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,660 http-8080-1 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,674 http-8080-1 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,675 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,676 http-8080-1 dbProcs.Getter - Module Broken Crypto Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,676 http-8080-1 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,676 http-8080-1 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,685 http-8080-1 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,692 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,694 http-8080-1 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,694 http-8080-1 servlets.module.GetModule - Returning: lessons&#x2f;911fa7f4232e096d6a74a0623842c4157e29b9bcc44e8a827be3bb7e58c9a212.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,694 http-8080-1 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,771 http-8080-1 utils.ShepherdLogManager - What is Mobile Broken Crypto? Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:50,776 http-8080-1 utils.ShepherdLogManager - What is Mobile Broken Crypto? has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,147 http-8080-1 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,148 http-8080-1 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,150 http-8080-1 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,150 http-8080-1 servlets.module.GetModule - moduleId = 408610f220b4f71f7261207a17055acbffb8a747
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,150 http-8080-1 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,151 http-8080-1 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,151 http-8080-1 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,166 http-8080-1 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,167 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,167 http-8080-1 dbProcs.Getter - Module SQL Injection Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,167 http-8080-1 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,167 http-8080-1 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,177 http-8080-1 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,191 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,192 http-8080-1 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,192 http-8080-1 servlets.module.GetModule - Returning: lessons&#x2f;e881086d4d8eb2604d8093d93ae60986af8119c4f643894775433dbfb6faa594.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,192 http-8080-1 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,254 http-8080-1 utils.ShepherdLogManager - SQL Injection Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:43:57,254 http-8080-1 utils.ShepherdLogManager - SQL Injection Lesson has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,493 http-8080-1 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,494 http-8080-1 servlets.module.lesson.SqlInjectionLesson - User Submitted - asdf
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,495 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,510 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,510 http-8080-1 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,510 http-8080-1 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:02,510 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,897 http-8080-1 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,897 http-8080-1 servlets.module.lesson.SqlInjectionLesson - User Submitted - 1
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,898 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,904 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,905 http-8080-1 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,905 http-8080-1 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:06,905 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,542 http-8080-1 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,542 http-8080-1 servlets.module.lesson.SqlInjectionLesson - User Submitted - admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,543 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,564 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,564 http-8080-1 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,565 http-8080-1 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:12,565 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,613 http-8080-2 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,615 http-8080-2 servlets.module.lesson.SqlInjectionLesson - User Submitted - admin' OR 'a'='a
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,616 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,636 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,636 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Row 0: User ID = 12345
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,636 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Row 1: User ID = 12346
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,636 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Row 2: User ID = 12543
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,636 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Row 3: User ID = 14232
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Row 4: User ID = 61523
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Row 5: User ID = 82642
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is 12345
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding table
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - outputLength = 10
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,637 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding User user
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,638 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding User OR 1 &#x3d; 1
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,638 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding User Fred Mtenzi
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,638 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding User Mark Denihan
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,638 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding User Cloud
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,638 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Adding User qw&#x21;dshs&#x40;ab
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 23 Jun 23:44:28,638 http-8080-2 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:46,676 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:46,754 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:46,844 http-8080-1 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,358 http-8080-1 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,434 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,439 http-8080-1 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,443 http-8080-1 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,453 http-8080-1 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,477 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,478 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,489 http-8080-1 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,489 http-8080-1 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:47,766 http-8080-3 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:58,168 http-8080-1 utils.ShepherdLogManager - DEBUG: scoreboard.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:58,168 http-8080-1 utils.ShepherdLogManager - Scoreboard accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:01:58,249 http-8080-1 servlets.admin.moduleManagement.GetFeedback - Scoreboard accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:06,866 http-8080-1 utils.ShepherdLogManager - DEBUG: addPlayers.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:06,866 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:06,867 http-8080-1 dbProcs.Getter - *** Getter.getClassInfo (All Classes) ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:06,896 http-8080-1 dbProcs.Getter - Gathering classesGetData ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:06,916 http-8080-1 dbProcs.Getter - Returning Result Set from classesGetData
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:06,916 http-8080-1 dbProcs.Getter - *** END getClassInfo
+DEBUG 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,108 http-8080-1 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,108 http-8080-1 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,109 http-8080-1 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,109 http-8080-1 servlets.module.GetModule - moduleId = 408610f220b4f71f7261207a17055acbffb8a747
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,109 http-8080-1 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,109 http-8080-1 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,110 http-8080-1 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,119 http-8080-1 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,120 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,120 http-8080-1 dbProcs.Getter - Module SQL Injection Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,121 http-8080-1 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,150 http-8080-1 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,160 http-8080-1 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,161 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,162 http-8080-1 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,162 http-8080-1 servlets.module.GetModule - Returning: lessons&#x2f;e881086d4d8eb2604d8093d93ae60986af8119c4f643894775433dbfb6faa594.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,162 http-8080-1 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,247 http-8080-1 utils.ShepherdLogManager - SQL Injection Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:13,248 http-8080-1 utils.ShepherdLogManager - SQL Injection Lesson has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,889 http-8080-1 servlets.module.lesson.SqlInjectionLesson - SQL Injection Lesson servlet accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,889 http-8080-1 servlets.module.lesson.SqlInjectionLesson - User Submitted - af' OR '1'='1
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,890 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,971 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Opening Result Set from query
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,973 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Row 0: User ID = 12345
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,974 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Row 1: User ID = 12346
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,975 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Row 2: User ID = 12543
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,979 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Row 3: User ID = 14232
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,980 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Row 4: User ID = 61523
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,980 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Row 5: User ID = 82642
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,981 http-8080-1 servlets.module.lesson.SqlInjectionLesson - That's All
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,981 http-8080-1 servlets.module.lesson.SqlInjectionLesson - output returned. [0][0] is 12345
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,982 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding table
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,982 http-8080-1 servlets.module.lesson.SqlInjectionLesson - outputLength = 10
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,983 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding User user
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,983 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding User OR 1 &#x3d; 1
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,983 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding User Fred Mtenzi
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,988 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding User Mark Denihan
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,989 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding User Cloud
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,990 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Adding User qw&#x21;dshs&#x40;ab
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 24 Jun 00:02:26,990 http-8080-1 servlets.module.lesson.SqlInjectionLesson - Outputting HTML
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:13:58,608 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:13:58,705 http-8080-1 utils.Validate - Session has no credentials
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:13:58,768 http-8080-2 utils.ShepherdLogManager - Sombody Conntected to login.jsp ...
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:41,483 http-8080-1 servlets.Login - **** servlets.Login ***
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:41,486 http-8080-1 servlets.Login - Getting ApplicationRoot
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:41,492 http-8080-1 servlets.Login - Servlet root = /var/lib/tomcat6/webapps/shepherd
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:41,494 http-8080-1 dbProcs.Getter - $$$ Getter.authUser $$$
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:41,495 http-8080-1 dbProcs.Getter - userName = admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,404 http-8080-1 dbProcs.Getter - Gathering userFind ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,406 http-8080-1 dbProcs.Getter - Opening Result Set from userFind
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,407 http-8080-1 dbProcs.Getter - User Found
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,414 http-8080-1 dbProcs.Getter - Gathering authUser ResultSet
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,460 http-8080-1 dbProcs.Getter - Opening Result Set from authUser
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,461 http-8080-1 dbProcs.Getter - User 'admin' has logged in
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,462 http-8080-1 servlets.Login - Creating new session for admin admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,703 http-8080-1 servlets.Login - userClassId = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,707 http-8080-1 servlets.Login - Setting CSRF cookie
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,709 http-8080-1 utils.Hash - Generated String = -105445044978164857352275309972282482381
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,711 http-8080-1 servlets.Login - Temporary Password Detected, user will be prompted to change
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,740 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,744 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,853 http-8080-1 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,934 http-8080-1 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,938 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,948 http-8080-1 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,958 http-8080-1 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:42,962 http-8080-1 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:43,012 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:43,022 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:43,077 http-8080-1 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:43,079 http-8080-1 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:43,503 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:56,486 http-8080-1 utils.ShepherdLogManager - DEBUG: aboutShepherd.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:15:56,488 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,257 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,260 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,261 http-8080-1 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,336 http-8080-1 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,340 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,342 http-8080-1 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,345 http-8080-1 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,346 http-8080-1 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,383 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,389 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,410 http-8080-1 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,412 http-8080-1 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:19,809 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:59,955 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:59,958 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:59,962 http-8080-1 utils.ShepherdLogManager - Thread Parameter = null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:26:59,965 http-8080-1 utils.ShepherdLogManager - Thread Cookie Value = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,492 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,495 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,496 http-8080-1 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,554 http-8080-1 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,563 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,573 http-8080-1 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,582 http-8080-1 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,585 http-8080-1 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,624 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,632 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,662 http-8080-1 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,664 http-8080-1 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:04,916 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:06,809 http-8080-1 utils.ShepherdLogManager - DEBUG: scoreboard.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:06,811 http-8080-1 utils.ShepherdLogManager - Scoreboard accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:07,130 http-8080-1 servlets.admin.moduleManagement.GetFeedback - Scoreboard accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,262 http-8080-1 servlets.module.GetModule - &&& servlets.module.GetModule &&&
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,267 http-8080-1 servlets.module.GetModule - Current User: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,271 http-8080-1 servlets.module.GetModule - Getting Parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,272 http-8080-1 servlets.module.GetModule - moduleId = ca8233e0398ecfa76f9e05a49d49f4a7ba390d07
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,273 http-8080-1 servlets.module.GetModule - Getting session parameters
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,273 http-8080-1 servlets.module.GetModule - userId = c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,274 http-8080-1 dbProcs.Getter - *** Getter.getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,313 http-8080-1 dbProcs.Getter - Gathering moduleGetResult ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,321 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetResult
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,322 http-8080-1 dbProcs.Getter - Module Cross Site Scripting Found
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,323 http-8080-1 dbProcs.Getter - *** END getModuleResult ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,346 http-8080-1 dbProcs.Getter - *** Getter.getModuleAddress ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,370 http-8080-1 dbProcs.Getter - Gathering moduleGetHash ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,380 http-8080-1 dbProcs.Getter - Opening Result Set from moduleGetHash
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,381 http-8080-1 dbProcs.Getter - *** END getModuleAddress() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,382 http-8080-1 servlets.module.GetModule - Returning: lessons&#x2f;zf8ed52591579339e590e0726c7b24009f3ac54cdff1b81a65db1688d86efb3a.jsp
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,382 http-8080-1 servlets.module.GetModule - &&& END GetModule &&&
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,923 http-8080-1 utils.ShepherdLogManager - Cross Site Scripting Lesson Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:27:15,924 http-8080-1 utils.ShepherdLogManager - Cross Site Scripting Lesson has been accessed by admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:23,001 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:23,004 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:23,004 http-8080-1 utils.ShepherdLogManager - Thread Parameter = null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:23,005 http-8080-1 utils.ShepherdLogManager - Thread Cookie Value = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:49,557 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:49,558 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:49,559 http-8080-1 utils.ShepherdLogManager - Thread Parameter = null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:49,560 http-8080-1 utils.ShepherdLogManager - Thread Cookie Value = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:50,381 http-8080-2 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:50,382 http-8080-2 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:50,383 http-8080-2 utils.ShepherdLogManager - Thread Parameter = null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:28:50,383 http-8080-2 utils.ShepherdLogManager - Thread Cookie Value = null
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:29:19,931 http-8080-2 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:29:19,932 http-8080-2 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:29:19,933 http-8080-2 utils.ShepherdLogManager - Thread Parameter = null
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:29:19,934 http-8080-2 utils.ShepherdLogManager - Thread Cookie Value = null
+DEBUG 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:29,134 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp Accessed
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:29,136 http-8080-1 utils.ShepherdLogManager - ReadyToPlay.jsp has been accessed by admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:29,137 http-8080-1 utils.ShepherdLogManager - Thread Parameter = null
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:29,138 http-8080-1 utils.ShepherdLogManager - Thread Cookie Value = null
+DEBUG 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,615 http-8080-5 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,616 http-8080-5 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,617 http-8080-5 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,643 http-8080-5 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,647 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,660 http-8080-5 dbProcs.Getter - Lesson List returned
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,664 http-8080-5 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,665 http-8080-5 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,691 http-8080-5 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,699 http-8080-5 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,731 http-8080-5 dbProcs.Getter - Appending End tags
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:32,735 http-8080-5 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:33,045 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:45,517 http-8080-1 utils.ShepherdLogManager - DEBUG: feedback.jsp *************************
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:45,518 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:45,519 http-8080-1 dbProcs.Getter - *** Getter.getModulesInOptionTags ***
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:45,536 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:45,538 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:45,547 http-8080-1 dbProcs.Getter - *** END getModulesInOptionTags() ***
+DEBUG 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:54,386 http-8080-1 utils.ShepherdLogManager - DEBUG: scoreboard.jsp *************************
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:54,433 http-8080-1 utils.ShepherdLogManager - Scoreboard accessed by: admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:29:54,725 http-8080-1 servlets.admin.moduleManagement.GetFeedback - Scoreboard accessed by admin
+DEBUG admin at 192.168.171.1 from ?.?.?.? @ 30 Jul 22:31:34,569 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:08,651 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,290 http-8080-1 utils.ShepherdLogManager - DEBUG: index.jsp *************************
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,292 http-8080-1 utils.ShepherdLogManager - Accessed by: admin
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,295 http-8080-1 dbProcs.Getter - *** Getter.getLesson ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,348 http-8080-1 dbProcs.Getter - Gathering lessonInfo ResultSet for user c7ad33304313f87dd2f149aa2c7bd301514dfe52
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,352 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,353 http-8080-1 dbProcs.Getter - Lesson List returned
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,354 http-8080-1 dbProcs.Getter - *** END getLesson() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,355 http-8080-1 dbProcs.Getter - *** Getter.getChallenges ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,388 http-8080-1 dbProcs.Getter - Gathering moduleAllInfo ResultSet
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,392 http-8080-1 dbProcs.Getter - Opening Result Set from moduleAllInfo
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,416 http-8080-1 dbProcs.Getter - Appending End tags
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,417 http-8080-1 dbProcs.Getter - *** END getChallenges() ***
+DEBUG admin at 127.0.0.1 from 192.168.171.1 @ 30 Jul 22:33:12,722 http-8080-1 utils.ShepherdLogManager - Accessed by: admin

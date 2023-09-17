@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Squid - Proxy Server</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="web-servers.html" title="Chapter 10. Web Servers" />
+    <link rel="prev" href="php5.html" title="PHP5 - Scripting Language" />
+    <link rel="next" href="ruby-on-rails.html" title="Ruby on Rails" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="web-servers.html">Web Servers</a></span> &gt; <span class="breadcrumb-node">Squid - Proxy Server</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Squid - Proxy Server">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="squid"></a>Squid - Proxy Server</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+          Squid is a full-featured web proxy cache server application which provides proxy and cache services for Hyper Text
+          Transport Protocol (HTTP), File Transfer Protocol (FTP), and other popular network protocols.  Squid can implement
+          caching and proxying of Secure Sockets Layer (SSL) requests and caching of Domain Name Server (DNS) lookups, and perform
+          transparent caching. Squid also supports a wide variety of caching protocols, such as Internet Cache Protocol, (ICP)
+          the Hyper Text Caching Protocol, (HTCP) the Cache Array Routing Protocol (CARP), and the Web Cache Coordination 
+          Protocol. (WCCP) 
+          </p>
+              <p>
+          The Squid proxy cache server is an excellent solution to a variety of proxy and caching server needs, and scales from
+          the branch office to enterprise level networks while providing extensive, granular access control mechanisms and
+          monitoring of critical parameters via the Simple Network Management Protocol (SNMP).  When selecting a computer system
+          for use as a dedicated Squid proxy, or caching servers, ensure your system is configured with a large amount of physical
+          memory, as Squid maintains an in-memory cache for increased performance.
+          </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="squid-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            At a terminal prompt, enter the following command to install the Squid server:
+          </p>
+                <p>
+</p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install squid</strong></span>
+</pre>
+                <p>
+          </p>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="squid-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            Squid is configured by editing the directives contained within the <code class="filename">/etc/squid/squid.conf</code> configuration file.
+            The following examples illustrate some of the directives which may be modified to affect the behavior of the Squid server.
+            For more in-depth configuration of Squid, see the References section. 
+          </p>
+                <div class="tip" title="Tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Tip]" src="../../libs/admon/tip.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>Prior to editing the configuration file, you should make a copy of the original file and protect it 
+               from writing so you will have the original settings as a reference, and to re-use as necessary.
+               </p>
+                        <p>Copy the <code class="filename">/etc/squid/squid.conf</code> file and protect it from writing with the following commands entered at a terminal prompt:
+               </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+</p>
+                <pre class="screen">
+<span class="command"><strong>sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.original</strong></span>
+<span class="command"><strong>sudo chmod a-w /etc/squid/squid.conf.original</strong></span>
+</pre>
+                <p>
+               </p>
+                <p>
+           </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+                  To set your Squid server to listen on TCP port 8888 instead of the default TCP port 3128, change
+                  the http_port directive as such:
+                  </p>
+                      <pre class="programlisting">
+http_port 8888
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                  Change the visible_hostname directive in order to give the Squid server a specific hostname.  This hostname
+                  does not necessarily need to be the computer's hostname. In this example it is set to <span class="emphasis"><em>weezie</em></span>
+                  </p>
+                      <pre class="programlisting">
+visible_hostname weezie
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                     Using Squid's access control, you may configure use of Internet services proxied by Squid
+                     to be available only users with certain Internet Protocol (IP) addresses.  For example, we will illustrate access 
+                     by users of the 192.168.42.0/24 subnetwork only:
+                  </p>
+                      <p>
+                     Add the following to the <span class="bold"><strong>bottom</strong></span> of the ACL section of your <code class="filename">/etc/squid/squid.conf</code> file:
+                  </p>
+                      <pre class="programlisting">
+acl fortytwo_network src 192.168.42.0/24
+</pre>
+                      <p>
+                     Then, add the following to the <span class="bold"><strong>top</strong></span> of the http_access section of your
+                     <code class="filename">/etc/squid/squid.conf</code> file:
+                  </p>
+                      <pre class="programlisting">
+http_access allow fortytwo_network
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                     Using the excellent access control features of Squid, you may configure use of Internet services proxied by Squid
+                     to be available only during normal business hours.  For example, we'll illustrate access by employees of a business
+                     which is operating between 9:00AM and 5:00PM, Monday through Friday, and which uses the 10.1.42.0/42 subnetwork:
+                  </p>
+                      <p>
+                     Add the following to the <span class="bold"><strong>bottom</strong></span> of the ACL section of your <code class="filename">/etc/squid/squid.conf</code> file:
+                  </p>
+                      <pre class="programlisting">
+acl biz_network src 10.1.42.0/24
+acl biz_hours time M T W T F 9:00-17:00
+</pre>
+                      <p>
+                     Then, add the following to the <span class="bold"><strong>top</strong></span> of the http_access section of your
+                     <code class="filename">/etc/squid/squid.conf</code> file:
+                  </p>
+                      <pre class="programlisting">
+http_access allow biz_network biz_hours
+</pre>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+          </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+          After making changes to the <code class="filename">/etc/squid/squid.conf</code> file, save the file and restart the <span class="application"><strong>squid</strong></span> 
+          server application to effect the changes using the following command entered at a terminal prompt:
+          </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+</p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/squid restart</strong></span>
+</pre>
+                <p>
+          </p>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="squid-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      <a class="ulink" href="http://www.squid-cache.org/" target="_top">Squid Website</a>
+      </p>
+                <p>
+      <a class="ulink" href="https://help.ubuntu.com/community/Squid" target="_top">Ubuntu Wiki Squid</a> page.
+      </p>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="php5.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="web-servers.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="ruby-on-rails.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">PHP5 - Scripting Language </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Ruby on Rails</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

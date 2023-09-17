@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jdom</groupId>
+	<artifactId>jdom</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.1.1</debian.originalVersion>
+		<debian.package>libjdom1-java</debian.package>
+	</properties>
+	
+	<name>JDOM</name>
+	<description>JDOM is, quite simply, a Java representation of an XML document. JDOM provides a way to represent that document for
+    easy and efficient reading, manipulation, and writing. It has a straightforward API, is a lightweight and fast, and
+    is optimized for the Java programmer. It's an alternative to DOM and SAX, although it integrates well with both DOM
+    and SAX.</description>
+	<url>http://www.jdom.org/</url>
+	<scm>
+		<connection>scm:cvs:pserver:anonymous@cvs.jdom.org:/home/cvspublic:jdom</connection>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,13 @@
+c33572440c0fb9145fce3fd4faf63100  usr/lib/ruby/1.8/blankslate.rb
+f7b1b3f89e53afb6f454d98c4bb6cea0  usr/lib/ruby/1.8/builder/blankslate.rb
+8f471479465ecf96c61513652cc109f4  usr/lib/ruby/1.8/builder/xchar.rb
+891c84264541d1f13b60e2873899ad52  usr/lib/ruby/1.8/builder/xmlbase.rb
+f22f5a1531a0cc7e6d7656d85a5b3a52  usr/lib/ruby/1.8/builder/xmlevents.rb
+68dc9dd80b61c2d312ae7c17803c1522  usr/lib/ruby/1.8/builder/xmlmarkup.rb
+e45d8c4a7a010eaae8ede4c499d14818  usr/lib/ruby/1.8/builder/css.rb
+5fb5f2142f1be189de1fc8cc7f3dde8a  usr/lib/ruby/1.8/builder.rb
+41b9aa601f1cb693c75066db18b958ed  usr/share/doc/libbuilder-ruby1.8/changelog.gz
+9afa1575731eaef85105855e7aab5763  usr/share/doc/libbuilder-ruby1.8/builder-2.1.1.rdoc
+0676e75ee32df75b8ca2fc370b01e385  usr/share/doc/libbuilder-ruby1.8/copyright
+2ec7cbc1eb53026e9d581dd80e468e8c  usr/share/doc/libbuilder-ruby1.8/README.rdoc.gz
+670c6b1cf5e7f6cee216b8e4f273027f  usr/share/doc/libbuilder-ruby1.8/changelog.Debian.gz

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Grabs errors from an array of messages (like ActiveRecord::Validations)
+full_name: ActiveResource::Errors#from_array
+is_singleton: false
+name: from_array
+params: (messages)
+visibility: public

@@ -1,0 +1,6 @@
+UtsRelease 2.4.22-10mdkenterprise
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Mandrake 9.2 enterprise
+UtsMachine i386

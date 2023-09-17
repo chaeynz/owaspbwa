@@ -1,0 +1,10 @@
+libjs-prototype for Debian
+--------------------------
+
+In order to make use of prototype in your html, include the following lines in
+your html header:
+
+	<script language="javascript" type="text/javascript"
+	src="/javascript/prototype/prototype.js"></script>
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 27 Feb 2008 00:02:00 +0100

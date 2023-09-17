@@ -1,0 +1,17 @@
+3752002f953747896644db6532efc8df  bin/plymouth
+ac26da15d80756a32fd8d173ea5e7762  sbin/plymouthd
+a6d7e544ccb879295c56ab92c4c9d6c9  lib/plymouth/script.so
+768ba7854448a66a59bfbc2812622760  lib/plymouth/renderers/drm.so
+7876944715640555688c1b1874e3d07c  lib/plymouth/renderers/frame-buffer.so
+e58af506d96f1f175a5d46861b29d963  lib/plymouth/renderers/vga16fb.so
+0ad7c8ec2112cd4b7d686e2940bd12d0  lib/plymouth/details.so
+3b47ede8c1017c0945bfdce42f7f4563  lib/plymouth/themes/details/details.plymouth
+3a465f827bcfc38432c56f9a4253501f  lib/plymouth/ubuntu-logo.png
+801fc110eafa8bdbfd31e5394028d585  usr/share/initramfs-tools/hooks/plymouth
+9089ec013b58c96a19ec71f70e975dc3  usr/share/initramfs-tools/scripts/init-top/plymouth
+a2021995217a65c4b1b6367d5c022025  usr/share/initramfs-tools/scripts/init-bottom/plymouth
+e14d23ba0997bcf4486ba2784ce593d7  usr/share/initramfs-tools/scripts/panic/plymouth
+0519c2e6ce5c00ba1b914793ff397e02  usr/share/doc/plymouth/README.Debian
+ca8eb4d38386aa5de79023eb309ee8e9  usr/share/doc/plymouth/copyright
+784349295b1c6370de5ff585743264db  usr/share/doc/plymouth/changelog.gz
+fb6df9e1fdb21b7db89e089739bfbde5  usr/share/doc/plymouth/changelog.Debian.gz

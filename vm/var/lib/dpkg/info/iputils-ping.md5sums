@@ -1,0 +1,7 @@
+85ad4f1b4b19ce87fc45d56b50b00676  bin/ping
+fca87207e9ab7e753694c0ef8559ee7e  bin/ping6
+319094a5bad43d67b69bf441141b210a  usr/share/lintian/overrides/iputils-ping
+8af0bffff357b496b8f4eec99aa6342d  usr/share/doc/iputils-ping/copyright
+2025d54e3180956f3df3befa041a26fa  usr/share/doc/iputils-ping/RELNOTES.gz
+35ae33d5859466816859274ec265412f  usr/share/doc/iputils-ping/changelog.Debian.gz
+2f38d4f69dc24166f953f9ee41e1b1ff  usr/share/man/man8/ping.8.gz

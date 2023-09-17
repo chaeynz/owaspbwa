@@ -1,0 +1,366 @@
+###
+### mysql bindings for dbconfig-common
+###
+###	all variables and functions fall under the namespace "dbc_foo" and
+###	"_dbc_foo", depending on whether or not they are "external"
+###
+
+# get some common functions
+. ${_dbc_root:-/usr/share/dbconfig-common}/internal/common
+
+##
+## pass configuration options securely to the mysql client
+##
+_dbc_generate_mycnf(){
+	local mycnf l_date
+	mycnf=`dbc_mktemp dbconfig-common_my.cnf.XXXXXX` || return 1
+	l_date=`date`
+	cat << EOF > "$mycnf"
+# temporary my.cnf generated for usage by dbconfig-common 
+# generated on $l_date
+# if you're reading this, it probably means something went wrong and
+# for some strange reason dbconfig-common was not able to clean up after itself.
+# you can safely delete this file
+
+[client]
+user		= '${dbc_dbadmin:-}'
+password	= '${dbc_dbadmpass:-}'
+host		= '${dbc_dbserver:-}'
+port		= '${dbc_dbport:-}'
+socket	  = '/var/run/mysqld/mysqld.sock'
+
+[mysqldump]
+user		= '${dbc_dbadmin:-}'
+password	= '${dbc_dbadmpass:-}'
+host		= '${dbc_dbserver:-}'
+port		= '${dbc_dbport:-}'
+socket	  = '/var/run/mysqld/mysqld.sock'
+
+EOF
+	echo $mycnf
+}
+
+##
+## check that we can actually connect to the specified mysql server
+##
+## TODO: don't smash stdout/stderr together
+_dbc_mysql_check_connect(){
+	local constat mycnf
+	constat="bad"
+	mycnf=`_dbc_generate_mycnf`
+	dbc_error=`mysql --defaults-extra-file="$mycnf" </dev/null 2>&1` && constat=good
+	rm -f "$mycnf"
+	if [ "$constat" = "bad" ]; then
+		dbc_logline "$dbc_error"
+		dbc_logline "unable to connect to mysql server"
+		return 1
+	fi
+}
+
+##
+## execute a file with mysql commands
+##
+##	note this is done without passing any sensitive info on the cmdline
+##
+dbc_mysql_exec_file(){
+	local l_sqlfile l_retval l_error l_dbname l_errfile
+	l_sqlfile=$1
+	l_errfile="`dbc_mktemp dbconfig-common_sql_exec_error.XXXXXX`"
+	l_retval=0
+
+	if [ ! "$l_sqlfile" ]; then
+		dbc_error="no file supplied to execute"
+		dbc_log="no file supplied to execute"
+		rm -f "$l_errfile"
+		return 1
+	elif [ ! -f "$l_sqlfile" ]; then
+		dbc_error="file $l_sqlfile missing"
+		dbc_log="file $l_sqlfile missing"
+		rm -f "$l_errfile"
+		return 1
+	fi
+
+	l_dbname=
+	if [ ! "${_dbc_nodb:-}" ]; then
+		l_dbname="$dbc_dbname"
+	fi
+
+	mycnf=`_dbc_generate_mycnf`
+	if ! mysql --defaults-extra-file="$mycnf" $l_dbname 2>"$l_errfile" <"$l_sqlfile"; then
+		l_retval=1
+		dbc_error="mysql said: `cat \"$l_errfile\"`"
+	fi
+	rm -f "$mycnf" "$l_errfile"
+	return $l_retval
+}
+
+##
+## execute a specific mysql command
+##
+##	note this is done without passing any sensitive info on the cmdline,
+##	including the mysql command itself
+##
+dbc_mysql_exec_command(){
+	local statement l_sqlfile l_retval
+	statement=$@
+	l_retval=0
+	l_sqlfile=`dbc_mktemp dbconfig-common_sqlfile.XXXXXX`
+	cat << EOF > $l_sqlfile
+$statement
+EOF
+	dbc_mysql_exec_file "$l_sqlfile"
+	l_retval=$?
+	rm -f "$l_sqlfile"
+	return $l_retval
+}
+
+##
+## check for the existance of a specified database
+##
+_dbc_mysql_check_database(){
+	local dbc_dbname local _dbc_nodb
+	dbc_dbname=$1
+	_dbc_nodb="yes" 
+	dbc_mysql_exec_command "SHOW DATABASES" 2>/dev/null | grep -q "^$dbc_dbname\$"
+	return $?
+}
+
+##
+## check for access for a specific user
+##
+##	this works by checking the grants for the user, so we can verify that
+##	not only does the user exist, but that it should be able to connect
+##
+dbc_mysql_check_user(){
+	local l_dballow l_retval _dbc_nodb
+	if [ ! "${dbc_dballow:-}" ]; then
+		if [ ! "${dbc_dbserver:-}" ] || [ "$dbc_dbserver" = "localhost" ]; then
+			l_dballow=localhost
+		else
+			l_dballow=`hostname`
+		fi
+	else
+		l_dballow="$dbc_dballow"
+	fi
+
+	if ! _dbc_nodb="yes" dbc_mysql_exec_command "SHOW GRANTS FOR '$dbc_dbuser'@'$l_dballow'" | grep -qi "GRANT .* ON \`$dbc_dbname\`"; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+###
+### externally supplied functions
+###
+###	included inline are some slightly modified / corrected comments from 
+###	the respective original	functions provided by wwwconfig-common, and
+###	comments of similar style for now functions
+###
+###	all functions return non-zero on error
+###
+
+dbc_mysql_createdb(){
+	local ret l_dbname _dbc_nodb
+
+	_dbc_sanity_check dbname dbadmin mysql || return 1
+	_dbc_mysql_check_connect || return 1
+
+	dbc_logpart "creating database $dbc_dbname:"
+
+	if _dbc_mysql_check_database "$dbc_dbname"; then
+		dbc_logline "already exists"
+	else
+		_dbc_nodb="yes" dbc_mysql_exec_command "CREATE DATABASE $dbc_dbname"
+		ret=$?
+		_dbc_nodb=""
+		if [ "$ret" = "0" ]; then
+			dbc_logline "success"
+			dbc_logpart "verifying database $dbc_dbname exists:"
+			if ! _dbc_mysql_check_database "$dbc_dbname"; then
+				dbc_logline "failed"
+				return 1
+			else
+				dbc_logline "success"
+			fi
+		else
+			dbc_logline "failed"
+			return 1
+		fi
+	fi
+}
+
+# File:		mysql-dropdb.sh
+# Needs:	$dbc_dbname    - the database that user should have access to.
+#		$dbc_dbserver  - the server to connect to.
+#		$dbc_dbadmin   - the administrator name.
+#		$dbc_dbadmpass - the administrator password.
+# Description:	drops a database.
+
+dbc_mysql_dropdb(){
+	_dbc_sanity_check dbname dbadmin mysql || return 1
+	_dbc_mysql_check_connect || return 1
+
+	dbc_logpart "dropping database $dbc_dbname:"
+
+	if _dbc_mysql_check_database "$dbc_dbname"; then
+		if dbc_mysql_exec_command "DROP DATABASE $dbc_dbname"; then
+			dbc_logline "success"
+			dbc_logpart "verifying database $dbc_dbname was dropped:"
+			if _dbc_mysql_check_database "$dbc_dbname"; then
+				dbc_logline "failed"
+				return 1
+			else
+				dbc_logline "success"
+			fi
+		else
+			dbc_logline "failed"
+			return 1
+		fi
+	else
+		dbc_logline "database does not exist"
+	fi
+}
+
+# File:		mysql-createuser.sh
+# Description:	Creates or replaces a database user.
+# Needs:	$dbc_dbuser    - the user name to create (or replace).
+#		$dbc_dballow   - what hosts to allow. defaults to localhost/hostname
+#		$dbc_dbname    - the database that user should have access to.
+#		$dbc_dbpass    - the password to use.
+#		$dbc_dbserver  - the server to connect to (defaults to localhost).
+#		$dbc_dbadmin   - the administrator name.
+#		$dbc_dbadmpass - the administrator password.
+
+dbc_mysql_createuser(){
+	local l_dballow l_sqlfile l_dbname l_ret
+
+	_dbc_sanity_check dbuser dbname dbadmin mysql || return 1
+	_dbc_mysql_check_connect || return 1
+
+	if [ ! "${dbc_dballow:-}" ]; then 
+		if [ ! "${dbc_dbserver:-}" ] || [ "$dbc_dbserver" = "localhost" ]; then
+			l_dballow=localhost
+		else
+			l_dballow=`hostname`
+		fi
+	else
+		l_dballow="$dbc_dballow" 
+	fi
+
+	dbc_logpart "granting access to database $dbc_dbname for $dbc_dbuser@$l_dballow:"
+
+	l_sqlfile=`dbc_mktemp dbconfig-common.sql.XXXXXX`
+
+	cat << EOF > "$l_sqlfile"
+GRANT ALL PRIVILEGES ON \`$dbc_dbname\`.* TO \`$dbc_dbuser\`@'$l_dballow' IDENTIFIED BY '`dbc_mysql_escape_str $dbc_dbpass`';
+FLUSH PRIVILEGES;
+EOF
+	if dbc_mysql_check_user; then
+		dbc_logline "already exists"
+	else
+		l_dbname=$dbc_dbname
+		_dbc_nodb="yes" dbc_mysql_exec_file "$l_sqlfile"
+		l_ret=$?
+		_dbc_nodb=""
+
+		if [ "$l_ret" = "0" ]; then
+			dbc_logline "success"
+			dbc_logpart "verifying access for $dbc_dbuser@$l_dballow:"
+			if ! dbc_mysql_check_user ; then
+				l_ret=1
+				dbc_logline "failed"
+			else
+				dbc_logline "success"
+			fi
+		else
+			dbc_logline "failed"
+		fi
+	fi
+	rm -f "$l_sqlfile"
+	return $l_ret
+}
+
+# File:		mysql-dropuser.sh
+# Needs:	$dbc_dbuser    - the user name to create (or replace).
+#		$dbc_dballow   - what hosts to allow (defaults to %).
+#		$dbc_dbname    - the database that user should have access to.
+#		$dbc_dbserver  - the server to connect to.
+#		$dbc_dbadmin   - the administrator name.
+#		$dbc_dbadmpass - the administrator password.
+# Description:	drops a database user.
+
+dbc_mysql_dropuser(){
+	local l_sqlfile l_dballow l_ret _dbc_nodb
+
+	_dbc_sanity_check dbuser dbname dbadmin mysql || return 1
+	_dbc_mysql_check_connect || return 1
+
+	if [ ! "$dbc_dballow" ]; then
+		if [ ! "${dbc_dbserver:-}" ] || [ "$dbc_dbserver" = "localhost" ]; then
+			l_dballow=localhost
+		else
+			l_dballow=`hostname`
+		fi
+	else
+		l_dballow="$dbc_dballow"
+	fi
+
+	dbc_logpart "revoking access to database $dbc_dbname from $dbc_dbuser@$l_dballow:"
+	if ! dbc_mysql_check_user; then
+		dbc_logline "access does not exist"
+	else
+		l_sqlfile=`dbc_mktemp dbconfig-common.sql.XXXXXX`
+
+		cat << EOF > "$l_sqlfile"
+REVOKE ALL PRIVILEGES ON \`$dbc_dbname\`.* FROM '$dbc_dbuser'@'$l_dballow';
+FLUSH PRIVILEGES;
+EOF
+		_dbc_nodb="yes"
+		if dbc_mysql_exec_file "$l_sqlfile" 2>/dev/null; then
+			dbc_logline "success"
+			l_ret=0
+		else
+			dbc_logline "failed"
+			l_ret=1
+		fi
+		# XXX no verification!
+		rm -f "$l_sqlfile"
+		return $l_ret
+	fi
+}
+
+##
+## perform mysqldump
+##
+dbc_mysql_dump(){
+	local mycnf dumperr db dumpfile old_umask
+	_dbc_sanity_check dbname dbadmin mysql || return 1
+	_dbc_mysql_check_connect || return 1
+	dumpfile=$1
+	dumperr=0
+	old_umask=`umask`
+	umask 0066
+	mycnf=`_dbc_generate_mycnf`
+	dbc_error=`mysqldump --defaults-file="$mycnf" $dbc_dbname 2>&1 >"$dumpfile"` || dumperr=1
+	umask $old_umask
+	rm -f "$mycnf"
+	return $dumperr
+}
+
+##
+## basic installation check
+##
+dbc_mysql_db_installed(){
+	which mysqld >/dev/null 2>&1
+}
+
+##
+## dbc_mysql_escape_str: properly escape strings passed to mysql queries
+##
+dbc_mysql_escape_str(){
+	sed -e 's,\\,\\&,g' -e "s,',\\\\&,g" << EOF
+$1
+EOF
+}
+

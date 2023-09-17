@@ -1,0 +1,7 @@
+commons-fileupload
+==================
+
+Support for the Portlet API is disabled in this package due to
+restrictions in the availability of it.
+ 
+  -- Michael Koch <konqueror@gmx.de>  Fri, 20 Jul 2007 07:20:00 +0200

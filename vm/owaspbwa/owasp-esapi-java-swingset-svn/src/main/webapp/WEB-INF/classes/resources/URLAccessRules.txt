@@ -1,0 +1,6 @@
+# URL Access Rules
+#
+
+/ESAPI_Swingset/test.jsp     | any      | allow  |
+/ESAPI_Swingset/test1.jsp    | admin    | allow  |
+

@@ -1,0 +1,20 @@
+This package was debianized by Adam Heath <doogie@brainfood.com> on
+Sunday, July 21, 2002.
+
+It is currently maintained by the Debian Java Maintainers
+<pkg-java-maintainers@lists.alioth.debian.org>.
+
+The source was downloaded from <http://commons.apache.org/pool/>.
+
+Upstream authors: Craig McClanahan, David Weinrich, Dirk Verbeeck,
+Geir Magnusson, Morgan Delagrange, Robert Burrell Donkin, Rodney
+Waldhoff, Sandy McArthur, Todd Carmichael.
+
+Copyright (C) 1999-2009 The Apache Software Foundation.
+License: Apache 2.0
+  On Debian systems the full text of the Apache License can be found
+  in `/usr/share/common-licenses/Apache-2.0'.
+
+The contributions to the Debian packaging by Marcus Better are
+Copyright (C) 2006 Marcus Better <marcus@better.se> and are licensed
+under the Apache License, Version 2.0.

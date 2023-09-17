@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/plugins/aptchannelsync.py

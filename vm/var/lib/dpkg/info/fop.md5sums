@@ -1,0 +1,12 @@
+454653c0e628a1420bab3c1ad18b0ee9  usr/share/java/fop-0.95.jar
+684eeb17f9fc765dbc46f54703b4820d  usr/share/maven-repo/org/apache/xmlgraphics/fop/0.95/fop-0.95.pom
+a64067da9197d475d2ac82b0e838fdbc  usr/share/maven-repo/org/apache/xmlgraphics/fop/debian/fop-debian.pom
+5ab536283fc5235916f75f1cbab0f2d2  usr/share/doc/fop/fop.xconf
+1e929e29570d007e34ef2c84efe18769  usr/share/doc/fop/README.Debian
+256fcbc09498e55db0ad4df02122e595  usr/share/doc/fop/copyright
+7bdeaf2583f511eae5e077f57bd657f0  usr/share/doc/fop/README.gz
+32ded5b40b59f6e28a77d904efdc5d13  usr/share/doc/fop/changelog.Debian.gz
+25ba2de34fd5dfbcd121c29fccba6d88  usr/share/man/man1/fop.1.gz
+9fa21b499c121766310aac186a2f3cb6  usr/share/man/man1/fop-ttfreader.1.gz
+3622091a7a497e3c3ae7ce7e3f390ac6  usr/bin/fop
+b2a7d29a47c02f55086d21c9faf7f34a  usr/bin/fop-ttfreader

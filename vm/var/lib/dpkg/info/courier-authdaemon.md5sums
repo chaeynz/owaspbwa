@@ -1,0 +1,4 @@
+18282c8fb425969ce5d12bb9f4d8c91e  usr/share/doc/courier-authdaemon/copyright
+a79808dab76f168fd2eaa8f7f4428456  usr/share/doc/courier-authdaemon/changelog.Debian.gz
+f7576892210b7fde1fa8c775bb890b36  usr/share/lintian/overrides/courier-authdaemon
+9185232051063d79476c49b2deb42bbd  usr/sbin/authdaemond

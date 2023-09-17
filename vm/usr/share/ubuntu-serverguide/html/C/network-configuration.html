@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Network Configuration</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="networking.html" title="Chapter 4. Networking" />
+    <link rel="prev" href="networking.html" title="Chapter 4. Networking" />
+    <link rel="next" href="tcpip.html" title="TCP/IP" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="networking.html">Networking</a></span> &gt; <span class="breadcrumb-node">Network Configuration</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Network Configuration">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="network-configuration"></a>Network Configuration</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+	Ubuntu ships with a number of graphical utilities to configure your 
+	network devices.  This document is geared toward server administrators 
+	and will focus on managing your	network on the command line.
+    </p>
+              <div class="sect2" title="Ethernet Interfaces">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ethernet-interfaces"></a>Ethernet Interfaces</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+		Ethernet interfaces are identified by the system using the naming convention of 
+		<span class="italix">ethX</span>, where <span class="italic">X</span> 
+		represents a numeric value.  The first Ethernet interface is typically identified 
+		as <span class="italic">eth0</span>, the second as 
+		<span class="italic">eth1</span>, and all others should move up in 
+		numerical order.
+		</p>
+                <div class="sect3" title="Identify Ethernet Interfaces">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="identify-ethernet-interfaces"></a>Identify Ethernet Interfaces</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			To quickly identify all available Ethernet interfaces, you can use the 
+			<span class="application"><strong>ifconfig</strong></span> command as shown below.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>ifconfig -a | grep eth</code></strong>
+eth0      Link encap:Ethernet  HWaddr 00:15:c5:4a:16:5a
+</pre>
+                  <p>
+			Another application that can help identify all network interfaces available to your system 
+			is the <span class="application"><strong>lshw</strong></span> command.  In the example below, <span class="application"><strong>lshw</strong></span> 
+			shows a single Ethernet interface with the logical name of <span class="italic">eth0</span>
+			along with bus information, driver details and all supported capabilities.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo lshw -class network</code></strong>
+  *-network
+       description: Ethernet interface
+       product: BCM4401-B0 100Base-TX
+       vendor: Broadcom Corporation
+       physical id: 0
+       bus info: pci@0000:03:00.0
+       logical name: eth0
+       version: 02
+       serial: 00:15:c5:4a:16:5a
+       size: 10MB/s
+       capacity: 100MB/s
+       width: 32 bits
+       clock: 33MHz
+       capabilities: (snipped for brevity)
+       configuration: (snipped for brevity)
+       resources: irq:17 memory:ef9fe000-ef9fffff
+</pre>
+                </div>
+                <div class="sect3" title="Ethernet Interface Logical Names">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="ethernet-interface-names"></a>Ethernet Interface Logical Names</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			Interface logical names are configured in the file 
+			<code class="filename">/etc/udev/rules.d/70-persistent-net.rules.</code>  If you would 
+			like control which interface receives a particular logical name, find the line 
+			matching the interfaces physical MAC address and modify the value of 
+			<span class="italic">NAME=ethX</span> to the desired logical name. 
+			Reboot the system to commit your changes.
+			</p>
+                  <pre class="programlisting">
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:15:c5:4a:16:5a", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth0"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:15:c5:4a:16:5b", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"
+</pre>
+                </div>
+                <div class="sect3" title="Ethernet Interface Settings">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="ethernet-interface-settings"></a>Ethernet Interface Settings</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			<span class="application"><strong>ethtool</strong></span> is a program that displays and changes Ethernet 
+			card settings such as auto-negotiation, port speed, duplex mode, and Wake-on-LAN. It
+			is not installed by default, but is available for installation in the repositories.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo apt-get install ethtool</code></strong>
+</pre>
+                  <p>
+			The following is an example of how to view supported features and configured 
+			settings of an Ethernet interface.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo ethtool eth0</code></strong>
+Settings for eth0:
+        Supported ports: [ TP ]
+        Supported link modes:   10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Half 1000baseT/Full 
+        Supports auto-negotiation: Yes
+        Advertised link modes:  10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Half 1000baseT/Full 
+        Advertised auto-negotiation: Yes
+        Speed: 1000Mb/s
+        Duplex: Full
+        Port: Twisted Pair
+        PHYAD: 1
+        Transceiver: internal
+        Auto-negotiation: on
+        Supports Wake-on: g
+        Wake-on: d
+        Current message level: 0x000000ff (255)
+        Link detected: yes
+</pre>
+                  <p>
+			Changes made with the <span class="application"><strong>ethtool</strong></span> command are temporary 
+			and will be lost after a reboot. If you would like to retain settings, simply add 
+			the desired <span class="application"><strong>ethtool</strong></span> command to a <span class="italic">pre-up</span> 
+			statement in the interface configuration file <code class="filename">/etc/network/interfaces</code>. 
+			</p>
+                  <p>
+			The following is an example of how the interface identified as <span class="italic">eth0</span>
+			could be permanently configured with a port speed of 1000Mb/s running in full duplex mode.
+			</p>
+                  <pre class="programlisting">
+auto eth0
+iface eth0 inet static
+pre-up /usr/sbin/ethtool -s eth0 speed 1000 duplex full
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+			Although the example above shows the interface configured to use the 
+			<span class="italic">static</span> method, it actually works with other 
+			methods as well, such as DHCP.  The example is meant to demonstrate only proper 
+			placement of the <span class="italic">pre-up</span> statement in relation 
+			to the rest of the interface configuration.
+			</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="IP Addressing">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="ip-addressing"></a>IP Addressing</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+		The following section describes the process of configuring your systems IP address
+		and default gateway needed for communicating on a local area network and the
+		Internet.
+		</p>
+                <div class="sect3" title="Temporary IP Address Assignment">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="temp-ip-assignment"></a>Temporary IP Address Assignment</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			For temporary network configurations, you can use standard commands 
+			such as <span class="application"><strong>ip</strong></span>, <span class="application"><strong>ifconfig</strong></span> 
+			and <span class="application"><strong>route</strong></span>, which are also found on most other 
+			GNU/Linux operating systems.  These commands allow you to configure settings
+			which take effect immediately, however they are not persistent and will
+			be lost after a reboot.
+			</p>
+                  <p>
+			To temporarily configure an IP address, you can use the <span class="application"><strong>ifconfig</strong></span> 
+			command in the following manner. Just modify the IP address and subnet mask to match your 
+			network requirements.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo ifconfig eth0 10.0.0.100 netmask 255.255.255.0</code></strong>
+</pre>
+                  <p>
+			To verify the IP address configuration of <span class="application"><strong>eth0</strong></span>, 
+			you can use the <span class="application"><strong>ifconfig</strong></span> command in the following manner.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>ifconfig eth0</code></strong>
+eth0      Link encap:Ethernet  HWaddr 00:15:c5:4a:16:5a  
+          inet addr:10.0.0.100  Bcast:10.0.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::215:c5ff:fe4a:165a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:466475604 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:403172654 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2574778386 (2.5 GB)  TX bytes:1618367329 (1.6 GB)
+          Interrupt:16 
+</pre>
+                  <p>
+			To configure a default gateway, you can use the <span class="application"><strong>route</strong></span> 
+			command in the following manner.  Modify the default gateway address to match 
+			your network requirements.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo route add default gw 10.0.0.1 eth0</code></strong>
+</pre>
+                  <p>
+			To verify your default gateway configuration, you can use the <span class="application"><strong>route</strong></span> 
+			command in the following manner.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>route -n</code></strong>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.0.0        0.0.0.0         255.255.255.0   U     1      0        0 eth0
+0.0.0.0         10.0.0.1        0.0.0.0         UG    0      0        0 eth0
+</pre>
+                  <p>
+			If you require DNS for your temporary network configuration, you can add DNS server
+			IP addresses in the file <code class="filename">/etc/resolv.conf</code>. The example below 
+			shows how to enter two DNS servers to <code class="filename">/etc/resolv.conf</code>, which 
+			should be changed to servers appropriate for your network. A more lengthy description 
+			of DNS client configuration is in a following section.
+			</p>
+                  <pre class="programlisting">
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</pre>
+                  <p>
+			If you no longer need this configuration and wish to purge all IP configuration from
+			an interface, you can use the <span class="application"><strong>ip</strong></span> command with the flush option
+			as shown below.  
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>ip addr flush eth0</code></strong>
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+			Flushing the IP configuration using the <span class="application"><strong>ip</strong></span> command does not clear the 
+			contents of <code class="filename">/etc/resolv.conf</code>.  You must remove or modify those entries manually.
+			</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="Dynamic IP Address Assignment (DHCP Client)">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="dynamic-ip-addressing"></a>Dynamic IP Address Assignment (DHCP Client)</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			To configure your server to use DHCP for dynamic address assignment, add the
+			<span class="italic">dhcp</span> method to the inet address family statement 
+			for the appropriate interface in the file <code class="filename">/etc/network/interfaces</code>.
+			The example below assumes you are configuring your first Ethernet interface identified as 
+			<span class="italic">eth0</span>.
+			</p>
+                  <pre class="programlisting">
+auto eth0
+iface eth0 inet dhcp
+</pre>
+                  <p>
+			By adding an interface configuration as shown above, you can manually enable the 
+			interface through the <span class="application"><strong>ifup</strong></span> command which initiates the 
+			DHCP process via <span class="application"><strong>dhclient</strong></span>.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo ifup eth0</code></strong>
+</pre>
+                  <p>
+			To manually disable the	interface, you can use the <span class="application"><strong>ifdown</strong></span> 
+			command, which in turn will initiate the DHCP release process and shut down the 
+			interface.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo ifdown eth0</code></strong>
+</pre>
+                </div>
+                <div class="sect3" title="Static IP Address Assignment">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="static-ip-addressing"></a>Static IP Address Assignment</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			To configure your system to use a static IP address assignment, add the 
+			<span class="italic">static</span> method to the inet address family statement 
+			for the appropriate interface in the file <code class="filename">/etc/network/interfaces</code>. 
+			The example below assumes you are configuring your first Ethernet interface identified as 
+			<span class="italic">eth0</span>.  Change the <span class="italic">address</span>, 
+			<span class="italic">netmask</span>, and <span class="italic">gateway</span> 
+			values to meet the requirements of your network.
+			</p>
+                  <pre class="programlisting">
+auto eth0
+iface eth0 inet static
+address 10.0.0.100
+netmask 255.255.255.0
+gateway 10.0.0.1
+</pre>
+                  <p>
+			By adding an interface configuration as shown above, you can manually enable the 
+			interface through the <span class="application"><strong>ifup</strong></span> command.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo ifup eth0</code></strong>
+</pre>
+                  <p>
+			To manually disable the	interface, you can use the <span class="application"><strong>ifdown</strong></span> 
+			command.
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>sudo ifdown eth0</code></strong>
+</pre>
+                </div>
+                <div class="sect3" title="Loopback Interface">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="loopback-interface"></a>Loopback Interface</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			The loopback interface is identified by the system as <span class="italic">lo</span>
+			and has a default IP address of 127.0.0.1.  It can be viewed using the ifconfig command. 
+			</p>
+                  <pre class="screen">
+<strong class="userinput"><code>ifconfig lo</code></strong>
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:2718 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2718 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:183308 (183.3 KB)  TX bytes:183308 (183.3 KB)
+</pre>
+                  <p>
+			By default, there should be two lines in <code class="filename">/etc/network/interfaces</code> 
+			responsible for automatically configuring your loopback interface. It is recommended that you 
+			keep the default settings unless you have a specific purpose for changing them.  An example of 
+			the two default lines are shown below.
+			</p>
+                  <pre class="programlisting">
+auto lo
+iface lo inet loopback
+</pre>
+                </div>
+              </div>
+              <div class="sect2" title="Name Resolution">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="name-resolution"></a>Name Resolution</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+		Name resolution as it relates to IP networking is the process of mapping IP addresses 
+		to hostnames, making it easier to identify resources on a network.  The following section
+		will explain how to properly configure your system for name resolution using DNS and static
+		hostname records.
+		</p>
+                <div class="sect3" title="DNS Client Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="dns-client-configuration"></a>DNS Client Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			To configure your system to use DNS for name resolution, add the IP addresses of the DNS 
+			servers that are appropriate for your network in the file <code class="filename">/etc/resolv.conf</code>. 
+			You can also add an optional DNS suffix search-lists to match your network domain names.
+			</p>
+                  <p>
+			Below is an example of a typical configuration of <code class="filename">/etc/resolv.conf</code>
+			for a server on the domain "<span class="italic">example.com</span>" and using 
+			two public DNS servers.
+			</p>
+                  <pre class="programlisting">
+search example.com
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</pre>
+                  <p>
+			The <span class="italic">search</span> option can also be used with multiple domain names 
+			so that DNS queries will be appended in the order in which they are entered.  For example,
+			your network may have multiple sub-domains to search; a parent domain of 
+			<span class="italic">example.com</span>, and two sub-domains, 
+			<span class="italic">sales.example.com</span> and 
+			<span class="italic">dev.example.com</span>.  
+			</p>
+                  <p>
+			If you have multiple domains you wish to search, your configuration might look like the following.
+			</p>
+                  <pre class="programlisting">
+search example.com sales.example.com dev.example.com
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</pre>
+                  <p>
+			If you try to ping a host with the name of <span class="italic">server1</span>, your system 
+			will automatically query DNS for its Fully Qualified Domain Name (FQDN) in the following order:
+			</p>
+                  <div class="orderedlist">
+                    <ol class="orderedlist" type="1">
+                      <li class="listitem">
+                        <p>
+			server1<span class="bold"><strong>.example.com</strong></span>
+			</p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+			server1<span class="bold"><strong>.sales.example.com</strong></span>
+			</p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+			server1<span class="bold"><strong>.dev.example.com</strong></span>
+			</p>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+			If no matches are found, the DNS server will provide a result of 
+			<span class="italic">notfound</span> and the DNS query will fail.
+			</p>
+                </div>
+                <div class="sect3" title="Static Hostnames">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="static-hostnames"></a>Static Hostnames</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			Static hostnames are locally defined hostname-to-IP mappings located in the file <code class="filename">/etc/hosts</code>.
+			Entries in the <code class="filename">hosts</code> file will have precedence over DNS by default. This means that if your
+			system tries to resolve a hostname and it matches an entry in /etc/hosts, it will not attempt to look up the
+			record in DNS.  In some configurations, especially when Internet access is not required, servers that 
+			communicate with a limited number of resources can be conveniently set to use static hostnames instead of DNS.
+			</p>
+                  <p>
+			The following is an example of a <code class="filename">hosts</code> file where a number of local servers 
+			have been identified by simple hostnames, aliases and their equivalent Fully Qualified Domain Names (FQDN's).
+			</p>
+                  <pre class="programlisting">
+127.0.0.1	localhost
+127.0.1.1	ubuntu-server
+10.0.0.11	server1 vpn server1.example.com
+10.0.0.12	server2 mail server2.example.com
+10.0.0.13	server3 www server3.example.com
+10.0.0.14	server4 file server4.example.com
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+			In the above example, notice that each of the servers have been given aliases in addition to their 
+			proper names and FQDN's. <span class="italic">Server1</span> has been mapped to the name 
+			<span class="italic">vpn</span>, <span class="italic">server2</span> is referred 
+			to as <span class="italic">mail</span>, <span class="italic">server3</span> as 
+			<span class="italic">www</span>, and <span class="italic">server4</span> as 
+			<span class="italic">file</span>.
+			</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="Name Service Switch Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="name-service-switch-config"></a>Name Service Switch Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+			The order in which your system selects a method of resolving hostnames to IP addresses is
+			controlled by the Name Service Switch (NSS) configuration file <code class="filename">/etc/nsswitch.conf</code>.
+			As mentioned in the previous section, typically static hostnames defined in the systems 
+			<code class="filename">/etc/hosts</code> file have precedence over names resolved from DNS. The following 
+			is an example of the line responsible for this order of hostname lookups in the file 
+			<code class="filename">/etc/nsswitch.conf</code>.
+			</p>
+                  <pre class="programlisting">
+hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4
+</pre>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+			<span class="bold"><strong>files</strong></span> first tries to resolve static hostnames located in 
+			<code class="filename">/etc/hosts</code>.
+			</p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+			<span class="bold"><strong>mdns4_minimal</strong></span> attempts to resolve the name using Multicast DNS.
+			</p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+			<span class="bold"><strong>[NOTFOUND=return]</strong></span> means that any response of 
+			<span class="italic">notfound</span> by the preceeding 
+			<span class="italic">mdns4_minimal</span> process should be treated as 
+			authoritative and that the system should not try to continue hunting for an answer.
+			</p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+			<span class="bold"><strong>dns</strong></span> represents a legacy unicast DNS query.
+			</p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+			<span class="bold"><strong>mdns4</strong></span> represents a Multicast DNS query.
+			</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+			To modify the order of the above mentioned name resolution methods, you can
+			simply change the <span class="italic">hosts:</span> string to the value 
+			of your choosing. For example, if you prefer to use legacy Unicast DNS versus 
+			Multicast DNS, you can change the string in <code class="filename">/etc/nsswitch.conf</code> 
+			as shown below.
+			</p>
+                  <pre class="programlisting">
+hosts:          files dns [NOTFOUND=return] mdns4_minimal mdns4
+</pre>
+                </div>
+              </div>
+              <div class="sect2" title="Bridging">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="bridging"></a>Bridging</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Bridging multiple interfaces is a more advanced configuration, but is very useful in multiple scenarios.  
+      One scenario is setting up a bridge with multiple network interfaces, then using a firewall to filter traffic
+      between two network segments.  Another scenario is using bridge on a system with one interface to allow virtual
+      machines direct access to the outside network.  The following example covers the latter scenario.
+      </p>
+                <p>
+      Before configuring a bridge you will need to install the <span class="application"><strong>bridge-utils</strong></span> package.  To install the 
+      package, in a terminal enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install bridge-utils</strong></span>
+</pre>
+                <p>
+      Next, configure the bridge by editing <code class="filename">/etc/network/interfaces</code>:
+      </p>
+                <pre class="programlisting">
+auto lo
+iface lo inet loopback
+
+auto br0
+iface br0 inet static
+        address 192.168.0.10
+        network 192.168.0.0
+        netmask 255.255.255.0
+        broadcast 192.168.0.255
+        gateway 192.168.0.1
+        bridge_ports eth0
+        bridge_fd 9
+        bridge_hello 2
+        bridge_maxage 12
+        bridge_stp off
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Enter the appropriate values for your physical interface and network.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      Now restart networking to enable the bridge interface:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/networking restart</strong></span>
+</pre>
+                <p>
+        The new bridge interface should now be up and running.  The <span class="application"><strong>brctl</strong></span> provides useful information
+        about the state of the bridge, controls which interfaces are part of the bridge, etc.  See <span class="command"><strong>man brctl</strong></span> 
+        for more information.        
+        </p>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="network-config-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+        
+        </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+            The <a class="ulink" href="https://help.ubuntu.com/community/Network" target="_top">Ubuntu Wiki Network page</a> has 
+            links to articles covering more advanced network configuration.
+            </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            The <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man5/interfaces.5.html" target="_top">interfaces man page</a> has 
+            details on more options for <code class="filename">/etc/network/interfaces</code>.
+            </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            The <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man8/dhclient.8.html" target="_top">dhclient man page</a> has 
+            details on more options for configuring DHCP client settings.
+            </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            For more information on DNS client configuration see the 
+            <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man5/resolver.5.html" target="_top">resolver man page</a>.  Also, Chapter 
+            6 of O'Reilly's <a class="ulink" href="http://oreilly.com/catalog/linag2/book/ch06.html" target="_top">Linux Network Administrator's Guide</a> is 
+            a good source of resolver and name service configuration information.
+            </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            For more information on <span class="emphasis"><em>bridging</em></span> see the 
+            <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man8/brctl.8.html" target="_top">brctl man page</a> and the Linux Foundation's
+            <a class="ulink" href="http://www.linuxfoundation.org/en/Net:Bridge" target="_top">Net:Bridge</a> page.
+            </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="networking.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="networking.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="tcpip.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 4. Networking </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> TCP/IP</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

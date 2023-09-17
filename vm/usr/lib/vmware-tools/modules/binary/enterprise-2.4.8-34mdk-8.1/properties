@@ -1,0 +1,6 @@
+UtsRelease 2.4.8-34.1mdkenterprise
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Mandrake 8.1 entreprise kernel update (PAE suport)
+UtsMachine i386

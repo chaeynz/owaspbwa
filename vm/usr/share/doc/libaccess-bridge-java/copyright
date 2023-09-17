@@ -1,0 +1,34 @@
+This package was debianized by Matthias Klose <doko@ubuntu.com>
+on Fri, 29 Feb 2008 12:06:09 +0000.
+
+It was downloaded from http://ftp.gnome.org/pub/GNOME/sources/java-access-bridge
+
+Upstream Authors: 
+
+    Bill Haneman <bill.haneman@sun.com>
+    Louise Miller
+    Gergõ Érdi <cactus@cactus.rulez.org>
+    Laszlo (Laca) Peter <laszlo.peter@sun.com>
+    Jeff Cai<jeff.cai@sun.com>
+    George Kraft IV <gk4@us.ibm.com>
+    Padraig O'Briain <padraig.obriain@sun.com>
+    Darren Kenny <darren.kenny@sun.com>
+
+Copyright: 
+
+    Portions Copyright © 2002-2007 Bill Haneman <bill.haneman@sun.com>
+    Portions Copyright © 2002-2007 Louise Miller
+    Portions Copyright © 2002-2007 Gergõ Érdi <cactus@cactus.rulez.org>
+    Portions Copyright © 2002-2007 Laszlo (Laca) Peter <laszlo.peter@sun.com>
+    Portions Copyright © 2002-2007 Jeff Cai<jeff.cai@sun.com>
+    Portions Copyright © 2002-2007 George Kraft IV <gk4@us.ibm.com>
+    Portions Copyright © 2002-2007 Padraig O'Briain <padraig.obriain@sun.com>
+    Portions Copyright © 2002-2007 Darren Kenny <darren.kenny@sun.com>
+
+License:
+
+  Java Access Bridge is licensed under the LGPL v2.
+  See `/usr/share/common-licenses/LGPL-2'.
+
+The Debian packaging is (C) 2008, Canonical Ltd and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

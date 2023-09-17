@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-spss-por">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SPSS Portable Data File</comment>
+  <comment xml:lang="bg">Данни — SPSS, преносими</comment>
+  <comment xml:lang="cs">Soubor přenositelných dat SPSS</comment>
+  <comment xml:lang="de">SPSS portable Datendatei</comment>
+  <comment xml:lang="en_GB">SPSS Portable Data File</comment>
+  <comment xml:lang="es">Archivo de datos portables de SPSS</comment>
+  <comment xml:lang="eu">SPSS datuen fitxategi eramangarria</comment>
+  <comment xml:lang="fr">fichier portable de données SPSS</comment>
+  <comment xml:lang="hu">SPSS hordozható adatfájl</comment>
+  <comment xml:lang="it">File dati SPSS Portable</comment>
+  <comment xml:lang="ja">SPSS ポータブルデータファイル</comment>
+  <comment xml:lang="kk">SPSS тасымалы ақпарат файлы</comment>
+  <comment xml:lang="lt">SPSS perkeliamas duomenų failas</comment>
+  <comment xml:lang="nl">SPSS-draagbaar gegevensbestand</comment>
+  <comment xml:lang="pl">Plik przenośnych danych SPSS</comment>
+  <comment xml:lang="pt_BR">Arquivo de dado portável SPSS</comment>
+  <comment xml:lang="ro">Fișier portabil de date SPSS</comment>
+  <comment xml:lang="uk">файл даних SPSS Portable</comment>
+  <glob pattern="*.por"/>
+</mime-type>

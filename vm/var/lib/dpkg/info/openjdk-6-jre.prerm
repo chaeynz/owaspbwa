@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+basedir=/usr/lib/jvm/java-6-openjdk
+basediralias=/usr/lib/jvm/java-6-openjdk
+jre_tools='javaws pluginappletviewer policytool'
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
+    for i in $jre_tools; do
+	update-alternatives --remove $i $basediralias/jre/bin/$i
+    done
+fi
+
+

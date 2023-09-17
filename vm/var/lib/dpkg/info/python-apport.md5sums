@@ -1,0 +1,17 @@
+fd3447316222deac55cf71ed0999c3ad  usr/share/doc/python-apport/copyright
+d41d8cd98f00b204e9800998ecf8427e  usr/share/pyshared/apport/crashdb_impl/__init__.py
+798f13d811986282d3da844ba51d9a48  usr/share/pyshared/apport/crashdb_impl/launchpad.py
+7717ba63406972a2db76d528bf12d949  usr/share/pyshared/apport/crashdb_impl/memory.py
+12ee1d74227cfdca0cef9c3b3e77af18  usr/share/pyshared/apport/crashdb_impl/multipartpost_handler.py
+361da47fdcef586f3b8c4a1827b8a428  usr/share/pyshared/apport/__init__.py
+44041179549b65fb8245c3fa89a0969c  usr/share/pyshared/apport/chroot.py
+7eb3b83064b72a1cff4216727de0af32  usr/share/pyshared/apport/crashdb.py
+d99b0b2b09095d937276bb813febf0a2  usr/share/pyshared/apport/fileutils.py
+c8e3335c94367acd6e63f45ee04d1021  usr/share/pyshared/apport/hookutils.py
+69ca49bdf0a44c800767f31289e76891  usr/share/pyshared/apport/packaging.py
+507d8342c79e8c63ebdcd13e576660b6  usr/share/pyshared/apport/packaging_impl.py
+f5efdf3bf2c3e0c20a90a5f0b88e1661  usr/share/pyshared/apport/report.py
+06546015dda1ed1bf6fb67e977b777fd  usr/share/pyshared/apport/REThread.py
+65a1a0cd2b3f9dd9edceb47843b6e07c  usr/share/pyshared/apport/ui.py
+e47728fdd9330acf59e1f605f6395700  usr/share/pyshared/apport_python_hook.py
+92eb73398006cc5229d8b6d38ddecb54  usr/share/pyshared-data/python-apport

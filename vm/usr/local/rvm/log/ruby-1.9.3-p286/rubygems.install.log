@@ -1,0 +1,18 @@
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/yaml.rb:56:in `<top (required)>':
+It seems your ruby installation is missing psych (for YAML output).
+To eliminate this warning, please install libyaml and reinstall your ruby.
+RubyGems 1.8.24 installed
+
+== 1.8.24 / 2012-04-27
+
+* 1 bug fix:
+
+  * Install the .pem files properly. Fixes #320
+  * Remove OpenSSL dependency from the http code path
+
+
+------------------------------------------------------------------------------
+
+RubyGems installed the following executables:
+	/usr/local/rvm/rubies/ruby-1.9.3-p286/bin/gem
+

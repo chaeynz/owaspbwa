@@ -1,0 +1,26 @@
+Name: EggDBus
+Maintainer: David Zeuthen <davidz@redhat.com>
+Source: http://people.freedesktop.org/~david/
+
+Files: *
+Copyright: 2008 Red Hat, Inc.
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ The full text of the LGPL is distributed as in
+ /usr/share/common-licenses/LGPL-2 on Debian systems.
+
+Files: docs/*
+Copyright: 2008 Red Hat, Inc.
+License: GFDL-1.1+
+ Permission is granted to copy, distribute and/or modify this
+ document under the terms of the GNU Free Documentation
+ License (GFDL), Version 1.1 or any later version published
+ by the Free Software Foundation with no Invariant Sections,
+ no Front-Cover Texts, and no Back-Cover Texts.
+ .
+ The full text of the GFDL is distributed as in
+ /usr/share/common-licenses/GFDL on Debian systems.

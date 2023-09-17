@@ -1,0 +1,9 @@
+d15f2242d272ca7cc57fad439e0f4ba4  usr/share/doc/command-not-found/README
+8789645b5ee879f1b4e14c9f03a7d39a  usr/share/doc/command-not-found/copyright
+94d4e623793367eab2fd592bc2fbd646  usr/share/doc/command-not-found/changelog.gz
+029d86c8daa3408cc45ea411438caa65  usr/share/pyshared/CommandNotFound/__init__.py
+5cba93eb15f2dd40d015a7cccf0cefd2  usr/share/pyshared/CommandNotFound/util.py
+5ad141ec5f1c63b7a8d0c801f6136538  usr/share/pyshared/CommandNotFound/CommandNotFound.py
+335101445217ac82a7439326bfb1ca81  usr/share/pyshared/command_not_found-0.1.egg-info
+a2d9b57e2f3d5fe963051c544157ccbf  usr/share/pyshared-data/command-not-found
+dfb820b17514563636c4cbc50e3215ba  usr/lib/command-not-found

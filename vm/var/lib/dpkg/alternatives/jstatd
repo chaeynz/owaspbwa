@@ -1,0 +1,9 @@
+manual
+/usr/bin/jstatd
+jstatd.1.gz
+/usr/share/man/man1/jstatd.1.gz
+
+/usr/lib/jvm/java-6-openjdk/bin/jstatd
+1061
+/usr/lib/jvm/java-6-openjdk/man/man1/jstatd.1.gz
+

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$1" in
+  remove)
+    if [ -f /lib/modules/2.6.28-11-server/volatile/.mounted ]; then
+	umount /lib/modules/2.6.28-11-server/volatile/
+    fi
+    rmdir /lib/modules/2.6.28-11-server/volatile/
+
+    depmod -a -F /boot/System.map-2.6.28-11-server 2.6.28-11-server
+    update-initramfs -u -k 2.6.28-11-server
+    ;;
+esac

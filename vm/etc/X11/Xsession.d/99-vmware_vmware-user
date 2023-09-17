@@ -1,0 +1,9 @@
+# Beginning of the block added by the VMware software
+#
+# This script is intended only as a last resort in order to launch the VMware
+# User Agent (vmware-user) in legacy Debian and Ubuntu VMs whose shipped X11
+# session managers may not support XDG/KDE-style autostart via .desktop files.
+#
+
+{ sleep 15 && /usr/bin/vmware-user &>/dev/null ; } &
+# End of the block added by the VMware software

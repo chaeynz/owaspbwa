@@ -1,0 +1,2 @@
+iputils-tracepath binary: setuid-binary usr/bin/traceroute6.iputils 4755 root/root
+

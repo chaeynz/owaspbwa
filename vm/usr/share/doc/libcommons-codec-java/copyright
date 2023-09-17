@@ -1,0 +1,38 @@
+This package was debianized by Arnaud Vandyck <avdyk@debian.org> on
+Thu, 19 Aug 2004 13:26:48 +0200
+
+It was downloaded from http://commons.apache.org/codec/
+
+Upstream Authors: Henri Yandell <bayard@generationjava.com>,
+                  Tim OBrien <tobrien@apache.org>,
+                  Scott Sanders <sanders@totalsync.com>,
+                  Rodney Waldhoff <rwaldhoff@apache.org>,
+                  Daniel Rall <dlr@finemaltcoding.com>,
+                  Jon S. Stevens <jon@collab.net>,
+                  Gary D. Gregory <ggregory@seagullsw.com>,
+                  David Graham <dgraham@apache.org>,
+                  Christopher O'Brien <siege@preoccupied.net>,
+                  Martin Redington,
+                  Jeffery Dever,
+                  Steve Zimmermann <steve.zimmermann@heii.com>,
+                  Benjamin Walstrum <ben@walstrum.com>,
+                  Oleg Kalnichevski <oleg@ural.ru>,
+                  Dave Dribin <apache@dave.dribin.org>,
+                  Alex Karasulu <aok123@bellsouth.net>,
+                  Matthew Inger <mattinger@yahoo.com>
+
+Copyright: 2002-2008 The Apache Software Foundation
+
+License: Apache 2.0
+
+On Debian systems the full text of the Apache License can be found
+in `/usr/share/common-licenses/Apache-2.0'.
+
+--------------------------------------------------------------------------------
+src/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java contains
+test data from http://aspell.sourceforge.net/test/batch0.tab.
+
+Copyright (C) 2002 Kevin Atkinson (kevina@gnu.org). Verbatim copying
+and distribution of this entire article is permitted in any medium,
+provided this notice is preserved.
+--------------------------------------------------------------------------------

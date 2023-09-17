@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/Accessibility
+/usr/lib/mono/gac/Accessibility/2.0.0.0__b03f5f7f11d50a3a
+/usr/lib/mono/gac/Accessibility/2.0.0.0__b03f5f7f11d50a3a/Accessibility.dll
+/usr/lib/mono/2.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-accessibility2.0-cil
+/usr/share/doc/libmono-accessibility2.0-cil/copyright
+/usr/share/doc/libmono-accessibility2.0-cil/changelog.Debian.gz
+/usr/lib/mono/2.0/Accessibility.dll

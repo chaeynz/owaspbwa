@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian Ruby Policy - Ruby 1.6 to 1.8 transition</title>
+
+</head>
+
+<body>
+
+<p><a name="ap-transition_1.6_to_1.8"></a></p>
+<hr>
+
+<p>
+[ <a href="ap-ruby1.8_bundled_modules.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ <a href="ch-programs.html">3</a> ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ C ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian Ruby Policy
+<br>Appendix C - Ruby 1.6 to 1.8 transition</h1>
+
+<hr>
+
+<p>
+Currently, ruby 1.6 is packaged as <code>ruby</code>, so this does not follow
+this ruby policy.  So, we'll do as follows.
+</p>
+
+<p>
+Initially, we, ruby maintenance team, will intent to package
+<code>ruby1.6</code>.  We'll make <code>ruby1.6</code> from ruby_1.6.8 with
+renaming ruby to ruby1.6.
+</p>
+
+<p>
+We also make package <code>ruby-defaults</code> providing <code>ruby</code> and
+<code>libruby</code> packages.  <code>Ruby</code> package depends on
+<code>ruby1.6</code> and includes <code>/usr/bin/ruby</code> symlinked to
+<code>/usr/bin/ruby1.6</code> and this ruby policy text.  <code>libruby</code>
+package depends on <code>libruby1.6</code>.
+</p>
+
+<p>
+Module packages are packaged as <code>lib<var>foo</var>-ruby1.6</code> for
+ruby1.6, and optionally <code>lib<var>foo</var>-ruby</code> that depends on
+<code>lib<var>foo</var>-ruby1.6</code>.
+</p>
+
+<p>
+Note that old version of <code>lib<var>foo</var>-ruby</code> and renamed
+version of <code>lib<var>foo</var>-ruby1.6</code> provides files with same
+pathnames, so that you must add conflicts &amp; replaces against older
+versions.  That is, don't forget to add to debian/control:
+</p>
+
+<pre>
+               Conflicts: lib<var>foo</var>-ruby (&lt;&lt; <var>renamed-version</var>)
+               Replaces: lib<var>foo</var>-ruby (&lt;&lt; <var>renamed-version</var>)
+</pre>
+
+<p>
+Version-dependent ruby programs should depends on <code>ruby1.6</code> and use
+<samp>#!/usr/bin/ruby1.6</samp> instead of <samp>#!/usr/bin/ruby</samp>.
+</p>
+
+<p>
+Version-independent ruby program that depends on <samp>ruby (&gt;= 1.6)</samp>
+but no upper bound limit such as <samp>ruby (&lt;&lt; 1.8)</samp> or so, make
+sure it actually works on ruby1.8.  If it works on ruby1.8, it should depend on
+<samp>ruby (&gt;= 1.6), ruby (&lt;&lt; 1.9)</samp>.  If it doesn't work on
+ruby1.8, it is version dependent ruby program, so it must depend on
+<samp>ruby1.6</samp>.
+</p>
+
+<p>
+After waiting for a week or so(?), we will change default version of ruby from
+1.6 to 1.8.  Ruby modules and programs should be modified to work with default
+version of ruby 1.8.
+</p>
+
+<hr>
+
+<p>
+[ <a href="ap-ruby1.8_bundled_modules.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ <a href="ch-programs.html">3</a> ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ C ]
+[ <a href="index.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian Ruby Policy
+</p>
+
+<address>
+version 0.0.1.4<br>
+<br>
+Akira Yamada<br>
+Akira Tagoh<br>
+Fumitoshi UKAI<br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

@@ -1,0 +1,35 @@
+wwwconfig-common for Debian
+---------------------------
+
+This package is used by some packages to prevent errors from duplication
+and ease the setup of new packages that uses a webserver and some other
+tools.
+
+Note! This package will not depend on any packages that are not critical.
+So if the package that uses this package to do a certain thing, it should
+depend the extra packages that this functionality requires, like mysql-client
+and similar. These packages are at most suggested by this package.
+
+If you are packaging applications for apache the debian-apache@lists.debian.org
+may be something for you. Also you may want to take a look on an other
+approach (not used yet and you should only take some ideas from it). The
+directories mentioned there should not be used, for now. The other approach
+can be found at:
+
+http://www.opal.dhs.org/involved/debian/apache/
+
+  Copyright (C) 2000-2006,2008 Ola Lundqvist <opal@debian.org>
+  Copyright (C) 2008      Bryan McLellan <btm@loftninjas.org>
+  Copyright (C) 2008      Morten Werner Forsbring <werner@debian.org>
+  Copyright (C) 2005      Christoph Martin <martin@uni-mainz.de>
+  Copyright (C) 2004      Hilko Bengen <bengen@debian.org>
+  Copyright (C) 2004      Jeremy Laine <jeremy.laine@m4x.org>
+  Copyright (C) 2003      Loic Dachary (OuoU) <loic@debian.org>
+  Copyright (C) 2003      Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+  Copyright (C) 2003      Benoit Joly <benoit@debian.org>
+  Copyright (C) 2003      Thomas Viehmann <tv@beamnet.de>
+  Copyright (C) 2002      Arndt Schönewald
+  Copyright (C) 2002      Stephen R. Darragh <srd@it.net.au>
+  Copyright (C) 2001      Luca De Vitis <luca@debian.org>
+
+ -- Ola Lundqvist <opal@debian.org>, Mon, 19 Feb 2001 20:39:34 +0100

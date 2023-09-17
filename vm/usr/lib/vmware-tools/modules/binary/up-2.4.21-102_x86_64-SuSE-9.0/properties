@@ -1,0 +1,6 @@
+UtsRelease 2.4.21-102-default
+ModVersion yes
+SMP no
+PageOffset 0000010000000000
+Comment SuSE 9.0 for AMD x86_64
+UtsMachine x86_64

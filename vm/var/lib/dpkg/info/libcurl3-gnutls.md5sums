@@ -1,0 +1,14 @@
+0610384464c0370a314d470eb752e7e9  usr/share/lintian/overrides/libcurl3-gnutls
+1c6cbf854bc66e650125a37e96bc778c  usr/share/doc/libcurl3-gnutls/FAQ.gz
+718908c86a768a3ff09a9b9d14e5be90  usr/share/doc/libcurl3-gnutls/README
+85cb2f88c953414a13f1a4318079755f  usr/share/doc/libcurl3-gnutls/THANKS.gz
+83881767b3aeb984b915b03086eab03e  usr/share/doc/libcurl3-gnutls/BUGS
+b5c93983a573d07e5472cf9fc8f72ee2  usr/share/doc/libcurl3-gnutls/copyright
+02f1798f162cd33918deb78be22b7377  usr/share/doc/libcurl3-gnutls/BINDINGS.gz
+c7212026b85737d194d95cbcc84eb01a  usr/share/doc/libcurl3-gnutls/KNOWN_BUGS.gz
+f9d4f13f62967853f837bef2eb49e0be  usr/share/doc/libcurl3-gnutls/VERSIONS
+abebbe5031e9015a9f11750f409e0d0b  usr/share/doc/libcurl3-gnutls/TODO.gz
+511da1dd4f875804a7a531e4d4e6ccbd  usr/share/doc/libcurl3-gnutls/changelog.Debian.gz
+29c39925bc6488fb9c2b170c7f89cc06  usr/share/doc/libcurl3-gnutls/FEATURES
+90726180307ab2f21c04712fc2a8be16  usr/share/doc/libcurl3-gnutls/changelog.gz
+4308df37c0b0002ac16c9c58baf4fddc  usr/lib/libcurl-gnutls.so.4.1.1

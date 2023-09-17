@@ -1,0 +1,268 @@
+This package was debianized by Varun Hiremath <varunhiremath@gmail.com> on
+Tue, 24 Apr 2007 17:19:10 +0530.
+
+It was downloaded from http://labs.jboss.com/jbossas/
+
+Upstream Author: JBoss Inc.
+
+Copyright: 
+    (C) 2005-2007 JBoss Inc., and authors
+    (C) 2005-2007 Red Hat Middleware LLC, and authors
+    (C) 2003-2006 Sun Microsystems, Inc.
+    (C) 1999-2005 The Apache Software Foundation.
+    (C) 1998-2000 Jason Dillon <jason@planet57.com>
+    (C) 1999-2002 Norman Walsh
+    (C) 1999-2000 BEA Systems, Inc. All Rights Reserved.
+    (C) 2000 Juha Lindfors
+    (C) 2001 ThoughtWorks, Inc.
+    (C) 2002-2003 Geir Landrö
+    (C) 2002 ObjectLearn. All Rights Reserved.
+    (C) 2003 Intracom S.A.
+    (C) 1992-2002 HaL Computer Systems, Inc.
+    (C) 1999 dreamBean Software
+    (C) 2003 ArborText, Inc., Norman Walsh, Sun Microsystems, Inc.
+    (C) 2004 World Wide Web Consortium
+    (C) 2006 Research In Motion
+    (C) 2006 Your Corporation. All Rights Reserved.
+
+Authors:
+    Aaron Mulder <ammulder@alumni.princeton.edu>
+    Adrian Brock <adrian@jboss.com>
+    Alex Fu <afu@novell.com>
+    Alexey Loubyansky <alex@jboss.org>
+    Anatoly Akkerman <akkerman@cs.nyu.edu>
+    Andreas Schaefer <andreas@jboss.com>
+    Andrew Rubinger <arubinge@redhat.com>
+    Andrew C. Oliver <acoliver@jbosss.org>
+    Andrew Rubinger <alr@alrubinger.com>
+    Andrew McCulloch <amccullo@sourceforge.new>
+    Andrew Belomutskiy <andrewarro@mail.ru>
+    Anil Saldhana <anil.saldhana@jboss.com>
+    Bill Burke <bill@burkecentral.com>
+    Brian Stansberry <brian.stansberry@jboss.com>
+    Carlo de Wolf <carlo@nerdnet.nl>
+    Chris Laprun <chris.laprun@jboss.com>
+    Christian Riege <criege@riege.com>
+    Christoph G. Jung <christoph.jung@jboss.org>
+    Claude Hussenet <chussenet@yahoo.com>
+    Clebert Suconic <clebert.suconic@jboss.com>
+    Corby Page <corby3000@hotmail.com>
+    Dain Sundstrom <dain@daingroup.com>
+    Dan Christopherson (danch) <danch@nvisia.com>
+    Dimitris Andreadis <dimitris@jboss.org>
+    Edward Kenworthy <edward.kenworthy@crispgroup.co.uk>
+    Galder Zamarreno <galder.zamarreno@jboss.com>
+    Heiko W. Rupp <heiko.rupp@cellent.de>
+    Heiko W. Rupp <hwr@pilhuhn.de>
+    Hiram Chirino <cojonudo14@hotmail.com>
+    Hiram Chirino <hiram@jboss.org>
+    Hugo Pinto <hugo@hugopinto.com>
+    Ignacio Coloma <icoloma@iverdino.com>
+    Ivelin Ivanov <ivelin@jboss.org>
+    James Wilson <jimmy.wilson@acxiom.com>
+    Jason Essington <jasone@greenrivercomputing.com>
+    Jason Dillon. <jason@planet57.com>
+    Jay Walters <jwalters@computer.org>
+    Jayesh Parayali <jayeshpk1@yahoo.com>
+    Jeff Haynie <jhaynie@vocalocity.net>
+    Jeremy Boynes <jeremy@boynes.com>
+    Jesper Pedersen <jep@worldleaguesports.com>
+    Jim Moran <jim.moran@jboss.org>
+    Joachim Van der Auwera <joachim@cabsoft.be>
+    John Freeborg <john-jboss@freeborg.com>
+    Juha Lindfors <juha.lindfors@jboss.org>
+    Julien Viet <julien@jboss.org>
+    Justin Forder <justin@j-m-f.demon.co.uk>
+    Kabir Khan <kabir.khan@jboss.com>
+    Klaus Richarz <kr@hbt.de>
+    Krishnaraj S <krishnaraj@ieee.org>
+    Larry Sanderson <lsanders@speakeasy.net>
+    Luc Texier <luc.texier@jboss.com>
+    Luke Taylor <luke@mkeym.com>
+    Marc Fleury <marc@jboss.org>
+    Marcus Redeker <mr@gedoplan.de>
+    Mark McGregor <mark.mcgregor@par3.com>
+    Michael Barker <mike@middlesoft.co.uk>
+    Michael Newcomb <MNewcomb@tacintel.com>
+    Michel de Groot <michel.anke@wolmail.nl>
+    Nathan Phelps <nathan@jboss.org>
+    Neale Swinnerton <neale@isismanor.co.uk>
+    Noel Rocher <noel.rocher@jboss.org>
+    Norbert Lataille <Norbert.Lataille@m4x.org>
+    Oleg Nitz <on@ibis.odessa.ua>
+    Ovidiu Feodorov ovidiu@jboss.org
+    Peter Antman <peter.antman@tim.se>
+    Peter Murray <pete@subx.com>
+    Peter Fagerlund <pf@iprobot.com>
+    Ricardo Arguello  ricardoarguello@users.sourceforge.net
+    Rickard Oberg <rickard@dreambean.com>
+    Ryan Campbell <ryan.campbell@jboss.com>
+    Sacha Labourey <sacha.labourey@cogito-info.ch>
+    Scott McLaughlin. <mclaugs@comcast.com>
+    Scott Stark <scott@jboss.org>
+    Scott Marlow smarlow@novell.com
+    Sebastien Alborini <sebastien.alborini@m4x.org>
+    Simone Bordet <simone.bordet@compaq.com>
+    Spyros Pollatos <spol@intracom.gr>
+    Stale W. Pedersen <stalep@conduct.no>
+    Stan Silvert <stan@jboss.org>
+    Stefan Reich <sreich@apple.com>
+    Stephan Steinbacher <s.steinbacher@mobilcom.de>
+    Steve Ebersole <steve@hibernate.org>
+    Steve Coy <steve@resolvesw.com>
+    Thomas Diesler <Thomas.Diesler@jboss.org>
+    Thomas Peuss <jboss@peuss.de>
+    Toby Allsopp <toby.allsopp@peace.com>
+    Tom Elrod <tom.elrod@jboss.com>
+    Trevor Squires <trevor@protocool.com>
+    Ulf Schroeter <u.schroeter@mobilcom.de>
+    Vicky Kak <vicky.kak@jboss.com>
+    Vinay Menon <menonv@cpw.co.uk>
+    Vincent Harcq <vincent.harcq@hubmethods.com>
+    Vincent Sheffer <vsheffer@telkel.com>
+    Vladimir Blagojevic vladimir@xisnext.2y.net
+    Weston Price <weston.price@jboss.com>
+    William Hoyle <william.hoyle@jungledrum.co.nz>
+    Wolfgang Werner <WolfgangWerner@gmx.net>
+    Yvan Borgne <yvan.borgne@lapeyre.fr>
+
+License:
+    This library is free software; you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 2.1 of
+    the License, or (at your option) any later version.
+ 
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    On Debian systems, full text of the LGPL license can be found at
+    `/usr/share/common-licenses/LGPL'.
+
+------
+Files:
+    testsuite/src/main/org/jboss/test/classloader/leak/web/ClassloaderLeakContextListener.java
+    tomcat/src/main/org/jboss/web/tomcat/filters/SemaphoreValve.java
+    tomcat/src/main/org/jboss/web/tomcat/security/FormAuthenticator.java
+    tomcat/src/main/org/jboss/web/tomcat/service/jasper/JspServletOptions.java
+    tomcat/src/main/org/jboss/web/tomcat/service/jasper/TagLibCache.java
+    tomcat/src/main/org/jboss/web/tomcat/service/sso/ClusteredSingleSignOn.java
+    tomcat/src/main/org/jboss/web/tomcat/service/sso/SingleSignOnEntry.java
+    tomcat/src/main/org/jboss/web/tomcat/service/StatusServlet.java
+    
+Copyright: 1999-2005 The Apache Software Foundation.
+
+License:
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+The full text of the Apache License can be found in
+`/usr/share/common-licenses/Apache-2.0'.
+
+------
+Files:
+    jaxrpc/src/main/org/w3c/dom/DOMConfiguration.java
+    jaxrpc/src/main/org/w3c/dom/DOMStringList.java
+    jaxrpc/src/main/org/w3c/dom/TypeInfo.java
+    jaxrpc/src/main/org/w3c/dom/UserDataHandler.java
+    security/src/main/org/jboss/security/Base64Encoder.java
+    
+Copyright: 
+    (c) 2004 World Wide Web Consortium,
+    (Massachusetts Institute of Technology, European Research Consortium for
+    Informatics and Mathematics, Keio University). All Rights Reserved. This
+    work is distributed under the W3C(r) Software License in the hope that
+    it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+    warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+License:
+    This work (and included software, documentation such as READMEs, or
+    other related items) is being provided by the copyright holders under
+    the following license. By obtaining, using and/or copying this work,
+    you (the licensee) agree that you have read, understood, and will
+    comply with the following terms and conditions.
+    
+    Permission to copy, modify, and distribute this software and its
+    documentation, with or without modification, for any purpose and
+    without fee or royalty is hereby granted, provided that you include
+    the following on ALL copies of the software and documentation or
+    portions thereof, including modifications:
+    
+       1. The full text of this NOTICE in a location viewable to users of
+       the redistributed or derivative work.
+       2. Any pre-existing intellectual property disclaimers, notices, or
+       terms and conditions. If none exist, the W3C Software Short Notice
+       should be included (hypertext is preferred, text is permitted)
+       within the body of any redistributed or derivative code.
+       3. Notice of any changes or modifications to the files, including
+       the date changes were made. (We recommend you provide URIs to the
+       location from which the code is derived.)
+    
+    THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT
+    HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS
+    FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR
+    DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS,
+    TRADEMARKS OR OTHER RIGHTS.
+    
+    COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL
+    OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR
+    DOCUMENTATION.
+    
+    The name and trademarks of copyright holders may NOT be used in
+    advertising or publicity pertaining to the software without specific,
+    written prior permission. Title to copyright in this software and any
+    associated documentation will at all times remain with copyright
+    holders.
+
+------
+Files:
+    tools/etc/cruisecontrol/scripts/xsl/changelists/changelists.xsl
+    tools/etc/cruisecontrol/scripts/xsl/changelists/header.xsl
+    tools/etc/cruisecontrol/scripts/xsl/checkstyle.xsl
+    tools/etc/cruisecontrol/scripts/xsl/compile.xsl
+    tools/etc/cruisecontrol/scripts/xsl/distributables.xsl
+    tools/etc/cruisecontrol/scripts/xsl/header.xsl
+    tools/etc/cruisecontrol/scripts/xsl/javadoc.xsl
+    tools/etc/cruisecontrol/scripts/xsl/logfile.xsl
+    tools/etc/cruisecontrol/scripts/xsl/maven.xsl
+    tools/etc/cruisecontrol/scripts/xsl/modifications.xsl
+    tools/etc/cruisecontrol/scripts/xsl/testdetails.xsl
+    tools/etc/cruisecontrol/scripts/xsl/unittests.xsl
+
+Copyright: (c) 2001, ThoughtWorks, Inc.
+
+License:
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+   
+        + Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+   
+        + Redistributions in binary form must reproduce the above
+          copyright notice, this list of conditions and the following
+          disclaimer in the documentation and/or other materials provided
+          with the distribution.
+   
+        + Neither the name of ThoughtWorks, Inc., CruiseControl, nor the
+          names of its contributors may be used to endorse or promote
+          products derived from this software without specific prior
+          written permission.
+   
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR
+    CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The Debian packaging is (C) 2007, Varun Hiremath <varunhiremath@gmail.com> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

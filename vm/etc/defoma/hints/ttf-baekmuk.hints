@@ -1,0 +1,77 @@
+category truetype
+
+begin /usr/share/fonts/truetype/baekmuk/batang.ttf
+  Family = Batang
+  FontName = Batang-Regular
+  Encoding = Unicode
+  Location = Korean
+  Charset = ISO10646-1 KSX1001
+  GeneralFamily = Roman
+  Weight = Medium
+  Width = Variable
+  Shape = Serif Upright
+  Foundry = Baekmuk
+  Priority = 20
+  X-Foundry = baekmuk
+  X-Family = batang
+  X-Weight = medium bold
+  X-Slant = r o
+  X-Spacing = c
+end
+
+begin /usr/share/fonts/truetype/baekmuk/gulim.ttf
+  Family = Gulim
+  FontName = Gulim-Regular
+  Encoding = Unicode
+  Location = Korean
+  Charset = ISO10646-1 KSX1001
+  GeneralFamily = SansSerif
+  Weight = Medium
+  Width = Variable
+  Shape = NoSerif Upright
+  Foundry = Baekmuk
+  Priority = 20
+  X-Foundry = baekmuk
+  X-Family = gulim
+  X-Weight = medium bold
+  X-Slant = r o
+  X-Spacing = c
+end
+
+begin /usr/share/fonts/truetype/baekmuk/dotum.ttf
+  Family = Dotum
+  FontName = Dotum-Regular
+  Encoding = Unicode
+  Location = Korean
+  Charset = ISO10646-1 KSX1001
+  GeneralFamily = Typewriter
+  Weight = Medium
+  Width = Fixed
+  Shape = Upright
+  Foundry = Baekmuk
+  Priority = 20
+  X-Foundry = baekmuk
+  X-Family = dotum
+  X-Weight = medium bold
+  X-Slant = r o
+  X-Spacing = c
+end
+
+begin /usr/share/fonts/truetype/baekmuk/hline.ttf
+  Family = Headline
+  FontName = Headline-Regular
+  Encoding = Unicode
+  Location = Korean
+  Charset = ISO10646-1 KSX1001
+  GeneralFamily = Lucida
+  Weight = Medium
+  Width = Variable
+  Shape = Upright
+  Foundry = Baekmuk
+  Priority = 20
+  X-Foundry = baekmuk
+  X-Family = headline
+  X-Weight = medium bold
+  X-Slant = r o
+  X-Spacing = c
+end

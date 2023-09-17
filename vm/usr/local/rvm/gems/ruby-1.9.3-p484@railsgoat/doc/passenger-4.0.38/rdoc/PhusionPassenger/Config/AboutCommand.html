@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::Config::AboutCommand - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/config/about_command.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Command.html">PhusionPassenger::Config::Command</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-description">::description</a>
+    
+    <li><a href="#method-c-help">::help</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="../../PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="../../PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="../../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../../Exception.html">Exception</a>
+  
+    <li><a href="../../GC.html">GC</a>
+  
+    <li><a href="../../IO.html">IO</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::Config::AboutCommand</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/config/about_command.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">description</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;Show information about #{PROGRAM_NAME}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description-method -->
+
+    
+      <div id="method-c-help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">help</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="help-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/config/about_command.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">help</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Usage: passenger-config about &lt;SUBCOMMAND&gt;&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Show information about #{PROGRAM_NAME}.&quot;</span>
+        <span class="ruby-identifier">puts</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Available subcommands:&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  root                     Show #{PROGRAM_NAME}'s root.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  ruby-libdir              Show #{PROGRAM_NAME}'s Ruby library directory.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  includedir               Show the Nginx runtime library headers directory.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  nginx-addon-dir          Show #{PROGRAM_NAME}'s Nginx addon directory.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  nginx-libs               Show Nginx runtime library flags.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  compiled                 Check whether runtime libraries are compiled.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  natively-packaged        Check whether Phusion Passenger is natively&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;                           packaged.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  installed-from-release-package  Check whether this installation came from&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;                                  an official release package.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  make-locations-ini       Generate a locations.ini based on the current&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;                           install paths.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  detect-apache2           Autodetect Apache installations.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  ruby-command             Show the correct command for invoking the Ruby&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;                           interpreter.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  rubyext-compat-id        Show the Ruby extension binary compatibility ID.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  cxx-compat-id            Show the C++ binary compatibility ID.&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  version                  Show the version number.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- help-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/config/about_command.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info'</span>
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/compiler'</span>
+
+        <span class="ruby-identifier">subcommand</span> = <span class="ruby-ivar">@argv</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-comment"># Compatibility with version &lt;= 4.0.29: accept both</span>
+        <span class="ruby-comment"># 'subcommand' and '--subcommand'.</span>
+        <span class="ruby-identifier">subcommand</span> = <span class="ruby-node">&quot;--#{subcommand}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">subcommand</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/^--/</span>
+
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">subcommand</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--root&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">source_root</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--ruby-libdir&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">ruby_libdir</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--includedir&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">include_dir</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--nginx-addon-dir&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">nginx_module_source_dir</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--nginx-libs&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{common_library.link_objects_as_string} #{PhusionPassenger.lib_dir}/common/libboost_oxt.a&quot;</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--compiled&quot;</span>
+                <span class="ruby-identifier">common_library</span>.<span class="ruby-identifier">link_objects</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">filename</span>)
+                                <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-node">&quot;#{PhusionPassenger.lib_dir}/common/libboost_oxt.a&quot;</span>)
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--natively-packaged&quot;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">natively_packaged?</span>
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--installed-from-release-package&quot;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">installed_from_release_package?</span>
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--make-locations-ini&quot;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@argv</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^--for-native-packaging-method=(.*)/</span>
+                        <span class="ruby-identifier">native_packaging_method</span> = <span class="ruby-node">$1</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">native_packaging_method</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;[locations]&quot;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">native_packaging_method</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;natively_packaged=true&quot;</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;native_packaging_method=#{native_packaging_method}&quot;</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;natively_packaged=#{PhusionPassenger.natively_packaged?}&quot;</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">natively_packaged?</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;native_packaging_method=#{PhusionPassenger.native_packaging_method}&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{field}=#{PhusionPassenger.send(field)}&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">OPTIONAL_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">value</span> = <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">field</span>)
+                        <span class="ruby-identifier">should_print</span> = <span class="ruby-identifier">value</span> <span class="ruby-operator">&amp;&amp;</span>
+                                (<span class="ruby-operator">!</span><span class="ruby-constant">ORIGINALLY_PACKAGED_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">field</span>) <span class="ruby-operator">||</span> (
+                                        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">originally_packaged?</span> <span class="ruby-operator">&amp;&amp;</span>
+                                        <span class="ruby-operator">!</span><span class="ruby-identifier">native_packaging_method</span>
+                                ))
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">should_print</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{field}=#{value}&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--detect-apache2&quot;</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/apache_detector'</span>
+                <span class="ruby-identifier">detector</span> = <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">PlatformInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">ApacheDetector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+                <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_TERMINAL_COLOR</span>)
+                <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-identifier">detector</span>.<span class="ruby-identifier">detect_all</span>
+                        <span class="ruby-identifier">detector</span>.<span class="ruby-identifier">report</span>
+                <span class="ruby-keyword">ensure</span>
+                        <span class="ruby-identifier">detector</span>.<span class="ruby-identifier">finish</span>
+                        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span><span class="ruby-operator">::</span><span class="ruby-constant">RESET</span>)
+                        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--ruby-command&quot;</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/ruby'</span>
+                <span class="ruby-identifier">ruby</span> = <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">ruby_command</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;passenger-config was invoked through the following Ruby interpreter:&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  Command: #{ruby}&quot;</span>
+                <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">write</span> <span class="ruby-string">&quot;  Version: &quot;</span>
+                <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>
+                <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;/bin/sh -c '#{ruby} -v'&quot;</span>)
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  To use in Apache: PassengerRuby #{ruby}&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  To use in Nginx : passenger_ruby #{ruby}&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  To use with Standalone: #{ruby} #{PhusionPassenger.bin_dir}/passenger start&quot;</span>
+                <span class="ruby-identifier">puts</span>
+
+                <span class="ruby-identifier">ruby</span> = <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">find_command</span>(<span class="ruby-string">'ruby'</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">ruby</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ruby</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;rvm/rubies/&quot;</span>)
+                        <span class="ruby-comment"># If this is an RVM Ruby executable then we don't show it. We want people to</span>
+                        <span class="ruby-comment"># use the RVM wrapper scripts only.</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;The following Ruby interpreter was found first in $PATH:&quot;</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  Command: #{ruby}&quot;</span>
+                        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">write</span> <span class="ruby-string">&quot;  Version: &quot;</span>
+                        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>
+                        <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;/bin/sh -c '#{ruby} -v'&quot;</span>)
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  To use in Apache: PassengerRuby #{ruby}&quot;</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  To use in Nginx : passenger_ruby #{ruby}&quot;</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  To use with Standalone: #{ruby} #{PhusionPassenger.bin_dir}/passenger start&quot;</span>
+                <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ruby</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;rvm/rubies/&quot;</span>)
+                        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;No Ruby interpreter found in $PATH.&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;## Notes for RVM users&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Do you want to know which command to use for a different Ruby interpreter? 'rvm use' that Ruby interpreter, then re-run 'passenger-config --ruby-command'.&quot;</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--rubyext-compat-id&quot;</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/binary_compatibility'</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">ruby_extension_binary_compatibility_id</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--cxx-compat-id&quot;</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/binary_compatibility'</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">cxx_binary_compatibility_id</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--version&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION_STRING</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;--help&quot;</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">help</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">help</span>
+                <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

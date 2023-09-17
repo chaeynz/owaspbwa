@@ -1,0 +1,22 @@
+This package was debianized by Arnaud Vandyck <avdyk@debian.org> on
+Mon, 27 Oct 2003 15:07:08 +0200.
+
+It was downloaded from http://commons.apache.org/cli
+
+Upstream Authors: James Strachan <jstrachan@apache.org>,
+                  Bob McWhirter <bob@werken.com>,
+                  John Keyes <jbjk@mac.com>,
+                  Rob Oxspring <roxspring@imapmail.org>,
+                  Emmanuel Bourg <ebourg@apache.org>,
+                  Peter Donald,
+                  Brian Egge,
+                  Berin Loritsch <bloritsch@apache.org>,
+                  Peter Maddocks <peter_maddocks@hp.com>,
+                  Andrew Shirley
+
+Copyright: 2002-2009 The Apache Software Foundation
+
+License: Apache-2.0
+
+On Debian systems the full text of the Apache License can be found
+in `/usr/share/common-licenses/Apache-2.0'.

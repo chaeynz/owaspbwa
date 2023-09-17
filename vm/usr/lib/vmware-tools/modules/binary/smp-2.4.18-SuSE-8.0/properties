@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-4GB-SMP
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment SuSE 8.0 smp with 2.4.18 kernel
+UtsMachine i386

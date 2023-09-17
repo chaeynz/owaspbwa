@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">pam_motd</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="other-useful-applications.html" title="Chapter 22. Other Useful Applications" />
+    <link rel="prev" href="other-useful-applications.html" title="Chapter 22. Other Useful Applications" />
+    <link rel="next" href="etckeeper.html" title="etckeeper" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="other-useful-applications.html">Other Useful Applications</a></span> &gt; <span class="breadcrumb-node">pam_motd</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="pam_motd">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="pam_motd"></a>pam_motd</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    When logging into an Ubuntu server you may have noticed the informative Message Of The Day (MOTD).  This information
+    is obtained and displayed using a couple of packages:
+    </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p>
+        <span class="emphasis"><em>landscape-common:</em></span> provides the core libraries of <span class="application"><strong>landscape-client</strong></span>,
+        which can be used to manage systems using the web based <span class="emphasis"><em>Landscape</em></span> application.  The package includes
+        the <span class="application"><strong>/usr/bin/landscape-sysinfo</strong></span> utility which is used to gather the information displayed
+        in the MOTD.
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        <span class="emphasis"><em>update-notifier-common:</em></span> is used to automatically update the MOTD via <span class="application"><strong>pam_motd</strong></span> module.
+        </p>
+                  </li>
+                </ul>
+              </div>
+              <p>    
+    <span class="application"><strong>pam_motd</strong></span> executes the scripts in <code class="filename">/etc/update-motd.d</code> in order based on the number 
+    prepended to the script.  The output of the scripts is written to <code class="filename">/var/run/motd</code>, keeping the numerical order, 
+    then concatenated with <code class="filename">/etc/motd.tail</code>.
+    </p>
+              <p>
+    You can add your own dynamic information to the MOTD.  For example, to add local weather information:
+    </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p>
+        First, install the <span class="application"><strong>weather-util</strong></span> package:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>sudo apt-get install weather-util</strong></span>
+</pre>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        The <span class="application"><strong>weather</strong></span> utility uses METAR data from the National Oceanic and Atmospheric Administration 
+        and forecasts from the National Weather  Service. In order to find local information you will need the 4-character ICAO 
+        location indicator. This can be determined by browsing to the 
+        <a class="ulink" href="http://www.weather.gov/tg/siteloc.shtml" target="_top">National Weather Service</a> site.
+        </p>
+                    <p>
+        Although the National Weather Service is a United States government agency there are weather stations available world wide.
+        However, local weather information for all locations outside the U.S. may not be available.
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        Create <code class="filename">/usr/local/bin/local-weather</code>, a simple shell script to use 
+        <span class="application"><strong>weather</strong></span> with your local ICAO indicator:
+        </p>
+                    <pre class="programlisting">
+#!/bin/sh
+#
+#
+# Prints the local weather information for the MOTD.
+#
+#
+
+# Replace KINT with your local weather station.
+# Local stations can be found here: http://www.weather.gov/tg/siteloc.shtml
+
+echo
+weather -i KINT
+echo
+
+</pre>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        Make the script executable:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>sudo chmod 755 /usr/local/bin/local-weather</strong></span>
+</pre>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        Next, create a symlink to <code class="filename">/etc/update-motd.d/98-local-weather</code>:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>sudo ln -s /usr/local/bin/local-weather /etc/update-motd.d/98-local-weather</strong></span>
+</pre>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        Finally, exit the server and re-login to view the new MOTD.
+        </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+    You should now be greeted with some useful information, and some information about the local weather that may not be
+    quite so useful. Hopefully the <span class="application"><strong>local-weather</strong></span> example demonstrates the flexibility of
+    <span class="application"><strong>pam_motd</strong></span>.
+    </p>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="other-useful-applications.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="other-useful-applications.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="etckeeper.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 22. Other Useful Applications </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> etckeeper</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

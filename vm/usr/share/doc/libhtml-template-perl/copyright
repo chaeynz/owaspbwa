@@ -1,0 +1,25 @@
+This package was debianized by Sander Smeenk <ssmeenk@debian.org> on
+Mon, 23 Oct 2000 19:18:14 +0200.
+
+It was downloaded from http://www.cpan.org/authors/id/S/SA/SAMTREGAR/
+
+Upstream Author: Sam Tregar <sam@tregar.com>
+
+Copyright:
+
+HTML::Template : A module for using HTML Templates with Perl
+Copyright (C) 2000 Sam Tregar (sam@tregar.com)
+
+This module is free software; you can redistribute it and/or modify it
+under the terms of either:
+
+a) the GNU General Public License as published by the Free Software
+Foundation; either version 1, or (at your option) any later version,
+or
+
+b) the "Artistic License" which comes with this module.
+
+
+On Debian systems, the complete text of the GNU General Public
+License can be found in /usr/share/common-licenses/GPL, while the
+Artistic License can be found in /usr/share/common-licenses/Artistic.

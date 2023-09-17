@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jaxen</groupId>
+	<artifactId>jaxen</artifactId>
+	<version>1.1.2</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.1.2</debian.originalVersion>
+		<debian.package>libjaxen-java</debian.package>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>xom</groupId>
+			<artifactId>xom</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+</project>

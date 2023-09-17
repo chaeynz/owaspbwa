@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-5bigmem
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Red Hat 7.3 for i686 bigmem smp systems.
+UtsMachine i386

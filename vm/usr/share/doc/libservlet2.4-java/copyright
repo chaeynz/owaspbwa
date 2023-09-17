@@ -1,0 +1,13 @@
+This package was debianized by Arnaud Vandyck <avdyk@debian.org> on
+Fri, 22 Apr 2005 12:53:51 +0200.
+
+It was downloaded from http://jakarta.apache.org/tomcat
+
+Upstream Authors: Jakarta Apache Group
+
+Copyright: 2005-2008 Apache Foundation
+
+License: Apache 2.0
+
+On Debian systems, the complete text of the Apache 2.0 License
+can be found in `/usr/share/common-licenses/Apache-2.0'.

@@ -1,0 +1,5 @@
+89948bd2e6ff5744ec7e467f71d73621  bin/busybox
+b40bfa7f3bea69c247a4f321797d1c9f  usr/share/man/man1/busybox.1.gz
+73b1ee3e92b3c2e570aeeaa2e61a9a1f  usr/share/lintian/overrides/busybox-static
+539cf417e700757e6c2ba205c5ed9d8a  usr/share/doc/busybox-static/copyright
+ec111830ec22bd0243cb8f415d12b037  usr/share/doc/busybox-static/changelog.Debian.gz

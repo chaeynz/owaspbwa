@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>ESAPI SwingSet</display-name>
+
+	<filter>
+		<filter-name>SimpleESAPIFilter</filter-name>
+		<filter-class>
+			org.owasp.esapi.swingset.SimpleESAPIFilter
+		</filter-class>
+		<init-param>
+			<param-name>resourceDirectory</param-name>
+			<param-value>/owaspbwa/owasp-esapi-java-swingset-svn/src/main/resources/</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping> 
+		<filter-name>SimpleESAPIFilter</filter-name>
+		<url-pattern>/test.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping> 
+		<filter-name>SimpleESAPIFilter</filter-name>
+		<url-pattern>/test1.jsp</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>controller</servlet-name>
+		<servlet-class>
+			org.owasp.esapi.swingset.Controller
+		</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>controller</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AjaxEngine</servlet-name>
+		<servlet-class>
+			org.owasp.esapi.swingset.AjaxEngine
+		</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AjaxEngine</servlet-name>
+		<url-pattern>/ajax</url-pattern>
+	</servlet-mapping>
+
+</web-app>

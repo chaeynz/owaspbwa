@@ -1,0 +1,9 @@
+auto
+/usr/bin/deliverquota
+deliverquota.8.gz
+/usr/share/man/man8/deliverquota.8.gz
+
+/usr/bin/deliverquota.courier
+10
+/usr/share/man/man8/deliverquota.courier.8.gz
+

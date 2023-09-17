@@ -1,0 +1,51 @@
+--------------- jtreg console summary for hotspot ---------------
+FAILED: compiler/6865031/Test.java
+Test results: passed: 61; failed: 1
+--------------- jtreg console summary for langtools ---------------
+Test results: passed: 1,355
+--------------- jtreg console summary for jdk ---------------
+FAILED: com/sun/crypto/provider/KeyFactory/TestProviderLeak.java
+FAILED: com/sun/net/httpserver/bugs/B6361557.java
+FAILED: java/awt/Frame/DynamicLayout/DynamicLayout.java
+Error:  java/awt/FullScreen/UninitializedDisplayModeChangeTest/UninitializedDisplayModeChangeTest.java
+FAILED: java/awt/print/PrinterJob/ExceptionTest.java
+FAILED: java/beans/XMLEncoder/javax_swing_tree_TreePath.java
+FAILED: java/net/URL/TestHttps.java
+FAILED: java/nio/channels/DatagramChannel/IsBound.java
+FAILED: java/nio/channels/DatagramChannel/IsConnected.java
+FAILED: java/nio/channels/Selector/Alias.java
+FAILED: java/nio/channels/Selector/BasicConnect.java
+FAILED: java/nio/channels/Selector/Connect.java
+FAILED: java/nio/channels/Selector/ConnectWrite.java
+FAILED: java/nio/channels/Selector/KeysReady.java
+FAILED: java/nio/channels/Selector/OpRead.java
+FAILED: java/nio/channels/SocketChannel/AdaptSocket.java
+FAILED: java/nio/channels/SocketChannel/Basic.java
+FAILED: java/nio/channels/SocketChannel/BufferSize.java
+FAILED: java/nio/channels/SocketChannel/Connect.java
+FAILED: java/nio/channels/SocketChannel/ConnectState.java
+FAILED: java/nio/channels/SocketChannel/FinishConnect.java
+FAILED: java/nio/channels/SocketChannel/IsConnectable.java
+FAILED: java/nio/channels/SocketChannel/LocalAddress.java
+FAILED: java/nio/channels/SocketChannel/Shutdown.java
+FAILED: java/nio/channels/SocketChannel/Stream.java
+FAILED: java/nio/channels/SocketChannel/VectorParams.java
+FAILED: java/security/KeyPairGenerator/Failover.java
+MyDeflater had end() called
+FAILED: javax/swing/JTextArea/Test6593649.java
+FAILED: sun/java2d/cmm/ColorConvertOp/ColConvCCMTest.java
+FAILED: sun/java2d/cmm/ColorConvertOp/ColConvDCMTest.java
+FAILED: sun/java2d/cmm/ColorConvertOp/MTColConvTest.java
+FAILED: sun/security/pkcs11/ec/ReadCertificates.java
+FAILED: sun/security/pkcs11/ec/ReadPKCS12.java
+FAILED: sun/security/pkcs11/ec/TestCurves.java
+FAILED: sun/security/pkcs11/ec/TestECDH.java
+FAILED: sun/security/pkcs11/ec/TestECDSA.java
+FAILED: sun/security/pkcs11/ec/TestECGenSpec.java
+FAILED: sun/security/pkcs11/ec/TestKeyFactory.java
+FAILED: sun/security/pkcs11/sslecc/ClientJSSEServerJSSE.java
+FAILED: sun/security/pkcs11/tls/TestPRF.java
+FAILED: sun/security/ssl/javax/net/ssl/NewAPIs/SSLEngine/TestAllSuites.java
+FAILED: sun/security/ssl/sanity/ciphersuites/CheckCipherSuites.java
+FAILED: sun/security/ssl/sanity/interop/ClientJSSEServerJSSE.java
+Test results: passed: 3,359; failed: 42; error: 1

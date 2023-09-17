@@ -1,0 +1,11 @@
+c51223d412b35af50b3caa46e4539abf  usr/share/java/bsh-2.0b4.jar
+6c4fe286f456fab6e4121dc3ebe87420  usr/share/maven-repo/org/beanshell/bsh/2.0b4/bsh-2.0b4.pom
+a4e3313487875b1be6fa94c70253706d  usr/share/maven-repo/org/beanshell/bsh/debian/bsh-debian.pom
+4df39d7f82144cf97ea7b452a82d871a  usr/share/doc/bsh/README.Debian
+8893ab3459ab5a499157ae60bf2c65d6  usr/share/doc/bsh/copyright
+fbc9d9b921ae79e86d5ab685713ee945  usr/share/doc/bsh/changelog.Debian.gz
+1bbb40f5608f0e4580528114f1121ccf  usr/share/man/man1/bsh.1.gz
+bebbf0e16a425626d101d8aacf8b4f01  usr/share/man/man1/xbsh.1.gz
+c7daaf9cc8886406088f27c8fe7b44a2  usr/share/menu/bsh
+c8dc3e013bec20fb989abb93df4029ae  usr/bin/bsh
+b9baec9c3f3a13f8341a1a015dccd395  usr/bin/xbsh

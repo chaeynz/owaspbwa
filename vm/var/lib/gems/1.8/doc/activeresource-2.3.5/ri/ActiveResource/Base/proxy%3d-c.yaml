@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the URI of the http proxy to the value in the <tt>proxy</tt> argument.
+full_name: ActiveResource::Base::proxy=
+is_singleton: true
+name: proxy=
+params: (proxy)
+visibility: public

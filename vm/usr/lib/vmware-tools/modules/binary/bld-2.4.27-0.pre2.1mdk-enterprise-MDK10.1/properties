@@ -1,0 +1,6 @@
+UtsRelease 2.4.27-0.pre2.1mdkenterprise
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Mandrake 10.1, 2.4.27, enterprise
+UtsMachine i386

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionController::Flash::FlashHash#store
+is_singleton: false
+name: store
+params: (session, key = "flash")
+visibility: public

@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Postfix</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="email-services.html" title="Chapter 14. Email Services" />
+    <link rel="prev" href="email-services.html" title="Chapter 14. Email Services" />
+    <link rel="next" href="exim4.html" title="Exim4" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="email-services.html">Email Services</a></span> &gt; <span class="breadcrumb-node">Postfix</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Postfix">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="postfix"></a>Postfix</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+            <span class="application"><strong>Postfix</strong></span> is the default Mail Transfer Agent (MTA) in Ubuntu. It
+            attempts to be fast and easy to administer and secure. It is
+            compatible with the MTA <span class="application"><strong>sendmail</strong></span>. This section explains how
+            to install and configure <span class="application"><strong>postfix</strong></span>. It also explains how to
+            set it up as an SMTP server using a secure connection (for sending emails securely).
+          </p>
+              <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="../../libs/admon/note.png" />
+                    </td>
+                    <th align="left"></th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+            This guide does not cover setting up Postfix <span class="emphasis"><em>Virtual Domains</em></span>, for information
+            on Virtual Domains and other advanced configurations see <a class="xref" href="postfix.html#postfix-references" title="References">the section called “References”</a>.
+            </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            To install <span class="application"><strong>postfix</strong></span> run the following command:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install postfix</strong></span>
+</pre>
+                <p>
+	    Simply press return when the installation process asks questions, the configuration will be done in greater detail in the next stage.
+            </p>
+              </div>
+              <div class="sect2" title="Basic Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-configuration"></a>Basic Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            To configure <span class="application"><strong>postfix</strong></span>, run the following command:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>sudo dpkg-reconfigure postfix</strong></span>
+</pre>
+                <p>
+            The user interface will be displayed. On each screen, select the following
+            values:
+            </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc" compact="compact">
+                    <li class="listitem">
+                      <p>Internet Site</p>
+                    </li>
+                    <li class="listitem">
+                      <p>mail.example.com</p>
+                    </li>
+                    <li class="listitem">
+                      <p>steve</p>
+                    </li>
+                    <li class="listitem">
+                      <p>mail.example.com, localhost.localdomain, localhost</p>
+                    </li>
+                    <li class="listitem">
+                      <p>No</p>
+                    </li>
+                    <li class="listitem">
+                      <p>127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128 192.168.0.0/24</p>
+                    </li>
+                    <li class="listitem">
+                      <p>0</p>
+                    </li>
+                    <li class="listitem">
+                      <p>+</p>
+                    </li>
+                    <li class="listitem">
+                      <p>all</p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+            </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            Replace mail.example.com with the domain for which you'll accept email, 192.168.0.0/24 with the actual network and class 
+	    range of your mail server, and steve with the appropriate username.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+            Now is a good time to decide which mailbox format you want to use.  By default 
+            Postfix will use  <span class="strong"><strong>mbox</strong></span> for the mailbox format.
+            Rather than editing the configuration file directly, 
+	    you can use the <span class="command"><strong>postconf</strong></span> command to configure
+            all <span class="application"><strong>postfix</strong></span> parameters.  The
+            configuration parameters will be stored in
+            <code class="filename">/etc/postfix/main.cf</code> file. Later if you
+            wish to re-configure a particular parameter, you can either
+            run the command or change it manually in the file.
+            </p>
+                <p>
+            To configure the mailbox format for <span class="strong"><strong>Maildir:</strong></span>
+            </p>
+                <pre class="screen">
+<span class="command"><strong>sudo postconf -e 'home_mailbox = Maildir/'</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            This will place new mail in /home/<span class="italic">username</span>/Maildir so 
+            you will need to configure your Mail Delivery Agent (MDA) to use the same path.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="SMTP Authentication">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-smtp-authentication"></a>SMTP Authentication</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	    SMTP-AUTH allows a client to identify itself through an authentication mechanism (SASL).
+	    Transport Layer Security (TLS) should be used to encrypt the authentication process.
+	    Once authenticated the SMTP server will allow the client to relay mail.  
+            </p>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+                 Configure Postfix for SMTP-AUTH using SASL (Dovecot SASL):
+		 </p>
+                      <pre class="screen">
+sudo postconf -e 'smtpd_sasl_type = dovecot'
+sudo postconf -e 'smtpd_sasl_path = private/auth-client'
+sudo postconf -e 'smtpd_sasl_local_domain ='
+sudo postconf -e 'smtpd_sasl_security_options = noanonymous'
+sudo postconf -e 'broken_sasl_auth_clients = yes'
+sudo postconf -e 'smtpd_sasl_auth_enable = yes'
+sudo postconf -e 'smtpd_recipient_restrictions = permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination'
+sudo postconf -e 'inet_interfaces = all'
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+		The <span class="emphasis"><em>smtpd_sasl_path</em></span> configuration is a path relative to the Postfix queue directory.
+	        </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+                Next, obtain a digital certificate for TLS. See <a class="xref" href="certificates-and-security.html" title="Certificates">the section called “Certificates”</a> for details.
+                This example also uses a Certificate Authority (CA).  For information on generating a CA certificate see
+                <a class="xref" href="certificates-and-security.html#certificate-authority" title="Certification Authority">the section called “Certification Authority”</a>.
+	        </p>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+                You can get the digital certificate from a certificate
+		authority.   But unlike web clients, SMTP clients rarely
+		complain about
+		"self-signed certificates", so alternatively, you
+                can create the certificate yourself. Refer to 
+		<a class="xref" href="certificates-and-security.html#creating-a-self-signed-certificate" title="Creating a Self-Signed Certificate">the section called “Creating a Self-Signed Certificate”</a> for more
+                details.
+                </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+                Once you have a certificate, configure Postfix to provide TLS encryption for both incoming and outgoing mail:
+                </p>
+                      <pre class="screen">
+sudo postconf -e 'smtpd_tls_auth_only = no'
+sudo postconf -e 'smtp_use_tls = yes'
+sudo postconf -e 'smtpd_use_tls = yes'
+sudo postconf -e 'smtp_tls_note_starttls_offer = yes'
+sudo postconf -e 'smtpd_tls_key_file = /etc/ssl/private/server.key'
+sudo postconf -e 'smtpd_tls_cert_file = /etc/ssl/certs/server.crt'
+sudo postconf -e 'smtpd_tls_loglevel = 1'
+sudo postconf -e 'smtpd_tls_received_header = yes'
+sudo postconf -e 'smtpd_tls_session_cache_timeout = 3600s'
+sudo postconf -e 'tls_random_source = dev:/dev/urandom'
+sudo postconf -e 'myhostname = mail.example.com'
+</pre>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+                  If you are using your own <span class="emphasis"><em>Certificate Authority</em></span> to sign the certificate enter:
+                  </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo postconf -e 'smtpd_tls_CAfile = /etc/ssl/certs/cacert.pem'</strong></span>
+</pre>
+                      <p>
+                  Again, for more details about certificates see <a class="xref" href="certificates-and-security.html" title="Certificates">the section called “Certificates”</a>.
+                  </p>
+                    </li>
+                  </ol>
+                </div>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            After running all the commands, <span class="application"><strong>Postfix</strong></span> is configured for SMTP-AUTH 
+	    and a self-signed certificate has been created for TLS encryption.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+            Now, the file <code class="filename">/etc/postfix/main.cf</code>
+            should look like <a class="ulink" href="../sample/postfix_configuration" target="_top">this</a>.
+	    </p>
+                <p>
+            The postfix initial configuration is complete. Run
+            the following command to restart the postfix daemon:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/postfix restart</strong></span>
+</pre>
+                <p>
+            <span class="application"><strong>Postfix</strong></span> supports SMTP-AUTH as defined in
+            <a class="ulink" href="ftp://ftp.isi.edu/in-notes/rfc2554.txt" target="_top">RFC2554</a>.
+            It is based on <a class="ulink" href="ftp://ftp.isi.edu/in-notes/rfc2222.txt" target="_top">SASL</a>. However it is still necessary 
+	    to set up SASL authentication before you can use SMTP-AUTH.
+            </p>
+              </div>
+              <div class="sect2" title="Configuring SASL">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-sasl"></a>Configuring SASL</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>	              
+	    Postfix supports two SASL implementations Cyrus SASL and Dovecot SASL.  To enable Dovecot SASL 	    
+	    the <span class="application"><strong>dovecot-common</strong></span> package will need to be installed.  From a terminal prompt
+	    enter the following:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install dovecot-common</strong></span>
+</pre>
+                <p>
+ 	    Next you will need to edit <code class="filename">/etc/dovecot/dovecot.conf</code>.  In the <span class="emphasis"><em>auth default</em></span>
+	    section uncomment the <span class="emphasis"><em>socket listen</em></span> option and change the following:
+	    </p>
+                <pre class="programlisting">
+  socket listen {
+    #master {
+      # Master socket provides access to userdb information. It's typically
+      # used to give Dovecot's local delivery agent access to userdb so it
+      # can find mailbox locations.
+      #path = /var/run/dovecot/auth-master
+      #mode = 0600
+      # Default user/group is the one who started dovecot-auth (root)
+      #user = 
+      #group = 
+    #}
+    client {
+      # The client socket is generally safe to export to everyone. Typical use
+      # is to export it to your SMTP server so it can do SMTP AUTH lookups
+      # using it.
+      path = /var/spool/postfix/private/auth-client
+      mode = 0660
+      user = postfix
+      group = postfix
+    }
+  }
+</pre>
+                <p>
+            In order to let <span class="application"><strong>Outlook</strong></span> clients use SMTPAUTH, in the <span class="emphasis"><em>auth default</em></span> 
+            section of /etc/dovecot/dovecot.conf add <span class="emphasis"><em>"login"</em></span>:
+            </p>
+                <pre class="programlisting">
+  mechanisms = plain login
+</pre>
+                <p>
+	    Once you have <span class="application"><strong>Dovecot</strong></span> configured restart it with:
+	    </p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/dovecot restart</strong></span>
+</pre>
+              </div>
+              <div class="sect2" title="Postfix-Dovecot">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-dovecot"></a>Postfix-Dovecot</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            Another option for configuring <span class="application"><strong>Postfix</strong></span> for SMTP-AUTH is using the 
+            <span class="application"><strong>dovecot-postfix</strong></span> package.  This package will install 
+            <span class="application"><strong>Dovecot</strong></span> and configure <span class="application"><strong>Postfix</strong></span> to use it
+            for both SASL authentication and as a Mail Delivery Agent (MDA).  The package also configures 
+            <span class="application"><strong>Dovecot</strong></span> for IMAP, IMAPS, POP3, and POP3S.
+            </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+              You may or may not want to run IMAP, IMAPS, POP3, or POP3S on your mail server.  For example, 
+              if you are configuring your server to be a mail gateway, spam/virus filter, etc.  If this is 
+              the case it may be easier to use the above commands to configure Postfix for SMTPAUTH.
+              </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+            To install the package, from a terminal prompt enter:
+            </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install dovecot-postfix</strong></span>
+</pre>
+                <p>
+            You should now have a working mail server, but there are a few options that you may wish to further customize.  For example, the
+            package uses the certificate and key from the <span class="application"><strong>ssl-cert</strong></span> package, and in a production environment you should
+            use a certificate and key generated for the host.  See <a class="xref" href="certificates-and-security.html" title="Certificates">the section called “Certificates”</a> for more details.
+            </p>
+                <p>
+            Once you have a customized certificate and key for the host, change the following options in <code class="filename">/etc/postfix/main.cf</code>:
+            </p>
+                <pre class="programlisting">
+smtpd_tls_cert_file = /etc/ssl/certs/ssl-mail.pem
+smtpd_tls_key_file = /etc/ssl/private/ssl-mail.key
+</pre>
+                <p>
+            Then restart Postfix:
+            </p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/postfix restart</strong></span>
+</pre>
+              </div>
+              <div class="sect2" title="Testing">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-testing"></a>Testing</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            SMTP-AUTH configuration is complete. Now it is time to test the setup. 
+	    </p>
+                <p>
+            To see if SMTP-AUTH and TLS work properly, run the following
+            command:
+            </p>
+                <pre class="screen">
+<span class="command"><strong>telnet mail.example.com 25</strong></span>
+</pre>
+                <p>
+            After you have established the connection to the postfix mail
+            server, type:
+            </p>
+                <pre class="screen">
+ehlo mail.example.com
+</pre>
+                <p>
+          If you see the following lines among others, then everything
+          is working perfectly. Type <span class="command"><strong>quit</strong></span> to exit.
+          </p>
+                <pre class="programlisting">
+250-STARTTLS
+250-AUTH LOGIN PLAIN
+250-AUTH=LOGIN PLAIN
+250 8BITMIME
+</pre>
+              </div>
+              <div class="sect2" title="Troubleshooting">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="postfix-troubleshooting"></a>Troubleshooting</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	    This section introduces some common ways to determine the cause if problems arise.
+	    </p>
+                <div class="sect3" title="Escaping chroot">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="postfix-chroot"></a>Escaping chroot</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+ 	    The Ubuntu <span class="application"><strong>postfix</strong></span> package will by default install into a <span class="emphasis"><em>chroot</em></span> 
+	    environment for security reasons.  This can add greater complexity when troubleshooting problems.
+	    </p>
+                  <p>
+          To turn off the chroot operation locate for the following line in the
+          <code class="filename">/etc/postfix/master.cf</code> configuration file:
+          </p>
+                  <pre class="screen">
+smtp      inet  n       -       -       -       -       smtpd
+</pre>
+                  <p>
+	  and modify it as follows:
+          </p>
+                  <pre class="screen">
+smtp      inet  n       -       n       -       -       smtpd
+</pre>
+                  <p>
+	  You will then need to restart Postfix to use the new configuration.  From a terminal prompt enter:
+          </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/postfix restart</strong></span>
+</pre>
+                </div>
+                <div class="sect3" title="Log Files">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="postfix-logs"></a>Log Files</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	  <span class="application"><strong>Postfix</strong></span> sends all log messages to <code class="filename">/var/log/mail.log</code>.
+	  However error and warning messages can sometimes get lost in the normal log output so they are also logged to
+          <code class="filename">/var/log/mail.err</code> and <code class="filename">/var/log/mail.warn</code> respectively.
+          </p>
+                  <p>
+ 	  To see messages entered into the logs in real time you can use the <span class="application"><strong>tail -f</strong></span>
+	  command:
+	  </p>
+                  <pre class="screen">
+<span class="command"><strong>tail -f /var/log/mail.err</strong></span>
+</pre>
+                  <p>
+	The amount of detail that is recorded in the logs can be increased.  Below are some configuration options for increasing the log level
+	for some of the areas covered above.
+	</p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc" compact="compact">
+                      <li class="listitem">
+                        <p>
+	    To increase <span class="emphasis"><em>TLS</em></span> activity logging set the <span class="emphasis"><em>smtpd_tls_loglevel</em></span> option to a value from 1 to 4.
+ 	    </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo postconf -e 'smtpd_tls_loglevel = 4'</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	    If you are having trouble sending or receiving mail from a specific domain you can add the domain to the <span class="emphasis"><em>debug_peer_list</em></span>
+	    parameter.
+ 	    </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo postconf -e 'debug_peer_list = problem.domain'</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+	    You can increase the verbosity of any <span class="application"><strong>Postfix</strong></span> daemon process by editing the <code class="filename">/etc/postfix/master.cf</code>
+	    and adding a <span class="emphasis"><em>-v</em></span> after the entry.  For example edit the <span class="emphasis"><em>smtp</em></span> entry:
+ 	    </p>
+                        <pre class="programlisting">
+smtp      unix  -       -       -       -       -       smtp -v
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+	  It is important to note that after making one of the logging changes above the <span class="application"><strong>Postfix</strong></span> process will need to be reloaded
+	  in order to recognize the new configuration: <span class="command"><strong>sudo /etc/init.d/postfix reload</strong></span>
+	  </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc" compact="compact">
+                      <li class="listitem">
+                        <p>
+   	    To increase the amount of information logged when troubleshooting <span class="emphasis"><em>SASL</em></span> issues you can set the following options in 
+	    <code class="filename">/etc/dovecot/dovecot.conf</code>
+	    </p>
+                        <pre class="programlisting">
+auth_debug=yes
+auth_debug_passwords=yes
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+	  Just like <span class="application"><strong>Postfix</strong></span> if you change a <span class="application"><strong>Dovecot</strong></span> configuration the process will need to be
+	  reloaded: <span class="command"><strong>sudo /etc/init.d/dovecot reload</strong></span>.
+	  </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+          Some of the options above can drastically increase the amount of information sent to the log files.  Remember to return the log level 
+	  back to normal after you have corrected the problem.  Then reload the appropriate daemon for the new configuration to take affect.
+	  </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="References">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="postfix-references"></a>References</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	  Administering a <span class="application"><strong>Postfix</strong></span> server can be a very complicated task.  At some point you may
+	  need to turn to the Ubuntu community for more experienced help.
+	  </p>
+                  <p>
+	  A great place to ask for <span class="application"><strong>Postfix</strong></span> assistance, and get involved with the Ubuntu Server community,
+	  is the <span class="emphasis"><em>#ubuntu-server</em></span>  IRC channel on  <a class="ulink" href="http://freenode.net" target="_top">freenode</a>.  You 
+	  can also post a message to one of the <a class="ulink" href="http://www.ubuntu.com/support/community/webforums" target="_top">Web Forums</a>.
+          </p>
+                  <p>
+	  For in depth <span class="application"><strong>Postfix</strong></span> information Ubuntu developers highly recommend:
+	  <a class="ulink" href="http://www.postfix-book.com/" target="_top">The Book of Postfix</a>.
+	  </p>
+                  <p>
+	  Finally, the <a class="ulink" href="http://www.postfix.org/documentation.html" target="_top">Postfix</a> website also has great documentation on all
+	  the different configuration options available.
+	  </p>
+                  <p>
+      Also, the <a class="ulink" href="https://help.ubuntu.com/community/Postfix" target="_top">Ubuntu Wiki Postifx</a> page has more information.
+      </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="email-services.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="email-services.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="exim4.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 14. Email Services </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Exim4</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

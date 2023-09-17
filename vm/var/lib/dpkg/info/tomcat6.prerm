@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    remove)
+	[ -f /etc/default/tomcat6 ] && . /etc/default/tomcat6
+	[ -z "$TOMCAT6_USER" ] && TOMCAT6_USER="tomcat6"
+	# Remove auth for tomcat6 to open privileged ports via authbind.
+	TOMCAT_UID="`id -u $TOMCAT6_USER`"
+	if [ -f "/etc/authbind/byuid/$TOMCAT_UID" ]; then
+		rm -f /etc/authbind/byuid/$TOMCAT_UID
+	fi
+    ;;
+esac
+
+# Automatically added by dh_installinit
+if [ -x "/etc/init.d/tomcat6" ]; then
+	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d tomcat6 stop || true
+	else
+		/etc/init.d/tomcat6 stop || true
+	fi
+fi
+# End automatically added section
+

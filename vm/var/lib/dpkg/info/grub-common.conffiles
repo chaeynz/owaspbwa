@@ -1,0 +1,7 @@
+/etc/pm/sleep.d/10_grub-common
+/etc/grub.d/00_header
+/etc/grub.d/30_os-prober
+/etc/grub.d/40_custom
+/etc/grub.d/10_linux
+/etc/grub.d/README
+/etc/init.d/grub-common

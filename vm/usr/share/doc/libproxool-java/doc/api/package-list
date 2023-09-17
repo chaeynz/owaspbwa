@@ -1,0 +1,10 @@
+org.logicalcobwebs.concurrent
+org.logicalcobwebs.proxool
+org.logicalcobwebs.proxool.admin
+org.logicalcobwebs.proxool.admin.jmx
+org.logicalcobwebs.proxool.admin.jndi
+org.logicalcobwebs.proxool.admin.servlet
+org.logicalcobwebs.proxool.configuration
+org.logicalcobwebs.proxool.proxy
+org.logicalcobwebs.proxool.resources
+org.logicalcobwebs.proxool.util

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.codehaus.plexus</groupId>
+	<artifactId>plexus-utils</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.5.15</debian.originalVersion>
+		<debian.package>libplexus-utils-java</debian.package>
+	</properties>
+	
+	<name>Plexus Common Utilities</name>
+	<description>A collection of various utility classes to ease working with strings, files, command lines, XML and more.</description>
+	<url>http://plexus.codehaus.org/plexus-utils</url>
+	<scm>
+		<connection>scm:svn:http://svn.codehaus.org/plexus/plexus-utils/tags/plexus-utils-1.5.15</connection>
+		<developerConnection>scm:svn:https://svn.codehaus.org/plexus/plexus-utils/tags/plexus-utils-1.5.15</developerConnection>
+		<url>http://fisheye.codehaus.org/browse/plexus/plexus-utils/tags/plexus-utils-1.5.15</url>
+	</scm>
+	<issueManagement>
+		<system>JIRA</system>
+		<url>http://jira.codehaus.org/browse/PLXUTILS</url>
+	</issueManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-interpolation</artifactId>
+			<version>debian</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.codehaus.plexus</groupId>
+					<artifactId>plexus-component-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.codehaus.plexus</groupId>
+					<artifactId>plexus-classworlds</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>

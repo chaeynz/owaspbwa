@@ -1,0 +1,8 @@
+plexus-utils
+------------
+
+This package is a set of utilities used by the Plexus container and a lot of
+the components.
+
+--
+Trygve Laugstøl

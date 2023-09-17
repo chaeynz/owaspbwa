@@ -1,0 +1,6 @@
+a9c2c9e22d627f6ffecc490c16acc00e  usr/share/doc/libpulse0/README
+b5ee45171c5d77667ae9981923d48f63  usr/share/doc/libpulse0/copyright
+116d5bb590d3d28451ed185ba1444340  usr/share/doc/libpulse0/changelog.Debian.gz
+f732b5de84afe013d303221446c1d1d8  usr/lib/libpulse.so.0.12.2
+35049f000bbb10c26d4c2aa46d146608  usr/lib/libpulse-simple.so.0.0.3
+8229854c3f1ddc3d76c82f9dc16e0de9  usr/lib/libpulsecommon-0.9.21.so

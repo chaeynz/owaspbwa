@@ -1,0 +1,4 @@
+0d9ce149e3aced1ff07f3002871448e9  usr/share/doc/tomcat6/copyright
+9e7bcc4b8780543a4e871fcbf6ffcdf5  usr/share/doc/tomcat6/changelog.Debian.gz
+edb6fc2099c8649c957ad1a543ad6f60  usr/share/tomcat6/webapps/default_root/META-INF/context.xml
+7b1cc4e93819dacbfd1de8ad9f6473a4  usr/share/tomcat6/webapps/default_root/index.html

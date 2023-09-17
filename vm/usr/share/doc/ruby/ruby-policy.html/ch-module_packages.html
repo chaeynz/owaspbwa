@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian Ruby Policy - Packaged Modules</title>
+
+</head>
+
+<body>
+
+<p><a name="ch-module_packages"></a></p>
+<hr>
+
+<p>
+[ <a href="ch-ruby.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ 2 ]
+[ <a href="ch-programs.html">3</a> ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ch-programs.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian Ruby Policy
+<br>Chapter 2 - Packaged Modules
+</h1>
+
+<hr>
+
+<h2><a name="s-package_names"></a>2.1 Module Package Names</h2>
+
+<p>
+Ruby module packages should be named for the primary module provided.  The
+naming convention for a module <samp>foo</samp> is
+<code>lib<var>foo</var>-ruby<var>X</var>.<var>Y</var></code> for the package
+for the Ruby version <var>X</var>.<var>Y</var>.
+</p>
+
+<p>
+Package that includes <var>foo</var> modules in
+<code>/usr/lib/ruby/<var>X</var>.<var>Y</var>/</code> must be named as
+<code>lib<var>foo</var>-ruby<var>X</var>.<var>Y</var></code>.
+</p>
+
+<p>
+Since we don't have version independent module path (<a
+href="ch-ruby.html#s-paths">Module Path, Section 1.6</a>), you must package
+ruby modules for each ruby version even if the module is really version
+independent.  So, your choice is (1) package only for default version of ruby,
+or (2) package for each available versions of ruby.  XXX: We don't recommend
+that <code>lib<var>foo</var>-ruby</code> contains files for all available
+versions of ruby.
+</p>
+
+<p>
+The package name <code>lib<var>foo</var>-ruby</code> should be used for a dummy
+package that depends on
+<code>lib<var>foo</var>-ruby<var>X</var>.<var>Y</var></code> that is packaged
+for default version of ruby <var>X</var>.<var>Y</var>.  By using such a dummy
+package, user can easily follow upgrading.
+</p>
+
+<hr>
+
+<h2><a name="s-dependencies"></a>2.2 Dependencies</h2>
+
+<p>
+Packaged modules available for one particular version of Ruby must depend on
+the corresponding <code>libruby<var>X</var>.<var>Y</var></code> package.  Note
+that you should use <code>libruby<var>X</var>.<var>Y</var></code>, not
+<code>ruby<var>X</var>.<var>Y</var></code>, because these modules are available
+<code>mod_ruby</code> or <code>eruby</code> without <code>/usr/bin/ruby</code>.
+Of course, if the package includes ruby scripts using
+<samp>#!/usr/bin/ruby</samp>.  it must depend on <code>ruby</code>.  (FIXME:
+such scripts should be packaged separately?)
+</p>
+
+<hr>
+
+<p>
+[ <a href="ch-ruby.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ 2 ]
+[ <a href="ch-programs.html">3</a> ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ch-programs.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian Ruby Policy
+</p>
+
+<address>
+version 0.0.1.4<br>
+<br>
+Akira Yamada<br>
+Akira Tagoh<br>
+Fumitoshi UKAI<br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

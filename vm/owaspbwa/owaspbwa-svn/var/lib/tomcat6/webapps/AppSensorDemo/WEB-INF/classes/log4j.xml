@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- main resources -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="file" class="org.apache.log4j.RollingFileAppender">
+        <param name="maxFileSize" value="5000KB" />
+        <param name="maxBackupIndex" value="500" />
+        <param name="File" value="${catalina.home}/logs/AppSensor.log" />
+        <!--  <param name="File" value="c:/ARMS.log" /> -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n" />
+        </layout>
+  </appender>
+  
+  <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n" />
+        </layout>
+  </appender>
+
+  <root> 
+    <priority value="info" /> 
+    <appender-ref ref="file" /> 
+    <appender-ref ref="stdout" /> 
+  </root>
+  
+</log4j:configuration>

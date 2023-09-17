@@ -1,0 +1,9 @@
+/.
+/bin
+/bin/ld_static
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/binutils-static
+/usr/share/doc/binutils-static/copyright
+/usr/share/doc/binutils-static/changelog.Debian.gz

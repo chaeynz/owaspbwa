@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionController::Reloader::BodyWrapper::new
+is_singleton: true
+name: new
+params: (body, lock)
+visibility: public

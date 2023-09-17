@@ -1,0 +1,12 @@
+d1a0692dd43257707122e6b565cca345  usr/bin/expect
+5c117630020c9c0fb3a9326173c425f1  usr/lib/libexpect.so.5.44.1.14
+9c8d220bd08d4965cd61c1d4834886bd  usr/lib/tcltk/expect5.44.1.14/pkgIndex.tcl
+c0f27f3cce74d88430573215b189213d  usr/share/man/man1/expect.1.gz
+7bf459bdac4da399557f648724ef527a  usr/share/doc/expect/FAQ.gz
+9260352a53f3425aae08c46718daa0cc  usr/share/doc/expect/NEWS.gz
+43ed9cc1c09f1b738eb7fda49142b441  usr/share/doc/expect/changelog.Debian.gz
+db8438f60bc19fb4c750e8c0239320e9  usr/share/doc/expect/copyright
+e07513bafb8f2d3baab33b02d24bed21  usr/share/doc/expect/changelog.gz
+1b8e12d0112dafe81aabe7a64550c076  usr/share/doc/expect/ChangeLog.gz
+ca05462644779cd2da3c8412da429fa9  usr/share/doc/expect/README.gz
+bf2cf1c5918747af6f805c320c3aa26f  usr/share/lintian/overrides/expect

@@ -1,0 +1,4 @@
+# Defaults for mono-apache-server2
+
+# Should mono-apache-server2 start apache?
+start_apache=true

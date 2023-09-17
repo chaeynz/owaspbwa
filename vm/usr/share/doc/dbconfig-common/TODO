@@ -1,0 +1,46 @@
+- in the long run, hardcoding the question priorities isn't ideal.  for
+  example, if a something goes wrong and the user selects "retry", they
+  should get all questions in case they needed to change something that
+  they missed.
+
+- the code is "in the process of" getting a cleanup.  there are still a
+  few globally scoped variables that ought to be removed and/or replaced
+  by local scoped variables.
+
+- testing various corner cases:
+  - errors dumping during upgrade
+  - errors dumping during purge
+
+- test suite for testing new versions of dbconfig-common.  ideally it
+  could just be a shell script that:
+	- builds the dbc package
+	- creates a chroot, chroots into it and:
+		- installs the dbc package + deps + db servers, 
+		- creates the examples out of /usr/share/doc/dbconfig-common/examples
+		- installs the examples in various ways to test functionality.
+
+- multiple instance support for many databases from one package.  the
+  idea is to create seperate "package configurations" that are derived
+  from the main configuration, using something to keep them in a namespace
+  that won't conflict with the standard package configurations.  something
+  like /etc/dbconfig-common/package_instance.conf etc.  most of dbconfig's
+  code could escape needing a rewrite then, as we could internally "trick"
+  the code into thinking that was the actual package name.
+
+- provide a normal-user-accessible script for setting up databases
+  (for running out of public_html type directories etc).
+
+- support for other database types (sqlite, others?)
+
+- think about how this should tie in with the webapps-common.
+
+- begin discussion on having the "best-practices" document incorporated
+  in some form as debian policy.
+
+- ask if the user is to be completely deleted or only have privileges
+  revoked in mysql.  this is the default in pgsql, but in pgsql the drop
+  will fail if the user owns other databases (not so in mysql).
+
+- mysql does not support ssl for the time being (see bug #291945)
+
+- should we remove users completely at purge?

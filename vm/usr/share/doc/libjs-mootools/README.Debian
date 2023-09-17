@@ -1,0 +1,13 @@
+mootools for Debian
+-------------------
+
+In order to make use of mootools in your html, include the following lines in
+your html header:
+
+    <script language="javascript" type="text/javascript"
+    src="/javascript/mootools/mootools.js"></script>
+
+    <script language="javascript" type="text/javascript"
+    src="/javascript/mootools/mootools-more.js"></script>
+
+ -- Marcelo Jorge Vieira (metal) <metal@alucinados.com> Sat, 29 Aug 2009 19:33:00 -0300

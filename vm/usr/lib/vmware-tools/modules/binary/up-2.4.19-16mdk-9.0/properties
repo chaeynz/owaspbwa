@@ -1,0 +1,6 @@
+UtsRelease 2.4.19-16mdk
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Mandrake 9.0
+UtsMachine i386

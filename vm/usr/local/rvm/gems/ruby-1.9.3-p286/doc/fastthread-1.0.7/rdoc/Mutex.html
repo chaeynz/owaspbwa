@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Mutex - fastthread-1.0.7 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>ext/fastthread/fastthread.c
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-exclusive_unlock">#exclusive_unlock</a>
+    
+    <li><a href="#method-i-lock">#lock</a>
+    
+    <li><a href="#method-i-locked-3F">#locked?</a>
+    
+    <li><a href="#method-i-marshal_dump">#marshal_dump</a>
+    
+    <li><a href="#method-i-marshal_load">#marshal_load</a>
+    
+    <li><a href="#method-i-synchronize">#synchronize</a>
+    
+    <li><a href="#method-i-try_lock">#try_lock</a>
+    
+    <li><a href="#method-i-unlock">#unlock</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./ext/fastthread/Makefile.html">Makefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ConditionVariable.html">ConditionVariable</a>
+  
+    <li><a href="./Mutex.html">Mutex</a>
+  
+    <li><a href="./Queue.html">Queue</a>
+  
+    <li><a href="./SizedQueue.html">SizedQueue</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Mutex</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Mutex.html">Mutex</a> implements a simple semaphore that can be
+used to coordinate access to shared data from multiple concurrent threads.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'thread'</span>
+<span class="ruby-identifier">semaphore</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-identifier">a</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> {
+  <span class="ruby-identifier">semaphore</span>.<span class="ruby-identifier">synchronize</span> {
+    <span class="ruby-comment"># access shared resource</span>
+  }
+}
+
+<span class="ruby-identifier">b</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> {
+  <span class="ruby-identifier">semaphore</span>.<span class="ruby-identifier">synchronize</span> {
+    <span class="ruby-comment"># access shared resource</span>
+  }
+}
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-exclusive_unlock" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            exclusive_unlock { ... }
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>If the mutex is locked, unlocks the mutex, wakes one waiting thread, and
+yields in a critical section.</p>
+          
+
+          
+          <div class="method-source-code" id="exclusive_unlock-source">
+            <pre>static VALUE
+rb_mutex_exclusive_unlock(VALUE self)
+{
+    Mutex *mutex;
+    VALUE waking;
+    Data_Get_Struct(self, Mutex, mutex);
+
+    waking = thread_exclusive(rb_mutex_exclusive_unlock_inner, (VALUE)mutex);
+
+    if (!RTEST(waking)) {
+        return Qnil;
+    }
+
+    run_thread(waking);
+
+    return self;
+}</pre>
+          </div><!-- exclusive_unlock-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exclusive_unlock-method -->
+
+    
+      <div id="method-i-lock" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            lock
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Attempts to grab the lock and waits if it isn't available.</p>
+          
+
+          
+          <div class="method-source-code" id="lock-source">
+            <pre>static VALUE
+rb_mutex_lock(VALUE self)
+{
+    Mutex *mutex;
+    Data_Get_Struct(self, Mutex, mutex);
+    lock_mutex(mutex);
+    return self;
+}</pre>
+          </div><!-- lock-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lock-method -->
+
+    
+      <div id="method-i-locked-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            locked?
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns <code>true</code> if this lock is currently held by some thread.</p>
+          
+
+          
+          <div class="method-source-code" id="locked-3F-source">
+            <pre>static VALUE
+rb_mutex_locked_p(VALUE self)
+{
+    Mutex *mutex;
+    Data_Get_Struct(self, Mutex, mutex);
+    return MUTEX_LOCKED_P(mutex) ? Qtrue : Qfalse;
+}</pre>
+          </div><!-- locked-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- locked-3F-method -->
+
+    
+      <div id="method-i-marshal_dump" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">marshal_dump</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="marshal_dump-source">
+            <pre>static VALUE
+dummy_dump(VALUE self)
+{
+    return rb_str_new2(&quot;&quot;);
+}</pre>
+          </div><!-- marshal_dump-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- marshal_dump-method -->
+
+    
+      <div id="method-i-marshal_load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">marshal_load</span><span
+            class="method-args">(p1)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>for marshalling mutexes and condvars</p>
+          
+
+          
+          <div class="method-source-code" id="marshal_load-source">
+            <pre>static VALUE
+dummy_load(VALUE self, VALUE string)
+{
+    return Qnil;
+}</pre>
+          </div><!-- marshal_load-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- marshal_load-method -->
+
+    
+      <div id="method-i-synchronize" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            synchronize { ... }
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Obtains a lock, runs the block, and releases the lock when the block
+completes.  See the example under <a href="Mutex.html">Mutex</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="synchronize-source">
+            <pre>static VALUE
+rb_mutex_synchronize(VALUE self)
+{
+    rb_mutex_lock(self);
+    return rb_ensure(rb_yield, Qundef, rb_mutex_unlock, self);
+}</pre>
+          </div><!-- synchronize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- synchronize-method -->
+
+    
+      <div id="method-i-try_lock" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            try_lock
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Attempts to obtain the lock and returns immediately. Returns
+<code>true</code> if the lock was granted.</p>
+          
+
+          
+          <div class="method-source-code" id="try_lock-source">
+            <pre>static VALUE
+rb_mutex_try_lock(VALUE self)
+{
+    Mutex *mutex;
+
+    Data_Get_Struct(self, Mutex, mutex);
+
+    if (MUTEX_LOCKED_P(mutex))
+        return Qfalse;
+
+    mutex-&gt;owner = rb_thread_current();
+    return Qtrue;
+}</pre>
+          </div><!-- try_lock-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- try_lock-method -->
+
+    
+      <div id="method-i-unlock" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unlock</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Releases the lock. Returns <code>nil</code> if ref wasn't locked.</p>
+          
+
+          
+          <div class="method-source-code" id="unlock-source">
+            <pre>static VALUE
+rb_mutex_unlock(VALUE self)
+{
+    Mutex *mutex;
+    Data_Get_Struct(self, Mutex, mutex);
+
+    if (RTEST(unlock_mutex(mutex))) {
+        return self;
+    } else {
+        return Qnil;
+    }
+}</pre>
+          </div><!-- unlock-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unlock-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

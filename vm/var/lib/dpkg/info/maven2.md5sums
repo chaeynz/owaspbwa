@@ -1,0 +1,7 @@
+7a050494cd35a91b1e8804d26b7a14a8  usr/share/doc/maven2/copyright
+ba3c7069f07207d21717fedd58111652  usr/share/doc/maven2/changelog.Debian.gz
+54fcd38cfb1d006c60179e98140f250a  usr/share/man/man1/mvn.1.gz
+97748fbb7482e8f19497283b12811ed0  usr/share/man/man1/mvnDebug.1.gz
+99ea9e0f07acde3fb5c6bece16f23016  usr/share/maven2/lib/maven-debian-uber.jar
+47ae05c1c8e87b8c78880cb10bfc7dcc  usr/bin/mvn
+fec983c8f45b4678bb3ea72846cc0e11  usr/bin/mvnDebug

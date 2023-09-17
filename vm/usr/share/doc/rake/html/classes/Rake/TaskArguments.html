@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: Rake::TaskArguments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />Rake::TaskArguments</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/rake_rb.html">lib/rake.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+Object
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+TaskAguments manage the arguments passed to a task.
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000180">[]</a></li>
+  <li><a href="#M000182">each</a></li>
+  <li><a href="#M000186">inspect</a></li>
+  <li><a href="#M000187">lookup</a></li>
+  <li><a href="#M000183">method_missing</a></li>
+  <li><a href="#M000178">new</a></li>
+  <li><a href="#M000179">new_scope</a></li>
+  <li><a href="#M000184">to_hash</a></li>
+  <li><a href="#M000185">to_s</a></li>
+  <li><a href="#M000181">with_defaults</a></li>
+  </ul>
+
+<div class="sectiontitle">Included Modules</div>
+<ul>
+  <li>Enumerable</li>
+</ul>
+
+
+
+
+  <div class="sectiontitle">Attributes</div>
+  <table border='0' cellpadding='5'>
+  <tr valign='top'>
+    <td class='attr-rw'>
+[R]
+    </td>
+    <td class='attr-name'>names</td>
+    <td class='attr-desc'></td>
+  </tr>
+  </table>
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000178"></a><b>new</b>(names, values, parent=nil)
+  </div>
+  <div class="description">
+  <p>
+Create a TaskArgument object with a list of named arguments (given by
+:names) and a set of associated values (given by :values). :parent is the
+parent argument object.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000178_source')" id="l_M000178_source">show source</a> ]</p>
+  <div id="M000178_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 341</span>
+341:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">names</span>, <span class="ruby-identifier">values</span>, <span class="ruby-identifier">parent</span>=<span class="ruby-keyword kw">nil</span>)
+342:       <span class="ruby-ivar">@names</span> = <span class="ruby-identifier">names</span>
+343:       <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
+344:       <span class="ruby-ivar">@hash</span> = {}
+345:       <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each_with_index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+346:         <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">values</span>[<span class="ruby-identifier">i</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">values</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">nil?</span>
+347:       }
+348:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000180"></a><b>[]</b>(index)
+  </div>
+  <div class="description">
+  <p>
+Find an argument value by name or index.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000180_source')" id="l_M000180_source">show source</a> ]</p>
+  <div id="M000180_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 358</span>
+358:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">index</span>)
+359:       <span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">index</span>.<span class="ruby-identifier">to_sym</span>)
+360:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000182"></a><b>each</b>(&amp;block)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000182_source')" id="l_M000182_source">show source</a> ]</p>
+  <div id="M000182_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 369</span>
+369:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+370:       <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+371:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000186"></a><b>inspect</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000186_source')" id="l_M000186_source">show source</a> ]</p>
+  <div id="M000186_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 385</span>
+385:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+386:       <span class="ruby-identifier">to_s</span>
+387:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000183"></a><b>method_missing</b>(sym, *args, &amp;block)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000183_source')" id="l_M000183_source">show source</a> ]</p>
+  <div id="M000183_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 373</span>
+373:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+374:       <span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_sym</span>)
+375:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000179"></a><b>new_scope</b>(names)
+  </div>
+  <div class="description">
+  <p>
+Create a <a href="TaskArguments.html#M000178">new</a> argument scope using
+the prerequisite argument names.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000179_source')" id="l_M000179_source">show source</a> ]</p>
+  <div id="M000179_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 352</span>
+352:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_scope</span>(<span class="ruby-identifier">names</span>)
+353:       <span class="ruby-identifier">values</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">n</span>] }
+354:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">names</span>, <span class="ruby-identifier">values</span>, <span class="ruby-keyword kw">self</span>)
+355:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000184"></a><b>to_hash</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000184_source')" id="l_M000184_source">show source</a> ]</p>
+  <div id="M000184_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 377</span>
+377:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>
+378:       <span class="ruby-ivar">@hash</span>
+379:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000185"></a><b>to_s</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000185_source')" id="l_M000185_source">show source</a> ]</p>
+  <div id="M000185_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 381</span>
+381:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+382:       <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">inspect</span>
+383:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000181"></a><b>with_defaults</b>(defaults)
+  </div>
+  <div class="description">
+  <p>
+Specify a hash of default values for task arguments. Use the defaults only
+if there is no specific value for the given argument.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000181_source')" id="l_M000181_source">show source</a> ]</p>
+  <div id="M000181_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 365</span>
+365:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_defaults</span>(<span class="ruby-identifier">defaults</span>)
+366:       <span class="ruby-ivar">@hash</span> = <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-ivar">@hash</span>)
+367:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Protected Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000187"></a><b>lookup</b>(name)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000187_source')" id="l_M000187_source">show source</a> ]</p>
+  <div id="M000187_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 391</span>
+391:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">name</span>)
+392:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+393:         <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">name</span>]
+394:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+395:         <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>]
+396:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>)
+397:         <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>]
+398:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@parent</span>
+399:         <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">name</span>)
+400:       <span class="ruby-keyword kw">end</span>
+401:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

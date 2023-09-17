@@ -1,0 +1,34 @@
+Format-Specification:
+    http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=196
+Upstream-Maintainer: Gisle Aas <gisle@activestate.com>
+Upstream-Source: http://search.cpan.org/dist/HTML-Parser/
+Upstream-Name: HTML-Parser
+
+Files: *
+Copyright: © 1995-2009 Gisle Aas <gisle@activestate.com>
+           © 1999-2000 Michael A. Chase.  All rights reserved.
+License-Alias: Perl
+License: Artistic | GPL-1+
+
+Files: debian/*
+Copyright: © 1998-2001 Michael Alan Dorman <mdorman@debian.org>
+           © 2003-2005 Kenneth J. Pronovici <pronovic@debian.org>
+	   © 2005-2007 Krzysztof Krzyzaniak (eloy) <eloy@debian.org> 
+	   © 2008 Damyan Ivanov <dmn@debian.org>
+	   © 2009 Salvatore Bonaccorso <salvatore.bonaccorso@gmail.com> 
+	   © 2009 Jonathan Yu <jawnsy@cpan.org>
+License: Artistic | GPL-1+
+
+License: Artistic
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the Artistic License, which comes with Perl.
+    On Debian GNU/Linux systems, the complete text of the Artistic License
+    can be found in `/usr/share/common-licenses/Artistic'
+
+License: GPL-1+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 1, or (at your option)
+    any later version.
+    On Debian GNU/Linux systems, the complete text of the GNU General
+    Public License can be found in `/usr/share/common-licenses/GPL'

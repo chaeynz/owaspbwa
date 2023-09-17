@@ -1,0 +1,10 @@
+e70771782885c99024a488a7b4d5e5b7  usr/share/update-notifier/notify-reboot-required
+51917c3789d05776fe0c840e3c147b87  usr/share/doc/update-notifier-common/copyright
+4a5ac4e86301718f5a6fc106cd7d7919  usr/share/doc/update-notifier-common/changelog.gz
+6de4ace23d40c15b32ead4c6982fcff1  usr/share/doc/update-notifier-common/changelog.Debian.gz
+8728f7e7b718cf699973bf92f7a55847  usr/lib/update-notifier/apt_check.py
+fac30fae8c9362150c1e8ae3465f8543  usr/lib/update-notifier/apt-cdrom-check
+83f4d9a1b6d09cc2951dfe3c55f4f18f  usr/lib/update-notifier/cddistupgrader
+c25756e5d615214a8396bf40cf2a5e6e  usr/lib/update-notifier/update-motd-reboot-required
+f57573f8ba58d4c86ab81d88787a5db4  usr/lib/update-notifier/update-motd-updates-available
+cea2ad4e9c3f9fa290e892d59a82b814  usr/lib/update-notifier/update-motd-cpu-checker

@@ -1,0 +1,6 @@
+/etc/init/ssh.conf
+/etc/init.d/ssh
+/etc/default/ssh
+/etc/network/if-up.d/openssh-server
+/etc/ufw/applications.d/openssh-server
+/etc/pam.d/sshd

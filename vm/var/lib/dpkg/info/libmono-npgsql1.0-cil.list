@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/Npgsql
+/usr/lib/mono/gac/Npgsql/1.0.5000.0__5d8b90d52f46fda7
+/usr/lib/mono/gac/Npgsql/1.0.5000.0__5d8b90d52f46fda7/Npgsql.dll
+/usr/lib/mono/1.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-npgsql1.0-cil
+/usr/share/doc/libmono-npgsql1.0-cil/copyright
+/usr/share/doc/libmono-npgsql1.0-cil/changelog.Debian.gz
+/usr/lib/mono/1.0/Npgsql.dll

@@ -1,0 +1,5 @@
+24f7330d8b79341ed97cae319b407ae5  usr/share/doc/libplexus-compiler-javac-java/copyright
+9f09785cb1fdb969b688429b982c3c7e  usr/share/doc/libplexus-compiler-javac-java/changelog.Debian.gz
+e941c7717dc73a34bf7f837c8e6b36c5  usr/share/maven-repo/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.pom
+bc9efa3f0a2dd80c76fc1a27bf01e658  usr/share/maven-repo/org/codehaus/plexus/plexus-compiler-javac/debian/plexus-compiler-javac-debian.pom
+f68a45bf8118803d07deea6b4152a666  usr/share/java/plexus-compiler-javac-1.5.3.jar

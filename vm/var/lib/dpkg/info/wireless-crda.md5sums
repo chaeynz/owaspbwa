@@ -1,0 +1,10 @@
+c269d1e7e4a70c2f18557b732f88cd67  sbin/crda
+bfa8c3fb720c9f2fa3d7817cdd2b0954  sbin/regdbdump
+553c614cdcec7f196cf1ea816daea0c7  lib/udev/rules.d/85-regulatory.rules
+4a808995b516b57874b682d2fbe792b3  usr/share/man/man8/crda.8.gz
+39d86eaabd5d5caf01f362a3f17ea817  usr/share/man/man8/regdbdump.8.gz
+c9bca451d7f2e08c250d357498c899ac  usr/share/doc/wireless-crda/README
+07c4f6dea3845b02a18dc00c8c87699c  usr/share/doc/wireless-crda/LICENSE
+734ad8c222f9e75398df295a8738dac3  usr/share/doc/wireless-crda/copyright
+84fa9024447e03996913777ff6779f4d  usr/share/doc/wireless-crda/changelog.gz
+873b5c55a26c8ba7674e083f51cb10aa  usr/lib/crda/regulatory.bin

@@ -1,0 +1,13 @@
+649fc1d90d224eda384d7c18b8865979  usr/share/doc/libdoxia-sitetools-java/copyright
+eb66eb43319fa1bc6d1d55a6079ea7ce  usr/share/doc/libdoxia-sitetools-java/changelog.Debian.gz
+eb47f9c70c29c7ee576797dc3493c029  usr/share/maven-repo/org/apache/maven/doxia/doxia-sitetools/1.1.1/doxia-sitetools-1.1.1.pom
+99d72f8e9965e5479fcb80425585e806  usr/share/maven-repo/org/apache/maven/doxia/doxia-sitetools/debian/doxia-sitetools-debian.pom
+94ec6e7628a804a56da15655bcc45dd1  usr/share/maven-repo/org/apache/maven/doxia/doxia-doc-renderer/1.1.1/doxia-doc-renderer-1.1.1.pom
+f627aed46f45b26960156c2d5ad809bc  usr/share/maven-repo/org/apache/maven/doxia/doxia-doc-renderer/debian/doxia-doc-renderer-debian.pom
+5b338c37af69db3d401742227f70fe2c  usr/share/maven-repo/org/apache/maven/doxia/doxia-site-renderer/1.1.1/doxia-site-renderer-1.1.1.pom
+60779a45a6256efd11c16614b2ee0290  usr/share/maven-repo/org/apache/maven/doxia/doxia-site-renderer/debian/doxia-site-renderer-debian.pom
+f625879560bce295410cc1b329a8b7e2  usr/share/maven-repo/org/apache/maven/doxia/doxia-decoration-model/1.1.1/doxia-decoration-model-1.1.1.pom
+b4dbf4a1d86ef9119973ffd2f5353768  usr/share/maven-repo/org/apache/maven/doxia/doxia-decoration-model/debian/doxia-decoration-model-debian.pom
+9af0b22f8972f32022b77e25a45e42de  usr/share/java/doxia-doc-renderer-1.1.1.jar
+0e525e0b1b03d5528d7db5c5710ab52b  usr/share/java/doxia-site-renderer-1.1.1.jar
+a99f8a0732a015354216c9673e972ac2  usr/share/java/doxia-decoration-model-1.1.1.jar

@@ -1,0 +1,4 @@
+# This one is intentional
+symbols-declares-dependency-on-other-package libserf-private
+# This one is just silly
+package-name-doesnt-match-sonames libserf-1-0

@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-12mdkenterprise
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment Mandrive 2006, 2.6.12-12mdk, enterprise
+UtsMachine i386

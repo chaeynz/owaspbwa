@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+# revert Ubuntu doc dir symlinking to Debian style
+if [ "$1" = "upgrade" ]
+    then if dpkg --compare-versions $2 lt 2.4 && [ -L /usr/share/doc/libmono-system-web-mvc1.0-cil ]
+        then rm -fr /usr/share/doc/libmono-system-web-mvc1.0-cil
+    fi
+fi

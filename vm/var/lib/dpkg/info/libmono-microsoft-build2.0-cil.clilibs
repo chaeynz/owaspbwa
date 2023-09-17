@@ -1,0 +1,4 @@
+Microsoft.Build.Engine 2.0.0.0__b03f5f7f11d50a3a libmono-microsoft-build2.0-cil (>= 2.4.3)
+Microsoft.Build.Framework 2.0.0.0__b03f5f7f11d50a3a libmono-microsoft-build2.0-cil (>= 2.4.3)
+Microsoft.Build.Tasks 2.0.0.0__b03f5f7f11d50a3a libmono-microsoft-build2.0-cil (>= 2.4.3)
+Microsoft.Build.Utilities 2.0.0.0__b03f5f7f11d50a3a libmono-microsoft-build2.0-cil (>= 2.4.3)

@@ -1,0 +1,7 @@
+UtsRelease 2.4.19-4GB
+UtsVersion #1 Fri Apr 2 19:59:17 UTC 2004
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment Sun JDS Release 2 UP
+UtsMachine i386

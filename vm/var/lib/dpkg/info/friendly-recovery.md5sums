@@ -1,0 +1,13 @@
+899b25685779a5fa8e41e7b7eb5f495d  usr/share/recovery-mode/options/failsafeX
+5925227e2b123c37eab1a7b63bbef689  usr/share/recovery-mode/options/fsck
+5093808045625b788238e348de63fdea  usr/share/recovery-mode/options/clean
+b97c3f0b25a17f1538cd18a698556a98  usr/share/recovery-mode/options/root
+dae2ec46159be910e63e4a092de7ac32  usr/share/recovery-mode/options/grub
+9e8d6fa22b229681f446294724780208  usr/share/recovery-mode/options/netroot
+0f9819b218cd532cc74a966bd67deeb8  usr/share/recovery-mode/options/dpkg
+7d6844d36ec3ddbdd45fc6a102275d5a  usr/share/recovery-mode/l10n.sh
+b5ec0ae162af49ae8ba2541cb2da1752  usr/share/recovery-mode/recovery-menu
+fb737a485a3c487dc6ed84a00336c94d  usr/share/doc/friendly-recovery/README
+d65eecd860ddf77b50725c00655c7787  usr/share/doc/friendly-recovery/TODO
+9e25796fc73378d4a16c5f87e49a5c79  usr/share/doc/friendly-recovery/copyright
+b2959dfb0721fb706744d9275558a891  usr/share/doc/friendly-recovery/changelog.gz

@@ -1,0 +1,12 @@
+libapache2-mod-python for Debian
+-------------------------------
+
+This package has been split into several components:
+libapache2-mod-python - module for currently supported python version
+libapache2-mod-python-doc - documentation for this package (to avoid duplication of the
+~700k uncompressed of docs in the archive).
+
+The HTML documentation can now be found at:
+/usr/share/doc/libapache2-mod-python-doc/doc-html/
+
+ -- Peter Hawkins <peterh@debian.org>

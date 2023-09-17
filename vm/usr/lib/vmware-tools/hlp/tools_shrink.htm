@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN" "http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+<html xmlns="http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Shrinking Virtual Disks</title>
+  </head>
+  <body style="">
+    <table align="right">
+      <tr>
+        <td style="text-align: left; font-size: 16px; font-weight:bold">VMware Tools Help</td>
+      </tr>
+    </table>
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="toc.htm"><img src="images/toc.gif" alt="Table of Contents" border="0"></a>
+          </td>
+          <td>
+            <a href="tools_scripts.htm"><img src="images/prev.gif" alt="Previous" border="0"></a>
+          </td>
+          <td>
+            <a href="tools_about.htm"><img src="images/next.gif" alt="Next" border="0"></a>
+          </td>
+          <td>
+            <a href="ix.htm"><img src="images/index.gif" alt="Index" border="0"></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br clear="all">
+    <br>
+    <div style="text-align: left;">Shrinking Virtual Disks</div>
+    <hr align="left">
+    <blockquote>
+      <p align="Left">
+        <font size="4" face="Arial, Sans-Serif" color="#000000"><strong><a name="1003313">Shrinking Virtual </a>Disks</strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1000762">Shrinking a virtual disk reclaims unused space in the virtual disk. If there is empty </a>space in the disk, this process reduces the amount of space the virtual disk occupies on the host drive.</font>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1023705">ESX Server can shrink the size of a virtual disk when a virtual machine is </a>exported. The space occupied by the virtual disk on the ESX server, however, does not change.</font></p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005732">Shrinking a disk is a two-step process: a preparation step and the actual shrink step. In </a>the first step, VMware Tools reclaims all unused portions of disk partitions (such as deleted files) and prepares them for shrinking. This allows for the maximum shrink possible. This step takes place in the guest operating system.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005733">The shrink process itself is the second step, and it takes place outside the virtual </a>machine. The VMware application reduces the size of the disk based on the disk space reclaimed during the preparation step.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005929">Shrinking requires:</a></font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005930">Free disk space on the host equal to the size of the virtual disk being shrunk. </a></font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005931">VMware Tools to have sufficient access rights to write a file in the partition’s </a>directory. If it cannot do so, change the directory access rights or deselect that partition.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005589">In some configurations, it is not possible to shrink virtual disks. If your virtual machine </a>uses such a configuration, the <font face="Arial, Sans-Serif"><strong>Shrink</strong></font> tab displays information explaining why you cannot shrink virtual disks.</font>
+      </p>
+      <p align="Left">
+        <font size="3" face="Arial, Sans-Serif" color="#000000"><strong><a name="1005581">Shrinking a Virtual Disk</a></strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005876">When a virtual machine is powered on, you shrink its virtual disks from the VMware </a>Tools control panel.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1031227">To shrink a virtual disk</a></font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>1.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1050075">To launch the VMware Tools control panel, </a>open a terminal window, become root (<font face="&quot;Courier New&quot;">su -</font>), and run the following command:</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>1.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1044762"><font face="&quot;Courier New&quot;">vmware-toolbox &amp;</font></a> </font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1050095">Running VMware Tools as root ensures that the whole virtual disk is shrunk. If you </a>shrink the virtual disk as a non-root user, you cannot prepare to shrink the parts of the virtual disk that require root-level permissions.</font>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1050096">On NetWare guests, instead of using </a><font face="&quot;Courier New&quot;">vmware-toolbox</font>, use the <font face="&quot;Courier New&quot;">vmwtool shrink</font> command. For instructions, see the documentation for your VMware product.</font></p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>2.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005773">Click the </a><font face="Arial, Sans-Serif"><strong>Shrink</strong></font> tab.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>3.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005774">Select the virtual disks and partitions you want to shrink, and click </a><font face="Arial, Sans-Serif"><strong>Shrink</strong></font>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005775">If you deselect some of the partitions, the whole disk is still shrunk. </a>However, those partitions are not prepared for shrinking, and the shrink process does not reduce the size of the virtual disk as much as it could otherwise.</font></p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005776">A progress bar appears for each partition. You can abort the operation at any </a>time by clicking <font face="Arial, Sans-Serif"><strong>Cancel</strong></font>.</font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="9.599999999999997">
+              <div>&nbsp;</div>
+            </td>
+            <td width="15.839999999999998">
+              <div>
+                <nobr>4.	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005857">After VMware Tools finishes preparing the selected disk partitions, respond to </a>the prompt to begin shrinking the disks.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005867">If you click </a><font face="Arial, Sans-Serif"><strong>Yes</strong></font>, the virtual machine freezes and VMware Tools shrinks your virtual disks. After that, the virtual machine continues to run normally.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005868">If you click </a><font face="Arial, Sans-Serif"><strong>No</strong></font>, you can delay shrinking the virtual disks. You can shrink the disks at a later time by using the <font face="Arial, Sans-Serif"><strong>Shrink</strong></font> tab.</font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005777">Shrinking disks can take considerable time.</a></font>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004501">Shrinking a virtual disk reclaims unused space on the disk. You might also </a>want to defragment the virtual disk, which rearranges files, programs, and unused space on the virtual disk so that programs run faster and files open more quickly. For information about defragmenting virtual disks, see your VMware product documentation.</font></p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1050114">&nbsp;</a></font>
+      </p>
+    </blockquote>
+    <hr align="left">
+    <table align="right" summary="">
+      <tr>
+        <td style="text-align: left; font-size: 16px ; font-weight: bold">VMware Tools Help</td>
+      </tr>
+    </table>
+  </body>
+</html>

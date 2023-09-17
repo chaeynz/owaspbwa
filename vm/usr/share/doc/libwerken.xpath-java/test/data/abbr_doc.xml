@@ -1,0 +1,37 @@
+
+<book id="book-1">
+  <title id="book-1-title-1">How to Test Some XPath Implementation</title>
+
+<chapter id="chapter-1" author="bob">
+  <title id="chapter-1-title-1">This is chapter One</title>
+</chapter>
+
+<chapter id="chapter-2" author="rebecca">
+  <title id="chapter-2-title-1">This is chapter Two</title>
+</chapter>
+
+<chapter id="chapter-3" author="bob">
+  <title id="chapter-3-title-1">This is chapter Three</title>
+</chapter>
+
+<chapter id="chapter-4" author="james">
+  <title id="chapter-4-title-1">This is chapter Four</title>
+</chapter>
+
+<chapter id="chapter-5" author="fred">
+  <title id="chapter-5-title-1">This is chapter Five</title>
+</chapter>
+
+<chapter id="chapter-6">
+  <title id="chapter-6-title-1">This is chapter Six</title>
+</chapter>
+
+</book>
+
+
+
+
+
+
+
+

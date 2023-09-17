@@ -1,0 +1,11 @@
+This package was debianized by Arnaud Vandyck <avdyk@debian.org> on 16-Jul-2007.
+The source code was downloaded from http://sourceforge.net/projects/jsr107cache
+
+Authors:  Greg Luck <gregluck@users.sourceforge.net>
+
+Copyright: © 2003-2007 Greg Luck
+
+License: Apache License Version 2.0
+
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache-2.0 license in `/usr/share/common-licenses/Apache-2.0'

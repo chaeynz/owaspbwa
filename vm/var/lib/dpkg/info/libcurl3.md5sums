@@ -1,0 +1,14 @@
+3a20d059820eff05613a7fe30cbe6357  usr/share/lintian/overrides/libcurl3
+1c6cbf854bc66e650125a37e96bc778c  usr/share/doc/libcurl3/FAQ.gz
+718908c86a768a3ff09a9b9d14e5be90  usr/share/doc/libcurl3/README
+85cb2f88c953414a13f1a4318079755f  usr/share/doc/libcurl3/THANKS.gz
+83881767b3aeb984b915b03086eab03e  usr/share/doc/libcurl3/BUGS
+b5c93983a573d07e5472cf9fc8f72ee2  usr/share/doc/libcurl3/copyright
+02f1798f162cd33918deb78be22b7377  usr/share/doc/libcurl3/BINDINGS.gz
+c7212026b85737d194d95cbcc84eb01a  usr/share/doc/libcurl3/KNOWN_BUGS.gz
+f9d4f13f62967853f837bef2eb49e0be  usr/share/doc/libcurl3/VERSIONS
+abebbe5031e9015a9f11750f409e0d0b  usr/share/doc/libcurl3/TODO.gz
+511da1dd4f875804a7a531e4d4e6ccbd  usr/share/doc/libcurl3/changelog.Debian.gz
+29c39925bc6488fb9c2b170c7f89cc06  usr/share/doc/libcurl3/FEATURES
+90726180307ab2f21c04712fc2a8be16  usr/share/doc/libcurl3/changelog.gz
+c0739e3d205d43c9aaf98f0ff20da193  usr/lib/libcurl.so.4.1.1

@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/java
+/usr/share/java/jsp-api-2.0.jar
+/usr/share/java/servlet-api-2.4.jar
+/usr/share/doc
+/usr/share/doc/libservlet2.4-java
+/usr/share/doc/libservlet2.4-java/README.txt
+/usr/share/doc/libservlet2.4-java/README.Debian
+/usr/share/doc/libservlet2.4-java/copyright
+/usr/share/doc/libservlet2.4-java/changelog.Debian.gz
+/usr/share/java/jsp-api.jar
+/usr/share/java/servlet-api.jar

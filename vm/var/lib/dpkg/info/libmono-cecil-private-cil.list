@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/Mono.Cecil
+/usr/lib/mono/gac/Mono.Cecil/0.6.9.0__0738eb9f132ed756
+/usr/lib/mono/gac/Mono.Cecil/0.6.9.0__0738eb9f132ed756/Mono.Cecil.dll
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-cecil-private-cil
+/usr/share/doc/libmono-cecil-private-cil/copyright
+/usr/share/doc/libmono-cecil-private-cil/changelog.Debian.gz

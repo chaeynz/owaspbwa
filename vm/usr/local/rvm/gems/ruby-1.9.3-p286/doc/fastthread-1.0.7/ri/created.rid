@@ -1,0 +1,6 @@
+Tue, 23 Oct 2012 23:20:23 -0400
+lib/fastthread.rb	Tue, 23 Oct 2012 23:20:19 -0400
+ext/fastthread/Makefile	Tue, 23 Oct 2012 23:20:19 -0400
+ext/fastthread/fastthread.c	Tue, 23 Oct 2012 23:20:19 -0400
+ext/fastthread/extconf.rb	Tue, 23 Oct 2012 23:20:19 -0400
+CHANGELOG	Tue, 23 Oct 2012 23:20:19 -0400

@@ -1,0 +1,12 @@
+manual
+/usr/bin/serialver
+serialver.1.gz
+/usr/share/man/man1/serialver.1.gz
+
+/usr/bin/gserialver-4.3
+43
+/usr/share/man/man1/gserialver-4.3.1.gz
+/usr/lib/jvm/java-6-openjdk/bin/serialver
+1061
+/usr/lib/jvm/java-6-openjdk/man/man1/serialver.1.gz
+

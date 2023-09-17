@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>commons-configuration</groupId>
+	<artifactId>commons-configuration</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	
+	<name>Commons Configuration</name>
+	<inceptionYear>2001</inceptionYear>
+	<description>Tools to assist in the reading of configuration/preferences files in
+        various formats</description>
+	<url>http://commons.apache.org/configuration/</url>
+	<issueManagement>
+		<system>jira</system>
+		<url>http://issues.apache.org/jira/browse/CONFIGURATION</url>
+	</issueManagement>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/commons/proper/configuration/trunk</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/commons/proper/configuration/trunk</developerConnection>
+		<url>http://svn.apache.org/viewvc/commons/proper/configuration/trunk</url>
+	</scm>
+	<developers>
+		<developer>
+			<name>Daniel Rall</name>
+			<id>dlr</id>
+			<email>dlr@finemaltcoding.com</email>
+			<organization>CollabNet, Inc.</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Jason van Zyl</name>
+			<id>jvanzyl</id>
+			<email>jason@zenplex.com</email>
+			<organization>Zenplex</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Martin Poeschl</name>
+			<id>mpoeschl</id>
+			<email>mpoeschl@marmot.at</email>
+			<organization>tucana.at</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>dIon Gillard</name>
+			<id>dion</id>
+			<email>dion@multitask.com.au</email>
+			<organization>Multitask Consulting</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Henning P. Schmiedehausen</name>
+			<id>henning</id>
+			<email>hps@intermeta.de</email>
+			<organization>INTERMETA - Gesellschaft fuer Mehrwertdienste mbH</organization>
+			<timezone>2</timezone>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Eric Pugh</name>
+			<id>epugh</id>
+			<email>epugh@upstate.com</email>
+			<organization>upstate.com</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Brian E. Dunbar</name>
+			<id>bdunbar</id>
+			<email>bdunbar@dunbarconsulting.org</email>
+			<organization>dunbarconsulting.org</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Emmanuel Bourg</name>
+			<id>ebourg</id>
+			<email>ebourg@apache.org</email>
+			<organization>Ariane Software</organization>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Oliver Heger</name>
+			<id>oheger</id>
+			<email>oheger@apache.org</email>
+			<organization>Agfa HealthCare</organization>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>J?rg Schaible</name>
+			<id>joehni</id>
+			<email>joerg.schaible@gmx.de</email>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Ralph Goers</name>
+			<id>rgoers</id>
+			<email>rgoers@apache.org</email>
+			<organization>Intuit</organization>
+			<timezone>-8</timezone>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Konstantin Shaposhnikov</name>
+			<email>ksh@scand.com</email>
+			<organization>scand.com</organization>
+		</contributor>
+		<contributor>
+			<name>Jamie M. Guillemette</name>
+			<email>JMGuillemette@gmail.com</email>
+			<organization>TD Bank</organization>
+		</contributor>
+		<contributor>
+			<name>Jorge Ferrer</name>
+			<email>jorge.ferrer@gmail.com</email>
+			<organization>
+			</organization>
+		</contributor>
+		<contributor>
+			<name>Gabriele Garuglieri</name>
+			<email>gabriele.garuglieri@infoblu.it</email>
+			<organization>Infoblu S.p.A</organization>
+		</contributor>
+		<contributor>
+			<name>Nicolas De Loof</name>
+			<email>nicolas.deloof@gmail.com</email>
+			<organization>Cap Gemini</organization>
+		</contributor>
+	</contributors>
+	<dependencies>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.x</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>debian</version>
+			<exclusions>
+				<exclusion>
+					<groupId>logkit</groupId>
+					<artifactId>logkit</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>avalon-framework</groupId>
+					<artifactId>avalon-framework</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>commons-jxpath</groupId>
+			<artifactId>commons-jxpath</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<groupId>xerces</groupId>
+					<artifactId>xerces</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>ant</groupId>
+					<artifactId>ant-optional</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>debian</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.x</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+	<properties>
+		<commons.componentid>configuration</commons.componentid>
+		<commons.release.version>1.5</commons.release.version>
+		<commons.binary.suffix>
+		</commons.binary.suffix>
+		<commons.jira.id>CONFIGURATION</commons.jira.id>
+		<commons.jira.pid>12310467</commons.jira.pid>
+		<debian.originalVersion>1.6</debian.originalVersion>
+		<debian.package>libcommons-configuration-java</debian.package>
+	</properties>
+</project>

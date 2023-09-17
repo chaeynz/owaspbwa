@@ -1,0 +1,12 @@
+cglib
+-----
+
+Source tarball:
+---------------
+
+I removed all the jar files.
+
+libs: aspectwerkz-core-0.10.RC1.jar
+      jarjar.jar
+
+ -- Arnaud Vandyck <avdyk@debian.org>, Tue, 10 Apr 2007 17:50:24 +0200

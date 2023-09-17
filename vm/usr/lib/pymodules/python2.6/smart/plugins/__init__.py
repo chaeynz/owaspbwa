@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/plugins/__init__.py

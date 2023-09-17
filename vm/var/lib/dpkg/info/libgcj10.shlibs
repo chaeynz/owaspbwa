@@ -1,0 +1,4 @@
+libgij 10 libgcj10 (>= 4.4)
+libgcj-tools 10 libgcj10 (>= 4.4)
+libgcj 10 libgcj10 (>= 4.4)
+libgcj_bc 1 libgcj-bc (>= 4.2.2-1)

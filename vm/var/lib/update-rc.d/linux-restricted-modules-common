@@ -1,0 +1,1 @@
+update-rc.d linux-restricted-modules-common remove

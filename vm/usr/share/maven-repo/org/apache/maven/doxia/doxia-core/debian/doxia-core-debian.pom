@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.doxia</groupId>
+	<artifactId>doxia-core</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia</artifactId>
+		<version>debian</version>
+	</parent>
+	<properties>
+		<debian.originalVersion>1.1.1</debian.originalVersion>
+		<debian.package>libdoxia-java</debian.package>
+	</properties>
+	
+	<name>Doxia :: Core</name>
+	<description>Doxia core classes and interfaces.</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-sink-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-logging-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.x</version>
+		</dependency>
+	</dependencies>
+</project>

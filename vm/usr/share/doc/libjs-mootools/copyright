@@ -1,0 +1,59 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Upstream-Name: MooTools
+Upstream-Maintainer: Valerio Proietti
+Upstream-Source: http://mootools.net
+
+Files: mootools-core/*
+Copyright: (c) 2006-2009 Valerio Proietti <http://mad4milk.net/>
+License: MIT
+Inspiration:
+  - Class implementation inspired by [Base.js] (c) 2006 Dean Edwards
+    <http://dean.edwards.name/weblog/2006/03/base/>
+  - Some functionality inspired by [Prototype.js] (c) 2005-2007 Sam Stephenson
+    <http://prototypejs.org>
+
+  About the "inspiration", Valerio Proietti wrote an email that
+  can be found at BTS #500697:
+
+    "We actually never "borrow" a single line of code from anywhere. What  
+    we "borrow" is the technique to make some pretty obscure thing work  
+    cross-browser-ly. For Instance, the element dimensions. From the code  
+    of qoodooxo I just understood what's the technique to find the offset  
+    parent of an element, and I implemented my own code to do that. I  
+    always put the notice in the header of the file for respect of the  
+    technique discovery. But there isnt a single line of code that is  
+    actually copied and pasted from other projects. Also, as said, every  
+    time I do that its reported in the file header, along with the project  
+    homepage and license, so those comments you find in the headers are  
+    really all there is that didnt come out directly out of our brains."
+
+Files: mootools-more/*
+Copyright:
+  (c) 2006-2009 Aaron Newton <http://clientcide.com/>,
+  (c) 2006-2009 Valerio Proietti <http://mad4milk.net>
+  (c) 2006-2009 the MooTools team <http://mootools.net/developers>
+License: MIT
+
+Files: debian/*
+Copyright: (c) 2009 Marcelo Jorge Vieira (metal) <metal@alucinados.com>
+License: MIT
+
+License: MIT 
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.

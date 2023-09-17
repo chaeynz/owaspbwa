@@ -1,0 +1,7 @@
+UtsRelease 2.6.15-23-386
+UtsVersion #1 PREEMPT Tue May 23 13:49:40 UTC 2006
+UtsMachine i386
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Ubuntu6.06, 2.6.15-23, i386, generic

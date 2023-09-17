@@ -1,0 +1,8 @@
+86338d587bc8b91b83fbac7fd6e1e91f  usr/share/bug/file/presubj
+bd01a0ea3f02d0d4d511bc089418586c  usr/share/doc/file/changelog.gz
+7b110a8224c8a9757d13146fe7f37d51  usr/share/doc/file/README.gz
+0bbef8c3be2bfdedbfeeb0211c309fc1  usr/share/doc/file/copyright
+d149965cb50f403e1c1c096c8f163d9c  usr/share/doc/file/changelog.Debian.gz
+a4b35e5f4ec107980a04392efd794130  usr/share/man/man1/file.1.gz
+3052268103b9c3a90195722d38dac28c  usr/share/lintian/overrides/file
+b6c62a7281a0c3a4ca1e4ff2746f92e0  usr/bin/file

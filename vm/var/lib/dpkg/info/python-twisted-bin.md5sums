@@ -1,0 +1,6 @@
+2756905bea4f993698f82c9f702fb3c3  usr/lib/python2.6/dist-packages/twisted/protocols/_c_urlarg.so
+710eee00be08648b27ca03d7b42427b6  usr/lib/python2.6/dist-packages/twisted/python/_epoll.so
+d5923d7bedfe455b3ea95112e3d5467e  usr/lib/python2.6/dist-packages/twisted/python/_initgroups.so
+a4413b6137761ec368f1af713b8d64f6  usr/lib/python2.6/dist-packages/twisted/test/raiser.so
+97f28d31ea3bc2ec7fde1477a2e4e4b1  usr/share/doc/python-twisted-bin/copyright
+2a4c6fd7e20ae91326310a6bb30d9401  usr/share/doc/python-twisted-bin/changelog.Debian.gz

@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/interfaces/text/interface.py

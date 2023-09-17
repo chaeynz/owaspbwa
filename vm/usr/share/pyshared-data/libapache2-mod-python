@@ -1,0 +1,23 @@
+[python-package]
+format = 1
+python-version = 2.6
+[pycentral]
+version = 0.6.11
+include-links = 0
+[files]
+/usr/lib/python2.6/dist-packages/mod_python=d
+/usr/lib/python2.6/dist-packages/mod_python/_psp.so=f
+/usr/share/pyshared/mod_python=d
+/usr/share/pyshared/mod_python/testhandler.py=f
+/usr/share/pyshared/mod_python/Cookie.py=f
+/usr/share/pyshared/mod_python/publisher.py=f
+/usr/share/pyshared/mod_python/__init__.py=f
+/usr/share/pyshared/mod_python/util.py=f
+/usr/share/pyshared/mod_python/cgihandler.py=f
+/usr/share/pyshared/mod_python/apache.py=f
+/usr/share/pyshared/mod_python/importer.py=f
+/usr/share/pyshared/mod_python/psp.py=f
+/usr/share/pyshared/mod_python/Session.py=f
+/usr/share/pyshared/mod_python/cache.py=f
+/usr/share/pyshared/mod_python/python22.py=f
+/usr/share/pyshared/mod_python-3.3.1.egg-info=f

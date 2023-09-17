@@ -1,0 +1,88 @@
+groovy for Debian
+-----------------
+
+A few notes for concerning this package:
+
+Build information:
+
+Groovy is normally built via maven, however since maven isn't in Debian
+just yet and debian policy requires all dependencies to be on the system
+at build time (and not retrieved via a network connection), ant is
+currently being used.
+
+The ant file was generated using the maven build files using the 'maven ant' 
+task, and was then modified to include some of the extra maven.xml post/pre
+goals.
+
+As far as I can tell both builds create the same installables, but please
+feel free to let me know if you notice something that is out of sync.
+
+When maven is available in Debian, we can switch over and use it to
+perform an offline build.
+
+Version Number:
+
+Currently groovy is a beta, but since the upstream version number contains
+a 1.0 in it (1.0beta8) this will be considered a higher version than 1.0
+when it's released. For this reason, all beta packages will have a leading
+0 in front of their upstream version. This will allow users to ugprade to
+1.0 cleanly when it's released.
+
+Dependency information:
+
+Debian java policy prefers all dependencies to be packaged as separate
+packages. I've done this for most packages, except those that are CVS cuts,
+development versions, or out of date packages. Since these dependencies are
+a specific snapshot of what's been used, I've bundled those in this package, 
+in the debian/bundled.tar.bz2.uue file.
+
+Over time, as each of these dependencies mature and are officially
+released (and groovy adopts them), I'll package them up individually,
+unless someone else beats me to it.
+
+The bundled dependencies are:
+
+axion-1.0-M3-dev (development version)
+commons-collections-3.0-dev2.jar (development version)
+nekohtml-0.7.7 (to be packaged)
+openejb-loader-0.9.2 (needs packaging, but is a large package)
+qdox-1.3 (to be packaged)
+redeox-0.9 (to be packaged)
+redeox-oro-0.9 (to be packaged, oro packageok ?)
+xerces-2.4 (old version, 2.6 in debian, will this work?)
+xml-apis-1.0.b2.jar (old version, 1.1 in debian, part of the xerces package ok?)
+
+Website:
+
+A shallow copy of the Groovy website has been included for offline reading
+in the groovy-doc package. The depth of links mirrored has been set to 2,
+this means most articles of interest will be in the
+/usr/share/doc/groovy-doc/groovy.codehaus.org directory. The main index
+page is Home.html (not index.html as normal) due to the structure of the
+actual Groovy website itself.
+
+The website is pre-fetched and included in the source package as a
+compressed uuencoded file, as part of the debian maintainer diffs. There's
+also a 'site' rule that's part of the debian/rules file. To update the
+website archive, simply run the 'site' rule, and a new website archive
+will be created (fakeroot debian/rules site).
+
+Note that the javadocs which are part of the website, are generated from
+the package source code and are not part of the pre-fetched website mirror.
+
+Misc:
+
+Any ideas, thoughts, help, etc with this package is greatly appreciated,
+please feel free to contact me if you would like to suggest and
+improvements, patches, etc. Thanks for using this package.
+
+ -- Marcus Crafter <crafterm@debian.org>, Sat, 18 Dec 2004 22:45:06 +0100
+
+Groovy's build is now using Ant and compatible with Maven 2.
+I have patched the Ant build to work with Debian, and I'm deploying 
+Groovy's jars into the Maven 2 repository for Debian in /usr/share/maven-repo
+
+Documentation is now completely generated from the code, using the Ant build script.
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Fri, 17 Jul 2009 00:33:18 +0100
+

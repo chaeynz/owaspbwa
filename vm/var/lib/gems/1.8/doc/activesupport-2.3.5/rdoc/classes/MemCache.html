@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MemCache</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MemCache</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/active_support/vendor/memcache-client-1_7_4/memcache_rb.html">
+                lib/active_support/vendor/memcache-client-1.7.4/memcache.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A Ruby client library for memcached.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000318">[]</a>&nbsp;&nbsp;
+      <a href="#M000319">[]=</a>&nbsp;&nbsp;
+      <a href="#M000300">active?</a>&nbsp;&nbsp;
+      <a href="#M000310">add</a>&nbsp;&nbsp;
+      <a href="#M000312">append</a>&nbsp;&nbsp;
+      <a href="#M000323">cache_decr</a>&nbsp;&nbsp;
+      <a href="#M000324">cache_get</a>&nbsp;&nbsp;
+      <a href="#M000326">cache_get_multi</a>&nbsp;&nbsp;
+      <a href="#M000327">cache_incr</a>&nbsp;&nbsp;
+      <a href="#M000309">cas</a>&nbsp;&nbsp;
+      <a href="#M000336">check_multithread_status!</a>&nbsp;&nbsp;
+      <a href="#M000334">create_continuum_for</a>&nbsp;&nbsp;
+      <a href="#M000303">decr</a>&nbsp;&nbsp;
+      <a href="#M000314">delete</a>&nbsp;&nbsp;
+      <a href="#M000335">entry_count_for</a>&nbsp;&nbsp;
+      <a href="#M000305">fetch</a>&nbsp;&nbsp;
+      <a href="#M000315">flush_all</a>&nbsp;&nbsp;
+      <a href="#M000304">get</a>&nbsp;&nbsp;
+      <a href="#M000306">get_multi</a>&nbsp;&nbsp;
+      <a href="#M000322">get_server_for_key</a>&nbsp;&nbsp;
+      <a href="#M000325">gets</a>&nbsp;&nbsp;
+      <a href="#M000330">handle_error</a>&nbsp;&nbsp;
+      <a href="#M000321">hash_for</a>&nbsp;&nbsp;
+      <a href="#M000307">incr</a>&nbsp;&nbsp;
+      <a href="#M000299">inspect</a>&nbsp;&nbsp;
+      <a href="#M000320">make_cache_key</a>&nbsp;&nbsp;
+      <a href="#M000298">new</a>&nbsp;&nbsp;
+      <a href="#M000331">noreply</a>&nbsp;&nbsp;
+      <a href="#M000313">prepend</a>&nbsp;&nbsp;
+      <a href="#M000333">raise_on_error_response!</a>&nbsp;&nbsp;
+      <a href="#M000301">readonly?</a>&nbsp;&nbsp;
+      <a href="#M000311">replace</a>&nbsp;&nbsp;
+      <a href="#M000332">request_setup</a>&nbsp;&nbsp;
+      <a href="#M000316">reset</a>&nbsp;&nbsp;
+      <a href="#M000302">servers=</a>&nbsp;&nbsp;
+      <a href="#M000308">set</a>&nbsp;&nbsp;
+      <a href="#M000317">stats</a>&nbsp;&nbsp;
+      <a href="#M000329">with_server</a>&nbsp;&nbsp;
+      <a href="#M000328">with_socket_management</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="MemCache/MemCacheError.html" class="link">MemCache::MemCacheError</a><br />
+Class <a href="MemCache/Server.html" class="link">MemCache::Server</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'1.7.4'</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The version of <a href="MemCache.html">MemCache</a> you are using.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_OPTIONS</td>
+          <td>=</td>
+          <td class="context-item-value">{     :namespace   =&gt; nil,     :readonly    =&gt; false,     :multithread =&gt; true,     :failover    =&gt; true,     :timeout     =&gt; 0.5,     :logger      =&gt; nil,     :no_reply    =&gt; false,   }</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Default options for the cache object.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_PORT</td>
+          <td>=</td>
+          <td class="context-item-value">11211</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Default memcached port.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_WEIGHT</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Default memcached server weight.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ONE_MB</td>
+          <td>=</td>
+          <td class="context-item-value">1024 * 1024</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Add <tt>key</tt> to the cache with value <tt>value</tt> that expires in
+<tt>expiry</tt> seconds. If <tt>raw</tt> is true, <tt>value</tt> will not
+be Marshalled.
+
+<p>
+Warning: Readers should not call this method in the event of a cache miss;
+see <a href="MemCache.html#M000310">MemCache#add</a>.
+</p>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">failover</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Should the client try to failover to another server if the first server is
+down? Defaults to true.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">logger</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Log debug/info/warn/error to the given <a href="Logger.html">Logger</a>,
+defaults to nil.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">multithread</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The multithread setting for this instance
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">namespace</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The namespace for this instance
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">no_reply</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Don&#8216;t send or look for a reply from the memcached server for write
+operations. Please note this feature only works in memcached 1.2.5 and
+later. Earlier versions will reply with &quot;ERROR&quot;.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">servers</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+The servers this client talks to. Play at your own peril.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">timeout</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Socket timeout limit with this client, defaults to 0.5 sec. Set to nil to
+disable timeouts.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000298" class="method-detail">
+        <a name="M000298"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000298.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000298.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accepts a list of <tt>servers</tt> and a list of <tt>opts</tt>.
+<tt>servers</tt> may be omitted. See +<a
+href="MemCache.html#M000302">servers=</a>+ for acceptable server list
+arguments.
+</p>
+<p>
+Valid options for <tt>opts</tt> are:
+</p>
+<pre>
+  [:namespace]   Prepends this value to all keys added or retrieved.
+  [:readonly]    Raises an exception on cache writes when true.
+  [:multithread] Wraps cache access in a Mutex for thread safety. Defaults to true.
+  [:failover]    Should the client try to failover to another server if the
+                 first server is down?  Defaults to true.
+  [:timeout]     Time to use as the socket read timeout.  Defaults to 0.5 sec,
+                 set to nil to disable timeouts (this is a major performance penalty in Ruby 1.8,
+                 &quot;gem install SystemTimer' to remove most of the penalty).
+  [:logger]      Logger to use for info/debug output, defaults to nil
+  [:no_reply]    Don't bother looking for a reply for write operations (i.e. they
+                 become 'fire and forget'), memcached 1.2.5 and later only, speeds up
+                 set/add/delete/incr/decr significantly.
+</pre>
+<p>
+Other options are ignored.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000318" class="method-detail">
+        <a name="M000318"></a>
+
+        <div class="method-heading">
+          <span class="method-name">[]</span><span class="method-args">(key, raw = false)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="MemCache.html#M000304">get</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000319" class="method-detail">
+        <a name="M000319"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000319.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000319.html');return false;">
+          <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Shortcut to save a value in the cache. This method does not <a
+href="MemCache.html#M000308">set</a> an expiration on the entry. Use <a
+href="MemCache.html#M000308">set</a> to specify an explicit expiry.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000300" class="method-detail">
+        <a name="M000300"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000300.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000300.html');return false;">
+          <span class="method-name">active?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns whether there is at least one active server for the object.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000310" class="method-detail">
+        <a name="M000310"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000310.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000310.html');return false;">
+          <span class="method-name">add</span><span class="method-args">(key, value, expiry = 0, raw = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add <tt>key</tt> to the cache with value <tt>value</tt> that expires in
+<tt>expiry</tt> seconds, but only if <tt>key</tt> does not already exist in
+the cache. If <tt>raw</tt> is true, <tt>value</tt> will not be Marshalled.
+</p>
+<p>
+Readers should call this method in the event of a cache miss, not <a
+href="MemCache.html#M000308">MemCache#set</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000312" class="method-detail">
+        <a name="M000312"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000312.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000312.html');return false;">
+          <span class="method-name">append</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Append - &#8216;<a href="MemCache.html#M000310">add</a> this data to an
+existing key after existing data&#8217; Please note the value is always
+passed to memcached as raw since it doesn&#8216;t make a lot of sense to
+concatenate marshalled data together.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000309" class="method-detail">
+        <a name="M000309"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000309.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000309.html');return false;">
+          <span class="method-name">cas</span><span class="method-args">(key, expiry=0, raw=false) {|value| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+&quot;<a href="MemCache.html#M000309">cas</a>&quot; is a check and <a
+href="MemCache.html#M000308">set</a> operation which means &quot;store this
+data but only if no one else has updated since I last fetched it.&quot;
+This can be used as a form of optimistic locking.
+</p>
+<p>
+Works in block form like so:
+</p>
+<pre>
+  cache.cas('some-key') do |value|
+    value + 1
+  end
+</pre>
+<p>
+Returns: <tt>nil</tt> if the value was not found on the memcached server.
+<tt>STORED</tt> if the value was updated successfully <tt>EXISTS</tt> if
+the value was updated by someone else since last <a
+href="MemCache.html#M000305">fetch</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000303" class="method-detail">
+        <a name="M000303"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000303.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000303.html');return false;">
+          <span class="method-name">decr</span><span class="method-args">(key, amount = 1)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Decrements the value for <tt>key</tt> by <tt>amount</tt> and returns the <a
+href="MemCache.html#M000298">new</a> value. <tt>key</tt> must already
+exist. If <tt>key</tt> is not an integer, it is assumed to be
+</p>
+<ol>
+<li><tt>key</tt> can not be decremented below 0.
+
+</li>
+</ol>
+        </div>
+      </div>
+
+      <div id="method-M000314" class="method-detail">
+        <a name="M000314"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000314.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000314.html');return false;">
+          <span class="method-name">delete</span><span class="method-args">(key, expiry = 0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Removes <tt>key</tt> from the cache in <tt>expiry</tt> seconds.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000305" class="method-detail">
+        <a name="M000305"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000305.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000305.html');return false;">
+          <span class="method-name">fetch</span><span class="method-args">(key, expiry = 0, raw = false) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Performs a <tt><a href="MemCache.html#M000304">get</a></tt> with the given
+<tt>key</tt>. If the value does not exist and a block was given, the block
+will be called and the result saved via <tt><a
+href="MemCache.html#M000310">add</a></tt>.
+</p>
+<p>
+If you do not provide a block, using this method is the same as using
+<tt><a href="MemCache.html#M000304">get</a></tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000315" class="method-detail">
+        <a name="M000315"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000315.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000315.html');return false;">
+          <span class="method-name">flush_all</span><span class="method-args">(delay=0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Flush the cache from all memcache servers. A non-zero value for
+<tt>delay</tt> will ensure that the flush is propogated slowly through your
+memcached server farm. The Nth server will be flushed N*delay seconds from
+now, asynchronously so this method returns quickly. This prevents a huge
+database spike due to a total flush all at once.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000304" class="method-detail">
+        <a name="M000304"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000304.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000304.html');return false;">
+          <span class="method-name">get</span><span class="method-args">(key, raw = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Retrieves <tt>key</tt> from memcache. If <tt>raw</tt> is false, the value
+will be unmarshalled.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000306" class="method-detail">
+        <a name="M000306"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000306.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000306.html');return false;">
+          <span class="method-name">get_multi</span><span class="method-args">(*keys)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Retrieves multiple values from memcached in parallel, if possible.
+</p>
+<p>
+The memcached protocol supports the ability to retrieve multiple keys in a
+single request. Pass in an array of keys to this method and it will:
+</p>
+<ol>
+<li>map the key to the appropriate memcached server
+
+</li>
+<li>send a single request to each server that has one or more key values
+
+</li>
+</ol>
+<p>
+Returns a hash of values.
+</p>
+<pre>
+  cache[&quot;a&quot;] = 1
+  cache[&quot;b&quot;] = 2
+  cache.get_multi &quot;a&quot;, &quot;b&quot; # =&gt; { &quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2 }
+</pre>
+<p>
+Note that <a href="MemCache.html#M000306">get_multi</a> assumes the values
+are marshalled.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000307" class="method-detail">
+        <a name="M000307"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000307.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000307.html');return false;">
+          <span class="method-name">incr</span><span class="method-args">(key, amount = 1)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Increments the value for <tt>key</tt> by <tt>amount</tt> and returns the <a
+href="MemCache.html#M000298">new</a> value. <tt>key</tt> must already
+exist. If <tt>key</tt> is not an integer, it is assumed to be 0.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000299" class="method-detail">
+        <a name="M000299"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000299.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000299.html');return false;">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a string representation of the cache object.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000313" class="method-detail">
+        <a name="M000313"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000313.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000313.html');return false;">
+          <span class="method-name">prepend</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Prepend - &#8216;<a href="MemCache.html#M000310">add</a> this data to an
+existing key before existing data&#8217; Please note the value is always
+passed to memcached as raw since it doesn&#8216;t make a lot of sense to
+concatenate marshalled data together.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000301" class="method-detail">
+        <a name="M000301"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000301.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000301.html');return false;">
+          <span class="method-name">readonly?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns whether or not the cache object was created read only.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000311" class="method-detail">
+        <a name="M000311"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000311.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000311.html');return false;">
+          <span class="method-name">replace</span><span class="method-args">(key, value, expiry = 0, raw = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add <tt>key</tt> to the cache with value <tt>value</tt> that expires in
+<tt>expiry</tt> seconds, but only if <tt>key</tt> already exists in the
+cache. If <tt>raw</tt> is true, <tt>value</tt> will not be Marshalled.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000316" class="method-detail">
+        <a name="M000316"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000316.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000316.html');return false;">
+          <span class="method-name">reset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Reset the connection to all memcache servers. This should be called if
+there is a problem with a cache lookup that might have left the connection
+in a corrupted state.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000302" class="method-detail">
+        <a name="M000302"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000302.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000302.html');return false;">
+          <span class="method-name">servers=</span><span class="method-args">(servers)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the servers that the requests will be distributed between. Entries can
+be either strings of the form &quot;hostname:port&quot; or
+&quot;hostname:port:weight&quot; or <a
+href="MemCache/Server.html">MemCache::Server</a> objects.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000308" class="method-detail">
+        <a name="M000308"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000308.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000308.html');return false;">
+          <span class="method-name">set</span><span class="method-args">(key, value, expiry = 0, raw = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000317" class="method-detail">
+        <a name="M000317"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000317.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000317.html');return false;">
+          <span class="method-name">stats</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns statistics for each memcached server. An explanation of the
+statistics can be found in the memcached docs:
+</p>
+<p>
+<a
+href="http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt">code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt</a>
+</p>
+<p>
+Example:
+</p>
+<pre>
+  &gt;&gt; pp CACHE.stats
+  {&quot;localhost:11211&quot;=&gt;
+    {&quot;bytes&quot;=&gt;4718,
+     &quot;pid&quot;=&gt;20188,
+     &quot;connection_structures&quot;=&gt;4,
+     &quot;time&quot;=&gt;1162278121,
+     &quot;pointer_size&quot;=&gt;32,
+     &quot;limit_maxbytes&quot;=&gt;67108864,
+     &quot;cmd_get&quot;=&gt;14532,
+     &quot;version&quot;=&gt;&quot;1.2.0&quot;,
+     &quot;bytes_written&quot;=&gt;432583,
+     &quot;cmd_set&quot;=&gt;32,
+     &quot;get_misses&quot;=&gt;0,
+     &quot;total_connections&quot;=&gt;19,
+     &quot;curr_connections&quot;=&gt;3,
+     &quot;curr_items&quot;=&gt;4,
+     &quot;uptime&quot;=&gt;1557,
+     &quot;get_hits&quot;=&gt;14532,
+     &quot;total_items&quot;=&gt;32,
+     &quot;rusage_system&quot;=&gt;0.313952,
+     &quot;rusage_user&quot;=&gt;0.119981,
+     &quot;bytes_read&quot;=&gt;190619}}
+  =&gt; nil
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000323" class="method-detail">
+        <a name="M000323"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000323.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000323.html');return false;">
+          <span class="method-name">cache_decr</span><span class="method-args">(server, cache_key, amount)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Performs a raw <a href="MemCache.html#M000303">decr</a> for
+<tt>cache_key</tt> from <tt>server</tt>. Returns nil if not found.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000324" class="method-detail">
+        <a name="M000324"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000324.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000324.html');return false;">
+          <span class="method-name">cache_get</span><span class="method-args">(server, cache_key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fetches the raw data for <tt>cache_key</tt> from <tt>server</tt>. Returns
+nil on cache miss.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000326" class="method-detail">
+        <a name="M000326"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000326.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000326.html');return false;">
+          <span class="method-name">cache_get_multi</span><span class="method-args">(server, cache_keys)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fetches <tt>cache_keys</tt> from <tt>server</tt> using a multi-<a
+href="MemCache.html#M000304">get</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000327" class="method-detail">
+        <a name="M000327"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000327.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000327.html');return false;">
+          <span class="method-name">cache_incr</span><span class="method-args">(server, cache_key, amount)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Performs a raw <a href="MemCache.html#M000307">incr</a> for
+<tt>cache_key</tt> from <tt>server</tt>. Returns nil if not found.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000336" class="method-detail">
+        <a name="M000336"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000336.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000336.html');return false;">
+          <span class="method-name">check_multithread_status!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000334" class="method-detail">
+        <a name="M000334"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000334.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000334.html');return false;">
+          <span class="method-name">create_continuum_for</span><span class="method-args">(servers)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000335" class="method-detail">
+        <a name="M000335"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000335.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000335.html');return false;">
+          <span class="method-name">entry_count_for</span><span class="method-args">(server, total_servers, total_weight)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000322" class="method-detail">
+        <a name="M000322"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000322.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000322.html');return false;">
+          <span class="method-name">get_server_for_key</span><span class="method-args">(key, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Pick a server to handle the request based on a hash of the key.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000325" class="method-detail">
+        <a name="M000325"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000325.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000325.html');return false;">
+          <span class="method-name">gets</span><span class="method-args">(key, raw = false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000330" class="method-detail">
+        <a name="M000330"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000330.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000330.html');return false;">
+          <span class="method-name">handle_error</span><span class="method-args">(server, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Handles <tt>error</tt> from <tt>server</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000321" class="method-detail">
+        <a name="M000321"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000321.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000321.html');return false;">
+          <span class="method-name">hash_for</span><span class="method-args">(key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an interoperable hash value for <tt>key</tt>. (I think, docs are
+sketchy for down servers).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000320" class="method-detail">
+        <a name="M000320"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000320.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000320.html');return false;">
+          <span class="method-name">make_cache_key</span><span class="method-args">(key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a key for the cache, incorporating the namespace qualifier if
+requested.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000331" class="method-detail">
+        <a name="M000331"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000331.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000331.html');return false;">
+          <span class="method-name">noreply</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000333" class="method-detail">
+        <a name="M000333"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000333.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000333.html');return false;">
+          <span class="method-name">raise_on_error_response!</span><span class="method-args">(response)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000332" class="method-detail">
+        <a name="M000332"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000332.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000332.html');return false;">
+          <span class="method-name">request_setup</span><span class="method-args">(key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Performs setup for making a request with <tt>key</tt> from memcached.
+Returns the server to <a href="MemCache.html#M000305">fetch</a> the key
+from and the complete key to use.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000329" class="method-detail">
+        <a name="M000329"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000329.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000329.html');return false;">
+          <span class="method-name">with_server</span><span class="method-args">(key) {|server, cache_key| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000328" class="method-detail">
+        <a name="M000328"></a>
+
+        <div class="method-heading">
+          <a href="MemCache.src/M000328.html" target="Code" class="method-signature"
+            onclick="popupCode('MemCache.src/M000328.html');return false;">
+          <span class="method-name">with_socket_management</span><span class="method-args">(server, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets or creates a socket connected to the given server, and yields it to
+the block, wrapped in a mutex synchronization if @multithread is true.
+</p>
+<p>
+If a socket error (SocketError, SystemCallError, IOError) or protocol error
+(<a href="MemCache/MemCacheError.html">MemCacheError</a>) is raised by the
+block, closes the socket, attempts to connect again, and retries the block
+(once). If an error is again raised, reraises it as <a
+href="MemCache/MemCacheError.html">MemCacheError</a>.
+</p>
+<p>
+If unable to connect to the server (or if in the reconnect wait period),
+raises <a href="MemCache/MemCacheError.html">MemCacheError</a>. Note that
+the socket connect code marks a server dead for a timeout period, so
+retrying does not apply to connection attempt failures (but does still
+apply to unexpectedly lost connections etc.).
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

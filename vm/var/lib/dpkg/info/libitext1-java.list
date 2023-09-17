@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libitext1-java
+/usr/share/doc/libitext1-java/copyright
+/usr/share/doc/libitext1-java/changelog.Debian.gz
+/usr/share/maven-repo
+/usr/share/maven-repo/com
+/usr/share/maven-repo/com/lowagie
+/usr/share/maven-repo/com/lowagie/itext
+/usr/share/maven-repo/com/lowagie/itext/1.4
+/usr/share/maven-repo/com/lowagie/itext/1.4/itext-1.4.pom
+/usr/share/java
+/usr/share/java/itext1-1.4.jar
+/usr/share/maven-repo/com/lowagie/itext/1.4/itext-1.4.jar
+/usr/share/java/itext1.jar

@@ -1,0 +1,25 @@
+category truetype
+begin /usr/share/fonts/truetype/ttf-telugu-fonts/Pothana2000.ttf
+ Family = Pothana2000
+ FontName = Pothana2000
+ Encoding = Unicode
+ Location = Telugu
+ Charset = ISO10646-1
+ GeneralFamily = Telugu
+ Weight = Book
+ Width = Variable
+ Shape = Upright
+ Priority = 60
+end
+begin /usr/share/fonts/truetype/ttf-telugu-fonts/lohit_te.ttf
+ Family = Lohit-Telugu
+ FontName = Lohit-Telugu
+ Encoding = Unicode
+ Location = Telugu
+ CharSet = ISO10646-1
+ GeneralFamily = Telugu
+ Weight = Book
+ Width = Variable
+ Shape = Upright
+ Priority = 30
+end

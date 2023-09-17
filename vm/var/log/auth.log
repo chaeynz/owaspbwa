@@ -1,0 +1,112 @@
+Sep 14 17:01:31 owaspbwa sshd[824]: Server listening on 0.0.0.0 port 22.
+Sep 14 17:01:31 owaspbwa sshd[824]: Server listening on :: port 22.
+Sep 14 15:02:03 owaspbwa login[2008]: pam_unix(login:auth): check pass; user unknown
+Sep 14 15:02:03 owaspbwa login[2008]: pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost= 
+Sep 14 15:02:03 owaspbwa login[2008]: pam_winbind(login:auth): getting password (0x00000388)
+Sep 14 15:02:03 owaspbwa login[2008]: pam_winbind(login:auth): pam_get_item returned a password
+Sep 14 15:02:05 owaspbwa login[2008]: FAILED LOGIN (1) on '/dev/tty1' FOR 'UNKNOWN', Authentication failure
+Sep 14 15:02:08 owaspbwa login[2008]: pam_lastlog(login:session): file /var/log/lastlog created
+Sep 14 15:02:08 owaspbwa login[2008]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
+Sep 14 15:02:09 owaspbwa login[2172]: ROOT LOGIN  on '/dev/tty1'
+Sep 14 15:05:08 owaspbwa sshd[2267]: Address 172.16.28.1 maps to cryptcave, but this does not map back to the address - POSSIBLE BREAK-IN ATTEMPT!
+Sep 14 15:05:11 owaspbwa sshd[2267]: Accepted password for root from 172.16.28.1 port 49602 ssh2
+Sep 14 15:05:11 owaspbwa sshd[2267]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 14 15:08:36 owaspbwa git-remote-https: gethostby*.getanswer: asked for "github.com.localdomain IN AAAA", got type "A"
+Sep 14 15:09:01 owaspbwa CRON[2473]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 15:09:01 owaspbwa CRON[2473]: pam_unix(cron:session): session closed for user root
+Sep 14 15:09:33 owaspbwa git-remote-https: gethostby*.getanswer: asked for "github.com.localdomain IN AAAA", got type "A"
+Sep 14 15:09:35 owaspbwa git-remote-https: gethostby*.getanswer: asked for "github.com.localdomain IN AAAA", got type "A"
+Sep 14 15:10:11 owaspbwa sudo:     root : TTY=pts/0 ; PWD=/owaspbwa/owaspbwa-svn/var/www ; USER=root ; COMMAND=/usr/bin/apt update
+Sep 14 15:10:12 owaspbwa sudo:     root : TTY=pts/0 ; PWD=/owaspbwa/owaspbwa-svn/var/www ; USER=root ; COMMAND=/usr/bin/apt upgrade
+Sep 14 15:11:44 owaspbwa sshd[2267]: Received disconnect from 172.16.28.1: 11: disconnected by user
+Sep 14 15:11:44 owaspbwa sshd[2267]: pam_unix(sshd:session): session closed for user root
+Sep 14 15:15:48 owaspbwa sshd[2572]: Address 172.16.28.1 maps to cryptcave, but this does not map back to the address - POSSIBLE BREAK-IN ATTEMPT!
+Sep 14 15:15:57 owaspbwa sshd[2572]: Accepted password for root from 172.16.28.1 port 59978 ssh2
+Sep 14 15:15:57 owaspbwa sshd[2572]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 14 15:15:59 owaspbwa sshd[2572]: subsystem request for sftp
+Sep 14 15:17:01 owaspbwa CRON[2650]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 15:17:01 owaspbwa CRON[2650]: pam_unix(cron:session): session closed for user root
+Sep 14 15:17:33 owaspbwa sshd[2572]: Received disconnect from 172.16.28.1: 11: disconnected by user
+Sep 14 15:17:33 owaspbwa sshd[2572]: pam_unix(sshd:session): session closed for user root
+Sep 14 15:39:01 owaspbwa CRON[2745]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 15:39:01 owaspbwa CRON[2745]: pam_unix(cron:session): session closed for user root
+Sep 14 16:09:01 owaspbwa CRON[2874]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 16:09:01 owaspbwa CRON[2874]: pam_unix(cron:session): session closed for user root
+Sep 14 16:17:01 owaspbwa CRON[2915]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 16:17:01 owaspbwa CRON[2915]: pam_unix(cron:session): session closed for user root
+Sep 14 16:39:01 owaspbwa CRON[3007]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 14 16:39:01 owaspbwa CRON[3007]: pam_unix(cron:session): session closed for user root
+Sep 14 23:56:46 owaspbwa sshd[706]: Received signal 15; terminating.
+Sep 14 23:56:46 owaspbwa sshd[1817]: Server listening on 0.0.0.0 port 22.
+Sep 14 23:56:46 owaspbwa sshd[1817]: Server listening on :: port 22.
+Sep 15 00:03:57 owaspbwa login[1995]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
+Sep 15 00:03:57 owaspbwa login[2334]: ROOT LOGIN  on '/dev/tty1'
+Sep 15 00:04:43 owaspbwa sshd[722]: Server listening on 0.0.0.0 port 22.
+Sep 15 00:04:43 owaspbwa sshd[722]: Server listening on :: port 22.
+Sep 15 00:04:47 owaspbwa sshd[722]: Received signal 15; terminating.
+Sep 15 00:04:47 owaspbwa sshd[1831]: Server listening on 0.0.0.0 port 22.
+Sep 15 00:04:47 owaspbwa sshd[1831]: Server listening on :: port 22.
+Sep 15 00:06:40 owaspbwa login[2025]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
+Sep 15 00:06:40 owaspbwa login[2192]: ROOT LOGIN  on '/dev/tty1'
+Sep 15 00:08:17 owaspbwa sshd[2261]: Accepted password for root from 10.55.0.10 port 47468 ssh2
+Sep 15 00:08:17 owaspbwa sshd[2261]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 00:08:17 owaspbwa sshd[2261]: subsystem request for sftp
+Sep 15 00:08:17 owaspbwa sshd[2261]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 00:08:17 owaspbwa sshd[2261]: pam_unix(sshd:session): session closed for user root
+Sep 15 00:09:01 owaspbwa CRON[2343]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 00:09:01 owaspbwa CRON[2343]: pam_unix(cron:session): session closed for user root
+Sep 15 00:12:19 owaspbwa sshd[2387]: Accepted password for root from 10.55.0.10 port 38890 ssh2
+Sep 15 00:12:19 owaspbwa sshd[2387]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 00:12:19 owaspbwa sshd[2387]: subsystem request for sftp
+Sep 15 00:12:19 owaspbwa sshd[2387]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 00:12:19 owaspbwa sshd[2387]: pam_unix(sshd:session): session closed for user root
+Sep 15 00:17:01 owaspbwa CRON[2487]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 00:17:01 owaspbwa CRON[2487]: pam_unix(cron:session): session closed for user root
+Sep 15 00:28:26 owaspbwa sshd[2548]: Accepted password for root from 10.55.0.10 port 60846 ssh2
+Sep 15 00:28:26 owaspbwa sshd[2548]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 00:28:27 owaspbwa sshd[2548]: subsystem request for sftp
+Sep 15 00:28:27 owaspbwa sshd[2548]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 00:28:27 owaspbwa sshd[2548]: pam_unix(sshd:session): session closed for user root
+Sep 15 14:28:29 owaspbwa sshd[682]: Received signal 15; terminating.
+Sep 15 14:28:29 owaspbwa sshd[857]: Server listening on 0.0.0.0 port 22.
+Sep 15 14:28:29 owaspbwa sshd[857]: Server listening on :: port 22.
+Sep 15 14:28:45 owaspbwa login[1968]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
+Sep 15 14:28:45 owaspbwa login[2130]: ROOT LOGIN  on '/dev/tty1'
+Sep 15 14:34:54 owaspbwa sshd[2253]: Accepted password for root from 10.55.0.10 port 49808 ssh2
+Sep 15 14:34:54 owaspbwa sshd[2253]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 14:34:54 owaspbwa sshd[2253]: subsystem request for sftp
+Sep 15 14:34:54 owaspbwa sshd[2253]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 14:34:54 owaspbwa sshd[2253]: pam_unix(sshd:session): session closed for user root
+Sep 15 14:35:02 owaspbwa sshd[2328]: Accepted password for root from 10.55.0.10 port 54620 ssh2
+Sep 15 14:35:02 owaspbwa sshd[2328]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 14:35:02 owaspbwa sshd[2328]: subsystem request for sftp
+Sep 15 14:35:02 owaspbwa sshd[2328]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 14:35:02 owaspbwa sshd[2328]: pam_unix(sshd:session): session closed for user root
+Sep 15 14:35:32 owaspbwa sshd[2404]: Accepted password for root from 10.55.0.10 port 44400 ssh2
+Sep 15 14:35:32 owaspbwa sshd[2404]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 14:35:32 owaspbwa sshd[2404]: subsystem request for sftp
+Sep 15 14:39:02 owaspbwa CRON[2514]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 14:39:02 owaspbwa CRON[2514]: pam_unix(cron:session): session closed for user root
+Sep 15 14:42:43 owaspbwa sshd[2404]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 14:42:43 owaspbwa sshd[2404]: pam_unix(sshd:session): session closed for user root
+Sep 15 14:44:53 owaspbwa sshd[703]: Received signal 15; terminating.
+Sep 15 14:44:53 owaspbwa sshd[882]: Server listening on 0.0.0.0 port 22.
+Sep 15 14:44:53 owaspbwa sshd[882]: Server listening on :: port 22.
+Sep 15 15:09:01 owaspbwa CRON[2135]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 15:09:01 owaspbwa CRON[2135]: pam_unix(cron:session): session closed for user root
+Sep 15 15:17:01 owaspbwa CRON[2184]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 15:17:01 owaspbwa CRON[2184]: pam_unix(cron:session): session closed for user root
+Sep 15 15:17:18 owaspbwa login[1992]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
+Sep 15 15:17:18 owaspbwa login[2328]: ROOT LOGIN  on '/dev/tty1'
+Sep 15 15:39:01 owaspbwa CRON[2507]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 15:39:01 owaspbwa CRON[2507]: pam_unix(cron:session): session closed for user root
+Sep 15 16:09:01 owaspbwa CRON[2663]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 16:09:01 owaspbwa CRON[2663]: pam_unix(cron:session): session closed for user root
+Sep 15 16:17:01 owaspbwa CRON[2716]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 16:17:01 owaspbwa CRON[2716]: pam_unix(cron:session): session closed for user root
+Sep 15 16:37:17 owaspbwa sshd[2909]: Accepted password for root from 10.55.0.10 port 43704 ssh2
+Sep 15 16:37:17 owaspbwa sshd[2909]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Sep 15 16:39:01 owaspbwa CRON[3055]: pam_unix(cron:session): session opened for user root by (uid=0)
+Sep 15 16:39:01 owaspbwa CRON[3055]: pam_unix(cron:session): session closed for user root
+Sep 15 17:02:57 owaspbwa sshd[2909]: Received disconnect from 10.55.0.10: 11: disconnected by user
+Sep 15 17:02:57 owaspbwa sshd[2909]: pam_unix(sshd:session): session closed for user root

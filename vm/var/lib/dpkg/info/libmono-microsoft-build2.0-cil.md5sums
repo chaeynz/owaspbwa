@@ -1,0 +1,6 @@
+2a66edd4f1db3fbcc46fa1dde06bafe9  usr/lib/mono/gac/Microsoft.Build.Engine/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Engine.dll
+736ffaefe122523d1e8a5e5512e884ee  usr/lib/mono/gac/Microsoft.Build.Framework/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Framework.dll
+5ed14c0e1b15636e4d1de5f792e61dea  usr/lib/mono/gac/Microsoft.Build.Tasks/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.dll
+360345a04bd918469c4ac280ade12b9f  usr/lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll
+179bf0a3c9b40dbae9061590f7efd0c5  usr/share/doc/libmono-microsoft-build2.0-cil/copyright
+623da1c6dd023680ea9babd7409a17b7  usr/share/doc/libmono-microsoft-build2.0-cil/changelog.Debian.gz

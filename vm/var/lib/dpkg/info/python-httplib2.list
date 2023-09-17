@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/python-httplib2
+/usr/share/doc/python-httplib2/copyright
+/usr/share/doc/python-httplib2/changelog.gz
+/usr/share/doc/python-httplib2/README.gz
+/usr/share/doc/python-httplib2/changelog.Debian.gz
+/usr/share/pyshared
+/usr/share/pyshared/httplib2-0.6.0.egg-info
+/usr/share/pyshared/httplib2
+/usr/share/pyshared/httplib2/iri2uri.py
+/usr/share/pyshared/httplib2/__init__.py
+/usr/share/python-support
+/usr/share/python-support/python-httplib2.public

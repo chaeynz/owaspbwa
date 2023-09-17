@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.doxia</groupId>
+	<artifactId>doxia-decoration-model</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-sitetools</artifactId>
+		<version>debian</version>
+	</parent>
+	<properties>
+		<debian.originalVersion>1.1.1</debian.originalVersion>
+		<debian.package>libdoxia-sitetools-java</debian.package>
+	</properties>
+	
+	<name>Doxia Sitetools :: Decoration Model</name>
+	<description>The Decoration Model handles the site descriptor, also known as site.xml.</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+		</dependency>
+	</dependencies>
+</project>

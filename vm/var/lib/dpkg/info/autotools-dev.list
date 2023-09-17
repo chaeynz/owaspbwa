@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/misc
+/usr/share/misc/config.guess
+/usr/share/misc/config.sub
+/usr/share/doc
+/usr/share/doc/autotools-dev
+/usr/share/doc/autotools-dev/upstream.mail.template
+/usr/share/doc/autotools-dev/changelog.gz
+/usr/share/doc/autotools-dev/TODO
+/usr/share/doc/autotools-dev/copyright
+/usr/share/doc/autotools-dev/examples
+/usr/share/doc/autotools-dev/examples/autogen.sh
+/usr/share/doc/autotools-dev/examples/rules.gz
+/usr/share/doc/autotools-dev/README.Debian.gz
+/usr/share/doc/autotools-dev/changelog.Debian.gz

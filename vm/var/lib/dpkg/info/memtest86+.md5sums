@@ -1,0 +1,12 @@
+7ad3e87c03d6b9d735b1419606348c87  usr/bin/make-memtest86+-boot-floppy
+9e3b266ae1ca86cbc956c239de207b33  usr/lib/memtest86+/memtest86+.elf
+ca2609f680bd4c0b5c91df2906f7310c  usr/share/man/man1/make-memtest86+-boot-floppy.1.gz
+354f2f8b52734bf2259c7da090245c61  usr/share/doc/memtest86+/README.Debian
+89ed27afff36592c28c7d34209d32951  usr/share/doc/memtest86+/copyright
+d13248cec6aaa272d4d1ed71258fc08d  usr/share/doc/memtest86+/buildinfo.gz
+e7b7c0d7230cbaae0941681efc137f15  usr/share/doc/memtest86+/examples/lilo.conf
+1847771bcc506674a44a0c035c93f8ef  usr/share/doc/memtest86+/examples/grub-menu.lst
+c1490f477af937ce7f06b4299f7a019c  usr/share/doc/memtest86+/changelog.gz
+5167f68588ecf58f5ebb617fe0481307  usr/share/doc/memtest86+/README.gz
+08b7a5a80fd88ec5c10d2d3036e06ba6  usr/share/doc/memtest86+/changelog.Debian.gz
+95f689bd6c9842be2e1d9991b991abfe  boot/memtest86+.bin

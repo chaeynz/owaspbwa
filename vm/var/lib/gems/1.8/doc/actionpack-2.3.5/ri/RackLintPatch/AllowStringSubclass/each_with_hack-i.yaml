@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: part
+comment: 
+full_name: RackLintPatch::AllowStringSubclass#each_with_hack
+is_singleton: false
+name: each_with_hack
+params: () {|part| ...}
+visibility: public

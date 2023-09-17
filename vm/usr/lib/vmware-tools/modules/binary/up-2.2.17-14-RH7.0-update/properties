@@ -1,0 +1,6 @@
+UtsRelease 2.2.17-14
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Red Hat 7.0 kernel update
+UtsMachine i386

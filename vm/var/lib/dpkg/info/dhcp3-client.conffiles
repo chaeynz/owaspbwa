@@ -1,0 +1,5 @@
+/etc/dhcp3/dhclient-enter-hooks.d/debug
+/etc/dhcp3/dhclient-exit-hooks.d/debug
+/etc/dhcp3/dhclient-exit-hooks.d/rfc3442-classless-routes
+/etc/dhcp3/dhclient.conf
+/etc/apparmor.d/sbin.dhclient3

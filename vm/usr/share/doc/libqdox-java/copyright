@@ -1,0 +1,18 @@
+Format-Specification: http://dep.debian.net/deps/dep5/
+Name: QDox
+Maintainer: QDox Project Team
+Source: http://qdox.codehaus.org/
+
+Files: *
+Copyright: 2002-2009, Joe Walnes and QDox Project Team
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2005, Trygve Laugstøl <trygvis@inamo.no>
+Copyright: 2009, Ludovic Claude <ludovic.claude@laposte.net>
+License: Apache-2.0
+
+License: Apache-2.0
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache 2.0 license in '/usr/share/common-licenses/Apache-2.0'.
+

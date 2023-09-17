@@ -1,0 +1,5 @@
+65e0fbef4591c72935958a19bf505129  lib/libparted.so.0.0.1
+ae9fb49acaefac7f807aa2e0463f2733  usr/share/doc/libparted0debian1/copyright
+54f30fda1d9bb3c6b32ac423019f6f5e  usr/share/doc/libparted0debian1/changelog.gz
+eedac40b5334583fe1dd5d0b2b0f2fec  usr/share/doc/libparted0debian1/changelog.Debian.gz
+1fd8938cf15a93f38730418382365eb8  usr/share/lintian/overrides/libparted0debian1

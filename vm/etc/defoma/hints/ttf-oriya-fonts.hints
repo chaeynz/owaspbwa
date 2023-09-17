@@ -1,0 +1,13 @@
+category truetype
+begin /usr/share/fonts/truetype/ttf-oriya-fonts/lohit_or.ttf
+ Family = Lohit-Oriya
+ FontName = Lohit-Oriya
+ Encoding = Unicode
+ Location = English Oriya
+ Charset = ISO10646-1
+ GeneralFamily = Oriya
+ Weight = Medium
+ Width = Variable
+ Shape = Upright
+ Priority = 30
+end

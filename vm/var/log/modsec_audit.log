@@ -1,0 +1,44 @@
+--8ba6df35-A--
+[15/Sep/2023:16:40:53 --0400] ZQTBVX8AAQEAAAeGCvkAAAAC 10.55.0.10 44572 10.55.0.14 80
+--8ba6df35-B--
+GET /bodgeit/ HTTP/1.1
+Host: 10.55.0.14
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://10.55.0.14/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-DE;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: Server=b3dhc3Bid2E=; acopendivids=swingset,jotto,phpbb2,redmine; acgroupswithpersist=nada; PHPSESSID=c7iee9i35gd519d5ghlfffjlf0; JSESSIONID=6C26D9CB2D13C1B0DAD31E0D2759F711
+
+--8ba6df35-F--
+HTTP/1.1 503 Service Temporarily Unavailable
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 236
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+--8ba6df35-E--
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Temporarily Unavailable</title>
+</head><body>
+<h1>Service Temporarily Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+</body></html>
+
+--8ba6df35-H--
+Apache-Handler: proxy-server
+Stopwatch: 1694810453572588 1666 (- - -)
+Stopwatch2: 1694810453572588 1666; combined=25, p1=3, p2=15, p3=1, p4=0, p5=5, sr=0, sw=1, l=0, gc=0
+Response-Body-Transformed: Dechunked
+Producer: ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/).
+Server: Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38
+Engine-Mode: "DETECTION_ONLY"
+
+--8ba6df35-Z--
+

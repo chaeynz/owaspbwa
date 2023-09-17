@@ -1,0 +1,27 @@
+This package was debianized by Varun Hiremath <varunhiremath@gmail.com> on
+Tue, 24 Apr 2007 17:19:10 +0530.
+
+It was downloaded from http://swarmcache.sourceforge.net/
+
+Upstream Author: John Watkinson <john@autobotcity.com>
+
+Contributors: Rajeev Kaul and Jason Carreira
+
+Copyright: (C) 2007 John Watkinson <john@autobotcity.com>
+
+License:
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+ 
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+
+  On Debian systems, you can find the LGPL license in:
+  /usr/share/common-licenses/LGPL
+
+The Debian packaging is (C) 2007, Varun Hiremath <varunhiremath@gmail.com> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

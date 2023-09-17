@@ -1,0 +1,11 @@
+18282c8fb425969ce5d12bb9f4d8c91e  usr/share/doc/courier-authlib-userdb/copyright
+a79808dab76f168fd2eaa8f7f4428456  usr/share/doc/courier-authlib-userdb/changelog.Debian.gz
+b32e604d72179a7b7f971ab56a1ca5d9  usr/share/man/man8/userdb.8.gz
+5a85add53db83e90cd00a444425e3005  usr/share/man/man8/makeuserdb.8.gz
+09fc919a6c6fa9eaa6c67b357ee94c83  usr/share/man/man8/userdbpw.8.gz
+30bd16d8ac7e3fead187b9c62d01b01a  usr/lib/courier-authlib/libauthuserdb.so
+c5d859d490109844b2d628e80c2dda2a  usr/sbin/makeuserdb
+d45292215352b27c45a3896abd766801  usr/sbin/pw2userdb
+020a669fbe811506660e885f85f707c2  usr/sbin/userdb
+c5785a0f19216302798e01f1bfae664e  usr/sbin/userdbpw
+f7974785905001e00fc85c47897aee3f  usr/sbin/userdb-test-cram-md5

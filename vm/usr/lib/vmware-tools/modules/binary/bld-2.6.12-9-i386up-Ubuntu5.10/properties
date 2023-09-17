@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-9-386
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Ubuntu5.10, 2.6.12-9-386, i386
+UtsMachine i386

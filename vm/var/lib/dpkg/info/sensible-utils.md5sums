@@ -1,0 +1,10 @@
+4d726d5fea14257bfc90f8a8b5b409ab  usr/bin/select-editor
+3198431db7e796a3000d4a26fff6f7d1  usr/bin/sensible-browser
+bb64e952de310d2d39a223c91cddf752  usr/bin/sensible-editor
+bbccb390fe7fa589c0ecb35f1426ed5b  usr/bin/sensible-pager
+320d5b190b90eba3fdbdd2e3a7eec8c8  usr/share/man/man1/select-editor.1.gz
+a4b0b0cbb20b1c480b828f672ff9dea7  usr/share/man/man1/sensible-editor.1.gz
+94165c1be5c1ad671c1e0a0980622215  usr/share/man/fr/man1/sensible-editor.1.gz
+445724922eb5f37e46d2413b7c0b3430  usr/share/doc/sensible-utils/copyright
+23ea30b0011d620154e40e30f6336508  usr/share/doc/sensible-utils/changelog.gz
+2d9a8b41bbd3d86812e66e53428a9bed  usr/lib/mime/packages/sensible-utils

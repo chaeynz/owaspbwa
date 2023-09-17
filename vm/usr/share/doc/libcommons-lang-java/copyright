@@ -1,0 +1,43 @@
+This package was debianized by Arnaud Vandyck <arnaud.vandyck@ulg.ac.be> on
+Tue,  1 Jul 2003 14:43:32 +0200.
+
+It was downloaded from http://commons.apache.org/lang/
+
+Upstream Authors: Daniel Rall <dlr@finemaltcoding.com>,
+                  Stephen Colebourne <scolebourne@joda.org>,
+                  Henri Yandell <bayard@apache.org>,
+                  Steven Caswell <stevencaswell@apache.org>,
+                  Robert Burrell Donkin <rdonkin@apache.org>,
+                  Gary D. Gregory <ggregory@seagullsw.com>,
+                  Phil Steitz <phil@steitz.com>,
+                  Fredrik Westermarck,
+                  James Carman <jcarman@apache.org>,
+                  Niall Pemberton, Matt Benson, C. Scott Ananian, Chris Audley,
+                  Stephane Bailliez, Michael Becke, Ola Berg, Nathan Beyer,
+                  Stefan Bodewig, Janek Bogucki, Mike Bowler, Sean Brown,
+                  Alexander Day Chaffee, Al Chou, Greg Coladonato,
+                  Maarten Coene, Justin Couch, Michael Davey, Norm Deane,
+                  Ringo De Smet, Russel Dittmar, Steve Downey, Matthias Eichel,
+                  Christopher Elkins, Chris Feldhacker, Pete Gieser,
+                  Jason Gritman, Matthew Hawthorne, Michael Heuer,
+                  Oliver Heger, Chris Hyzer, Marc Johnson, Shaun Kalley,
+                  Tetsuya Kaneuchi, Nissim Karpenstein, Ed Korthof,
+                  Holger Krauth, Rafal Krupinski, Rafal Krzewski,
+                  Craig R. McClanahan, Rand McNeely, Dave Meikle,
+                  Nikolay Metchev, Kasper Nielsen, Tim O'Brien,
+                  Brian S O'Neill, Andrew C. Oliver, Alban Peignier,
+                  Moritz Petersen, Dmitri Plotnikov, Neeme Praks, Eric Pugh,
+                  Stephen Putman, Travis Reeder, Antony Riley, Scott Sanders,
+                  Ralph Schaer, Henning P. Schmiedehausen, Sean Schofield,
+                  Reuben Sivan, Ville Skytta, Jan Sorensen, Glen Stampoultzis,
+                  Scott Stanchfield, Jon S. Stevens, Sean C. Sullivan,
+                  Ashwin Suresh, Helge Tesgaard, Arun Mammen Thomas,
+                  Masato Tezuka, Jeff Varszegi, Chris Webb, Mario Winterer,
+                  Stepan Koltsov, Holger Hoffstatte
+
+Copyright: 2001-2008 The Apache Software Foundation
+
+License: Apache 2.0
+
+On Debian systems the full text of the Apache License can be found
+in `/usr/share/common-licenses/Apache-2.0'.

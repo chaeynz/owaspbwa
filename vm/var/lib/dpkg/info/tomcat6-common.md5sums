@@ -1,0 +1,14 @@
+75dc2413d626d7319e1c0e58c011ba00  usr/share/doc/tomcat6-common/RELEASE-NOTES.gz
+964ec9038f642ce94113d9a500326547  usr/share/doc/tomcat6-common/RUNNING.txt.gz
+0d9ce149e3aced1ff07f3002871448e9  usr/share/doc/tomcat6-common/copyright
+9e7bcc4b8780543a4e871fcbf6ffcdf5  usr/share/doc/tomcat6-common/changelog.Debian.gz
+dacabcb74941d2835798363edcab07c2  usr/share/doc/tomcat6-common/README.Debian.gz
+615971fb159758003b435ad35371c90f  usr/share/tomcat6/bin/bootstrap.jar
+25a116c308447c02dbdbf1546f95d91d  usr/share/tomcat6/bin/catalina-tasks.xml
+e76b3d2d96a9c04ba57fb7a7c3bff054  usr/share/tomcat6/bin/catalina.sh
+607dccd70ac0a4e95696255c514e4189  usr/share/tomcat6/bin/digest.sh
+3d1f7d7dad1a013caf9969bfdcb17362  usr/share/tomcat6/bin/setclasspath.sh
+51fdbbc00b5cd257ff32e38170f6823d  usr/share/tomcat6/bin/shutdown.sh
+68a766645edd3031c08111f8d9137154  usr/share/tomcat6/bin/startup.sh
+95bb567daeecec19d760603372dfddb5  usr/share/tomcat6/bin/tool-wrapper.sh
+947e34e3a5f9a0ffbb386e223224b53a  usr/share/tomcat6/bin/version.sh

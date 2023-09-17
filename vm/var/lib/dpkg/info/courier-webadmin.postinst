@@ -1,0 +1,44 @@
+#! /bin/sh -e
+#
+# Copyright 2001,2005,2009 by Stefan Hornburg (Racke) <racke@linuxia.de>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public
+# License along with this program; if not, write to the Free
+# Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+# MA  02111-1307  USA.
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+if [ "$1" = "configure" ]; then
+	# install CGI script for Courier web administration
+	db_get courier-webadmin/install-cgi
+	if [ "$RET" = "true" ]; then
+		cp -p /usr/lib/courier/courier/webmail/webadmin /usr/lib/cgi-bin/courierwebadmin
+		chmod 4555 /usr/lib/cgi-bin/courierwebadmin
+	fi
+
+	# fix permissions
+	chown -R daemon:daemon /etc/courier/webadmin
+
+	# record password for Courier web administration
+	db_get courier-webadmin/password
+	if [ "$RET" ]; then
+		touch /etc/courier/webadmin/password
+		chmod 400 /etc/courier/webadmin/password
+		chown daemon:daemon /etc/courier/webadmin/password
+		echo $RET > /etc/courier/webadmin/password
+	fi
+fi
+
+

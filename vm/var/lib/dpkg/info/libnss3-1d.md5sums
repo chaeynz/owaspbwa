@@ -1,0 +1,14 @@
+6a354e09190b62d7f744a24456cb3487  usr/lib/nss/libfreebl3.so
+28b08982ec841bba8f72c69686520b13  usr/lib/nss/libsoftokn3.so
+27be437cc80906f9195b54152a34ba3a  usr/lib/nss/libnssdbm3.so
+978a197545e665962b69b4e5b5f049d1  usr/lib/nss/libnssckbi.so
+fc5de6b40830aba2ac2c7e148528fee2  usr/lib/nss/libsoftokn3.chk
+126e57bc58efc5bad05f9fd367d67f69  usr/lib/nss/libfreebl3.chk
+7b3b291260a5f7979911e7f577beae93  usr/lib/nss/libnssdbm3.chk
+5085f8e9836cc7f8b639d6213280673e  usr/lib/libssl3.so
+bab527c7aea99b62624663245bce8a74  usr/lib/libsmime3.so
+d672d0d8460087b130f4507676a2af2a  usr/lib/libnssutil3.so
+80aa93576637d3da2ac8137b9b192a99  usr/lib/libnss3.so
+fd32f43f8ab3b92c73bc3d27818424b8  usr/share/doc/libnss3-1d/copyright
+e583161d7e8de5ee98efeb743dc29954  usr/share/doc/libnss3-1d/changelog.Debian.gz
+c683abd873591af4ac5fcaabf57c7c1c  usr/share/lintian/overrides/libnss3-1d

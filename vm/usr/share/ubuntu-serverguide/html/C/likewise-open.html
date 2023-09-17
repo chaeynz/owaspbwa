@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Likewise Open</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="windows-networking.html" title="Chapter 17. Windows Networking" />
+    <link rel="prev" href="samba-ad-integration.html" title="Samba Active Directory Integration" />
+    <link rel="next" href="backups.html" title="Chapter 18. Backups" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="windows-networking.html">Windows Networking</a></span> &gt; <span class="breadcrumb-node">Likewise Open</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Likewise Open">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="likewise-open"></a>Likewise Open</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    <span class="application"><strong>Likewise Open</strong></span> simplifies the necessary configuration needed to authenticate a Linux machine to an
+    Active Directory domain.  Based on <span class="application"><strong>winbind</strong></span>, the <span class="application"><strong>likewise-open</strong></span> package
+    takes the pain out of integrating Ubuntu authentication into an existing Windows network.
+    </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="likewise-open-install"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      There are two ways to use Likewise Open, <span class="application"><strong>likewise-open</strong></span> the command line utility and 
+      <span class="application"><strong>likewise-open-gui</strong></span>.  This section focuses on the command line utility.
+      </p>
+                <p>
+      To install the <span class="application"><strong>likewise-open</strong></span> package, open a terminal prompt and enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install likewise-open</strong></span>
+</pre>
+              </div>
+              <div class="sect2" title="Joining a Domain">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="likewise-open-configuration"></a>Joining a Domain</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The main executable file of the <span class="application"><strong>likewise-open</strong></span> package is 
+      <code class="filename">/usr/bin/domainjoin-cli</code>, which is used to join your computer to the domain. Before you join 
+      a domain you will need to make sure you have:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	  Access to an Active Directory user with appropriate rights to join the domain.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  The <span class="emphasis"><em>Fully Qualified Domain Name</em></span> (FQDN) of the domain you want to join.  If your AD domain
+          does not match a valid domain such as <span class="italic">example.com</span>, it is likely that it has
+          the form of <span class="emphasis"><em>domainname.local</em></span>.  
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  DNS for the domain setup properly.  In a production AD environment this should be the case.  Proper Microsoft 
+      DNS is needed so that client workstations can determine the Active Directory domain is available.
+	  </p>
+                      <p>
+          If you don't have a Windows DNS server on your network, see <a class="xref" href="likewise-open.html#likewise-open-ms-dns" title="Microsoft DNS">the section called “Microsoft DNS”</a> for details.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      To join a domain, from a terminal prompt enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo domainjoin-cli join example.com Administrator</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	Replace <span class="emphasis"><em>example.com</em></span> with your domain name, and <span class="emphasis"><em>Administrator</em></span> with the
+        appropriate user name.
+	</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      You will then be prompted for the user's password.  If all goes well a <span class="emphasis"><em>SUCCESS</em></span> message should be
+      printed to the console.
+      </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+			  After joining the domain, it is necessary to reboot before
+			  attempting to authenticate against the domain.
+		  </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      After successfully joining an Ubuntu machine to an Active Directory domain you can authenticate using any valid AD user.  
+      To login you will need to enter the user name as 'domain\username'. For example to ssh to a server joined to the domain
+      enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>ssh 'example\steve'@hostname</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+	If configuring a Desktop the user name will need to be prefixed with <span class="italic">domain\</span> in the
+        graphical logon as well.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      To make likewise-open use a default domain, you can add the following statement to <code class="filename">/etc/samba/lwiauthd.conf</code>:
+      </p>
+                <pre class="programlisting">
+winbind use default domain = yes
+</pre>
+                <p>
+      Then restart the <span class="application"><strong>likewise-open</strong></span> daemons:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/likewise-open restart</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Once configured for a <span class="emphasis"><em>default domain</em></span> the <span class="italic">'domain\'</span> is no longer required, 
+        users can login using only their username.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      The <span class="application"><strong>domainjoin-cli</strong></span> utility can also be used to leave the domain.  From a terminal:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo domainjoin-cli leave</strong></span>
+</pre>
+              </div>
+              <div class="sect2" title="Other Utilities">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="likewise-open-utilities"></a>Other Utilities</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The <span class="application"><strong>likewise-open</strong></span> package comes with a few other utilities that may be useful for gathering
+      information about the Active Directory environment.  These utilities are used to join the machine to the domain, and are
+      the same as those available in the <span class="application"><strong>samba-common</strong></span> and <span class="application"><strong>winbind</strong></span> 
+      packages:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+	  <span class="application"><strong>lwinet</strong></span>:  Returns information about the network and the domain.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="application"><strong>lwimsg</strong></span>:  Allows interaction with the <span class="application"><strong>likewise-winbindd</strong></span> daemon.
+	  </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+	  <span class="application"><strong>lwiinfo</strong></span>:  Displays information about various parts of the Domain.
+	  </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      Please refer to each utility's man page specific for details.
+      </p>
+              </div>
+              <div class="sect2" title="Troubleshooting">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="likewise-open-troubleshooting"></a>Troubleshooting</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+            If the client has trouble joining the domain, double check that the Microsoft DNS is listed first in <code class="filename">/etc/resolv.conf</code>.
+            For example:
+            </p>
+                      <pre class="programlisting">
+nameserver 192.168.0.1
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            For more information when joining a domain, use the <span class="emphasis"><em>--loglevel verbose</em></span> or <span class="emphasis"><em>--advanced</em></span> option of the 
+            <span class="application"><strong>domainjoin-cli</strong></span> utility:
+            </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo domainjoin-cli --loglevel verbose join example.com Administrator</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            If an Active Directory user has trouble logging in, check the <code class="filename">/var/log/auth.log</code> for details.
+            </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+            When joining an Ubuntu Desktop workstation to a domain, you may need to edit <code class="filename">/etc/nsswitch.conf</code> if your AD domain 
+            uses the <span class="italic">.local</span> syntax.  In order to join the domain the <span class="emphasis"><em>"mdns4"</em></span> entry should be removed from the
+            <span class="emphasis"><em>hosts</em></span> option.  For example:
+            </p>
+                      <pre class="programlisting">
+hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4
+</pre>
+                      <p>
+            Change the above to:
+            </p>
+                      <pre class="programlisting">
+hosts: files dns [NOTFOUND=return]
+</pre>
+                      <p>
+            Then restart networking by entering:
+            </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/networking restart</strong></span>
+</pre>
+                      <p>
+            You should now be able to join the Active Directory domain.
+            </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="Microsoft DNS">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="likewise-open-ms-dns"></a>Microsoft DNS</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+        The following are instructions for installing DNS on an Active Directory domain controller running Windows Server 2003, 
+        but the instructions should be similar for other versions:
+        </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+              Click 
+              <span class="guimenuitem">Start</span> → <span class="guimenuitem">Administrative Tools</span> → <span class="guimenuitem">Manage Your Server</span>.
+              This will open the <span class="application"><strong>Server Role Mangement</strong></span> utility.
+              </p>
+                      <div class="orderedlist">
+                        <ol class="orderedlist" type="1">
+                          <li class="listitem">
+                            <p>Click <em class="guilabel">Add or remove a role</em></p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Next</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Select "DNS Server"</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Next</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Next again to proceed </p>
+                          </li>
+                          <li class="listitem">
+                            <p>Select "Create a forward lookup zone" if it is not selected.</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Next</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Make sure "This server maintains the zone" is selected and click Next.</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Enter your domain name and click Next</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Next to "Allow only secure dynamic updates"</p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+                 Enter the IP for DNS servers to forward queries to, or Select "No, it should not forward queries" and click Next.
+                 </p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Finish</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Finish</p>
+                          </li>
+                        </ol>
+                      </div>
+                      <p>
+              DNS is now installed and can be further configured using the <span class="application"><strong>Microsoft Management Console</strong></span> DNS snap-in.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+              Next, configure the Server to use itself for DNS queries:
+                </p>
+                      <div class="orderedlist">
+                        <ol class="orderedlist" type="1">
+                          <li class="listitem">
+                            <p>Click Start</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Control Panel</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Network Connections</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Right Click "Local Area Connection"</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Properties</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Double click "Internet Protocol (TCP/IP)"</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Enter the Server's IP Address as the "Preferred DNS server"</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Ok</p>
+                          </li>
+                          <li class="listitem">
+                            <p>Click Ok again to save the settings</p>
+                          </li>
+                        </ol>
+                      </div>
+                      <p>
+              </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="likewise-open-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	Please refer to the <a class="ulink" href="http://www.likewisesoftware.com/" target="_top">Likewise</a> home page for further information.
+	</p>
+                <p>
+	For more <span class="application"><strong>domainjoin-cli</strong></span> options see the man page: <span class="command"><strong>man domainjoin-cli</strong></span>.
+	</p>
+                <p>
+    Also, see the <a class="ulink" href="https://help.ubuntu.com/community/LikewiseOpen" target="_top">Ubuntu Wiki LikewiseOpen</a> page.
+    </p>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="samba-ad-integration.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="windows-networking.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="backups.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Samba Active Directory Integration </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 18. Backups</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

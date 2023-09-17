@@ -1,0 +1,14 @@
+0511f06bc05fbaa0063b7c65692573d2  usr/share/doc/libplexus-containers-java/README.Debian
+35f1fb04e8da5f7a7d82b3697b0ab928  usr/share/doc/libplexus-containers-java/copyright
+35303e7d4db7d70e41743ba6c681b813  usr/share/doc/libplexus-containers-java/changelog.Debian.gz
+3a6f8d047826e7402b8e0313d54f9ef0  usr/share/maven-repo/org/codehaus/plexus/plexus-containers/1.0-beta-3.0.7/plexus-containers-1.0-beta-3.0.7.pom
+c514c9b2820946b98c58d1e45204f7ca  usr/share/maven-repo/org/codehaus/plexus/plexus-containers/debian/plexus-containers-debian.pom
+c8b638d40cf3406ef98b17f4739eab93  usr/share/maven-repo/org/codehaus/plexus/plexus-container-default/1.0-beta-3.0.7/plexus-container-default-1.0-beta-3.0.7.pom
+eab40535dfb1d4f84561cb87f59971a4  usr/share/maven-repo/org/codehaus/plexus/plexus-container-default/debian/plexus-container-default-debian.pom
+7024603e69bad98cd4914335874fb06b  usr/share/maven-repo/org/codehaus/plexus/plexus-component-javadoc/1.0-beta-3.0.7/plexus-component-javadoc-1.0-beta-3.0.7.pom
+d928ec6630f72f65d51790fffc0c1662  usr/share/maven-repo/org/codehaus/plexus/plexus-component-javadoc/debian/plexus-component-javadoc-debian.pom
+97dd50e6a4b27c77ea0d9f5de052ab3c  usr/share/maven-repo/org/codehaus/plexus/plexus-component-annotations/1.0-beta-3.0.7/plexus-component-annotations-1.0-beta-3.0.7.pom
+7a47fb0ecd3ed1b9597d6f43707f4bb2  usr/share/maven-repo/org/codehaus/plexus/plexus-component-annotations/debian/plexus-component-annotations-debian.pom
+2dc6682f41df111f11f4187e5768cad4  usr/share/java/plexus-container-default-1.0-beta-3.0.7.jar
+8302d54635d930408bc7890011d21724  usr/share/java/plexus-component-annotations-1.0-beta-3.0.7.jar
+a0e757ac6f9b2b28e3c6af0731c0c2df  usr/share/java/plexus-component-javadoc-1.0-beta-3.0.7.jar

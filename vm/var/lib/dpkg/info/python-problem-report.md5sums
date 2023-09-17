@@ -1,0 +1,8 @@
+80ac8583a3bd5fab5007657e46430291  usr/share/doc/python-problem-report/README
+a48d1b04e013bc988266e8bb5f29b173  usr/share/doc/python-problem-report/TODO
+1798bd51831bfe7e613dc78b856e3dfb  usr/share/doc/python-problem-report/AUTHORS
+fd3447316222deac55cf71ed0999c3ad  usr/share/doc/python-problem-report/copyright
+f66165b5903a04ab43f7aecdbf560c64  usr/share/doc/python-problem-report/NEWS.gz
+02ece72f209ad8db56ff079832ce38e7  usr/share/doc/python-problem-report/changelog.Debian.gz
+3f7de2ea03747c0f2f7606b48b723ba0  usr/share/pyshared/problem_report.py
+e256f8d74cf11cf86d42680e28c3b0e9  usr/share/pyshared-data/python-problem-report

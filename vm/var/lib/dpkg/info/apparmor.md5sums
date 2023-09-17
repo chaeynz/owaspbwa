@@ -1,0 +1,10 @@
+880f61f14e49d7388bb6699306f77463  sbin/apparmor_parser
+0864c7b1b3988961b59710620f211b97  usr/share/man/man5/apparmor.vim.5.gz
+90cfb94902ecf77065ea197627075bcc  usr/share/man/man5/apparmor.d.5.gz
+65c5b6131c0531d858bdd41e491421e5  usr/share/man/man5/subdomain.conf.5.gz
+86909f9b83250ecf87973bcc5076e9e8  usr/share/man/man7/apparmor.7.gz
+e3b5c05fcc4a53f91d73e940b3b438e3  usr/share/man/man8/apparmor_parser.8.gz
+08b38080c148e6f6d4ea28d44d6b7cb9  usr/share/apport/package-hooks/source_apparmor.py
+aa4280dbfc6c1f113e096b15ac9e399f  usr/share/doc/apparmor/README.Debian
+343183cf2405c2948c0a4b16a5d39c25  usr/share/doc/apparmor/copyright
+8db51a8c8576363a3f01c8d58127956d  usr/share/doc/apparmor/changelog.Debian.gz

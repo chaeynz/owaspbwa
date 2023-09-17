@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+#set -x
+
+. /usr/share/debconf/confmodule
+if [ -f /usr/share/dbconfig-common/dpkg/config.sqlite ]; then
+	. /usr/share/dbconfig-common/dpkg/config.sqlite
+	dbc_go db-test-sqlite $@
+fi

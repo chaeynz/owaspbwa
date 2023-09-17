@@ -1,0 +1,58 @@
+
+Template: libapache2-mod-mono/mono-server
+Type: select
+Choices: mod-mono-server1, mod-mono-server2
+Default: mod-mono-server2
+Description: Mono server to use:
+ The libapache2-mod-mono module can be used with one of two different
+ Mono ASP.NET backends:
+  - mod-mono-server1: implements ASP.NET 1.1 features;
+  - mod-mono-server2: implements ASP.NET 2.0 features.
+Description-cs.UTF-8: Mono server, který se má použít:
+ Modul libapache2-mod-mono se dá použít s různými backendy pro Mono ASP.NET:
+  - mod-mono-server1: implementuje ASP.NET 1.1;
+  - mod-mono-server2: implementuje ASP.NET 2.0.
+Description-de.UTF-8: Mono-Server, der verwendet werden soll:
+ Das Modul libapache2-mod-mono kann mit einem von zwei verschiedenen Mono-ASP.NET-Backends verwendet werden:
+  - mod-mono-server : implementiert ASP.NET 1.1-Funktionen
+  - mod-mono-server2: implementiert ASP.NET 2.0-Funktionen
+Description-es.UTF-8: Servidor Mono a utilizar:
+ El módulo «libapache2-mod-mono» se puede utilizar con uno de los dos motores distintos de Mono ASP.NET:
+  - «mod-mono-server1»: Implementa las funcionalidades de ASP.NET 1.1;
+  - «mod-mono-server2»: Implementa las funcionalidades de ASP.NET 2.0.
+Description-eu.UTF-8: Mono zerbitzaria:
+ 'libapache2-mod-mono' modulua Mono ASP.NET motor desberdinetako batekin erabili daiteke:
+  - mod-mono-server1: ASP.NET 1.1 ezaugarriak inplementatzen ditu;
+  - mod-mono-server2: ASP.NET 2.0 ezaugarriak inplementatzen ditu.
+Description-fi.UTF-8: Käytettävä Mono-palvelin:
+ Moduulia libapache2-mod-mono voidaan käyttää kahden eri Mono ASP.NET -taustaosan kanssa:
+  - mod-mono-server1: toteuttaa ASP.NET 1.1 -ominaisuudet
+  - mod-mono-server2: toteuttaa ASP.NET 2.0 -ominaisuudet
+Description-fr.UTF-8: Serveur Mono à utiliser :
+ Le module libapache2-mod-mono peut être utilisé avec deux modes différents de gestion de ASP.NET :
+  - mod-mono-server1 : compatible avec ASP.NET 1.1 ;
+  - mod-mono-server2 : compatible avec ASP.NET 2.0.
+Description-gl.UTF-8: Servidor Mono a empregar:
+ Pódese empregar o módulo libapache2-mod-mono con calquera destes motores ASP.NET de Mono:
+  - mod-mono-server1: implementa as características de ASP.NET 1.1;
+  - mod-mono-server2: implementa as características de ASP.NET 2.0.
+Description-it.UTF-8: Server mono da utilizzare:
+ Il modulo libapache2-mod-mono può essere usato con uno dei due diversi backend di Mono ASP.NET:
+  - mod-mono-server1: implementa le funzioni di ASP.NET 1.1;
+  - mod-mono-server2: implementa le funzioni di ASP.NET 2.0.
+Description-ja.UTF-8: 利用する Mono サーバ:
+ libapache2-mod-mono モジュールは 1 つまたは 2 つの異なる Mono ASP.NET バックエンドと共に利用できます:
+  - mod-mono-server1: ASP.NET 1.1 機能の実装。
+  - mod-mono-server2: ASP.NET 2.0 機能の実装。
+Description-pt.UTF-8: Servidor mono a utilizar:
+ O módulo libapache2-mod-mono pode ser utilizado com um de dois diferentes backends Mono de ASP.NET.
+  - mod-mono-server1: implementa funcionalidades ASP.NET 1.1;
+  - mod-mono-server2: implementa funcionalidades ASP.NET 2.0.
+Description-ru.UTF-8: Используемый сервер Mono:
+ Модуль libapache2-mod-mono можно использовать с одним из двух различных серверов Mono ASP.NET:
+  - mod-mono-server1: реализует возможности ASP.NET 1.1;
+  - mod-mono-server2: реализует возможности ASP.NET 2.0.
+Description-sv.UTF-8: Mono-server som ska användas:
+ Modulen libapache2-mod-mono kan användas med en av två olika Mono ASP.NET-motorer:
+  - mod-mono-server1: funktioner motsvarande ASP.NET 1.1
+  - mod-mono-server2: funktioner motsvarande ASP.NET 2.0

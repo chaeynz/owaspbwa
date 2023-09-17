@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian Ruby Policy - Ruby Programs</title>
+
+</head>
+
+<body>
+
+<p><a name="ch-programs"></a></p>
+<hr>
+
+<p>
+[ <a href="ch-module_packages.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ 3 ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ap-build_dependencies.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian Ruby Policy
+<br>Chapter 3 - Ruby Programs
+</h1>
+
+<hr>
+
+<h2><a name="s-version_indep_progs"></a>3.1 Version Independent Programs</h2>
+
+<p>
+Programs that can run with any version of Ruby should be started with
+<samp>#!/usr/bin/ruby</samp>.  They must also specify a dependency on
+<code>ruby</code>.  They may specify a dependency with versioned like
+<samp>ruby (&gt;= <var>X</var>.<var>Y</var>), ruby (&lt;&lt;
+<var>X</var>.<var>Y'</var>)</samp>, where <var>Y'</var> &gt;= <var>Y</var> + 3.
+If <var>Y'</var> &lt; <var>Y</var> + 3, then you should reconsider that the
+program is really version independent.
+</p>
+
+<p>
+You're free to use <samp>#!/usr/bin/env ruby</samp>, if you'd like to give the
+user a chance to override the Debian Ruby package with a local version.
+</p>
+
+<hr>
+
+<h2><a name="s-version_dep_progs"></a>3.2 Version Dependent Programs</h2>
+
+<p>
+Programs which require a specific version of Ruby must start with
+<samp>#!/usr/bin/ruby<var>X</var>.<var>Y</var></samp>.  They must also specify
+a dependency on <code>ruby<var>X</var>.<var>Y</var></code>.  Usually, you may
+package only for default version of ruby, since program path name should not
+contains ruby version.  (FIXME: of course, you can alternatives or divert, but
+we don't recommend to do that.)
+</p>
+
+<p>
+Again, if you're using <samp>#!/usr/bin/env
+ruby<var>X</var>.<var>Y</var></samp>, please be aware that a user might
+override the Debian Ruby package with a local version.
+</p>
+
+<hr>
+
+<p>
+[ <a href="ch-module_packages.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ 3 ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ap-build_dependencies.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian Ruby Policy
+</p>
+
+<address>
+version 0.0.1.4<br>
+<br>
+Akira Yamada<br>
+Akira Tagoh<br>
+Fumitoshi UKAI<br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

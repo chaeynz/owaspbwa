@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-12mdk
+ModVersion no
+SMP no
+PageOffset FFFF810000000000
+Comment MDV2006, 2.6.12-12mdk, amd64, default
+UtsMachine x86_64

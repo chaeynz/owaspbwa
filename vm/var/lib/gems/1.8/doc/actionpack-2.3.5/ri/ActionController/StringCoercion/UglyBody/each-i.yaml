@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: part.to_s
+comment: 
+full_name: ActionController::StringCoercion::UglyBody#each
+is_singleton: false
+name: each
+params: () {|part.to_s| ...}
+visibility: public

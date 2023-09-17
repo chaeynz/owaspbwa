@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">dpkg</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="package-management.html" title="Chapter 3. Package Management" />
+    <link rel="prev" href="package-management-introduction.html" title="Introduction" />
+    <link rel="next" href="apt-get.html" title="Apt-Get" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="package-management.html">Package Management</a></span> &gt; <span class="breadcrumb-node">dpkg</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="dpkg">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="dpkg"></a>dpkg</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    <span class="application"><strong>dpkg</strong></span> is a package manager for <span class="emphasis"><em>Debian</em></span> based systems.  It can install, remove, and build packages, but
+    unlike other package management system's it can not automatically download and install packages and their dependencies.  This section covers using
+    <span class="application"><strong>dpkg</strong></span> to manage locally installed packages:
+    </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" type="disc">
+                  <li class="listitem">
+                    <p>
+        To list all packages installed on the system, from a terminal prompt enter:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>dpkg -l</strong></span>
+</pre>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        Depending on the amount of packages on your system, this can generate a large amount of output.  Pipe the output through 
+        <span class="application"><strong>grep</strong></span> to see if a specific package is installed:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>dpkg -l | grep apache2</strong></span>
+</pre>
+                    <p>
+        Replace <span class="emphasis"><em>apache2</em></span> with any package name, part of a package name, or other regular expression.
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        To list the files installed by a package, in this case the <span class="application"><strong>ufw</strong></span> package, enter:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>dpkg -L ufw</strong></span>
+</pre>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        If you are not sure which package installed a file, <span class="application"><strong>dpkg -S</strong></span> may be able to tell you.
+        For example:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>dpkg -S /etc/host.conf </strong></span>
+<code class="computeroutput">base-files: /etc/host.conf</code>
+</pre>
+                    <p>
+        The output shows that the <code class="filename">/etc/host.conf</code> belongs to the <span class="application"><strong>base-files</strong></span> package.
+        </p>
+                    <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Note">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Note]" src="../../libs/admon/note.png" />
+                          </td>
+                          <th align="left"></th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+          Many files are automatically generated during the package install process, and even though they are on the filesystem 
+          <span class="command"><strong>dpkg -S</strong></span> may not know which package they belong to.
+          </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        You can install a local <span class="emphasis"><em>.deb</em></span> file by entering:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>sudo dpkg -i zip_2.32-1_i386.deb</strong></span>
+</pre>
+                    <p>
+        Change <code class="filename">zip_2.32-1_i386.deb</code> to the actual file name of the local .deb file.
+        </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+        Uninstalling a package can be accomplished by:
+        </p>
+                    <pre class="screen">
+<span class="command"><strong>sudo dpkg -r zip</strong></span>
+</pre>
+                    <div class="caution" title="Caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Caution">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Caution]" src="../../libs/admon/caution.png" />
+                          </td>
+                          <th align="left"></th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+          Uninstalling packages using <span class="application"><strong>dpkg</strong></span>, in most cases, is <span class="emphasis"><em>NOT</em></span> recommended.
+          It is better to use a package manager that handles dependencies, to ensure that the system is in a consistent state.  For
+          example using <span class="command"><strong>dpkg -r</strong></span> you can remove the <span class="application"><strong>zip</strong></span> package, but any packages that
+          depend on it will still be installed and may no longer function correctly.
+          </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <p>
+    For more <span class="application"><strong>dpkg</strong></span> options see the man page: <span class="command"><strong>man dpkg</strong></span>.
+    </p>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="package-management-introduction.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="package-management.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="apt-get.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Introduction </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Apt-Get</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

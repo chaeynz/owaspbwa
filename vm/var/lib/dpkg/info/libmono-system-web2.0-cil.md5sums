@@ -1,0 +1,12 @@
+dfdd5dc32d5a2e317d31efcd084b8969  usr/lib/mono/gac/System.Web/2.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+4f10b6e41a7a79e19b8ed9926908cfdf  usr/lib/mono/gac/System.Web.Extensions/1.0.61025.0__31bf3856ad364e35/System.Web.Extensions.dll
+f6893253cecf2ce7ef82aeb54e1d0ff1  usr/lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.dll
+0b9ad615426ea71e4525aadddec461ae  usr/lib/mono/gac/System.Web.Extensions.Design/1.0.61025.0__31bf3856ad364e35/System.Web.Extensions.Design.dll
+c0d1ab49045e088744996801d87b69e5  usr/lib/mono/gac/System.Web.Extensions.Design/3.5.0.0__31bf3856ad364e35/System.Web.Extensions.Design.dll
+415ee196f34515f96e4259b979613ca3  usr/lib/mono/gac/System.Web.Services/2.0.0.0__b03f5f7f11d50a3a/System.Web.Services.dll
+1328b8545809d48f227230c832b57321  usr/lib/mono/gac/System.ComponentModel.DataAnnotations/3.5.0.0__31bf3856ad364e35/System.ComponentModel.DataAnnotations.dll
+92c6091993c40031cdc298be896dd9aa  usr/lib/mono/gac/System.Web.Abstractions/3.5.0.0__31bf3856ad364e35/System.Web.Abstractions.dll
+fabb5cba1eb249c53b609db6f84c71b5  usr/lib/mono/gac/System.Web.DynamicData/3.5.0.0__31bf3856ad364e35/System.Web.DynamicData.dll
+784703dd3c0f923321ae15c5a0cfd130  usr/lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll
+179bf0a3c9b40dbae9061590f7efd0c5  usr/share/doc/libmono-system-web2.0-cil/copyright
+623da1c6dd023680ea9babd7409a17b7  usr/share/doc/libmono-system-web2.0-cil/changelog.Debian.gz

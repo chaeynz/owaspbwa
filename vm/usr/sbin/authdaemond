@@ -1,0 +1,18 @@
+#! /bin/bash
+#
+# $Id: authdaemond.in,v 1.6 2005/07/05 12:25:08 mrsam Exp $
+#
+# Copyright 1998 - 2004 Double Precision, Inc.  See COPYING for
+# distribution information.
+#
+# Courier authentication daemon startup script.
+
+prefix=/usr
+exec_prefix=/usr
+sbindir=/usr/sbin
+localstatedir=/var/lib/courier
+
+set -a
+. /etc/courier/authdaemonrc
+
+exec ${sbindir}/courierlogger -pid=/var/run/courier/authdaemon/pid $LOGGEROPTS -$1 /usr/lib/courier/courier-authlib/authdaemond

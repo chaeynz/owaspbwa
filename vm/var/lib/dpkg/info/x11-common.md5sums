@@ -1,0 +1,10 @@
+c50a37f7cb7612590cf4471227d4f2f5  usr/share/doc/x11-common/changelog.gz
+fbdf45d0ba08000b8b73b54dee77a9ed  usr/share/doc/x11-common/TODO
+1d277cd63da4d9cdd569462c567acb11  usr/share/doc/x11-common/copyright
+02822444319e9d5a6a293db6c31acd4f  usr/share/doc/x11-common/changelog.Debian.old.gz
+c3ea640d689b1fbea5717587fc51ec06  usr/share/doc/x11-common/NEWS.Debian.gz
+45a120430021706fbfd4e76b7dd39fed  usr/share/apport/package-hooks/source_xorg.py
+83c2b0cb71f309e026e6a780554c2a39  usr/share/man/man5/Xsession.5.gz
+c9b046f846779de895b9c7dfe9c72b35  usr/share/man/man5/Xwrapper.config.5.gz
+152eb22f0c8cfd1671333f9697139923  usr/share/man/man5/Xsession.options.5.gz
+f36754cb1d65cc02b40e8df88ee675ec  usr/share/lintian/overrides/x11-common

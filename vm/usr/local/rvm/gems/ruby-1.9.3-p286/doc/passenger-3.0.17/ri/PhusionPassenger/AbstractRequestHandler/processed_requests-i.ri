@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"processed_requests:EFI"@PhusionPassenger::AbstractRequestHandler#processed_requests;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LNumber of requests processed so far. This includes requests that raised;TI"exceptions.;T:
+@fileI"6lib/phusion_passenger/abstract_request_handler.rb;TF@

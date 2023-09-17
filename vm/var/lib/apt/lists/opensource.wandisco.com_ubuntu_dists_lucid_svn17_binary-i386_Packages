@@ -1,0 +1,321 @@
+Package: libapache2-svn
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 364
+Depends: apache2, libc6 (>= 2.4), libexpat1 (>= 1.95.8), subversion (>= 1.7.22-1+WANdisco)
+Suggests: db4.8-util
+Filename: dists/lucid/svn17/binary-i386/libapache2-svn_1.7.22-1+WANdisco_i386.deb
+Size: 152818
+MD5sum: a28b04c72cc344ea46e030afbfd9fde3
+SHA1: b03b708ebc47f22025d876eedc24e37e6c76e8a6
+SHA256: b7988fc1361462b6e06d0ccb04139901bd703a1059709abb5d72224620ac9acc
+Section: httpd
+Priority: optional
+Homepage: http://wandisco.com
+Description: Subversion server modules for Apache
+ This package provides the mod_dav_svn and mod_authz_svn modules for
+ the Apache 2.2 web server.  These modules provide Subversion's WebDAV
+ server backend, to serve repositories over the http and https
+ protocols.  See the 'subversion' package for more information.
+
+Package: libserf-dev
+Source: serf
+Version: 1.3.7-1+WANdisco
+Architecture: i386
+Maintainer: Peter Samuelson <peter@p12n.org>
+Installed-Size: 316
+Depends: libserf1 (= 1.3.7-1+WANdisco), libapr1-dev, libaprutil1-dev
+Conflicts: libserf-0-0-dev
+Replaces: libserf-0-0 (<< 0.3.0-1), libserf-0-0-dev
+Provides: libserf-0-0-dev
+Filename: dists/lucid/svn17/binary-i386/libserf-dev_1.3.7-1+WANdisco_i386.deb
+Size: 94054
+MD5sum: 120a28d405cc04c65960a38d5cbee237
+SHA1: 3654e40944bd98799afd7cb5b28f5d2a2ecf7711
+SHA256: b1ec71f54e0ed20927941a911afa29d8b592166c9d27fb4db8f41ffeed375603
+Section: libdevel
+Priority: optional
+Homepage: http://code.google.com/p/serf/
+Description: high-performance asynchronous HTTP client library headers
+ serf library is a C-based HTTP client library built upon the Apache
+ Portable Runtime (APR) library.  It multiplexes connections, running the
+ read/write communication asynchronously.  Memory copies and
+ transformations are kept to a minimum to provide high performance
+ operation.
+ .
+ This package contains development headers for serf.
+
+Package: libserf1
+Source: serf
+Version: 1.3.7-1+WANdisco
+Architecture: i386
+Maintainer: Peter Samuelson <peter@p12n.org>
+Installed-Size: 160
+Depends: libapr1 (>= 1.3.2), libaprutil1 (>= 1.2.7+dfsg), libc6 (>= 2.4), libcomerr2 (>= 1.01), libdb4.8, libgssapi-krb5-2 (>= 1.7+dfsg), libk5crypto3 (>= 1.6.dfsg.2), libkrb5-3 (>= 1.6.dfsg.2), libssl0.9.8 (>= 0.9.8k-1), zlib1g (>= 1:1.1.4)
+Filename: dists/lucid/svn17/binary-i386/libserf1_1.3.7-1+WANdisco_i386.deb
+Size: 50754
+MD5sum: 19b19571db4cd2023e2fcb8eabce0a15
+SHA1: bdb5321ba26b472c50e81a351061ffb1079a285b
+SHA256: 4381a4f091d30477c1bd23cdf4db54cd49c9825a791f03f3a19d173532bb688d
+Section: libs
+Priority: optional
+Homepage: http://code.google.com/p/serf/
+Description: high-performance asynchronous HTTP client library
+ serf library is a C-based HTTP client library built upon the Apache
+ Portable Runtime (APR) library.  It multiplexes connections, running the
+ read/write communication asynchronously.  Memory copies and
+ transformations are kept to a minimum to provide high performance
+ operation.
+
+Package: libserf1-dbg
+Source: serf
+Version: 1.3.7-1+WANdisco
+Architecture: i386
+Maintainer: Peter Samuelson <peter@p12n.org>
+Installed-Size: 80
+Depends: libserf1 (= 1.3.7-1+WANdisco)
+Provides: libserf-dbg
+Filename: dists/lucid/svn17/binary-i386/libserf1-dbg_1.3.7-1+WANdisco_i386.deb
+Size: 16806
+MD5sum: bd773d8416332f1c8a492323333604d3
+SHA1: 5feef1567a44d414ab501721481b423229ea56bf
+SHA256: 17c416ef283988604a9352d9853bc5fdf34078463c88cab8fea3a8b04f4be535
+Section: debug
+Priority: extra
+Homepage: http://code.google.com/p/serf/
+Description: high-performance asynchronous HTTP client library debugging symbols
+ serf library is a C-based HTTP client library built upon the Apache
+ Portable Runtime (APR) library.  It multiplexes connections, running the
+ read/write communication asynchronously.  Memory copies and
+ transformations are kept to a minimum to provide high performance
+ operation.
+ .
+ This package contains the debugging symbols for serf.
+
+Package: libsvn-dev
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 5028
+Depends: libsvn1 (= 1.7.22-1+WANdisco), libapr1-dev, libaprutil1-dev
+Suggests: libsvn-doc, zlib1g-dev, libneon27-gnutls-dev
+Filename: dists/lucid/svn17/binary-i386/libsvn-dev_1.7.22-1+WANdisco_i386.deb
+Size: 1719814
+MD5sum: b0737001f47b9e15175cb457afe5c9a1
+SHA1: f7bdb1990de6d74f99c5322298bcdbd6e95bb9ee
+SHA256: 082b19ac9070bfd9749bffff9ffb2902b8e709e563d6e3441dfe7ecd6966f6af
+Section: vcs
+Priority: extra
+Homepage: http://wandisco.com
+Description: Development files for Subversion libraries
+ This package contains the symlinks, headers, and object files needed
+ to compile and link programs which use libsvn1, the Subversion
+ libraries.  This package is needed only in order to compile software
+ that uses libsvn1.
+
+Package: libsvn-doc
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: all
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 19148
+Suggests: libsvn-dev
+Filename: dists/lucid/svn17/binary-i386/libsvn-doc_1.7.22-1+WANdisco_all.deb
+Size: 2437086
+MD5sum: 17ecc44c76aa7f26da06bffb3fc75253
+SHA1: c3b25915793d92f417cb87a5b172e7f3e5eee527
+SHA256: 1fd3d448eccdc25b30289ba8b5b30b120ae34b1ffdb55051790c3aebebd30620
+Section: doc
+Priority: extra
+Homepage: http://wandisco.com
+Description: Developer documentation for libsvn
+ This package contains development (API) documentation for libsvn1, the
+ Subversion libraries.  See the 'libsvn1' package for more information.
+
+Package: libsvn-java
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 656
+Depends: libsvn1 (= 1.7.22-1+WANdisco), libapr1 (>= 1.2.7), libaprutil1 (>= 1.2.7+dfsg), libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libneon27-gnutls (>= 0.29.0), libstdc++6 (>= 4.4.0), subversion (>= 1.7.22-1+WANdisco)
+Filename: dists/lucid/svn17/binary-i386/libsvn-java_1.7.22-1+WANdisco_i386.deb
+Size: 427584
+MD5sum: 39819bd50ee3ca1baa01ecf889fd3245
+SHA1: 61221fcaff0bdb5baf94f04d973ad58f470f2d97
+SHA256: 06c9b115eaa0679ed8771a8050667531d30b3b32b230c915db82e2f54700872d
+Section: java
+Priority: optional
+Homepage: http://wandisco.com
+Description: Java bindings for Subversion
+ This is a set of Java classes which provide the functionality of
+ libsvn, the Subversion libraries.  It is useful if you want to, for
+ example, write a Java class that manipulates a Subversion repository
+ or working copy.  See the 'subversion' package for more information.
+
+Package: libsvn-perl
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 4684
+Depends: libapr1 (>= 1.2.7), libaprutil1 (>= 1.2.7+dfsg), libc6 (>= 2.4), subversion (>= 1.7.22-1+WANdisco)
+Filename: dists/lucid/svn17/binary-i386/libsvn-perl_1.7.22-1+WANdisco_i386.deb
+Size: 1317914
+MD5sum: 3094ded78238785f5ebb802fb0bf8495
+SHA1: 6a76d8c3ba3d3936fbddbce6b2fa451085f58bad
+SHA256: bc89ded6a7d8729f0fdec42d339b99720932aaf4e52a0ca6f41dd71508559515
+Section: perl
+Priority: optional
+Homepage: http://wandisco.com
+Description: Perl bindings for Subversion
+ This is a set of Perl interfaces to libsvn, the Subversion libraries.
+ It is useful if you want to, for example, write a Perl script that
+ manipulates a Subversion repository or working copy.  See the
+ 'subversion' package for more information.
+
+Package: libsvn-ruby
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: all
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 20
+Depends: libsvn-ruby1.8
+Filename: dists/lucid/svn17/binary-i386/libsvn-ruby_1.7.22-1+WANdisco_all.deb
+Size: 762
+MD5sum: 92e7da78390d926c8c47200891d66a62
+SHA1: c249ed6d03516a3c0fda226c9f83f7affc571769
+SHA256: e6ccf6426b2b8a6ea5aff6ab9dbd73ec3f81e7ea02348225a160bb66254cf5e5
+Section: ruby
+Priority: optional
+Homepage: http://wandisco.com
+Description: Ruby bindings for Subversion (dummy package)
+ This is a dummy package to install the Subversion library bindings for
+ the default version of Ruby.
+
+Package: libsvn-ruby1.8
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 2020
+Depends: ruby1.8, libapr1 (>= 1.2.7), libaprutil1 (>= 1.2.7+dfsg), libc6 (>= 2.4), libruby1.8 (>= 1.8.7.249), subversion (>= 1.7.22-1+WANdisco)
+Filename: dists/lucid/svn17/binary-i386/libsvn-ruby1.8_1.7.22-1+WANdisco_i386.deb
+Size: 576566
+MD5sum: 317d37fd5ebfee7c4f933a0b2fcfa116
+SHA1: 82b2faa7e2527e4a35c270e3ef4ea955bd4a867d
+SHA256: fb8ed5387c9e7ef9448de81283fb2a0edba0f19ee9b40288679d533cb73f6c1b
+Section: ruby
+Priority: optional
+Homepage: http://wandisco.com
+Description: Ruby bindings for Subversion
+ This is a set of Ruby interfaces to libsvn, the Subversion libraries.
+ It is useful if you want to, for example, write a Ruby script that
+ manipulates a Subversion repository or working copy.  See the
+ 'subversion' package for more information.
+
+Package: libsvn1
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 2916
+Depends: libapr1 (>= 1.3.2), libaprutil1 (>= 1.3.2+dfsg), libc6 (>= 2.4), libdb4.8, libexpat1 (>= 1.95.8), libneon27-gnutls (>= 0.29.0), libsasl2-2, libserf1 (>= 1.3.7), subversion (>= 1.7.22-1+WANdisco), zlib1g (>= 1:1.2.0)
+Filename: dists/lucid/svn17/binary-i386/libsvn1_1.7.22-1+WANdisco_i386.deb
+Size: 1324398
+MD5sum: 33667e9f216d3effe079dc03efdf8aa6
+SHA1: f39e15db1b9362e2c55a68595c92e01ae4d70cc7
+SHA256: 604bac118543054fc45dcbe6a199948bb8306367e6e13b21c5c998767f49b46e
+Section: vcs
+Priority: optional
+Homepage: http://wandisco.com
+Description: Shared libraries used by Subversion
+ This package includes shared libraries to manipulate Subversion (svn)
+ repositories and working copies.  See the 'subversion' package for
+ more information.
+
+Package: python-subversion
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 3308
+Depends: subversion, python (>= 2.4)
+Provides: python2.6-subversion
+Filename: dists/lucid/svn17/binary-i386/python-subversion_1.7.22-1+WANdisco_i386.deb
+Size: 727350
+MD5sum: 463d0e5f64d884e947780a4a49cbc41c
+SHA1: 07d3d7a6ccdf54bd3db32a5e97ec654fa52906cf
+SHA256: d87d3e495eed8f19540b5c418b5d25c3d2b0d3b45e4fd2a491eb3b5796671f2d
+Section: python
+Priority: optional
+Homepage: http://wandisco.com
+Description: Python bindings for Subversion
+ This is a set of Python interfaces to libsvn, the Subversion
+ libraries.  It is useful if you want to, for example, write a Python
+ script that manipulates a Subversion repository or working copy.  See
+ the 'subversion' package for more information.
+Python-Version: 2.6
+
+Package: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: i386
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 3800
+Depends: libsvn1 (= 1.7.22-1+WANdisco), libapr1 (>= 1.2.7), libaprutil1 (>= 1.2.7+dfsg), libc6 (>= 2.4), libneon27-gnutls (>= 0.29.0), libsasl2-2
+Suggests: subversion-tools, db4.8-util, patch
+Filename: dists/lucid/svn17/binary-i386/subversion_1.7.22-1+WANdisco_i386.deb
+Size: 1219282
+MD5sum: e2285c603d6737c361fbd96874b1bfad
+SHA1: d478c950f718a190cf7451d51ebcbc8ac74374b5
+SHA256: 6e30d9b1716c2c5b3aa70b9194abbb4ba22de1760f94c58c6c821d3f8bcd32e6
+Section: vcs
+Priority: optional
+Homepage: http://wandisco.com
+Description: Advanced version control system
+ Subversion, also known as svn, is a version control system much like
+ the Concurrent Versions System (CVS).  Version control systems allow
+ many individuals (who may be distributed geographically) to
+ collaborate on a set of files (typically source code).  Subversion has
+ all the major features of CVS, plus certain new features that CVS
+ users often wish they had.
+ .
+ This package includes the Subversion client (svn), tools to create a
+ Subversion repository (svnadmin) and to make a repository available
+ over a network (svnserve).
+
+Package: subversion-tools
+Source: subversion
+Version: 1.7.22-1+WANdisco
+Architecture: all
+Maintainer: Philip Herron <opensource@wandisco.com>
+Installed-Size: 1496
+Depends: subversion (>= 1.7)
+Recommends: python-subversion, libsvn-perl, libconfig-inifiles-perl, liburi-perl, exim4 | mail-transport-agent, rsync, svn2cl
+Suggests: libsvn-ruby1.8
+Filename: dists/lucid/svn17/binary-i386/subversion-tools_1.7.22-1+WANdisco_all.deb
+Size: 350130
+MD5sum: 7a3b022ca5cbdd62aa91e5c605036396
+SHA1: c863e991d52d6feb7a3638a6041d0b7ce0bb67b8
+SHA256: 799053db41c0ecc4871a31ac5ab0f03aa702d2c935b07488a1ab80712ed501ed
+Section: vcs
+Priority: extra
+Homepage: http://wandisco.com
+Description: Assorted tools related to Subversion
+ This package includes miscellaneous tools for use with Subversion
+ clients and servers:
+  * svn-backup-dumps: Incremental dumpfile-based backup script
+  * svn-bisect: Bisect revisions to find a regression
+  * svn-clean: Remove unversioned files from a working copy
+  * svn-fast-backup: rsync-based backup script for FSFS repositories
+  * svn-hot-backup: Backup script, primarily for BDB repositories
+  * svn_apply_autoprops: Apply property settings from
+    .subversion/config file to an existing repository
+  * svn_load_dirs: Sophisticated replacement for 'svn import'
+  * svnwrap: Set umask to 002 before calling svn or svnserve
+  * several example hook scripts: commit-access-control, commit-email,
+    log-police, mailer, svnperms, verify-po
+

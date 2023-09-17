@@ -1,0 +1,27 @@
+Format-Specification: http://dep.debian.net/deps/dep5/
+Name: avalon-framework
+Maintainer: Federico Barbieri <fede@apache.org>,
+ Charles Benett <charles@benett1.demon.co.uk>, Peter Donald <donaldp@apache.org>,
+ Pierpaolo Fumagalli <pier@apache.org>, Serge Knystautas <sergek@lokitech.com>,
+ Roberto Lo Giacco <rlogiacco@mail.com>, Berin Loritsch <bloritsch@apache.org>,
+ Stefano Mazzocchi <stefano@apache.org>, Leo Simons <mail@leosimons.com>
+Source: http://excalibur.apache.org/
+
+Copyright: 1997-2004, The Apache Software Foundation
+License: Apache Software License version 2.0
+ On Debian systems the full text of the Apache Software License version
+ 2.0 can be found in the `/usr/share/common-licenses/Apache-2.0' file.
+
+Files: debian/*
+Copyright: 2001, Takashi Okamoto <tora@debian.org>
+License: Apache Software License version 2.0
+ On Debian systems the full text of the Apache Software License version
+ 2.0 can be found in the `/usr/share/common-licenses/Apache-2.0' file.
+
+Files: debian/poms/*
+Copyright: The Apache Software Foundation
+License: Apache Software License version 2.0
+ pom files have been downloaded from
+ <https://svn.apache.org/repos/asf/excalibur/trunk/framework/>
+ On Debian systems the full text of the Apache Software License version
+ 2.0 can be found in the `/usr/share/common-licenses/Apache-2.0' file.

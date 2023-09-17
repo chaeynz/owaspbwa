@@ -1,0 +1,6 @@
+UtsRelease 2.6.8-24-smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment SuSE 9.2
+UtsMachine i386

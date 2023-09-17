@@ -1,0 +1,14 @@
+/etc/tomcat6/catalina.properties
+/etc/tomcat6/logging.properties
+/etc/tomcat6/context.xml
+/etc/tomcat6/server.xml
+/etc/tomcat6/tomcat-users.xml
+/etc/tomcat6/web.xml
+/etc/tomcat6/policy.d/01system.policy
+/etc/tomcat6/policy.d/02debian.policy
+/etc/tomcat6/policy.d/03catalina.policy
+/etc/tomcat6/policy.d/04webapps.policy
+/etc/tomcat6/policy.d/50local.policy
+/etc/default/tomcat6
+/etc/init.d/tomcat6
+/etc/cron.daily/tomcat6

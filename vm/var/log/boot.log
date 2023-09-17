@@ -1,0 +1,30 @@
+fsck from util-linux-ng 2.17.2
+fsck from util-linux-ng 2.17.2
+/dev/mapper/brokenwebapps-root: clean, 308843/482384 files, 1541832/1926144 blocks
+/dev/sda5: clean, 45/124496 files, 60111/248976 blocks
+ * Starting AppArmor profiles       [80G [74G[ OK ]
+ * Starting PostgreSQL 8.4 database server       [80G [74G[ OK ]
+   Checking acpi hot plug[71G done
+Starting VMware Tools services in the virtual machine:
+   Switching to guest configuration:[71G done
+   Guest operating system daemon:[71G done
+   Virtual Printing daemon:[71G done
+ * Starting Courier authentication services authdaemond       [80G [74G[ OK ]
+ * Starting Courier IMAP server...       [80G [74G[ OK ]
+ * Starting Postfix Mail Transport Agent postfix       [80G [74G[ OK ]
+ * Starting the Winbind daemon winbind       [80G [74G[ OK ]
+ * Enabling additional executable binary formats binfmt-support       [80G [74G[ OK ]
+ * Starting web server apache2       [80G [Fri Sep 15 14:44:56 2023] [warn] worker http://localhost:8008/ already used by another worker
+[Fri Sep 15 14:44:56 2023] [warn] worker http://localhost:8008/ already used by another worker
+apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+[74G[ OK ]
+ * Starting Tomcat servlet engine tomcat6       [80G Using CATALINA_BASE:   /var/lib/tomcat6
+Using CATALINA_HOME:   /usr/share/tomcat6
+Using CATALINA_TMPDIR: /tmp/tomcat6-tmp
+Using JRE_HOME:        /usr/lib/jvm/java-6-openjdk
+Using CLASSPATH:       /usr/share/tomcat6/bin/bootstrap.jar
+[74G[ OK ]
+
+      Gruyere started...
+          http://127.0.0.1:8008/
+          http://127.0.0.1:8008/967108931/

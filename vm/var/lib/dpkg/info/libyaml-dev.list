@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libyaml-dev
+/usr/share/doc/libyaml-dev/copyright
+/usr/include
+/usr/include/yaml.h
+/usr/lib
+/usr/lib/libyaml.a
+/usr/lib/libyaml.la
+/usr/share/doc/libyaml-dev/README
+/usr/share/doc/libyaml-dev/changelog.Debian.gz
+/usr/lib/libyaml-0.so
+/usr/lib/libyaml.so

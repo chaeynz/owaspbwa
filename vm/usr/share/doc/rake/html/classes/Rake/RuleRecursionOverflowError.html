@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: Rake::RuleRecursionOverflowError</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />Rake::RuleRecursionOverflowError</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/rake_rb.html">lib/rake.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+StandardError
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+Error indicating a recursion overflow error in task selection.
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000056">add_target</a></li>
+  <li><a href="#M000057">message</a></li>
+  <li><a href="#M000055">new</a></li>
+  </ul>
+
+
+
+
+
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000055"></a><b>new</b>(*args)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000055_source')" id="l_M000055_source">show source</a> ]</p>
+  <div id="M000055_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 250</span>
+250:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+251:       <span class="ruby-keyword kw">super</span>
+252:       <span class="ruby-ivar">@targets</span> = []
+253:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000056"></a><b>add_target</b>(target)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000056_source')" id="l_M000056_source">show source</a> ]</p>
+  <div id="M000056_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 255</span>
+255:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_target</span>(<span class="ruby-identifier">target</span>)
+256:       <span class="ruby-ivar">@targets</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">target</span>
+257:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000057"></a><b>message</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000057_source')" id="l_M000057_source">show source</a> ]</p>
+  <div id="M000057_source" class="dyn-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rake.rb, line 259</span>
+259:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">message</span>
+260:       <span class="ruby-keyword kw">super</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;: [&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@targets</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' =&gt; '</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;]&quot;</span>
+261:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

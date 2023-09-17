@@ -1,0 +1,7 @@
+UtsRelease 2.4.20-18.7
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Red Hat 7
+UtsMachine i386
+AthlonKernel required

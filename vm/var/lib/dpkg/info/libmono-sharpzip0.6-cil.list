@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/ICSharpCode.SharpZipLib
+/usr/lib/mono/gac/ICSharpCode.SharpZipLib/0.6.0.0__1b03e6acf1164f73
+/usr/lib/mono/gac/ICSharpCode.SharpZipLib/0.6.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll
+/usr/lib/mono/compat-1.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-sharpzip0.6-cil
+/usr/share/doc/libmono-sharpzip0.6-cil/copyright
+/usr/share/doc/libmono-sharpzip0.6-cil/changelog.Debian.gz
+/usr/lib/mono/compat-1.0/ICSharpCode.SharpZipLib.dll

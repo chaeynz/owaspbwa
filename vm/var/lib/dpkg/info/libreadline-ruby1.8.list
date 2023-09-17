@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libreadline-ruby1.8
+/usr/share/doc/libreadline-ruby1.8/README
+/usr/share/doc/libreadline-ruby1.8/README.ja
+/usr/share/doc/libreadline-ruby1.8/copyright
+/usr/lib
+/usr/lib/ruby
+/usr/lib/ruby/1.8
+/usr/lib/ruby/1.8/i486-linux
+/usr/lib/ruby/1.8/i486-linux/readline.so
+/usr/share/doc/libreadline-ruby1.8/NEWS.Debian.gz
+/usr/share/doc/libreadline-ruby1.8/NEWS.gz
+/usr/share/doc/libreadline-ruby1.8/changelog.Debian.gz

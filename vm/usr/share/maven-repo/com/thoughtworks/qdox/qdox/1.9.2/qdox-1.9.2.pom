@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.thoughtworks.qdox</groupId>
+	<artifactId>qdox</artifactId>
+	<version>1.9.2</version>
+	<packaging>jar</packaging>
+	
+	<name>QDox</name>
+	<url>http://qdox.codehaus.org</url>
+	<description>QDox is a high speed, small footprint parser for extracting class/interface/method definitions from source files
+    complete with JavaDoc @tags. It is designed to be used by active code generators or documentation tools.</description>
+	<inceptionYear>2002</inceptionYear>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<mailingLists>
+		<mailingList>
+			<name>announce at QDox</name>
+			<post>announce@qdox.codehaus.org</post>
+			<subscribe>http://xircles.codehaus.org/lists/announce@qdox.codehaus.org/subscribe</subscribe>
+			<unsubscribe>http://xircles.codehaus.org/lists/announce@qdox.codehaus.org/unsubscribe</unsubscribe>
+			<archive>http://archive.codehaus.org/lists/org.codehaus.qdox.announce</archive>
+		</mailingList>
+		<mailingList>
+			<name>dev at QDox</name>
+			<post>dev@qdox.codehaus.org</post>
+			<subscribe>http://xircles.codehaus.org/lists/dev@qdox.codehaus.org/subscribe</subscribe>
+			<unsubscribe>http://xircles.codehaus.org/lists/dev@qdox.codehaus.org/unsubscribe</unsubscribe>
+			<archive>http://archive.codehaus.org/lists/org.codehaus.qdox.dev</archive>
+		</mailingList>
+		<mailingList>
+			<name>scm at QDox</name>
+			<subscribe>http://xircles.codehaus.org/lists/scm@qdox.codehaus.org/subscribe</subscribe>
+			<unsubscribe>http://xircles.codehaus.org/lists/scm@qdox.codehaus.org/unsubscribe</unsubscribe>
+			<archive>http://archive.codehaus.org/lists/org.codehaus.qdox.scm</archive>
+		</mailingList>
+		<mailingList>
+			<name>user at QDox</name>
+			<post>user@qdox.codehaus.org</post>
+			<subscribe>http://xircles.codehaus.org/lists/user@qdox.codehaus.org/subscribe</subscribe>
+			<unsubscribe>http://xircles.codehaus.org/lists/user@qdox.codehaus.org/unsubscribe</unsubscribe>
+			<archive>http://archive.codehaus.org/lists/org.codehaus.qdox.user</archive>
+		</mailingList>
+	</mailingLists>
+	<issueManagement>
+		<system>jira</system>
+		<url>http://jira.codehaus.org/browse/QDOX</url>
+	</issueManagement>
+	<scm>
+		<connection>scm:svn:https://svn.codehaus.org/qdox/tags/qdox-1.9.2</connection>
+		<developerConnection>scm:svn:https://svn.codehaus.org/qdox/tags/qdox-1.9.2</developerConnection>
+		<url>http://svn.qdox.codehaus.org/browse/qdox/tags/qdox-1.9.2</url>
+	</scm>
+	<developers>
+		<developer>
+			<id>joe</id>
+			<name>Joe Walnes</name>
+			<roles>
+				<role>founder</role>
+				<role>project lead</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Aslak Hellesoy</name>
+			<id>rinkrank</id>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Paul Hammant</name>
+			<id>paul</id>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<name>Mike Williams</name>
+			<id>mdub</id>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>mauro</id>
+			<name>Mauro Talevi</name>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>rfscholte</id>
+			<name>Robert Scholte</name>
+			<timezone>+2</timezone>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Mike Royle</name>
+		</contributor>
+		<contributor>
+			<name>Peter Donald</name>
+		</contributor>
+		<contributor>
+			<name>James Strachan</name>
+		</contributor>
+		<contributor>
+			<name>Nick Pomfret</name>
+		</contributor>
+		<contributor>
+			<name>Chris Stevenson</name>
+		</contributor>
+		<contributor>
+			<name>Ben Hogan</name>
+		</contributor>
+		<contributor>
+			<name>Laurent Etiemble</name>
+		</contributor>
+		<contributor>
+			<name>Shawn Chain</name>
+		</contributor>
+		<contributor>
+			<name>Brian Slesinsky</name>
+		</contributor>
+		<contributor>
+			<name>James Lee</name>
+		</contributor>
+		<contributor>
+			<name>Eric Redmond</name>
+		</contributor>
+	</contributors>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>debian</version>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.x</version>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+	<properties>
+		<xsite.sourceDirectoryPath>${project.build.directory}/generated-site</xsite.sourceDirectoryPath>
+		<debian.originalVersion>1.9.2</debian.originalVersion>
+		<debian.package>libqdox-java</debian.package>
+		<debian.mavenRules><![CDATA[s/qdox/com.thoughtworks.qdox/ * * s/.*/debian/ *]]></debian.mavenRules>
+	</properties>
+</project>

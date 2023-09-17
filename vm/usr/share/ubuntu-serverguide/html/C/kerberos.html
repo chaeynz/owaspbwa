@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Kerberos</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="network-authentication.html" title="Chapter 6. Network Authentication" />
+    <link rel="prev" href="samba-ldap.html" title="Samba and LDAP" />
+    <link rel="next" href="kerberos-ldap.html" title="Kerberos and LDAP" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="network-authentication.html">Network Authentication</a></span> &gt; <span class="breadcrumb-node">Kerberos</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Kerberos">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="kerberos"></a>Kerberos</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    <span class="application"><strong>Kerberos</strong></span> is a network authentication system based on the principal of a trusted third party.
+    The other two parties being the user and the service the user wishes to authenticate to.  Not all services and applications
+    can use Kerberos, but for those that can, it brings the network environment one step closer to being Single Sign On (SSO).
+    </p>
+              <p>
+    This section covers installation and configuration of a Kerberos server, and some example client configurations.
+    </p>
+              <div class="sect2" title="Overview">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-overview"></a>Overview</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      If you are new to Kerberos there are a few terms that are good to understand before setting up a Kerberos server.  Most of the terms
+      will relate to things you may be familiar with in other environments:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Principal:</em></span> any users, computers, and services provided by servers need to be defined as Kerberos Principals.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Instances:</em></span> are used for service principals and special administrative principals.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Realms:</em></span> the unique realm of control provided by the Kerberos installation.  Usually the DNS domain converted to 
+          uppercase (EXAMPLE.COM).
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Key Distribution Center:</em></span> (KDC) consist of three parts, a database of all principals, the authentication server,
+          and the ticket granting server.  For each realm there must be at least one KDC.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Ticket Granting Ticket:</em></span> issued by the Authentication Server (AS), the Ticket Granting Ticket (TGT) is encrypted in 
+          the user's password which is known only to the user and the KDC.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Ticket Granting Server:</em></span> (TGS) issues service tickets to clients upon request.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Tickets:</em></span> confirm the identity of the two principals.  One principal being a user and the other a service requested by 
+          the user.  Tickets establish an encryption key used for secure communication during the authenticated session.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Keytab Files:</em></span> are files extracted from the KDC principal database and contain the encryption key for a service or
+          host.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      To put the pieces together, a Realm has at least one KDC, preferably two for redundancy, which contains a database of Principals.  When a 
+      user principal logs into a workstation, configured for Kerberos authentication, the KDC issues a Ticket Granting Ticket (TGT).  If the user
+      supplied credentials match, the user is authenticated and can then request tickets for Kerberized services from the Ticket Granting Server
+      (TGS).  The service tickets allow the user to authenticate to the service without entering another username and password.
+      </p>
+              </div>
+              <div class="sect2" title="Kerberos Server">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-server"></a>Kerberos Server</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="sect3" title="Installation">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="kerberos-server-installation"></a>Installation</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p> 
+        Before installing the Kerberos server a properly configured DNS server is needed for your domain.  Since the Kerberos Realm by 
+        convention matches the domain name, this section uses the <span class="emphasis"><em>example.com</em></span> domain configured in 
+        <a class="xref" href="dns-configuration.html#dns-primarymaster-configuration" title="Primary Master">the section called “Primary Master”</a>.  
+        </p>
+                  <p>
+        Also, Kerberos is a time sensitive protocol.  So if the local system time between a client machine and the server differs by
+        more than five minutes (by default), the workstation will not be able to authenticate.  To correct the problem all hosts 
+        should have their time synchronized using the <span class="emphasis"><em>Network Time Protocol (NTP)</em></span>.  For details
+        on setting up NTP see <a class="xref" href="NTP.html" title="Time Synchronisation with NTP">the section called “Time Synchronisation with NTP”</a>.
+        </p>
+                  <p>
+        The first step in installing a Kerberos Realm is to install the <span class="application"><strong>krb5-kdc</strong></span>  and 
+        <span class="application"><strong>krb5-admin-server</strong></span> packages.  From a terminal enter:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo apt-get install krb5-kdc krb5-admin-server</strong></span>
+</pre>
+                  <p>
+        You will be asked at the end of the install to supply a name for the Kerberos and Admin servers, which may or may not be the 
+        same server, for the realm.
+        </p>
+                  <p>
+        Next, create the new realm with the <span class="application"><strong>kdb5_newrealm</strong></span> utility:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo krb5_newrealm</strong></span>
+</pre>
+                </div>
+                <div class="sect3" title="Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="kerberos-server-configuration"></a>Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        The questions asked during installation are used to configure the <code class="filename">/etc/krb5.conf</code> file.  If you need to adjust 
+        the Key Distribution Center (KDC) settings simply edit the file and restart the <span class="application"><strong>krb5-kdc</strong></span> daemon.
+        </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+            Now that the KDC running an admin user is needed.  It is recommended to use a different username from your everyday username.  
+            Using the <span class="application"><strong>kadmin.local</strong></span> utility in a terminal prompt enter:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo kadmin.local</strong></span>
+<code class="computeroutput">Authenticating as principal root/admin@EXAMPLE.COM with password.
+kadmin.local:</code><strong class="userinput"><code> addprinc steve/admin</code></strong>
+<code class="computeroutput">WARNING: no policy specified for steve/admin@EXAMPLE.COM; defaulting to no policy
+Enter password for principal "steve/admin@EXAMPLE.COM": 
+Re-enter password for principal "steve/admin@EXAMPLE.COM": 
+Principal "steve/admin@EXAMPLE.COM" created.
+kadmin.local:</code><strong class="userinput"><code> quit</code></strong>
+</pre>
+                        <p>
+            In the above example <span class="italic">steve</span> is the <span class="emphasis"><em>Principal</em></span>, 
+            <span class="italic">/admin</span> is an <span class="emphasis"><em>Instance</em></span>, and 
+            <span class="italic">@EXAMPLE.COM</span> signifies the realm.  The <span class="italic">"every day"</span>
+            Principal would be <span class="emphasis"><em>steve@EXAMPLE.COM</em></span>, and should have only normal user rights.            
+            </p>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+              Replace <span class="emphasis"><em>EXAMPLE.COM</em></span> and <span class="emphasis"><em>steve</em></span> with your Realm and admin username.
+              </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+            Next, the new admin user needs to have the appropriate Access Control List (ACL) permissions.
+            The permissions are configured in the <code class="filename">/etc/krb5kdc/kadm5.acl</code> file:
+            </p>
+                        <pre class="programlisting">
+steve/admin@EXAMPLE.COM        *
+</pre>
+                        <p>
+            This entry grants <span class="emphasis"><em>steve/admin</em></span> the ability to perform any operation on all principals in the realm.
+            </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+            Now restart the <span class="application"><strong>krb5-admin-server</strong></span> for the new ACL to take affect:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/krb5-admin-server restart</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+            The new user principal can be tested using the <span class="application"><strong>kinit utility</strong></span>:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>kinit steve/admin</strong></span>
+<code class="computeroutput">steve/admin@EXAMPLE.COM's Password:</code>
+</pre>
+                        <p>
+            After entering the password, use the <span class="application"><strong>klist</strong></span> utility to view information about the 
+            Ticket Granting Ticket (TGT):
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>klist</strong></span>
+<code class="computeroutput">Credentials cache: FILE:/tmp/krb5cc_1000
+        Principal: steve/admin@EXAMPLE.COM
+
+  Issued           Expires          Principal
+Jul 13 17:53:34  Jul 14 03:53:34  krbtgt/EXAMPLE.COM@EXAMPLE.COM</code>
+</pre>
+                        <p>
+            You may need to add an entry into the <code class="filename">/etc/hosts</code> for the KDC.  For example:           
+            </p>
+                        <pre class="programlisting">
+192.168.0.1   kdc01.example.com       kdc01
+</pre>
+                        <p>
+            Replacing <span class="emphasis"><em>192.168.0.1</em></span> with the IP address of your KDC.
+            </p>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+            In order for clients to determine the KDC for the Realm some DNS SRV records are needed.  Add the following to 
+            <code class="filename">/etc/named/db.example.com</code>:
+            </p>
+                        <pre class="programlisting">
+_kerberos._udp.EXAMPLE.COM.     IN SRV 1  0 88  kdc01.example.com.
+_kerberos._tcp.EXAMPLE.COM.     IN SRV 1  0 88  kdc01.example.com.
+_kerberos._udp.EXAMPLE.COM.     IN SRV 10 0 88  kdc02.example.com. 
+_kerberos._tcp.EXAMPLE.COM.     IN SRV 10 0 88  kdc02.example.com. 
+_kerberos-adm._tcp.EXAMPLE.COM. IN SRV 1  0 749 kdc01.example.com.
+_kpasswd._udp.EXAMPLE.COM.      IN SRV 1  0 464 kdc01.example.com.
+</pre>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+              Replace <span class="emphasis"><em>EXAMPLE.COM</em></span>, <span class="emphasis"><em>kdc01</em></span>, and <span class="emphasis"><em>kdc02</em></span> with your 
+              domain name, primary KDC, and secondary KDC.
+              </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <p>
+            See <a class="xref" href="dns.html" title="Chapter 7. Domain Name Service (DNS)">Chapter 7, <i>Domain Name Service (DNS)</i></a> for detailed instructions on setting up DNS.
+            </p>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+        Your new Kerberos Realm is now ready to authenticate clients.
+        </p>
+                </div>
+              </div>
+              <div class="sect2" title="Secondary KDC">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-secondary-kdc"></a>Secondary KDC</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Once you have one Key Distribution Center (KDC) on your network, it is good practice to have a Secondary KDC in case the
+      primary becomes unavailable.
+      </p>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+        First, install the packages, and when asked for the Kerberos and Admin server names enter the name of the Primary KDC:        
+        </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo apt-get install krb5-kdc krb5-admin-server</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+        Once you have the packages installed, create the Secondary KDC's host principal.  From a terminal prompt, enter:
+        </p>
+                      <pre class="screen">
+<span class="command"><strong>kadmin -q "addprinc -randkey host/kdc02.example.com"</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+          After, issuing any <span class="application"><strong>kadmin</strong></span> commands you will be prompted for your 
+          <span class="emphasis"><em>username/admin@EXAMPLE.COM</em></span> principal password.
+          </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+          Extract the <span class="emphasis"><em>keytab</em></span> file:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>kadmin -q "ktadd -k keytab.kdc02 host/kdc02.example.com"</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+          There should now be a <code class="filename">keytab.kdc02</code> in the current directory, move the file to 
+          <code class="filename">/etc/krb5.keytab</code>:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo mv keytab.kdc02 /etc/krb5.keytab</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+            If the path to the <code class="filename">keytab.kdc02</code> file is different adjust accordingly. 
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <p>
+          Also, you can list the principals in a Keytab file, which can be useful when troubleshooting, using the 
+          <span class="application"><strong>klist</strong></span> utility:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo klist -k /etc/krb5.keytab</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 5">
+                      <p>
+          Next, there needs to be a <code class="filename">kpropd.acl</code> file on each KDC that lists all KDCs for the Realm.  For example, 
+          on both primary and secondary KDC, create <code class="filename">/etc/krb5kdc/kpropd.acl</code>:
+          </p>
+                      <pre class="programlisting">
+host/kdc01.example.com@EXAMPLE.COM
+host/kdc02.example.com@EXAMPLE.COM
+</pre>
+                    </li>
+                    <li class="step" title="Step 6">
+                      <p>
+          Create an empty database on the <span class="emphasis"><em>Secondary KDC</em></span>:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kdb5_util -s create</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 7">
+                      <p>
+          Now start the <span class="application"><strong>kpropd</strong></span> daemon, which listens for connections from the 
+          <span class="application"><strong>kprop</strong></span> utility.  <span class="application"><strong>kprop</strong></span> is used to transfer 
+          dump files:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kpropd -S</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 8">
+                      <p>
+          From a terminal on the <span class="emphasis"><em>Primary KDC</em></span>, create a dump file of the principal database:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kdb5_util dump /var/lib/krb5kdc/dump</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 9">
+                      <p>
+          Extract the Primary KDC's <span class="emphasis"><em>keytab</em></span> file and copy it to <code class="filename">/etc/krb5.keytab</code>:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>kadmin -q "ktadd -k keytab.kdc01 host/kdc01.example.com"</strong></span>
+<span class="command"><strong>sudo mv keytab.kdc01 /etc/kr5b.keytab</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+            Make sure there is a <span class="emphasis"><em>host</em></span> for <span class="emphasis"><em>kdc01.example.com</em></span> before extracting the Keytab.
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 10">
+                      <p>
+          Using the <span class="application"><strong>kprop</strong></span> utility push the database to the Secondary KDC:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kprop -r EXAMPLE.COM -f /var/lib/krb5kdc/dump kdc02.example.com</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+            There should be a <span class="emphasis"><em>SUCCEEDED</em></span> message if the propagation worked.  If there is an error 
+            message check <code class="filename">/var/log/syslog</code> on the secondary KDC for more information.
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <p>
+          You may also want to create a <span class="application"><strong>cron</strong></span> job to periodically update the database on the Secondary KDC.  For 
+          example, the following will push the database every hour:
+          </p>
+                      <pre class="programlisting">
+# m h  dom mon dow   command
+0 * * * * /usr/sbin/kdb5_util dump /var/lib/krb5kdc/dump &amp;&amp; /usr/sbin/kprop -r EXAMPLE.COM -f /var/lib/krb5kdc/dump kdc02.example.com
+</pre>
+                    </li>
+                    <li class="step" title="Step 11">
+                      <p>
+          Back on the <span class="emphasis"><em>Secondary KDC</em></span>, create a <span class="emphasis"><em>stash</em></span> file to hold the Kerberos 
+          master key:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kdb5_util stash</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 12">
+                      <p>
+          Finally, start the <span class="application"><strong>krb5-kdc</strong></span> daemon on the Secondary KDC:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/krb5-kdc start</strong></span>
+</pre>
+                    </li>
+                  </ol>
+                </div>
+                <p>
+      The <span class="emphasis"><em>Secondary KDC</em></span> should now be able to issue tickets for the Realm.  You can test this by stopping 
+      the <span class="application"><strong>krb5-kdc</strong></span> daemon on the Primary KDC, then use <span class="application"><strong>kinit</strong></span> to request a ticket.
+      If all goes well you should receive a ticket from the Secondary KDC.
+      </p>
+              </div>
+              <div class="sect2" title="Kerberos Linux Client">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-linux-client"></a>Kerberos Linux Client</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      This section covers configuring a Linux system as a <span class="application"><strong>Kerberos</strong></span> client.  This will allow access
+      to any kerberized services once a user has successfully logged into the system.
+      </p>
+                <div class="sect3" title="Installation">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="kerberos-client-installation"></a>Installation</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        In order to authenticate to a Kerberos Realm, the <span class="application"><strong>krb5-user</strong></span> and <span class="application"><strong>libpam-krb5</strong></span>
+        packages are needed, along with a few others that are not strictly necessary but make life easier.  To install the packages 
+        enter the following in a terminal prompt:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo apt-get install krb5-user libpam-krb5 libpam-ccreds auth-client-config</strong></span>
+</pre>
+                  <p>
+        The <span class="application"><strong>auth-client-config</strong></span> package allows simple configuration of PAM for authentication from multiple 
+        sources, and the <span class="application"><strong>libpam-ccreds</strong></span> will cache authentication credentials allowing you to login in case the 
+        Key Distribution Center (KDC) is unavailable.  This package is also useful for laptops that may authenticate using Kerberos while 
+        on the corporate network, but will need to be accessed off the network as well.
+        </p>
+                </div>
+                <div class="sect3" title="Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="kerberos-client-configuration"></a>Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        To configure the client in a terminal enter:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo dpkg-reconfigure krb5-config</strong></span>
+</pre>
+                  <p>
+        You will then be prompted to enter the name of the Kerberos Realm.  Also, if you don't have DNS configured with Kerberos 
+        <span class="emphasis"><em>SRV</em></span> records, the menu will prompt you for the hostname of the Key Distribution Center (KDC) and 
+        Realm Administration server.
+        </p>
+                  <p>
+        The <span class="application"><strong>dpkg-reconfigure</strong></span> adds entries to the <code class="filename">/etc/krb5.conf</code> file for your Realm.
+        You should have entries similar to the following:
+        </p>
+                  <pre class="programlisting">
+[libdefaults]
+        default_realm = EXAMPLE.COM
+...
+[realms]
+        EXAMPLE.COM = }                
+                kdc = 192.168.0.1               
+                admin_server = 192.168.0.1
+        }
+</pre>
+                  <p>
+        You can test the configuration by requesting a ticket using the <span class="application"><strong>kinit</strong></span> utility.  For example:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>kinit steve@EXAMPLE.COM</strong></span>
+<code class="computeroutput">Password for steve@EXAMPLE.COM:</code>
+</pre>
+                  <p>
+        When a ticket has been granted, the details can be viewed using <span class="application"><strong>klist</strong></span>:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>klist</strong></span>
+<code class="computeroutput">Ticket cache: FILE:/tmp/krb5cc_1000
+Default principal: steve@EXAMPLE.COM
+
+Valid starting     Expires            Service principal
+07/24/08 05:18:56  07/24/08 15:18:56  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+        renew until 07/25/08 05:18:57
+
+
+Kerberos 4 ticket cache: /tmp/tkt1000
+klist: You have no tickets cached</code>
+</pre>
+                  <p>
+        Next, use the <span class="application"><strong>auth-client-config</strong></span> to configure the <span class="application"><strong>libpam-krb5</strong></span> module
+        to request a ticket during login:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo auth-client-config -a -p kerberos_example</strong></span>
+</pre>
+                  <p>
+        You will should now receive a ticket upon successful login authentication. 
+        </p>
+                </div>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          For more information on Kerberos see the <a class="ulink" href="http://web.mit.edu/Kerberos/" target="_top">MIT Kerberos</a> site.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          The <a class="ulink" href="https://help.ubuntu.com/community/Kerberos" target="_top">Ubuntu Wiki Kerberos</a> page has more details.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          O'Reilly's <a class="ulink" href="http://oreilly.com/catalog/9780596004033/" target="_top">Kerberos: The Definitive Guide</a> is a great reference when
+          setting up Kerberos.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Also, feel free to stop by the <span class="emphasis"><em>#ubuntu-server</em></span> IRC channel on <a class="ulink" href="http://freenode.net/" target="_top">Freenode</a>  
+          if you have Kerberos questions.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="samba-ldap.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="network-authentication.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="kerberos-ldap.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Samba and LDAP </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Kerberos and LDAP</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-9-k7-smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Ubuntu5.10, 2.6.12-9-k7-smp, i386
+UtsMachine i386

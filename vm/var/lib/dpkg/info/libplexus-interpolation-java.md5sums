@@ -1,0 +1,5 @@
+a7c9d63a5432f093dab9bdb2a9f71f2f  usr/share/doc/libplexus-interpolation-java/copyright
+eb19bdf806fd7746a55e04cc1589b52b  usr/share/doc/libplexus-interpolation-java/changelog.Debian.gz
+61f285d0573db6d6cd9df47db69bb86b  usr/share/maven-repo/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom
+83b7ee50629c3b67b12a9158408021da  usr/share/maven-repo/org/codehaus/plexus/plexus-interpolation/debian/plexus-interpolation-debian.pom
+dc2d5cf8ee3db6116261d474d7562e12  usr/share/java/plexus-interpolation-1.11.jar

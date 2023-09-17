@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+Thu Mar 13 22:50:23 EDT 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance a816c00e-0144-be7f-63e1-000000de9f88 
+on database directory /owaspbwa/owaspbwa-svn/var/lib/tomcat6/db/WavsepConfigDB  with class loader WebappClassLoader
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@4c4975
+ 
+Loaded from file:/owaspbwa/owaspbwa-svn/var/lib/tomcat6/webapps/wavsep/WEB-INF/lib/derby.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_18-b18
+user.dir=/var/lib/tomcat6
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

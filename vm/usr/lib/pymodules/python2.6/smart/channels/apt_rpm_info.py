@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/apt_rpm_info.py

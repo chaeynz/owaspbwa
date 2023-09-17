@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.shared</groupId>
+	<artifactId>file-management</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.2.1</debian.originalVersion>
+		<debian.package>libmaven-file-management-java</debian.package>
+	</properties>
+	
+	<name>Maven File Management API</name>
+	<description>API to collect files from a given directory using several include/exclude rules.</description>
+	<contributors>
+		<contributor>
+			<name>Joakim Erdfelt</name>
+			<email>joakim@erdfelt.com</email>
+		</contributor>
+	</contributors>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/file-management-1.2.1</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/shared/tags/file-management-1.2.1</developerConnection>
+		<url>http://svn.apache.org/viewvc/maven/shared/tags/file-management-1.2.1</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.shared</groupId>
+			<artifactId>maven-shared-io</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+			<version>debian</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian Ruby Policy - Build Dependencies</title>
+
+</head>
+
+<body>
+
+<p><a name="ap-build_dependencies"></a></p>
+<hr>
+
+<p>
+[ <a href="ch-programs.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ <a href="ch-programs.html">3</a> ]
+[ A ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian Ruby Policy
+<br>Appendix A - Build Dependencies</h1>
+
+<hr>
+
+<p>
+Build dependencies for Ruby dependent packages must be declared for every Ruby
+version, that the package is built for.  To build for a specific version, add
+the versioned dependencies, to build for the default version, add the
+unversioned dependency.  Architecture dependent packages must depend on the
+<code>ruby<var>X</var>.<var>Y</var>-dev</code> package; for architecture
+independent packages, it may be sufficient to depend on the <code>ruby</code>
+or <code>ruby<var>X</var>.<var>Y</var></code> package.
+</p>
+
+<hr>
+
+<p>
+[ <a href="ch-programs.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ruby.html">1</a> ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ <a href="ch-programs.html">3</a> ]
+[ A ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian Ruby Policy
+</p>
+
+<address>
+version 0.0.1.4<br>
+<br>
+Akira Yamada<br>
+Akira Tagoh<br>
+Fumitoshi UKAI<br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

@@ -1,0 +1,124 @@
+[Thu Sep 14 15:01:38 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-14 15:01:39.0257 1849/b75aa6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1848', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-14 15:01:39.0418 1852/b75956e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1848/generation-0/request
+[ 2023-09-14 15:01:39.0555 1857/b7172700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1848/generation-0/logging
+[ 2023-09-14 15:01:39.0559 1849/b75aa6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Thu Sep 14 15:01:39 2023] [notice] ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/) configured.
+[Thu Sep 14 15:01:39 2023] [notice] ModSecurity: APR compiled version="1.3.8"; loaded version="1.3.8"
+[Thu Sep 14 15:01:39 2023] [notice] ModSecurity: PCRE compiled version="7.8 "; loaded version="7.8 2008-09-05"
+[Thu Sep 14 15:01:39 2023] [notice] ModSecurity: LUA compiled version="Lua 5.1"
+[Thu Sep 14 15:01:39 2023] [notice] ModSecurity: LIBXML compiled version="2.7.6"
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Thu Sep 14 15:01:39 2023] [notice] mod_python: Creating 8 session mutexes based on 150 max processes and 0 max threads.
+[Thu Sep 14 15:01:39 2023] [notice] mod_python: using mutex_directory /tmp 
+[Thu Sep 14 15:01:39 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-14 15:01:40.0046 1917/b75746e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1869', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-14 15:01:40.0103 1920/b75b96e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1869/generation-0/request
+[ 2023-09-14 15:01:40.0163 1928/b710e700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1869/generation-0/logging
+[ 2023-09-14 15:01:40.0165 1917/b75746e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Thu Sep 14 15:01:40 2023] [notice] Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 configured -- resuming normal operations
+[Fri Sep 15 01:55:44 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-14 23:55:48.3293 1752/b752e6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1673', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-14 23:55:48.3323 1756/b74a56e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1673/generation-0/request
+[ 2023-09-14 23:55:48.3350 1765/b716b700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1673/generation-0/logging
+[ 2023-09-14 23:55:48.3353 1752/b752e6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Thu Sep 14 23:55:48 2023] [notice] ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/) configured.
+[Thu Sep 14 23:55:48 2023] [notice] ModSecurity: APR compiled version="1.3.8"; loaded version="1.3.8"
+[Thu Sep 14 23:55:48 2023] [notice] ModSecurity: PCRE compiled version="7.8 "; loaded version="7.8 2008-09-05"
+[Thu Sep 14 23:55:48 2023] [notice] ModSecurity: LUA compiled version="Lua 5.1"
+[Thu Sep 14 23:55:48 2023] [notice] ModSecurity: LIBXML compiled version="2.7.6"
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Thu Sep 14 23:55:48 2023] [notice] mod_python: Creating 8 session mutexes based on 150 max processes and 0 max threads.
+[Thu Sep 14 23:55:48 2023] [notice] mod_python: using mutex_directory /tmp 
+[Thu Sep 14 23:55:48 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-14 23:55:49.0019 1840/b75516e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1790', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-14 23:55:49.0056 1843/b75ed6e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1790/generation-0/request
+[ 2023-09-14 23:55:49.0120 1851/b7122700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1790/generation-0/logging
+[ 2023-09-14 23:55:49.0123 1840/b75516e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Thu Sep 14 23:55:49 2023] [notice] Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 configured -- resuming normal operations
+[Thu Sep 14 23:56:26 2023] [notice] caught SIGTERM, shutting down
+[ 2023-09-14 23:56:29.5036 1851/b7122700 agents/LoggingAgent/Main.cpp:289 ]: Caught signal, exiting...
+[Thu Sep 14 23:56:44 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-14 23:56:46.9847 1852/b751f6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1780', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-14 23:56:46.9871 1855/b75896e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1780/generation-0/request
+[ 2023-09-14 23:56:46.9899 1861/b7259700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1780/generation-0/logging
+[ 2023-09-14 23:56:46.9901 1852/b751f6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Thu Sep 14 23:56:46 2023] [notice] ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/) configured.
+[Thu Sep 14 23:56:46 2023] [notice] ModSecurity: APR compiled version="1.3.8"; loaded version="1.3.8"
+[Thu Sep 14 23:56:46 2023] [notice] ModSecurity: PCRE compiled version="7.8 "; loaded version="7.8 2008-09-05"
+[Thu Sep 14 23:56:46 2023] [notice] ModSecurity: LUA compiled version="Lua 5.1"
+[Thu Sep 14 23:56:46 2023] [notice] ModSecurity: LIBXML compiled version="2.7.6"
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Thu Sep 14 23:56:47 2023] [notice] mod_python: Creating 8 session mutexes based on 150 max processes and 0 max threads.
+[Thu Sep 14 23:56:47 2023] [notice] mod_python: using mutex_directory /tmp 
+[Thu Sep 14 23:56:47 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-14 23:56:48.0027 1921/b74ca6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1872', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-14 23:56:48.0063 1924/b75406e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1872/generation-0/request
+[ 2023-09-14 23:56:48.0103 1932/b721a700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1872/generation-0/logging
+[ 2023-09-14 23:56:48.0106 1921/b74ca6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Thu Sep 14 23:56:48 2023] [notice] Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 configured -- resuming normal operations
+[Fri Sep 15 00:04:28 2023] [notice] caught SIGTERM, shutting down
+[ 2023-09-15 00:04:32.3023 1932/b721a700 agents/LoggingAgent/Main.cpp:289 ]: Caught signal, exiting...
+[Fri Sep 15 00:04:47 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-15 00:04:48.0011 1866/b75df6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1777', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-15 00:04:48.0036 1869/b74686e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1777/generation-0/request
+[ 2023-09-15 00:04:48.0082 1874/b710f700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1777/generation-0/logging
+[ 2023-09-15 00:04:48.0086 1866/b75df6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Fri Sep 15 00:04:48 2023] [notice] ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/) configured.
+[Fri Sep 15 00:04:48 2023] [notice] ModSecurity: APR compiled version="1.3.8"; loaded version="1.3.8"
+[Fri Sep 15 00:04:48 2023] [notice] ModSecurity: PCRE compiled version="7.8 "; loaded version="7.8 2008-09-05"
+[Fri Sep 15 00:04:48 2023] [notice] ModSecurity: LUA compiled version="Lua 5.1"
+[Fri Sep 15 00:04:48 2023] [notice] ModSecurity: LIBXML compiled version="2.7.6"
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Sep 15 00:04:48 2023] [notice] mod_python: Creating 8 session mutexes based on 150 max processes and 0 max threads.
+[Fri Sep 15 00:04:48 2023] [notice] mod_python: using mutex_directory /tmp 
+[Fri Sep 15 00:04:48 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-15 00:04:48.0025 1934/b75ec6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1886', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-15 00:04:49.0061 1937/b74dc6e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1886/generation-0/request
+[ 2023-09-15 00:04:49.0098 1945/b7295700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1886/generation-0/logging
+[ 2023-09-15 00:04:49.0099 1934/b75ec6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Fri Sep 15 00:04:49 2023] [notice] Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 configured -- resuming normal operations
+[Fri Sep 15 00:29:37 2023] [notice] caught SIGTERM, shutting down
+[ 2023-09-15 00:29:41.2900 1945/b7295700 agents/LoggingAgent/Main.cpp:289 ]: Caught signal, exiting...
+[Fri Sep 15 14:28:34 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-15 14:28:35.0017 1814/b75b26e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1737', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-15 14:28:35.0045 1817/b75206e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1737/generation-0/request
+[ 2023-09-15 14:28:35.0084 1823/b71cc700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1737/generation-0/logging
+[ 2023-09-15 14:28:35.0089 1814/b75b26e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Fri Sep 15 14:28:35 2023] [notice] ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/) configured.
+[Fri Sep 15 14:28:35 2023] [notice] ModSecurity: APR compiled version="1.3.8"; loaded version="1.3.8"
+[Fri Sep 15 14:28:35 2023] [notice] ModSecurity: PCRE compiled version="7.8 "; loaded version="7.8 2008-09-05"
+[Fri Sep 15 14:28:35 2023] [notice] ModSecurity: LUA compiled version="Lua 5.1"
+[Fri Sep 15 14:28:35 2023] [notice] ModSecurity: LIBXML compiled version="2.7.6"
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Sep 15 14:28:35 2023] [notice] mod_python: Creating 8 session mutexes based on 150 max processes and 0 max threads.
+[Fri Sep 15 14:28:35 2023] [notice] mod_python: using mutex_directory /tmp 
+[Fri Sep 15 14:28:35 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-15 14:28:36.0045 1882/b74706e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1834', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-15 14:28:36.0100 1885/b74c86e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1834/generation-0/request
+[ 2023-09-15 14:28:36.0158 1893/b71a7700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1834/generation-0/logging
+[ 2023-09-15 14:28:36.0161 1882/b74706e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Fri Sep 15 14:28:36 2023] [notice] Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 configured -- resuming normal operations
+[Fri Sep 15 14:44:33 2023] [notice] caught SIGTERM, shutting down
+[ 2023-09-15 14:44:37.1071 1893/b71a7700 agents/LoggingAgent/Main.cpp:289 ]: Caught signal, exiting...
+[Fri Sep 15 14:44:58 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-15 14:44:59.0017 1838/b76176e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1774', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-15 14:44:59.0049 1841/b74846e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1774/generation-0/request
+[ 2023-09-15 14:44:59.0091 1847/b725a700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1774/generation-0/logging
+[ 2023-09-15 14:44:59.0099 1838/b76176e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Fri Sep 15 14:44:59 2023] [notice] ModSecurity for Apache/2.7.4 (http://www.modsecurity.org/) configured.
+[Fri Sep 15 14:44:59 2023] [notice] ModSecurity: APR compiled version="1.3.8"; loaded version="1.3.8"
+[Fri Sep 15 14:44:59 2023] [notice] ModSecurity: PCRE compiled version="7.8 "; loaded version="7.8 2008-09-05"
+[Fri Sep 15 14:44:59 2023] [notice] ModSecurity: LUA compiled version="Lua 5.1"
+[Fri Sep 15 14:44:59 2023] [notice] ModSecurity: LIBXML compiled version="2.7.6"
+PHP Deprecated:  Comments starting with '#' are deprecated in /etc/php5/apache2/conf.d/mcrypt.ini on line 1 in Unknown on line 0
+[Fri Sep 15 14:44:59 2023] [notice] mod_python: Creating 8 session mutexes based on 150 max processes and 0 max threads.
+[Fri Sep 15 14:44:59 2023] [notice] mod_python: using mutex_directory /tmp 
+[Fri Sep 15 14:44:59 2023] [warn] RSA server certificate CommonName (CN) `owaspbwa' does NOT match server name!?
+[ 2023-09-15 14:44:59.0026 1906/b74ec6e0 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'nobody', 'default_group' => 'nogroup', 'default_python' => 'python', 'default_ruby' => '/usr/local/rvm/wrappers/ruby-1.9.3-p484@railsgoat/ruby', 'default_user' => 'nobody', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/usr/local/rvm/gems/ruby-1.9.3-p484@railsgoat/gems/passenger-4.0.38', 'passenger_version' => '4.0.38', 'pool_idle_time' => '300', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'true', 'web_server_passenger_version' => '4.0.38', 'web_server_pid' => '1858', 'web_server_type' => 'apache', 'web_server_worker_gid' => '33', 'web_server_worker_uid' => '33' }
+[ 2023-09-15 14:45:00.0090 1909/b74246e0 agents/HelperAgent/Main.cpp:643 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.1858/generation-0/request
+[ 2023-09-15 14:45:00.0127 1918/b7278700 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.1858/generation-0/logging
+[ 2023-09-15 14:45:00.0133 1906/b74ec6e0 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+[Fri Sep 15 14:45:00 2023] [notice] Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.30 with Suhosin-Patch proxy_html/3.0.1 mod_python/3.3.1 Python/2.6.5 mod_ssl/2.2.14 OpenSSL/0.9.8k Phusion_Passenger/4.0.38 mod_perl/2.0.4 Perl/v5.10.1 configured -- resuming normal operations
+[Fri Sep 15 16:40:53 2023] [error] (111)Connection refused: proxy: HTTP: attempt to connect to 127.0.0.1:8080 (localhost) failed
+[Fri Sep 15 16:40:53 2023] [error] ap_proxy_connect_backend disabling worker for (localhost)

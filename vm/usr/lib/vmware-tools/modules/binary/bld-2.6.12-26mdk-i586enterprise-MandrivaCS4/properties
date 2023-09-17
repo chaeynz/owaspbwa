@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-26mdk
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment MandrivaCS4, 2.6.12-26mdk, i586, enterprise
+UtsMachine i386

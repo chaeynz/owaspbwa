@@ -1,0 +1,7 @@
+UtsRelease 2.6.15-23-amd64-server
+UtsVersion #1 SMP Tue May 23 13:57:20 UTC 2006
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment Ubuntu6.06, 2.6.15-23, amd64, server

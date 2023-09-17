@@ -1,0 +1,22 @@
+Format-Specification: http://dep.debian.net/deps/dep5/
+Name: Maven Jar Plugin
+Maintainer: Apache Maven team
+Source: http://maven.apache.org/
+
+Files: *
+Copyright: 2001-2009, The Apache Software Foundation.
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2008, Torsten Werner <twerner@debian.org>.
+License: GPL-3+
+
+License: Apache-2.0
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache 2.0 license in '/usr/share/common-licenses/Apache-2.0'.
+
+License: GPL-3
+  On Debian GNU/Linux system you can find the complete text of the
+  GNU General Public License version 3 license in 
+  '/usr/share/common-licenses/GPL-3'.
+

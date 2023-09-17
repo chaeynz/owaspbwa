@@ -1,0 +1,50 @@
+#!/bin/sh
+# postinst script for command-not-found
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <postinst> `abort-remove'
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see http://www.debian.org/doc/debian-policy/ or
+# the debian-policy package
+
+
+case "$1" in
+    configure)
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+# remove old left-over file
+if dpkg --compare-versions "$2" lt-nl "0.2.35ubuntu3"; then
+    rm -f /etc/bash_command_not_found
+fi
+
+# Automatically added by dh_pycentral
+rm -f /var/lib/pycentral/command-not-found.pkgremove
+if which pycentral >/dev/null 2>&1; then
+	pycentral pkginstall command-not-found
+	if grep -qs '^command-not-found$' /var/lib/pycentral/delayed-pkgs; then
+		sed -i '/^command-not-found$/d' /var/lib/pycentral/delayed-pkgs
+	fi
+fi
+# End automatically added section
+
+
+exit 0

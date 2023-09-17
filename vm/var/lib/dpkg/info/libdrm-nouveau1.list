@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libdrm-nouveau1
+/usr/share/doc/libdrm-nouveau1/changelog.gz
+/usr/share/doc/libdrm-nouveau1/copyright
+/usr/share/doc/libdrm-nouveau1/changelog.Debian.gz
+/lib
+/lib/libdrm_nouveau.so.1.0.0
+/lib/libdrm_nouveau.so.1

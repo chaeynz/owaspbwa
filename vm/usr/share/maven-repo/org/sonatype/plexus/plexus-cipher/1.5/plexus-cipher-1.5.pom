@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.sonatype.plexus</groupId>
+	<artifactId>plexus-cipher</artifactId>
+	<version>1.5</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.5</debian.originalVersion>
+		<debian.package>libplexus-cipher-java</debian.package>
+	</properties>
+	
+	<url>http://spice.sonatype.org/${project.artifactId}</url>
+	<name>Plexus Cipher: encryption/decryption Component</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+			<version>1.0-alpha</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.x</version>
+		</dependency>
+	</dependencies>
+	<scm>
+		<connection>scm:svn:http://svn.sonatype.org/spice/tags/plexus-cipher-1.5</connection>
+		<developerConnection>scm:svn:https://svn.sonatype.org/spice/tags/plexus-cipher-1.5</developerConnection>
+		<url>http://svn.sonatype.org/spice/tags/plexus-cipher-1.5</url>
+	</scm>
+</project>

@@ -1,0 +1,13 @@
+838282cd1120bbd478d17d9cfdc1f8be  usr/lib/ruby/1.8/redcloth/erb_extension.rb
+085637ffd9da64e78518239f1688558c  usr/lib/ruby/1.8/redcloth/textile_doc.rb
+ed56b5624bdc420debf85426f734cd64  usr/lib/ruby/1.8/redcloth/version.rb
+fda8249af2cb7e4ef326a6780e3b4e4e  usr/lib/ruby/1.8/redcloth/formatters/base.rb
+0ed52674adc800fdae2a0248c8089332  usr/lib/ruby/1.8/redcloth/formatters/html.rb
+f8b45b8509dbb3932388805b572d56f2  usr/lib/ruby/1.8/redcloth/formatters/latex.rb
+81f37ea46eaf8dacfda82ea05923710c  usr/lib/ruby/1.8/redcloth/formatters/latex_entities.yml
+526f0ca45410442981c2385a236dcbd6  usr/lib/ruby/1.8/redcloth.rb
+f7f919d7a6f93a440766357593a35740  usr/lib/ruby/1.8/i486-linux/redcloth_scan.so
+71c02128fa7ca1f25bb564a7c4b6ffd6  usr/share/doc/libredcloth-ruby1.8/changelog.gz
+09a13595006b2ae0bc1687cf4c86c514  usr/share/doc/libredcloth-ruby1.8/README.gz
+6a87e6ac0ff2c3dfa86275316df8a083  usr/share/doc/libredcloth-ruby1.8/copyright
+300b4fada1de4967b4dbbd61ff0e3adc  usr/share/doc/libredcloth-ruby1.8/changelog.Debian.gz

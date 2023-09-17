@@ -1,0 +1,6 @@
+samba-common 	 /etc/samba/smb.conf
+grub 	 /var/run/grub/menu.lst
+rsyslog 	 /etc/rsyslog.d/50-default.conf
+dbconfig-common 	 /etc/dbconfig-common/config
+libxml-sax-perl 	 /etc/perl/XML/SAX/ParserDetails.ini
+phpmyadmin 	 /etc/dbconfig-common/phpmyadmin.conf

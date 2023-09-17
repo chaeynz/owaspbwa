@@ -1,0 +1,52 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: controller
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: output_buffer
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: rendered
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: determine_default_helper_class
+- !ruby/object:RI::MethodSummary 
+  name: helper_class
+- !ruby/object:RI::MethodSummary 
+  name: helper_method
+- !ruby/object:RI::MethodSummary 
+  name: tests
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EXCLUDE_IVARS
+  value: "%w{         @output_buffer         @fixture_cache         @method_name         @_result         @loaded_fixtures         @test_passed         @view       }"
+full_name: ActionView::TestCase
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: ActionController::TestCase::Assertions
+- !ruby/object:RI::IncludedModule 
+  name: ActionController::TestProcess
+- !ruby/object:RI::IncludedModule 
+  name: ActionController::PolymorphicRoutes
+- !ruby/object:RI::IncludedModule 
+  name: ActionController::RecordIdentifier
+- !ruby/object:RI::IncludedModule 
+  name: ActionView::Helpers
+- !ruby/object:RI::IncludedModule 
+  name: ActionController::Helpers
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: protect_against_forgery?
+- !ruby/object:RI::MethodSummary 
+  name: render
+- !ruby/object:RI::MethodSummary 
+  name: setup_with_controller
+name: TestCase
+superclass: ActiveSupport::TestCase

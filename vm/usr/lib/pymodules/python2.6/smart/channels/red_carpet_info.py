@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/red_carpet_info.py

@@ -1,0 +1,7 @@
+UtsRelease 2.4.21-166-smp
+UtsVersion #1 SMP Fri Dec 19 16:28:23 UTC 2003
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment SuSE 9.0 smp 64GB
+UtsMachine i386

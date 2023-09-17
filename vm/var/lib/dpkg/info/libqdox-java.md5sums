@@ -1,0 +1,6 @@
+cc4f93a9ac0377d437298056de5925d0  usr/share/java/qdox-1.9.2.jar
+d4f742078088881613879b32eef31071  usr/share/doc/libqdox-java/README.Debian
+029b845ba1f068b51c4a9c75e2de4372  usr/share/doc/libqdox-java/copyright
+0f6bca635998f1f235e1027eef55885f  usr/share/doc/libqdox-java/changelog.Debian.gz
+9defe239c56c3e20074cfc1ab78c1fb5  usr/share/maven-repo/com/thoughtworks/qdox/qdox/1.9.2/qdox-1.9.2.pom
+5d0ba75064cf1eb2cd5daa763e5f50e9  usr/share/maven-repo/com/thoughtworks/qdox/qdox/debian/qdox-debian.pom

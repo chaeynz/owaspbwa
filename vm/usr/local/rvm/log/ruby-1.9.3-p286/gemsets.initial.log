@@ -1,0 +1,24 @@
+[2012-10-23 22:59:13] '/usr/local/rvm/scripts/gemsets' initial # under ruby-1.9.3-p286
+Importing initial gemsets for ruby-1.9.3-p286.
+paths: /usr/local/rvm/gemsets /usr/local/rvm/gemsets/ruby /usr/local/rvm/gemsets/ruby/1.9.3 /usr/local/rvm/gemsets/ruby/1.9.3/p286
+
+Installing gems listed in /usr/local/rvm/gemsets/default.gems file...
+
+
+Processing of /usr/local/rvm/gemsets/default.gems is complete.
+
+
+Installing gems listed in /usr/local/rvm/gemsets/global.gems file...
+
+installing bundler ...
+bundler  installed.
+installing rubygems-bundler ...
+rubygems-bundler  installed.
+installing rake ...
+rake  installed.
+installing rvm ...
+rvm  installed.
+
+Processing of /usr/local/rvm/gemsets/global.gems is complete.
+
+Installation of gems for ruby-1.9.3-p286 is complete.

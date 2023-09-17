@@ -1,0 +1,7 @@
+UtsRelease 2.4.18-4GB
+UtsVersion #1 Mon Mar 24 14:37:51 GMT 2003
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment SuSE 7.x up with 2.4.18 kernel
+UtsMachine i386

@@ -1,0 +1,6 @@
+UtsRelease 2.6.3-7mdk-i686-up-4GB
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Mandrake 10.0, 2.6.3-7mdk, i686-up-4GB
+UtsMachine i386

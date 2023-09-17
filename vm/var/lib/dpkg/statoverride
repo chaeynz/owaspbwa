@@ -1,0 +1,4 @@
+root postdrop 2555 /usr/sbin/postdrop
+root postdrop 2555 /usr/sbin/postqueue
+root mlocate 2755 /usr/bin/mlocate
+postfix postdrop 2710 /var/spool/postfix/public

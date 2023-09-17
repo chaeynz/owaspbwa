@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+if [ -L /usr/share/doc/binutils-static ]; then
+	# We must be upgrading from a version that depended on binutils
+	rm -f /usr/share/doc/binutils-static
+fi
+
+exit 0

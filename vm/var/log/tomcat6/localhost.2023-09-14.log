@@ -1,0 +1,12 @@
+Sep 14, 2023 11:55:48 PM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Sep 14, 2023 11:55:48 PM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Sep 14, 2023 11:55:49 PM org.apache.catalina.core.ApplicationContext log
+INFO: InitServlet init TheBodgeItStore :)
+Sep 14, 2023 11:56:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+Sep 14, 2023 11:56:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+Sep 14, 2023 11:56:48 PM org.apache.catalina.core.ApplicationContext log
+INFO: InitServlet init TheBodgeItStore :)

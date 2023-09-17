@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Kerberos and LDAP</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="network-authentication.html" title="Chapter 6. Network Authentication" />
+    <link rel="prev" href="kerberos.html" title="Kerberos" />
+    <link rel="next" href="dns.html" title="Chapter 7. Domain Name Service (DNS)" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="network-authentication.html">Network Authentication</a></span> &gt; <span class="breadcrumb-node">Kerberos and LDAP</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Kerberos and LDAP">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="kerberos-ldap"></a>Kerberos and LDAP</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    Replicating a Kerberos principal database between two servers can be complicated, and adds an additional user
+    database to your network.  Fortunately, MIT Kerberos can be configured to use an <span class="application"><strong>LDAP</strong></span>
+    directory as a principal database.  This section covers configuring a primary and secondary kerberos server to use
+    <span class="application"><strong>OpenLDAP</strong></span> for the principal database.
+    </p>
+              <div class="sect2" title="Configuring OpenLDAP">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-ldap-openldap"></a>Configuring OpenLDAP</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      First, the necessary <span class="emphasis"><em>schema</em></span> needs to be loaded on an <span class="application"><strong>OpenLDAP</strong></span> server that has
+      network connectivity to the Primary and Secondary KDCs.  The rest of this section assumes that you also have LDAP replication
+      configured between at least two servers.  For information on setting up OpenLDAP see <a class="xref" href="openldap-server.html" title="OpenLDAP Server">the section called “OpenLDAP Server”</a>.
+      </p>
+                <p>
+      It is also required to configure OpenLDAP for TLS and SSL connections, so that traffic between the KDC and LDAP server is encrypted.
+      See <a class="xref" href="openldap-server.html#openldap-tls" title="TLS and SSL">the section called “TLS and SSL”</a> for details.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          To load the schema into LDAP, on the LDAP server install the <span class="application"><strong>krb5-kdc-ldap</strong></span> package.
+          From a terminal enter:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo apt-get install krb5-kdc-ldap</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Next, extract the <code class="filename">kerberos.schema.gz</code> file:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo gzip -d /usr/share/doc/krb5-kdc-ldap/kerberos.schema.gz</strong></span>
+<span class="command"><strong>sudo cp /usr/share/doc/krb5-kdc-ldap/kerberos.schema /etc/ldap/schema/</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+           The <span class="emphasis"><em>kerberos</em></span> schema needs to be added to the <span class="emphasis"><em>cn=config</em></span> tree.
+           The procedure to add a new schema to <span class="application"><strong>slapd</strong></span> is also detailed in 
+           <a class="xref" href="openldap-server.html#openldap-configuration" title="Further Configuration">the section called “Further Configuration”</a>.
+           </p>
+                      <div class="procedure">
+                        <ol class="procedure" type="1">
+                          <li class="step" title="Step 1">
+                            <p>                  
+                First, create a configuration file named <code class="filename">schema_convert.conf</code>, or a similar 
+                descriptive name, containing the following lines:
+                </p>
+                            <pre class="programlisting">
+include /etc/ldap/schema/core.schema
+include /etc/ldap/schema/collective.schema
+include /etc/ldap/schema/corba.schema
+include /etc/ldap/schema/cosine.schema
+include /etc/ldap/schema/duaconf.schema
+include /etc/ldap/schema/dyngroup.schema
+include /etc/ldap/schema/inetorgperson.schema
+include /etc/ldap/schema/java.schema
+include /etc/ldap/schema/misc.schema
+include /etc/ldap/schema/nis.schema
+include /etc/ldap/schema/openldap.schema
+include /etc/ldap/schema/ppolicy.schema
+include /etc/ldap/schema/kerberos.schema
+</pre>
+                          </li>
+                          <li class="step" title="Step 2">
+                            <p>
+                   Create a temporary directory to hold the LDIF files:
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>mkdir /tmp/ldif_output</strong></span>
+</pre>
+                          </li>
+                          <li class="step" title="Step 3">
+                            <p>
+                  Now use <span class="application"><strong>slapcat</strong></span> to convert the schema files: 
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>slapcat -f schema_convert.conf -F /tmp/ldif_output -n0 -s "cn={12}kerberos,cn=schema,cn=config" &gt; /tmp/cn=kerberos.ldif</strong></span>
+</pre>
+                            <p>
+                  Change the above file and path names to match your own if they are different.
+                  </p>
+                          </li>
+                          <li class="step" title="Step 4">
+                            <p>
+                  Edit the generated <code class="filename">/tmp/cn\=kerberos.ldif</code> file, changing the following attributes: 
+                  </p>
+                            <pre class="programlisting">
+dn: cn=kerberos,cn=schema,cn=config
+...
+cn: kerberos
+</pre>
+                            <p>
+                  And remove the following lines from the end of the file:
+                  </p>
+                            <pre class="programlisting">
+structuralObjectClass: olcSchemaConfig
+entryUUID: 18ccd010-746b-102d-9fbe-3760cca765dc
+creatorsName: cn=config
+createTimestamp: 20090111203515Z
+entryCSN: 20090111203515.326445Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20090111203515Z
+</pre>
+                            <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                              <table border="0" summary="Note">
+                                <tr>
+                                  <td rowspan="2" align="center" valign="top" width="25">
+                                    <img alt="[Note]" src="../../libs/admon/note.png" />
+                                  </td>
+                                  <th align="left"></th>
+                                </tr>
+                                <tr>
+                                  <td align="left" valign="top">
+                                    <p>
+                    The attribute values will vary, just be sure the attributes are removed. 
+                    </p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </li>
+                          <li class="step" title="Step 5">
+                            <p>
+                  Load the new schema with <span class="application"><strong>ldapadd</strong></span>:
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>ldapadd -x -D cn=admin,cn=config -W -f /tmp/cn\=kerberos.ldif</strong></span>
+</pre>
+                          </li>
+                          <li class="step" title="Step 6">
+                            <p>
+                  Add an index for the <span class="emphasis"><em>krb5principalname</em></span> attribute:
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>ldapmodify -x -D cn=admin,cn=config -W</strong></span>
+<code class="computeroutput">Enter LDAP Password:
+<strong class="userinput"><code>dn: olcDatabase={1}hdb,cn=config
+add: olcDbIndex
+olcDbIndex: krbPrincipalName eq,pres,sub</code></strong>
+
+modifying entry "olcDatabase={1}hdb,cn=config"</code>
+</pre>
+                          </li>
+                          <li class="step" title="Step 7">
+                            <p>
+                  Finally, update the Access Control Lists (ACL):
+                  </p>
+                            <pre class="screen">
+<span class="command"><strong>ldapmodify -x -D cn=admin,cn=config -W</strong></span>
+<code class="computeroutput">Enter LDAP Password: 
+<strong class="userinput"><code>dn: olcDatabase={1}hdb,cn=config
+replace: olcAccess
+olcAccess: to attrs=userPassword,shadowLastChange,krbPrincipalKey by dn="cn=admin,dc=exampl
+ e,dc=com" write by anonymous auth by self write by * none
+-
+add: olcAccess
+olcAccess: to dn.base="" by * read
+-
+add: olcAccess
+olcAccess: to * by dn="cn=admin,dc=example,dc=com" write by * read</code></strong>
+
+modifying entry "olcDatabase={1}hdb,cn=config"
+</code>
+</pre>
+                          </li>
+                        </ol>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      That's it, your LDAP directory is now ready to serve as a Kerberos principal database.
+      </p>
+              </div>
+              <div class="sect2" title="Primary KDC Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-ldap-primary-kdc"></a>Primary KDC Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      With <span class="application"><strong>OpenLDAP</strong></span> configured it is time to configure the KDC.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          First, install the necessary packages, from a terminal enter:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo apt-get install krb5-kdc krb5-admin-server krb5-kdc-ldap</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Now edit <code class="filename">/etc/krb5.conf</code> adding the following options to under the appropriate sections:
+          </p>
+                      <pre class="programlisting">
+[libdefaults]
+        default_realm = EXAMPLE.COM
+
+...
+
+[realms]
+        EXAMPLE.COM = {
+                kdc = kdc01.example.com
+                kdc = kdc02.example.com
+                admin_server = kdc01.example.com
+                admin_server = kdc02.example.com
+                default_domain = example.com
+                database_module = openldap_ldapconf
+        }
+
+...
+
+[domain_realm]
+        .example.com = EXAMPLE.COM
+
+
+...
+
+[dbdefaults]
+        ldap_kerberos_container_dn = dc=example,dc=com
+
+[dbmodules]
+        openldap_ldapconf = {
+                db_library = kldap
+                ldap_kdc_dn = "cn=admin,dc=example,dc=com"
+
+                # this object needs to have read rights on
+                # the realm container, principal container and realm sub-trees
+                ldap_kadmind_dn = "cn=admin,dc=example,dc=com"
+
+                # this object needs to have read and write rights on
+                # the realm container, principal container and realm sub-trees
+                ldap_service_password_file = /etc/krb5kdc/service.keyfile
+                ldap_servers = ldaps://ldap01.example.com ldaps://ldap02.example.com
+                ldap_conns_per_server = 5
+        }
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+            Change <span class="emphasis"><em>example.com</em></span>, <span class="emphasis"><em>dc=example,dc=com</em></span>, <span class="emphasis"><em>cn=admin,dc=example,dc=com</em></span>,
+            and <span class="emphasis"><em>ldap01.example.com</em></span> to the appropriate domain, LDAP object, and LDAP server for your network.
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Next, use the <span class="application"><strong>kdb5_ldap_util</strong></span> utility to create the realm:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kdb5_ldap_util -D  cn=admin,dc=example,dc=com create -subtrees dc=example,dc=com -r EXAMPLE.COM -s -H ldap://ldap01.example.com</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Create a stash of the password used to bind to the LDAP server.  This password is used by the <span class="emphasis"><em>ldap_kdc_dn</em></span> and        
+          <span class="emphasis"><em>ldap_kadmin_dn</em></span> options in <code class="filename">/etc/krb5.conf</code>:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kdb5_ldap_util -D  cn=admin,dc=example,dc=com stashsrvpw -f /etc/krb5kdc/service.keyfile cn=admin,dc=example,dc=com</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Copy the CA certificate from the LDAP server:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>scp ldap01:/etc/ssl/certs/cacert.pem .</strong></span>
+<span class="command"><strong>sudo cp cacert.pem /etc/ssl/certs</strong></span>
+</pre>
+                      <p> 
+          And edit <code class="filename">/etc/ldap/ldap.conf</code> to use the certificate:
+          </p>
+                      <pre class="programlisting">
+TLS_CACERT /etc/ssl/certs/cacert.pem
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+            The certificate will also need to be copied to the Secondary KDC, to allow the connection to the LDAP servers using
+            LDAPS.
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      You can now add Kerberos principals to the LDAP database, and they will be copied to any other LDAP servers configured for replication.
+      To add a principal using the <span class="application"><strong>kadmin.local</strong></span> utility enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo kadmin.local</strong></span>
+<code class="computeroutput">Authenticating as principal root/admin@EXAMPLE.COM with password.
+kadmin.local:  <strong class="userinput"><code>addprinc -x dn="uid=steve,ou=people,dc=example,dc=com" steve</code></strong>
+WARNING: no policy specified for steve@EXAMPLE.COM; defaulting to no policy
+Enter password for principal "steve@EXAMPLE.COM": 
+Re-enter password for principal "steve@EXAMPLE.COM": 
+Principal "steve@EXAMPLE.COM" created.</code>
+</pre>
+                <p>
+      There should now be krbPrincipalName, krbPrincipalKey, krbLastPwdChange, and krbExtraData attributes added to the 
+      <span class="emphasis"><em>uid=steve,ou=people,dc=example,dc=com</em></span> user object.  Use the <span class="application"><strong>kinit</strong></span> and 
+      <span class="application"><strong>klist</strong></span> utilities to test that the user is indeed issued a ticket.
+      </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        If the user object is already created the <span class="emphasis"><em>-x dn="..."</em></span> option is needed to add the Kerberos attributes.
+        Otherwise a new <span class="emphasis"><em>principal</em></span> object will be created in the realm subtree.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="Secondary KDC Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-ldap-secondary-kdc"></a>Secondary KDC Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Configuring a Secondary KDC using the LDAP backend is similar to configuring one using the normal Kerberos database.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          First, install the necessary packages.  In a terminal enter:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo apt-get install krb5-kdc krb5-admin-server krb5-kdc-ldap</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Next, edit <code class="filename">/etc/krb5.conf</code> to use the LDAP backend:
+          </p>
+                      <pre class="programlisting">
+[libdefaults]
+        default_realm = EXAMPLE.COM
+
+...
+
+[realms]
+        EXAMPLE.COM = {
+                kdc = kdc01.example.com
+                kdc = kdc02.example.com
+                admin_server = kdc01.example.com
+                admin_server = kdc02.example.com
+                default_domain = example.com
+                database_module = openldap_ldapconf
+        }
+
+...
+
+[domain_realm]
+        .example.com = EXAMPLE.COM
+
+...
+
+[dbdefaults]
+        ldap_kerberos_container_dn = dc=example,dc=com
+
+[dbmodules]
+        openldap_ldapconf = {
+                db_library = kldap
+                ldap_kdc_dn = "cn=admin,dc=example,dc=com"
+
+                # this object needs to have read rights on
+                # the realm container, principal container and realm sub-trees
+                ldap_kadmind_dn = "cn=admin,dc=example,dc=com"
+
+                # this object needs to have read and write rights on
+                # the realm container, principal container and realm sub-trees
+                ldap_service_password_file = /etc/krb5kdc/service.keyfile
+                ldap_servers = ldaps://ldap01.example.com ldaps://ldap02.example.com
+                ldap_conns_per_server = 5
+        }
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+      Create the stash for the LDAP bind password:
+      </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo kdb5_ldap_util -D  cn=admin,dc=example,dc=com stashsrvpw -f /etc/krb5kdc/service.keyfile cn=admin,dc=example,dc=com</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Now, on the <span class="emphasis"><em>Primary KDC</em></span> copy the <code class="filename">/etc/krb5kdc/.k5.EXAMPLE.COM</code> 
+          <span class="emphasis"><em>Master Key</em></span> stash to the Secondary KDC.  Be sure to copy the file over an encrypted 
+          connection such as <span class="application"><strong>scp</strong></span>, or on physical media.
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo scp /etc/krb5kdc/.k5.EXAMPLE.COM steve@kdc02.example.com:~</strong></span>
+<span class="command"><strong>sudo mv .k5.EXAMPLE.COM /etc/krb5kdc/</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+          Again, replace <span class="emphasis"><em>EXAMPLE.COM</em></span> with your actual realm.
+          </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Finally, start the <span class="application"><strong>krb5-kdc</strong></span> daemon:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>sudo /etc/init.d/krb5-kdc start</strong></span>
+</pre>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      You now have redundant KDCs on your network, and with redundant LDAP servers you should be able to 
+      continue to authenticate users if one LDAP server, one Kerberos server, or one LDAP and one Kerberos 
+      server become unavailable. 
+      </p>
+              </div>
+              <div class="sect2" title="Resources">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="kerberos-ldap-resources"></a>Resources</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          The <a class="ulink" href="http://web.mit.edu/Kerberos/krb5-1.6/krb5-1.6.3/doc/krb5-admin.html#Configuring-Kerberos-with-OpenLDAP-back_002dend" target="_top">
+          Kerberos Admin Guide</a> has some additional details.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          For more information on <span class="application"><strong>kdb5_ldap_util</strong></span> see 
+          <a class="ulink" href="http://web.mit.edu/Kerberos/krb5-1.6/krb5-1.6.3/doc/krb5-admin.html#Global-Operations-on-the-Kerberos-LDAP-Database" target="_top">
+          Section 5.6</a> and the 
+          <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man8/kdb5_ldap_util.8.html" target="_top">kdb5_ldap_util man page</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Another useful link is the <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man5/krb5.conf.5.html" target="_top">krb5.conf man page</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Also, see the <a class="ulink" href="https://help.ubuntu.com/community/Kerberos#kerberos-ldap" target="_top">Kerberos and LDAP</a> Ubuntu wiki page.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="kerberos.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="network-authentication.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="dns.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Kerberos </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 7. Domain Name Service (DNS)</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

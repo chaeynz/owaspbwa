@@ -1,0 +1,10 @@
+Document: libcommons-collections-java
+Title: Programmer API for libcommons-collections-java
+Author: Apache Commons Developer Team
+Abstract: Javadocs programmer API of libcommons-collections-java, 
+ a set of abstract data type interfaces and implementations.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libcommons-collections-java/api/index.html
+Files: /usr/share/doc/libcommons-collections-java/api/*.html

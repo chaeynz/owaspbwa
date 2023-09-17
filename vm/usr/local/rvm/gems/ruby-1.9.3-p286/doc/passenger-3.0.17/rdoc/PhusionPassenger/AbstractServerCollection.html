@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::AbstractServerCollection - passenger-3.0.17 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/abstract_server_collection.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Utils.html">PhusionPassenger::Utils</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-check_idle_servers-21">#check_idle_servers!</a>
+    
+    <li><a href="#method-i-cleanup">#cleanup</a>
+    
+    <li><a href="#method-i-clear">#clear</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-each_pair">#each_pair</a>
+    
+    <li><a href="#method-i-empty-3F">#empty?</a>
+    
+    <li><a href="#method-i-has_key-3F">#has_key?</a>
+    
+    <li><a href="#method-i-lookup_or_add">#lookup_or_add</a>
+    
+    <li><a href="#method-i-register_activity">#register_activity</a>
+    
+    <li><a href="#method-i-synchronize">#synchronize</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractRequestHandler.html">PhusionPassenger::AbstractRequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer.html">PhusionPassenger::AbstractServer</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/InvalidPassword.html">PhusionPassenger::AbstractServer::InvalidPassword</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/ServerAlreadyStarted.html">PhusionPassenger::AbstractServer::ServerAlreadyStarted</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/ServerError.html">PhusionPassenger::AbstractServer::ServerError</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/ServerNotStarted.html">PhusionPassenger::AbstractServer::ServerNotStarted</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServer/UnknownMessage.html">PhusionPassenger::AbstractServer::UnknownMessage</a>
+  
+    <li><a href="../PhusionPassenger/AbstractServerCollection.html">PhusionPassenger::AbstractServerCollection</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/AppInitError.html">PhusionPassenger::AppInitError</a>
+  
+    <li><a href="../PhusionPassenger/AppProcess.html">PhusionPassenger::AppProcess</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ApplicationSpawner.html">PhusionPassenger::ClassicRails::ApplicationSpawner</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ApplicationSpawner/Error.html">PhusionPassenger::ClassicRails::ApplicationSpawner::Error</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/FrameworkSpawner.html">PhusionPassenger::ClassicRails::FrameworkSpawner</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/FrameworkSpawner/Error.html">PhusionPassenger::ClassicRails::FrameworkSpawner::Error</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/RequestHandler.html">PhusionPassenger::ClassicRails::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions.html">PhusionPassenger::ClassicRailsExtensions</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACBaseExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACBaseExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACBenchmarkingExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACBenchmarkingExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACRescueExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACRescueExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ARAbstractAdapterExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ARAbstractAdapterExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/AVBenchmarkHelperExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::AVBenchmarkHelperExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/CacheStoreExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::CacheStoreExtension</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ConcreteCacheStoreExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ConcreteCacheStoreExtension</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/Dependency.html">PhusionPassenger::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/FrameworkInitError.html">PhusionPassenger::FrameworkInitError</a>
+  
+    <li><a href="../PhusionPassenger/HTMLTemplate.html">PhusionPassenger::HTMLTemplate</a>
+  
+    <li><a href="../PhusionPassenger/InitializationError.html">PhusionPassenger::InitializationError</a>
+  
+    <li><a href="../PhusionPassenger/InvalidPath.html">PhusionPassenger::InvalidPath</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ApplicationSpawner.html">PhusionPassenger::Rack::ApplicationSpawner</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ApplicationSpawner/Error.html">PhusionPassenger::Rack::ApplicationSpawner::Error</a>
+  
+    <li><a href="../PhusionPassenger/Rack/RequestHandler.html">PhusionPassenger::Rack::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions.html">PhusionPassenger::Rails3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/SpawnManager.html">PhusionPassenger::SpawnManager</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/UnknownError.html">PhusionPassenger::UnknownError</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/Kernel.html">PhusionPassenger::Utils::Kernel</a>
+  
+    <li><a href="../PhusionPassenger/Utils/PseudoIO.html">PhusionPassenger::Utils::PseudoIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/RewindableInput.html">PhusionPassenger::Utils::RewindableInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/RewindableInput/Tempfile.html">PhusionPassenger::Utils::RewindableInput::Tempfile</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../PhusionPassenger/VersionNotFound.html">PhusionPassenger::VersionNotFound</a>
+  
+    <li><a href="../PhusionPassenger/WSGI.html">PhusionPassenger::WSGI</a>
+  
+    <li><a href="../PhusionPassenger/WSGI/ApplicationSpawner.html">PhusionPassenger::WSGI::ApplicationSpawner</a>
+  
+    <li><a href="../ConditionVariable.html">ConditionVariable</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Process.html">Process</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::AbstractServerCollection</h1>
+
+  <div id="description" class="description">
+    
+<p>This class maintains a collection of <a
+href="AbstractServer.html">AbstractServer</a> objects. One can add new <a
+href="AbstractServer.html">AbstractServer</a> objects, or look up existing
+ones via a key. <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> also
+automatically takes care of cleaning up AbstractServers that have been idle
+for too long.</p>
+
+<p>This class exists because both <a href="SpawnManager.html">SpawnManager</a>
+and <a
+href="ClassicRails/FrameworkSpawner.html">ClassicRails::FrameworkSpawner</a>
+need this kind of functionality. <a
+href="SpawnManager.html">SpawnManager</a> maintains a collection of <a
+href="ClassicRails/FrameworkSpawner.html">ClassicRails::FrameworkSpawner</a>
+and <a
+href="ClassicRails/ApplicationSpawner.html">ClassicRails::ApplicationSpawner</a>
+objects, while <a
+href="ClassicRails/FrameworkSpawner.html">ClassicRails::FrameworkSpawner</a>
+maintains a collection of <a
+href="ClassicRails/ApplicationSpawner.html">ClassicRails::ApplicationSpawner</a>
+objects.</p>
+
+<p>This class is thread-safe as long as the specified thread-safety rules are
+followed.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-next_cleaning_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">next_cleaning_time</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+        <span class="ruby-ivar">@collection</span> = {}
+        <span class="ruby-ivar">@lock</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@cleanup_lock</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@cond</span> = <span class="ruby-constant">ConditionVariable</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-ivar">@done</span> = <span class="ruby-keyword">false</span>
+        
+        <span class="ruby-comment"># The next time the cleaner thread should check for idle servers.</span>
+        <span class="ruby-comment"># The value may be nil, in which case the value will be calculated</span>
+        <span class="ruby-comment"># at the end of the #synchronized block.</span>
+        <span class="ruby-comment">#</span>
+        <span class="ruby-comment"># Invariant:</span>
+        <span class="ruby-comment">#    if value is not nil:</span>
+        <span class="ruby-comment">#       There exists an s in @collection with s.next_cleaning_time == value.</span>
+        <span class="ruby-comment">#       for all s in @collection:</span>
+        <span class="ruby-comment">#          if eligable_for_cleanup?(s):</span>
+        <span class="ruby-comment">#             s.next_cleaning_time &lt;= value</span>
+        <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-value">60</span> * <span class="ruby-value">60</span>
+        <span class="ruby-ivar">@next_cleaning_time_changed</span> = <span class="ruby-keyword">false</span>
+        
+        <span class="ruby-ivar">@cleaner_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                                <span class="ruby-identifier">cleaner_thread_main</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                        <span class="ruby-identifier">print_exception</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">e</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-check_idle_servers-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_idle_servers!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tell the cleaner thread to check the collection as soon as possible,
+instead of sleeping until the next scheduled cleaning time.</p>
+
+<p>Precondition: this method must NOT be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="check_idle_servers-21-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_idle_servers!</span>
+        <span class="ruby-identifier">must_not_be_in_synchronize_block</span>
+        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-value">60</span> * <span class="ruby-value">60</span>
+                <span class="ruby-ivar">@cond</span>.<span class="ruby-identifier">signal</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_idle_servers-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_idle_servers-21-method -->
+
+    
+      <div id="method-i-cleanup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cleanup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Cleanup all resources used by this <a
+href="AbstractServerCollection.html">AbstractServerCollection</a>. All
+AbstractServers from the collection will be deleted. Each <a
+href="AbstractServer.html">AbstractServer</a> will be stopped, if
+necessary. The background thread which removes idle AbstractServers will be
+stopped.</p>
+
+<p>After calling this method, this <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> object
+will become unusable.</p>
+
+<p>Precondition: this method must <strong>NOT</strong> be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="cleanup-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cleanup</span>
+        <span class="ruby-identifier">must_not_be_in_synchronize_block</span>
+        <span class="ruby-ivar">@cleanup_lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@done</span>
+                <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                        <span class="ruby-ivar">@done</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-ivar">@cond</span>.<span class="ruby-identifier">signal</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@cleaner_thread</span>.<span class="ruby-identifier">join</span>
+                <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                        <span class="ruby-identifier">clear</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cleanup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cleanup-method -->
+
+    
+      <div id="method-i-clear" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete all AbstractServers from the collection. Each <a
+href="AbstractServer.html">AbstractServer</a> will be stopped, if
+necessary.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="clear-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear</span>
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">server</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">started?</span>
+                        <span class="ruby-identifier">server</span>.<span class="ruby-identifier">stop</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">clear</span>
+        <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes from the collection the <a
+href="AbstractServer.html">AbstractServer</a> that’s associated with the
+given key. If no such <a href="AbstractServer.html">AbstractServer</a>
+exists, nothing will happen.</p>
+
+<p>If the <a href="AbstractServer.html">AbstractServer</a> is started, then it
+will be stopped before deletion.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;cleanup() has already been called.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@done</span>
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-identifier">server</span> = <span class="ruby-ivar">@collection</span>[<span class="ruby-identifier">key</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">started?</span>
+                        <span class="ruby-identifier">server</span>.<span class="ruby-identifier">stop</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@next_cleaning_time</span>
+                        <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |server| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterate over all <a href="AbstractServer.html">AbstractServer</a> objects.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">server</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">yield</span> <span class="ruby-identifier">server</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-each_pair" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_pair</span><span
+            class="method-args">() { |key, server| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterate over all keys and associated <a
+href="AbstractServer.html">AbstractServer</a> objects.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="each_pair-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_pair</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;cleanup() has already been called.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@done</span>
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">server</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">server</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_pair-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_pair-method -->
+
+    
+      <div id="method-i-empty-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">empty?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks whether the collection is empty.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="empty-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- empty-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- empty-3F-method -->
+
+    
+      <div id="method-i-has_key-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks whether there’s an <a href="AbstractServer.html">AbstractServer</a>
+object associated with the given key.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="has_key-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_key-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_key-3F-method -->
+
+    
+      <div id="method-i-lookup_or_add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lookup_or_add</span><span
+            class="method-args">(key) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lookup and returns an <a href="AbstractServer.html">AbstractServer</a> with
+the given key.</p>
+
+<p>If there is no AbstractSerer associated with the given key, then the given
+block will be called. That block must return an <a
+href="AbstractServer.html">AbstractServer</a> object. Then, that object
+will be stored in the collection, and returned.</p>
+
+<p>The block must set the ‘max_idle_time’ attribute on the <a
+href="AbstractServer.html">AbstractServer</a>. AbstractServerCollection’s
+idle cleaning interval will be adapted to accomodate with this. Changing
+the value outside this block is not guaranteed to have any effect on the
+idle cleaning interval. A max_idle_time value of nil or 0 means the <a
+href="AbstractServer.html">AbstractServer</a> will never be idle cleaned.</p>
+
+<p>If the block raises an exception, then the collection will not be modified,
+and the exception will be propagated.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="lookup_or_add-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lookup_or_add</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;cleanup() has already been called.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@done</span>
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-identifier">server</span> = <span class="ruby-ivar">@collection</span>[<span class="ruby-identifier">key</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>
+                <span class="ruby-identifier">register_activity</span>(<span class="ruby-identifier">server</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">server</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">server</span> = <span class="ruby-keyword">yield</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">server</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:start</span>)
+                        <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;The block didn't return a valid AbstractServer object.&quot;</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">eligable_for_cleanup?</span>(<span class="ruby-identifier">server</span>)
+                        <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">max_idle_time</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next_cleaning_time</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@next_cleaning_time</span>
+                                <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span>
+                                <span class="ruby-ivar">@next_cleaning_time_changed</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-ivar">@collection</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">server</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">server</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lookup_or_add-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lookup_or_add-method -->
+
+    
+      <div id="method-i-register_activity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_activity</span><span
+            class="method-args">(server)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Notify this <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> that
+<code>server</code> has performed an activity. This <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> will
+update the idle information associated with <code>server</code>
+accordingly.</p>
+
+<p><a
+href="AbstractServerCollection.html#method-i-lookup_or_add">#lookup_or_add</a>
+already automatically updates idle information, so you only need to call
+this method if the time at which the server has performed an activity is
+not close to the time at which <a
+href="AbstractServerCollection.html#method-i-lookup_or_add">#lookup_or_add</a>
+had been called.</p>
+
+<p>Precondition: this method must be called within a <a
+href="AbstractServerCollection.html#method-i-synchronize">synchronize</a>
+block.</p>
+          
+
+          
+          <div class="method-source-code" id="register_activity-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">register_activity</span>(<span class="ruby-identifier">server</span>)
+        <span class="ruby-identifier">must_be_in_synchronize_block</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">eligable_for_cleanup?</span>(<span class="ruby-identifier">server</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@next_cleaning_time</span>
+                        <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">server</span>.<span class="ruby-identifier">max_idle_time</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- register_activity-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- register_activity-method -->
+
+    
+      <div id="method-i-synchronize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">synchronize</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Acquire the lock for this <a
+href="AbstractServerCollection.html">AbstractServerCollection</a> object,
+and run the code within the block. The entire block will be a single atomic
+operation.</p>
+          
+
+          
+          <div class="method-source-code" id="synchronize-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_server_collection.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">synchronize</span>
+        <span class="ruby-ivar">@lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-ivar">@in_synchronize_block</span> = <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-keyword">yield</span>
+                <span class="ruby-keyword">ensure</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next_cleaning_time</span>.<span class="ruby-identifier">nil?</span>
+                                <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">each_value</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">server</span><span class="ruby-operator">|</span>
+                                        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next_cleaning_time</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span>
+                                           (<span class="ruby-identifier">eligable_for_cleanup?</span>(<span class="ruby-identifier">server</span>) <span class="ruby-operator">&amp;&amp;</span>
+                                            <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@next_cleaning_time</span>
+                                           )
+                                                <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">next_cleaning_time</span>
+                                        <span class="ruby-keyword">end</span>
+                                <span class="ruby-keyword">end</span>
+                                <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next_cleaning_time</span>.<span class="ruby-identifier">nil?</span>
+                                        <span class="ruby-comment"># There are no servers in the collection with an idle timeout.</span>
+                                        <span class="ruby-ivar">@next_cleaning_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-value">60</span> * <span class="ruby-value">60</span>
+                                <span class="ruby-keyword">end</span>
+                                <span class="ruby-ivar">@next_cleaning_time_changed</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next_cleaning_time_changed</span>
+                                <span class="ruby-ivar">@next_cleaning_time_changed</span> = <span class="ruby-keyword">false</span>
+                                <span class="ruby-ivar">@cond</span>.<span class="ruby-identifier">signal</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-ivar">@in_synchronize_block</span> = <span class="ruby-keyword">false</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- synchronize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- synchronize-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

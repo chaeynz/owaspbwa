@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.wagon</groupId>
+	<artifactId>wagon-ftp</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.wagon</groupId>
+		<artifactId>wagon-providers</artifactId>
+		<version>debian</version>
+	</parent>
+	<properties>
+		<debian.originalVersion>1.0-beta-6</debian.originalVersion>
+		<debian.package>libwagon-java</debian.package>
+	</properties>
+	
+	<name>Maven Wagon FTP Provider</name>
+	<description>Wagon that gets and puts artifacts from and to remote server using FTP protocol</description>
+	<dependencies>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>2.x</version>
+		</dependency>
+	</dependencies>
+</project>

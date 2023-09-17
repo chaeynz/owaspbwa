@@ -1,0 +1,15 @@
+category truetype
+begin /usr/share/fonts/truetype/wqy/wqy-zenhei.ttf
+  Family = WenQuanYi ZenHei
+  FontName = ZenHei
+  Encoding = Unicode
+  Location = Chinese-China Chinese-Taiwan English
+  Charset = ISO10646-1 BIG5 CNS11643-1 CNS11643-2 CNS11643-3 CNS11643-4 CNS11643-5 CNS11643-6 CNS11643-7 BIG5-HKSCS GB2312 GBK GB18030 ISO8859-1
+  GeneralFamily = SansSerif
+  Weight = Medium
+  Width = Variable
+  Shape = Upright
+  Foundry = WenQuanYi
+  Priority = 20
+  X-Family = WenQuanYi_ZenHei
+end

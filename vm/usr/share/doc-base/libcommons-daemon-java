@@ -1,0 +1,9 @@
+Document: libcommons-daemon-java
+Title: API Javadoc for commons-daemon
+Author: commons-daemon developers
+Abstract: This is the API Javadoc provided by the commons-daemon library.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libcommons-daemon-java/apidocs/index.html
+Files: /usr/share/doc/libcommons-daemon-java/apidocs/*

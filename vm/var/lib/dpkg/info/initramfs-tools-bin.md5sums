@@ -1,0 +1,4 @@
+411ea40a0b34d3477d1b9096bee7e892  usr/share/doc/initramfs-tools-bin/copyright
+87573d95571fa8a73f0a382c6d1003b6  usr/share/doc/initramfs-tools-bin/changelog.gz
+85a89fc90c7348f2640e6b78cdd71ccd  usr/share/doc/initramfs-tools-bin/NEWS.Debian.gz
+7fd961a9cb14aaa1962d23e020c6adb9  usr/lib/initramfs-tools/bin/wait-for-root

@@ -1,0 +1,12 @@
+auto
+/usr/bin/gem
+bash_completion_gem
+/etc/bash_completion.d/gem
+gem.1.gz
+/usr/share/man/man1/gem.1.gz
+
+/usr/bin/gem1.8
+180
+/etc/bash_completion.d/gem1.8
+/usr/share/man/man1/gem1.8.1.gz
+

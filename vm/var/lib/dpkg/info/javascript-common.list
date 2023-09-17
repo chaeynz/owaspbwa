@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/share
+/usr/share/javascript
+/usr/share/doc
+/usr/share/doc/javascript-common
+/usr/share/doc/javascript-common/README.Debian
+/usr/share/doc/javascript-common/copyright
+/usr/share/doc/javascript-common/changelog.gz
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/javascript-common
+/etc
+/etc/javascript-common
+/etc/javascript-common/javascript-common.conf

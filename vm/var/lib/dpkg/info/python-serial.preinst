@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_pycentral
+if which pycentral >/dev/null 2>&1 && pycentral --help 2>/dev/null | grep -q '^ *version'; then
+	pycentral pkgprepare python-serial <<PYEOF
+[python-package]
+format = 1
+python-version = all
+[pycentral]
+version = 0.6.7
+[files]
+/usr/share/pyshared/serial=d
+/usr/share/pyshared/serial/serialposix.py=f
+/usr/share/pyshared/serial/serialwin32.py=f
+/usr/share/pyshared/serial/sermsdos.py=f
+/usr/share/pyshared/serial/serialutil.py=f
+/usr/share/pyshared/serial/serialjava.py=f
+/usr/share/pyshared/serial/__init__.py=f
+/usr/share/pyshared/pyserial-2.3.egg-info=f
+PYEOF
+else
+	mkdir -p /var/lib/pycentral
+	echo python-serial >> /var/lib/pycentral/delayed-pkgs
+fi
+# End automatically added section

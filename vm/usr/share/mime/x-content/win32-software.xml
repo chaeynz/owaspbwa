@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="x-content/win32-software">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Windows software</comment>
+  <comment xml:lang="bg">Софтуер — Windows</comment>
+  <comment xml:lang="ca">Programari Windows</comment>
+  <comment xml:lang="cs">Software Windows</comment>
+  <comment xml:lang="de">Windows-Software</comment>
+  <comment xml:lang="en_GB">Windows software</comment>
+  <comment xml:lang="es">Software para Windows</comment>
+  <comment xml:lang="eu">Windows-eko softwarea</comment>
+  <comment xml:lang="fr">logiciel Windows</comment>
+  <comment xml:lang="hu">Windows-szoftver</comment>
+  <comment xml:lang="it">Software Windows</comment>
+  <comment xml:lang="ja">Windows ソフトウェア</comment>
+  <comment xml:lang="kk">Windows бағдарламасы</comment>
+  <comment xml:lang="lt">Windows programinė įranga</comment>
+  <comment xml:lang="nl">Windows-software</comment>
+  <comment xml:lang="oc">logicial Windows</comment>
+  <comment xml:lang="pl">Oprogramowanie systemu Windows</comment>
+  <comment xml:lang="pt_BR">Software Windows</comment>
+  <comment xml:lang="ro">Software Windows</comment>
+  <comment xml:lang="sv">Windows-programvara</comment>
+  <comment xml:lang="uk">програмне забезпечення Windows</comment>
+  <sub-class-of type="x-content/software"/>
+</mime-type>

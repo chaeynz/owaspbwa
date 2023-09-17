@@ -1,0 +1,41 @@
+## ## End Default Options ##
+
+title		Ubuntu 10.04.1 LTS, kernel 2.6.32-25-generic-pae
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/vmlinuz-2.6.32-25-generic-pae root=/dev/mapper/brokenwebapps-root ro quiet splash 
+initrd		/initrd.img-2.6.32-25-generic-pae
+quiet
+
+title		Ubuntu 10.04.1 LTS, kernel 2.6.32-25-generic-pae (recovery mode)
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/vmlinuz-2.6.32-25-generic-pae root=/dev/mapper/brokenwebapps-root ro  single
+initrd		/initrd.img-2.6.32-25-generic-pae
+
+title		Ubuntu 10.04.1 LTS, kernel 2.6.32-25-generic
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/vmlinuz-2.6.32-25-generic root=/dev/mapper/brokenwebapps-root ro quiet splash 
+initrd		/initrd.img-2.6.32-25-generic
+quiet
+
+title		Ubuntu 10.04.1 LTS, kernel 2.6.32-25-generic (recovery mode)
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/vmlinuz-2.6.32-25-generic root=/dev/mapper/brokenwebapps-root ro  single
+initrd		/initrd.img-2.6.32-25-generic
+
+title		Ubuntu 10.04.1 LTS, kernel 2.6.31-14-generic-pae
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/vmlinuz-2.6.31-14-generic-pae root=/dev/mapper/brokenwebapps-root ro quiet splash 
+initrd		/initrd.img-2.6.31-14-generic-pae
+quiet
+
+title		Ubuntu 10.04.1 LTS, kernel 2.6.31-14-generic-pae (recovery mode)
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/vmlinuz-2.6.31-14-generic-pae root=/dev/mapper/brokenwebapps-root ro  single
+initrd		/initrd.img-2.6.31-14-generic-pae
+
+title		Ubuntu 10.04.1 LTS, memtest86+
+uuid		2a453c45-e48d-42da-822d-298e15dd5057
+kernel		/memtest86+.bin
+quiet
+
+### END DEBIAN AUTOMAGIC KERNELS LIST

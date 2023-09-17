@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionView::Helpers::RawOutputHelper#raw
+is_singleton: false
+name: raw
+params: (stringish)
+visibility: public

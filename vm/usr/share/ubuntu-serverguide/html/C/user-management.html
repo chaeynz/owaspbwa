@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">User Management</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="security.html" title="Chapter 8. Security" />
+    <link rel="prev" href="security.html" title="Chapter 8. Security" />
+    <link rel="next" href="console-security.html" title="Console Security" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="security.html">Security</a></span> &gt; <span class="breadcrumb-node">User Management</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="User Management">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="user-management"></a>User Management</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+	User management is a critical part of maintaining a secure system.  Ineffective user and privilege management often lead many systems into being compromised.  Therefore, it is important that you understand how you can protect your server through simple and effective user account management techniques.
+	</p>
+              <div class="sect2" title="Where is root?">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="where-is-root"></a>Where is root?</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	Ubuntu developers made a conscientious decision to disable the administrative root account by default in all Ubuntu installations.  This does not mean that the root account has been deleted or that it may not be accessed.  It merely has been given a password which matches no possible encrypted value, therefore may not log in directly by itself.
+	</p>
+                <p>
+	Instead, users are encouraged to make use of a tool by the name of <span class="application"><strong>sudo</strong></span> to carry out system administrative duties.  <span class="application"><strong>Sudo</strong></span> allows an authorized user to  temporarily elevate their privileges using their own password instead of having to know the password belonging to the root account.  This simple yet effective methodology provides accountability for all user actions, and gives the administrator granular control over which actions a user can perform with said privileges.   
+	</p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+		If for some reason you wish to enable the root account, simply give it a password:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo passwd</strong></span>
+</pre>
+                      <p>Sudo will prompt you for your password, and then ask you to supply a new password for root as shown below:
+		</p>
+                      <pre class="screen">
+<code class="computeroutput">[sudo] password for username: <strong class="userinput"><code>(enter your own password)</code></strong>
+Enter new UNIX password: <strong class="userinput"><code>(enter a new password for root)</code></strong>
+Retype new UNIX password: <strong class="userinput"><code>(repeat new password for root)</code></strong>
+passwd: password updated successfully</code>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		To disable the root account, use the following passwd syntax:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo passwd -l root</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		You should read more on <span class="application"><strong>Sudo</strong></span> by checking out it's man page:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>man sudo</strong></span>
+</pre>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+		By default, the initial user created by the Ubuntu installer is a member of the group "admin" which is added to the file <code class="filename">/etc/sudoers</code> as an authorized sudo user.  If you wish to give any other account full root access through <span class="application"><strong>sudo</strong></span>, simply add them to the admin group.
+		</p>
+              </div>
+              <div class="sect2" title="Adding and Deleting Users">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="adding-deleting-users"></a>Adding and Deleting Users</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	The process for managing local users and groups is straight forward and  differs very little from most other GNU/Linux operating systems.  Ubuntu and other Debian based distributions, encourage the use of the "adduser" package for account management.
+	</p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+		To add a user account, use the following syntax, and follow the prompts to give the account a password and identifiable characteristics such as a full name, phone number, etc.
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo adduser username</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		To delete a user account and its primary group, use the following syntax:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo deluser username</strong></span>
+</pre>
+                      <p>
+		Deleting an account does not remove their respective home folder. It is up to you whether or not you wish to delete the folder manually or keep it according to your desired retention policies.  
+		</p>
+                      <p>
+		Remember, any user added later on with the same UID/GID as the previous owner will now have access to this folder if you have not taken the necessary precautions.
+		</p>
+                      <p>
+		You may want to change these UID/GID values to something more appropriate, such as the root account, and perhaps even relocate the folder to avoid future conflicts:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo chown -R root:root /home/username/</strong></span>
+<span class="command"><strong>sudo mkdir /home/archived_users/</strong></span>
+<span class="command"><strong>sudo mv /home/username /home/archived_users/</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		To temporarily lock or unlock a user account, use the following syntax, respectively:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo passwd -l username</strong></span>
+<span class="command"><strong>sudo passwd -u username</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		To add or delete a personalized group, use the following syntax, respectively:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo addgroup groupname</strong></span>
+<span class="command"><strong>sudo delgroup groupname</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		To add a user to a group, use the following syntax:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo adduser username groupname</strong></span>
+</pre>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="User Profile Security">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="user-profile-security"></a>User Profile Security</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	When a new user is created, the adduser utility creates a brand new home directory named <code class="filename">/home/username</code>, respectively.  The default profile is modeled after the contents found in the directory of <code class="filename">/etc/skel</code>, which includes all profile basics.  
+	</p>
+                <p>
+	If your server will be home to multiple users, you should pay close attention to the user home directory permissions to ensure confidentiality.  By default, user home directories in Ubuntu are created with world read/execute permissions.   This means that all users can browse and access the contents of other users home directories.  This may not be suitable for your environment.
+	</p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+		To verify your current users home directory permissions, use the following syntax:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>ls -ld /home/username</strong></span>
+</pre>
+                      <p>The following output shows that the directory <code class="filename">/home/username</code> has world readable permissions:
+		</p>
+                      <pre class="screen">
+<code class="computeroutput">drwxr-xr-x  2 username username    4096 2007-10-02 20:03 username</code>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		You can remove the world readable permissions using the following syntax:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>sudo chmod 0750 /home/username</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+		Some people tend to use the recursive option (-R) indiscriminately which modifies all child folders and files, but this is not necessary, and may yield other undesirable results.  The parent directory alone is sufficient for preventing unauthorized access to anything below the parent.
+		</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <p>
+		A much more efficient approach to the matter would be to modify the <span class="application"><strong>adduser</strong></span> global default permissions when creating user home folders.  Simply edit the file <code class="filename">/etc/adduser.conf</code> and modify the <code class="varname">DIR_MODE</code> variable to something appropriate, so that all new home directories will receive the correct permissions.
+		</p>
+                      <pre class="programlisting">
+DIR_MODE=0750
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+		After correcting the directory permissions using any of the previously mentioned techniques, verify the results using the following syntax:
+		</p>
+                      <pre class="screen">
+<span class="command"><strong>ls -ld /home/username</strong></span>
+</pre>
+                      <p>The results below show that world readable permissions have been removed:
+		</p>
+                      <pre class="screen">
+<code class="computeroutput">drwxr-x---   2 username username    4096 2007-10-02 20:03 username</code>
+</pre>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="Password Policy">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="password-policy"></a>Password Policy</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	A strong password policy is one of the most important aspects of your security posture.  Many successful security breaches involve simple brute force and dictionary attacks against weak passwords.  If you intend to offer any form of remote access involving your local password system, make sure you adequately address minimum password complexity requirements, maximum password lifetimes, and frequent audits of your authentication systems.
+	</p>
+                <div class="sect3" title="Minimum Password Length">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="minimum-password-length"></a>Minimum Password Length</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	By default, Ubuntu requires a minimum password length of 4 characters, as well as some basic entropy checks.  These values are controlled in the file <code class="filename">/etc/pam.d/common-password</code>, which is outlined below.
+	</p>
+                  <pre class="programlisting">
+password   required   pam_unix.so nullok obscure min=4 max=8 md5
+</pre>
+                  <p>
+If you would like to adjust the minimum length to 6 characters, change the appropriate variable to min=6.  The modification is outlined below.
+	</p>
+                  <pre class="programlisting">
+password   required   pam_unix.so nullok obscure min=6 max=8 md5
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+	The <code class="varname">max=8</code> variable does not represent the maximum length of a password.  It only means that complexity requirements will not be checked on passwords over 8 characters.  You may want to look at the <span class="application"><strong>libpam-cracklib</strong></span> package for additional password entropy assistance.
+	</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="Password Expiration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="password-expiration"></a>Password Expiration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	When creating user accounts, you should make it a policy to have a minimum and  maximum password age forcing users to change their passwords when they expire.
+	</p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+		To easily view the current status of a user account, use the following syntax:
+		</p>
+                        <pre class="screen">
+<span class="command"><strong>sudo chage -l username</strong></span>
+</pre>
+                        <p>The output below shows interesting facts about the user account, namely that there are no policies applied:
+		</p>
+                        <pre class="screen">
+<code class="computeroutput">Last password change                                    : Jan 20, 2008
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7</code>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+		To set any of these values, simply use the following syntax, and follow the interactive prompts:
+		</p>
+                        <pre class="screen">
+<span class="command"><strong>sudo chage username</strong></span>
+</pre>
+                        <p>
+		The following is also an example of how you can manually change the explicit expiration date (-E) to 01/31/2008, minimum password age (-m) of 5 days, maximum password  age (-M) of 90 days, inactivity period (-I) of 5 days after password expiration, and a warning time period (-W) of 14 days before password expiration.
+		</p>
+                        <pre class="screen">
+<span class="command"><strong>sudo chage -E 01/31/2008 -m 5 -M 90 -I 30 -W 14 username</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+		To verify changes, use the same syntax as mentioned previously:
+		</p>
+                        <pre class="screen">
+<span class="command"><strong>sudo chage -l username</strong></span>
+</pre>
+                        <p>The output below shows the new policies that have been established for the account:
+		</p>
+                        <pre class="screen">
+<code class="computeroutput">Last password change                                    : Jan 20, 2008
+Password expires                                        : Apr 19, 2008
+Password inactive                                       : May 19, 2008
+Account expires                                         : Jan 31, 2008
+Minimum number of days between password change          : 5
+Maximum number of days between password change          : 90
+Number of days of warning before password expires       : 14</code>
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Other Security Considerations">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="other-security-considerations"></a>Other Security Considerations</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	Many applications use alternate authentication mechanisms that can be easily  overlooked by even experienced system administrators.  Therefore, it is important to understand and control how users authenticate and gain access to services and  applications on your server.
+	</p>
+                <div class="sect3" title="SSH Access by Disabled Users">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="ssh-access-by-disabled-users"></a>SSH Access by Disabled Users</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	Simply disabling/locking a user account will not prevent a user from logging into your server remotely if they have previously set up RSA public key authentication. They will still be able to gain shell access to the server, without the need for any password.  Remember to check the users home directory for files that will allow for this type of authenticated SSH access.  e.g. <code class="filename">/home/username/.ssh/authorized_keys</code>.
+	</p>
+                  <p>
+	Remove or rename the directory <code class="filename">.ssh/</code> in the user's home folder to prevent further SSH authentication capabilities.
+	</p>
+                  <p>
+	Be sure to check for any established SSH connections by the disabled user, as it is possible they may have existing inbound or outbound connections.  Kill any that are found.
+	</p>
+                  <p>
+	Restrict SSH access to only user accounts that should have it.  For example, you may create a group called "sshlogin" and add the group name as the value associated with the <code class="varname">AllowGroups</code> variable located in the file <code class="filename">/etc/ssh/sshd_config</code>.
+	</p>
+                  <pre class="programlisting">
+AllowGroups sshlogin
+</pre>
+                  <p>
+	Then add your permitted SSH users to the group "sshlogin", and restart the SSH service.
+	</p>
+                  <pre class="screen">
+<span class="command"><strong>sudo adduser username sshlogin</strong></span>
+<span class="command"><strong>sudo /etc/init.d/ssh restart</strong></span>
+</pre>
+                </div>
+                <div class="sect3" title="External User Database Authentication">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="external-db-auth"></a>External User Database Authentication</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+	Most enterprise networks require centralized authentication and access controls for all system resources.  If you have configured your server to  authenticate users against external databases, be sure to disable the user accounts both externally and locally, this way you ensure that local fallback authentication is not possible.
+	</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="security.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="security.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="console-security.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 8. Security </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Console Security</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

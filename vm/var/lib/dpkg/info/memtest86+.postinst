@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+# offer to run LILO
+# (adapted from snippet by chr.ohm@gmx.net)
+if [ -x /sbin/lilo ] && [ -r /etc/lilo.conf ] && 
+	[ "${DEBIAN_FRONTEND}" != "noninteractive" ] &&
+	grep "image.*=.*/boot/memtest86+.bin" /etc/lilo.conf >/dev/null
+then
+    echo "You seem to have an entry for memtest86+ in /etc/lilo.conf."
+    printf "Run lilo now [y/N]? "
+    read c
+    if [ "$c" = "y" ] || [ "$c" = "Y" ]
+    then
+	lilo
+    fi
+fi
+
+if [ "$1" = "configure" ] && [ -x "`which update-grub2 2>/dev/null`" ] && [ -e /boot/grub/grub.cfg ]; then
+    update-grub2
+fi
+
+

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Module: Rake::TaskManager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Module</span><br />Rake::TaskManager</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/rake_rb.html">lib/rake.rb</a>
+        </td>
+      </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+The <a href="TaskManager.html">TaskManager</a> module is a mixin for
+managing <a href="TaskManager.html#M000048">tasks</a>.
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000044">[]</a></li>
+  <li><a href="#M000050">clear</a></li>
+  <li><a href="#M000041">create_rule</a></li>
+  <li><a href="#M000052">current_scope</a></li>
+  <li><a href="#M000042">define_task</a></li>
+  <li><a href="#M000047">enhance_with_matching_rule</a></li>
+  <li><a href="#M000053">in_namespace</a></li>
+  <li><a href="#M000043">intern</a></li>
+  <li><a href="#M000051">lookup</a></li>
+  <li><a href="#M000040">new</a></li>
+  <li><a href="#M000046">resolve_args</a></li>
+  <li><a href="#M000045">synthesize_file_task</a></li>
+  <li><a href="#M000048">tasks</a></li>
+  <li><a href="#M000049">tasks_in_scope</a></li>
+  </ul>
+
+
+
+
+
+  <div class="sectiontitle">Attributes</div>
+  <table border='0' cellpadding='5'>
+  <tr valign='top'>
+    <td class='attr-rw'>
+[RW]
+    </td>
+    <td class='attr-name'>last_description</td>
+    <td class='attr-desc'>
+Track the last comment made in the Rakefile.
+
+</td>
+  </tr>
+  </table>
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000040"></a><b>new</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000040_source')" id="l_M000040_source">show source</a> ]</p>
+  <div id="M000040_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1690</span>
+1690:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+1691:       <span class="ruby-keyword kw">super</span>
+1692:       <span class="ruby-ivar">@tasks</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+1693:       <span class="ruby-ivar">@rules</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+1694:       <span class="ruby-ivar">@scope</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+1695:       <span class="ruby-ivar">@last_description</span> = <span class="ruby-keyword kw">nil</span>
+1696:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000044"></a><b>[]</b>(task_name, scopes=nil)
+  </div>
+  <div class="description">
+  <p>
+Find a matching task for <tt>task_name</tt>.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000044_source')" id="l_M000044_source">show source</a> ]</p>
+  <div id="M000044_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1724</span>
+1724:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">scopes</span>=<span class="ruby-keyword kw">nil</span>)
+1725:       <span class="ruby-identifier">task_name</span> = <span class="ruby-identifier">task_name</span>.<span class="ruby-identifier">to_s</span>
+1726:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">scopes</span>) <span class="ruby-keyword kw">or</span>
+1727:         <span class="ruby-identifier">enhance_with_matching_rule</span>(<span class="ruby-identifier">task_name</span>) <span class="ruby-keyword kw">or</span>
+1728:         <span class="ruby-identifier">synthesize_file_task</span>(<span class="ruby-identifier">task_name</span>) <span class="ruby-keyword kw">or</span>
+1729:         <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Don't know how to build task '#{task_name}'&quot;</span>
+1730:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000050"></a><b>clear</b>()
+  </div>
+  <div class="description">
+  <p>
+Clear all <a href="TaskManager.html#M000048">tasks</a> in this application.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000050_source')" id="l_M000050_source">show source</a> ]</p>
+  <div id="M000050_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1833</span>
+1833:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear</span>
+1834:       <span class="ruby-ivar">@tasks</span>.<span class="ruby-identifier">clear</span>
+1835:       <span class="ruby-ivar">@rules</span>.<span class="ruby-identifier">clear</span>
+1836:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000041"></a><b>create_rule</b>(*args, &amp;block)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000041_source')" id="l_M000041_source">show source</a> ]</p>
+  <div id="M000041_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1698</span>
+1698:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_rule</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+1699:       <span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">arg_names</span>, <span class="ruby-identifier">deps</span> = <span class="ruby-identifier">resolve_args</span>(<span class="ruby-identifier">args</span>)
+1700:       <span class="ruby-identifier">pattern</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">quote</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'$'</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">pattern</span>
+1701:       <span class="ruby-ivar">@rules</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">deps</span>, <span class="ruby-identifier">block</span>]
+1702:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000052"></a><b>current_scope</b>()
+  </div>
+  <div class="description">
+  <p>
+Return the list of scope names currently active in the task manager.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000052_source')" id="l_M000052_source">show source</a> ]</p>
+  <div id="M000052_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1873</span>
+1873:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">current_scope</span>
+1874:       <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">dup</span>
+1875:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000042"></a><b>define_task</b>(task_class, *args, &amp;block)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000042_source')" id="l_M000042_source">show source</a> ]</p>
+  <div id="M000042_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1704</span>
+1704:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_task</span>(<span class="ruby-identifier">task_class</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+1705:       <span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">arg_names</span>, <span class="ruby-identifier">deps</span> = <span class="ruby-identifier">resolve_args</span>(<span class="ruby-identifier">args</span>)
+1706:       <span class="ruby-identifier">task_name</span> = <span class="ruby-identifier">task_class</span>.<span class="ruby-identifier">scope_name</span>(<span class="ruby-ivar">@scope</span>, <span class="ruby-identifier">task_name</span>)
+1707:       <span class="ruby-identifier">deps</span> = [<span class="ruby-identifier">deps</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">deps</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_ary</span>)
+1708:       <span class="ruby-identifier">deps</span> = <span class="ruby-identifier">deps</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_s</span> }
+1709:       <span class="ruby-identifier">task</span> = <span class="ruby-identifier">intern</span>(<span class="ruby-identifier">task_class</span>, <span class="ruby-identifier">task_name</span>)
+1710:       <span class="ruby-identifier">task</span>.<span class="ruby-identifier">set_arg_names</span>(<span class="ruby-identifier">arg_names</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">arg_names</span>.<span class="ruby-identifier">empty?</span>
+1711:       <span class="ruby-identifier">task</span>.<span class="ruby-identifier">add_description</span>(<span class="ruby-ivar">@last_description</span>)
+1712:       <span class="ruby-ivar">@last_description</span> = <span class="ruby-keyword kw">nil</span>
+1713:       <span class="ruby-identifier">task</span>.<span class="ruby-identifier">enhance</span>(<span class="ruby-identifier">deps</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+1714:       <span class="ruby-identifier">task</span>
+1715:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000047"></a><b>enhance_with_matching_rule</b>(task_name, level=0)
+  </div>
+  <div class="description">
+  <p>
+If a rule can be found that matches the task name, enhance the task with
+the prerequisites and actions from the rule. Set the source attribute of
+the task appropriately for the rule. Return the enhanced task or nil of no
+rule was found.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000047_source')" id="l_M000047_source">show source</a> ]</p>
+  <div id="M000047_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1803</span>
+1803:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enhance_with_matching_rule</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">level</span>=<span class="ruby-value">0</span>)
+1804:       <span class="ruby-identifier">fail</span> <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">RuleRecursionOverflowError</span>,
+1805:         <span class="ruby-value str">&quot;Rule Recursion Too Deep&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">level</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">16</span>
+1806:       <span class="ruby-ivar">@rules</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">extensions</span>, <span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
+1807:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">md</span> = <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">task_name</span>)
+1808:           <span class="ruby-identifier">task</span> = <span class="ruby-identifier">attempt_rule</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">extensions</span>, <span class="ruby-identifier">block</span>, <span class="ruby-identifier">level</span>)
+1809:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">task</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">task</span>
+1810:         <span class="ruby-keyword kw">end</span>
+1811:       <span class="ruby-keyword kw">end</span>
+1812:       <span class="ruby-keyword kw">nil</span>
+1813:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">RuleRecursionOverflowError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>
+1814:       <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">add_target</span>(<span class="ruby-identifier">task_name</span>)
+1815:       <span class="ruby-identifier">fail</span> <span class="ruby-identifier">ex</span>
+1816:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000053"></a><b>in_namespace</b>(name) {|ns| ...}
+  </div>
+  <div class="description">
+  <p>
+Evaluate the block in a nested namespace named <tt>name</tt>. Create an
+anonymous namespace if <tt>name</tt> is nil.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000053_source')" id="l_M000053_source">show source</a> ]</p>
+  <div id="M000053_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1879</span>
+1879:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">in_namespace</span>(<span class="ruby-identifier">name</span>)
+1880:       <span class="ruby-identifier">name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">generate_name</span>
+1881:       <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">name</span>)
+1882:       <span class="ruby-identifier">ns</span> = <span class="ruby-constant">NameSpace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-ivar">@scope</span>)
+1883:       <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">ns</span>)
+1884:       <span class="ruby-identifier">ns</span>
+1885:     <span class="ruby-keyword kw">ensure</span>
+1886:       <span class="ruby-ivar">@scope</span>.<span class="ruby-identifier">pop</span>
+1887:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000043"></a><b>intern</b>(task_class, task_name)
+  </div>
+  <div class="description">
+  <p>
+Lookup a task. Return an existing task if found, otherwise create a task of
+the current type.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000043_source')" id="l_M000043_source">show source</a> ]</p>
+  <div id="M000043_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1719</span>
+1719:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">intern</span>(<span class="ruby-identifier">task_class</span>, <span class="ruby-identifier">task_name</span>)
+1720:       <span class="ruby-ivar">@tasks</span>[<span class="ruby-identifier">task_name</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">task_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-keyword kw">self</span>)
+1721:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000051"></a><b>lookup</b>(task_name, initial_scope=nil)
+  </div>
+  <div class="description">
+  <p>
+Lookup a task, using scope and the scope hints in the task name. This
+method performs straight lookups without trying to synthesize file <a
+href="TaskManager.html#M000048">tasks</a> or rules. Special scope names
+(e.g. &#8217;^&#8217;) are recognized. If no scope argument is supplied,
+use the current scope. Return nil if the task cannot be found.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000051_source')" id="l_M000051_source">show source</a> ]</p>
+  <div id="M000051_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1843</span>
+1843:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">initial_scope</span>=<span class="ruby-keyword kw">nil</span>)
+1844:       <span class="ruby-identifier">initial_scope</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@scope</span>
+1845:       <span class="ruby-identifier">task_name</span> = <span class="ruby-identifier">task_name</span>.<span class="ruby-identifier">to_s</span>
+1846:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">task_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^rake:/</span>
+1847:         <span class="ruby-identifier">scopes</span> = []
+1848:         <span class="ruby-identifier">task_name</span> = <span class="ruby-identifier">task_name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/^rake:/</span>, <span class="ruby-value str">''</span>)
+1849:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">task_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(\^+)/</span>
+1850:         <span class="ruby-identifier">scopes</span> = <span class="ruby-identifier">initial_scope</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">initial_scope</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">size</span>]
+1851:         <span class="ruby-identifier">task_name</span> = <span class="ruby-identifier">task_name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/^(\^+)/</span>, <span class="ruby-value str">''</span>)
+1852:       <span class="ruby-keyword kw">else</span>
+1853:         <span class="ruby-identifier">scopes</span> = <span class="ruby-identifier">initial_scope</span>
+1854:       <span class="ruby-keyword kw">end</span>
+1855:       <span class="ruby-identifier">lookup_in_scope</span>(<span class="ruby-identifier">task_name</span>, <span class="ruby-identifier">scopes</span>)
+1856:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000046"></a><b>resolve_args</b>(args)
+  </div>
+  <div class="description">
+  <p>
+Resolve the arguments for a task/rule. Returns a triplet of [task_name,
+arg_name_list, prerequisites].
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000046_source')" id="l_M000046_source">show source</a> ]</p>
+  <div id="M000046_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1739</span>
+1739:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">resolve_args</span>(<span class="ruby-identifier">args</span>)
+1740:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+1741:         <span class="ruby-identifier">deps</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>
+1742:         <span class="ruby-identifier">resolve_args_with_dependencies</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">deps</span>)
+1743:       <span class="ruby-keyword kw">else</span>
+1744:         <span class="ruby-identifier">resolve_args_without_dependencies</span>(<span class="ruby-identifier">args</span>)
+1745:       <span class="ruby-keyword kw">end</span>
+1746:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000045"></a><b>synthesize_file_task</b>(task_name)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000045_source')" id="l_M000045_source">show source</a> ]</p>
+  <div id="M000045_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1732</span>
+1732:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">synthesize_file_task</span>(<span class="ruby-identifier">task_name</span>)
+1733:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">task_name</span>)
+1734:       <span class="ruby-identifier">define_task</span>(<span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">FileTask</span>, <span class="ruby-identifier">task_name</span>)
+1735:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000048"></a><b>tasks</b>()
+  </div>
+  <div class="description">
+  <p>
+List of all defined <a href="TaskManager.html#M000048">tasks</a> in this
+application.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000048_source')" id="l_M000048_source">show source</a> ]</p>
+  <div id="M000048_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1819</span>
+1819:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tasks</span>
+1820:       <span class="ruby-ivar">@tasks</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">name</span> }
+1821:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000049"></a><b>tasks_in_scope</b>(scope)
+  </div>
+  <div class="description">
+  <p>
+List of all the <a href="TaskManager.html#M000048">tasks</a> defined in the
+given scope (and its sub-scopes).
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000049_source')" id="l_M000049_source">show source</a> ]</p>
+  <div id="M000049_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1825</span>
+1825:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tasks_in_scope</span>(<span class="ruby-identifier">scope</span>)
+1826:       <span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">scope</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;:&quot;</span>)
+1827:       <span class="ruby-identifier">tasks</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+1828:         <span class="ruby-node">/^#{prefix}:/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">name</span>
+1829:       }
+1830:     <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+##
+## dbconfig-common includes example packages with its documentation.  these
+## packages contain copyright files as well, which is redundant but okay.
+##
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-multidbtype-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-mysql-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-mysql-perl-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-pgsql-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-mysql-2.1/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-mysql-frontend-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-1.9/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-sqlite-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-sqlite3-2.0/COPYING
+extra-license-file usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.0/COPYING
+
+##
+## and these are harmless false-positives, also because of the examples.
+##
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-multidbtype-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-multidbtype-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-multidbtype-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-multidbtype-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-perl-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-perl-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-perl-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-perl-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.1/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.1/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.1/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-2.1/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite3-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite3-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite3-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-sqlite3-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.0/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.1/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.1/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.1/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-pgsql-migration-2.1/debian/prerm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-frontend-2.0/debian/postinst
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-frontend-2.0/debian/postrm
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-frontend-2.0/debian/config
+debconf-is-not-a-registry ./usr/share/doc/dbconfig-common/examples/db-test-mysql-frontend-2.0/debian/prerm
+package-contains-empty-directory usr/share/dbconfig-common/data/

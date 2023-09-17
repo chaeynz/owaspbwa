@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_pycentral
+rm -f /var/lib/pycentral/python-pexpect.pkgremove
+if which pycentral >/dev/null 2>&1; then
+	pycentral pkginstall python-pexpect
+	if grep -qs '^python-pexpect$' /var/lib/pycentral/delayed-pkgs; then
+		sed -i '/^python-pexpect$/d' /var/lib/pycentral/delayed-pkgs
+	fi
+fi
+# End automatically added section

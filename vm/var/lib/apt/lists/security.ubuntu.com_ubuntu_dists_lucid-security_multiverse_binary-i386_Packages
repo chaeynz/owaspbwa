@@ -1,0 +1,458 @@
+Package: flashplugin-installer
+Priority: optional
+Section: multiverse/web
+Installed-Size: 116
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Bart Martens <bartm@knars.be>
+Architecture: i386
+Source: flashplugin-nonfree
+Version: 11.2.202.280ubuntu0.10.04.1
+Replaces: flashplugin (<< 6), flashplugin-nonfree
+Provides: flashplugin-nonfree
+Depends: debconf | debconf-2.0, wget, libgtk2.0-0, fontconfig, libxt6, libxext6, libatk1.0-0, libc6, libcairo2, libexpat1, libfontconfig1, libfreetype6, libglib2.0-0, libice6, libpango1.0-0, libpng12-0, libsm6, libx11-6, libxau6, libxcursor1, libxdmcp6, libxfixes3, libxi6, libxinerama1, libxrandr2, libxrender1, zlib1g, libnss3-1d (>= 3.12.0~beta3), libnspr4-0d (>= 4.7.1~beta2)
+Recommends: libasound2-plugins (>= 1.0.16)
+Suggests: firefox, xulrunner-1.9, firefox-3.0, konqueror-nsplugins, x-ttcidfont-conf, msttcorefonts, ttf-bitstream-vera | ttf-dejavu, ttf-xfree86-nonfree, xfs (>= 1:1.0.1-5)
+Conflicts: flashplayer-mozilla, flashplugin (<< 6), flashplugin-nonfree (<< 10.0.22.87ubuntu2~), libflashsupport, xfs (<< 1:1.0.1-5)
+Filename: pool/multiverse/f/flashplugin-nonfree/flashplugin-installer_11.2.202.280ubuntu0.10.04.1_i386.deb
+Size: 20958
+MD5sum: a2da225646d1b383f2d6323e85afde3f
+SHA1: fb114b47483676e5c5cd9024013678667f2f18a7
+SHA256: 4a2294bf0674d419ed84a332c1c9a9048e05af966e9d189a06907589991c3013
+Description: Adobe Flash Player plugin installer
+ Downloads and Installs the Adobe Flash Player plugin. The Adobe Flash Player
+ plugin supports playing of media and other dynamic content online.
+ .
+ The Adobe Flash Player plugin will work with a range of web-browsers including,
+ limited to:
+  * Firefox
+  * Chromium
+  * SeaMonkey
+  * Iceweasel
+  * Iceape
+  * Galeon
+  * Epiphany
+  * Konqueror
+ .
+ WARNING: Installing this Ubuntu package causes the Adobe Flash Player plugin to
+ be downloaded from the Canonical partner archive. The distribution license of
+ the Adobe Flash Player plugin is available at www.adobe.com. Installing this
+ Ubuntu package implies that you have accepted the terms of that license.
+Homepage: http://www.adobe.com/products/flashplayer.html
+Npp-Applications: ec8030f7-c20a-464f-9b0e-13a3a9e97384, 92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a, aa5ca914-c309-495d-91cf-3141bbb04115
+Npp-Description: Adobe Flash SWF Player (http://www.adobe.com)
+Npp-File: libflashplayer.so
+Npp-Mimetype: application/x-shockwave-flash
+Npp-Name: Adobe Flash Player (installer)
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: flashplugin-nonfree
+Priority: optional
+Section: multiverse/web
+Installed-Size: 48
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Bart Martens <bartm@knars.be>
+Architecture: i386
+Version: 11.2.202.280ubuntu0.10.04.1
+Depends: flashplugin-installer
+Filename: pool/multiverse/f/flashplugin-nonfree/flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1_i386.deb
+Size: 2124
+MD5sum: 12de11dda4985c15d8faa3868d2f9f7d
+SHA1: c794dea6b29f4bd1caa10855a6728ef1ad2a5ea1
+SHA256: 565afb6d37de5c8ca019aa9632d67181e411eaa0f83e9e8641fc1fdb0b114d66
+Description: Adobe Flash Player plugin installer (transitional package)
+ This package is a transitional package that can safely be removed after you installed
+ flashplugin-installer.
+Homepage: http://www.adobe.com/products/flashplayer.html
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: gecko-mediaplayer
+Priority: optional
+Section: multiverse/graphics
+Installed-Size: 672
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Cesare Tirabassi <norsetto@ubuntu.com>
+Architecture: i386
+Version: 0.9.9.2-1ubuntu0.10.04.2
+Depends: libc6 (>= 2.4), libdbus-1-3 (>= 1.0.2), libdbus-glib-1-2 (>= 0.78), libgcc1 (>= 1:4.1.1), libgconf2-4 (>= 2.27.0), libglib2.0-0 (>= 2.14), libstdc++6 (>= 4.1.1), gconf2 (>= 2.10.1-2), gnome-mplayer (>= 0.9.9.2), iceweasel | firefox | firefox-3.5 | iceape-browser | epiphany-browser | galeon | midbrowser | xulrunner | xulrunner-1.9 | konqueror (>= 4:4) | opera (>= 9.50) | chromium-browser (>> 4.0)
+Filename: pool/multiverse/g/gecko-mediaplayer/gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2_i386.deb
+Size: 202108
+MD5sum: 8bb4b69f64867a878ba4a0628673c9a7
+SHA1: 75b23b57989e7e6e22dfc16cff99a6ad06031f5b
+SHA256: 5303d8b4d19374cdb1725e739f9d18d348191efecc2424b61886046604d57f25
+Description: Multimedia plug-in for Gecko browsers
+ Gecko Media Player is a browser plug-in that uses GNOME MPlayer
+ and Mplayer to play media in a browser.
+ It uses the NS4 API and is therefore compatible with all NS4 derived browsers:
+ Iceweasel, Firefox, Iceape, Epiphany, Galeon, Midbrowser, Xulrunner, etc.
+ .
+ It is the modern replacement for mplayerplug-in (from the same author).
+Homepage: http://kdekorte.googlepages.com/gecko-mediaplayer
+Npp-Applications: ec8030f7-c20a-464f-9b0e-13a3a9e97384, 92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a, aa5ca914-c309-495d-91cf-3141bbb04115
+Npp-Description: Play media off the net using the gnome-mplayer
+Npp-File: gecko-mediaplayer
+Npp-Mimetype: video/mpeg, audio/mpeg, video/x-mpeg, video/x-mpeg2, audio/x-mpeg, audio/mpeg2, audio/x-mpeg2, audio/mpeg3, audio/x-mpeg3, audio/mp3, audio/x-mpegurl, video/mp4, application/x-ogg, audio/ogg, application/ogg, video/fli, video/x-fli, video/vnd.vivo, application/x-nsv-vp3-mp3, audio/basic, audio/x-basic, audio/x-scpls, video/divx, video/vnd.divx, audio/midi, video/quicktime, video/x-quicktime, image/x-quicktime, video/quicktime, video/quicktime, application/x-quicktimeplayer, application/asx, video/x-ms-asf-plugin, video/x-msvideo, video/msvideo, application/x-mplayer2, application/x-ms-wmv, video/x-ms-asf, video/x-ms-wm, video/x-ms-wmv, audio/x-ms-wmv, video/x-ms-wmp, video/x-ms-wvx, audio/x-ms-wax, audio/x-ms-wma, application/x-drm-v2, audio/wav, audio/x-wav, audio/x-pn-realaudio, application/vnd.rn-realmedia, application/vnd.rn-realaudio, video/vnd.rn-realvideo, audio/x-realaudio, audio/x-pn-realaudio-plugin, application/smil, audio/x-mod
+Npp-Name: Gecko Media Player
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: gs-aladdin
+Priority: extra
+Section: multiverse/text
+Installed-Size: 80
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Masayuki Hatta (mhatta) <mhatta@debian.org>
+Architecture: all
+Source: ghostscript
+Version: 8.71.dfsg.1-0ubuntu5.7
+Depends: ghostscript, ghostscript-x
+Filename: pool/multiverse/g/ghostscript/gs-aladdin_8.71.dfsg.1-0ubuntu5.7_all.deb
+Size: 37638
+MD5sum: cfaa449e2553a9010a728f5d2fefa1a7
+SHA1: e6669072dfc2437497004da39db8944d2f016825
+SHA256: 73a3e07972179bf067831e79bf708d7373153f8c232b198aa817ef42115dc815
+Description: Transitional package
+ This dummy package is provided for a smooth transition from the
+ previous  gs-aladdin package (the package is replaced by ghostscript).
+ It may safely be removed after installation.
+Homepage: http://www.ghostscript.com/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavcodec-extra-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 10904
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: ffmpeg (<< 4:0.5.1-1), libavcodec-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavcodec52
+Depends: libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.7), libdirac-encoder0, libfaad2, libgsm1 (>= 1.0.13), libmp3lame0, libopenjpeg2, libschroedinger-1.0-0 (>= 1.0.0), libspeex1 (>= 1.2~beta3-1), libtheora0 (>= 0.0.0.alpha7.dfsg), libvorbis0a (>= 1.1.2), libvorbisenc2 (>= 1.1.2), libx264-85, libxvidcore4 (>= 1.2.2), zlib1g (>= 1:1.1.4)
+Suggests: libfaad0
+Conflicts: libavcodec-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavcodec52
+Filename: pool/multiverse/f/ffmpeg-extra/libavcodec-extra-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 4029324
+MD5sum: ff11f0bd648f69f9d94e5fdc09aedb46
+SHA1: 7becf61ee61732f9f4948cab3575a6232c18b787
+SHA256: 143245c8d196a6c0f96b87c58d9daebe0e6a262a6eb4975d2474f8c7d7fa136f
+Description: ffmpeg codec library
+ This is the codec library from the ffmpeg project. It supports most existing
+ encoding formats (MPEG, DivX, MPEG4, AC3, DV...).
+ .
+ This package contains a unrestricted version of the libavcodec shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavcodec-unstripped-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavcodec-extra-52 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavcodec-unstripped-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43644
+MD5sum: aff04d7e5062d9ab8ab5c39f327cf0ac
+SHA1: 3023ea96941f4b8613f07085f79ad278fbd21d71
+SHA256: 8b508a4e6f526ddcf74675aa7d3238730374a25d9ad0ee05f8f950341354f9d8
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavdevice-extra-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 188
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavdevice-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavdevice52
+Depends: libasound2 (>> 1.0.22), libavcodec-extra-52 (>= 4:0.5.9), libavcodec-extra-52 (<< 4:0.5.9-99), libavformat-extra-52 (>= 4:0.5.9), libavformat-extra-52 (<< 4:0.5.9-99), libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.7), libdc1394-22, libx11-6 (>= 0), libxext6 (>= 0)
+Conflicts: libavdevice-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavdevice52
+Filename: pool/multiverse/f/ffmpeg-extra/libavdevice-extra-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 78006
+MD5sum: e8de901e9fce35ca7a8f85e4e94407ec
+SHA1: 9b77975e1cf60b7748da428b0e12efd075c91138
+SHA256: cbf53fd92178d010871a84fe1f30c79f82411412e37bdd99c7de64dee8fb241e
+Description: ffmpeg device handling library
+ This is the device handling library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libavdevice shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavdevice-unstripped-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavdevice-extra-52 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavdevice-unstripped-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43648
+MD5sum: 66273e3acf60428516d6db6dd5561583
+SHA1: b2e5113f71638e3465a0220ea629456cbcbd1a4a
+SHA256: 272f8423e753796c2d2fc9c2097ed8b6e3b045a0355d9fd27f6d482128d77c64
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavfilter-extra-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 148
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavfilter-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libavfilter0
+Depends: libavcodec-extra-52 (>= 4:0.5.9), libavcodec-extra-52 (<< 4:0.5.9-99), libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.3.6-6~)
+Conflicts: libavfilter-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libavfilter0
+Filename: pool/multiverse/f/ffmpeg-extra/libavfilter-extra-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 53416
+MD5sum: e378f0e51711813e44f5f10cc8b45335
+SHA1: b7427e4dc56e4cf5866c3ad43451eec6a1751741
+SHA256: b1d57948b870cdb9fead5cc809a14647320b481e4d477e6752c28a769896d05f
+Description: ffmpeg video filtering library
+ This is the video filtering library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libavfilter shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavfilter-unstripped-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavfilter0
+Depends: libavfilter-extra-0 (= 4:0.5.9-0ubuntu0.10.04.3)
+Conflicts: libavfilter0
+Filename: pool/multiverse/f/ffmpeg-extra/libavfilter-unstripped-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43660
+MD5sum: 8058913d97b6622b55515358d6e398e2
+SHA1: ff2903f880ca52c16d30d0113d0c1146f3be215b
+SHA256: edb6c6f4c24a66380d2fdad6c6469df8905ef8cab020a1752649abd267a19dbd
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavformat-extra-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 1524
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavformat-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavformat52
+Depends: libavcodec-extra-52 (>= 4:0.5.9), libavcodec-extra-52 (<< 4:0.5.9-99), libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libbz2-1.0, libc6 (>= 2.7), zlib1g (>= 1:1.1.4)
+Conflicts: libavformat-unstripped-52 (<< 4:0.5.9-0ubuntu0.10.04.3), libavformat52
+Breaks: libavcodec51
+Filename: pool/multiverse/f/ffmpeg-extra/libavformat-extra-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 723360
+MD5sum: 1d525758251c5eeb063d070d995b41a3
+SHA1: 7ffb13cfbdb0f7889b947e90f949168c736e17f1
+SHA256: 60cd2601c4ba731a8ba8e02ec811d6a9c27ae020db65a1cadddfc93ad744fe82
+Description: ffmpeg file format library
+ This is the demuxer library from the ffmpeg project. It supports most
+ existing file formats (AVI, MPEG, OGG, Matroska, ASF...).
+ .
+ This package contains a unrestricted version of the libavformat shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavformat-unstripped-52
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavformat-extra-52 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavformat-unstripped-52_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43640
+MD5sum: 195a74fa97fdc2d4c0c9bc388e5b44d4
+SHA1: 5cdb49a15eba0d70c226b30629a233ab1225ffe1
+SHA256: 18472dc11dc03cf0b1adbb709241124cdb22b785de076b3c299ad92c2d808843
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavutil-extra-49
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 220
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libavutil-unstripped-49 (<< 4:0.5.9-0ubuntu0.10.04.3), libavutil49
+Depends: libc6 (>= 2.4)
+Conflicts: libavutil-unstripped-49 (<< 4:0.5.9-0ubuntu0.10.04.3), libavutil49
+Filename: pool/multiverse/f/ffmpeg-extra/libavutil-extra-49_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 102850
+MD5sum: b3afd0479b784e3e694381e9a559b4b5
+SHA1: c8c881c6653be09fde09d24ca51efd79023bdde2
+SHA256: 1e887142b5b9bf130955ce82e494345cce3048ea0552a9dcaeb636e60731a8a7
+Description: ffmpeg utility library
+ This is the common utility library from the ffmpeg project. It is required
+ by all other ffmpeg libraries.
+ .
+ This package contains a unrestricted version of the libavutil shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libavutil-unstripped-49
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libavutil-extra-49 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libavutil-unstripped-49_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43650
+MD5sum: 59256175867aa73b66a9f1b050fa253b
+SHA1: 80207db9991861f6f35461871fb1858356ca134d
+SHA256: 09a0c0e6bed347f9b6e0172e97714794e35bc02ac9da15a03c5ce5be190a4be8
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libpostproc-extra-51
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 588
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libpostproc-unstripped-51 (<< 4:0.5.9-0ubuntu0.10.04.3), libpostproc51
+Depends: libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.4)
+Conflicts: libpostproc-unstripped-51 (<< 4:0.5.9-0ubuntu0.10.04.3), libpostproc51
+Filename: pool/multiverse/f/ffmpeg-extra/libpostproc-extra-51_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 193216
+MD5sum: 0b166b942f89387e984328042330d419
+SHA1: f4fb710ef40c196e4a31530f3d5f8c0caa04e50c
+SHA256: c09630f8bfd15d400eca85b1402cf830de7b90646fbedc051cbde8861b56dd6e
+Description: ffmpeg video postprocessing library
+ This is the video postprocessing library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libpostproc shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libpostproc-unstripped-51
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libpostproc-extra-51 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libpostproc-unstripped-51_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43642
+MD5sum: baf6aebfe0a33791f86a72a63ef5e9a4
+SHA1: 2135fe4e48ca4f57c2f42992a03709a4b31c0777
+SHA256: 9336bdc2c97571edd02c6272b03017ae017c201f63a58d5abc72d3ea07d1a16a
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libswscale-extra-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 696
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Replaces: libswscale-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libswscale0
+Depends: libavutil-extra-49 (>= 4:0.5.9), libavutil-extra-49 (<< 4:0.5.9-99), libc6 (>= 2.3.6-6~)
+Conflicts: libswscale-unstripped-0 (<< 4:0.5.9-0ubuntu0.10.04.3), libswscale0
+Filename: pool/multiverse/f/ffmpeg-extra/libswscale-extra-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 232824
+MD5sum: e7ea7ba25369d99cde7ad38ceadf7a6b
+SHA1: 19b0bd16e0ad63450219b23344d6cddf30a4acf8
+SHA256: 6786e25b212fd577d62552ebe2f3c6505c380dd665f490f98db8e57502007fa2
+Description: ffmpeg video scaling library
+ This is the video scaling library from the ffmpeg project.
+ .
+ This package contains a unrestricted version of the libswscale shared
+ object that should only be used by Debian packages.
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+
+Package: libswscale-unstripped-0
+Priority: optional
+Section: multiverse/libs
+Installed-Size: 84
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Source: ffmpeg-extra
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Depends: libswscale-extra-0 (= 4:0.5.9-0ubuntu0.10.04.3)
+Filename: pool/multiverse/f/ffmpeg-extra/libswscale-unstripped-0_0.5.9-0ubuntu0.10.04.3_i386.deb
+Size: 43640
+MD5sum: 93a0ad52b1deac6f89012719bea13b67
+SHA1: d2fce6549a97a2d0d82bef0d0e52b40c4ccea507
+SHA256: f8833228c4044e07ef35cf49497ce14f63eba6dde93e5a360765a322ef16511c
+Description: ffmpeg utility library - transitional package
+ This package can be safely removed if no other packages depend on this
+Homepage: http://ffmpeg.org/
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Origin: Ubuntu
+

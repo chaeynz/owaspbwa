@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Bazaar</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="version-control-system.html" title="Chapter 16. Version Control System" />
+    <link rel="prev" href="version-control-system.html" title="Chapter 16. Version Control System" />
+    <link rel="next" href="subversion.html" title="Subversion" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="version-control-system.html">Version Control System</a></span> &gt; <span class="breadcrumb-node">Bazaar</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Bazaar">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="bazaar"></a>Bazaar</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+          Bazaar is a new version control system sponsored by Canonical, the
+          commercial company behind Ubuntu. Unlike Subversion and CVS that
+          only support a central repository model, Bazaar also supports
+          <span class="emphasis"><em>distributed version control</em></span>, giving people
+          the ability to collaborate more efficiently. In particular,
+          Bazaar is designed to maximize the level of community participation
+          in open source projects.
+          </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="bzr-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+              At a terminal prompt, enter the following command to install
+              <span class="application"><strong>bzr</strong></span>:
+
+</p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install bzr</strong></span>
+</pre>
+                <p>
+            </p>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="bzr-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            To introduce yourself to <span class="application"><strong>bzr</strong></span>,
+            use the <span class="emphasis"><em>whoami</em></span> command like this:
+</p>
+                <pre class="screen">
+<span class="command"><strong>$ bzr whoami 'Joe Doe &lt;joe.doe@gmail.com&gt;'</strong></span>
+</pre>
+                <p>
+            </p>
+              </div>
+              <div class="sect2" title="Learning Bazaar">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="bzr-learning"></a>Learning Bazaar</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            Bazaar comes with bundled documentation installed into
+            <span class="application"><strong>/usr/share/doc/bzr/html</strong></span> by default.
+            The tutorial is a good place to start. The
+            <span class="application"><strong>bzr</strong></span> command also comes with
+            built-in help:
+</p>
+                <pre class="screen">
+<span class="command"><strong>$ bzr help</strong></span>
+</pre>
+                <p>
+            </p>
+                <p>
+            To learn more about the <span class="emphasis"><em>foo</em></span> command:
+</p>
+                <pre class="screen">
+<span class="command"><strong>$ bzr help foo</strong></span>
+</pre>
+                <p>            
+            </p>
+              </div>
+              <div class="sect2" title="Launchpad Integration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="bzr-lp-integration"></a>Launchpad Integration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+            While highly useful as a stand-alone system, Bazaar has good, optional
+            integration with <a class="ulink" href="https://launchpad.net/" target="_top">Launchpad</a>,
+            the collaborative development system used by Canonical and the
+            broader open source community to manage and extend Ubuntu itself.
+            For information on how Bazaar can be used with Launchpad to
+            collaborate on open source projects, see
+            <a class="ulink" href="http://bazaar-vcs.org/LaunchpadIntegration/" target="_top">
+            http://bazaar-vcs.org/LaunchpadIntegration</a>.</p>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="version-control-system.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="version-control-system.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="subversion.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 16. Version Control System </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Subversion</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

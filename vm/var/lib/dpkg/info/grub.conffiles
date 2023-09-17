@@ -1,0 +1,3 @@
+/etc/event.d/last-good-boot
+/etc/default/kernel-helper-rc
+/etc/kernel/prerm.d/last-good-boot

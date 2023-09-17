@@ -1,0 +1,52 @@
+#! /bin/sh -e
+#
+### BEGIN INIT INFO
+# Provides:          courier-authdaemon
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+### END INIT INFO
+
+prefix="/usr"
+exec_prefix=${prefix}
+sysconfdir="/etc/courier"
+sbindir="${exec_prefix}/sbin"
+daemonscript="${sbindir}/authdaemond"
+rundir="/var/run/courier/authdaemon"
+
+. /lib/lsb/init-functions
+
+# Check for a leftover init script
+if [ ! -x $daemonscript ]; then
+	exit 0
+fi
+
+case "$1" in
+start)
+	# Start daemon.
+	cd /
+	log_daemon_msg "Starting Courier authentication services" "authdaemond"
+	if [ ! -d "$rundir" ]; then
+		mkdir -p -m 0750 $rundir 
+	fi
+	$daemonscript start
+	log_end_msg 0
+	;;
+stop)
+	# Stop daemon.
+	cd /
+	log_daemon_msg "Stopping Courier authentication services" "authdaemond"
+	$daemonscript stop
+	log_end_msg 0
+    ;;
+restart|force-reload)
+	$0 stop
+	$0 start
+    ;;
+*)
+	echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+	exit 2
+	;;
+esac
+exit 0

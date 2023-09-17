@@ -1,0 +1,798 @@
+From MAILER-DAEMON  Sun Nov  8 23:00:23 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 7C74A2275F; Sun,  8 Nov 2009 23:00:23 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:00:23 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="55EFD2275C.1257739223/brokenwebapps.localdomain"
+Message-Id: <20091109040023.7C74A2275F@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--55EFD2275C.1257739223/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<brokenwordpress@example.org>: example.org
+
+--55EFD2275C.1257739223/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 55EFD2275C
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:00:23 -0500 (EST)
+
+Final-Recipient: rfc822; brokenwordpress@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--55EFD2275C.1257739223/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 55EFD2275C; Sun,  8 Nov 2009 23:00:23 -0500 (EST)
+To: brokenwordpress@example.org
+Subject: [Broken WordPress] Password Reset
+MIME-Version: 1.0
+From: wordpress@owaspbwa
+Content-Type: text/plain; charset="UTF-8"
+Message-Id: <20091109040023.55EFD2275C@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:00:23 -0500 (EST)
+
+
+Someone has asked to reset the password for the following site and username.
+
+http://owaspbwa/wordpress
+
+Username: admin
+
+To reset your password visit the following address, otherwise just ignore this email and nothing will happen.
+
+http://owaspbwa/wordpress/wp-login.php?action=resetpass&key=21b6b8fcdfc2330f329e9c3807bb6d53
+
+
+--55EFD2275C.1257739223/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:02:48 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 3C90A2275F; Sun,  8 Nov 2009 23:02:48 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:02:48 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="228E82275E.1257739368/brokenwebapps.localdomain"
+Message-Id: <20091109040248.3C90A2275F@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--228E82275E.1257739368/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<brokenwordpress@example.org>: example.org
+
+--228E82275E.1257739368/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 228E82275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:02:48 -0500 (EST)
+
+Final-Recipient: rfc822; brokenwordpress@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--228E82275E.1257739368/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 228E82275E; Sun,  8 Nov 2009 23:02:48 -0500 (EST)
+To: brokenwordpress@example.org
+Subject: [Broken WordPress] Please moderate: "This is a title"
+MIME-Version: 1.0
+From: wordpress@owaspbwa
+Content-Type: text/plain; charset="UTF-8"
+Message-Id: <20091109040248.228E82275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:02:48 -0500 (EST)
+
+
+A new comment on the post #3 "This is a title" is waiting for your approval
+http://owaspbwa/wordpress/?p=3
+
+Author : Anonymous Reply (IP: 192.168.23.1 , 192.168.23.1)
+E-mail : asdf@example.org
+URI    : http://owasp.org
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=192.168.23.1
+Comment: 
+Anonymous Reply
+
+To approve this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=mailapprovecomment&p=3&comment=3
+To delete this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=confirmdeletecomment&p=3&comment=3
+Currently 2 comments are waiting for approval. Please visit the moderation panel:
+http://owaspbwa/wordpress/wp-admin/moderation.php
+
+
+--228E82275E.1257739368/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:03:31 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 041DA2275F; Sun,  8 Nov 2009 23:03:31 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:03:31 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="485092275E.1257739411/brokenwebapps.localdomain"
+Message-Id: <20091109040331.041DA2275F@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--485092275E.1257739411/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<brokenwordpress@example.org>: example.org
+
+--485092275E.1257739411/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 485092275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:03:30 -0500 (EST)
+
+Final-Recipient: rfc822; brokenwordpress@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--485092275E.1257739411/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 485092275E; Sun,  8 Nov 2009 23:03:30 -0500 (EST)
+To: brokenwordpress@example.org
+Subject: [Broken WordPress] Comment: "This is a title"
+MIME-Version: 1.0
+From: "Another User" <wordpress@owaspbwa>
+Content-Type: text/plain; charset="UTF-8"
+Reply-To: "user@example.org" <user@example.org>
+Message-Id: <20091109040330.485092275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:03:30 -0500 (EST)
+
+
+New comment on your post #3 "This is a title"
+Author : Another User (IP: 192.168.23.1 , 192.168.23.1)
+E-mail : user@example.org
+URI    : http://www
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=192.168.23.1
+Comment: 
+This is a comment
+
+You can see all comments on this post here: 
+http://owaspbwa/wordpress/?p=3#comments
+
+To delete this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=confirmdeletecomment&p=3&comment=2
+
+
+--485092275E.1257739411/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:03:31 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 2DDC52275E; Sun,  8 Nov 2009 23:03:31 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:03:31 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="EB1352275C.1257739411/brokenwebapps.localdomain"
+Message-Id: <20091109040331.2DDC52275E@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--EB1352275C.1257739411/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<brokenwordpress@example.org>: example.org
+
+--EB1352275C.1257739411/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: EB1352275C
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:03:30 -0500 (EST)
+
+Final-Recipient: rfc822; brokenwordpress@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--EB1352275C.1257739411/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id EB1352275C; Sun,  8 Nov 2009 23:03:30 -0500 (EST)
+To: brokenwordpress@example.org
+Subject: [Broken WordPress] Comment: "This is a title"
+MIME-Version: 1.0
+From: "Anonymous Reply" <wordpress@owaspbwa>
+Content-Type: text/plain; charset="UTF-8"
+Reply-To: "asdf@example.org" <asdf@example.org>
+Message-Id: <20091109040330.EB1352275C@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:03:30 -0500 (EST)
+
+
+New comment on your post #3 "This is a title"
+Author : Anonymous Reply (IP: 192.168.23.1 , 192.168.23.1)
+E-mail : asdf@example.org
+URI    : http://owasp.org
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=192.168.23.1
+Comment: 
+Anonymous Reply
+
+You can see all comments on this post here: 
+http://owaspbwa/wordpress/?p=3#comments
+
+To delete this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=confirmdeletecomment&p=3&comment=3
+
+
+--EB1352275C.1257739411/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:05:33 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 896AC22762; Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="78F5B2275C.1257739533/brokenwebapps.localdomain"
+Message-Id: <20091109040533.896AC22762@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--78F5B2275C.1257739533/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<user@example.org>: example.org
+
+--78F5B2275C.1257739533/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 78F5B2275C
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+
+Final-Recipient: rfc822; user@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--78F5B2275C.1257739533/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 78F5B2275C; Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+To: user@example.org
+Subject: [Broken WordPress] Your username and password
+MIME-Version: 1.0
+From: wordpress@owaspbwa
+Content-Type: text/plain; charset="UTF-8"
+Message-Id: <20091109040533.78F5B2275C@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+
+
+Username: user
+Password: fd46457
+http://owaspbwa/wordpress/wp-login.php
+
+
+--78F5B2275C.1257739533/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:05:34 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 8688922761; Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="672D02275E.1257739533/brokenwebapps.localdomain"
+Message-Id: <20091109040533.8688922761@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--672D02275E.1257739533/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<brokenwordpress@example.org>: example.org
+
+--672D02275E.1257739533/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 672D02275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+
+Final-Recipient: rfc822; brokenwordpress@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--672D02275E.1257739533/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 672D02275E; Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+To: brokenwordpress@example.org
+Subject: [Broken WordPress] New User Registration
+MIME-Version: 1.0
+From: wordpress@owaspbwa
+Content-Type: text/plain; charset="UTF-8"
+Message-Id: <20091109040533.672D02275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:05:33 -0500 (EST)
+
+
+New user registration on your blog Broken WordPress:
+
+Username: user
+
+E-mail: user@example.org
+
+
+--672D02275E.1257739533/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:07:40 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 2AD2D2275F; Sun,  8 Nov 2009 23:07:40 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:07:40 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="0F3AA2275E.1257739660/brokenwebapps.localdomain"
+Message-Id: <20091109040740.2AD2D2275F@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--0F3AA2275E.1257739660/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<brokenwordpress@example.org>: example.org
+
+--0F3AA2275E.1257739660/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 0F3AA2275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:07:40 -0500 (EST)
+
+Final-Recipient: rfc822; brokenwordpress@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--0F3AA2275E.1257739660/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 0F3AA2275E; Sun,  8 Nov 2009 23:07:40 -0500 (EST)
+To: brokenwordpress@example.org
+Subject: [Broken WordPress] Please moderate: "This is a title"
+MIME-Version: 1.0
+From: wordpress@owaspbwa
+Content-Type: text/plain; charset="UTF-8"
+Message-Id: <20091109040740.0F3AA2275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:07:40 -0500 (EST)
+
+
+A new comment on the post #3 "This is a title" is waiting for your approval
+http://owaspbwa/wordpress/?p=3
+
+Author : user (IP: 192.168.23.1 , 192.168.23.1)
+E-mail : user@example.org
+URI    : 
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=192.168.23.1
+Comment: 
+>From user.
+
+To approve this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=mailapprovecomment&p=3&comment=4
+To delete this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=confirmdeletecomment&p=3&comment=4
+Currently 1 comments are waiting for approval. Please visit the moderation panel:
+http://owaspbwa/wordpress/wp-admin/moderation.php
+
+
+--0F3AA2275E.1257739660/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:08:08 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 5047E2275C; Sun,  8 Nov 2009 23:08:08 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:08:08 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="3A01B2275E.1257739688/brokenwebapps.localdomain"
+Message-Id: <20091109040808.5047E2275C@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--3A01B2275E.1257739688/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<admin@example.org>: example.org
+
+--3A01B2275E.1257739688/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 3A01B2275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:08:08 -0500 (EST)
+
+Final-Recipient: rfc822; admin@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--3A01B2275E.1257739688/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 3A01B2275E; Sun,  8 Nov 2009 23:08:08 -0500 (EST)
+To: admin@example.org
+Subject: [Broken WordPress] Comment: "This is a title"
+MIME-Version: 1.0
+From: "user" <wordpress@owaspbwa>
+Content-Type: text/plain; charset="UTF-8"
+Reply-To: "user@example.org" <user@example.org>
+Message-Id: <20091109040808.3A01B2275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:08:08 -0500 (EST)
+
+
+New comment on your post #3 "This is a title"
+Author : user (IP: 192.168.23.1 , 192.168.23.1)
+E-mail : user@example.org
+URI    : 
+Whois  : http://ws.arin.net/cgi-bin/whois.pl?queryinput=192.168.23.1
+Comment: 
+>From user.
+
+You can see all comments on this post here: 
+http://owaspbwa/wordpress/?p=3#comments
+
+To delete this comment, visit: http://owaspbwa/wordpress/wp-admin/post.php?action=confirmdeletecomment&p=3&comment=4
+
+
+--3A01B2275E.1257739688/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:20:28 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 32CD02275F; Sun,  8 Nov 2009 23:20:28 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:20:28 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="17B732275E.1257740428/brokenwebapps.localdomain"
+Message-Id: <20091109042028.32CD02275F@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--17B732275E.1257740428/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<user@example.org>: example.org
+
+--17B732275E.1257740428/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: 17B732275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:20:28 -0500 (EST)
+
+Final-Recipient: rfc822; user@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--17B732275E.1257740428/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id 17B732275E; Sun,  8 Nov 2009 23:20:28 -0500 (EST)
+To: user@example.org
+Subject: Welcome to phpBB 2.0.0 Forums
+From: 
+Message-Id: <20091109042028.17B732275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:20:28 -0500 (EST)
+
+
+Welcome to phpBB 2.0.0 Forums
+
+Please keep this email for your records. Your account information is as follows:
+
+----------------------------
+Username: user
+Password: user
+----------------------------
+
+Please do not forget your password as it has been encrypted in our database and we cannot retrieve it for you. However, should you forget your password you can request a new one which will be activated in the same way as this account.
+
+Thank you for registering.
+
+-- 
+Thanks, The Management
+
+--17B732275E.1257740428/brokenwebapps.localdomain--
+
+From MAILER-DAEMON  Sun Nov  8 23:34:01 2009
+Return-Path: <>
+X-Original-To: www-data@brokenwebapps.localdomain
+Delivered-To: www-data@brokenwebapps.localdomain
+Received: by brokenwebapps.localdomain (Postfix)
+	id 21F002275F; Sun,  8 Nov 2009 23:34:01 -0500 (EST)
+Date: Sun,  8 Nov 2009 23:34:01 -0500 (EST)
+From: MAILER-DAEMON@brokenwebapps.localdomain (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: www-data@brokenwebapps.localdomain
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="F25572275E.1257741241/brokenwebapps.localdomain"
+Message-Id: <20091109043401.21F002275F@brokenwebapps.localdomain>
+
+This is a MIME-encapsulated message.
+
+--F25572275E.1257741241/brokenwebapps.localdomain
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host brokenwebapps.localdomain.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<mod@example.org>: example.org
+
+--F25572275E.1257741241/brokenwebapps.localdomain
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; brokenwebapps.localdomain
+X-Postfix-Queue-ID: F25572275E
+X-Postfix-Sender: rfc822; www-data@brokenwebapps.localdomain
+Arrival-Date: Sun,  8 Nov 2009 23:34:00 -0500 (EST)
+
+Final-Recipient: rfc822; mod@example.org
+Action: failed
+Status: 5.0.0
+Diagnostic-Code: X-Postfix; example.org
+
+--F25572275E.1257741241/brokenwebapps.localdomain
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Received: by brokenwebapps.localdomain (Postfix, from userid 33)
+	id F25572275E; Sun,  8 Nov 2009 23:34:00 -0500 (EST)
+To: mod@example.org
+Subject: Welcome to phpBB 2.0.0 Forums
+From: 
+Message-Id: <20091109043400.F25572275E@brokenwebapps.localdomain>
+Date: Sun,  8 Nov 2009 23:34:00 -0500 (EST)
+
+
+Welcome to phpBB 2.0.0 Forums
+
+Please keep this email for your records. Your account information is as follows:
+
+----------------------------
+Username: mod
+Password: mod
+----------------------------
+
+Please do not forget your password as it has been encrypted in our database and we cannot retrieve it for you. However, should you forget your password you can request a new one which will be activated in the same way as this account.
+
+Thank you for registering.
+
+-- 
+Thanks, The Management
+
+--F25572275E.1257741241/brokenwebapps.localdomain--
+

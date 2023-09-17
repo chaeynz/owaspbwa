@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/interfaces/text/__init__.py

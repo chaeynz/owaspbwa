@@ -1,0 +1,12 @@
+37b1ee3fa3e1930821c1086d14fda460  usr/bin/pcretest
+4e9f25f90caef5faaee47eb09a3e51db  usr/lib/libpcreposix.so.3.12.1
+bf93eb6b2db4c9e20bb31528ed50ed27  usr/share/man/man1/pcretest.1.gz
+5b6c74d00bd1463582a3fcc9156d4e86  usr/share/man/man3/pcrepattern.3.gz
+0b271522a207386fa3360f66f0f40fbc  usr/share/doc/libpcre3/NEWS.gz
+95a339a0e8c8c2a6794e560b81abca96  usr/share/doc/libpcre3/AUTHORS
+1803fd54d33fac74c113b78c18d56355  usr/share/doc/libpcre3/README.Debian
+b74684cdd7069616a57aa29cb658da63  usr/share/doc/libpcre3/copyright
+5eceeebf725df5411c788dbff970c953  usr/share/doc/libpcre3/changelog.gz
+dac306ef19acb5864272f84ab928806c  usr/share/doc/libpcre3/README.gz
+c72b44d0ace4467e528764d802b1f00e  usr/share/doc/libpcre3/changelog.Debian.gz
+054e911e110dc349e7043406a0776bf9  lib/libpcre.so.3.12.1

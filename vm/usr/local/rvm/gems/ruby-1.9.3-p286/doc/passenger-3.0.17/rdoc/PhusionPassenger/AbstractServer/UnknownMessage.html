@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::AbstractServer::UnknownMessage - passenger-3.0.17 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/abstract_server.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">StandardError
+  
+</nav>
+
+    
+    
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractRequestHandler.html">PhusionPassenger::AbstractRequestHandler</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServer.html">PhusionPassenger::AbstractServer</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServer/InvalidPassword.html">PhusionPassenger::AbstractServer::InvalidPassword</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServer/ServerAlreadyStarted.html">PhusionPassenger::AbstractServer::ServerAlreadyStarted</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServer/ServerError.html">PhusionPassenger::AbstractServer::ServerError</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServer/ServerNotStarted.html">PhusionPassenger::AbstractServer::ServerNotStarted</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServer/UnknownMessage.html">PhusionPassenger::AbstractServer::UnknownMessage</a>
+  
+    <li><a href="../../PhusionPassenger/AbstractServerCollection.html">PhusionPassenger::AbstractServerCollection</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../../PhusionPassenger/AppInitError.html">PhusionPassenger::AppInitError</a>
+  
+    <li><a href="../../PhusionPassenger/AppProcess.html">PhusionPassenger::AppProcess</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/ApplicationSpawner.html">PhusionPassenger::ClassicRails::ApplicationSpawner</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/ApplicationSpawner/Error.html">PhusionPassenger::ClassicRails::ApplicationSpawner::Error</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/FrameworkSpawner.html">PhusionPassenger::ClassicRails::FrameworkSpawner</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/FrameworkSpawner/Error.html">PhusionPassenger::ClassicRails::FrameworkSpawner::Error</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRails/RequestHandler.html">PhusionPassenger::ClassicRails::RequestHandler</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions.html">PhusionPassenger::ClassicRailsExtensions</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACBaseExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACBaseExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACBenchmarkingExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACBenchmarkingExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ACRescueExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ACRescueExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ARAbstractAdapterExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ARAbstractAdapterExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/AVBenchmarkHelperExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::AVBenchmarkHelperExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/CacheStoreExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::CacheStoreExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ClassicRailsExtensions/AnalyticsLogging/ConcreteCacheStoreExtension.html">PhusionPassenger::ClassicRailsExtensions::AnalyticsLogging::ConcreteCacheStoreExtension</a>
+  
+    <li><a href="../../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../../PhusionPassenger/Dependency.html">PhusionPassenger::Dependency</a>
+  
+    <li><a href="../../PhusionPassenger/FrameworkInitError.html">PhusionPassenger::FrameworkInitError</a>
+  
+    <li><a href="../../PhusionPassenger/HTMLTemplate.html">PhusionPassenger::HTMLTemplate</a>
+  
+    <li><a href="../../PhusionPassenger/InitializationError.html">PhusionPassenger::InitializationError</a>
+  
+    <li><a href="../../PhusionPassenger/InvalidPath.html">PhusionPassenger::InvalidPath</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/ApplicationSpawner.html">PhusionPassenger::Rack::ApplicationSpawner</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/ApplicationSpawner/Error.html">PhusionPassenger::Rack::ApplicationSpawner::Error</a>
+  
+    <li><a href="../../PhusionPassenger/Rack/RequestHandler.html">PhusionPassenger::Rack::RequestHandler</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions.html">PhusionPassenger::Rails3Extensions</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../../PhusionPassenger/SpawnManager.html">PhusionPassenger::SpawnManager</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../../PhusionPassenger/UnknownError.html">PhusionPassenger::UnknownError</a>
+  
+    <li><a href="../../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/Kernel.html">PhusionPassenger::Utils::Kernel</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/PseudoIO.html">PhusionPassenger::Utils::PseudoIO</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/RewindableInput.html">PhusionPassenger::Utils::RewindableInput</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/RewindableInput/Tempfile.html">PhusionPassenger::Utils::RewindableInput::Tempfile</a>
+  
+    <li><a href="../../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../../PhusionPassenger/VersionNotFound.html">PhusionPassenger::VersionNotFound</a>
+  
+    <li><a href="../../PhusionPassenger/WSGI.html">PhusionPassenger::WSGI</a>
+  
+    <li><a href="../../PhusionPassenger/WSGI/ApplicationSpawner.html">PhusionPassenger::WSGI::ApplicationSpawner</a>
+  
+    <li><a href="../../ConditionVariable.html">ConditionVariable</a>
+  
+    <li><a href="../../Exception.html">Exception</a>
+  
+    <li><a href="../../GC.html">GC</a>
+  
+    <li><a href="../../IO.html">IO</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Process.html">Process</a>
+  
+    <li><a href="../../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::AbstractServer::UnknownMessage</h1>
+
+  <div id="description" class="description">
+    
+<p>Raised when the server receives a message with an unknown message name.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/commands/upgrade.py

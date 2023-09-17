@@ -1,0 +1,6 @@
+UtsRelease 2.4.8-26mdksmp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Mandrake 8.1 smp
+UtsMachine i386

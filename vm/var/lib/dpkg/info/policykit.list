@@ -1,0 +1,11 @@
+/var/lib/PolicyKit
+/etc
+/etc/init.d
+/etc/init.d/policykit
+/etc/pam.d
+/etc/pam.d/polkit
+/etc/dbus-1
+/etc/dbus-1/system.d
+/etc/dbus-1/system.d/org.freedesktop.PolicyKit.conf
+/etc/PolicyKit
+/etc/PolicyKit/PolicyKit.conf

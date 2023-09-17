@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Failsafe middleware is usually the top-most middleware in the Rack middleware chain. It returns the underlying middleware's response, but if the underlying middle raises an exception then Failsafe will log the exception into the Rails log file, and will attempt to return an error message response.
+- !ruby/struct:SM::Flow::P 
+  body: Failsafe is a last resort for logging errors and for telling the HTTP client that something went wrong. Do not confuse this with the ActionController::Rescue module, which is responsible for catching exceptions at deeper levels. Unlike Failsafe, which is as simple as possible, Rescue provides features that allow developers to hook into the error handling logic, and can customize the error message response based on the HTTP client's IP.
+constants: []
+
+full_name: ActionController::Failsafe
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: Failsafe
+superclass: Object

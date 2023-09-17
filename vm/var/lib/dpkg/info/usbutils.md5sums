@@ -1,0 +1,12 @@
+c13c12ae4ee8b593dcf3a30dbb62a5da  usr/sbin/lsusb
+95bd2a3a9a0aa50ba1f0fcf4cd13c6ac  usr/sbin/update-usbids
+281036e11638b8d4b25138ac4dd4cf57  usr/share/man/man8/lsusb.8.gz
+c6e3531d212bd8cef1f33401b71273bf  usr/share/man/man8/update-usbids.8.gz
+da6f58893924df5ef2dc829994050378  usr/share/man/man1/usb-devices.1.gz
+d7a6b9027e5a280c954ac7f680eac5be  usr/share/pkgconfig/usbutils.pc
+e1a798a6ca74e5e40739289754096bf4  usr/share/doc/usbutils/README.Debian
+9e913bdedd85111d966e79d3569f0f2b  usr/share/doc/usbutils/copyright
+9f3074bfd00b20b4244df1cfb021f31a  usr/share/doc/usbutils/changelog.gz
+b10497aebd6f46d600f0f5a27be25c82  usr/share/doc/usbutils/changelog.Debian.gz
+5e78e1b8c0e1e8cb73fded5de384c000  usr/bin/usb-devices
+8e24a315395ca359696f4745bad08436  var/lib/usbutils/usb.ids

@@ -1,0 +1,236 @@
+	CC = gcc
+	LD = ld
+	LDSHARED = gcc -shared
+	CFLAGS = -I/usr/local/rvm/usr/include -fPIC 
+	XCFLAGS = -include ruby/config.h -include ruby/missing.h -fvisibility=hidden -DRUBY_EXPORT
+	CPPFLAGS =   -I. -I.ext/include/i686-linux -I./include -I.
+	DLDFLAGS = -Wl,-soname,libruby.so.1.9  
+	SOLIBS = -lpthread -lrt -ldl -lcrypt -lm  
+generating encdb.h
+encdb.h unchanged
+making enc
+make[1]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[1]: Nothing to be done for `enc'.
+make[1]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+making srcs under enc
+make[1]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[1]: Nothing to be done for `srcs'.
+make[1]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+generating transdb.h
+transdb.h unchanged
+making trans
+make[1]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[1]: Nothing to be done for `./enc/trans'.
+make[1]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+making encs
+make[1]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[1]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[1]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/array/resize'
+installing default resize libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/array/resize'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/bug-3571'
+installing default bug libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/bug-3571'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/bug-3662'
+installing default bug libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/bug-3662'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/funcall'
+installing default funcall libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/funcall'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/load/dot.dot'
+installing default dot.dot libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/load/dot.dot'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/old_thread_select'
+installing default old_thread_select libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/old_thread_select'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/st/numhash'
+installing default numhash libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/st/numhash'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/string'
+installing default string libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/string'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/wait_for_single_fd'
+installing default wait_for_single_fd libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/wait_for_single_fd'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/win32/dln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/win32/dln'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/win32/fd_setsize'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/-test-/win32/fd_setsize'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/bigdecimal'
+installing default bigdecimal libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/bigdecimal'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/continuation'
+installing default continuation libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/continuation'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/coverage'
+installing default coverage libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/coverage'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/curses'
+installing default curses libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/curses'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/date'
+installing default date_core libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/date'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dbm'
+installing default dbm libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dbm'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest'
+installing digest libraries
+installing default digest libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/bubblebabble'
+installing default bubblebabble libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/bubblebabble'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/md5'
+installing default md5 libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/md5'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/rmd160'
+installing default rmd160 libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/rmd160'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/sha1'
+installing default sha1 libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/sha1'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/sha2'
+installing default sha2 libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/digest/sha2'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dl'
+installing dl libraries
+installing default dl libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dl'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dl/callback'
+installing default callback libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dl/callback'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dl/win32'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/dl/win32'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/etc'
+installing default etc libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/etc'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/fcntl'
+installing default fcntl libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/fcntl'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/fiber'
+installing default fiber libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/fiber'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/fiddle'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/fiddle'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/gdbm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/gdbm'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/iconv'
+installing default iconv libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/iconv'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/io/console'
+installing default console libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/io/console'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/io/nonblock'
+installing default nonblock libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/io/nonblock'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/io/wait'
+installing default wait libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/io/wait'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/json'
+installing default libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/json'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/json/generator'
+installing default generator libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/json/generator'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/json/parser'
+installing default parser libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/json/parser'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/mathn/complex'
+installing default complex libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/mathn/complex'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/mathn/rational'
+installing default rational libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/mathn/rational'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/nkf'
+installing default nkf libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/nkf'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/objspace'
+installing default objspace libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/objspace'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/openssl'
+installing default openssl libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/openssl'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/pathname'
+installing default pathname libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/pathname'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/psych'
+installing default psych libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/psych'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/pty'
+installing default pty libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/pty'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/racc/cparse'
+installing default cparse libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/racc/cparse'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/readline'
+installing default readline libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/readline'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/ripper'
+installing default ripper libraries
+checking ../.././parse.y and ../.././ext/ripper/eventids2.c
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/ripper'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/sdbm'
+installing default sdbm libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/sdbm'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/socket'
+installing default socket libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/socket'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/stringio'
+installing default stringio libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/stringio'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/strscan'
+installing default strscan libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/strscan'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/syck'
+installing default syck libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/syck'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/syslog'
+installing default syslog libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/syslog'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/tk'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/tk'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/tk/tkutil'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/tk/tkutil'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/win32ole'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/win32ole'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/zlib'
+installing default zlib libraries
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484/ext/zlib'
+make[2]: Entering directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[2]: `ruby' is up to date.
+make[2]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+make[1]: Leaving directory `/usr/local/rvm/src/ruby-1.9.3-p484'
+./miniruby -I./lib -I. -I.ext/common  ./tool/rbinstall.rb --make="make" --dest-dir="" --extout=".ext" --mflags="" --make-flags="" --data-mode=0644 --prog-mode=0755 --installed-list .installed.list --mantype="doc"
+installing binary commands:   /usr/local/rvm/rubies/ruby-1.9.3-p484/bin
+installing base libraries:    /usr/local/rvm/rubies/ruby-1.9.3-p484/lib
+installing arch files:        /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/i686-linux
+installing pkgconfig data:    /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/pkgconfig
+installing command scripts:   /usr/local/rvm/rubies/ruby-1.9.3-p484/bin
+installing library scripts:   /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1
+installing common headers:    /usr/local/rvm/rubies/ruby-1.9.3-p484/include/ruby-1.9.1
+installing manpages:          /usr/local/rvm/rubies/ruby-1.9.3-p484/share/man/man1
+installing extension objects: /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/i686-linux
+installing extension objects: /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1/i686-linux
+installing extension objects: /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/1.9.1/i686-linux
+installing extension headers: /usr/local/rvm/rubies/ruby-1.9.3-p484/include/ruby-1.9.1/i686-linux
+installing extension scripts: /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1
+installing extension scripts: /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1
+installing extension scripts: /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/1.9.1
+installing extension headers: /usr/local/rvm/rubies/ruby-1.9.3-p484/include/ruby-1.9.1/ruby
+installing default gems:      /usr/local/rvm/rubies/ruby-1.9.3-p484/lib/ruby/gems/1.9.1 (cache, doc, gems, specifications)
+                              rake 0.9.2.2
+                              rdoc 3.9.5
+                              minitest 2.5.1
+                              json 1.5.5
+                              io-console 0.3
+                              bigdecimal 1.1.0

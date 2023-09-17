@@ -1,0 +1,9 @@
+Document: modsecurity-reference
+Title: Mod Security Reference Manual v2
+Author: Ivan Ristic
+Abstract: This document describes how to configure mod-security
+ in Apache, and how to create and optimize security rules.
+Section: System/Security
+
+Format: PDF
+Files: /usr/share/doc/mod-security-common/doc/modsecurity2-apache-reference.pdf.gz

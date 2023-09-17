@@ -1,0 +1,16 @@
+[python-package]
+format = 1
+python-version = all
+[pycentral]
+version = 0.6.11
+include-links = 1
+[files]
+/usr/share/apport/package-hooks/source_ubiquity.py=f
+/usr/share/apport/package-hooks/source_linux.py=f
+/usr/share/apport/package-hooks/source_apport.py=f
+/usr/share/apport/package-hooks/source_debian-installer.py=f
+/usr/share/apport/package-hooks/source_linux-meta.py=f
+/usr/share/apport/general-hooks/generic.py=f
+/usr/share/apport/general-hooks/automatix.py=f
+/usr/share/apport/general-hooks/parse_segv.py=f
+/usr/share/apport/general-hooks/ubuntu.py=f

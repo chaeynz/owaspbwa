@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/glassfish-javaee
+/usr/share/doc/glassfish-javaee/copyright
+/usr/share/doc/glassfish-javaee/changelog.Debian.gz
+/usr/share/java
+/usr/share/java/glassfish-javaee-2ur2-b04.jar
+/usr/share/java/glassfish-ejb-api-2ur2-b04.jar
+/usr/share/java/glassfish-appserv-jstl-2ur2-b04.jar
+/usr/share/java/glassfish-javaee.jar
+/usr/share/java/glassfish-ejb-api.jar
+/usr/share/java/glassfish-appserv-jstl.jar

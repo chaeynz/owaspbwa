@@ -1,0 +1,5 @@
+f4015dae2277655923e34ddc92578f63  usr/share/doc/libcommons-beanutils-java/copyright
+10548ba28151153fcee85821b3acd7c9  usr/share/doc/libcommons-beanutils-java/changelog.Debian.gz
+94da59e8da276d327a75b7fc30c4c547  usr/share/maven-repo/commons-beanutils/commons-beanutils/1.8.2/commons-beanutils-1.8.2.pom
+11b013bb20e50f9f4f6385c887631821  usr/share/maven-repo/commons-beanutils/commons-beanutils/debian/commons-beanutils-debian.pom
+151cdc56f36d397f2c25b7a380b12609  usr/share/java/commons-beanutils-1.8.2.jar

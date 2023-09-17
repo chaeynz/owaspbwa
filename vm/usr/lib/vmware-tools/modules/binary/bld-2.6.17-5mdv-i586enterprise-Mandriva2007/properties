@@ -1,0 +1,6 @@
+UtsRelease 2.6.17-5mdventerprise
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment Mandriva2007, 2.6.17-5mdv, i586, enterprise
+UtsMachine i386

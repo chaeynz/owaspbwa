@@ -1,0 +1,116 @@
+<html>
+ <head>
+ <title>SwarmCache - Cluster-aware Caching for Java</title>
+ <link rel="stylesheet" href="styles.css" type="text/css">
+ <LINK REL="icon" HREF="favicon.gif" TYPE="image/gif">
+ <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+</html>
+<body>
+<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+<tr>
+ <!-- Top Left Image -->
+ <td class="border" width="100" height="100"><img src="img/swarm.jpg" border="0"/></td>
+ <!-- Title Bar -->
+ <td class="border" height="100">
+  <table>
+   <tr><td height="10"></td></tr>
+   <tr><td class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SwarmCache</td></tr>
+   <tr><td class="subtitle">Cluster-aware Caching for Java</td></tr>
+  </table>
+ </td>
+</tr>
+<tr>
+ <!-- Menu Bar -->
+ <td id="menu" class="border" width="100" valign="top">
+ <table width="100%" cellpadding="0" cellspacing="0">
+ <tr><td height="25"/></tr>
+ <tr><td class="menuitem"><a href="index.html">Home</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="http://sourceforge.net/project/showfiles.php?group_id=78637&release_id=193220">Download</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="tutorial.html">Tutorial</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="documentation.html">Documentation</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="api/index.html">Javadocs</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="http://sf.net/projects/swarmcache">Project Page</a></td></tr>
+ <tr><td height="4"/></tr>
+ <tr><td class="menuitem"><a href="http://sourceforge.net/forum/forum.php?forum_id=268479">Help Forums</a></td></tr>
+ </table>
+ </td>
+ <!-- Content Area -->
+ <td valign="top">
+ <table class="contentTable" height="100%" cellspacing="5">
+ <tr>
+  <td class="content">
+<!-- --------------------------- CONTENT BEGIN --------------------------- -->
+Please be sure to read the <a href="tutorial.html">Tutorial</a> section before reading this section.
+<p>
+<span class="heading">Caching Algorithms</span><br>
+The following caching algorithms are available for the local caches:
+<p>
+<span class="subheading">Least Recently Used (LRU)</span><br>
+This is the most common and straightforward caching algorithm. There is a fixed amount of objects that can be cached, and this is configurable. When the caching of a new object is requested but the cache is full, the object that has least recently been requested from the cache (or updated in the cache) is ejected to make space.
+<p>
+<span class="subheading">Automatic</span><br>
+This algorithm works with the JVM's garbage collector to allow cached objects to be automatically garbage-collected. The cache maintains <i>soft references</i> to cached objects. These allow the cached objects to be garbage collected by the system as necessary. This allows for a cache size that is bounded only by the amount of memory available to the JVM. However, unlike the LRU algorithm, it does not necessarily guarantee that frequently accessed objects will always be available in the cache.
+<p>
+<span class="subheading">Timeout</span><br>
+This algorithm times out objects that have been untouched for a number of milliseconds. The timeout amount is specified via the property <code>cache.timeout</code>.
+<p>
+<span class="subheading">Hybrid</span><br>
+This combines the benefits of both the LRU and Automatic algorithms. Two levels of caching are provided. At the first level, an LRU cache ensures that a fixed number of the most recently used objects are available in the cache. At the second level, an Automatic cache holds cached objects that are available to be reclaimed by the garbage collector.
+<p>
+<span class="subheading">Which one should I use?</span><br>
+The Hybrid algorithm offers the best combination of guaranteed performance for frequently used objects and overall cache size. It is the recommended algorithm. For those developers who want simple, deterministic caching, the LRU algorithm may be preferable.
+
+<p>
+<span class="heading">Configuration Details</span><br>
+The following are all the configuration options available via the <code>CacheConfiguration</code> class:
+<p>
+<span class="subheading">CacheType</span><br>
+This is the type of the underlying caches that will be used. The options are <code>CacheConfiguration.TYPE_LRU</code>, <code>CacheConfiguration.TYPE_AUTO</code>, <code>CacheConfiguration.TYPE_TIMER</code> and <code>CacheConfiguration.TYPE_HYBRID</code>. The default is LRU.
+<p>
+<span class="subheading">LRUCacheSize</span><br>
+This is the LRU cache size. This measured in <i>number of objects</i>, not bytes. This value is ignored if <b>CacheType</b> is set to <code>CacheConfiguration.AUTO</code> or <code>CacheConfiguration.TIMER</code>. The default is 10000.
+<p>
+<span class="subheading">MulticastIP</span><br>
+This is the multicast IP address that will be used to communicate between cache managers. The default value is 231.12.21.132.
+<p>
+<span class="subheading">ChannelProperties</span><br>
+If you are familiar with <a href="http://www.javagroups.com">JavaGroups</a>, then this allows you to directly set the properties for the JavaGroups channel. Note that setting this property will cause the value of <b>MulticastIP</b> to be ignored. If you are interested, see the <a href="api/net/sf/swarmcache/CacheConfiguration.html#DEFAULT_CHANNEL_PROPERTIES_PRE">Javadocs</a> for the default value.
+<p>
+<span class="heading">Writing Cache-Aware Applications</span><br>
+Now that you have this fabulous caching engine built in to your web application, how do you make the most of it? Here are some tips:
+<p>
+<b>Think about what data comprises 90% of all requests.</b><br>
+In the vast majority of web applications, at least 90% of all requests that arrive at the persistence engine are for the same small set of data. So this is the data you want to ensure you have cached. Don't worry so much about that other 10%.
+<p>
+<b>Do not cache compound objects!</b><br>
+Suppose we had a method in the above persistence example called <code>getAllPeople</code>, that returned all people in the database. Should we cache the result of that query? It is often an unwise idea to do so. The problem is that one of those <code>People</code> objects could be updated and yet the cache of the <code>getAllPeople</code> query would not be expired. Of course, you could add extra code to <code>insert</code>, <code>update</code> and <code>delete</code> to clear the compound object from the cache, but it will quickly get messy.
+<p>
+<b>Do not be afraid of single selects.</b><br>
+Suppose again that we are running code similar to the persistence example above. Now that objects are being cached efficiently, it is in our advantage to call the <code>get</code> often. Don't be afraid to replace database joins with mutliple calls to get(long key). This will also result in a more object-oriented use of your data model. As an example of this, suppose you had a one-to-many relationship between an object <code>House</code> and <code>People</code>. This modeled the fact that many people could live in a house. If you had the ID of a <code>Person</code> and wanted to select it and the <code>House</code> in which it lived, you may be tempted to use a join for this. Instead, perform a simple select for the <code>Person</code> with the <code>get</code> method, and then do the same for the <code>House</code> once you have its ID.
+<p>
+<b>Have a means to clear all caches.</b><br>
+If you ever want to make direct database changes, it is often very handy to have a web-accessible admin screen that allows some or all of the caches to be manually cleared.
+<p>
+<span class="heading">Credits</span><br>
+SwarmCache was written by John Watkinson (john <i>at</i> autobotcity <i>dot</i> com).<br>
+Code and ideas were contributed by Jason Carreira, Rajeev Kaul and André Schild.
+SwarmCache uses <a href="http://www.javagroups.com/javagroupsnew/docs/index.html">JavaGroups</a> and <a href="http://jakarta.apache.org/commons/">Apache Jakarta Commons</a>. The project is hosted by <a href="http://sourceforge.net">SourceForge</a>.
+<p align="right"><a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=78637&amp;type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a>
+
+<!-- ---------------------------- CONTENT END ---------------------------- --> 
+  </td>
+ </tr>
+ <tr>
+  <td class="copyright">&copy;2003 <a href="http://tronics.org/watkinson">John Watkinson</a></td>
+ </tr>
+ </table>
+ </td>
+</tr>
+</table>
+</body>
+</html> 

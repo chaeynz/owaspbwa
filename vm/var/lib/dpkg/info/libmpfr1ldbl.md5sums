@@ -1,0 +1,10 @@
+b4f095ac962aced0f5bdd0df0f96c1d8  usr/lib/libmpfr.so.1.2.2
+339c7c4a57ff4b604d4aac350b4a4ad7  usr/share/doc/libmpfr1ldbl/changelog.gz
+5db2372f72754dabfc8296a43e1403a5  usr/share/doc/libmpfr1ldbl/NEWS.gz
+c66aa8440e61eaff69d00680ca5ddbac  usr/share/doc/libmpfr1ldbl/BUGS
+e71f87b830b38d2fa4e59f8feeaeb7dc  usr/share/doc/libmpfr1ldbl/README
+fd917f9c082d12b3c259f4559039b5d0  usr/share/doc/libmpfr1ldbl/README.Debian
+7cff0b3a5450e18c76efd28f76fe2615  usr/share/doc/libmpfr1ldbl/copyright
+777130d9d6846fe24dccf1cc8b86ab2e  usr/share/doc/libmpfr1ldbl/changelog.Debian.gz
+12a27c541b0bb245212a83fd87b3122f  usr/share/doc/libmpfr1ldbl/TODO.gz
+6244a7713c34bc47366f630fadadd183  usr/share/lintian/overrides/libmpfr1ldbl

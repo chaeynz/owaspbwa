@@ -1,0 +1,9 @@
+/etc
+/etc/fonts
+/etc/fonts/conf.avail
+/etc/fonts/conf.avail/44-wqy-zenhei.conf
+/etc/fonts/conf.avail/66-wqy-zenhei-sharp.conf
+/etc/fonts/conf.avail/66-wqy-zenhei-sharp-no13px.conf
+/etc/defoma
+/etc/defoma/hints
+/etc/defoma/hints/ttf-wqy-zenhei.hints

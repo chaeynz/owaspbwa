@@ -1,0 +1,16 @@
+3b3bb74625b108f36b7b0494ac3de17d  usr/share/man/ja/man8/dhclient.8.gz
+c2b9bb8478b7c3b0367db80f23d4aa6e  usr/share/man/ja/man8/dhclient-script.8.gz
+8eaa1ae2b9c2a8addf3ba58926ce5d0c  usr/share/man/ja/man5/dhcp-eval.5.gz
+fe3cefb17ad8d0f857fc323efc47ec64  usr/share/man/ja/man5/dhcp-options.5.gz
+0ea3c6d282e5e6a7b9f5fff0c532b649  usr/share/man/ja/man5/dhclient.conf.5.gz
+ca2a04fb8c19f9dc947afbbf2b70f0e5  usr/share/man/ja/man5/dhclient.leases.5.gz
+f9222fb31d697462465140ef451f1bb6  usr/share/man/man5/dhcp-eval.5.gz
+e7b6fe9f2ecda80d8b948eab98b10155  usr/share/man/man5/dhcp-options.5.gz
+7030f93fd63784e34446605084f509a4  usr/share/man/man1/omshell.1.gz
+94abf9e1974f64504eded841b6b77358  usr/share/doc/dhcp3-common/api+protocol.gz
+b52916ceed7c5086724ba01375f6f7c0  usr/share/doc/dhcp3-common/changelog.Debian.gz
+9732c36f59e8084ac356fba54328dd23  usr/share/doc/dhcp3-common/README.Debian
+6fa20b8ad86e433a76968e90d6809a51  usr/share/doc/dhcp3-common/copyright
+423fa0b77431f6cdcc7e3e6473901f6d  usr/share/doc/dhcp3-common/README.gz
+2cb064237743ef1e367d22b0ac013b1a  usr/share/doc/dhcp3-common/RELNOTES.gz
+3e8b6836c57e52201014fd9fa7337d2a  usr/bin/omshell

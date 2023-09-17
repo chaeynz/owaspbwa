@@ -1,0 +1,6 @@
+UtsRelease 2.4.10-64GB-SMP
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment SuSE 7.3 smp 64GB with 2.4.10 kernel
+UtsMachine i386

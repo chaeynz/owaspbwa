@@ -1,0 +1,72 @@
+#!/bin/sh
+set -e
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d tomcat6 remove >/dev/null || true
+fi
+# End automatically added section
+
+
+# Remove cached files and auto-generated catalina.policy
+rm -rf /var/cache/tomcat6/*
+
+case "$1" in
+    remove)
+        # Remove ROOT webapp if not modified
+        RWLOC="/var/lib/tomcat6/webapps/ROOT"
+        RWFILES="$RWLOC/index.html $RWLOC/META-INF/context.xml"
+        if [ "`(cat $RWFILES | md5sum -) 2>/dev/null | cut -d ' ' -f 1`" \
+                            = "c05987dd6c6bcbd651889e9a0ec98ade" ] ; then
+            rm $RWFILES
+            rmdir --ignore-fail-on-non-empty \
+                /var/lib/tomcat6/webapps/ROOT/META-INF \
+                /var/lib/tomcat6/webapps/ROOT \
+                /var/lib/tomcat6/webapps \
+                /var/lib/tomcat6 || true
+        fi
+        if [ -d /var/lib/tomcat6/common ] && [ -z "`(find var/lib/tomcat6/common/classes -type f)`" ] ; then
+            rmdir --ignore-fail-on-non-empty \
+                /var/lib/tomcat6/common/classes \
+                /var/lib/tomcat6/common || true
+        fi
+        if [ -d /var/lib/tomcat6/server ] && [ -z "`(find var/lib/tomcat6/server/classes -type f)`" ] ; then
+            rmdir --ignore-fail-on-non-empty \
+                /var/lib/tomcat6/server/classes \
+                /var/lib/tomcat6/server || true
+        fi
+        if [ -d /var/lib/tomcat6/shared ] && [ -z "`(find var/lib/tomcat6/shared/classes -type f)`" ] ; then
+            rmdir --ignore-fail-on-non-empty \
+                /var/lib/tomcat6/shared/classes \
+                /var/lib/tomcat6/shared || true
+        fi
+        if [ -d "/var/cache/tomcat6" ] ; then
+            rm -rf /var/cache/tomcat6
+        fi
+    ;;
+
+    purge)
+        rm -rf /var/log/tomcat6 /var/lib/tomcat6/temp
+        if [ -d "/var/lib/tomcat6" ] ; then
+            rmdir --ignore-fail-on-non-empty /var/lib/tomcat6 || true
+        fi
+        rmdir --ignore-fail-on-non-empty /etc/tomcat6/policy.d \
+          /etc/tomcat6/Catalina/localhost /etc/tomcat6/Catalina /etc/tomcat6 || true
+		# Put all files owned by group tomcat6 back into root group before deleting
+		# the tomcat6 user and group
+		chown -Rh root:root /etc/tomcat6/
+        # Remove user/group and log files (don't remove everything under
+        # /var/lib/tomcat6 because there might be user-installed webapps)
+        deluser tomcat6 || true
+        delgroup tomcat6 || true
+    ;;
+
+    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        # Nothing to do here
+    ;;
+
+    *)
+        echo "$0 called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac

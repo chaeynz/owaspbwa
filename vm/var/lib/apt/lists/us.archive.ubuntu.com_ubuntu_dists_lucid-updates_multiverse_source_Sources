@@ -1,0 +1,293 @@
+Package: cuneiform
+Binary: cuneiform, cuneiform-common
+Version: 0.7.0+dfsg-5ubuntu0.1
+Priority: optional
+Section: multiverse/graphics
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 7), cmake (>= 2.6.2), libmagick++-dev, pkg-config
+Architecture: amd64 i386 all
+Standards-Version: 3.8.3
+Format: 1.0
+Directory: pool/multiverse/c/cuneiform
+Files:
+ 80dc85c8a345b723c5d66c2b27ff998f 1374 cuneiform_0.7.0+dfsg-5ubuntu0.1.dsc
+ a3af6e517a026f805df3dbd80b0afee4 29405973 cuneiform_0.7.0+dfsg.orig.tar.gz
+ cd38d81020a7b5dbc24754d397f68193 3542 cuneiform_0.7.0+dfsg-5ubuntu0.1.diff.gz
+Homepage: http://launchpad.net/cuneiform-linux/
+Vcs-Browser: http://git.debian.net/?p=debian/cuneiform.git
+Vcs-Git: git://git.debian.net/git/debian/cuneiform.git
+Checksums-Sha1:
+ f80bbb31b6cb06be2197b1c105b5794b809bbf2f 1374 cuneiform_0.7.0+dfsg-5ubuntu0.1.dsc
+ d66cfec36420f6615f64be7fb9a379d8ba5186de 29405973 cuneiform_0.7.0+dfsg.orig.tar.gz
+ e0e219bc95d882fd59f9acee3480d3e7f2720242 3542 cuneiform_0.7.0+dfsg-5ubuntu0.1.diff.gz
+Checksums-Sha256:
+ a7c06d3075df28f6eb9107178b606c9eb463cac1237f5f666c4a145fdbfa5390 1374 cuneiform_0.7.0+dfsg-5ubuntu0.1.dsc
+ 6a7d99bd23fd1b8b8e985708988a393a34990974756cd38bab1b4070f95f5576 29405973 cuneiform_0.7.0+dfsg.orig.tar.gz
+ 1a47c9fa51b4dc38b8ec9f29596e4f0bf07d7a0501ee0f394685ae2341c9d7e8 3542 cuneiform_0.7.0+dfsg-5ubuntu0.1.diff.gz
+Autobuild: yes
+
+Package: dssi-vst
+Binary: dssi-vst
+Version: 0.8-2ubuntu2
+Priority: extra
+Section: multiverse/sound
+Maintainer: Samuel Mimram <smimram@debian.org>
+Build-Depends: debhelper (>= 7.0.50~), quilt, gcc-multilib [amd64], g++-multilib [amd64], dssi-dev, wine1.0-dev, liblo-dev, libasound-dev
+Architecture: i386 amd64
+Standards-Version: 3.8.3
+Format: 1.0
+Directory: pool/multiverse/d/dssi-vst
+Files:
+ c204ef2692a46fc151f6d7786b8c3e7f 1120 dssi-vst_0.8-2ubuntu2.dsc
+ 2d46474eaf84f0a2efc2389edaa18e3a 44333 dssi-vst_0.8.orig.tar.gz
+ c2a752c104d6adc58049eac597215f8f 2892 dssi-vst_0.8-2ubuntu2.diff.gz
+Homepage: http://breakfastquay.com/dssi-vst/
+Checksums-Sha1:
+ fffd27045b9a03e3f9ae415869d6b7cbc9918edf 1120 dssi-vst_0.8-2ubuntu2.dsc
+ e5894e457b4281124687d2a05c370b1bb31d020d 44333 dssi-vst_0.8.orig.tar.gz
+ 6d994e0e21b5ed643122fa3fd232c480690ab744 2892 dssi-vst_0.8-2ubuntu2.diff.gz
+Checksums-Sha256:
+ d987b5eb225d96c717a52cb0d1ccf811df35ffb605453c98a6bdddc662bbc1ea 1120 dssi-vst_0.8-2ubuntu2.dsc
+ 4d472417c38779089866ca294721e3a2defd0da61615ef5ccca3a20a835f9847 44333 dssi-vst_0.8.orig.tar.gz
+ e198e6ee685c10422e862eabd88b9dc31074a32225049ac85a07959f55198425 2892 dssi-vst_0.8-2ubuntu2.diff.gz
+
+Package: ec2-ami-tools
+Binary: ec2-ami-tools
+Version: 1.3-45758-0ubuntu1.1
+Priority: extra
+Section: multiverse/admin
+Maintainer: Soren Hansen <soren@ubuntu.com>
+Build-Depends: cdbs, debhelper (>= 7), quilt
+Architecture: all
+Standards-Version: 3.7.3
+Format: 1.0
+Directory: pool/multiverse/e/ec2-ami-tools
+Files:
+ f780d9340da2e11e478ea97214318631 1702 ec2-ami-tools_1.3-45758-0ubuntu1.1.dsc
+ dc539e795b039f9ef2e3f2c079379dcc 75755 ec2-ami-tools_1.3-45758.orig.tar.gz
+ 1469ce4445607b80134fbff5a608af06 4526 ec2-ami-tools_1.3-45758-0ubuntu1.1.diff.gz
+Checksums-Sha1:
+ 5c5161b25fb69fd375117618d785c635c34af515 1702 ec2-ami-tools_1.3-45758-0ubuntu1.1.dsc
+ 3c360ebee598d5f350319b86dec9bcbbddd80a53 75755 ec2-ami-tools_1.3-45758.orig.tar.gz
+ c9536e5b15d0758c918b1cade34fe9cbeee0a24e 4526 ec2-ami-tools_1.3-45758-0ubuntu1.1.diff.gz
+Checksums-Sha256:
+ a6c967d244b995f2265194a5b1786b0131f3eb4aa12017944539d3f37c2d8dba 1702 ec2-ami-tools_1.3-45758-0ubuntu1.1.dsc
+ 255bdd3d20e585fb4b1dd83bf0ea478ecc9e2218586ce6c7d66f1bc08265d946 75755 ec2-ami-tools_1.3-45758.orig.tar.gz
+ 9f8c2ad6470bb540b356042cfbe1064c6819f82a28c4a27b362e5a147c2ed9fb 4526 ec2-ami-tools_1.3-45758-0ubuntu1.1.diff.gz
+
+Package: ffmpeg-extra
+Binary: libavutil-extra-49, libavutil-unstripped-49, libavcodec-extra-52, libavcodec-unstripped-52, libavdevice-extra-52, libavdevice-unstripped-52, libavfilter-extra-0, libavfilter-unstripped-0, libpostproc-extra-51, libpostproc-unstripped-51, libavformat-extra-52, libavformat-unstripped-52, libswscale-extra-0, libswscale-unstripped-0
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 7), libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libavcodec-dev, libavfilter-dev, libavformat-dev, libavutil-dev, libbz2-dev, libdc1394-22-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libdirac-dev, libfaad-dev | libfaad2-dev, libfreetype6-dev, libgsm1-dev, libopenjpeg-dev, libimlib2-dev, libmp3lame-dev, libpostproc-dev, libraw1394-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libschroedinger-dev, libsdl1.2-dev, libspeex-dev, libtheora-dev (>> 0.0.0.alpha4), libvorbis-dev, libx11-dev, libx264-dev (>> 1:0.svn20100213+gitfcf70c), libxext-dev, libxvidcore-dev | libxvidcore4-dev, libvdpau-dev, libxvmc-dev, quilt, texi2html, yasm [i386 amd64], zlib1g-dev
+Build-Depends-Indep: doxygen
+Architecture: any
+Standards-Version: 3.8.3
+Format: 1.0
+Directory: pool/multiverse/f/ffmpeg-extra
+Files:
+ 07858d1cd10c2f3f47bc5641efbc9e96 3286 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.dsc
+ bece0d81795de82bdb06c17eeb27353a 3335278 ffmpeg-extra_0.5.9.orig.tar.gz
+ 3ee860a179d2c16fc49b2a0e5ef2d8a4 64834 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.diff.gz
+Uploaders: Sam Hocevar (Debian packages) <sam+deb@zoy.org>,           Loic Minier <lool@dooz.org>,           Reinhard Tartler <siretart@tauware.de>,           Fabian Greffrath <fabian+debian@greffrath.com>,           Andres Mejia <mcitadel@gmail.com>
+Dm-Upload-Allowed: yes
+Homepage: http://ffmpeg.org/
+Vcs-Browser: http://git.debian.org/?p=pkg-multimedia/ffmpeg.git;a=summary
+Vcs-Git: git://git.debian.org/git/pkg-multimedia/ffmpeg.git
+Checksums-Sha1:
+ 883169bb3175e5f422b9c03b7031ce282ba1e88b 3286 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.dsc
+ f27c2425b0eae0773c4650db02e9facb300f8d58 3335278 ffmpeg-extra_0.5.9.orig.tar.gz
+ 07406c1637e01d69e7fd0c017ab171c0d6934c1e 64834 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.diff.gz
+Checksums-Sha256:
+ 8d27ba2dcd1f7ca6c5df6bd1128347cbec3bf7ed189b46511a9b26f6a12ed80a 3286 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.dsc
+ acb9a0693be6cd82e7e4e7928bb4227704cea67e8df67d30963e5dc1604908e4 3335278 ffmpeg-extra_0.5.9.orig.tar.gz
+ 45b5155e719ed755453d9b56611b0cabe8437d540987d4afa070cde6734bf7aa 64834 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.diff.gz
+
+Package: flashplugin-nonfree
+Binary: flashplugin-installer, flashplugin-nonfree
+Version: 11.2.202.280ubuntu0.10.04.1
+Priority: optional
+Section: multiverse/web
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Bart Martens <bartm@knars.be>
+Build-Depends: debhelper (>= 5), cdbs
+Architecture: i386 amd64
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/multiverse/f/flashplugin-nonfree
+Files:
+ bb37935dd9111668c94d21a1e8148b9a 1410 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.dsc
+ c7214f9e294f9252c6b15f0e96983b40 27246 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.tar.gz
+Homepage: http://www.adobe.com/products/flashplayer.html
+Package-List:
+ flashplugin-installer deb contrib/web optional
+ flashplugin-nonfree deb contrib/web optional
+Checksums-Sha1:
+ 8b21dde7f244cb9e5a8b05aaea78ca157440143f 1410 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.dsc
+ d10041f5e21a37301a001de580541061e588803f 27246 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.tar.gz
+Checksums-Sha256:
+ 12964341847b3da6f3d176bbaf0e80fe5dd5b3cd6e3e5a5099fe5afaa0fb38fd 1410 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.dsc
+ 81bb7c64820757a0399005e110cc068b2b3fb13817ce7b11ba330bdf48e51f4e 27246 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.tar.gz
+
+Package: gecko-mediaplayer
+Binary: gecko-mediaplayer
+Version: 0.9.9.2-1ubuntu0.10.04.2
+Priority: optional
+Section: multiverse/graphics
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Cesare Tirabassi <norsetto@ubuntu.com>
+Build-Depends: debhelper (>= 7), autotools-dev, pkg-config (>= 0.20), libglib2.0-dev (>= 2.14), xulrunner-dev, libdbus-1-dev (>= 0.95), libdbus-glib-1-dev (>= 0.70), libx11-dev, libidl0, libgconf2-dev (>= 2.20), quilt
+Architecture: any
+Standards-Version: 3.8.4
+Format: 3.0 (quilt)
+Directory: pool/multiverse/g/gecko-mediaplayer
+Files:
+ 1a2c0c2612481e006adb8814b85ef7c2 1936 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.dsc
+ deb41a4bcbde2b78d548dc37b684cfbb 262053 gecko-mediaplayer_0.9.9.2.orig.tar.gz
+ 599bcf89990cbc2c59492958203cd9d3 56598 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.debian.tar.gz
+Homepage: http://kdekorte.googlepages.com/gecko-mediaplayer
+Vcs-Browser: https://code.launchpad.net/~norsetto/gnome-mplayer/gecko-mediaplayer
+Vcs-Bzr: lp:~norsetto/gnome-mplayer/gecko-mediaplayer
+Package-List:
+ gecko-mediaplayer deb video optional
+Checksums-Sha1:
+ ea813f65f9bb799e4d61ca0fb97d2fd0cf983bb7 1936 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.dsc
+ fb9620bbb9e4df27a7e588dcf3d0b6e55188c262 262053 gecko-mediaplayer_0.9.9.2.orig.tar.gz
+ c7862037734b88dac791c14d1ac02624ca23fa01 56598 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.debian.tar.gz
+Checksums-Sha256:
+ 1176ff2de166d95003305248a65a9f36d2665e80c3ef3a5d8c506f7e1079ca2f 1936 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.dsc
+ 378b6c149e41efd5f0e47c8a711d7b3e108409cb72c6f9504ac4a8791de83cd6 262053 gecko-mediaplayer_0.9.9.2.orig.tar.gz
+ 31a4e6512cfcea79ffba7a62c66243764a3511d7704471d06fa58e93976981f3 56598 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.debian.tar.gz
+
+Package: gst-plugins-ugly-multiverse0.10
+Binary: gstreamer0.10-plugins-ugly-multiverse, gstreamer0.10-plugins-ugly-multiverse-dbg
+Version: 0.10.14-0ubuntu2
+Priority: optional
+Section: multiverse/libs
+Maintainer: Sebastian Dröge <slomo@ubuntu.com>, Onkar Shinde <onkarshinde@ubuntu.com>
+Build-Depends: libgstreamer0.10-dev (>= 0.10.26), libgstreamer-plugins-base0.10-dev (>= 0.10.26), autotools-dev, cdbs (>= 0.4.32ubuntu10), check, debhelper (>= 5), gstreamer-tools (>= 0.10.12-4ubuntu2), pkg-config (>= 0.11.0), gconf2, liboil0.3-dev (>= 0.3.2), libmp3lame-dev, zlib1g-dev, libx264-dev
+Architecture: any
+Standards-Version: 3.8.4
+Format: 1.0
+Directory: pool/multiverse/g/gst-plugins-ugly-multiverse0.10
+Files:
+ 2ddb91a99e162ad020e7aa43cb4ecedf 1835 gst-plugins-ugly-multiverse0.10_0.10.14-0ubuntu2.dsc
+ 31d1035879262418d392d79f70f666f7 1409811 gst-plugins-ugly-multiverse0.10_0.10.14.orig.tar.gz
+ 40dd1b21529cd8b369b14e6361b6a80a 20280 gst-plugins-ugly-multiverse0.10_0.10.14-0ubuntu2.diff.gz
+Checksums-Sha1:
+ 9b8777938a5f08ee869ecdc0f0e2429b134c23ac 1835 gst-plugins-ugly-multiverse0.10_0.10.14-0ubuntu2.dsc
+ 89ed101973b3aabf57ef2e3563e0fe9633935bf5 1409811 gst-plugins-ugly-multiverse0.10_0.10.14.orig.tar.gz
+ 7cafabbec654642b75a20ac46c079e6733f2478b 20280 gst-plugins-ugly-multiverse0.10_0.10.14-0ubuntu2.diff.gz
+Checksums-Sha256:
+ 01fd717b14fcf538f4bb48c3db50320e594b145f40ddac5826a33b8eebd1fc37 1835 gst-plugins-ugly-multiverse0.10_0.10.14-0ubuntu2.dsc
+ b76b726d55d5428ec574e645f033693d3824da3fcb0819bea516d4ff00751763 1409811 gst-plugins-ugly-multiverse0.10_0.10.14.orig.tar.gz
+ a72571a18b3afe2b5883a88e5defb88f423217089f0533055b79fc53e380b624 20280 gst-plugins-ugly-multiverse0.10_0.10.14-0ubuntu2.diff.gz
+
+Package: linux-firmware-nonfree
+Binary: linux-firmware-nonfree
+Version: 1.8ubuntu1
+Priority: optional
+Section: multiverse/kernel
+Maintainer: Ubuntu Kernel Team <kernel-team@lists.ubuntu.com>
+Build-Depends: debhelper (>= 7)
+Architecture: all
+Standards-Version: 3.8.4
+Format: 3.0 (native)
+Directory: pool/multiverse/l/linux-firmware-nonfree
+Files:
+ 663d6b68e00fac4f6aa162de12ee9a41 1518 linux-firmware-nonfree_1.8ubuntu1.dsc
+ 9ae264180fb66115b82edbc13b197850 3490788 linux-firmware-nonfree_1.8ubuntu1.tar.gz
+Package-List:
+ linux-firmware-nonfree deb kernel optional
+Checksums-Sha1:
+ 54ed99d8366427e2b47c5416c2672f4565651bf7 1518 linux-firmware-nonfree_1.8ubuntu1.dsc
+ 3a3f7c0b9309057e51e9d14d69963b4db54af025 3490788 linux-firmware-nonfree_1.8ubuntu1.tar.gz
+Checksums-Sha256:
+ d485396797cd119d05d27bb95cfda16e8385cf994895c39d3d5bc5883da9301d 1518 linux-firmware-nonfree_1.8ubuntu1.dsc
+ ff6bae44beb7ec432328fc98f32c36dadb29cf6d452c07829e29614d11ca84a9 3490788 linux-firmware-nonfree_1.8ubuntu1.tar.gz
+
+Package: mplayer
+Binary: mplayer-gui, mencoder, mplayer, mplayer-dbg, mplayer-doc, mplayer-nogui
+Version: 2:1.0~rc3+svn20090426-1ubuntu16.1
+Priority: optional
+Section: multiverse/graphics
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 7), docbook-xml, docbook-xsl, ladspa-sdk, libenca-dev, libaa1-dev, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libaudio-dev, libavcodec-dev (>= 0.svn20080206), libavdevice-dev, libavformat-dev, libavutil-dev, libcaca-dev, libcdparanoia-dev | libcdparanoia0-dev, libdirectfb-dev, libdts-dev, libdvdread-dev, libesd0-dev, libfaad-dev, libfontconfig1-dev, libfreetype6-dev, libfribidi-dev, libgif-dev, libgl1-mesa-dev, libgtk2.0-dev, libjack-dev, libjpeg62-dev, liblircclient-dev, liblivemedia-dev, liblzo2-dev, libmp3lame-dev, libmpcdec-dev, libncurses5-dev, libopenal-dev, libpng12-dev | libpng-dev, libpostproc-dev, libpulse-dev, libschroedinger-dev, libsdl1.2-dev | libsdl1.1-dev, libsmbclient-dev, libspeex-dev, libsvga1-dev [i386 amd64], libswscale-dev, libtheora-dev (>= 1.0~beta1), libvorbis-dev, libvorbisidec-dev, libx11-dev, libx264-dev (>= 2:0.85.1442), libxext-dev, libxinerama-dev, libxv-dev, libxvidcore-dev, libxvmc-dev, libxxf86dga-dev, libxxf86vm-dev, libvdpau-dev [i386 amd64], pkg-config, quilt, vstream-client-dev, x11proto-core-dev, xsltproc, zlib1g-dev
+Architecture: any
+Standards-Version: 3.8.4
+Format: 1.0
+Directory: pool/multiverse/m/mplayer
+Files:
+ c3d3adf66a50fdb2f21f76315f9d6861 2999 mplayer_1.0~rc3+svn20090426-1ubuntu16.1.dsc
+ 201f069efc96d38efa9433e23742ee1d 10029266 mplayer_1.0~rc3+svn20090426.orig.tar.gz
+ 3a4b40a2fbddd45d4118ca5d1f1858b6 77046 mplayer_1.0~rc3+svn20090426-1ubuntu16.1.diff.gz
+Uploaders: A Mennucc1 <mennucc1@debian.org>,           Reinhard Tartler <siretart@tauware.de>,           Andres Mejia <mcitadel@gmail.com>
+Dm-Upload-Allowed: yes
+Homepage: http://www.mplayerhq.hu/
+Vcs-Browser: http://git.debian.org/?p=pkg-multimedia/mplayer.git;a=summary
+Vcs-Git: git://git.debian.org/git/pkg-multimedia/mplayer.git
+Checksums-Sha1:
+ 91d419a919221fee432a3c1da5ae9a125ad5c58a 2999 mplayer_1.0~rc3+svn20090426-1ubuntu16.1.dsc
+ 32b07ff0d9bbf9813331df597f42261e29b7b083 10029266 mplayer_1.0~rc3+svn20090426.orig.tar.gz
+ e5a12bb2d0364f2f85f41d35c9f7a4a1135e8b4d 77046 mplayer_1.0~rc3+svn20090426-1ubuntu16.1.diff.gz
+Checksums-Sha256:
+ f8f19f314f761ee0b5d4cdbef7dd94b020df38670204c3a70f57b008d95a5106 2999 mplayer_1.0~rc3+svn20090426-1ubuntu16.1.dsc
+ 9c986b3f446420a6a10392f31defda4d11f2256f397c7db1151ce30dfd4fd491 10029266 mplayer_1.0~rc3+svn20090426.orig.tar.gz
+ 2b9fe145932c4c9177d2b40d0a7a439e1e9a23097555b1dd40126864ff7f4b52 77046 mplayer_1.0~rc3+svn20090426-1ubuntu16.1.diff.gz
+
+Package: msttcorefonts
+Binary: ttf-mscorefonts-installer
+Version: 3.2ubuntu0.1
+Priority: optional
+Section: multiverse/x11
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Thijs Kinkhorst <thijs@debian.org>
+Build-Depends: debhelper (>= 7)
+Build-Depends-Indep: defoma
+Architecture: all
+Standards-Version: 3.8.4
+Format: 1.0
+Directory: pool/multiverse/m/msttcorefonts
+Files:
+ 6ab4e552ac3de2823eeaa933e6c25a86 1007 msttcorefonts_3.2ubuntu0.1.dsc
+ 2b23004a0be20304a2833a4ea26a9b0e 52934 msttcorefonts_3.2ubuntu0.1.tar.gz
+Vcs-Browser: https://aphrodite.kinkhorst.nl/wsvn/debian/msttcorefonts/
+Vcs-Svn: https://svn.kinkhorst.nl/svn/debian/msttcorefonts/trunk
+Checksums-Sha1:
+ 20d77a8fb15087970ec300b2be38297bc7242394 1007 msttcorefonts_3.2ubuntu0.1.dsc
+ 9492f07edbd837877dda5e3dec4001a998598f90 52934 msttcorefonts_3.2ubuntu0.1.tar.gz
+Checksums-Sha256:
+ 84acf0edc4d5a20d1a1141d3f34188164d90935184e4fa90f2513291f3815a90 1007 msttcorefonts_3.2ubuntu0.1.dsc
+ edd09df706afa48a874c22bbe179baec626047545c376b75243a65e0733f274a 52934 msttcorefonts_3.2ubuntu0.1.tar.gz
+
+Package: nspluginwrapper
+Binary: nspluginwrapper
+Version: 1.2.2-0ubuntu6.10.04.1
+Priority: extra
+Section: multiverse/utils
+Maintainer: Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>
+Original-Maintainer: Rob Andrews <rob@choralone.org>
+Build-Depends: debhelper (>= 5), quilt, autotools-dev, libc6-dev-i386 [amd64], libxt-dev, x11proto-core-dev, x11proto-xext-dev, libx11-dev, libatk1.0-dev, libfontconfig1-dev, libgtk2.0-dev, libglib2.0-dev, libpango1.0-dev, ia32-libs [amd64], gcc-multilib [amd64], g++-multilib [amd64], libcurl4-gnutls-dev
+Architecture: amd64 i386
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/multiverse/n/nspluginwrapper
+Files:
+ 022e6e2ccf5dfc5c421002256eb1a3e8 1787 nspluginwrapper_1.2.2-0ubuntu6.10.04.1.dsc
+ 0c35f3bf4531307001f27e6fdfb1bc89 420878 nspluginwrapper_1.2.2.orig.tar.gz
+ 7dbdb865129343c5a819566c937c8a5b 13157 nspluginwrapper_1.2.2-0ubuntu6.10.04.1.diff.gz
+Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-dev/nspluginwrapper/ubuntu
+Checksums-Sha1:
+ 1f81ba9a2a10dcf858aedb283c70c7ab2713b4a7 1787 nspluginwrapper_1.2.2-0ubuntu6.10.04.1.dsc
+ f245c5f9958c35e9f9b4bba9e243563c08c95bd4 420878 nspluginwrapper_1.2.2.orig.tar.gz
+ ad8a68ae35dd01d0544777f27e4279b70e4f8158 13157 nspluginwrapper_1.2.2-0ubuntu6.10.04.1.diff.gz
+Checksums-Sha256:
+ 4277fb376f66e3f971c57d43497c7743c8aef85cc9d477377df07878ea8b0f3c 1787 nspluginwrapper_1.2.2-0ubuntu6.10.04.1.dsc
+ d8c5f87f27b14fd4bc46dad37c34c56ab2b662b0455878ec2d14024935f79f5c 420878 nspluginwrapper_1.2.2.orig.tar.gz
+ f9b50142ea8d695eb3e88c1c9299a2dcfff6ba1ac94e9699ea5af07bda604bd7 13157 nspluginwrapper_1.2.2-0ubuntu6.10.04.1.diff.gz
+

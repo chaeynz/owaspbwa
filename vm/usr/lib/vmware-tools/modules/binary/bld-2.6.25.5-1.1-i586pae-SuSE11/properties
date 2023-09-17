@@ -1,0 +1,7 @@
+UtsRelease 2.6.25.5-1.1-pae
+UtsVersion #1 Sun Jun 8 10:54:28 UTC 2008
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment openSuSE11,  2.6.25.5-1.1, i586, pae

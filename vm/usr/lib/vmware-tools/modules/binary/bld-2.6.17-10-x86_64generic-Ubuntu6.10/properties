@@ -1,0 +1,7 @@
+UtsRelease 2.6.17-10-generic
+UtsVersion #2 SMP Fri Oct 13 15:34:39 UTC 2006
+UtsMachine x86_64
+ModVersion yes
+SMP yes
+PageOffset FFFF810000000000
+Comment Ubuntu6.10, 2.6.17-10, amd64, generic

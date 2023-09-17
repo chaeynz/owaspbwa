@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: ActiveSupport::CoreExtensions::DateTime::Calculations</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">ActiveSupport::CoreExtensions::DateTime::Calculations</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/active_support/core_ext/date_time/calculations_rb.html">
+                lib/active_support/core_ext/date_time/calculations.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Enables the use of time calculations within DateTime itself
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000980">advance</a>&nbsp;&nbsp;
+      <a href="#M000981">ago</a>&nbsp;&nbsp;
+      <a href="#M000987">at_beginning_of_day</a>&nbsp;&nbsp;
+      <a href="#M000986">at_midnight</a>&nbsp;&nbsp;
+      <a href="#M000984">beginning_of_day</a>&nbsp;&nbsp;
+      <a href="#M000979">change</a>&nbsp;&nbsp;
+      <a href="#M000993">compare_with_coercion</a>&nbsp;&nbsp;
+      <a href="#M000988">end_of_day</a>&nbsp;&nbsp;
+      <a href="#M000977">future?</a>&nbsp;&nbsp;
+      <a href="#M000990">getutc</a>&nbsp;&nbsp;
+      <a href="#M000983">in</a>&nbsp;&nbsp;
+      <a href="#M000985">midnight</a>&nbsp;&nbsp;
+      <a href="#M000976">past?</a>&nbsp;&nbsp;
+      <a href="#M000978">seconds_since_midnight</a>&nbsp;&nbsp;
+      <a href="#M000982">since</a>&nbsp;&nbsp;
+      <a href="#M000989">utc</a>&nbsp;&nbsp;
+      <a href="#M000991">utc?</a>&nbsp;&nbsp;
+      <a href="#M000992">utc_offset</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Calculations/ClassMethods.html" class="link">ActiveSupport::CoreExtensions::DateTime::Calculations::ClassMethods</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000980" class="method-detail">
+        <a name="M000980"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000980.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000980.html');return false;">
+          <span class="method-name">advance</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Uses Date to provide precise Time calculations for years, months, and days.
+The <tt>options</tt> parameter takes a hash with any of these keys:
+<tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>,
+<tt>:hours</tt>, <tt>:minutes</tt>, <tt>:seconds</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000981" class="method-detail">
+        <a name="M000981"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000981.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000981.html');return false;">
+          <span class="method-name">ago</span><span class="method-args">(seconds)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new DateTime representing the time a number of seconds <a
+href="Calculations.html#M000981">ago</a> Do not use this method <a
+href="Calculations.html#M000983">in</a> combination with x.months, use
+months_ago instead!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000987" class="method-detail">
+        <a name="M000987"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_beginning_of_day</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M000984">beginning_of_day</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000986" class="method-detail">
+        <a name="M000986"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_midnight</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M000984">beginning_of_day</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000984" class="method-detail">
+        <a name="M000984"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000984.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000984.html');return false;">
+          <span class="method-name">beginning_of_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new DateTime representing the start of the day (0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000979" class="method-detail">
+        <a name="M000979"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000979.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000979.html');return false;">
+          <span class="method-name">change</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new DateTime where one or more of the elements have been changed
+according to the <tt>options</tt> parameter. The time options (hour,
+minute, sec) reset cascadingly, so if only the hour is passed, then minute
+and sec is set to 0. If the hour and minute is passed, then sec is set to
+0.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000993" class="method-detail">
+        <a name="M000993"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000993.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000993.html');return false;">
+          <span class="method-name">compare_with_coercion</span><span class="method-args">(other)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Layers additional behavior on DateTime#&lt;=&gt; so that Time and <a
+href="../../TimeWithZone.html">ActiveSupport::TimeWithZone</a> instances
+can be compared with a DateTime
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000988" class="method-detail">
+        <a name="M000988"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000988.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000988.html');return false;">
+          <span class="method-name">end_of_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new DateTime representing the end of the day (23:59:59)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000977" class="method-detail">
+        <a name="M000977"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000977.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000977.html');return false;">
+          <span class="method-name">future?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells whether the DateTime object&#8216;s datetime lies <a
+href="Calculations.html#M000983">in</a> the future
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000990" class="method-detail">
+        <a name="M000990"></a>
+
+        <div class="method-heading">
+          <span class="method-name">getutc</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M000989">utc</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000983" class="method-detail">
+        <a name="M000983"></a>
+
+        <div class="method-heading">
+          <span class="method-name">in</span><span class="method-args">(seconds)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M000982">since</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000985" class="method-detail">
+        <a name="M000985"></a>
+
+        <div class="method-heading">
+          <span class="method-name">midnight</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M000984">beginning_of_day</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000976" class="method-detail">
+        <a name="M000976"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000976.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000976.html');return false;">
+          <span class="method-name">past?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells whether the DateTime object&#8216;s datetime lies <a
+href="Calculations.html#M000983">in</a> the past
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000978" class="method-detail">
+        <a name="M000978"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000978.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000978.html');return false;">
+          <span class="method-name">seconds_since_midnight</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Seconds <a href="Calculations.html#M000982">since</a> <a
+href="Calculations.html#M000985">midnight</a>: DateTime.now.<a
+href="Calculations.html#M000978">seconds_since_midnight</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000982" class="method-detail">
+        <a name="M000982"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000982.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000982.html');return false;">
+          <span class="method-name">since</span><span class="method-args">(seconds)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new DateTime representing the time a number of seconds <a
+href="Calculations.html#M000982">since</a> the instance time Do not use
+this method <a href="Calculations.html#M000983">in</a> combination with
+x.months, use months_since instead!
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000989" class="method-detail">
+        <a name="M000989"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000989.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000989.html');return false;">
+          <span class="method-name">utc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adjusts DateTime to UTC by adding its offset value; offset is set to 0
+</p>
+<p>
+Example:
+</p>
+<pre>
+  DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))       # =&gt; Mon, 21 Feb 2005 10:11:12 -0600
+  DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24)).utc   # =&gt; Mon, 21 Feb 2005 16:11:12 +0000
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000991" class="method-detail">
+        <a name="M000991"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000991.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000991.html');return false;">
+          <span class="method-name">utc?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if offset == 0
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000992" class="method-detail">
+        <a name="M000992"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M000992.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M000992.html');return false;">
+          <span class="method-name">utc_offset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the offset value <a href="Calculations.html#M000983">in</a> seconds
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

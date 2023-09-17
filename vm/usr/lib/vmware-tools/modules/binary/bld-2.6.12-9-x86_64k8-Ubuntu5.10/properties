@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-9-amd64-k8
+ModVersion yes
+SMP no
+PageOffset FFFF810000000000
+Comment Ubuntu5.10, 2.6.12-9-amd64-k8, x86_64 
+UtsMachine x86_64

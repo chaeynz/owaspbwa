@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libpolkit2
+/usr/share/doc/libpolkit2/README
+/usr/share/doc/libpolkit2/AUTHORS
+/usr/share/doc/libpolkit2/copyright
+/usr/share/doc/libpolkit2/changelog.gz
+/usr/share/doc/libpolkit2/NEWS.gz
+/usr/share/doc/libpolkit2/changelog.Debian.gz
+/usr/lib
+/usr/lib/libpolkit.so.2.0.0
+/usr/lib/libpolkit.so.2

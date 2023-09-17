@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-26mdk
+ModVersion no
+SMP no
+PageOffset FFFF810000000000
+Comment Mandriva CS4, 2.6.12-26mdk, amd64, default
+UtsMachine x86_64

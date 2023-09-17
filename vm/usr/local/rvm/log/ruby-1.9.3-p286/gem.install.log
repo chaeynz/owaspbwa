@@ -1,0 +1,7 @@
+/usr/local/rvm/rubies/ruby-1.9.3-p286/lib/ruby/1.9.1/yaml.rb:56:in `<top (required)>':
+It seems your ruby installation is missing psych (for YAML output).
+To eliminate this warning, please install libyaml and reinstall your ruby.
+Successfully installed rvm-1.11.3.5
+1 gem installed
+Installing ri documentation for rvm-1.11.3.5...
+Installing RDoc documentation for rvm-1.11.3.5...

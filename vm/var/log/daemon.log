@@ -1,0 +1,116 @@
+Sep 14 17:01:31 owaspbwa init: hal main process (808) terminated with status 2
+Sep 14 17:01:31 owaspbwa init: hal main process ended, respawning
+Sep 14 17:01:31 owaspbwa init: apport pre-start process (850) terminated with status 1
+Sep 14 17:01:31 owaspbwa acpid: starting up with proc fs
+Sep 14 17:01:31 owaspbwa init: apport post-stop process (874) terminated with status 1
+Sep 14 17:01:31 owaspbwa acpid: 1 rule loaded
+Sep 14 17:01:31 owaspbwa acpid: waiting for events: event logging is off
+Sep 14 15:01:34 owaspbwa ntpdate[754]: step time server 185.125.190.58 offset -7197.899721 sec
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[949]: Upgrading MySQL tables if necessary.
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[952]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[952]: Looking for 'mysql' as: /usr/bin/mysql
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[952]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[952]: This installation of MySQL is already upgraded to 5.1.41, use --force if you still need to run mysql_upgrade
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[959]: Checking for insecure root accounts.
+Sep 14 15:01:35 owaspbwa /etc/mysql/debian-start[963]: Triggering myisam-recover for all MyISAM tables
+Sep 15 01:55:42 owaspbwa init: hal main process (712) terminated with status 2
+Sep 15 01:55:42 owaspbwa init: hal main process ended, respawning
+Sep 15 01:55:42 owaspbwa init: apport pre-start process (747) terminated with status 1
+Sep 15 01:55:42 owaspbwa acpid: starting up with proc fs
+Sep 15 01:55:42 owaspbwa acpid: 1 rule loaded
+Sep 15 01:55:42 owaspbwa acpid: waiting for events: event logging is off
+Sep 15 01:55:42 owaspbwa init: apport post-stop process (767) terminated with status 1
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[854]: Upgrading MySQL tables if necessary.
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[857]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[857]: Looking for 'mysql' as: /usr/bin/mysql
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[857]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[857]: This installation of MySQL is already upgraded to 5.1.41, use --force if you still need to run mysql_upgrade
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[867]: Checking for insecure root accounts.
+Sep 15 01:55:43 owaspbwa /etc/mysql/debian-start[871]: Triggering myisam-recover for all MyISAM tables
+Sep 14 23:56:41 owaspbwa init: hal main process (717) terminated with status 2
+Sep 14 23:56:41 owaspbwa init: hal main process ended, respawning
+Sep 14 23:56:41 owaspbwa init: apport pre-start process (757) terminated with status 1
+Sep 14 23:56:41 owaspbwa acpid: starting up with proc fs
+Sep 14 23:56:41 owaspbwa acpid: 1 rule loaded
+Sep 14 23:56:41 owaspbwa acpid: waiting for events: event logging is off
+Sep 14 23:56:41 owaspbwa init: apport post-stop process (776) terminated with status 1
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[864]: Upgrading MySQL tables if necessary.
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[867]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[867]: Looking for 'mysql' as: /usr/bin/mysql
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[867]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[867]: This installation of MySQL is already upgraded to 5.1.41, use --force if you still need to run mysql_upgrade
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[874]: Checking for insecure root accounts.
+Sep 14 23:56:42 owaspbwa /etc/mysql/debian-start[878]: Triggering myisam-recover for all MyISAM tables
+Sep 14 23:56:44 owaspbwa dhclient: DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3
+Sep 14 23:56:46 owaspbwa dhclient: DHCPOFFER of 10.55.0.14 from 10.55.255.254
+Sep 14 23:56:46 owaspbwa dhclient: DHCPREQUEST of 10.55.0.14 on eth0 to 255.255.255.255 port 67
+Sep 14 23:56:46 owaspbwa dhclient: DHCPACK of 10.55.0.14 from 10.55.255.254
+Sep 14 23:56:46 owaspbwa dhclient: bound to 10.55.0.14 -- renewal in 1126534 seconds.
+Sep 14 23:56:46 owaspbwa init: ssh main process (706) terminated with status 255
+Sep 14 23:56:47 owaspbwa ntpdate[1812]: adjust time server 2620:2d:4000:1::41 offset 0.210853 sec
+Sep 15 00:04:43 owaspbwa init: hal main process (737) terminated with status 2
+Sep 15 00:04:43 owaspbwa init: hal main process ended, respawning
+Sep 15 00:04:43 owaspbwa init: apport pre-start process (778) terminated with status 1
+Sep 15 00:04:43 owaspbwa acpid: starting up with proc fs
+Sep 15 00:04:43 owaspbwa acpid: 1 rule loaded
+Sep 15 00:04:43 owaspbwa acpid: waiting for events: event logging is off
+Sep 15 00:04:43 owaspbwa init: apport post-stop process (800) terminated with status 1
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[886]: Upgrading MySQL tables if necessary.
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[889]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[889]: Looking for 'mysql' as: /usr/bin/mysql
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[889]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[889]: This installation of MySQL is already upgraded to 5.1.41, use --force if you still need to run mysql_upgrade
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[896]: Checking for insecure root accounts.
+Sep 15 00:04:44 owaspbwa /etc/mysql/debian-start[902]: Triggering myisam-recover for all MyISAM tables
+Sep 15 00:04:47 owaspbwa dhclient: DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3
+Sep 15 00:04:47 owaspbwa dhclient: DHCPOFFER of 10.55.0.14 from 10.55.255.254
+Sep 15 00:04:47 owaspbwa dhclient: DHCPREQUEST of 10.55.0.14 on eth0 to 255.255.255.255 port 67
+Sep 15 00:04:47 owaspbwa dhclient: DHCPACK of 10.55.0.14 from 10.55.255.254
+Sep 15 00:04:47 owaspbwa dhclient: bound to 10.55.0.14 -- renewal in 980450 seconds.
+Sep 15 00:04:47 owaspbwa init: ssh main process (722) terminated with status 255
+Sep 15 00:04:49 owaspbwa ntpdate[1825]: adjust time server 2620:2d:4000:1::41 offset 0.265650 sec
+Sep 15 14:28:28 owaspbwa init: hal main process (692) terminated with status 2
+Sep 15 14:28:28 owaspbwa init: hal main process ended, respawning
+Sep 15 14:28:28 owaspbwa init: apport pre-start process (729) terminated with status 1
+Sep 15 14:28:28 owaspbwa acpid: starting up with proc fs
+Sep 15 14:28:28 owaspbwa acpid: 1 rule loaded
+Sep 15 14:28:28 owaspbwa acpid: waiting for events: event logging is off
+Sep 15 14:28:28 owaspbwa init: apport post-stop process (748) terminated with status 1
+Sep 15 14:28:29 owaspbwa dhclient: DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 6
+Sep 15 14:28:29 owaspbwa dhclient: DHCPOFFER of 10.55.0.14 from 10.55.255.254
+Sep 15 14:28:29 owaspbwa dhclient: DHCPREQUEST of 10.55.0.14 on eth0 to 255.255.255.255 port 67
+Sep 15 14:28:29 owaspbwa dhclient: DHCPACK of 10.55.0.14 from 10.55.255.254
+Sep 15 14:28:29 owaspbwa dhclient: bound to 10.55.0.14 -- renewal in 1288324 seconds.
+Sep 15 14:28:29 owaspbwa init: ssh main process (682) terminated with status 255
+Sep 15 14:28:30 owaspbwa ntpdate[852]: step time server 185.125.190.58 offset 1.091750 sec
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[896]: Upgrading MySQL tables if necessary.
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[899]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[899]: Looking for 'mysql' as: /usr/bin/mysql
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[899]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[899]: This installation of MySQL is already upgraded to 5.1.41, use --force if you still need to run mysql_upgrade
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[906]: Checking for insecure root accounts.
+Sep 15 14:28:31 owaspbwa /etc/mysql/debian-start[913]: Triggering myisam-recover for all MyISAM tables
+Sep 15 14:44:52 owaspbwa init: hal main process (722) terminated with status 2
+Sep 15 14:44:52 owaspbwa init: hal main process ended, respawning
+Sep 15 14:44:52 owaspbwa dhclient: Listening on LPF/eth0/00:0c:29:46:b9:94
+Sep 15 14:44:52 owaspbwa dhclient: Sending on   LPF/eth0/00:0c:29:46:b9:94
+Sep 15 14:44:52 owaspbwa dhclient: Sending on   Socket/fallback
+Sep 15 14:44:52 owaspbwa init: apport pre-start process (754) terminated with status 1
+Sep 15 14:44:52 owaspbwa acpid: starting up with proc fs
+Sep 15 14:44:52 owaspbwa acpid: 1 rule loaded
+Sep 15 14:44:52 owaspbwa acpid: waiting for events: event logging is off
+Sep 15 14:44:52 owaspbwa init: apport post-stop process (782) terminated with status 1
+Sep 15 14:44:53 owaspbwa dhclient: DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3
+Sep 15 14:44:53 owaspbwa dhclient: DHCPOFFER of 10.55.0.14 from 10.55.255.254
+Sep 15 14:44:53 owaspbwa dhclient: DHCPREQUEST of 10.55.0.14 on eth0 to 255.255.255.255 port 67
+Sep 15 14:44:53 owaspbwa dhclient: DHCPACK of 10.55.0.14 from 10.55.255.254
+Sep 15 14:44:53 owaspbwa dhclient: bound to 10.55.0.14 -- renewal in 1006101 seconds.
+Sep 15 14:44:53 owaspbwa init: ssh main process (703) terminated with status 255
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[922]: Upgrading MySQL tables if necessary.
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[925]: /usr/bin/mysql_upgrade: the '--basedir' option is always ignored
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[925]: Looking for 'mysql' as: /usr/bin/mysql
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[925]: Looking for 'mysqlcheck' as: /usr/bin/mysqlcheck
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[925]: This installation of MySQL is already upgraded to 5.1.41, use --force if you still need to run mysql_upgrade
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[933]: Checking for insecure root accounts.
+Sep 15 14:44:53 owaspbwa /etc/mysql/debian-start[937]: Triggering myisam-recover for all MyISAM tables
+Sep 15 14:44:56 owaspbwa ntpdate[877]: step time server 185.125.190.58 offset 1.460992 sec

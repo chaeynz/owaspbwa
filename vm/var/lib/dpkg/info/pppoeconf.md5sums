@@ -1,0 +1,7 @@
+a15ff89376b9ec295832406308966949  usr/share/pixmaps/pppoeconf.xpm
+3af4d073a42fecf56b132d05673e47df  usr/share/doc/pppoeconf/README.Debian
+f26fefcd7fbeed9b372c4d4b5363bc9d  usr/share/doc/pppoeconf/copyright
+d6d7d0868240ca284af0ec7db4ac22d1  usr/share/doc/pppoeconf/changelog.gz
+18e3090a04da176142744f8820c64f73  usr/share/menu/pppoeconf
+3899c9b3f71803c3b3a26be6e34b294d  usr/share/man/man8/pppoeconf.8.gz
+c931a8b468ecb8c44e4af73efeaa7c7d  usr/sbin/pppoeconf

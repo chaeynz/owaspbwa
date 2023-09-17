@@ -1,0 +1,38 @@
+#! /bin/sh -e
+#
+# Copyright 2000,2001,2003,2004,2008 by Stefan Hornburg (Racke) <racke@linuxia.de>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public
+# License along with this program; if not, write to the Free
+# Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+# MA  02111-1307  USA.
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+if [ "$1" = "configure" ]; then
+	# alternative for deliverquota
+	update-alternatives --install /usr/bin/deliverquota deliverquota /usr/bin/deliverquota.courier 10 \
+                      --slave /usr/share/man/man8/deliverquota.8.gz deliverquota.8.gz /usr/share/man/man8/deliverquota.courier.8.gz
+	# alternative for maildir
+	update-alternatives --install /usr/share/man/man5/maildir.5.gz maildir.5.gz /usr/share/man/man5/maildir.courier.5.gz 5
+	# alternative for maildirmake
+    update-alternatives --install /usr/bin/maildirmake maildirmake /usr/bin/maildirmake.courier 5 \
+                      --slave /usr/share/man/man1/maildirmake.1.gz maildirmake.1.gz /usr/share/man/man1/maildirmake.courier.1.gz
+	# alternative for maildirquota
+	update-alternatives --install /usr/share/man/man7/maildirquota.7.gz maildirquota.7.gz /usr/share/man/man7/maildirquota.courier.7.gz 5
+	# alternative for makedat
+	update-alternatives --install /usr/bin/makedat makedat /usr/bin/makedat.courier 5 --slave /usr/share/man/man1/makedat.1.gz makedat.1.gz /usr/share/man/man1/makedat.courier.1.gz
+fi
+
+

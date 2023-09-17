@@ -1,0 +1,9 @@
+8cd03d832579f8c7ec79ae2d8ad8550d  usr/lib/cli/nunit.core-2.4/nunit.core.dll
+38ba07862db6e7faa19abbea228cd5e6  usr/lib/cli/nunit.core.interfaces-2.4/nunit.core.interfaces.dll
+b6dddbbe78b43a39efaaf6a56fabde15  usr/lib/cli/nunit.core.extensions-2.4/nunit.core.extensions.dll
+631d5fa345101648e7c86c56e1abf10a  usr/lib/cli/nunit.framework-2.4/nunit.framework.dll
+b5b7348c2405e6e05b8344acbc639969  usr/lib/cli/nunit.mocks-2.4/nunit.mocks.dll
+6ed6dbd7ca967d463c3a442c92a7ea84  usr/lib/cli/nunit.util-2.4/nunit.util.dll
+059ac9066af53062360ac1f598d08f98  usr/share/doc/libnunit2.4-cil/copyright
+6bb5629c3c7c123f98d560307c8482de  usr/share/doc/libnunit2.4-cil/changelog.Debian.gz
+617a99828e085906a83fa7fc13312ae5  usr/share/cli-common/packages.d/libnunit2.4-cil.installcligac

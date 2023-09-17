@@ -1,0 +1,7 @@
+UtsRelease 2.4.21-99-athlon
+UtsVersion #1 Wed Sep 24 13:34:32 UTC 2003
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment SuSE 9.0 up Athlon
+UtsMachine i386

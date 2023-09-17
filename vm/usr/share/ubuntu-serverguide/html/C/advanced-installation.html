@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Advanced Installation</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="installation.html" title="Chapter 2. Installation" />
+    <link rel="prev" href="installing-upgrading.html" title="Upgrading" />
+    <link rel="next" href="package-management.html" title="Chapter 3. Package Management" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="installation.html">Installation</a></span> &gt; <span class="breadcrumb-node">Advanced Installation</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Advanced Installation">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="advanced-installation"></a>Advanced Installation</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Software RAID">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="software-raid"></a>Software RAID</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+        RAID is a method of configuring multiple hard drives to act as one, reducing the 
+        probability of catastrophic data loss in case of drive failure. RAID is implemented in either software 
+        (where the operating system knows about both drives and actively maintains both of them) or hardware 
+        (where a special controller makes the OS think there's only one drive and maintains the drives 'invisibly').
+        </p>
+                <p>
+        The RAID software included with current versions of Linux (and Ubuntu) is based on the <span class="application"><strong>'mdadm'</strong></span>
+        driver and works very well, better even than many so-called 'hardware' RAID controllers.  This section will guide you 
+        through installing Ubuntu Server Edition using two RAID1 partitions on two physical hard drives, one for 
+        <span class="emphasis"><em>/</em></span> and another for <span class="emphasis"><em>swap</em></span>.
+        </p>
+                <div class="sect3" title="Partitioning">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="raid-partitioning"></a>Partitioning</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          Follow the installation steps until you get to the <span class="emphasis"><em>Partition disks</em></span> step, then:
+          </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+              Select <span class="emphasis"><em>Manual</em></span> as the partition method.
+              </p>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+              Select the first hard drive, and agree to <span class="emphasis"><em>"Create a new empty partition table on this device?"</em></span>.
+              </p>
+                        <p>
+              Repeat this step for each drive you wish to be part of the RAID array.
+              </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+              Select the <span class="emphasis"><em>"FREE SPACE"</em></span> on the first drive then select <span class="emphasis"><em>"Create a new partition"</em></span>. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+              Next, select the <span class="emphasis"><em>Size</em></span> of the partition.  This partition will be the <span class="emphasis"><em>swap</em></span> partition,
+              and a general rule for swap size is twice that of RAM.  Enter the partition size, then choose <span class="emphasis"><em>Primary</em></span>,
+              then <span class="emphasis"><em>Beginning</em></span>. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+              Select the <span class="emphasis"><em>"Use as:"</em></span> line at the top.  By default this is 
+              <span class="italic">"Ext4 journaling file system"</span>, change that to <span class="emphasis"><em>"physical volume for RAID"</em></span>
+              then <span class="emphasis"><em>"Done setting up partition"</em></span>. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+              For the <span class="emphasis"><em>/</em></span> partition once again select <span class="emphasis"><em>"Free Space"</em></span> on the first drive then
+              <span class="emphasis"><em>"Create a new partition"</em></span>. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 7">
+                        <p>
+              Use the rest of the free space on the drive and choose <span class="emphasis"><em>Continue</em></span>, then <span class="emphasis"><em>Primary</em></span>. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 8">
+                        <p>
+              As with the swap partition, select the <span class="emphasis"><em>"Use as:"</em></span> line at the 
+              top, changing it to <span class="emphasis"><em>"physical volume for RAID"</em></span>. Also select the 
+              <span class="emphasis"><em>"Bootable flag:"</em></span> line to change the value to 
+              <span class="emphasis"><em>"on"</em></span>. Then choose <span class="emphasis"><em>"Done setting up partition"</em></span>. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 9">
+                        <p>
+              Repeat steps three through eight for the other disk and partitions. 
+              </p>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="sect3" title="RAID Configuration">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="raid-configuration"></a>RAID Configuration</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          With the partitions setup the arrays are ready to be configured:
+          </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+              Back in the main "Partition Disks" page, select <span class="emphasis"><em>"Configure Software RAID"</em></span> at the top.
+              </p>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+              Select <span class="emphasis"><em>"yes"</em></span> to write the changes to disk.
+              </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+              Choose <span class="emphasis"><em>"Create MD device"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+              For this example, select <span class="emphasis"><em>"RAID1"</em></span>, but if you are using a different setup choose the appropriate type 
+              (RAID0 RAID1 RAID5).
+              </p>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+                In order to use <span class="emphasis"><em>RAID5</em></span> you need at least <span class="emphasis"><em>three</em></span> drives.  Using RAID0 or RAID1
+                only <span class="emphasis"><em>two</em></span> drives are required.
+                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+              Enter the number of active devices <span class="emphasis"><em>"2"</em></span>, or the amount of hard drives you have, for the array.  Then 
+              select <span class="emphasis"><em>"Continue"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+              Next, enter the number of spare devices <span class="emphasis"><em>"0"</em></span> by default, then choose <span class="emphasis"><em>"Continue"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 7">
+                        <p>
+              Choose which partitions to use. Generally they will be sda1, sdb1, sdc1, etc. The numbers will usually match and the different 
+              letters correspond to different hard drives.  
+              </p>
+                        <p>
+              For the <span class="emphasis"><em>swap</em></span> partition choose <span class="emphasis"><em>sda1</em></span> and <span class="emphasis"><em>sdb1</em></span>.
+              Select <span class="emphasis"><em>"Continue"</em></span> to go to the next step.
+              </p>
+                      </li>
+                      <li class="step" title="Step 8">
+                        <p>
+              Repeat steps <span class="emphasis"><em>three</em></span> through <span class="emphasis"><em>seven</em></span> for the <span class="emphasis"><em>/</em></span> partition choosing 
+              <span class="emphasis"><em>sda2</em></span> and <span class="emphasis"><em>sdb2</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 9">
+                        <p>
+              Once done select <span class="emphasis"><em>"Finish"</em></span>.
+              </p>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="sect3" title="Formatting">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="raid-formatting"></a>Formatting</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          There should now be a list of hard drives and RAID devices. The next step is to format and set the mount point for the RAID devices.
+          Treat the RAID device as a local hard drive, format and mount accordingly.
+          </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+              Select <span class="emphasis"><em>"#1"</em></span> under the <span class="emphasis"><em>"RAID1 device #0"</em></span> partition. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+              Choose <span class="emphasis"><em>"Use as:"</em></span>.  Then select <span class="emphasis"><em>"swap area"</em></span>, then 
+              <span class="emphasis"><em>"Done setting up partition"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+              Next, select <span class="emphasis"><em>"#1"</em></span> under the <span class="emphasis"><em>"RAID1 device #1"</em></span> partition. 
+              </p>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+              Choose <span class="emphasis"><em>"Use as:"</em></span>.  Then select <span class="emphasis"><em>"Ext4 journaling file system"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+              Then select the <span class="emphasis"><em>"Mount point"</em></span> and choose <span class="emphasis"><em>"/ - the root file system"</em></span>.
+              Change any of the other options as appropriate, then select <span class="emphasis"><em>"Done setting up partition"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+              Finally, select <span class="emphasis"><em>"Finish partitioning and write changes to disk"</em></span>.
+              </p>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+          If you choose to place the root partition on a RAID array, the installer will then ask if you would like to boot in
+          a <span class="emphasis"><em>degraded</em></span> state.  See <a class="xref" href="advanced-installation.html#raid-degraded" title="Degraded RAID">the section called “Degraded RAID”</a> for further details.  
+          </p>
+                  <p>
+          The installation process will then continue normally.
+          </p>
+                </div>
+                <div class="sect3" title="Degraded RAID">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="raid-degraded"></a>Degraded RAID</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          At some point in the life of the computer a disk failure event may occur.  When this happens, using Software RAID, the operating
+          system will place the array into what is known as a <span class="emphasis"><em>degraded</em></span> state.
+          </p>
+                  <p>
+          If the array has become degraded, due to the chance of data corruption, by default Ubuntu Server Edition will boot 
+          to <span class="emphasis"><em>initramfs</em></span> after thirty seconds.  Once the initramfs has booted there is a fifteen second 
+          prompt giving you the option to go ahead and boot the system, or attempt manual recover.  Booting to the initramfs
+          prompt may or may not be the desired behavior, especially if the machine is in a remote location.  Booting to a 
+          degraded array can be configured several ways:
+          </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+              The <span class="application"><strong>dpkg-reconfigure</strong></span> utility can be used to configure the default behavior, and 
+              during the process you will be queried about additional settings related to the array.  Such as monitoring, email 
+              alerts, etc.  To reconfigure <span class="application"><strong>mdadm</strong></span> enter the following:  
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo dpkg-reconfigure mdadm</strong></span>
+</pre>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              The <span class="command"><strong>dpkg-reconfigure mdadm</strong></span> process will change the <code class="filename">/etc/initramfs-tools/conf.d/mdadm</code>
+              configuration file.  The file has the advantage of being able to pre-configure the system's behavior, and can also be manually
+              edited:
+              </p>
+                        <pre class="programlisting">
+BOOT_DEGRADED=true
+</pre>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+            The configuration file can be overridden by using a Kernel argument.
+            </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              Using a Kernel argument will allow the system to boot to a degraded array as well:
+              </p>
+                        <div class="itemizedlist">
+                          <ul class="itemizedlist" type="circle">
+                            <li class="listitem">
+                              <p>
+                  When the server is booting press <span class="keycap"><strong>Shift</strong></span> to open the <span class="application"><strong>Grub</strong></span> menu.
+                  </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                  Press <span class="keycap"><strong>e</strong></span> to edit your kernel command options.
+                  </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                  Press the <span class="keycap"><strong>down</strong></span> arrow to highlight the kernel line.
+                  </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                  Add <span class="emphasis"><em>"bootdegraded=true"</em></span> (without the quotes) to the end of the line.
+                  </p>
+                            </li>
+                            <li class="listitem">
+                              <p>
+                  Press <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>x</strong></span> to boot the system.
+                  </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+           Once the system has booted you can either repair the array see <a class="xref" href="advanced-installation.html#raid-maintenance" title="RAID Maintenance">the section called “RAID Maintenance”</a> for details, or copy 
+           important data to another machine due to major hardware failure.
+           </p>
+                </div>
+                <div class="sect3" title="RAID Maintenance">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="raid-maintenance"></a>RAID Maintenance</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          The <span class="application"><strong>mdadm</strong></span> utility can be used to view the status of an array, add disks to an array, remove 
+          disks, etc:
+          </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+              To view the status of an array, from a terminal prompt enter:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo mdadm -D /dev/md0</strong></span>
+</pre>
+                        <p>
+              The <span class="emphasis"><em>-D</em></span> tells <span class="application"><strong>mdadm</strong></span> to display <span class="emphasis"><em>detailed</em></span> information
+              about the <code class="filename">/dev/md0</code> device.  Replace <code class="filename">/dev/md0</code> with the appropriate RAID device.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              To view the status of a disk in an array:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo mdadm -E /dev/sda1</strong></span>
+</pre>
+                        <p>
+              The output if very similar to the <span class="command"><strong>mdadm -D</strong></span> command, adjust <code class="filename">/dev/sda1</code> for each disk.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              If a disk fails and needs to be removed from an array enter:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo mdadm --remove /dev/md0 /dev/sda1</strong></span>
+</pre>
+                        <p>
+              Change <code class="filename">/dev/md0</code> and <code class="filename">/dev/sda1</code> to the appropriate RAID device and disk.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              Similarly, to add a new disk:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo mdadm --add /dev/md0 /dev/sda1</strong></span>
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+          Sometimes a disk can change to a <span class="emphasis"><em>faulty</em></span> state even though there is nothing physically wrong with the drive. 
+          It is usually worthwhile to remove the drive from the array then re-add it.  This will cause the drive to re-sync with the array.
+          If the drive will not sync with the array, it is a good indication of hardware failure.
+          </p>
+                  <p>
+          The <code class="filename">/proc/mdstat</code> file also contains useful information about the system's RAID devices:
+          </p>
+                  <pre class="screen">
+<span class="command"><strong>cat /proc/mdstat</strong></span>
+<code class="computeroutput">Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+md0 : active raid1 sda1[0] sdb1[1]
+      10016384 blocks [2/2] [UU]
+      
+unused devices: &lt;none&gt;</code>
+</pre>
+                  <p>
+          The following command is great for watching the status of a syncing drive:
+          </p>
+                  <pre class="screen">
+<span class="command"><strong>watch -n1 cat /proc/mdstat</strong></span>
+</pre>
+                  <p>
+          Press <span class="emphasis"><em>Ctrl+c</em></span> to stop the <span class="application"><strong>watch</strong></span> command.
+          </p>
+                  <p>
+          If you do need to replace a faulty drive, after the drive has been replaced and synced, <span class="application"><strong>grub</strong></span> will need to be 
+          installed.  To install <span class="application"><strong>grub</strong></span> on the new drive, enter the following:
+          </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo grub-install /dev/md0</strong></span>
+</pre>
+                  <p>
+          Replace <code class="filename">/dev/md0</code> with the appropriate array device name.
+          </p>
+                </div>
+                <div class="sect3" title="Resources">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="raid-resources"></a>Resources</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          The topic of RAID arrays is a complex one due to the plethora of ways RAID can be configured.  Please see the following links for 
+          more information:
+          </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+              <a class="ulink" href="https://help.ubuntu.com/community/Installation#raid" target="_top">Ubuntu Wiki Articles on RAID</a>.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              <a class="ulink" href="http://www.faqs.org/docs/Linux-HOWTO/Software-RAID-HOWTO.html" target="_top">Software RAID HOWTO</a>
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              <a class="ulink" href="http://oreilly.com/catalog/9781565927308/" target="_top">Managing RAID on Linux</a>
+              </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Logical Volume Manager (LVM)">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="lvm"></a>Logical Volume Manager (LVM)</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+        Logical Volume Manger, or <span class="emphasis"><em>LVM</em></span>, allows administrators to create <span class="emphasis"><em>logical</em></span> volumes out of
+        one or multiple physical hard disks.  LVM volumes can be created on both software RAID partitions and standard partitions 
+        residing on a single disk.  Volumes can also be extended, giving greater flexibility to systems as requirements change.
+        </p>
+                <div class="sect3" title="Overview">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="lvm-overview"></a>Overview</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          A side effect of LVM's power and flexibility is a greater degree of complication.  Before diving into the LVM installation process,
+          it is best to get familiar with some terms.
+          </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+              <span class="emphasis"><em>Volume Group (VG):</em></span> contains one or several Logical Volumes (LV). 
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              <span class="emphasis"><em>Logical Volume (LV):</em></span> is similar to a partition in a non-LVM system.  Multiple Physical Volumes (PV) 
+              can make up one LV, on top of which resides the actual EXT3, XFS, JFS, etc filesystem.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              <span class="emphasis"><em>Physical Volume (PV):</em></span> physical hard disk or software RAID partition.  The Volume Group can be extended
+              by adding more PVs.
+              </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sect3" title="Installation">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="lvm-installation"></a>Installation</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          As an example this section covers installing Ubuntu Server Edition with <code class="filename">/srv</code> mounted
+          on a LVM volume.  During the initial install only one Physical Volume (PV) will be part of the Volume Group (VG).  Another
+          PV will be added after install to demonstrate how a VG can be extended.
+          </p>
+                  <p>
+          There are several installation options for LVM, <span class="emphasis"><em>"Guided - use the entire disk and setup LVM"</em></span> which will
+          also allow you to assign a portion of the available space to LVM, <span class="emphasis"><em>"Guided - use entire and setup encrypted LVM"</em></span>,
+          or <span class="emphasis"><em>Manually</em></span> setup the partitions and configure LVM.  At this time the only way to configure a system with 
+          both LVM and standard partitions, during installation, is to use the Manual approach.
+          </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+              Follow the installation steps until you get to the <span class="emphasis"><em>Partition disks</em></span> step, then:
+              </p>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+              At the <span class="emphasis"><em>"Partition Disks</em></span> screen choose <span class="emphasis"><em>"Manual"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+              Select the hard disk and on the next screen choose "yes" to <span class="emphasis"><em>"Create a new empty partition table on this device"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+              Next, create standard <span class="emphasis"><em>/boot</em></span>, <span class="emphasis"><em>swap</em></span>, and <span class="emphasis"><em>/</em></span> partitions with whichever
+              filesystem you prefer.
+              </p>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+              For the LVM <span class="emphasis"><em>/srv</em></span>, create a new <span class="emphasis"><em>Logical</em></span> partition.  Then change <span class="emphasis"><em>"Use as"</em></span>
+              to <span class="emphasis"><em>"physical volume for LVM"</em></span> then <span class="emphasis"><em>"Done setting up the partition"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+              Now select <span class="emphasis"><em>"Configure the Logical Volume Manager"</em></span> at the top, and choose <span class="emphasis"><em>"Yes"</em></span> to write 
+              the changes to disk.
+              </p>
+                      </li>
+                      <li class="step" title="Step 7">
+                        <p>
+              For the <span class="emphasis"><em>"LVM configuration action"</em></span> on the next screen, choose <span class="emphasis"><em>"Create volume group"</em></span>.  Enter
+              a name for the VG such as <span class="emphasis"><em>vg01</em></span>, or something more descriptive. After entering a name, select the partition 
+              configured for LVM, and choose <span class="emphasis"><em>"Continue"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 8">
+                        <p>
+              Back at the <span class="emphasis"><em>"LVM configuration action"</em></span> screen, select <span class="emphasis"><em>"Create logical volume"</em></span>.  Select 
+              the newly created volume group, and enter a name for the new LV, for example <span class="emphasis"><em>srv</em></span> since that is the intended
+              mount point.  Then choose a size, which may be the full partition because it can always be extended later. Choose 
+              <span class="emphasis"><em>"Finish"</em></span> and you should be back at the main <span class="emphasis"><em>"Partition Disks"</em></span> screen.    
+              </p>
+                      </li>
+                      <li class="step" title="Step 9">
+                        <p>
+              Now add a filesystem to the new LVM.  Select the partition under <span class="emphasis"><em>"LVM VG vg01, LV srv"</em></span>, or whatever name
+              you have chosen, the choose <span class="emphasis"><em>Use as</em></span>.  Setup a file system as normal selecting <span class="emphasis"><em>/srv</em></span> as
+              the mount point.  Once done, select <span class="emphasis"><em>"Done setting up the partition"</em></span>.
+              </p>
+                      </li>
+                      <li class="step" title="Step 10">
+                        <p>
+              Finally, select <span class="emphasis"><em>"Finish partitioning and write changes to disk"</em></span>.  Then confirm the changes and continue
+              with the rest of the installation.
+              </p>
+                      </li>
+                    </ol>
+                  </div>
+                  <p>
+          There are some useful utilities to view information about LVM: 
+          </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p><span class="emphasis"><em>vgdisplay:</em></span> shows information about Volume Groups.</p>
+                      </li>
+                      <li class="listitem">
+                        <p><span class="emphasis"><em>lvdisplay:</em></span> has information about Logical Volumes.</p>
+                      </li>
+                      <li class="listitem">
+                        <p><span class="emphasis"><em>pvdisplay:</em></span> similarly displays information about Physical Volumes.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sect3" title="Extending Volume Groups">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="lvm-extending"></a>Extending Volume Groups</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+          Continuing with <span class="emphasis"><em>srv</em></span> as an LVM volume example, this section covers adding a second hard disk, creating
+          a Physical Volume (PV), adding it to the volume group (VG), extending the logical volume <code class="filename">srv</code>
+          and finally extending the filesystem. This example assumes a second hard disk has been added to the system. This hard disk will be 
+          named <code class="filename">/dev/sdb</code> in our example. BEWARE: make sure you don't already have an existing <code class="filename">/dev/sdb</code>
+          before issuing the commands below. You could lose some data if you issue those commands on a non-empty disk. In our example we will 
+          use the entire disk as a physical volume (you could choose to create partitions and use them as different physical volumes)
+          </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+              First, create the physical volume, in a terminal execute:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo pvcreate /dev/sdb</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+              Now extend the Volume Group (VG):
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo vgextend vg01 /dev/sdb</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+              Use <span class="application"><strong>vgdisplay</strong></span> to find out the free physical extents - Free PE / size (the size you can allocate). 
+              We will assume a free size of 511 PE (equivalent to 2GB with a PE size of 4MB) and we will use the whole free space available.
+              Use your own PE and/or free space.
+              </p>
+                        <p>
+              The Logical Volume (LV) can now be extended by different methods, we will only see how to use the PE to extend the LV:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo lvextend /dev/vg01/srv -l +511</strong></span>
+</pre>
+                        <p>
+              The <span class="emphasis"><em>-l</em></span> option allows the LV to be extended using PE.
+              The <span class="emphasis"><em>-L</em></span> option allows the LV to be extended using Meg, Gig, Tera, etc bytes.
+              </p>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+              Even though you are supposed to be able to <span class="emphasis"><em>expand</em></span> an ext3 or ext4 filesystem without unmounting it first, 
+              it may be a good pratice to unmount it anyway and check the filesystem, so that you don't mess up the day you want to reduce
+              a logical volume (in that case unmounting first is compulsory).
+              </p>
+                        <p>
+              The following commands are for an <span class="emphasis"><em>EXT3</em></span> or <span class="emphasis"><em>EXT4</em></span> filesystem. If you are
+              using another filesystem there may be other utilities available.
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo umount /srv</strong></span>
+<span class="command"><strong>sudo e2fsck -f /dev/vg01/srv</strong></span>
+</pre>
+                        <p>
+              The <span class="emphasis"><em>-f</em></span> option of <span class="application"><strong>e2fsck</strong></span> forces checking even if the system seems clean.
+              </p>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+              Finally, resize the filesystem:
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo resize2fs /dev/vg01/srv</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+              Now mount the partition and check its size.
+              </p>
+                        <pre class="screen">
+<span class="command"><strong>mount /dev/vg01/srv /srv &amp;&amp; df -h /srv</strong></span>
+</pre>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="sect3" title="Resources">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="lvm-resources"></a>Resources</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+              See the <a class="ulink" href="https://help.ubuntu.com/community/Installation#lvm" target="_top">Ubuntu Wiki LVM Articles</a>.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              See the <a class="ulink" href="http://tldp.org/HOWTO/LVM-HOWTO/index.html" target="_top">LVM HOWTO</a> for more information.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              Another good article is 
+              <a class="ulink" href="http://www.linuxdevcenter.com/pub/a/linux/2006/04/27/managing-disk-space-with-lvm.html" target="_top">Managing Disk Space with LVM</a>
+              on O'Reilly's linuxdevcenter.com site.
+              </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+              For more information on <span class="application"><strong>fdisk</strong></span> see the
+              <a class="ulink" href="http://manpages.ubuntu.com/manpages/lucid/en/man8/fdisk.8.html" target="_top">fdisk man page</a>.
+              </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="installing-upgrading.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="installation.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="package-management.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Upgrading </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 3. Package Management</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

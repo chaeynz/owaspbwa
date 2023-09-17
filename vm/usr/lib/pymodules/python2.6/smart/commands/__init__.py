@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/commands/__init__.py

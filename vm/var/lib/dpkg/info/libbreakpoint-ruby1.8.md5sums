@@ -1,0 +1,10 @@
+0547ed045522c0ff5dd919308cd51040  usr/bin/breakpoint_client
+db23e47e533fe20900cd889ceaca913d  usr/lib/ruby/1.8/binding_of_caller.rb
+f47625d97cacde03aee4ca774b43ce62  usr/lib/ruby/1.8/breakpoint.rb
+fc91d6fdad663d392bb12629c44a51a2  usr/lib/ruby/1.8/breakpoint_client.rb
+1d492a34fcb1982f3a48fa81c1939975  usr/share/doc/libbreakpoint-ruby1.8/README
+a7e33b1ec216464083eba6f6c86edff7  usr/share/doc/libbreakpoint-ruby1.8/TODO
+4d6e0f4c15fc8991439c36f30f56bb99  usr/share/doc/libbreakpoint-ruby1.8/copyright
+e301db35e28ebfdbcbdf8fe80bd3d58b  usr/share/doc/libbreakpoint-ruby1.8/NEWS.gz
+ed0cee4833ec0b9c600c11851788a22b  usr/share/doc/libbreakpoint-ruby1.8/changelog.Debian.gz
+3a7c26dcaecabad1b3148255dd4d83bf  usr/share/man/man1/breakpoint_client.1.gz

@@ -1,0 +1,3 @@
+/etc/maven2/m2.conf
+/etc/maven2/settings.xml
+/etc/bash_completion.d/maven2

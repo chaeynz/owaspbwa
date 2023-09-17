@@ -1,0 +1,10 @@
+61828689824ef4d6f060f8bce686ee88  usr/lib/perl5/Compress/Raw/Zlib.pm
+f7531771eb742b98438b43a8d07892e8  usr/lib/perl5/auto/Compress/Raw/Zlib/Zlib.so
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/perl5/auto/Compress/Raw/Zlib/Zlib.bs
+24b5530458ed19b3eebd3805ea8c2ca3  usr/lib/perl5/auto/Compress/Raw/Zlib/autosplit.ix
+22277e37d2bd14d3fdd26acb887998c9  usr/share/man/man3/Compress::Raw::Zlib.3pm.gz
+6b1167d918663358f749a5f0847bffd1  usr/share/doc/libcompress-raw-zlib-perl/copyright
+ca315536c52855504bc8da30f735394e  usr/share/doc/libcompress-raw-zlib-perl/changelog.gz
+3921abeb4d209160b3d2db5f873453d7  usr/share/doc/libcompress-raw-zlib-perl/examples/filtdef
+820d1db90d971f0b2ca419ffa80f6cfe  usr/share/doc/libcompress-raw-zlib-perl/examples/filtinf
+2264d63cf4b7227c03be0bb29b020f78  usr/share/doc/libcompress-raw-zlib-perl/changelog.Debian.gz

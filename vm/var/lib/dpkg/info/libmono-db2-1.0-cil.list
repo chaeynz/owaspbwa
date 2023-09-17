@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/IBM.Data.DB2
+/usr/lib/mono/gac/IBM.Data.DB2/1.0.0.0__7c307b91aa13d208
+/usr/lib/mono/gac/IBM.Data.DB2/1.0.0.0__7c307b91aa13d208/IBM.Data.DB2.dll
+/usr/lib/mono/1.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-db2-1.0-cil
+/usr/share/doc/libmono-db2-1.0-cil/copyright
+/usr/share/doc/libmono-db2-1.0-cil/changelog.Debian.gz
+/usr/lib/mono/1.0/IBM.Data.DB2.dll

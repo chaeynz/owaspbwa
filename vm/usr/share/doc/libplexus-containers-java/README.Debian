@@ -1,0 +1,8 @@
+This package installs versioned jar files into /usr/share/java/ and some
+less versioned symlinks:
+
+component-api-1.0.jar
+container-default-1.0.jar
+
+The unversioned symlinks are already used by other packages with older
+upstream releases of the jars and they might be installed in parallel.

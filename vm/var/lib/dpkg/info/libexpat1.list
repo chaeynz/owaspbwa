@@ -1,0 +1,13 @@
+/.
+/lib
+/lib/libexpat.so.1.5.2
+/lib/libexpatw.so.1.5.2
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libexpat1
+/usr/share/doc/libexpat1/copyright
+/usr/share/doc/libexpat1/changelog.gz
+/usr/share/doc/libexpat1/changelog.Debian.gz
+/lib/libexpat.so.1
+/lib/libexpatw.so.1

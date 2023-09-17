@@ -1,0 +1,24 @@
+From user@example.org  Sun Nov  1 22:16:24 2009
+Return-Path: <user@example.org>
+X-Original-To: user
+Delivered-To: user@brokenwebapps.localdomain
+Received: from example.org (localhost [127.0.0.1])
+	by brokenwebapps.localdomain (Postfix) with SMTP id EDA9F2272B
+	for <user>; Sun,  1 Nov 2009 22:16:23 -0500 (EST)
+Received: from 192.168.23.1
+        (SquirrelMail authenticated user user)
+        by 192.168.23.131 with HTTP;
+        Sun, 1 Nov 2009 22:16:23 -0500 (EST)
+Message-ID: <10500.192.168.23.1.1257131783.squirrel@192.168.23.131>
+Date: Sun, 1 Nov 2009 22:16:23 -0500 (EST)
+Subject: test
+From: <user@example.org>
+To: user@brokenwebapps.localdomain
+X-Mailer: SquirrelMail (version 1.0)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+test
+
+

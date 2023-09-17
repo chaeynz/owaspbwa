@@ -1,0 +1,6 @@
+e5f14711e23082587546862fc0662ced  usr/bin/csharp
+4c41c12e438de6784b008db591abda14  usr/lib/mono/2.0/csharp.exe
+10c67488e2ad5733501fbf5a1a1aeee5  usr/lib/mono/gac/Mono.CSharp/2.1.0.0__0738eb9f132ed756/Mono.CSharp.dll
+179bf0a3c9b40dbae9061590f7efd0c5  usr/share/doc/mono-csharp-shell/copyright
+623da1c6dd023680ea9babd7409a17b7  usr/share/doc/mono-csharp-shell/changelog.Debian.gz
+2bc4b568118f25bc50dde8c44879aa5f  usr/share/man/man1/csharp.1.gz

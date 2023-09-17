@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/yast2_info.py

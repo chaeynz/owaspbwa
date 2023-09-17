@@ -1,0 +1,9 @@
+auto
+/usr/bin/maildirmake
+maildirmake.1.gz
+/usr/share/man/man1/maildirmake.1.gz
+
+/usr/bin/maildirmake.courier
+5
+/usr/share/man/man1/maildirmake.courier.1.gz
+

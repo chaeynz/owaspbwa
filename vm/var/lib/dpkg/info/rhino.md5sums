@@ -1,0 +1,11 @@
+658d3a862a7880253f4a3b10a37785d7  usr/share/maven-repo/rhino/js/1.7R2/js-1.7R2.pom
+b3ae8697a1e319df472f1c6790670f98  usr/share/maven-repo/rhino/js/debian/js-debian.pom
+58535bb1af9a3bf0daa7b7e7ab577312  usr/share/java/js-1.7R2.jar
+284a694350da5e5d593bfdf7527e3754  usr/share/doc/rhino/copyright
+918ca6aa208785b0a0e2f24b2d846583  usr/share/doc/rhino/changelog.Debian.gz
+d3add3f10ba20c61beab05fe695cbee7  usr/share/man/man1/rhino-debugger.1.gz
+c89e7dc3fc64dde869e49210c6489f85  usr/share/man/man1/rhino.1.gz
+0e77ae4524998793b156f9a3076b299d  usr/share/man/man1/rhino-jsc.1.gz
+490cd4330352c1cf46f4f53255d2b8c4  usr/bin/rhino
+6d90c9d81a48f90860b8169915e7fb06  usr/bin/rhino-debugger
+321292ed4a582b1bba6b0ce9e5b02a97  usr/bin/rhino-jsc

@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian GNU/Linux Java FAQ. - Other Java alternatives for Debian</title>
+
+<link href="index.html" rel="start">
+<link href="ch11.html" rel="prev">
+<link href="apA.html" rel="next">
+<link href="index.html#contents" rel="contents">
+<link href="index.html#copyright" rel="copyright">
+<link href="ch1.html" rel="chapter" title="1 Introduction">
+<link href="ch2.html" rel="chapter" title="2 Introduction to Java">
+<link href="ch-debian-java-woody.html" rel="chapter" title="3 Status of Java in Debian GNU/Linux 3.0 (Woody)">
+<link href="ch-debian-java-sarge.html" rel="chapter" title="4 Status of Java in Debian GNU/Linux 3.1 (Sarge)">
+<link href="ch-debian-java-etch.html" rel="chapter" title="5 Status of Java in Debian GNU/Linux 4.0 (Etch)">
+<link href="ch6.html" rel="chapter" title="6 Java Development">
+<link href="ch7.html" rel="chapter" title="7 Java Compilers">
+<link href="ch8.html" rel="chapter" title="8 Java Virtual Machines (JVM)">
+<link href="ch-browser-java.html" rel="chapter" title="9 Java Plugins for Browsers">
+<link href="ch10.html" rel="chapter" title="10 Java Servlets">
+<link href="ch11.html" rel="chapter" title="11 Java Policy">
+<link href="ch12.html" rel="chapter" title="12 Other Java alternatives for Debian">
+<link href="apA.html" rel="appendix" title="A Older Debian GNU/Linux versions">
+<link href="ch1.html#s1.1" rel="section" title="1.1 Introduction to this FAQ">
+<link href="ch1.html#s1.2" rel="section" title="1.2 Location of this FAQ">
+<link href="ch1.html#s-bugs" rel="section" title="1.3 Sending bugs on this FAQ">
+<link href="ch1.html#s-moreinfo" rel="section" title="1.4 Complementary information">
+<link href="ch1.html#s-pending" rel="section" title="1.5 Uncovered issues">
+<link href="ch2.html#s2.1" rel="section" title="2.1 What is Java?">
+<link href="ch2.html#s2.2" rel="section" title="2.2 Why would I be interested in Java?">
+<link href="ch2.html#s2.3" rel="section" title="2.3 What is a JIT?">
+<link href="ch2.html#s2.4" rel="section" title="2.4 Where can I read more about Java?">
+<link href="ch2.html#s2.5" rel="section" title="2.5 Where can I ask questions about Java on Debian?">
+<link href="ch-debian-java-woody.html#s3.1" rel="section" title="3.1 Where is Debian Java going?">
+<link href="ch-debian-java-woody.html#s3.2" rel="section" title="3.2 Is there a Java1 compiler (.java to .class)?">
+<link href="ch-debian-java-woody.html#s3.3" rel="section" title="3.3 Is there a Java1 JVM or JIT?">
+<link href="ch-debian-java-woody.html#s3.4" rel="section" title="3.4 Is there a Java1 native compiler?">
+<link href="ch-debian-java-woody.html#s3.5" rel="section" title="3.5 Does Debian have Java2 foundation libraries?">
+<link href="ch-debian-java-woody.html#s3.6" rel="section" title="3.6 Is there a Java Debugger (jdb equivalent)?">
+<link href="ch-debian-java-woody.html#s3.7" rel="section" title="3.7 Is there an Appletviewer tool?">
+<link href="ch-debian-java-woody.html#s3.8" rel="section" title="3.8 Is there a Jar tool?">
+<link href="ch-debian-java-woody.html#s3.9" rel="section" title="3.9 Is there a Javadoc tool?">
+<link href="ch-debian-java-woody.html#s3.10" rel="section" title="3.10 Does Debian do Enterprise Java Beans (EJB)?">
+<link href="ch-debian-java-woody.html#s3.11" rel="section" title="3.11 What is JAIN?">
+<link href="ch-debian-java-woody.html#s3.12" rel="section" title="3.12 What is Jini?">
+<link href="ch-debian-java-woody.html#s3.13" rel="section" title="3.13 Is there a full list of packages?">
+<link href="ch-debian-java-sarge.html#s4.1" rel="section" title="4.1 Are there many changes?">
+<link href="ch-debian-java-etch.html#s5.1" rel="section" title="5.1 Which Java package are currently in main?">
+<link href="ch-debian-java-etch.html#s5.2" rel="section" title="5.2 What keeps Java packages out of main?">
+<link href="ch-debian-java-etch.html#s5.3" rel="section" title="5.3 What can I expect in future releases?">
+<link href="ch6.html#s6.1" rel="section" title="6.1 What full-fledged Java development platforms are available in Debian?">
+<link href="ch6.html#s-free" rel="section" title="6.2 What free platforms are there and how can I contribute?">
+<link href="ch6.html#s-license-concerns" rel="section" title="6.3 Questions on platforms and license concerns">
+<link href="ch6.html#s-sect:dfsg-compliant-gui" rel="section" title="6.4 How can I make a DFSG compliant Java GUI program?">
+<link href="ch6.html#s6.5" rel="section" title="6.5 Making Debian packages for Java progams.">
+<link href="ch7.html#s7.1" rel="section" title="7.1 What Java compilers are available in Debian?">
+<link href="ch8.html#s8.1" rel="section" title="8.1 What jvms work in Debian?">
+<link href="ch8.html#s8.2" rel="section" title="8.2 What free JVMs are available in Debian?">
+<link href="ch8.html#s8.3" rel="section" title="8.3 What API do these JVMs provide?">
+<link href="ch8.html#s8.4" rel="section" title="8.4 Are there known problems?">
+<link href="ch8.html#s8.5" rel="section" title="8.5 Do I need a JVM to run a Java program in Debian?">
+<link href="ch-browser-java.html#s9.1" rel="section" title="9.1 Can I use any JVM as a Java Plugin?">
+<link href="ch-browser-java.html#s-konqueror-java" rel="section" title="9.2 Can I use Java in Konqueror?">
+<link href="ch-browser-java.html#s-netscape-java" rel="section" title="9.3 Can I use Java in Netscape 6.x/7.x?">
+<link href="ch-browser-java.html#s9.4" rel="section" title="9.4 Can I use Java in Mozilla?">
+<link href="ch10.html#s10.1" rel="section" title="10.1 How can I make Java servlets work?">
+<link href="ch10.html#s10.2" rel="section" title="10.2 Do servlets work with kaffe?">
+<link href="ch10.html#s10.3" rel="section" title="10.3 Do I need non-free Java in order to run servlets?">
+<link href="ch11.html#s11.1" rel="section" title="11.1 Is there a Java policy for Debian?">
+<link href="ch11.html#s11.2" rel="section" title="11.2 Are there holes in the Java Policy?">
+<link href="ch12.html#s-blackdown-pack" rel="section" title="12.1 How can I get Debian packages from Blackdown?">
+<link href="ch12.html#s12.2" rel="section" title="12.2 How can I integrate Sun's J2SE SDK with Debian 3.1?">
+<link href="ch12.html#s12.3" rel="section" title="12.3 How can I integrate Sun's J2SE SDK with Debian 3.0?">
+<link href="ch12.html#s12.4" rel="section" title="12.4 Java programs not yet available on Debian">
+<link href="apA.html#sA.1" rel="section" title="A.1 Debian 2.2 'potato'">
+<link href="apA.html#sA.2" rel="section" title="A.2 Debian 2.1 'slink'">
+<link href="apA.html#sA.3" rel="section" title="A.3 Debian 2.0 'hamm'">
+<link href="apA.html#sA.4" rel="section" title="A.4 Debian 1.3.1 'bo'">
+<link href="ch-debian-java-woody.html#s3.4.1" rel="subsection" title="3.4.1 Java2 native compiler">
+<link href="ch-debian-java-woody.html#s3.6.1" rel="subsection" title="3.6.1 What free edit-interactive/graphical debugging tools are available on Debian?">
+<link href="ch-debian-java-woody.html#s3.6.2" rel="subsection" title="3.6.2 Known problems">
+<link href="ch6.html#s-java56" rel="subsection" title="6.3.1 Java 5 and 6">
+<link href="ch6.html#s6.3.2" rel="subsection" title="6.3.2 Sun's OpenJDK">
+<link href="ch6.html#s6.3.3" rel="subsection" title="6.3.3 Java 2 SE (aka JDK1.2)">
+<link href="ch6.html#s6.3.3.1" rel="subsection" title="6.3.3.1 Why is Sun's Java 2 SE (aka jdk 1.2) not available?">
+<link href="ch6.html#s-scsl" rel="subsection" title="6.3.3.2 What are the problems with Suns' new license?">
+<link href="ch6.html#s6.3.3.3" rel="subsection" title="6.3.3.3 What is the SCSL?">
+<link href="ch6.html#s6.3.3.4" rel="subsection" title="6.3.3.4 Can I use jdk1.2 while working with the free Java implementations?">
+<link href="ch6.html#s6.3.3.5" rel="subsection" title="6.3.3.5 Why is (some) free software not implementing Java2?">
+<link href="ch6.html#s-ibm-jdk" rel="subsection" title="6.3.4 IBM's Developer Kit for Linux">
+<link href="ch6.html#s6.3.4.1" rel="subsection" title="6.3.4.1 Can Debian distribute IBM's jdk?">
+<link href="ch6.html#s6.3.4.2" rel="subsection" title="6.3.4.2 Is it possible to obtain a licence for Debian?">
+<link href="ch6.html#s6.3.5" rel="subsection" title="6.3.5 JRE">
+<link href="ch6.html#s6.3.5.1" rel="subsection" title="6.3.5.1 Can Debian distribute JRE?">
+<link href="ch6.html#s6.3.6" rel="subsection" title="6.3.6 GPL or LGPL?">
+<link href="ch6.html#s6.4.1" rel="subsection" title="6.4.1 Do swing-based programs work in Debian?">
+<link href="ch6.html#s6.5.1" rel="subsection" title="6.5.1 Can the package go into main?">
+<link href="ch6.html#s6.5.2" rel="subsection" title="6.5.2 What virtual packages could I use?">
+<link href="ch6.html#s6.5.3" rel="subsection" title="6.5.3 Is there a good example Debian package?">
+<link href="ch6.html#s6.5.4" rel="subsection" title="6.5.4 What tools are available to make maintaining a Java packages easier?">
+<link href="ch8.html#s8.5.1" rel="subsection" title="8.5.1 How do I compile to native code?">
+<link href="ch8.html#s8.5.2" rel="subsection" title="8.5.2 Are there any successes using this approach?">
+<link href="ch8.html#s8.5.3" rel="subsection" title="8.5.3 Are there any problems with this approach?">
+<link href="ch8.html#s8.5.4" rel="subsection" title="8.5.4 Does these work for architectures different than i386?">
+<link href="ch12.html#s-swing-run" rel="subsection" title="12.1.1 Making swing work in Debian">
+<link href="ch12.html#s12.1.2" rel="subsection" title="12.1.2 Making Java 2 work in Debian">
+<link href="apA.html#sA.2.1" rel="subsection" title="A.2.1 I've installed the latest jde package...what I have to do to let Emacs enter jde-mode automatically when loading a Java source file?">
+
+</head>
+
+<body>
+
+<p><a name="ch12"></a></p>
+<hr>
+
+<p>
+[ <a href="ch11.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch-debian-java-woody.html">3</a> ]
+[ <a href="ch-debian-java-sarge.html">4</a> ]
+[ <a href="ch-debian-java-etch.html">5</a> ]
+[ <a href="ch6.html">6</a> ]
+[ <a href="ch7.html">7</a> ]
+[ <a href="ch8.html">8</a> ]
+[ <a href="ch-browser-java.html">9</a> ]
+[ <a href="ch10.html">10</a> ]
+[ <a href="ch11.html">11</a> ]
+[ 12 ]
+[ <a href="apA.html">A</a> ]
+[ <a href="apA.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian GNU/Linux Java FAQ.
+<br>Chapter 12 - Other Java alternatives for Debian
+</h1>
+
+<hr>
+
+<p>
+If the Java packages provided in Debian are not sufficient for your needs you
+might need to take a look at other alternatives.  Please understand that these
+alternatives are not supported by the Debian project directly, you might get
+help, however, from the debian-java mailing list if you encounter issues with
+them.
+</p>
+
+<p>
+Some of the alternatives presented use Debian packages which is convenient,
+since the user/administrator does not need to care on installation issues.
+However, mixing packages that come from a source which is not the Debian
+project might cause conflicts with your installation some times.  Of course,
+Debian tries to integrate as many free software efforts as possible, so some of
+the alternatives described below might (if license permits) be included in
+Debian in the near future.
+</p>
+
+<hr>
+
+<h2><a name="s-blackdown-pack"></a>12.1 How can I get Debian packages from Blackdown?</h2>
+
+<p>
+If the releases provided aren't recent enough for you, you can of course
+install the files from the Blackdown mirrors.  You can either use the Debian
+packages provided by Blackdown or download their tar files.
+</p>
+
+<p>
+(contributed by Federico Mennite) If you want to use their packages, add the
+following line [<a href="footnotes.html#f3" name="fr3">3</a>] to your
+<code>/etc/apt/sources.list</code>:
+</p>
+
+<pre>
+     deb proto://url/debian potato main non-free
+     deb proto://url/debian woody main non-free
+     deb proto://url/debian testing main non-free
+     deb proto://url/debian unstable main non-free
+</pre>
+
+<p>
+Where <em>proto://url</em> is one of the mirrors from the list available at
+<code><a
+href="http://www.blackdown.org/java-linux/java-linux-d2.html">http://www.blackdown.org/java-linux/java-linux-d2.html</a></code>.
+[<a href="footnotes.html#f4" name="fr4">4</a>] For example, in Debian 3.0 using
+the main site (in the US) you would use:
+</p>
+
+<pre>
+     deb ftp://ftp.tux.org/pub/java/debian unstable non-free
+</pre>
+
+<p>
+And then do:
+</p>
+
+<pre>
+     $ apt-get update
+     $ apt-get install j2sdk1.4
+</pre>
+
+<p>
+The packages will download all the library files into
+<code>/usr/lib/j2se/</code>, you just need to configure your system to use that
+jvm.  If you use these Debian packages you will not need, for example, to
+configure your web browser: the symbolic links described in <a
+href="ch-browser-java.html#s-netscape-java">Can I use Java in Netscape
+6.x/7.x?, Section 9.3</a> for <code>libjavaplugin_oji.so</code> will be
+created, as well as the alternative location of <code>/usr/bin/java</code>
+pointing to the j2se's Java.
+</p>
+
+<p>
+Note that, at the moment of this writting, there are only Blackdown packages
+for <em>unstable</em> and <em>testing</em> of Java 1.4.
+</p>
+
+<p>
+(contributed by Paul Reavis) If you download and install the JDK tar.gz files,
+unpack them into <code>/usr/local/jdk1.1.x</code>, and use symlinks to create a
+<code>/usr/local/jdk</code> and link in binaries to <code>/usr/local/bin</code>
+or whatever.  It is not at all difficult to install these.  However, you can
+get segfaults under some conditions depending on your libraries.
+</p>
+
+<p>
+Here is a list of releases that are known to work under each Debian release,
+and what other software needed, if any, to make it happen.
+</p>
+<ul>
+<li>
+<p>
+rex/bo: 1.1.5v7 (libc5).
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+hamm:1.1.5v7 (glibc), also needed latest glibc from <em>slink</em>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+slink: 1.1.6-test2 (glibc).
+</p>
+</li>
+</ul>
+
+<hr>
+
+<h3><a name="s-swing-run"></a>12.1.1 Making swing work in Debian</h3>
+
+<p>
+(from Paul Reavis) [A quickie on getting Swing working under Debian or any
+Linux really]
+</p>
+
+<p>
+Yes, it does work with the linux JDK; Swing is 100% Pure Java (tm)(c)(SFD) and
+therefore should run under any compliant JVM.  Paul Reavis reported converting
+a commercial app (350+ classes) over to a fully-Swing GUI; I've had no problems
+so far.
+</p>
+
+<p>
+If you are using jdk 1.1.3 or below, all you need are the class files.  So, the
+easiest thing to do is grab the solaris distribution, in tar.Z format, from
+javasoft.  Depending on phase of moon, they either call it swing or JFC 1.1 (to
+distinguish from 1.2, which is part of Java 1.2).  The current version is Swing
+1.0.2 (not to be confused with Java 1.0.2!).  If you are using jdk 1.2.2 do not
+download Swing (it is already integrated in the jdk).
+</p>
+
+<p>
+I don't have the archive handy here, so we'll pretend it's named swing.tar.Z.
+It is recommended you install it in /usr/local.  So
+</p>
+
+<pre>
+             skronk# cd /usr/local
+             skronk# tar xzf /tmp/swing.tar.Z
+</pre>
+
+<p>
+Now you should have a /usr/local/swing directory.  To test, make sure your
+JAVA_HOME variable is set, and CLASSPATH is unset, and run the
+&quot;runnit&quot; script in each example.  To be painfully obvious, do this:
+</p>
+
+<pre>
+             skronk$ cd /usr/local/swing/examples/SwingSet
+             skronk$ echo $JAVA_HOME
+             /usr/local/jdk
+             skronk$ unset CLASSPATH
+             skronk$ echo $CLASSPATH
+     
+             skronk$ ./runnit
+</pre>
+
+<p>
+Of course, your directories, shell prompt, and mileage will vary.  To use with
+your own applications, just add the jars you want to your classpath.
+</p>
+
+<hr>
+
+<h3><a name="s12.1.2"></a>12.1.2 Making Java 2 work in Debian</h3>
+
+<p>
+If you wish to use Sun's or Blackdown's jdk 1.2 or later in Debian download the
+packages provided by Blackdown (they are available in aptable directories) from
+the different mirrors available in <code><a
+href="http://www.blackdown.org/java-linux/mirrors.html">http://www.blackdown.org/java-linux/mirrors.html</a></code>
+(check the debian subdir).  Currently there are i386 packages for the Java2 SDK
+and RE, JAI, Java3D and JMF.  This is the recommended mechanism for more
+information read <a href="#s-blackdown-pack">How can I get Debian packages from
+Blackdown?, Section 12.1</a>.
+</p>
+
+<p>
+<em>Or</em> you can download the archives yourself (that is, the tar.gz, no the
+.deb package) and use the following mechanism:
+</p>
+<ul>
+<li>
+<p>
+Make a directory under <code>/usr/local</code> (for example
+<code>/usr/local/sun</code>).
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Download the archine into this directory, then unpack it.  A directory jdk1.X
+[<a href="footnotes.html#f5" name="fr5">5</a>] will be created.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Adjust the alternatives to work correctly:
+</p>
+
+<pre>
+        update-alternatives --install /usr/bin/javac javac /usr/local/sun/jdk1.X/bin/javac 120
+        update-alternatives --install /usr/bin/java Java /usr/local/sun/jdk1.X/bin/java 120
+</pre>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Check your alternatives with &quot;type&quot;
+</p>
+
+<pre>
+        type javac
+        type java
+</pre>
+</li>
+</ul>
+
+<p>
+You should have now a fully working jdk 1.X environment, virtual machine and
+compiler included.
+</p>
+
+<p>
+You might need to change your <code>/etc/profile</code> adding the proper
+definitions of some environment variables (<samp>CLASSPATH</samp>,
+<samp>JAVA_COMPILER</samp> and <samp>JAVA_HOME</samp>) so that Java programs
+can find the kit you just have installed.  The following example show which
+settings you could add if you had installed Sun's 1.2.2 jdk:
+</p>
+
+<pre>
+     # JDK 1.2.2 (.tar)
+     export CLASSPATH=.:/usr/local/sun/jdk1.2.2/lib:/usr/local/sun/jdk1.2.2/jre/lib
+     export JAVA_COMPILER=javacomp
+     export JAVA_HOME=/usr/local/sun/jdk1.2.2
+     export PATH=$PATH:/usr/local/sun/jdk1.2.2/bin
+</pre>
+
+<p>
+Note: As Juergen Kreileder correctly pointed me out The preferred name for
+versions &gt;= 1.2 is Java 2 SE (Standard Edition).  The jdk1.3 now is called
+&quot;Java2 SDK v1.3&quot; or &quot;J2SDK 1.3&quot;.  The jre1.3 now is called
+&quot;Java2 RE v1.3&quot; or &quot;J2RE 1.3&quot;.
+</p>
+
+<hr>
+
+<h2><a name="s12.2"></a>12.2 How can I integrate Sun's J2SE SDK with Debian 3.1?</h2>
+
+<p>
+Warren Dodge explains how this can be done for Debian testing: the first step
+is to download the J2SE SDK components from <code><a
+href="http://java.sun.com/j2se/downloads.html">http://java.sun.com/j2se/downloads.html</a></code>
+into, e.g.  <code>/var/install/java/1.4.2</code>.  Make sure that you have
+write permission to the directory, and make the installer executable.  Running
+the installer <code>./j2sdk-1_4_2_02-linux-i586.bin</code> will create a
+directory <code>j2sdk1_4_2_02</code> which can be moved to
+<code>/usr/local/lib</code>.  Next, create a link <samp>ln -s
+/usr/local/lib/j2sdk1_4_2_02 /usr/local/lib/jdk</samp> which allows you to use
+the latter location to refer to the Java environment and makes upgrading a lot
+easier in the future.
+</p>
+
+<p>
+Because Debian does not have an installer packages for Sun's J2SE, a dummy
+package needs to be made to let Debian know that a J2SE is installed.  This is
+done as follows.  Use the 'dummy' package control files provided by
+<code>java-common</code> to satisfy dependencies:
+</p>
+
+<pre>
+     mkdir -p /var/install/java/pkg
+     cd /var/install/java/pkg
+     cp /usr/share/doc/java-common/dummy-packages/*.control .
+     equivs-build java-compiler-dummy.control
+     equivs-build java-virtual-machine-dummy.control
+     equivs-build java1-runtime-dummy.control
+     equivs-build java2-compiler-dummy.control
+     equivs-build java2-runtime-dummy.control
+</pre>
+
+<p>
+You should now have five packages in /var/install/java/pkg which should be
+installed.
+</p>
+
+<p>
+The command <code>update-alternatives</code> is used in Debian to choose which
+of several pacakges to use when several can do the same thing.
+(&quot;Java&quot; can also be provided by kaffe, Blackdown (see above), etc).
+See &quot;man update-alternatives&quot; for more details.  Use this command to
+install the programs you need with commands like:
+</p>
+
+<pre>
+     update-alternatives --verbose --install /usr/bin/java java /usr/local/lib/jdk/bin/java 500 \
+       --slave /usr/share/man/man1/java.1 java.1 /usr/local/lib/jdk/man/man1/java.1
+</pre>
+
+<p>
+Run java once as root to allow system preference directories to be created and
+to check if Sun's <code>java</code> is working properly:
+</p>
+
+<pre>
+       java -version
+</pre>
+
+<hr>
+
+<h2><a name="s12.3"></a>12.3 How can I integrate Sun's J2SE SDK with Debian 3.0?</h2>
+
+<p>
+The procedure is similar to the one described for Debian 3.1 .  However, the
+java-common in stable does not have the *.control files.  Therefore, you need
+to install the java-common package from testing or unstable.  Versions 0.19 and
+0.20 can be safely be installed and require the installation of the equivs
+package, but the one from stable is just fine.
+</p>
+
+<p>
+Notice, however, that newer J2SE versions (notably 1.4.2_04 instead of
+1.4.1_02) might depend on newer libc6 or libgcc1 libraries.  If you cannot
+backport (recompile) this package to your libraries you will need are limited
+to using jdk 1.3.1-11 (which requires libstdc++2.9-glibc2.1 from the
+<em>oldlibs</em> section).
+</p>
+
+<hr>
+
+<h2><a name="s12.4"></a>12.4 Java programs not yet available on Debian</h2>
+
+<p>
+The following are programs that have not yet been packaged for Debian nor is
+there an installer.  There are quite a lot Java programs out there and this
+list is not an exhaustive list, it only includes programs that <em>might</em>
+be packaged for Debian or those that someone is working on an installer for:
+</p>
+<ul>
+<li>
+<p>
+BlueJ.  A development environment for Java with editor, compiler, virtual
+machine and debugger.  See <code><a
+href="http://bluej.monash.edu.au/">http://bluej.monash.edu.au/</a></code>
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Jacob (Java Commando Base): project maintainer and visualiser for Java in
+Emacs.  See <code><a
+href="http://home.pages.de/~kclee/clemens/jacob">http://home.pages.de/~kclee/clemens/jacob</a></code>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Emacs in Java.  See <code><a
+href="http://jemacs.sourceforge.net/">http://jemacs.sourceforge.net/</a></code>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Netbeans developer, now called <em>Forte</em>.  Based on the Javabeans
+architecture.  See <code><a
+href="http://www.netbeans.com">http://www.netbeans.com</a></code>.Sun recently
+announced they would open-source it.  See <code><a
+href="http://www.sun.com/forte/tools4dotcom/opensource.html">http://www.sun.com/forte/tools4dotcom/opensource.html</a></code>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+AnyJ.  Graphic environment to develop applications, applets and servlets.  More
+info in <code><a
+href="http://www.netcomputing.de">http://www.netcomputing.de</a></code>.
+</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>
+Free Builder.  A Java IDE written in Java and distributed under the GPL
+<code><a
+href="http://www.freebuilder.org">http://www.freebuilder.org</a></code>.
+</p>
+</li>
+</ul>
+
+<hr>
+
+<p>
+[ <a href="ch11.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch1.html">1</a> ]
+[ <a href="ch2.html">2</a> ]
+[ <a href="ch-debian-java-woody.html">3</a> ]
+[ <a href="ch-debian-java-sarge.html">4</a> ]
+[ <a href="ch-debian-java-etch.html">5</a> ]
+[ <a href="ch6.html">6</a> ]
+[ <a href="ch7.html">7</a> ]
+[ <a href="ch8.html">8</a> ]
+[ <a href="ch-browser-java.html">9</a> ]
+[ <a href="ch10.html">10</a> ]
+[ <a href="ch11.html">11</a> ]
+[ 12 ]
+[ <a href="apA.html">A</a> ]
+[ <a href="apA.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian GNU/Linux Java FAQ.
+</p>
+
+<address>
+$Revision: 1.57 $ 20 January 2010Sunday, 4th November<br>
+<br>
+Javier Fernández-Sanguino Peña <code><a href="mailto:jfs@debian.org">jfs@debian.org</a></code><br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

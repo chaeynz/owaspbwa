@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wraps an error message into a full_message format.
+- !ruby/struct:SM::Flow::P 
+  body: The default full_message format for any locale is <tt>&quot;{{attribute}} {{message}}&quot;</tt>. One can specify locale specific default full_message format by storing it as a translation for the key <tt>:&quot;activerecord.errors.full_messages.format&quot;</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: Additionally one can specify a validation specific error message format by storing a translation for <tt>:&quot;activerecord.errors.full_messages.[message_key]&quot;</tt>. E.g. the full_message format for any validation that uses :blank as a message key (such as validates_presence_of) can be stored to <tt>:&quot;activerecord.errors.full_messages.blank&quot;.</tt>
+- !ruby/struct:SM::Flow::P 
+  body: "Because the message key used by a validation can be overwritten on the <tt>validates_*</tt> class macro level one can customize the full_message format for any particular validation:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # app/models/article.rb\n  class Article &lt; ActiveRecord::Base\n    validates_presence_of :title, :message =&gt; :&quot;title.blank&quot;\n  end\n\n  # config/locales/en.yml\n  en:\n    activerecord:\n      errors:\n        full_messages:\n          title:\n            blank: This title is screwed!\n"
+full_name: ActiveRecord::Error#generate_full_message
+is_singleton: false
+name: generate_full_message
+params: (options = {})
+visibility: protected

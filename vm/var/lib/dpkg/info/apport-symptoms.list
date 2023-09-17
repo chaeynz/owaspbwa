@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/share
+/usr/share/apport
+/usr/share/apport/symptoms
+/usr/share/apport/symptoms/audio.py
+/usr/share/apport/symptoms/display.py
+/usr/share/apport/symptoms/security.py
+/usr/share/apport/symptoms/storage.py
+/usr/share/doc
+/usr/share/doc/apport-symptoms
+/usr/share/doc/apport-symptoms/copyright
+/usr/share/doc/apport-symptoms/changelog.gz

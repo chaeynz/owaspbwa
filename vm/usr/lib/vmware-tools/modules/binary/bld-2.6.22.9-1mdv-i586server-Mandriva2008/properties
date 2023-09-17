@@ -1,0 +1,7 @@
+UtsRelease 2.6.22.9-server-1mdv
+UtsVersion #1 SMP Thu Sep 27 04:28:02 CEST 2007
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Mandriva2008, 2.6.22.9-1mdv, i586, server

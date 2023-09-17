@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>ESAPI SwingSet</display-name>
+
+	<!-- CD 2011-04-12 -->
+	<!-- this filter is VERY IMPORTANT since without it the ThreadLocal User variable can become reusable by other requests! -->
+	<filter>
+		<filter-name>SimpleESAPIFilter</filter-name>
+		<filter-class>org.owasp.esapi.swingset.SimpleESAPIFilter</filter-class>
+	</filter>
+
+	<!-- this filter is VERY IMPORTANT since without it the ThreadLocal User variable can become reusable by other requests! -->
+	<filter-mapping>
+		<filter-name>SimpleESAPIFilter</filter-name>
+		<url-pattern>/*</url-pattern><!-- "/*" is safer than "/main" since there are already pages outside of main like admin_lab.jsp or any new page that is created outside of main. -->
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>controller</servlet-name>
+		<servlet-class>org.owasp.esapi.swingset.Controller</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>controller</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AjaxEngine</servlet-name>
+		<servlet-class>org.owasp.esapi.swingset.AjaxEngine</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AjaxEngine</servlet-name>
+		<url-pattern>/ajax</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginServletLab</servlet-name>
+		<servlet-class>org.owasp.esapi.swingset.login.LoginServletLab</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServletLab</servlet-name>
+		<url-pattern>/LoginServletLab</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginServletSolution</servlet-name>
+		<servlet-class>org.owasp.esapi.swingset.login.LoginServletSolution</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServletSolution</servlet-name>
+		<url-pattern>/LoginServletSolution</url-pattern>
+	</servlet-mapping>
+</web-app>

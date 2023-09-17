@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/pkgconfig
+/usr/share/pkgconfig/pthread-stubs.pc
+/usr/share/doc
+/usr/share/doc/libpthread-stubs0-dev
+/usr/share/doc/libpthread-stubs0-dev/copyright
+/usr/share/doc/libpthread-stubs0-dev/README
+/usr/share/doc/libpthread-stubs0-dev/changelog.Debian.gz

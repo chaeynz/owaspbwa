@@ -1,0 +1,11 @@
+libcommons-net2-java for Debian
+------------------------------
+
+Commons Net has switch its build process to Maven, but I'm not using Maven 
+here as some components of Maven rely on this library.
+
+debian/MANIFEST.MF has been extracted from the official commons-net.jar and
+it may need to be updated for new releases.
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Thu, 30 Apr 2009 12:05:34 +0100
+

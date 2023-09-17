@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/urpmi.py

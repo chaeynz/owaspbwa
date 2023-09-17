@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+<title>Debian Ruby Policy - Ruby Packaging</title>
+
+</head>
+
+<body>
+
+<p><a name="ch-ruby"></a></p>
+<hr>
+
+<p>
+[ <a href="index.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ 1 ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ <a href="ch-programs.html">3</a> ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ch-module_packages.html">next</a> ]
+</p>
+
+<hr>
+
+<h1>
+Debian Ruby Policy
+<br>Chapter 1 - Ruby Packaging
+</h1>
+
+<hr>
+
+<h2><a name="s-versions"></a>1.1 Versions</h2>
+
+<p>
+At any given time, the package <code>ruby</code> will represent the current
+default Debian Ruby version.
+</p>
+
+<p>
+The default Debian Ruby version should alway be the latest stable upstream
+release that can be integrated in the distribution.
+</p>
+
+<p>
+Apart from the default version, legacy versions of Ruby may be included as well
+in the distribution, as long as they are needed by other packages, or as long
+as it seems reasonable to provide them.  (Note: For the scope of this document,
+Ruby versions are synonymous to feature releases, i.e.  Ruby 1.6 and 1.6.8 are
+subminor versions of the same Ruby version 1.6, but Ruby 1.8 and 1.9 are indeed
+different versions.)
+</p>
+
+<p>
+In addition, unstable/development version of Ruby may be included in the
+unstable distribution.
+</p>
+
+<p>
+For any version, the main package must be called
+<code>ruby<var>X</var>.<var>Y</var></code>.  Names of related packages must
+include the <code>ruby<var>X</var>.<var>Y</var></code> part.
+</p>
+
+<hr>
+
+<h2><a name="s-base"></a>1.2 Main package</h2>
+
+<p>
+For every Ruby version provided in the distribution, the package
+<code>libruby<var>X</var>.<var>Y</var></code> shall comprise a complete
+distribution for <em>deployment</em> of Ruby modules and the package
+<code>ruby<var>X</var>.<var>Y</var></code> shall comprise a complete
+distribution for deployment of Ruby scripts.  Note that some ruby applications
+don't require <code>ruby</code>, instead these require <code>mod_ruby</code> or
+<code>eruby</code>.  The <code>libruby<var>X</var>.<var>Y</var></code> includes
+core modules of the upstream Ruby distribution and the
+<code>ruby<var>X</var>.<var>Y</var></code> package includes the binary
+<code>/usr/bin/ruby<var>X</var>.<var>Y</var></code>.
+</p>
+
+<p>
+Some tools and files for the <em>development</em> of Ruby modules are split off
+in a separate package <code>ruby<var>X</var>.<var>Y</var>-dev</code>.  Some
+modules in upstream Ruby distribution will be provided in separate packages.
+Documentation will be provided separately as well.
+</p>
+
+<p>
+At any time, exactly one package, called <code>ruby</code> must contain a
+binary <code>/usr/bin/ruby</code>, which is symlink to the
+<code>/usr/bin/ruby<var>X</var>.<var>Y</var></code>, the default version of
+Ruby.
+</p>
+
+<hr>
+
+<h2><a name="s-interpreter"></a>1.3 Ruby Interpreter</h2>
+
+<hr>
+
+<h3><a name="s-interpreter_name"></a>1.3.1 Interpreter Name</h3>
+
+<p>
+Ruby scripts depending on the default Ruby version (see <a href="#s-base">Main
+package, Section 1.2</a>) or not depending on a specific Ruby version should
+use <code>ruby</code> (unversioned) as the interpreter name.
+</p>
+
+<p>
+Ruby scripts that only work with a specific Ruby version must explicitly use
+the versioned interpreter name (<code>ruby<var>X</var>.<var>Y</var></code>).
+</p>
+
+<hr>
+
+<h3><a name="s-interpreter_loc"></a>1.3.2 Interpreter Location</h3>
+
+<p>
+The path name for the Ruby interpreter is <code>/usr/bin/ruby</code> or
+<code>/usr/bin/ruby<var>X</var>.<var>Y</var></code>.
+</p>
+
+<p>
+If a maintainer would like to provide the user with the possibility to override
+the Debian Ruby interpreter, he may want to use <code>/usr/bin/env ruby</code>
+or <code>/usr/bin/env rubyX.Y</code>.  However this is not advisable as it
+bypasses Debian's dependency checking and makes the package vulnerable to
+incomplete local installations of ruby.
+</p>
+
+<hr>
+
+<h2><a name="s-libruby"></a>1.4 Ruby library</h2>
+
+<p>
+The Ruby library is provided by <code>libruby<var>X</var>.<var>Y</var></code>.
+The package installs
+<code>/usr/lib/libruby<var>X</var>.<var>Y</var>.so.<var>X</var>.<var>Y</var>.<var>Z</var></code>
+(soname is
+<samp>libruby<var>X</var>.<var>Y</var>.so.<var>X</var>.<var>Y</var></samp>) and
+<code>/usr/lib/libruby<var>X</var>.<var>Y</var>.so.<var>X</var>.<var>Y</var></code>.
+</p>
+
+<p>
+Note that ruby version 1.6 used <samp>libruby.so.1.6</samp>.
+</p>
+
+<hr>
+
+<h2><a name="s-ruby-dev"></a>1.5 Tools/files for Development of ruby modules</h2>
+
+<p>
+Some tools and files for development of ruby modules are packaged as
+<code>ruby<var>X</var>.<var>Y</var>-dev</code>.  This package provides
+<code>/usr/lib/ruby/<var>X</var>.<var>Y</var>/mkmf.rb</code>,
+<code>/usr/lib/libruby<var>X</var>.<var>Y</var>.so</code> and header files,
+static library in <samp>Config::CONFIG['archdir']</samp>.
+</p>
+
+<p>
+Note that ruby 1.6 (ruby1.6-dev) provides <code>/usr/lib/libruby.so</code>.
+</p>
+
+<p>
+TODO: we should install header files in
+<code>/usr/include/ruby<var>X</var>.<var>Y</var>/</code> ?
+</p>
+
+<hr>
+
+<h2><a name="s-paths"></a>1.6 Module Path</h2>
+
+<p>
+The module search path (<samp>$LOAD_PATH</samp> or <samp>$:</samp>) is searched
+in the following order:
+</p>
+
+<pre>
+      /usr/local/lib/site_ruby/<var>X</var>.<var>Y</var>	 (Config::CONFIG['sitelibdir'])
+      /usr/local/lib/site_ruby/<var>X</var>.<var>Y</var>/<var>GNU-SYSTEM</var> (Config::CONFIG['sitearchdir'])
+      /usr/local/lib/site_ruby		 (Config::CONFIG['sitedir'])
+      /usr/lib/ruby/<var>X</var>.<var>Y</var>	(Config::CONFIG['rubylibdir'])
+      /usr/lib/ruby/<var>X</var>.<var>Y</var>/<var>GNU-SYSTEM</var>	(Config::CONFIG['archdir'])
+      .
+</pre>
+
+<p>
+TODO: What about <code>/usr/share/ruby/<var>X</var>.<var>Y</var></code> ?
+</p>
+
+<p>
+System administrator can install ruby modules to
+<code>/usr/local/lib/site_ruby/<var>X</var>.<var>Y</var>/</code> (for arch
+independent modules),
+<code>/usr/local/lib/site_ruby/<var>X</var>.<var>Y</var>/<var>GNU-SYSTEM</var>/</code>
+(for arch dependent modules) or <code>/usr/local/lib/site_ruby/</code> (for
+version independent modules).  Note that ruby module packages MUST not use
+these directories.
+</p>
+
+<hr>
+
+<h2><a name="s-docs"></a>1.7 Documentation</h2>
+
+<p>
+TODO: We should make some policy to use <code>refe</code>.
+</p>
+
+<hr>
+
+<p>
+[ <a href="index.html">previous</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ 1 ]
+[ <a href="ch-module_packages.html">2</a> ]
+[ <a href="ch-programs.html">3</a> ]
+[ <a href="ap-build_dependencies.html">A</a> ]
+[ <a href="ap-ruby1.8_bundled_modules.html">B</a> ]
+[ <a href="ap-transition_1.6_to_1.8.html">C</a> ]
+[ <a href="ch-module_packages.html">next</a> ]
+</p>
+
+<hr>
+
+<p>
+Debian Ruby Policy
+</p>
+
+<address>
+version 0.0.1.4<br>
+<br>
+Akira Yamada<br>
+Akira Tagoh<br>
+Fumitoshi UKAI<br>
+<br>
+</address>
+<hr>
+
+</body>
+
+</html>
+

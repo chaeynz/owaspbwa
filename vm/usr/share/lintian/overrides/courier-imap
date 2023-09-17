@@ -1,0 +1,2 @@
+courier-imap: binary-or-shlib-defines-rpath ./usr/bin/imapd /usr/lib/courier-authlib
+courier-imap: binary-or-shlib-defines-rpath ./usr/lib/courier/courier/imaplogin /usr/lib/courier-authlib

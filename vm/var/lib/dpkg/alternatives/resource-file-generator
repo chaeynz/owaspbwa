@@ -1,0 +1,9 @@
+auto
+/usr/bin/cli-resgen
+cli-resgen.1.gz
+/usr/share/man/man1/cli-resgen.1.gz
+
+/usr/bin/resgen
+10
+/usr/share/man/man1/resgen.1.gz
+

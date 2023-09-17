@@ -1,0 +1,9 @@
+manual
+/usr/bin/javap
+javap.1.gz
+/usr/share/man/man1/javap.1.gz
+
+/usr/lib/jvm/java-6-openjdk/bin/javap
+1061
+/usr/lib/jvm/java-6-openjdk/man/man1/javap.1.gz
+

@@ -1,0 +1,8 @@
+0d9ce149e3aced1ff07f3002871448e9  usr/share/doc/libservlet2.5-java/copyright
+9e7bcc4b8780543a4e871fcbf6ffcdf5  usr/share/doc/libservlet2.5-java/changelog.Debian.gz
+b547cc59049d604cb1784c9ff342218f  usr/share/maven-repo/javax/servlet/servlet-api/2.5/servlet-api-2.5.pom
+d13f62cf5dc614329350d39ed9a74646  usr/share/maven-repo/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.pom
+87b70c4f0a290dd5f77431936ec61b72  usr/share/maven-repo/javax/el/el-api/2.1/el-api-2.1.pom
+dbb53420e7abf2ab4dc276bb06ded64b  usr/share/java/servlet-api-2.5.jar
+d695db99b9104d3fc60d3cef4073eef7  usr/share/java/jsp-api-2.1.jar
+33d8e14fa0e8551996c23a2fa729d24f  usr/share/java/el-api-2.1.jar

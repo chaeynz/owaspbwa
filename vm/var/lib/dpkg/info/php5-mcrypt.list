@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/php5
+/usr/lib/php5/20090626+lfs
+/usr/lib/php5/20090626+lfs/mcrypt.so
+/usr/share
+/usr/share/doc
+/usr/share/doc/php5-mcrypt
+/usr/share/doc/php5-mcrypt/copyright
+/usr/share/doc/php5-mcrypt/changelog.Debian.gz
+/etc
+/etc/php5
+/etc/php5/conf.d
+/etc/php5/conf.d/mcrypt.ini

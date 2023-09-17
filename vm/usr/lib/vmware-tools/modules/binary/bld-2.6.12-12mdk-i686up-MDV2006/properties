@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-12mdk-i686-up-4GB
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment Mandrive 2006, 2.6.12-12mdk, i686 up
+UtsMachine i386

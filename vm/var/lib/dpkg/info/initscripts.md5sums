@@ -1,0 +1,16 @@
+982a8ab75a85d43e66b4c883c27bfddd  sbin/fsck.nfs
+58f820155cd96d107fd056fb9cf820d4  lib/init/usplash-fsck-functions.sh
+83905a7b2e91f3b5cb2edfe1ea186ab1  lib/init/splash-functions-base
+c8505d6abff08c0bf6b9f02a117a482a  lib/init/vars.sh
+225d907a57d2e40d8cebbd8dd0720dc8  lib/init/readlink
+9c5506dee259c3026ff1ee5f77ea6f01  etc/init.d/skeleton
+3ae1cdb6091b6423926e62e025e47621  usr/share/initscripts/default.rcS
+0ffeeda1b62c9233d6621bc45e93eaf9  usr/share/doc/initscripts/copyright
+50c68457ad47bfb1f145e84c511b3aa0  usr/share/doc/initscripts/README.Debian.gz
+db331c91d3e713fef72f3f58b9ce1bd4  usr/share/doc/initscripts/changelog.Debian.gz
+e5fa624d6dc37bd973a7408170e1e039  usr/share/man/man1/mountpoint.1.gz
+691ca8967d20f3064d0c73e5e5e86b13  usr/share/man/man5/rcS.5.gz
+139f1c67235ee84223761a0473659e50  usr/share/man/man5/halt.5.gz
+8aeab63c5d69b5d56a9241f558906b7f  usr/share/man/man8/fsck.nfs.8.gz
+3cac737822cbede477461e3c2982fd13  usr/share/lintian/overrides/initscripts
+59d7496c233d7616e5244ae75db76c83  bin/mountpoint

@@ -1,0 +1,146 @@
+[2023/09/14 17:01:31,  0] smbd/server.c:1069(main)
+  smbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/14 17:01:31,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 17:01:31,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 17:01:31,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 17:01:31,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 17:01:31,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 17:01:31,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 17:01:31,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/14 17:01:31,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/14 17:01:31,  0] smbd/server.c:1115(main)
+  standard input is not a socket, assuming -D option
+[2023/09/15 01:55:42,  0] smbd/server.c:1069(main)
+  smbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 01:55:42,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:42,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:42,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:42,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:42,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:42,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:42,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 01:55:42,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 01:55:42,  0] smbd/server.c:1115(main)
+  standard input is not a socket, assuming -D option
+[2023/09/15 01:55:42,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 01:55:42,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/14 23:56:41,  0] smbd/server.c:1069(main)
+  smbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/14 23:56:41,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:41,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:41,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:41,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:41,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:41,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:41,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/14 23:56:41,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/14 23:56:41,  0] smbd/server.c:1115(main)
+  standard input is not a socket, assuming -D option
+[2023/09/14 23:56:41,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/14 23:56:41,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 00:04:43,  0] smbd/server.c:1069(main)
+  smbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 00:04:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:43,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 00:04:43,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 00:04:43,  0] smbd/server.c:1115(main)
+  standard input is not a socket, assuming -D option
+[2023/09/15 00:04:43,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 00:04:43,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 14:28:28,  0] smbd/server.c:1069(main)
+  smbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 14:28:28,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:28,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:28,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:28,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:28,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:28,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:28,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 14:28:28,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 14:28:28,  0] smbd/server.c:1115(main)
+  standard input is not a socket, assuming -D option
+[2023/09/15 14:28:28,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 14:28:28,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 14:44:52,  0] smbd/server.c:1069(main)
+  smbd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 14:44:52,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:52,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:52,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:52,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:52,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:52,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:52,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 14:44:52,  0] printing/print_cups.c:103(cups_connect)
+  Unable to connect to CUPS server localhost:631 - Connection refused
+[2023/09/15 14:44:52,  0] smbd/server.c:1115(main)
+  standard input is not a socket, assuming -D option
+[2023/09/15 14:44:52,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use
+[2023/09/15 14:44:52,  0] smbd/server.c:457(smbd_open_one_socket)
+  smbd_open_once_socket: open_socket_in: Address already in use

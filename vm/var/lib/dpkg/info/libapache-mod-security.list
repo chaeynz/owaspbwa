@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/lib
+/usr/lib/apache2
+/usr/lib/apache2/modules
+/usr/lib/apache2/modules/mod_security2.so
+/usr/share
+/usr/share/doc
+/etc
+/etc/apache2
+/etc/apache2/mods-available
+/etc/apache2/mods-available/mod-security.load
+/usr/share/doc/libapache-mod-security

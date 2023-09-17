@@ -1,0 +1,16 @@
+Format-Specification: http://dep.debian.net/deps/dep5/
+Name: Plexus Build api
+Maintainer: Sonatype
+Source: http://forge.sonatype.com/spice-parent/plexus-build-api
+
+Files: *
+Copyright: 2008, Sonatype Inc.
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2009, Ludovic Claude <ludovic.claude@laposte.net>
+License: Apache-2.0
+
+License: Apache-2.0
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache 2.0 license in '/usr/share/common-licenses/Apache-2.0'.

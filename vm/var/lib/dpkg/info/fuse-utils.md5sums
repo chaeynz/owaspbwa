@@ -1,0 +1,8 @@
+8fcd99f2b334b09be6f9adc616194350  usr/share/lintian/overrides/fuse-utils
+8cad2146dad3bc6ef0e6e7dd9991e574  usr/share/initramfs-tools/hooks/fuse_utils
+d850d0f33b302743fdab870892c46edf  usr/share/man/man1/fusermount.1.gz
+69d70acbb29164cb0688463d82318ff7  bin/fusermount
+cde88a4d2bc2e6698100c5ec4b149e5d  bin/ulockmgr_server
+ee54a219494e84cb03e8a1db8436f8b5  sbin/mount.fuse
+06b62b7e743c0d6e1956504d516dca43  lib/udev/rules.d/45-fuse.rules
+137bd32644d1c239dd85bd27ed3551b6  lib/udev/rules.d/40-fuse-utils.rules

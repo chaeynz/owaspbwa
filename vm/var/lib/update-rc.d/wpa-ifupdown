@@ -1,0 +1,1 @@
+update-rc.d wpa-ifupdown start 15 0 6 .

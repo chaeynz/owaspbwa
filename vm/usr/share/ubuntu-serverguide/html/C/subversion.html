@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Subversion</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="version-control-system.html" title="Chapter 16. Version Control System" />
+    <link rel="prev" href="bazaar.html" title="Bazaar" />
+    <link rel="next" href="cvs-server.html" title="CVS Server" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="version-control-system.html">Version Control System</a></span> &gt; <span class="breadcrumb-node">Subversion</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Subversion">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="subversion"></a>Subversion</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+Subversion is an open source version control system. Using Subversion, you can record the history of source files and documents. It manages files and directories over time. A tree of files is placed into a central repository. The repository is much like an ordinary file server, except that it remembers every change ever made to files and directories.
+          </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="subversion-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+To access Subversion repository using the HTTP protocol, you must install and 
+configure a web server. Apache2 is proven to work with Subversion. Please 
+refer to the HTTP subsection in the Apache2 section to install and configure 
+Apache2.  To access the Subversion repository using the HTTPS protocol, you 
+must install and configure a digital certificate in your Apache 2 web server. 
+Please refer to the HTTPS subsection in the Apache2 section to install and 
+configure the digital certificate.
+						</p>
+                <p>
+		To install Subversion, run the following command from a terminal prompt:
+            </p>
+                <p>
+</p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install subversion libapache2-svn</strong></span>
+</pre>
+                <p>
+	    </p>
+              </div>
+              <div class="sect2" title="Server Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="subversion-configuration"></a>Server Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+	This step assumes you have installed above mentioned packages on your system. This section explains how to create a Subversion repository and access the project.</p>
+                <div class="sect3" title="Create Subversion Repository">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="create-svn-repos"></a>Create Subversion Repository</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>The Subversion repository can be created using the following command from a terminal prompt:</p>
+                  <p>
+</p>
+                  <pre class="screen">
+<span class="command"><strong>svnadmin create /path/to/repos/project</strong></span>
+</pre>
+                  <p>
+        </p>
+                </div>
+                <div class="sect3" title="Importing Files">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="import-svn-files"></a>Importing Files</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                            Once you create the repository you can
+                            <span class="emphasis"><em>import</em></span> files into the
+                            repository.  To import a directory, enter the
+                            following from a terminal prompt:
+</p>
+                  <pre class="screen">
+<span class="command"><strong>svn import /path/to/import/directory file:///path/to/repos/project</strong></span>
+</pre>
+                  <p>
+                            </p>
+                </div>
+              </div>
+              <div class="sect2" title="Access Methods">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="access-methods"></a>Access Methods</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>Subversion repositories can be accessed (checked out) through many 
+different methods --on local disk, or through various network protocols. 
+A repository location, however, is always a URL. The table describes how 
+different URL schemes map to the available access methods.</p>
+                <div class="table">
+                  <a id="id2651112"></a>
+                  <p class="title">
+                    <b>Table 16.1. Access Methods</b>
+                  </p>
+                  <div class="table-contents">
+                    <table summary="Access Methods" border="1">
+                      <colgroup>
+                        <col />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>
+                            <p>Schema</p>
+                          </th>
+                          <th>
+                            <p>Access Method</p>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <p>file://</p>
+                          </td>
+                          <td>
+                            <p>direct repository access (on local disk)</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>http://</p>
+                          </td>
+                          <td>
+                            <p>Access via WebDAV protocol to Subversion-aware Apache2 web server</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>https://</p>
+                          </td>
+                          <td>
+                            <p>Same as http://, but with SSL encryption</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>svn://</p>
+                          </td>
+                          <td>
+                            <p>Access via custom protocol to an svnserve server</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>svn+ssh://</p>
+                          </td>
+                          <td>
+                            <p>Same as svn://, but through an SSH tunnel</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <br class="table-break" />
+                <p>
+In this section, we will see how to configure Subversion for all 
+these access methods. Here, we cover the basics. For more advanced 
+usage details, refer to the <a class="ulink" href="http://svnbook.red-bean.com/" target="_top">svn book</a>.
+				</p>
+                <div class="sect3" title="Direct repository access (file://)">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="direct-repos-access"></a>Direct repository access (file://)</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p> This is the simplest of all access methods. It does not 
+require any Subversion server process to be running. This access 
+method is used to access Subversion from the same machine. The 
+syntax of the command, entered at a terminal prompt, is as follows:</p>
+                  <p>
+</p>
+                  <pre class="screen">
+<span class="command"><strong>svn co file:///path/to/repos/project</strong></span>
+</pre>
+                  <p>
+        </p>
+                  <p>or</p>
+                  <p>
+</p>
+                  <pre class="screen">
+<span class="command"><strong>svn co file://localhost/path/to/repos/project</strong></span>
+</pre>
+                  <p>
+        </p>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>If you do not specify the hostname, there are three forward slashes (///) -- two for the protocol (file, in this case) plus the leading slash in the path. If you specify the hostname, you must use two forward slashes (//).</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>The repository permissions depend on filesystem permissions. If the user has read/write permission, he can checkout from and commit to the repository.</p>
+                </div>
+                <div class="sect3" title="Access via WebDAV protocol (http://)">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="access-via-webdav"></a>Access via WebDAV protocol (http://)</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                          To access the Subversion repository via WebDAV protocol, you must configure your Apache 2 web server. Add the following snippet between the 
+                          <span class="emphasis"><em>&lt;VirtualHost&gt;</em></span> and <span class="emphasis"><em>&lt;/VirtualHost&gt;</em></span> elements in
+                          <code class="filename">/etc/apache2/sites-available/default</code>, or another VirtualHost file:
+                          </p>
+                  <pre class="programlisting">
+ &lt;Location /svn&gt;
+  DAV svn
+  SVNPath /home/svn
+  AuthType Basic
+  AuthName "Your repository name"
+  AuthUserFile /etc/subversion/passwd
+  Require valid-user
+ &lt;/Location&gt; 
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>The above configuration snippet assumes that Subversion
+    repositories are created under <code class="filename">/home/svn/</code>
+    directory using <span class="command"><strong>svnadmin</strong></span> command.  They can be
+    accessible using <span class="command"><strong>http://hostname/svn/repos_name</strong></span>
+    url.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>
+         To import or commit files to your Subversion repository over
+         HTTP, the repository should be owned by the HTTP user. In
+         Ubuntu systems, normally the HTTP user is
+         <span class="command"><strong>www-data</strong></span>.  To change the ownership of the
+         repository files enter the following command from terminal
+         prompt:
+         </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo chown -R www-data:www-data /path/to/repos</strong></span>
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+        By changing the ownership of repository as
+        <span class="command"><strong>www-data</strong></span> you will not be able to import or
+        commit files into the repository by running <span class="command"><strong>svn import
+        file:///</strong></span> command as any user other than
+        <span class="command"><strong>www-data</strong></span>.
+        </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>
+        Next, you must create the <code class="filename">/etc/subversion/passwd</code> file that will contain user authentication details. 
+        To create a file issue the following command at a command prompt (which will create the file and add the first user):
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo htpasswd -c /etc/subversion/passwd user_name</strong></span>
+</pre>
+                  <p>
+        To add additional users omit the <span class="emphasis"><em>"-c"</em></span> option as this option replaces the old file. Instead use this form:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo htpasswd /etc/subversion/password user_name</strong></span>
+</pre>
+                  <p>This command will prompt you to enter the password. Once you enter the password, the user is added. Now, to access the repository you can run the following command:</p>
+                  <pre class="screen">
+                    <span class="command">
+                      <strong>svn co http://servername/svn</strong>
+                    </span>
+                  </pre>
+                  <div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Warning">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Warning]" src="../../libs/admon/warning.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+			The password is transmitted as plain text. If you are worried about password snooping, you are advised to use SSL encryption. For details, please refer next section.
+		</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="sect3" title="Access via WebDAV protocol with SSL encryption (https://)">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="access-via-webdav-with-ssl"></a>Access via WebDAV protocol with SSL encryption (https://)</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p> 
+					Accessing Subversion repository via WebDAV protocol with SSL 
+					encryption (https://) is similar to http:// except that you 
+					must install and configure the digital certificate in your 
+					Apache2 web server.  To use SSL with Subversion add the above
+                                        Apache2 configuration to <code class="filename">/etc/apache2/sites-available/default-ssl</code>.
+                                        For more information on setting up Apache2 with SSL see <a class="xref" href="httpd.html#https-configuration" title="HTTPS Configuration">the section called “HTTPS Configuration”</a>.
+					</p>
+                  <p>
+						You can install a digital certificate issued by a signing 
+						authority. Alternatively, you can install your 
+						own self-signed certificate.
+					</p>
+                  <p>
+						This step assumes you have installed and configured a digital 
+						certificate in your Apache 2 web server. Now, to access the 
+						Subversion repository, please refer to the above section! 
+						The access methods are exactly the same, except the protocol. 
+						You must use https:// to access the Subversion repository.
+					</p>
+                </div>
+                <div class="sect3" title="Access via custom protocol (svn://)">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="access-via-custom-protocol"></a>Access via custom protocol (svn://)</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p> 
+					Once the Subversion repository is created, you can configure the 
+					access control. You can edit the <code class="filename">
+					/path/to/repos/project/conf/svnserve.conf</code> file to 
+					configure the access control.  For example, to set up 
+					authentication, you can uncomment the following lines in the 
+					configuration file: </p>
+                  <pre class="programlisting"># [general]
+# password-db = passwd</pre>
+                  <p>
+					After uncommenting the above lines, you can maintain the user 
+					list in the passwd file. So, edit the file <code class="filename">passwd
+					</code> in the same directory and add the new user. The 
+					syntax is as follows:
+					</p>
+                  <pre class="programlisting">username = password</pre>
+                  <p>
+					For more details, please refer to the file.
+					</p>
+                  <p>
+					Now, to access Subversion via the svn:// custom protocol, either 
+					from the same machine or a different machine, you can run 
+					svnserver using svnserve command. The syntax is as follows:
+					</p>
+                  <pre class="programlisting">$ svnserve -d --foreground -r /path/to/repos
+# -d -- daemon mode
+# --foreground -- run in foreground (useful for debugging)
+# -r -- root of directory to serve
+
+For more usage details, please refer to:
+$ svnserve --help</pre>
+                  <p>Once you run this command, Subversion starts listening on default port (3690). To access the project repository, you must run the following command from a terminal prompt: </p>
+                  <p>
+</p>
+                  <pre class="screen">
+<span class="command"><strong>svn co svn://hostname/project project --username user_name</strong></span>
+</pre>
+                  <p>
+                                        </p>
+                  <p>Based on server configuration, it prompts for password. Once 
+					you are authenticated, it checks out the code from Subversion 
+					repository.  To synchronize the project repository with the local 
+					copy, you can run the <span class="command"><strong>update</strong></span> sub-command. The 
+					syntax of the command, entered at a terminal prompt, is as follows:
+					</p>
+                  <p>
+</p>
+                  <pre class="screen">
+<span class="command"><strong>cd project_dir ; svn update</strong></span>
+</pre>
+                  <p>
+                                        </p>
+                  <p>For more details about using each Subversion sub-command, you 
+					can refer to the manual. For example, to learn more about the co 
+					(checkout) command, please run the following command from a 
+					terminal prompt:</p>
+                  <pre class="screen">
+                    <span class="command">
+                      <strong>svn co help</strong>
+                    </span>
+                  </pre>
+                </div>
+                <div class="sect3" title="Access via custom protocol with SSL encryption (svn+ssh://)">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="access-via-custom-protocol-with-ssl"></a>Access via custom protocol with SSL encryption (svn+ssh://)</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p> The configuration and server process is same as in the
+					svn:// method. For details, please refer to the above section. 
+					This step assumes you have followed the above step and started 
+					the	Subversion server using <span class="application"><strong>svnserve</strong></span>  
+					command.</p>
+                  <p>It is also assumed that the ssh server is running on that 
+					machine and that it is allowing incoming connections. To confirm, 
+					please try to login to that machine using ssh. If you can login, 
+					everything is perfect. If you cannot login, please address it 
+					before continuing further.</p>
+                  <p>The svn+ssh:// protocol is used to access the Subversion 
+					repository using SSL encryption. The data transfer is encrypted 
+					using this method. To access the project repository (for example 
+					with a checkout), you must use the following command syntax: 
+                                        </p>
+                  <p>
+</p>
+                  <pre class="screen">
+<span class="command"><strong>svn co svn+ssh://hostname/var/svn/repos/project</strong></span>
+</pre>
+                  <p>
+                                        </p>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p> You must use the full path (/path/to/repos/project) 
+					to access the Subversion repository using this access method. 
+					</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>
+					Based on server configuration, it prompts for password. You must 
+					enter the password you use to login via ssh. Once you are 
+					authenticated, it checks out the code from the Subversion 
+					repository.
+					</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="bazaar.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="version-control-system.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="cvs-server.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Bazaar </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> CVS Server</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

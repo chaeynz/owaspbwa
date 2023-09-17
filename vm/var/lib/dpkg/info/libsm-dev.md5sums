@@ -1,0 +1,8 @@
+4896f2fc8eeb03b7f3655384b72417a7  usr/share/doc/libsm-dev/copyright
+29a5ad67ba274fc47ffdad5c249193aa  usr/share/doc/libsm-dev/changelog.gz
+adc39a13fd0b4757f30ef4bbf3286cca  usr/share/doc/libsm-dev/changelog.Debian.gz
+951c42645160a9e170973ca6ad4b1edc  usr/include/X11/SM/SM.h
+37ad031fac2da068c4e3d40dba27aa08  usr/include/X11/SM/SMlib.h
+a6a17620686227183480077bf70b1d64  usr/include/X11/SM/SMproto.h
+a39cabd16c2449afb2003dc2b8083eaf  usr/lib/libSM.a
+5c26236ecf402d92134fb332c448460e  usr/lib/pkgconfig/sm.pc

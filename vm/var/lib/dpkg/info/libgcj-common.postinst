@@ -1,0 +1,18 @@
+#! /bin/sh
+
+set -e
+
+rebuild-security-providers
+
+# Automatically added by dh_pycentral
+rm -f /var/lib/pycentral/libgcj-common.pkgremove
+if which pycentral >/dev/null 2>&1; then
+	pycentral pkginstall libgcj-common
+	if grep -qs '^libgcj-common$' /var/lib/pycentral/delayed-pkgs; then
+		sed -i '/^libgcj-common$/d' /var/lib/pycentral/delayed-pkgs
+	fi
+fi
+# End automatically added section
+
+
+exit 0

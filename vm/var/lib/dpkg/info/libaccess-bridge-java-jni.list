@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libaccess-bridge-java-jni
+/usr/share/doc/libaccess-bridge-java-jni/copyright
+/usr/lib
+/usr/lib/jni
+/usr/lib/jni/libjava-access-bridge-jni.so.0.0.0
+/usr/share/doc/libaccess-bridge-java-jni/README
+/usr/share/doc/libaccess-bridge-java-jni/AUTHORS
+/usr/share/doc/libaccess-bridge-java-jni/NEWS.gz
+/usr/share/doc/libaccess-bridge-java-jni/changelog.Debian.gz
+/usr/lib/jni/libjava-access-bridge-jni.so
+/usr/lib/jni/libjava-access-bridge-jni.so.0

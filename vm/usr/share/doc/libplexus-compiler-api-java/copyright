@@ -1,0 +1,66 @@
+This package was debianized by Paul Cager <paul-debian@home.paulcager.org>
+Sun, 06 Apr 2008 17:44:08 +0100.
+
+It was downloaded from http://repository.codehaus.org/org/codehaus/plexus/plexus-compiler-api
+
+Copyright: 
+  (C) 2001-2005 The Apache Software Foundation.
+  (C) 2004-2005 The Codehaus.
+
+Authors:
+  jdcasey
+  Jason van Zyl jason@maven.org
+  Matthew Pocock matthew.pocock@ncl.ac.uk
+  Michal Maczka  michal.maczka@dimatics.com
+  Stefano Mazzocchi stefano@apache.org
+  Trygve Laugstol trygvis@inamo.no
+
+License:
+  The following files are licensed under the "MIT" license:
+        org/codehaus/plexus/compiler/CompilerOutputStyle.java
+        org/codehaus/plexus/compiler/CompilerConfiguration.java
+        org/codehaus/plexus/compiler/util/StreamPumper.java
+        org/codehaus/plexus/compiler/util/scan/SimpleSourceInclusionScanner.java
+        org/codehaus/plexus/compiler/util/scan/mapping/SingleTargetSourceMapping.java
+        org/codehaus/plexus/compiler/AbstractCompiler.java
+        org/codehaus/plexus/compiler/CompilerError.java
+        org/codehaus/plexus/compiler/Compiler.java
+
+  The "MIT" license is:
+    * Permission is hereby granted, free of charge, to any person obtaining a copy of
+    * this software and associated documentation files (the "Software"), to deal in
+    * the Software without restriction, including without limitation the rights to
+    * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+    * of the Software, and to permit persons to whom the Software is furnished to do
+    * so, subject to the following conditions:
+    *
+    * The above copyright notice and this permission notice shall be included in all
+    * copies or substantial portions of the Software.
+    *
+    * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    * SOFTWARE.
+
+  All other files are licensed under the Apache License (version 2.0)
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+  
+	http://www.apache.org/licenses/LICENSE-2.0
+  
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+The full text of the license can be found in
+'/usr/share/common-licenses/Apache-2.0'.
+
+The Debian packaging is (C) 2008, Paul Cager <paul-debian@home.paulcager.org>
+and is licensed under the Apache License version 2.

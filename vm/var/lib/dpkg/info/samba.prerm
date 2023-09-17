@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e 
+
+if [ "x$1" != xupgrade ]; then
+	update-alternatives --remove smbstatus /usr/bin/smbstatus.samba3
+fi
+
+# Automatically added by dh_installinit
+if [ -e "/etc/init/nmbd.conf" ]; then
+	# stop fails if not running
+	stop nmbd || :
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init/smbd.conf" ]; then
+	# stop fails if not running
+	stop smbd || :
+fi
+# End automatically added section
+
+
+exit 0

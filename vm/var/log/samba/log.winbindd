@@ -1,0 +1,110 @@
+[2023/09/14 15:01:36,  0] winbindd/winbindd.c:1252(main)
+  winbindd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/14 15:01:36,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 15:01:36,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 15:01:36,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 15:01:36,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 15:01:36,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 15:01:36,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 15:01:36,  0] winbindd/winbindd_cache.c:2578(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 1
+[2023/09/15 01:55:44,  0] winbindd/winbindd.c:1252(main)
+  winbindd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 01:55:44,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:44,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:44,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:44,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:44,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:44,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 01:55:44,  0] winbindd/winbindd_cache.c:2578(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 1
+[2023/09/14 23:56:28,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=1)
+[2023/09/14 23:56:43,  0] winbindd/winbindd.c:1252(main)
+  winbindd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/14 23:56:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:43,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/14 23:56:43,  0] winbindd/winbindd_cache.c:2578(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 1
+[2023/09/15 00:04:31,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=1)
+[2023/09/15 00:04:45,  0] winbindd/winbindd.c:1252(main)
+  winbindd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 00:04:45,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:45,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:45,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:45,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:45,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:45,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 00:04:45,  0] winbindd/winbindd_cache.c:2578(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 1
+[2023/09/15 00:29:40,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=1)
+[2023/09/15 14:28:32,  0] winbindd/winbindd.c:1252(main)
+  winbindd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 14:28:32,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:32,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:32,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:32,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:32,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:32,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:28:32,  0] winbindd/winbindd_cache.c:2578(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 1
+[2023/09/15 14:44:35,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=1)
+[2023/09/15 14:44:56,  0] winbindd/winbindd.c:1252(main)
+  winbindd version 3.4.7 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2023/09/15 14:44:56,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:56,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:56,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:56,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:56,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:56,  0] param/loadparm.c:7501(lp_do_parameter)
+  Global parameter unix extensions found in service section!
+[2023/09/15 14:44:56,  0] winbindd/winbindd_cache.c:2578(initialize_winbindd_cache)
+  initialize_winbindd_cache: clearing cache and re-creating with version number 1

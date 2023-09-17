@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.codehaus.plexus</groupId>
+	<artifactId>plexus-interactivity-api</artifactId>
+	<version>1.0-alpha-6</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.0-alpha-6</debian.originalVersion>
+		<debian.package>libplexus-interactivity-api-java</debian.package>
+	</properties>
+	
+	<name>Plexus Default Interactivity Handler</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>debian</version>
+		</dependency>
+	</dependencies>
+</project>

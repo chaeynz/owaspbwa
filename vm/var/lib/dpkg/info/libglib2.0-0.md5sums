@@ -1,0 +1,15 @@
+54736edffb56891be27303d4760fe61b  lib/libglib-2.0.so.0.2400.1
+0682cbfbd0aece9a6c41e2b0cd50cb9e  usr/lib/libgobject-2.0.so.0.2400.1
+f28daf48a9365deb49993b32be701c00  usr/lib/libgmodule-2.0.so.0.2400.1
+d8b9cb60d5511411828e8b30a5aa6959  usr/lib/libgthread-2.0.so.0.2400.1
+d999a40be6835fd9b1d33028b587863e  usr/lib/libgio-2.0.so.0.2400.1
+efca73d7eb10b914b2aae6c1bc69c0c6  usr/bin/gio-querymodules
+a31003a996deafafb84f973e4bb2ffc0  usr/share/doc/libglib2.0-0/changelog.gz
+d0aece9426a463842b655eb99baff372  usr/share/doc/libglib2.0-0/NEWS.gz
+bfad50b2434973801f01fee88226538e  usr/share/doc/libglib2.0-0/README.gz
+5b96ccc20b3fbeabf932f189ea362419  usr/share/doc/libglib2.0-0/ChangeLog.pre-1-2.gz
+55f3ed7c4c50650c98158fcf43ccd92c  usr/share/doc/libglib2.0-0/ChangeLog.pre-2-0.gz
+6e035f3ad96d594f4f1c3e2b642f84dd  usr/share/doc/libglib2.0-0/ChangeLog.pre-2-2.gz
+9bc17a241845510b9ee386dd137d564e  usr/share/doc/libglib2.0-0/copyright
+f024ae8dc785998330d206a458dd4339  usr/share/doc/libglib2.0-0/changelog.Debian.gz
+1e44d0e71a46f28ee55ac77e28eae050  usr/share/doc/libglib2.0-0/NEWS.pre-1-3.gz

@@ -1,0 +1,8 @@
+[2023/09/14 23:56:28,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)
+[2023/09/15 00:04:31,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)
+[2023/09/15 00:29:40,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)
+[2023/09/15 14:44:35,  0] winbindd/winbindd.c:190(winbindd_sig_term_handler)
+  Got sig[15] terminate (is_parent=0)

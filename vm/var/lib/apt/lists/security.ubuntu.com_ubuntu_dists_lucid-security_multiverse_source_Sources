@@ -1,0 +1,87 @@
+Package: ffmpeg-extra
+Binary: libavutil-extra-49, libavutil-unstripped-49, libavcodec-extra-52, libavcodec-unstripped-52, libavdevice-extra-52, libavdevice-unstripped-52, libavfilter-extra-0, libavfilter-unstripped-0, libpostproc-extra-51, libpostproc-unstripped-51, libavformat-extra-52, libavformat-unstripped-52, libswscale-extra-0, libswscale-unstripped-0
+Version: 4:0.5.9-0ubuntu0.10.04.3
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Debian multimedia packages maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 7), libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libavcodec-dev, libavfilter-dev, libavformat-dev, libavutil-dev, libbz2-dev, libdc1394-22-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libdirac-dev, libfaad-dev | libfaad2-dev, libfreetype6-dev, libgsm1-dev, libopenjpeg-dev, libimlib2-dev, libmp3lame-dev, libpostproc-dev, libraw1394-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libschroedinger-dev, libsdl1.2-dev, libspeex-dev, libtheora-dev (>> 0.0.0.alpha4), libvorbis-dev, libx11-dev, libx264-dev (>> 1:0.svn20100213+gitfcf70c), libxext-dev, libxvidcore-dev | libxvidcore4-dev, libvdpau-dev, libxvmc-dev, quilt, texi2html, yasm [i386 amd64], zlib1g-dev
+Build-Depends-Indep: doxygen
+Architecture: any
+Standards-Version: 3.8.3
+Format: 1.0
+Directory: pool/multiverse/f/ffmpeg-extra
+Files:
+ 07858d1cd10c2f3f47bc5641efbc9e96 3286 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.dsc
+ bece0d81795de82bdb06c17eeb27353a 3335278 ffmpeg-extra_0.5.9.orig.tar.gz
+ 3ee860a179d2c16fc49b2a0e5ef2d8a4 64834 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.diff.gz
+Uploaders: Sam Hocevar (Debian packages) <sam+deb@zoy.org>,           Loic Minier <lool@dooz.org>,           Reinhard Tartler <siretart@tauware.de>,           Fabian Greffrath <fabian+debian@greffrath.com>,           Andres Mejia <mcitadel@gmail.com>
+Dm-Upload-Allowed: yes
+Homepage: http://ffmpeg.org/
+Vcs-Browser: http://git.debian.org/?p=pkg-multimedia/ffmpeg.git;a=summary
+Vcs-Git: git://git.debian.org/git/pkg-multimedia/ffmpeg.git
+Checksums-Sha1:
+ 883169bb3175e5f422b9c03b7031ce282ba1e88b 3286 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.dsc
+ f27c2425b0eae0773c4650db02e9facb300f8d58 3335278 ffmpeg-extra_0.5.9.orig.tar.gz
+ 07406c1637e01d69e7fd0c017ab171c0d6934c1e 64834 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.diff.gz
+Checksums-Sha256:
+ 8d27ba2dcd1f7ca6c5df6bd1128347cbec3bf7ed189b46511a9b26f6a12ed80a 3286 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.dsc
+ acb9a0693be6cd82e7e4e7928bb4227704cea67e8df67d30963e5dc1604908e4 3335278 ffmpeg-extra_0.5.9.orig.tar.gz
+ 45b5155e719ed755453d9b56611b0cabe8437d540987d4afa070cde6734bf7aa 64834 ffmpeg-extra_0.5.9-0ubuntu0.10.04.3.diff.gz
+
+Package: flashplugin-nonfree
+Binary: flashplugin-installer, flashplugin-nonfree
+Version: 11.2.202.280ubuntu0.10.04.1
+Priority: optional
+Section: multiverse/web
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Bart Martens <bartm@knars.be>
+Build-Depends: debhelper (>= 5), cdbs
+Architecture: i386 amd64
+Standards-Version: 3.8.0
+Format: 1.0
+Directory: pool/multiverse/f/flashplugin-nonfree
+Files:
+ bb37935dd9111668c94d21a1e8148b9a 1410 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.dsc
+ c7214f9e294f9252c6b15f0e96983b40 27246 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.tar.gz
+Homepage: http://www.adobe.com/products/flashplayer.html
+Package-List:
+ flashplugin-installer deb contrib/web optional
+ flashplugin-nonfree deb contrib/web optional
+Checksums-Sha1:
+ 8b21dde7f244cb9e5a8b05aaea78ca157440143f 1410 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.dsc
+ d10041f5e21a37301a001de580541061e588803f 27246 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.tar.gz
+Checksums-Sha256:
+ 12964341847b3da6f3d176bbaf0e80fe5dd5b3cd6e3e5a5099fe5afaa0fb38fd 1410 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.dsc
+ 81bb7c64820757a0399005e110cc068b2b3fb13817ce7b11ba330bdf48e51f4e 27246 flashplugin-nonfree_11.2.202.280ubuntu0.10.04.1.tar.gz
+
+Package: gecko-mediaplayer
+Binary: gecko-mediaplayer
+Version: 0.9.9.2-1ubuntu0.10.04.2
+Priority: optional
+Section: multiverse/graphics
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Cesare Tirabassi <norsetto@ubuntu.com>
+Build-Depends: debhelper (>= 7), autotools-dev, pkg-config (>= 0.20), libglib2.0-dev (>= 2.14), xulrunner-dev, libdbus-1-dev (>= 0.95), libdbus-glib-1-dev (>= 0.70), libx11-dev, libidl0, libgconf2-dev (>= 2.20), quilt
+Architecture: any
+Standards-Version: 3.8.4
+Format: 3.0 (quilt)
+Directory: pool/multiverse/g/gecko-mediaplayer
+Files:
+ 1a2c0c2612481e006adb8814b85ef7c2 1936 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.dsc
+ deb41a4bcbde2b78d548dc37b684cfbb 262053 gecko-mediaplayer_0.9.9.2.orig.tar.gz
+ 599bcf89990cbc2c59492958203cd9d3 56598 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.debian.tar.gz
+Homepage: http://kdekorte.googlepages.com/gecko-mediaplayer
+Vcs-Browser: https://code.launchpad.net/~norsetto/gnome-mplayer/gecko-mediaplayer
+Vcs-Bzr: lp:~norsetto/gnome-mplayer/gecko-mediaplayer
+Package-List:
+ gecko-mediaplayer deb video optional
+Checksums-Sha1:
+ ea813f65f9bb799e4d61ca0fb97d2fd0cf983bb7 1936 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.dsc
+ fb9620bbb9e4df27a7e588dcf3d0b6e55188c262 262053 gecko-mediaplayer_0.9.9.2.orig.tar.gz
+ c7862037734b88dac791c14d1ac02624ca23fa01 56598 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.debian.tar.gz
+Checksums-Sha256:
+ 1176ff2de166d95003305248a65a9f36d2665e80c3ef3a5d8c506f7e1079ca2f 1936 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.dsc
+ 378b6c149e41efd5f0e47c8a711d7b3e108409cb72c6f9504ac4a8791de83cd6 262053 gecko-mediaplayer_0.9.9.2.orig.tar.gz
+ 31a4e6512cfcea79ffba7a62c66243764a3511d7704471d06fa58e93976981f3 56598 gecko-mediaplayer_0.9.9.2-1ubuntu0.10.04.2.debian.tar.gz
+

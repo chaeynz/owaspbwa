@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.tomcat</groupId>
+	<artifactId>coyote</artifactId>
+	<version>6.0.24</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>6.0.24</debian.originalVersion>
+		<debian.package>libtomcat6-java</debian.package>
+		<debian.mavenRules><![CDATA[s/org.apache.tomcat/javax.el/ el-api jar s/.*/2.1/ *,
+		s/org.apache.tomcat/javax.servlet/ jsp-api jar s/.*/2.1/ *,
+		s/org.apache.tomcat/javax.servlet/ servlet-api jar s/.*/2.5/ *]]></debian.mavenRules>
+	</properties>
+	
+	<description>Tomcat Connectors and HTTP parser</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>catalina</artifactId>
+			<version>debian</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>juli</artifactId>
+			<version>debian</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>

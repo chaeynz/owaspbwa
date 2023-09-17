@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/cscompmgd
+/usr/lib/mono/gac/cscompmgd/8.0.0.0__b03f5f7f11d50a3a
+/usr/lib/mono/gac/cscompmgd/8.0.0.0__b03f5f7f11d50a3a/cscompmgd.dll
+/usr/lib/mono/2.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmono-cscompmgd8.0-cil
+/usr/share/doc/libmono-cscompmgd8.0-cil/copyright
+/usr/share/doc/libmono-cscompmgd8.0-cil/changelog.Debian.gz
+/usr/lib/mono/2.0/cscompmgd.dll

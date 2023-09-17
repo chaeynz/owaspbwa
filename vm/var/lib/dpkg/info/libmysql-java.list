@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/share
+/usr/share/java
+/usr/share/java/mysql-connector-java-5.1.10.jar
+/usr/share/doc
+/usr/share/doc/libmysql-java
+/usr/share/doc/libmysql-java/changelog.Debian.gz
+/usr/share/doc/libmysql-java/README
+/usr/share/doc/libmysql-java/README.Debian
+/usr/share/doc/libmysql-java/copyright
+/usr/share/doc/libmysql-java/EXCEPTIONS-CONNECTOR-J.gz
+/usr/share/java/mysql-connector-java.jar
+/usr/share/java/mysql-5.1.10.jar
+/usr/share/java/mysql.jar

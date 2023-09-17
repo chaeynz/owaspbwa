@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">UEC</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="virtualization.html" title="Chapter 19. Virtualization" />
+    <link rel="prev" href="jeos-and-vmbuilder.html" title="JeOS and vmbuilder" />
+    <link rel="next" href="opennebula.html" title="OpenNebula" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="virtualization.html">Virtualization</a></span> &gt; <span class="breadcrumb-node">UEC</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="UEC">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="uec"></a>UEC</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Overview">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-overview"></a>Overview</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      This tutorial covers <span class="application"><strong>UEC</strong></span> installation from the Ubuntu 10.04 LTS Server Edition CD, and assumes a basic network topology, 
+      with a single system serving as the <span class="emphasis"><em>"all-in-one controller"</em></span>, and one or more nodes attached.
+      </p>
+                <p>
+      From this Tutorial you will learn how to install, configure, register and perform several operations on a basic <span class="application"><strong>UEC</strong></span> 
+      setup that results in a cloud with a one controller <span class="emphasis"><em>"front-end"</em></span> and one or several node(s) for running Virtual Machine (VM)
+      instances. You will also use examples to help get you started using your own private compute cloud.
+      </p>
+              </div>
+              <div class="sect2" title="Prerequisites">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-prerequisites"></a>Prerequisites</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      To deploy a minimal cloud infrastructure, you’ll need at least <span class="emphasis"><em>two</em></span> dedicated systems:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          A front end.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          One or more node(s).
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      The following are recommendations, rather than fixed requirements. However, our experience in developing this documentation indicated the following suggestions.
+      </p>
+                <div class="sect3" title="Front End Requirements">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="uec-frontend-requirements"></a>Front End Requirements</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        Use the following table for a system that will run one or more of:
+        </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>Cloud Controller (CLC)</p>
+                      </li>
+                      <li class="listitem">
+                        <p>Cluster Controller (CC)</p>
+                      </li>
+                      <li class="listitem">
+                        <p>Walrus (the S3-like storage service)</p>
+                      </li>
+                      <li class="listitem">
+                        <p>Storage Controller (SC)</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="table">
+                    <a id="id2672264"></a>
+                    <p class="title">
+                      <b>Table 19.1. UEC Front End Requirements</b>
+                    </p>
+                    <div class="table-contents">
+                      <table summary="UEC Front End Requirements" border="1">
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th rowspan="2" valign="middle">
+                              <p>Hardware</p>
+                            </th>
+                            <th rowspan="2" valign="middle">
+                              <p>Minimum</p>
+                            </th>
+                            <th rowspan="2" valign="middle">
+                              <p>Suggested</p>
+                            </th>
+                            <th rowspan="2" valign="middle">
+                              <p>Notes</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>CPU</p>
+                            </td>
+                            <td>
+                              <p>1 GHz</p>
+                            </td>
+                            <td>
+                              <p>2 x 2 GHz</p>
+                            </td>
+                            <td>
+                              <p>For an <span class="emphasis"><em>all-in-one</em></span> front end, it helps to have at least a dual core processor.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Memory</p>
+                            </td>
+                            <td>
+                              <p>512 MB</p>
+                            </td>
+                            <td>
+                              <p>2 GB</p>
+                            </td>
+                            <td>
+                              <p>The Java web front end benefits from lots of available memory.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Disk</p>
+                            </td>
+                            <td>
+                              <p>5400 RPM IDE</p>
+                            </td>
+                            <td>
+                              <p>7200 RPM SATA</p>
+                            </td>
+                            <td>
+                              <p>Slower disks will work, but will yield much longer instance startup times.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Disk Space</p>
+                            </td>
+                            <td>
+                              <p>40 GB</p>
+                            </td>
+                            <td>
+                              <p>200 GB</p>
+                            </td>
+                            <td>
+                              <p>40GB is only enough space for only a single image, cache, etc., Eucalyptus does not like to run out of disk space.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Networking</p>
+                            </td>
+                            <td>
+                              <p>100 Mbps</p>
+                            </td>
+                            <td>
+                              <p>1000 Mbps</p>
+                            </td>
+                            <td>
+                              <p>Machine images are hundreds of MB, and need to be copied over the network to nodes.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br class="table-break" />
+                </div>
+                <div class="sect3" title="Node Requirements">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="uec-node-requirements"></a>Node Requirements</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        The other system(s) are <span class="emphasis"><em>nodes</em></span>, which will run::
+        </p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>the Node Controller (NC)</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="table">
+                    <a id="id2672504"></a>
+                    <p class="title">
+                      <b>Table 19.2. UEC Node Requirements</b>
+                    </p>
+                    <div class="table-contents">
+                      <table summary="UEC Node Requirements" border="1">
+                        <colgroup>
+                          <col />
+                          <col />
+                          <col />
+                          <col />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th rowspan="2" valign="middle">
+                              <p>Hardware</p>
+                            </th>
+                            <th rowspan="2" valign="middle">
+                              <p>Minimum</p>
+                            </th>
+                            <th rowspan="2" valign="middle">
+                              <p>Suggested</p>
+                            </th>
+                            <th rowspan="2" valign="middle">
+                              <p>Notes</p>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>CPU</p>
+                            </td>
+                            <td>
+                              <p>VT Extensions</p>
+                            </td>
+                            <td>
+                              <p>VT, 64-bit, Multicore</p>
+                            </td>
+                            <td>
+                              <p>64-bit can run both i386, and amd64 instances; by default, Eucalyptus will only run 1 VM per CPU core on a Node.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Memory</p>
+                            </td>
+                            <td>
+                              <p>1 GB</p>
+                            </td>
+                            <td>
+                              <p>4 GB</p>
+                            </td>
+                            <td>
+                              <p>Additional memory means more, and larger guests.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Disk</p>
+                            </td>
+                            <td>
+                              <p>5400 RPM IDE</p>
+                            </td>
+                            <td>
+                              <p>7200 RPM SATA or SCSI</p>
+                            </td>
+                            <td>
+                              <p>Eucalyptus nodes are disk-intensive; I/O wait will likely be the performance bottleneck.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Disk Space</p>
+                            </td>
+                            <td>
+                              <p>40 GB</p>
+                            </td>
+                            <td>
+                              <p>100 GB</p>
+                            </td>
+                            <td>
+                              <p>Images will be cached locally, Eucalyptus does not like to run out of disk space.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>Networking</p>
+                            </td>
+                            <td>
+                              <p>100 Mbps</p>
+                            </td>
+                            <td>
+                              <p>1000 Mbps</p>
+                            </td>
+                            <td>
+                              <p>Machine images are hundreds of MB, and need to be copied over the network to nodes.</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <br class="table-break" />
+                </div>
+              </div>
+              <div class="sect2" title="Installing the Cloud/Cluster/Storage/Walrus Front End Server">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-frontend-installation"></a>Installing the Cloud/Cluster/Storage/Walrus Front End Server</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+          Download the Ubuntu 10.04 LTS Server ISO file, and burn it to a CD.
+          </p>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+          When you boot, select <span class="emphasis"><em>“Install Ubuntu Enterprise Cloud”</em></span>. 
+          </p>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+          When asked whether you want a <span class="emphasis"><em>“Cluster”</em></span> or a <span class="emphasis"><em>“Node”</em></span> install, select
+          <span class="emphasis"><em>“Cluster”</em></span>.
+          </p>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+          It will ask two other cloud-specific questions during the course of the install:
+          </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="disc">
+                          <li class="listitem">
+                            <p>
+              Name of your cluster.
+              </p>
+                            <div class="itemizedlist">
+                              <ul class="itemizedlist" type="circle">
+                                <li class="listitem">
+                                  <p>e.g. <span class="emphasis"><em>cluster1</em></span>.</p>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="listitem">
+                            <p>
+              A range of public IP addresses on the LAN that the cloud can allocate to instances.
+              </p>
+                            <div class="itemizedlist">
+                              <ul class="itemizedlist" type="circle">
+                                <li class="listitem">
+                                  <p>e.g. <span class="emphasis"><em>192.168.1.200-192.168.1.249</em></span>.</p>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="sect2" title="Installing the Node Controller(s)">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-node-installation"></a>Installing the Node Controller(s)</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The node controller install is even simpler. Just make sure that you are connected to the network on which the cloud/cluster controller is already running.
+      </p>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+          Boot from the same ISO on the node(s).
+          </p>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+          When you boot, select <span class="emphasis"><em>“Install Ubuntu Enterprise Cloud”</em></span>. 
+          </p>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+          Select <span class="emphasis"><em>“Install Ubuntu Enterprise Cloud”</em></span>.
+          </p>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+          It should detect the Cluster and preselect <span class="emphasis"><em>“Node”</em></span> install for you.
+          </p>
+                    </li>
+                    <li class="step" title="Step 5">
+                      <p>
+          Confirm the partitioning scheme.
+          </p>
+                    </li>
+                    <li class="step" title="Step 6">
+                      <p>
+          The rest of the installation should proceed uninterrupted; complete the installation and reboot the node.
+          </p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="sect2" title="Register the Node(s)">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-register-nodes"></a>Register the Node(s)</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Nodes are the physical systems within <span class="application"><strong>UEC</strong></span> that actually run the virtual machine instances of the cloud.
+      </p>
+                <p>
+      Once one or more Ubuntu Server node(s) are installed and running the <span class="application"><strong>eucalyptus-nc</strong></span> service, log onto the 
+      <span class="emphasis"><em>Cloud Controller (CLC)</em></span> and run: 
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo euca_conf --no-rsync --discover-nodes</strong></span>
+</pre>
+                <p>
+      This will discover the systems on the network running the <span class="application"><strong>eucalyptus-nc</strong></span> service, and the 
+      administrator can confirm the registration of each node by its IP address.
+      </p>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        If you get prompted for passwords, or receive errors from scp, you may need to revisit the key synchronization instructions at 
+        <a class="ulink" href="https://help.ubuntu.com/community/UEC/NodeInstallation" target="_top">UEC/NodeInstallation</a>.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="Obtain Credentials">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-obtain-credentials"></a>Obtain Credentials</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      After installing and booting the <span class="emphasis"><em>Cloud Controller</em></span>, users of the cloud will need to retrieve their credentials. 
+      This can be done either through a web browser, or at the command line.
+      </p>
+                <div class="sect3" title="From a Web Browser">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="uec-creds-browser"></a>From a Web Browser</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+            From your web browser (either remotely or on your Ubuntu server) access the following URL:
+            </p>
+                        <pre class="programlisting">
+https://&lt;cloud-controller-ip-address&gt;:8443/
+</pre>
+                        <div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Warning">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Warning]" src="../../libs/admon/warning.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+              You must use a secure connection, so make sure you use "https" not "http" in your URL. You will get a security 
+              certificate warning. You will have to add an exception to view the page. If you do not accept it you will not 
+              be able to view the Eucalyptus configuration page. 
+              </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+            Use username <span class="emphasis"><em>'admin'</em></span> and password <span class="emphasis"><em>'admin'</em></span> for the first time login 
+            (you will be prompted to change your password).
+            </p>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+            Then follow the on-screen instructions to update the admin password and email address.
+            </p>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+            Once the first time configuration process is completed, click the <span class="emphasis"><em>'credentials'</em></span> tab 
+            located in the top-left portion of the screen. 
+            </p>
+                      </li>
+                      <li class="step" title="Step 5">
+                        <p>
+            Click the <span class="emphasis"><em>'Download Credentials'</em></span> button to get your certificates.
+            </p>
+                      </li>
+                      <li class="step" title="Step 6">
+                        <p>
+            Save them to <code class="filename">~/.euca</code>.
+            </p>
+                      </li>
+                      <li class="step" title="Step 7">
+                        <p>
+            Unzip the downloaded zip file into a safe location (<code class="filename">~/.euca</code>).
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>unzip -d ~/.euca mycreds.zip</strong></span>
+</pre>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="sect3" title="From a Command Line">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="uec-creds-cli"></a>From a Command Line</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="procedure">
+                    <ul class="procedure">
+                      <li class="step" title="Step 1">
+                        <p>
+            Alternatively, if you are on the command line of the <span class="emphasis"><em>Cloud Controller</em></span>, you can run:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>mkdir -p ~/.euca</strong></span>
+<span class="command"><strong>chmod 700 ~/.euca</strong></span>
+<span class="command"><strong>cd ~/.euca</strong></span>
+<span class="command"><strong>sudo euca_conf --get-credentials mycreds.zip</strong></span>
+<span class="command"><strong>unzip mycreds.zip</strong></span>
+<span class="command"><strong>cd -</strong></span>
+</pre>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sect3" title="Extracting and Using Your Credentials">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="uec-creds-usage"></a>Extracting and Using Your Credentials</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        Now you will need to setup EC2 API and AMI tools on your server using X.509 certificates.
+        </p>
+                  <div class="procedure">
+                    <ol class="procedure" type="1">
+                      <li class="step" title="Step 1">
+                        <p>
+            Source the included <span class="emphasis"><em>"eucarc"</em></span> file to set up your Eucalyptus environment:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>. ~/.euca/eucarc</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 2">
+                        <p>
+            You may additionally wish to add this command to your <code class="filename">~/.bashrc</code> file so that your Eucalyptus 
+            environment is set up automatically when you log in. Eucalyptus treats this set of credentials as <span class="emphasis"><em>'administrator'</em></span>
+            credentials that allow the holder global privileges across the cloud. As such, they should be protected in the same way that other 
+            elevated-priority access is protected (e.g. should not be made visible to the general user population).
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>echo "[ -r ~/.euca/eucarc ] &amp;&amp; . ~/.euca/eucarc" &gt;&gt; ~/.bashrc</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 3">
+                        <p>
+            Install the required cloud user tools:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>sudo apt-get install euca2ools</strong></span>
+</pre>
+                      </li>
+                      <li class="step" title="Step 4">
+                        <p>
+            To validate that everything is working correctly, get the local cluster availability details:
+            </p>
+                        <pre class="screen">
+<span class="command"><strong>. ~/.euca/eucarc</strong></span>
+<span class="command"><strong>euca-describe-availability-zones verbose</strong></span>
+<code class="computeroutput">AVAILABILITYZONE   myowncloud                 192.168.1.1
+AVAILABILITYZONE   |- vm types                free / max   cpu   ram  disk
+AVAILABILITYZONE   |- m1.small                0004 / 0004   1    128     2
+AVAILABILITYZONE   |- c1.medium               0004 / 0004   1    256     5
+AVAILABILITYZONE   |- m1.large                0002 / 0002   2    512    10
+AVAILABILITYZONE   |- m1.xlarge               0002 / 0002   2   1024    20
+AVAILABILITYZONE   |- c1.xlarge               0001 / 0001   4   2048    20</code>
+</pre>
+                        <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                          <table border="0" summary="Note">
+                            <tr>
+                              <td rowspan="2" align="center" valign="top" width="25">
+                                <img alt="[Note]" src="../../libs/admon/note.png" />
+                              </td>
+                              <th align="left"></th>
+                            </tr>
+                            <tr>
+                              <td align="left" valign="top">
+                                <p>
+              Your output from the above command will vary.
+              </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div class="sect2" title="Running an Image">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-image-running"></a>Running an Image</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      There are multiple ways to instantiate an image in UEC:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>Use the command line.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Use one of the UEC compatible management tools such as <span class="emphasis"><em>Landscape</em></span>.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Use the <a class="ulink" href="https://help.ubuntu.com/community/UEC/ElasticFox" target="_top">ElasticFox</a> extension to Firefox.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      Here we will describe the process from the command line:
+      </p>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+          Before running an instance of your image, you should first create a <span class="emphasis"><em>keypair</em></span> (ssh key) that you can 
+          use to log into your instance as root, once it boots. The key is stored, so you will only have to do this once. 
+          </p>
+                      <p>
+          Run the following command:
+          </p>
+                      <pre class="programlisting">
+if [ ! -e ~/.euca/mykey.priv ]; then
+    touch ~/.euca/mykey.priv
+    chmod 0600 ~/.euca/mykey.priv
+    euca-add-keypair mykey &gt; ~/.euca/mykey.priv
+fi
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+            You can call your key whatever you like (in this example, the key is called <span class="emphasis"><em>'mykey'</em></span>), but remember what it is called. 
+            If you forget, you can always run <span class="command"><strong>euca-describe-keypairs</strong></span> to get a list of created keys stored in the system.
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+          You must also allow access to port 22 in your instances:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>euca-describe-groups</strong></span>
+<span class="command"><strong>euca-authorize default -P tcp -p 22 -s 0.0.0.0/0</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+          Next, you can create instances of your registered image:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>euca-run-instances $EMI -k mykey -t c1.medium</strong></span>
+</pre>
+                      <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                        <table border="0" summary="Note">
+                          <tr>
+                            <td rowspan="2" align="center" valign="top" width="25">
+                              <img alt="[Note]" src="../../libs/admon/note.png" />
+                            </td>
+                            <th align="left"></th>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">
+                              <p>
+             If you receive an error regarding <span class="emphasis"><em>image_id</em></span>, you may find it by viewing Images page or click 
+             <span class="emphasis"><em>"How to Run"</em></span> on the <span class="emphasis"><em>Store</em></span> page to see the sample command.
+            </p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+          The first time you run an instance, the system will be setting up caches for the image from which it will be created.
+          This can often take some time the first time an instance is run given that VM images are usually quite large.
+          </p>
+                      <p> 
+          To monitor the state of your instance, run:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>watch -n5 euca-describe-instances</strong></span>
+</pre>
+                      <p>
+          In the output, you should see information about the instance, including its state. While first-time caching is being performed, 
+          the instance's state will be <span class="emphasis"><em>'pending'</em></span>.
+          </p>
+                    </li>
+                    <li class="step" title="Step 5">
+                      <p>
+          When the instance is fully started, the above state will become <span class="emphasis"><em>'running'</em></span>. Look at the IP address assigned 
+          to your instance in the output, then connect to it:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>IPADDR=$(euca-describe-instances | grep $EMI | grep running | tail -n1 | awk '{print $4}')</strong></span>
+<span class="command"><strong>ssh -i ~/.euca/mykey.priv ubuntu@$IPADDR</strong></span>
+</pre>
+                    </li>
+                    <li class="step" title="Step 6">
+                      <p>
+          And when you are done with this instance, exit your SSH connection, then terminate your instance:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>INSTANCEID=$(euca-describe-instances | grep $EMI | grep running | tail -n1 | awk '{print $2}')</strong></span>
+<span class="command"><strong>euca-terminate-instances $INSTANCEID</strong></span>
+</pre>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="sect2" title="Install an Image from the Store">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-image-installation"></a>Install an Image from the Store</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The following is by far the simplest way to install an image. However, advanced users may be interested in learning how to 
+      <a class="ulink" href="https://help.ubuntu.com/community/UEC/BundlingImages" target="_top">Bundle their own image</a>.
+      </p>
+                <p>
+      The simplest way to add an image to <span class="application"><strong>UEC</strong></span> is to install it from the Image Store on the UEC web interface.
+      </p>
+                <div class="procedure">
+                  <ol class="procedure" type="1">
+                    <li class="step" title="Step 1">
+                      <p>
+          Access the web interface at the following URL (Make sure you specify https):
+          </p>
+                      <pre class="programlisting">
+https://&lt;cloud-controller-ip-address&gt;:8443/
+</pre>
+                    </li>
+                    <li class="step" title="Step 2">
+                      <p>
+          Enter your login and password (if requested, as you may still be logged in from earlier).
+          </p>
+                    </li>
+                    <li class="step" title="Step 3">
+                      <p>
+          Click on the <span class="emphasis"><em>Store</em></span> tab.
+          </p>
+                    </li>
+                    <li class="step" title="Step 4">
+                      <p>
+          Browse available images.
+          </p>
+                    </li>
+                    <li class="step" title="Step 5">
+                      <p>
+          Click on <span class="emphasis"><em>install</em></span> for the image you want.
+          </p>
+                    </li>
+                  </ol>
+                </div>
+                <p>
+      Once the image has been downloaded and installed, you can click on <span class="emphasis"><em>"How to run?"</em></span> that will be displayed
+      below the image button to view the command to execute to instantiate (start) this image. The image will also appear on the 
+      list given on the <span class="emphasis"><em>Image</em></span> tab.
+      </p>
+              </div>
+              <div class="sect2" title="More Information">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-more-info"></a>More Information</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      How to use the <a class="ulink" href="https://help.ubuntu.com/community/UEC/StorageController" target="_top">Storage Controller</a>
+      </p>
+                <p>
+      Controlling eucalyptus services:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>sudo service eucalyptus [start|stop|restart] (on the CLC/CC/SC/Walrus side)</p>
+                    </li>
+                    <li class="listitem">
+                      <p>sudo service eucalyptus-nc [start|stop|restart] (on the Node side)</p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      Locations of some important files:
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Log files:</em></span>
+          </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="circle">
+                          <li class="listitem">
+                            <p>/var/log/eucalyptus</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Configuration files:</em></span>
+          </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="circle">
+                          <li class="listitem">
+                            <p>/etc/eucalyptus</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Database:</em></span>
+          </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="circle">
+                          <li class="listitem">
+                            <p>/var/lib/eucalyptus/db</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Keys:</em></span>
+          </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="circle">
+                          <li class="listitem">
+                            <p>/var/lib/eucalyptus</p>
+                          </li>
+                          <li class="listitem">
+                            <p>/var/lib/eucalyptus/.ssh</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Don't forget to source your <code class="filename">~/.euca/eucarc</code> before running the client tools. 
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          For information on loading instances see the <a class="ulink" href="https://help.ubuntu.com/community/Eucalyptus" target="_top">Eucalyptus Wiki</a> page.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <a class="ulink" href="http://open.eucalyptus.com/" target="_top">Eucalyptus Project Site (forums, documentation, downloads)</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <a class="ulink" href="https://launchpad.net/eucalyptus/" target="_top">Eucalyptus on Launchpad (bugs, code)</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <a class="ulink" href="http://open.eucalyptus.com/wiki/EucalyptusTroubleshooting_v1.5" target="_top">Eucalyptus Troubleshooting (1.5)</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <a class="ulink" href="http://support.rightscale.com/2._References/02-Cloud_Infrastructures/Eucalyptus/03-Administration_Guide/Register_with_RightScale" target="_top">
+          Register your cloud with RightScale</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          You can also find help in the <span class="emphasis"><em>#ubuntu-virt</em></span>, <span class="emphasis"><em>#eucalyptus</em></span>, and 
+          <span class="emphasis"><em>#ubuntu-server</em></span> IRC channels on <a class="ulink" href="http://freenode.net" target="_top">Freenode</a>.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="sect2" title="Glossary">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="uec-glossary"></a>Glossary</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The Ubuntu Enterprise Cloud documentation uses terminology that might be unfamiliar to some readers. 
+      This page is intended to provide a glossary of such terms and acronyms.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Cloud</em></span> - A federated set of physical machines that offer computing resources through virtual machines,
+          provisioned and recollected dynamically.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Cloud Controller (CLC)</em></span> - Eucalyptus component that provides the web UI (an https server on port 8443), 
+          and implements the Amazon EC2 API. There should be only one Cloud Controller in an installation of UEC. This service is 
+          provided by the Ubuntu <span class="application"><strong>eucalyptus-cloud</strong></span> package.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Cluster</em></span> - A collection of nodes, associated with a Cluster Controller. There can be more than one 
+          Cluster in an installation of UEC. Clusters are sometimes physically separate sets of nodes. (e.g. floor1, floor2, floor2).
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Cluster Controller (CC)</em></span> - Eucalyptus component that manages collections of node resources. 
+          This service is provided by the Ubuntu <span class="application"><strong>eucalyptus-cc</strong></span> package.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>EBS</em></span> - Elastic Block Storage.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>EC2</em></span> - Elastic Compute Cloud. Amazon's pay-by-the-hour, pay-by-the-gigabyte public cloud computing offering.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>EKI</em></span> - Eucalyptus Kernel Image.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>EMI</em></span> - Eucalyptus Machine Image.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>ERI</em></span> - Eucalyptus Ramdisk Image.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Eucalyptus</em></span> - Elastic Utility Computing Architecture for Linking Your Programs To Useful Systems. 
+          An open source project originally from the University of California at Santa Barbara, now supported by Eucalyptus Systems, 
+          a Canonical Partner.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Front-end</em></span> - Physical machine hosting one (or more) of the high level Eucalyptus components (cloud, 
+          walrus, storage controller, cluster controller).
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Node</em></span> - A node is a physical machine that's capable of running virtual machines, running a node controller.
+          Within Ubuntu, this generally means that the CPU has VT extensions, and can run the KVM hypervisor.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Node Controller (NC)</em></span> - Eucalyptus component that runs on nodes which host the virtual machines that comprise
+          the cloud. This service is provided by the Ubuntu package <span class="application"><strong>eucalyptus-nc</strong></span>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>S3</em></span> - Simple Storage Service. Amazon's pay-by-the-gigabyte persistent storage solution for EC2.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Storage Controller (SC)</em></span> - Eucalyptus component that manages dynamic block storage services (EBS). 
+          Each 'cluster' in a Eucalyptus installation can have its own Storage Controller. This component is provided by the 
+          <span class="application"><strong>eucalyptus-sc</strong></span> package.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>UEC</em></span> - Ubuntu Enterprise Cloud. Ubuntu's cloud computing solution, based on Eucalyptus.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>VM</em></span> - Virtual Machine.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>VT</em></span> - Virtualization Technology. An optional feature of some modern CPUs, allowing for accelerated virtual machine hosting.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          <span class="emphasis"><em>Walrus</em></span> - Eucalyptus component that implements the Amazon S3 API, used for storing VM images and user storage using 
+          S3 bucket put/get abstractions.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="jeos-and-vmbuilder.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="virtualization.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="opennebula.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">JeOS and vmbuilder </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> OpenNebula</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

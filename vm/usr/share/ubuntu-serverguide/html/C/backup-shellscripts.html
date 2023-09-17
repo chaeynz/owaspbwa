@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Shell Scripts</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="backups.html" title="Chapter 18. Backups" />
+    <link rel="prev" href="backups.html" title="Chapter 18. Backups" />
+    <link rel="next" href="backups-shellscripts-rotation.html" title="Archive Rotation" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="backups.html">Backups</a></span> &gt; <span class="breadcrumb-node">Shell Scripts</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Shell Scripts">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="backup-shellscripts"></a>Shell Scripts</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    One of the simplest ways to backup a system is using a <span class="emphasis"><em>shell script</em></span>.  For example, a script can be used to configure 
+    which directories to backup, and use those directories as arguments to the <span class="application"><strong>tar</strong></span> utility creating
+    an archive file. The archive file can then be moved or copied to another location.  The archive can also be created on a remote 
+    file system such as an <span class="emphasis"><em>NFS</em></span> mount.
+    </p>
+              <p>
+    The <span class="application"><strong>tar</strong></span> utility creates one archive file out of many files or directories.  <span class="application"><strong>tar</strong></span> 
+    can also filter the files through compression utilities reducing the size of the archive file.  
+    </p>
+              <div class="sect2" title="Simple Shell Script">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="backup-shellscript"></a>Simple Shell Script</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The following shell script uses <span class="application"><strong>tar</strong></span> to create an archive file on a remotely mounted NFS file system. 
+      The archive filename is determined using additional command line utilities.
+      </p>
+                <pre class="programlisting">
+#!/bin/sh
+####################################
+#
+# Backup to NFS mount script.
+#
+####################################
+
+# What to backup. 
+backup_files="/home /var/spool/mail /etc /root /boot /opt"
+
+# Where to backup to.
+dest="/mnt/backup"
+
+# Create archive filename.
+day=$(date +%A)
+hostname=$(hostname -s)
+archive_file="$hostname-$day.tgz"
+
+# Print start status message.
+echo "Backing up $backup_files to $dest/$archive_file"
+date
+echo
+
+# Backup the files using tar.
+tar czf $dest/$archive_file $backup_files
+
+# Print end status message.
+echo
+echo "Backup finished"
+date
+
+# Long listing of files in $dest to check file sizes.
+ls -lh $dest
+</pre>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+       	  <span class="emphasis"><em>$backup_files:</em></span> a variable listing which directories you would like to backup.
+          The list should be customized to fit your needs.  
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+     	  <span class="emphasis"><em>$day:</em></span> a variable holding the day of the week (Monday, Tuesday, Wednesday, etc).  This is used to create 
+          an archive file for each day of the week, giving a backup history of seven days.  There are other ways to accomplish
+          this including other ways using the <span class="application"><strong>date</strong></span> utility. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+   	  <span class="emphasis"><em>$hostname:</em></span> variable containing the <span class="emphasis"><em>short</em></span> hostname of the system.  Using 
+          the hostname in the archive filename gives you the option of placing daily archive files from multiple systems in the 
+          same directory.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+     	  <span class="emphasis"><em>$archive_file:</em></span> the full archive filename.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+   	  <span class="emphasis"><em>$dest:</em></span> destination of the archive file.  The directory needs to be created and in this case 
+          <span class="emphasis"><em>mounted</em></span> before executing the backup script.  See <a class="xref" href="network-file-system.html" title="Network File System (NFS)">the section called “Network File System (NFS)”</a> for details
+          using <span class="emphasis"><em>NFS</em></span>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+     	  <span class="emphasis"><em>status messages:</em></span> optional messages printed to the console using the <span class="application"><strong>echo</strong></span>
+          utility.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+   	  <span class="emphasis"><em>tar czf $dest/$archive_file $backup_files:</em></span> the <span class="application"><strong>tar</strong></span> command used to create the 
+          archive file.  
+          </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="circle">
+                          <li class="listitem">
+                            <p>
+       	      <span class="emphasis"><em>c:</em></span> creates an archive. 
+              </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+     	      <span class="emphasis"><em>z:</em></span> filter the archive through the <span class="application"><strong>gzip</strong></span> utility compressing the archive.   
+              </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+      	      <span class="emphasis"><em>f:</em></span> use archive file.  Otherwise the <span class="application"><strong>tar</strong></span> output will be sent to STDOUT.
+              </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="listitem">
+                      <p>
+     	  <span class="emphasis"><em>ls -lh $dest:</em></span> optional statement prints a <span class="emphasis"><em>-l</em></span> long listing in <span class="emphasis"><em>-h</em></span>
+          human readable format of the destination directory.  This is useful for a quick file size check of the archive file.  
+          This check should not replace testing the archive file.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      This is a simple example of a backup shell script.  There are large amount of options that can be included in a backup script.
+      See <a class="xref" href="backup-shellscripts.html#backup-shellscript-references" title="References">the section called “References”</a> for links to resources providing more in depth shell scripting information.
+      </p>
+              </div>
+              <div class="sect2" title="Executing the Script">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="backup-executing-shellscript"></a>Executing the Script</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="sect3" title="Executing from a Terminal">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="backup-script-execute-shell"></a>Executing from a Terminal</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        The simplest way of executing the above backup script is to copy and paste the contents into a file.  <code class="filename">backup.sh</code> 
+        for example.  Then from a terminal prompt:  
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo bash backup.sh</strong></span>
+</pre>
+                  <p>
+        This is a great way to test the script to make sure everything works as expected.
+        </p>
+                </div>
+                <div class="sect3" title="Executing with cron">
+                  <div class="titlepage">
+                    <div>
+                      <div>
+                        <h4 class="title"><a id="backup-script-execute-cron"></a>Executing with cron</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+        The <span class="application"><strong>cron</strong></span> utility can be used to automate the script execution.  The <span class="application"><strong>cron</strong></span> daemon 
+        allows the execution of scripts, or commands, at a specified time and date.
+        </p>
+                  <p>
+        <span class="application"><strong>cron</strong></span> is configured through entries in a <code class="filename">crontab</code> file. 
+        <code class="filename">crontab</code> files are separated into fields:
+        </p>
+                  <pre class="programlisting">
+# m h dom mon dow   command
+</pre>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" type="disc">
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>m:</em></span> minute the command executes on between 0 and 59.
+            </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>h:</em></span> hour the command executes on between 0 and 23.
+            </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>dom:</em></span> day of month the command executes on.
+            </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>mon:</em></span> the month the command executes on between 1 and 12.
+            </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>dow:</em></span> the day of the week the command executes on between 0 and 7. Sunday may be specified by using 0 or 7, both values are valid.
+            </p>
+                      </li>
+                      <li class="listitem">
+                        <p>
+            <span class="emphasis"><em>command:</em></span> the command to execute.
+            </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <p>
+        To add or change entries in a <code class="filename">crontab</code> file the <span class="application"><strong>crontab -e</strong></span> command should be used.  Also,
+        the contents of a <code class="filename">crontab</code> file can be viewed using the <span class="application"><strong>crontab -l</strong></span> command.
+        </p>
+                  <p>
+        To execute the <span class="application"><strong>backup.sh</strong></span> script listed above using <span class="application"><strong>cron</strong></span>.  Enter the following 
+        from a terminal prompt:
+        </p>
+                  <pre class="screen">
+<span class="command"><strong>sudo crontab -e</strong></span>
+</pre>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+          Using <span class="application"><strong>sudo</strong></span> with the <span class="application"><strong>crontab -e</strong></span> command edits the <span class="emphasis"><em>root</em></span> user's crontab.  
+          This is necessary if you are backing up directories only the root user has access to.
+          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>
+        Add the following entry to the <code class="filename">crontab</code> file:
+        </p>
+                  <pre class="programlisting">
+# m h dom mon dow   command
+0 0 * * * bash /usr/local/bin/backup.sh
+</pre>
+                  <p>
+        The <span class="application"><strong>backup.sh</strong></span> script will now be executed every day at 12:00 am. 
+        </p>
+                  <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Note">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Note]" src="../../libs/admon/note.png" />
+                        </td>
+                        <th align="left"></th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>
+          The <span class="application"><strong>backup.sh</strong></span> script will need to be copied to the <code class="filename">/usr/local/bin/</code> directory in order for 
+          this entry to execute properly.  The script can reside anywhere on the file system simply change the script path appropriately.
+          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <p>
+        For more in depth <span class="application"><strong>crontab</strong></span> options see <a class="xref" href="backup-shellscripts.html#backup-shellscript-references" title="References">the section called “References”</a>.
+        </p>
+                </div>
+              </div>
+              <div class="sect2" title="Restoring from the Archive">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="backup-shellscript-archive-testing"></a>Restoring from the Archive</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      Once an archive has been created it is important to test the archive.  The archive can be tested by listing the files
+      it contains, but the best test is to <span class="emphasis"><em>restore</em></span> a file from the archive.
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          To see a listing of the archive contents.  From a terminal prompt:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>tar -tzvf /mnt/backup/host-Monday.tgz</strong></span>
+</pre>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          To restore a file from the archive to a different directory enter:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>tar -xzvf /mnt/backup/host-Monday.tgz -C /tmp etc/hosts</strong></span>
+</pre>
+                      <p>
+          The <span class="emphasis"><em>-C</em></span> option to <span class="application"><strong>tar</strong></span> redirects the extracted files to the specified directory.  The above 
+          example will extract the <code class="filename">/etc/hosts</code> file to <code class="filename">/tmp/etc/hosts</code>.  <span class="application"><strong>tar</strong></span>
+          recreates the directory structure that it contains.
+          </p>
+                      <p>
+          Also, notice the leading <span class="emphasis"><em>"/"</em></span> is left off the path of the file to restore.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          To restore all files in the archive enter the following:
+          </p>
+                      <pre class="screen">
+<span class="command"><strong>cd /</strong></span>
+<span class="command"><strong>sudo tar -xzvf /mnt/backup/host-Monday.tgz</strong></span>
+</pre>
+                    </li>
+                  </ul>
+                </div>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        This will overwrite the files currently on the file system.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="backup-shellscript-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          For more information on shell scripting see the <a class="ulink" href="http://tldp.org/LDP/abs/html/" target="_top">Advanced Bash-Scripting Guide</a>
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          The book <a class="ulink" href="http://safari.samspublishing.com/0672323583" target="_top">Teach Yourself Shell Programming in 24 Hours</a> is available
+          online and a great resource for shell scripting.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          The <a class="ulink" href="https://help.ubuntu.com/community/CronHowto" target="_top">CronHowto Wiki Page</a> contains details on advanced 
+          <span class="application"><strong>cron</strong></span>
+          options.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          See the <a class="ulink" href="http://www.gnu.org/software/tar/manual/index.html" target="_top">GNU tar Manual</a> for more 
+          <span class="application"><strong>tar</strong></span> options.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          The Wikipedia <a class="ulink" href="http://en.wikipedia.org/wiki/Backup_rotation_scheme" target="_top">Backup Rotation Scheme</a> article contains
+          information on other backup rotation schemes.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+        The shell script uses <span class="application"><strong>tar</strong></span> to create the archive, but there many other command line utilities 
+        that can be used.  For example:
+        </p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" type="circle">
+                          <li class="listitem">
+                            <p>
+	      <a class="ulink" href="http://www.gnu.org/software/cpio/" target="_top">cpio</a>: used to copy files to and from archives.
+              </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+              <a class="ulink" href="http://www.gnu.org/software/coreutils/" target="_top">dd</a>: part of the <span class="application"><strong>coreutils</strong></span> 
+              package.  A low level utility that can copy data from one format to another 
+              </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+              <a class="ulink" href="http://www.rsnapshot.org/" target="_top">rsnapshot</a>: a file system snap shot utility used to create 
+              copies of an entire file system. 
+              </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="backups.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="backups.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="backups-shellscripts-rotation.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Chapter 18. Backups </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Archive Rotation</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

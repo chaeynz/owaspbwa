@@ -1,0 +1,7 @@
+UtsRelease 2.4.18-5
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Linux Red Hat 7.3 for athlon systems.
+UtsMachine i386
+AthlonKernel required

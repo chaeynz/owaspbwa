@@ -1,0 +1,9 @@
+1c928244f51de4abf95e295b4fa481a2  usr/lib/ruby/1.8/dbd/Pg.rb
+252aff88e2c90be574d5f62cbde5aedb  usr/lib/ruby/1.8/dbd/pg/type.rb
+6a0c3e12dd8b9ea88760520e2d96ffd1  usr/lib/ruby/1.8/dbd/pg/statement.rb
+048e41ff7bf82b8983871b5537280a0f  usr/lib/ruby/1.8/dbd/pg/tuples.rb
+caf16e7cbb0f4fbc1516a14eb2b9ba75  usr/lib/ruby/1.8/dbd/pg/database.rb
+845244a1888839f1e830b3d2a6da8828  usr/lib/ruby/1.8/dbd/pg/exec.rb
+708fd1f9e4e9f2c6fc9d093953f4fa8c  usr/share/doc/libdbd-pg-ruby1.8/changelog.gz
+70b6574f21c18f984bc01e481850734c  usr/share/doc/libdbd-pg-ruby1.8/copyright
+b3ae8e61e2b0ac76cb3d005f7aad415b  usr/share/doc/libdbd-pg-ruby1.8/changelog.Debian.gz

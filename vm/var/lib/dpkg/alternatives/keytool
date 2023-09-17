@@ -1,0 +1,12 @@
+auto
+/usr/bin/keytool
+keytool.1.gz
+/usr/share/man/man1/keytool.1.gz
+
+/usr/bin/gkeytool-4.3
+43
+/usr/share/man/man1/gkeytool-4.3.1.gz
+/usr/lib/jvm/java-6-openjdk/jre/bin/keytool
+1061
+/usr/lib/jvm/java-6-openjdk/jre/man/man1/keytool.1.gz
+

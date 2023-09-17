@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module PhusionPassenger - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/abstract_installer.rb
+    <li>lib/phusion_passenger/console_text_template.rb
+    <li>lib/phusion_passenger/standalone/start_command.rb
+    <li>lib/phusion_passenger/standalone/config_file.rb
+    <li>lib/phusion_passenger/standalone/utils.rb
+    <li>lib/phusion_passenger/standalone/version_command.rb
+    <li>lib/phusion_passenger/standalone/main.rb
+    <li>lib/phusion_passenger/standalone/command.rb
+    <li>lib/phusion_passenger/standalone/runtime_locator.rb
+    <li>lib/phusion_passenger/standalone/stop_command.rb
+    <li>lib/phusion_passenger/standalone/runtime_installer.rb
+    <li>lib/phusion_passenger/standalone/app_finder.rb
+    <li>lib/phusion_passenger/standalone/help_command.rb
+    <li>lib/phusion_passenger/standalone/status_command.rb
+    <li>lib/phusion_passenger/standalone/package_runtime_command.rb
+    <li>lib/phusion_passenger/packaging.rb
+    <li>lib/phusion_passenger/loader_shared_helpers.rb
+    <li>lib/phusion_passenger/utils.rb
+    <li>lib/phusion_passenger/rack/out_of_band_gc.rb
+    <li>lib/phusion_passenger/rack/thread_handler_extension.rb
+    <li>lib/phusion_passenger/debug_logging.rb
+    <li>lib/phusion_passenger/request_handler/thread_handler.rb
+    <li>lib/phusion_passenger/admin_tools.rb
+    <li>lib/phusion_passenger/request_handler.rb
+    <li>lib/phusion_passenger/public_api.rb
+    <li>lib/phusion_passenger/active_support3_extensions/init.rb
+    <li>lib/phusion_passenger/platform_info/apache.rb
+    <li>lib/phusion_passenger/platform_info/linux.rb
+    <li>lib/phusion_passenger/platform_info/cxx_portability.rb
+    <li>lib/phusion_passenger/platform_info/compiler.rb
+    <li>lib/phusion_passenger/platform_info/apache_detector.rb
+    <li>lib/phusion_passenger/platform_info/zlib.rb
+    <li>lib/phusion_passenger/platform_info/binary_compatibility.rb
+    <li>lib/phusion_passenger/platform_info/curl.rb
+    <li>lib/phusion_passenger/platform_info/operating_system.rb
+    <li>lib/phusion_passenger/platform_info/depcheck.rb
+    <li>lib/phusion_passenger/platform_info/ruby.rb
+    <li>lib/phusion_passenger/utils/file_system_watcher.rb
+    <li>lib/phusion_passenger/utils/hosts_file_parser.rb
+    <li>lib/phusion_passenger/utils/download.rb
+    <li>lib/phusion_passenger/utils/terminal_choice_menu.rb
+    <li>lib/phusion_passenger/utils/tmpdir.rb
+    <li>lib/phusion_passenger/utils/ansi_colors.rb
+    <li>lib/phusion_passenger/utils/tmpio.rb
+    <li>lib/phusion_passenger/utils/unseekable_socket.rb
+    <li>lib/phusion_passenger/utils/json.rb
+    <li>lib/phusion_passenger/utils/native_support_utils.rb
+    <li>lib/phusion_passenger/utils/tee_input.rb
+    <li>lib/phusion_passenger/preloader_shared_helpers.rb
+    <li>lib/phusion_passenger/config/detach_process_command.rb
+    <li>lib/phusion_passenger/config/utils.rb
+    <li>lib/phusion_passenger/config/main.rb
+    <li>lib/phusion_passenger/config/command.rb
+    <li>lib/phusion_passenger/config/about_command.rb
+    <li>lib/phusion_passenger/config/restart_app_command.rb
+    <li>lib/phusion_passenger/config/validate_install_command.rb
+    <li>lib/phusion_passenger/message_channel.rb
+    <li>lib/phusion_passenger/platform_info.rb
+    <li>lib/phusion_passenger/analytics_logger.rb
+    <li>lib/phusion_passenger/admin_tools/memory_stats.rb
+    <li>lib/phusion_passenger/admin_tools/server_instance.rb
+    <li>lib/phusion_passenger/plugin.rb
+    <li>lib/phusion_passenger/classic_rails/cgi_fixed.rb
+    <li>lib/phusion_passenger/classic_rails/thread_handler_extension.rb
+    <li>lib/phusion_passenger/constants.rb
+    <li>lib/phusion_passenger/native_support.rb
+    <li>lib/phusion_passenger/message_client.rb
+    <li>lib/phusion_passenger.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-advertised_concurrency_level">::advertised_concurrency_level</a>
+    
+    <li><a href="#method-c-advertised_concurrency_level-3D">::advertised_concurrency_level=</a>
+    
+    <li><a href="#method-c-apache2_doc_path">::apache2_doc_path</a>
+    
+    <li><a href="#method-c-benchmark">::benchmark</a>
+    
+    <li><a href="#method-c-binaries_sites">::binaries_sites</a>
+    
+    <li><a href="#method-c-call_event">::call_event</a>
+    
+    <li><a href="#method-c-index_doc_path">::index_doc_path</a>
+    
+    <li><a href="#method-c-install_framework_extensions-21">::install_framework_extensions!</a>
+    
+    <li><a href="#method-c-installed_from_release_package-3F">::installed_from_release_package?</a>
+    
+    <li><a href="#method-c-locate_directories">::locate_directories</a>
+    
+    <li><a href="#method-c-log_cache_hit">::log_cache_hit</a>
+    
+    <li><a href="#method-c-log_cache_miss">::log_cache_miss</a>
+    
+    <li><a href="#method-c-native_packaging_method">::native_packaging_method</a>
+    
+    <li><a href="#method-c-natively_packaged-3F">::natively_packaged?</a>
+    
+    <li><a href="#method-c-nginx_doc_path">::nginx_doc_path</a>
+    
+    <li><a href="#method-c-on_event">::on_event</a>
+    
+    <li><a href="#method-c-originally_packaged-3F">::originally_packaged?</a>
+    
+    <li><a href="#method-c-require_passenger_lib">::require_passenger_lib</a>
+    
+    <li><a href="#method-c-source_root">::source_root</a>
+    
+    <li><a href="#method-c-standalone_doc_path">::standalone_doc_path</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="./PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="./PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="./PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="./PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="./PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="./PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="./PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="./PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="./PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="./PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="./PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="./PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="./PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="./PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="./PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="./PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="./PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="./PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="./PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="./PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="./PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="./PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="./PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="./PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="./PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="./PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="./PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="./PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="./PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="./PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="./PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="./PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="./PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="./PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="./PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="./PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="./PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="./PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="./PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="./PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="./PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="./PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="./PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="./PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="./PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="./PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="./PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="./PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="./PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="./PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="./PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="./PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="./PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="./PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="./CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="./Exception.html">Exception</a>
+  
+    <li><a href="./GC.html">GC</a>
+  
+    <li><a href="./IO.html">IO</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module PhusionPassenger</h1>
+
+  <div id="description" class="description">
+    
+<p>IMPORTANT: do not directly or indirectly require native_support; we can’t
+compile it yet until we have a compiler, and installers usually check
+whether a compiler is installed.</p>
+
+<p>We lazy load as many libraries as possible not only to improve startup
+performance, but also to ensure that we don’t require libraries before
+we’ve passed the dependency checking stage of the runtime installer.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2014 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2014 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2013 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+<p>Phusion Passenger - <a
+href="https://www.phusionpassenger.com/">www.phusionpassenger.com/</a>
+Copyright © 2010-2014 Phusion</p>
+
+<p>“Phusion Passenger” is a trademark of Hongli Lai &amp; Ninh Bui.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="APACHE2_DOC_NAME">APACHE2_DOC_NAME
+        
+        <dd class="description">
+        
+      
+        <dt id="APACHE2_MODULE_CONF_NAME">APACHE2_MODULE_CONF_NAME
+        
+        <dd class="description"><p>The name for the /etc/apache2/mods-available/*.{load,conf} file.</p>
+        
+      
+        <dt id="FILE_LOCATION">FILE_LOCATION
+        
+        <dd class="description">
+        
+      
+        <dt id="GLOBAL_NAMESPACE_DIRNAME">GLOBAL_NAMESPACE_DIRNAME
+        
+        <dd class="description"><p>Directories ######</p>
+        
+      
+        <dt id="INDEX_DOC_NAME">INDEX_DOC_NAME
+        
+        <dd class="description"><p>Other resource locations ######</p>
+        
+      
+        <dt id="NGINX_DOC_NAME">NGINX_DOC_NAME
+        
+        <dd class="description">
+        
+      
+        <dt id="NGINX_SHA256_CHECKSUM">NGINX_SHA256_CHECKSUM
+        
+        <dd class="description">
+        
+      
+        <dt id="OPTIONAL_LOCATIONS_INI_FIELDS">OPTIONAL_LOCATIONS_INI_FIELDS
+        
+        <dd class="description">
+        
+      
+        <dt id="ORIGINALLY_PACKAGED_LOCATIONS_INI_FIELDS">ORIGINALLY_PACKAGED_LOCATIONS_INI_FIELDS
+        
+        <dd class="description"><p>The subset of the optional fields which are only available when originally
+packaged.</p>
+        
+      
+        <dt id="PACKAGE_NAME">PACKAGE_NAME
+        
+        <dd class="description"><p>Names and version numbers ######</p>
+        
+      
+        <dt id="PASSENGER_ANALYTICS_WEB_LOG">PASSENGER_ANALYTICS_WEB_LOG
+        
+        <dd class="description">
+        
+      
+        <dt id="PASSENGER_TXN_ID">PASSENGER_TXN_ID
+        
+        <dd class="description">
+        
+      
+        <dt id="PASSENGER_UNION_STATION_KEY">PASSENGER_UNION_STATION_KEY
+        
+        <dd class="description">
+        
+      
+        <dt id="PCRE_SHA256_CHECKSUM">PCRE_SHA256_CHECKSUM
+        
+        <dd class="description">
+        
+      
+        <dt id="PLUGIN_DIRS">PLUGIN_DIRS
+        
+        <dd class="description"><p>Directories in which to look for plugins.</p>
+        
+      
+        <dt id="PREFERRED_NGINX_VERSION">PREFERRED_NGINX_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="PREFERRED_PCRE_VERSION">PREFERRED_PCRE_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="RACK_HIJACK_IO">RACK_HIJACK_IO
+        
+        <dd class="description">
+        
+      
+        <dt id="REQUIRED_LOCATIONS_INI_FIELDS">REQUIRED_LOCATIONS_INI_FIELDS
+        
+        <dd class="description">
+        
+      
+        <dt id="STANDALONE_DOC_NAME">STANDALONE_DOC_NAME
+        
+        <dd class="description">
+        
+      
+        <dt id="STANDALONE_INTERFACE_VERSION">STANDALONE_INTERFACE_VERSION
+        
+        <dd class="description">
+        
+      
+        <dt id="USER_NAMESPACE_DIRNAME">USER_NAMESPACE_DIRNAME
+        
+        <dd class="description"><p>Subdirectory under $HOME to use for storing stuff.</p>
+        
+      
+        <dt id="VERSION_STRING">VERSION_STRING
+        
+        <dd class="description"><p>Run ‘rake ext/common/Constants.h’ after changing this number.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-advertised_concurrency_level" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advertised_concurrency_level</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advertised_concurrency_level-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">advertised_concurrency_level</span>
+        <span class="ruby-identifier">@@advertised_concurrency_level</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- advertised_concurrency_level-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- advertised_concurrency_level-method -->
+
+    
+      <div id="method-c-advertised_concurrency_level-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">advertised_concurrency_level=</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="advertised_concurrency_level-3D-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">advertised_concurrency_level=</span>(<span class="ruby-identifier">value</span>)
+        <span class="ruby-identifier">@@advertised_concurrency_level</span> = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- advertised_concurrency_level-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- advertised_concurrency_level-3D-method -->
+
+    
+      <div id="method-c-apache2_doc_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">apache2_doc_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="apache2_doc_path-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">apache2_doc_path</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{doc_dir}/#{APACHE2_DOC_NAME}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- apache2_doc_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- apache2_doc_path-method -->
+
+    
+      <div id="method-c-benchmark" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">benchmark</span><span
+            class="method-args">(env = nil, title = "Benchmarking") { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="benchmark-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">benchmark</span>(<span class="ruby-identifier">env</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">title</span> = <span class="ruby-string">&quot;Benchmarking&quot;</span>)
+        <span class="ruby-identifier">log</span> = <span class="ruby-identifier">lookup_analytics_log</span>(<span class="ruby-identifier">env</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">log</span>
+                <span class="ruby-identifier">log</span>.<span class="ruby-identifier">measure</span>(<span class="ruby-node">&quot;BENCHMARK: #{title}&quot;</span>) <span class="ruby-keyword">do</span>
+                        <span class="ruby-keyword">yield</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">yield</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- benchmark-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- benchmark-method -->
+
+    
+      <div id="method-c-binaries_sites" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">binaries_sites</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="binaries_sites-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">binaries_sites</span>
+        <span class="ruby-keyword">return</span> [
+                { <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release&quot;</span>,
+                  <span class="ruby-value">:cacert</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{resources_dir}/oss-binaries.phusionpassenger.com.crt&quot;</span> },
+                { <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release&quot;</span> }
+        ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- binaries_sites-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- binaries_sites-method -->
+
+    
+      <div id="method-c-call_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call_event</span><span
+            class="method-args">(name, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="call_event-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call_event</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">callback_list_for_event</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">callback</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">callback</span>.<span class="ruby-identifier">call</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call_event-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call_event-method -->
+
+    
+      <div id="method-c-index_doc_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index_doc_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index_doc_path-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">index_doc_path</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{doc_dir}/#{INDEX_DOC_NAME}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index_doc_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index_doc_path-method -->
+
+    
+      <div id="method-c-install_framework_extensions-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">install_framework_extensions!</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="install_framework_extensions-21-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">install_framework_extensions!</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">require</span> <span class="ruby-string">'active_support/version'</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">ActiveSupport</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">ActiveSupport</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">::</span><span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span><span class="ruby-operator">::</span><span class="ruby-constant">MAJOR</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">3</span>
+                <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'active_support3_extensions/init'</span>
+                <span class="ruby-constant">ActiveSupport3Extensions</span>.<span class="ruby-identifier">init!</span>(<span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">App</span>.<span class="ruby-identifier">options</span>, *<span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- install_framework_extensions-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- install_framework_extensions-21-method -->
+
+    
+      <div id="method-c-installed_from_release_package-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">installed_from_release_package?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether the current Phusion Passenger installation is installed from a
+release package, e.g. an official gem or official tarball. Retruns false if
+e.g. the gem was built by the user, or if this install is from a git
+repository.</p>
+          
+
+          
+          <div class="method-source-code" id="installed_from_release_package-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">installed_from_release_package?</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-node">&quot;#{resources_dir}/release.txt&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- installed_from_release_package-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- installed_from_release_package-3F-method -->
+
+    
+      <div id="method-c-locate_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">locate_directories</span><span
+            class="method-args">(source_root_or_location_configuration_file = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Follows the logic of ext/common/ResourceLocator.h, so don’t forget to
+modify that too.</p>
+          
+
+          
+          <div class="method-source-code" id="locate_directories-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">locate_directories</span>(<span class="ruby-identifier">source_root_or_location_configuration_file</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">source_root_or_location_configuration_file</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">find_location_configuration_file</span>
+        <span class="ruby-identifier">root_or_file</span> = <span class="ruby-ivar">@source_root</span> = <span class="ruby-identifier">source_root_or_location_configuration_file</span>
+        
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">root_or_file</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">root_or_file</span>)
+                <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">root_or_file</span>
+                <span class="ruby-identifier">options</span>  = <span class="ruby-identifier">parse_ini_file</span>(<span class="ruby-identifier">filename</span>)
+                
+                <span class="ruby-ivar">@natively_packaged</span> = <span class="ruby-identifier">get_bool_option</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">options</span>, <span class="ruby-string">'natively_packaged'</span>)
+                <span class="ruby-constant">REQUIRED_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{field}&quot;</span>, <span class="ruby-identifier">get_option</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">field</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">freeze</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-constant">OPTIONAL_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{field}&quot;</span>, <span class="ruby-identifier">get_option</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">field</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">false</span>).<span class="ruby-identifier">freeze</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">natively_packaged?</span>
+                        <span class="ruby-ivar">@native_packaging_method</span> = <span class="ruby-identifier">get_option</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">options</span>, <span class="ruby-string">'native_packaging_method'</span>)
+                        <span class="ruby-constant">ORIGINALLY_PACKAGED_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+                                <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{field}&quot;</span>, <span class="ruby-keyword">nil</span>)
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@source_root</span>           = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">FILE_LOCATION</span>))
+                <span class="ruby-ivar">@natively_packaged</span>     = <span class="ruby-keyword">false</span>
+                <span class="ruby-ivar">@bin_dir</span>               = <span class="ruby-node">&quot;#{@source_root}/bin&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@agents_dir</span>            = <span class="ruby-node">&quot;#{@source_root}/buildout/agents&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@lib_dir</span>               = <span class="ruby-node">&quot;#{@source_root}/buildout&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@helper_scripts_dir</span>    = <span class="ruby-node">&quot;#{@source_root}/helper-scripts&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@resources_dir</span>         = <span class="ruby-node">&quot;#{@source_root}/resources&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@include_dir</span>           = <span class="ruby-node">&quot;#{@source_root}/ext&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@doc_dir</span>               = <span class="ruby-node">&quot;#{@source_root}/doc&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@ruby_libdir</span>           = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">FILE_LOCATION</span>).<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@node_libdir</span>           = <span class="ruby-node">&quot;#{@source_root}/node_lib&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@apache2_module_path</span>   = <span class="ruby-node">&quot;#{@source_root}/buildout/apache2/mod_passenger.so&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@ruby_extension_source_dir</span> = <span class="ruby-node">&quot;#{@source_root}/ext/ruby&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@nginx_module_source_dir</span>   = <span class="ruby-node">&quot;#{@source_root}/ext/nginx&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@download_cache_dir</span>        = <span class="ruby-node">&quot;#{@source_root}/download_cache&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@build_system_dir</span>          = <span class="ruby-ivar">@source_root</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@buildout_dir</span>              = <span class="ruby-node">&quot;#{@source_root}/buildout&quot;</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-ivar">@apache2_module_source_dir</span> = <span class="ruby-ivar">@source_root</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">freeze</span>
+                <span class="ruby-constant">REQUIRED_LOCATIONS_INI_FIELDS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{field}&quot;</span>).<span class="ruby-identifier">nil?</span>
+                                <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;BUG: @#{field} not set&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- locate_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- locate_directories-method -->
+
+    
+      <div id="method-c-log_cache_hit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log_cache_hit</span><span
+            class="method-args">(env, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="log_cache_hit-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log_cache_hit</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">log</span> = <span class="ruby-identifier">lookup_analytics_log</span>(<span class="ruby-identifier">env</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">log</span>
+                <span class="ruby-identifier">log</span>.<span class="ruby-identifier">message</span>(<span class="ruby-node">&quot;Cache hit: #{name}&quot;</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log_cache_hit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log_cache_hit-method -->
+
+    
+      <div id="method-c-log_cache_miss" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log_cache_miss</span><span
+            class="method-args">(env, name, generation_time = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="log_cache_miss-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log_cache_miss</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">generation_time</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">log</span> = <span class="ruby-identifier">lookup_analytics_log</span>(<span class="ruby-identifier">env</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">log</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">generation_time</span>
+                        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">message</span>(<span class="ruby-node">&quot;Cache miss (#{generation_time.to_i}): #{name}&quot;</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">log</span>.<span class="ruby-identifier">message</span>(<span class="ruby-node">&quot;Cache miss: #{name}&quot;</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log_cache_miss-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log_cache_miss-method -->
+
+    
+      <div id="method-c-native_packaging_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">native_packaging_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If Phusion Passenger is natively packaged, returns which packaging method
+was used. Can be ‘deb’, ‘rpm’ or ‘homebrew’.</p>
+          
+
+          
+          <div class="method-source-code" id="native_packaging_method-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">native_packaging_method</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@native_packaging_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- native_packaging_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- native_packaging_method-method -->
+
+    
+      <div id="method-c-natively_packaged-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">natively_packaged?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="natively_packaged-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">natively_packaged?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@natively_packaged</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- natively_packaged-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- natively_packaged-3F-method -->
+
+    
+      <div id="method-c-nginx_doc_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nginx_doc_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nginx_doc_path-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nginx_doc_path</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{doc_dir}/#{NGINX_DOC_NAME}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nginx_doc_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nginx_doc_path-method -->
+
+    
+      <div id="method-c-on_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_event</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_event-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/public_api.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_event</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-identifier">callback_list_for_event</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_event-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_event-method -->
+
+    
+      <div id="method-c-originally_packaged-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">originally_packaged?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns whether this Phusion Passenger installation is in the ‘originally
+packaged’ configuration (as opposed to the ‘natively packaged’
+configuration.</p>
+          
+
+          
+          <div class="method-source-code" id="originally_packaged-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">originally_packaged?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@natively_packaged</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- originally_packaged-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- originally_packaged-3F-method -->
+
+    
+      <div id="method-c-require_passenger_lib" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_passenger_lib</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Instead of calling `require ‘phusion_passenger/foo’`, you should call `<a
+href="PhusionPassenger.html#method-c-require_passenger_lib">::require_passenger_lib</a>
+‘foo’`. This is because when Phusion Passenger is natively packaged, it may
+still be run with arbitrary Ruby interpreters. Adding ruby_libdir to
+$LOAD_PATH is then dangerous because ruby_libdir may be the distribution’s
+Ruby’s vendor_ruby directory, which may be incompatible with the active
+Ruby interpreter. This method looks up the exact filename directly.</p>
+
+<p>Using this method also has two more advantages:</p>
+
+<pre class="ruby"><span class="ruby-value">1</span>. <span class="ruby-constant">It</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">immune</span> <span class="ruby-identifier">to</span> <span class="ruby-constant">Bundler</span><span class="ruby-string">'s load path mangling code.
+2. It is faster than plan require() because it doesn'</span><span class="ruby-identifier">t</span> <span class="ruby-identifier">need</span> <span class="ruby-identifier">to</span>
+   <span class="ruby-identifier">scan</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">entire</span> <span class="ruby-identifier">load</span> <span class="ruby-identifier">path</span>.
+</pre>
+          
+
+          
+          <div class="method-source-code" id="require_passenger_lib-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">require_passenger_lib</span>(<span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">require</span>(<span class="ruby-node">&quot;#{ruby_libdir}/phusion_passenger/#{name}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require_passenger_lib-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- require_passenger_lib-method -->
+
+    
+      <div id="method-c-source_root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source_root</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>When originally packaged, returns the source root. When natively packaged,
+returns the location of the location configuration file.</p>
+          
+
+          
+          <div class="method-source-code" id="source_root-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">source_root</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-ivar">@source_root</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- source_root-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- source_root-method -->
+
+    
+      <div id="method-c-standalone_doc_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">standalone_doc_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="standalone_doc_path-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">standalone_doc_path</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{doc_dir}/#{STANDALONE_DOC_NAME}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- standalone_doc_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- standalone_doc_path-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

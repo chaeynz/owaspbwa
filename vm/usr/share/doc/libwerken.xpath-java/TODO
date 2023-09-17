@@ -1,0 +1,10 @@
+
+* Renamed ContextHelper to ContextSupport
+
+* Maintain Namespace parent information (wrap?)
+
+* Maintain Attribute parent information (hashmap?)
+
+* Document Order!!
+
+* Replace my testcase stuff with JUnit.

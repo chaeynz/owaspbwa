@@ -1,0 +1,7 @@
+34aeb70944bff22f7dae3d85fff12706  usr/share/man/man3/XML::SAX::Expat.3pm.gz
+4e08fe4e643219dc5cd5027154d07069  usr/share/perl5/XML/SAX/Expat.pm
+d9e5aae822132083151149e91caa04ee  usr/share/lintian/overrides/libxml-sax-expat-perl
+7ff31f36e46e7426edcb763b0920f0bb  usr/share/doc/libxml-sax-expat-perl/examples/counter.pl
+56296ff712e1fcc845d344d3c44b18b0  usr/share/doc/libxml-sax-expat-perl/copyright
+d980ef64e242369ddee2bd9b10e95dd8  usr/share/doc/libxml-sax-expat-perl/changelog.gz
+e12488d1cf9592cc07514c992f9025ee  usr/share/doc/libxml-sax-expat-perl/changelog.Debian.gz

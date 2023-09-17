@@ -1,0 +1,6 @@
+UtsRelease 2.6.10-5-amd64-k8-smp
+ModVersion yes
+SMP yes
+PageOffset 0000010000000000
+Comment Ubuntu5.04, 2.6.10-5-amd64-k8-smp, x86_64 smp 
+UtsMachine x86_64

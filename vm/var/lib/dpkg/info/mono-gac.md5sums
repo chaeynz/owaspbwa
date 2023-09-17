@@ -1,0 +1,6 @@
+8c6688b06bfd016d65283c47163e62d1  usr/share/cli-common/runtimes.d/mono
+6b34288bbff3ada73d29c7a41f69ca4c  usr/share/mono/MonoGetAssemblyName.exe
+179bf0a3c9b40dbae9061590f7efd0c5  usr/share/doc/mono-gac/copyright
+623da1c6dd023680ea9babd7409a17b7  usr/share/doc/mono-gac/changelog.Debian.gz
+10b02f0600b1187d452d1e665a052d78  usr/share/man/man1/gacutil.1.gz
+38c6bf4d46b4eccddf9c3cd57626996c  usr/bin/gacutil

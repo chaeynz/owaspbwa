@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module PhusionPassenger::Utils - passenger-4.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/utils.rb
+    <li>lib/phusion_passenger/utils/file_system_watcher.rb
+    <li>lib/phusion_passenger/utils/hosts_file_parser.rb
+    <li>lib/phusion_passenger/utils/tmpdir.rb
+    <li>lib/phusion_passenger/utils/ansi_colors.rb
+    <li>lib/phusion_passenger/utils/tmpio.rb
+    <li>lib/phusion_passenger/utils/unseekable_socket.rb
+    <li>lib/phusion_passenger/utils/tee_input.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-included">::included</a>
+    
+    <li><a href="#method-c-mktmpdir">::mktmpdir</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-opens_files-3F">::opens_files?</a>
+    
+    <li><a href="#method-c-passenger_tmpdir">::passenger_tmpdir</a>
+    
+    <li><a href="#method-c-passenger_tmpdir-3D">::passenger_tmpdir=</a>
+    
+    <li><a href="#method-i-connect_to_server">#connect_to_server</a>
+    
+    <li><a href="#method-i-generate_random_id">#generate_random_id</a>
+    
+    <li><a href="#method-i-get_socket_address_type">#get_socket_address_type</a>
+    
+    <li><a href="#method-i-global_backtrace_report">#global_backtrace_report</a>
+    
+    <li><a href="#method-i-install_options_as_ivars">#install_options_as_ivars</a>
+    
+    <li><a href="#method-i-local_socket_address-3F">#local_socket_address?</a>
+    
+    <li><a href="#method-i-passenger_tmpdir">#passenger_tmpdir</a>
+    
+    <li><a href="#method-i-print_exception">#print_exception</a>
+    
+    <li><a href="#method-i-process_is_alive-3F">#process_is_alive?</a>
+    
+    <li><a href="#method-i-require_option">#require_option</a>
+    
+    <li><a href="#method-i-split_by_null_into_hash">#split_by_null_into_hash</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions.html">PhusionPassenger::Rails3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/Rails3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module PhusionPassenger::Utils</h1>
+
+  <div id="description" class="description">
+    
+<p>Utility functions.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="FileSystemWatcher">FileSystemWatcher
+        
+        <dd class="description">
+        
+      
+        <dt id="NULL">NULL
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">klass</span>)
+        <span class="ruby-comment"># When included into another class, make sure that Utils</span>
+        <span class="ruby-comment"># methods are made private.</span>
+        <span class="ruby-identifier">public_instance_methods</span>(<span class="ruby-keyword">false</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method_name</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:private</span>, <span class="ruby-identifier">method_name</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+      <div id="method-c-mktmpdir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mktmpdir</span><span
+            class="method-args">(prefix_suffix=nil, tmpdir=nil) { |path| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Like Dir.mktmpdir, but creates shorter filenames.</p>
+          
+
+          
+          <div class="method-source-code" id="mktmpdir-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils/tmpio.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mktmpdir</span>(<span class="ruby-identifier">prefix_suffix</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">tmpdir</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">prefix_suffix</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">prefix</span> = <span class="ruby-string">&quot;d&quot;</span>
+    <span class="ruby-identifier">suffix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">prefix_suffix</span>
+    <span class="ruby-identifier">suffix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">prefix_suffix</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">suffix</span> = <span class="ruby-identifier">prefix_suffix</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;unexpected prefix_suffix: #{prefix_suffix.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tmpdir</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">tmpdir</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-node">&quot;#{tmpdir}/#{prefix}#{rand(0x100000000).to_s(36)}&quot;</span>
+    <span class="ruby-identifier">path</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">suffix</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value">0700</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EEXIST</span>
+    <span class="ruby-keyword">retry</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">remove_entry_secure</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mktmpdir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mktmpdir-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(filenames, termination_pipe = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils/file_system_watcher.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filenames</span>, <span class="ruby-identifier">termination_pipe</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-comment"># Default parameter values, type conversion and exception</span>
+        <span class="ruby-comment"># handling in C is too much of a pain.</span>
+        <span class="ruby-identifier">filenames</span> = <span class="ruby-identifier">filenames</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">_new</span>(<span class="ruby-identifier">filenames</span>, <span class="ruby-identifier">termination_pipe</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-opens_files-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">opens_files?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="opens_files-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils/file_system_watcher.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">opens_files?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- opens_files-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- opens_files-3F-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="protected-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Class Methods</h3>
+
+    
+      <div id="method-c-passenger_tmpdir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">passenger_tmpdir</span><span
+            class="method-args">(create = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the directory in which to store Phusion Passenger-specific
+temporary files. If <code>create</code> is true, then this method creates
+the directory if it doesn’t exist.</p>
+          
+
+          
+          <div class="method-source-code" id="passenger_tmpdir-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils/tmpdir.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">passenger_tmpdir</span>(<span class="ruby-identifier">create</span> = <span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">@@passenger_tmpdir</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">tmpdir</span> = <span class="ruby-string">&quot;/tmp&quot;</span>
+                [<span class="ruby-string">&quot;PASSENGER_TEMP_DIR&quot;</span>, <span class="ruby-string">&quot;PASSENGER_TMPDIR&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">empty?</span>
+                                <span class="ruby-identifier">tmpdir</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>]
+                                <span class="ruby-keyword">break</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">dir</span> = <span class="ruby-node">&quot;#{tmpdir}/passenger.1.0.#{Process.pid}&quot;</span>
+                <span class="ruby-identifier">dir</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r{//+}</span>, <span class="ruby-string">'/'</span>)
+                <span class="ruby-identifier">@@passenger_tmpdir</span> = <span class="ruby-identifier">dir</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">create</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">dir</span>)
+                <span class="ruby-comment"># This is a very minimal implementation of the subdirectory</span>
+                <span class="ruby-comment"># creation logic in ServerInstanceDir.h. This implementation</span>
+                <span class="ruby-comment"># is only meant to make the unit tests pass. For production</span>
+                <span class="ruby-comment"># systems one should pre-create the temp directory with</span>
+                <span class="ruby-comment"># ServerInstanceDir.h.</span>
+                <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;mkdir&quot;</span>, <span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;-m&quot;</span>, <span class="ruby-string">&quot;u=rwxs,g=rwx,o=rwx&quot;</span>, <span class="ruby-identifier">dir</span>)
+                <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;mkdir&quot;</span>, <span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;-m&quot;</span>, <span class="ruby-string">&quot;u=rwxs,g=rwx,o=rwx&quot;</span>, <span class="ruby-node">&quot;#{dir}/generation-0&quot;</span>)
+                <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;mkdir&quot;</span>, <span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;-m&quot;</span>, <span class="ruby-string">&quot;u=rwxs,g=rwx,o=rwx&quot;</span>, <span class="ruby-node">&quot;#{dir}/backends&quot;</span>)
+                <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;mkdir&quot;</span>, <span class="ruby-string">&quot;-p&quot;</span>, <span class="ruby-string">&quot;-m&quot;</span>, <span class="ruby-string">&quot;u=rwxs,g=rwx,o=rwx&quot;</span>, <span class="ruby-node">&quot;#{dir}/spawn-server&quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- passenger_tmpdir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- passenger_tmpdir-method -->
+
+    
+      <div id="method-c-passenger_tmpdir-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">passenger_tmpdir=</span><span
+            class="method-args">(dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="passenger_tmpdir-3D-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils/tmpdir.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">passenger_tmpdir=</span>(<span class="ruby-identifier">dir</span>)
+        <span class="ruby-identifier">@@passenger_tmpdir</span> = <span class="ruby-identifier">dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- passenger_tmpdir-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- passenger_tmpdir-3D-method -->
+
+    
+    </section><!-- protected-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-connect_to_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">connect_to_server</span><span
+            class="method-args">(address)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="connect_to_server-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">connect_to_server</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">get_socket_address_type</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:unix</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">address</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^unix:/</span>, <span class="ruby-string">''</span>))
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp</span>
+                <span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span> = <span class="ruby-identifier">address</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r{^tcp://}</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">':'</span>, <span class="ruby-value">2</span>)
+                <span class="ruby-identifier">port</span> = <span class="ruby-identifier">port</span>.<span class="ruby-identifier">to_i</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>)
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown socket address type for '#{address}'.&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- connect_to_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- connect_to_server-method -->
+
+    
+      <div id="method-i-generate_random_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_random_id</span><span
+            class="method-args">(method)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a long, cryptographically secure random ID string, which is also a
+valid filename.</p>
+          
+
+          
+          <div class="method-source-code" id="generate_random_id-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_random_id</span>(<span class="ruby-identifier">method</span>)
+        <span class="ruby-identifier">data</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/dev/urandom&quot;</span>, <span class="ruby-string">&quot;rb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">64</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">method</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:base64</span>
+                <span class="ruby-identifier">data</span> = [<span class="ruby-identifier">data</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'m'</span>)
+                <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">''</span>)
+                <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;+&quot;</span>, <span class="ruby-string">''</span>)
+                <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;/&quot;</span>, <span class="ruby-string">''</span>)
+                <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/==$/</span>, <span class="ruby-string">''</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:hex</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'H*'</span>)[<span class="ruby-value">0</span>]
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Invalid method #{method.inspect}&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate_random_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generate_random_id-method -->
+
+    
+      <div id="method-i-get_socket_address_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_socket_address_type</span><span
+            class="method-args">(address)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_socket_address_type-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_socket_address_type</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">address</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{^unix:.}</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-value">:unix</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">address</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{^tcp://.}</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-value">:tcp</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-value">:unknown</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_socket_address_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_socket_address_type-method -->
+
+    
+      <div id="method-i-global_backtrace_report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">global_backtrace_report</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a string which reports the backtraces for all threads, or if that’s
+not supported the backtrace for the current thread.</p>
+          
+
+          
+          <div class="method-source-code" id="global_backtrace_report-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">global_backtrace_report</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:caller_for_all_threads</span>)
+                <span class="ruby-identifier">all_thread_stacks</span> = <span class="ruby-identifier">caller_for_all_threads</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:list</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">public_method_defined?</span>(<span class="ruby-value">:backtrace</span>)
+                <span class="ruby-identifier">all_thread_stacks</span> = {}
+                <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">thread</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">all_thread_stacks</span>[<span class="ruby-identifier">thread</span>] = <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">backtrace</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">output</span> = <span class="ruby-node">&quot;========== Process #{Process.pid}: backtrace dump ==========\n&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">all_thread_stacks</span>
+                <span class="ruby-identifier">all_thread_stacks</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">thread</span>, <span class="ruby-identifier">stack</span><span class="ruby-operator">|</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">thread_name</span> = <span class="ruby-identifier">thread</span>[<span class="ruby-value">:name</span>]
+                                <span class="ruby-identifier">thread_name</span> = <span class="ruby-node">&quot;(#{thread_name})&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;-&quot;</span> * <span class="ruby-value">60</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                        <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;# Thread: #{thread.inspect}#{thread_name}, &quot;</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">thread</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">main</span>
+                                <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;[main thread], &quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">thread</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>
+                                <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;[current thread], &quot;</span>
+                        <span class="ruby-keyword">end</span>
+                        <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;alive = #{thread.alive?}\n&quot;</span>
+                        <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;-&quot;</span> * <span class="ruby-value">60</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                        <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;    &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n    &quot;</span>)
+                        <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n\n&quot;</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;-&quot;</span> * <span class="ruby-value">60</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;# Current thread: #{Thread.current.inspect}\n&quot;</span>
+                <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">&quot;-&quot;</span> * <span class="ruby-value">60</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+                <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;    &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n    &quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- global_backtrace_report-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- global_backtrace_report-method -->
+
+    
+      <div id="method-i-install_options_as_ivars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">install_options_as_ivars</span><span
+            class="method-args">(object, options, *keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="install_options_as_ivars-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">install_options_as_ivars</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">options</span>, *<span class="ruby-identifier">keys</span>)
+        <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">object</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-identifier">key</span>])
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- install_options_as_ivars-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- install_options_as_ivars-method -->
+
+    
+      <div id="method-i-local_socket_address-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">local_socket_address?</span><span
+            class="method-args">(address)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="local_socket_address-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">local_socket_address?</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">get_socket_address_type</span>(<span class="ruby-identifier">address</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:unix</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-value">:tcp</span>
+                <span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span> = <span class="ruby-identifier">address</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r{^tcp://}</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">':'</span>, <span class="ruby-value">2</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">host</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;127.0.0.1&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;::1&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">host</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;localhost&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown socket address type for '#{address}'.&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- local_socket_address-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- local_socket_address-3F-method -->
+
+    
+      <div id="method-i-print_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print_exception</span><span
+            class="method-args">(current_location, exception, destination = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Print the given exception, including the stack trace, to STDERR.</p>
+
+<p><code>current_location</code> is a string which describes where the code is
+currently at. Usually the current class name will be enough.</p>
+          
+
+          
+          <div class="method-source-code" id="print_exception-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print_exception</span>(<span class="ruby-identifier">current_location</span>, <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">destination</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">exception</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SystemExit</span>)
+                <span class="ruby-identifier">data</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">backtrace_string</span>(<span class="ruby-identifier">current_location</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">DebugLogging</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">DebugLogging</span>)
+                        <span class="ruby-identifier">error</span>(<span class="ruby-identifier">data</span>)
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">destination</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">STDERR</span>
+                        <span class="ruby-identifier">destination</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">data</span>)
+                        <span class="ruby-identifier">destination</span>.<span class="ruby-identifier">flush</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">destination</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:flush</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- print_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- print_exception-method -->
+
+    
+      <div id="method-i-process_is_alive-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_is_alive?</span><span
+            class="method-args">(pid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks whether the given process exists.</p>
+          
+
+          
+          <div class="method-source-code" id="process_is_alive-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_is_alive?</span>(<span class="ruby-identifier">pid</span>)
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-constant">Process</span>.<span class="ruby-identifier">kill</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">pid</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ESRCH</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_is_alive-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_is_alive-3F-method -->
+
+    
+      <div id="method-i-require_option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_option</span><span
+            class="method-args">(hash, key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="require_option-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">require_option</span>(<span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>]
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Option #{key.inspect} required&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require_option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- require_option-method -->
+
+    
+      <div id="method-i-split_by_null_into_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">split_by_null_into_hash</span><span
+            class="method-args">(data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Split the given string into an hash. Keys and values are obtained by
+splitting the string using the null character as the delimitor.</p>
+          
+
+          
+          <div class="method-source-code" id="split_by_null_into_hash-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">split_by_null_into_hash</span>(<span class="ruby-identifier">data</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">NativeSupport</span>.<span class="ruby-identifier">split_by_null_into_hash</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- split_by_null_into_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- split_by_null_into_hash-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-passenger_tmpdir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">passenger_tmpdir</span><span
+            class="method-args">(create = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="passenger_tmpdir-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/utils/tmpdir.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">passenger_tmpdir</span>(<span class="ruby-identifier">create</span> = <span class="ruby-keyword">true</span>)
+        <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">passenger_tmpdir</span>(<span class="ruby-identifier">create</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- passenger_tmpdir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- passenger_tmpdir-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

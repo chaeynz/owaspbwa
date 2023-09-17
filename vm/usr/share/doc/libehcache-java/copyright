@@ -1,0 +1,16 @@
+This package was debianized by Arnaud Vandyck <avdyk@debian.org> on 7-May-2007.
+The source code was downloaded from http://ehcache.sourceforge.net/
+
+Authors:
+
+  Greg Luck <gregluck@users.sourceforge.net>
+  Mauro Talevi <maurotalevi@users.sourceforge.net>
+  Gavin King <oneovthafew@users.sourceforge.net>
+  Surya Suravarapu <ssuravarapu@users.sourceforge.net>
+
+Copyright: © 2003-2007 Greg Luck
+
+License: Apache 2.0
+
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache-2.0 license in `/usr/share/common-licenses/Apache-2.0'

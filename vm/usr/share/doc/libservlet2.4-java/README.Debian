@@ -1,0 +1,10 @@
+libservlet2.4-java for Debian
+-----------------------------
+
+The sources of jsr152 (JSP 2.0) and jsr154 (Servlet API 2.4) come from
+Tomcat5. They have been extracted form tomcat5 source package because
+libcommons-el-java package needs this API to build and tomcat5 needs
+libcommons-el-java (and libservlet2.4-java) to build, so it's easier to
+split the source packages.
+
+ -- Arnaud Vandyck <avdyk@debian.org>, Fri Apr 22 14:47:20 2005

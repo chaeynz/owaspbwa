@@ -1,0 +1,11 @@
+#!/bin/sh
+
+. /usr/share/recovery-mode/l10n.sh
+
+if [ "$1" = "test" ]; then
+  echo $(eval_gettext "Drop to root shell prompt with networking")
+  exit 0
+fi
+
+dhclient
+/sbin/sulogin

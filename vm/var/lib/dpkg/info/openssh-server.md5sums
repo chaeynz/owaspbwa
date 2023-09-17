@@ -1,0 +1,8 @@
+7bf45f243bada68154d271a0fec7656f  usr/lib/openssh/sftp-server
+e8c491b6d8304b77cd6427e27ef56e8e  usr/sbin/sshd
+8c5592e0d522fa0f8f55f3c104479ef5  usr/share/lintian/overrides/openssh-server
+6b4d42e770cfefcacbcc8aebfb1fff1e  usr/share/man/man5/sshd_config.5.gz
+ccb26092aa170bad7b46596c9f094f1c  usr/share/man/man8/sshd.8.gz
+8bb3cec0efe0c02f95ee367447fc141a  usr/share/man/man8/sftp-server.8.gz
+b53cf52906a8df0ee82a3fe4e4d9a949  usr/share/doc/openssh-client/examples/sshd_config
+e4f66eb12e8650acbafbfb14a0325b26  usr/share/apport/package-hooks/openssh-server.py

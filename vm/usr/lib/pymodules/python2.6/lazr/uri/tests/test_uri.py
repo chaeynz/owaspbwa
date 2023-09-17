@@ -1,0 +1,1 @@
+/usr/share/pyshared/lazr/uri/tests/test_uri.py

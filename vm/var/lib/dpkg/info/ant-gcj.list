@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/gcj
+/usr/lib/gcj/ant-launcher-1.7.1.jar.so
+/usr/lib/gcj/ant-1.7.1.jar.so
+/usr/share
+/usr/share/gcj
+/usr/share/gcj/classmap.d
+/usr/share/gcj/classmap.d/ant-1.7.1.jar.db
+/usr/share/gcj/classmap.d/ant-launcher-1.7.1.jar.db
+/usr/share/doc
+/usr/share/doc/ant-gcj
+/usr/share/doc/ant-gcj/copyright
+/usr/share/doc/ant-gcj/README.gz
+/usr/share/doc/ant-gcj/changelog.Debian.gz

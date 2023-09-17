@@ -1,0 +1,10 @@
+20f067bb922f9a521d6cb8465205e02d  usr/bin/make
+e5fc1340c545e3264dc23226997df712  usr/share/man/man1/make.1.gz
+fd52097d1c86d81666d4825d7f43d159  usr/share/doc/make/changelog.Debian.gz
+15e4115a29760f08db962921a03be388  usr/share/doc/make/changelog.gz
+a53e905bee2bbed670f582acb2ba7c5e  usr/share/doc/make/NEWS.gz
+00a78b3370c03e29291dea278d4b6b94  usr/share/doc/make/NEWS.Debian.gz
+09c045adfa114f2aef542dc6285629ad  usr/share/doc/make/copyright
+a480b33efb147de621a0ce281f734e9d  usr/share/doc/make/README.gz
+e5a2680a904e0fa9feee6776f1a0b976  usr/share/doc/make/Explanations.gz
+a3326a2a1264167327c5f1087fcb59fe  usr/share/lintian/overrides/make

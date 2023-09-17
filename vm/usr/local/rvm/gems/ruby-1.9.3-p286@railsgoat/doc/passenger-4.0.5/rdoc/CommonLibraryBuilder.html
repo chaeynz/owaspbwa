@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class CommonLibraryBuilder - passenger-4.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/common_library.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Rake::DSL</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-define_component">#define_component</a>
+    
+    <li><a href="#method-i-define_tasks">#define_tasks</a>
+    
+    <li><a href="#method-i-exclude">#exclude</a>
+    
+    <li><a href="#method-i-initialize_copy">#initialize_copy</a>
+    
+    <li><a href="#method-i-link_objects">#link_objects</a>
+    
+    <li><a href="#method-i-link_objects_as_string">#link_objects_as_string</a>
+    
+    <li><a href="#method-i-only">#only</a>
+    
+    <li><a href="#method-i-set_namespace">#set_namespace</a>
+    
+    <li><a href="#method-i-set_output_dir">#set_output_dir</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="./PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="./PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="./PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="./PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="./PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="./PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="./PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="./PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="./PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="./PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="./PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="./PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="./PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="./PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="./PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="./PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="./PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="./PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="./PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="./PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="./PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="./PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="./PhusionPassenger/Rails3Extensions.html">PhusionPassenger::Rails3Extensions</a>
+  
+    <li><a href="./PhusionPassenger/Rails3Extensions/AnalyticsLogging.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="./PhusionPassenger/Rails3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="./PhusionPassenger/Rails3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="./PhusionPassenger/Rails3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::Rails3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="./PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="./PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="./PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="./PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="./PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="./PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="./PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="./PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="./PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="./PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="./PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="./PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="./PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="./PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="./PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="./CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="./Exception.html">Exception</a>
+  
+    <li><a href="./GC.html">GC</a>
+  
+    <li><a href="./IO.html">IO</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CommonLibraryBuilder</h1>
+
+  <div id="description" class="description">
+    
+<p>This file lists all the Phusion Passenger C++ library files and contains
+code for calculating how to compile and how to link them into executables.
+It’s used by the build system (build/*.rb) and
+lib/phusion_passenger/standalone/runtime_installer.rb.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-all_components" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">all_components</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-output_dir" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">output_dir</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-selected_components" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">selected_components</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(&amp;<span class="ruby-identifier">block</span>)
+        <span class="ruby-ivar">@all_components</span> = {}
+        <span class="ruby-ivar">@all_ordered_components</span> = []
+        <span class="ruby-ivar">@selected_components</span> = {}
+        <span class="ruby-ivar">@namespace</span> = <span class="ruby-string">&quot;common&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">COMMON_OUTPUT_DIR</span>)
+                <span class="ruby-ivar">@output_dir</span> = <span class="ruby-constant">COMMON_OUTPUT_DIR</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;libpassenger_common&quot;</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@output_dir</span> = <span class="ruby-string">&quot;.&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-define_component" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">define_component</span><span
+            class="method-args">(object_name, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="define_component-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">define_component</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">options</span>)
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:deps</span>] <span class="ruby-operator">||=</span> []
+        <span class="ruby-ivar">@all_components</span>[<span class="ruby-identifier">object_name</span>] = <span class="ruby-identifier">options</span>
+        <span class="ruby-ivar">@all_ordered_components</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object_name</span>
+        <span class="ruby-ivar">@selected_components</span>[<span class="ruby-identifier">object_name</span>] = <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- define_component-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- define_component-method -->
+
+    
+      <div id="method-i-define_tasks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">define_tasks</span><span
+            class="method-args">(extra_compiler_flags = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="define_tasks-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">define_tasks</span>(<span class="ruby-identifier">extra_compiler_flags</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">flags</span> =  <span class="ruby-node">&quot;-Iext -Iext/common #{LIBEV_CFLAGS} #{extra_compiler_flags} &quot;</span>
+        <span class="ruby-identifier">flags</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{PlatformInfo.portability_cflags} #{EXTRA_CXXFLAGS}&quot;</span>
+        <span class="ruby-identifier">flags</span>.<span class="ruby-identifier">strip!</span>
+
+        <span class="ruby-identifier">group_all_components_by_category</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">category</span>, <span class="ruby-identifier">object_names</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">define_category_tasks</span>(<span class="ruby-identifier">category</span>, <span class="ruby-identifier">object_names</span>, <span class="ruby-identifier">flags</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">task</span>(<span class="ruby-node">&quot;#{@namespace}:clean&quot;</span>) <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">sh</span> <span class="ruby-node">&quot;rm -rf #{@output_dir}&quot;</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- define_tasks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- define_tasks-method -->
+
+    
+      <div id="method-i-exclude" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exclude</span><span
+            class="method-args">(*selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exclude-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exclude</span>(*<span class="ruby-identifier">selector</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:exclude!</span>, *<span class="ruby-identifier">selector</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exclude-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exclude-method -->
+
+    
+      <div id="method-i-initialize_copy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize_copy</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="initialize_copy-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize_copy</span>(<span class="ruby-identifier">other</span>)
+        [<span class="ruby-value">:all_components</span>, <span class="ruby-value">:all_ordered_components</span>, <span class="ruby-value">:selected_components</span>, <span class="ruby-value">:namespace</span>, <span class="ruby-value">:output_dir</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">var_name</span> = <span class="ruby-node">&quot;@#{name}&quot;</span>
+                <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">var_name</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">var_name</span>).<span class="ruby-identifier">dup</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- initialize_copy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- initialize_copy-method -->
+
+    
+      <div id="method-i-link_objects" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">link_objects</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="link_objects-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">link_objects</span>
+        <span class="ruby-identifier">result</span> = []
+
+        <span class="ruby-identifier">selected_categories</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">category</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">category_complete?</span>(<span class="ruby-identifier">category</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">false</span>
+                        <span class="ruby-comment"># Feature disabled: we don't want to waste too much space when</span>
+                        <span class="ruby-comment"># packaging the runtime ('passenger package-runtime') so we</span>
+                        <span class="ruby-comment"># never generate static libraries.</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">aggregate_sources?</span>
+                                <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@output_dir}/#{category}.o&quot;</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@output_dir}/#{category}.a&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">object_names</span> = <span class="ruby-identifier">selected_objects_beloging_to_category</span>(<span class="ruby-identifier">category</span>)
+                        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">object_filenames_for</span>(<span class="ruby-identifier">object_names</span>))
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- link_objects-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- link_objects-method -->
+
+    
+      <div id="method-i-link_objects_as_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">link_objects_as_string</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="link_objects_as_string-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">link_objects_as_string</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">link_objects</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- link_objects_as_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- link_objects_as_string-method -->
+
+    
+      <div id="method-i-only" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">only</span><span
+            class="method-args">(*selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="only-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">only</span>(*<span class="ruby-identifier">selector</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:only!</span>, *<span class="ruby-identifier">selector</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- only-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- only-method -->
+
+    
+      <div id="method-i-set_namespace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_namespace</span><span
+            class="method-args">(namespace)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_namespace-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_namespace</span>(<span class="ruby-identifier">namespace</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:set_namespace!</span>, <span class="ruby-identifier">namespace</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_namespace-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_namespace-method -->
+
+    
+      <div id="method-i-set_output_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_output_dir</span><span
+            class="method-args">(dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_output_dir-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/common_library.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_output_dir</span>(<span class="ruby-identifier">dir</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:set_output_dir!</span>, <span class="ruby-identifier">dir</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_output_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_output_dir-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

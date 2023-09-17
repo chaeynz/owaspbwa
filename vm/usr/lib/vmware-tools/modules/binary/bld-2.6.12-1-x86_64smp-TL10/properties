@@ -1,0 +1,6 @@
+UtsRelease 2.6.12-1smp
+ModVersion no
+SMP yes 
+PageOffset FFFF810000000000
+Comment TurboLinux10, 2.6.12-1smp, x86_64 
+UtsMachine x86_64

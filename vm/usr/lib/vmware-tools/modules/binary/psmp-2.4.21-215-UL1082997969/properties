@@ -1,0 +1,6 @@
+UtsRelease 2.4.21-215-psmp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment UnitedLinux SLES8
+UtsMachine i386

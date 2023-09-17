@@ -1,0 +1,6 @@
+UtsRelease 2.4.18-19.7.xbigmem
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Linux Red Hat 7.x kernel update.
+UtsMachine i386

@@ -1,0 +1,6 @@
+UtsRelease 2.2.16-22smp
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment RedHat 7.0
+UtsMachine i386

@@ -1,0 +1,17 @@
+adddfd41c751e2b2ac16f1a88a1a0f55  usr/bin/net.samba3
+cc681300f67c66149ef61da4addb60b2  usr/bin/nmblookup.samba3
+44d96f3e17200f36f466d652ffe40507  usr/bin/smbpasswd
+108c3f16a658bab1aa34fa16c9464e04  usr/bin/testparm.samba3
+f502f3bac71559f3888da286278b1f92  usr/share/man/man1/testparm.samba3.1.gz
+77dd751c46ef6a867e0a6f2d55b1cb4e  usr/share/man/man1/nmblookup.samba3.1.gz
+23a8ca5350d0acd4c903907ec5f174cc  usr/share/man/man5/smbpasswd.5.gz
+c0b626076690bcd72961cbfa0cde001d  usr/share/man/man5/lmhosts.5.gz
+f72ab1d0b5ca0b33720fe9f669de06a9  usr/share/man/man5/smb.conf.5.gz
+131542fc948d541358ebbfdb2b33b1d0  usr/share/man/man7/samba.7.gz
+b356aac8ca31f7b04584b059ddd7c3e8  usr/share/man/man8/net.samba3.8.gz
+da15a5f6c3cef06e0f35ff396a1f1b91  usr/share/man/man8/smbpasswd.8.gz
+e658a4a4033e7d2ab9007bbfb9a32f8b  usr/share/apport/package-hooks/source_samba.py
+aef77e4b5acac75faa3ad0199e72c507  usr/share/doc/samba-common-bin/copyright
+aa0cd78046301148409139d1857ce3a5  usr/share/doc/samba-common-bin/NEWS.Debian.gz
+3c65c21df53159d328b0cab9348c7c29  usr/share/doc/samba-common-bin/README.build.gz
+01817107761b582da6c1ba33467b26b8  usr/share/doc/samba-common-bin/changelog.Debian.gz

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.scm</groupId>
+	<artifactId>maven-scm-provider-accurev</artifactId>
+	<version>1.2</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.scm</groupId>
+		<artifactId>maven-scm-providers</artifactId>
+		<version>1.2</version>
+	</parent>
+	
+	<name>Maven SCM AccuRev Provider</name>
+	<description>SCM Provider implementation for AccuRev (http://www.accurev.com/).</description>
+	<properties>
+		<test.accurev.username>test</test.accurev.username>
+		<test.accurev.password>
+		</test.accurev.password>
+		<test.accurev.host>localhost</test.accurev.host>
+		<test.accurev.port>5050</test.accurev.port>
+		<test.accurev.depot>TestDepot</test.accurev.depot>
+		<test.accurev.stream>TestStream</test.accurev.stream>
+		<debian.originalVersion>1.2</debian.originalVersion>
+		<debian.package>libmaven-scm-java</debian.package>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.scm</groupId>
+			<artifactId>maven-scm-api</artifactId>
+		</dependency>
+	</dependencies>
+</project>

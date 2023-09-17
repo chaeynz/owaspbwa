@@ -1,0 +1,14 @@
+/etc
+/etc/apparmor.d
+/etc/init.d
+/etc/init.d/mysql-ndb-mgm
+/etc/init.d/mysql-ndb
+/etc/logrotate.d
+/etc/mysql
+/etc/logcheck
+/etc/logcheck/ignore.d.workstation
+/etc/logcheck/ignore.d.workstation/mysql-server-5_0
+/etc/logcheck/ignore.d.server
+/etc/logcheck/ignore.d.server/mysql-server-5_0
+/etc/logcheck/ignore.d.paranoid
+/etc/logcheck/ignore.d.paranoid/mysql-server-5_0

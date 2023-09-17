@@ -1,0 +1,9 @@
+Maven Wagon for Debian
+----------------------
+
+The wagon provider for WebDAV is not packaged as there is a dependency on
+Apache JackRabbit, which is not yet in the Debian repository.
+
+Furthermore, JackRabbit depends on JCR, which is non-free. 
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Thu, 30 Apr 2009 11:17:02 +0100

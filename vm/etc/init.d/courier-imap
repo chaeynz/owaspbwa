@@ -1,0 +1,114 @@
+#! /bin/bash -e
+### BEGIN INIT INFO
+# Short-Description: Courier IMAP server
+# Provides:          courier-imap
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Description:       courier-imap is an IMAP Mail Delivery Agent.
+### END INIT INFO
+prefix="/usr"
+exec_prefix=${prefix}
+sysconfdir="/etc/courier"
+bindir="${exec_prefix}/bin"
+sbindir="${exec_prefix}/sbin"
+libexecdir="${prefix}/lib/courier"
+TCPD="${sbindir}/couriertcpd"
+run_dir="/var/run/courier"
+calendar_dir="/var/run/courier/calendar"
+DAEMON="imapd"
+PROGRAM="Courier IMAP server"
+SSLCONFIG=
+
+. /lib/lsb/init-functions
+
+# first of all check if daemon is available
+if ! [ -x "${bindir}/imapd" ]; then
+	exit 0
+fi
+
+if [ ! -d ${run_dir} ]; then
+        mkdir -p ${run_dir}
+        chown daemon:daemon ${run_dir}
+fi
+
+if [ ! -d ${calendar_dir} ]; then
+        mkdir -p ${calendar_dir}
+        chown daemon:daemon ${calendar_dir}
+fi
+
+
+if ! [ -x $TCPD ]; then
+  log_failure_msg "ERR: $TCPD missing"
+  exit 1
+fi
+
+if ! [ -f ${sysconfdir}/$DAEMON ]; then
+  log_failure_msg "ERR: config file missing"
+  exit 1
+fi
+
+# read/set defaults
+if [ -f /etc/default/courier ]; then
+	. /etc/default/courier
+fi
+# ensure that maildirpath is set
+if [ -z "$MAILDIRPATH" ]; then
+	MAILDIRPATH=Maildir
+fi
+
+if [ -f "${sysconfdir}/imapd-ssl" ]; then
+	. "${sysconfdir}/imapd-ssl"
+	SSLCONFIG=1
+fi
+. ${sysconfdir}/$DAEMON
+
+# ensure that umask is set
+if [ -z "$IMAP_UMASK" ]; then
+	IMAP_UMASK=022
+fi
+
+START=no
+case "$IMAPDSTART" in
+	[yY]*)START=yes;;
+esac
+
+case "$1" in
+start)
+  if [ "$START" = "yes" ]; then
+    log_begin_msg "Starting $PROGRAM..."
+
+	umask $IMAP_UMASK
+    ulimit -v $IMAP_ULIMITD
+    /usr/bin/env - /bin/sh -c " set -a; \
+		bindir=${bindir}; \
+		. ${sysconfdir}/imapd; \
+		if [ "$SSLCONFIG" ]; then . ${sysconfdir}/imapd-ssl; fi; \
+		IMAP_STARTTLS=$IMAPDSTARTTLS ; export IMAP_STARTTLS ; \
+		PROXY_HOSTNAME=$PROXY_HOSTNAME; 
+		TLS_PROTOCOL=$TLS_STARTTLS_PROTOCOL ; \
+		/usr/sbin/courierlogger -pid=$PIDFILE -start $LOGGEROPTS \
+		$TCPD -address=$ADDRESS \
+			-maxprocs=$MAXDAEMONS -maxperip=$MAXPERIP \
+			$TCPDOPTS \
+			$PORT ${libexecdir}/courier/imaplogin \
+				${bindir}/imapd $MAILDIRPATH"
+    log_end_msg 0
+  fi
+	;;
+stop)
+  log_begin_msg "Stopping $PROGRAM..."
+  /usr/sbin/courierlogger -pid=$PIDFILE -stop || log_end_msg 1
+  log_end_msg 0
+	;;
+restart | force-reload)
+  $0 stop
+  $0 start
+	;;
+*)
+  log_success_msg "Usage: $0 {start|stop|restart|reload|force-reload}"
+  exit 1
+  ;;
+esac
+exit 0

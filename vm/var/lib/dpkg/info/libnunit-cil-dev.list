@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/lib
+/usr/lib/pkgconfig
+/usr/lib/pkgconfig/nunit.pc
+/usr/share
+/usr/share/doc
+/usr/share/doc/libnunit-cil-dev
+/usr/share/doc/libnunit-cil-dev/copyright
+/usr/share/doc/libnunit-cil-dev/changelog.Debian.gz

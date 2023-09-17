@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/deb_dir_info.py

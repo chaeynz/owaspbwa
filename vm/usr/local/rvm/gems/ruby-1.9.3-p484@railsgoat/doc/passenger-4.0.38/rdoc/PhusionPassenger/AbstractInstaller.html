@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class PhusionPassenger::AbstractInstaller - passenger-4.0.38 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/phusion_passenger/abstract_installer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-after_install">#after_install</a>
+    
+    <li><a href="#method-i-before_install">#before_install</a>
+    
+    <li><a href="#method-i-check_dependencies">#check_dependencies</a>
+    
+    <li><a href="#method-i-check_directory_accessible_by_web_server">#check_directory_accessible_by_web_server</a>
+    
+    <li><a href="#method-i-check_gem_install_permission_problems">#check_gem_install_permission_problems</a>
+    
+    <li><a href="#method-i-check_whether_os_is_broken">#check_whether_os_is_broken</a>
+    
+    <li><a href="#method-i-check_whether_system_has_enough_ram">#check_whether_system_has_enough_ram</a>
+    
+    <li><a href="#method-i-dependencies">#dependencies</a>
+    
+    <li><a href="#method-i-download">#download</a>
+    
+    <li><a href="#method-i-home_dir">#home_dir</a>
+    
+    <li><a href="#method-i-interactive-3F">#interactive?</a>
+    
+    <li><a href="#method-i-line">#line</a>
+    
+    <li><a href="#method-i-list_parent_directories">#list_parent_directories</a>
+    
+    <li><a href="#method-i-new_screen">#new_screen</a>
+    
+    <li><a href="#method-i-non_interactive-3F">#non_interactive?</a>
+    
+    <li><a href="#method-i-print">#print</a>
+    
+    <li><a href="#method-i-prompt">#prompt</a>
+    
+    <li><a href="#method-i-prompt_confirmation">#prompt_confirmation</a>
+    
+    <li><a href="#method-i-puts">#puts</a>
+    
+    <li><a href="#method-i-puts_error">#puts_error</a>
+    
+    <li><a href="#method-i-rake">#rake</a>
+    
+    <li><a href="#method-i-rake-21">#rake!</a>
+    
+    <li><a href="#method-i-render_template">#render_template</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-sh">#sh</a>
+    
+    <li><a href="#method-i-sh-21">#sh!</a>
+    
+    <li><a href="#method-i-show_support_options_for_installer_bug">#show_support_options_for_installer_bug</a>
+    
+    <li><a href="#method-i-use_stderr">#use_stderr</a>
+    
+    <li><a href="#method-i-users_guide_path">#users_guide_path</a>
+    
+    <li><a href="#method-i-users_guide_url">#users_guide_url</a>
+    
+    <li><a href="#method-i-wait">#wait</a>
+    
+    <li><a href="#method-i-world_executable-3F">#world_executable?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../PhusionPassenger.html">PhusionPassenger</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller.html">PhusionPassenger::AbstractInstaller</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/Abort.html">PhusionPassenger::AbstractInstaller::Abort</a>
+  
+    <li><a href="../PhusionPassenger/AbstractInstaller/CommandError.html">PhusionPassenger::AbstractInstaller::CommandError</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions.html">PhusionPassenger::ActiveSupport3Extensions</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ACExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ACExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ASBenchmarkableExtension.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ASBenchmarkableExtension</a>
+  
+    <li><a href="../PhusionPassenger/ActiveSupport3Extensions/AnalyticsLogging/ExceptionLogger.html">PhusionPassenger::ActiveSupport3Extensions::AnalyticsLogging::ExceptionLogger</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools.html">PhusionPassenger::AdminTools</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats.html">PhusionPassenger::AdminTools::MemoryStats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/MemoryStats/Process.html">PhusionPassenger::AdminTools::MemoryStats::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance.html">PhusionPassenger::AdminTools::ServerInstance</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/CorruptedDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::CorruptedDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/GenerationsAbsentError.html">PhusionPassenger::AdminTools::ServerInstance::GenerationsAbsentError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Group.html">PhusionPassenger::AdminTools::ServerInstance::Group</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Process.html">PhusionPassenger::AdminTools::ServerInstance::Process</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/RoleDeniedError.html">PhusionPassenger::AdminTools::ServerInstance::RoleDeniedError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/StaleDirectoryError.html">PhusionPassenger::AdminTools::ServerInstance::StaleDirectoryError</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/Stats.html">PhusionPassenger::AdminTools::ServerInstance::Stats</a>
+  
+    <li><a href="../PhusionPassenger/AdminTools/ServerInstance/UnsupportedGenerationStructureVersionError.html">PhusionPassenger::AdminTools::ServerInstance::UnsupportedGenerationStructureVersionError</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger.html">PhusionPassenger::AnalyticsLogger</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Connection.html">PhusionPassenger::AnalyticsLogger::Connection</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Lock.html">PhusionPassenger::AnalyticsLogger::Lock</a>
+  
+    <li><a href="../PhusionPassenger/AnalyticsLogger/Log.html">PhusionPassenger::AnalyticsLogger::Log</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails.html">PhusionPassenger::ClassicRails</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/CGIFixed.html">PhusionPassenger::ClassicRails::CGIFixed</a>
+  
+    <li><a href="../PhusionPassenger/ClassicRails/ThreadHandlerExtension.html">PhusionPassenger::ClassicRails::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/Config.html">PhusionPassenger::Config</a>
+  
+    <li><a href="../PhusionPassenger/Config/AboutCommand.html">PhusionPassenger::Config::AboutCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Command.html">PhusionPassenger::Config::Command</a>
+  
+    <li><a href="../PhusionPassenger/Config/DetachProcessCommand.html">PhusionPassenger::Config::DetachProcessCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/RestartAppCommand.html">PhusionPassenger::Config::RestartAppCommand</a>
+  
+    <li><a href="../PhusionPassenger/Config/Utils.html">PhusionPassenger::Config::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Config/ValidateInstallCommand.html">PhusionPassenger::Config::ValidateInstallCommand</a>
+  
+    <li><a href="../PhusionPassenger/ConsoleTextTemplate.html">PhusionPassenger::ConsoleTextTemplate</a>
+  
+    <li><a href="../PhusionPassenger/DebugLogging.html">PhusionPassenger::DebugLogging</a>
+  
+    <li><a href="../PhusionPassenger/LoaderSharedHelpers.html">PhusionPassenger::LoaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel.html">PhusionPassenger::MessageChannel</a>
+  
+    <li><a href="../PhusionPassenger/MessageChannel/InvalidHashError.html">PhusionPassenger::MessageChannel::InvalidHashError</a>
+  
+    <li><a href="../PhusionPassenger/MessageClient.html">PhusionPassenger::MessageClient</a>
+  
+    <li><a href="../PhusionPassenger/NativeSupportLoader.html">PhusionPassenger::NativeSupportLoader</a>
+  
+    <li><a href="../PhusionPassenger/Packaging.html">PhusionPassenger::Packaging</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo.html">PhusionPassenger::PlatformInfo</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector.html">PhusionPassenger::PlatformInfo::ApacheDetector</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/ApacheDetector/Result.html">PhusionPassenger::PlatformInfo::ApacheDetector::Result</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck.html">PhusionPassenger::PlatformInfo::Depcheck</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/ConsoleRunner.html">PhusionPassenger::PlatformInfo::Depcheck::ConsoleRunner</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/Depcheck/Dependency.html">PhusionPassenger::PlatformInfo::Depcheck::Dependency</a>
+  
+    <li><a href="../PhusionPassenger/PlatformInfo/RuntimeError.html">PhusionPassenger::PlatformInfo::RuntimeError</a>
+  
+    <li><a href="../PhusionPassenger/Plugin.html">PhusionPassenger::Plugin</a>
+  
+    <li><a href="../PhusionPassenger/PreloaderSharedHelpers.html">PhusionPassenger::PreloaderSharedHelpers</a>
+  
+    <li><a href="../PhusionPassenger/Rack.html">PhusionPassenger::Rack</a>
+  
+    <li><a href="../PhusionPassenger/Rack/OutOfBandGc.html">PhusionPassenger::Rack::OutOfBandGc</a>
+  
+    <li><a href="../PhusionPassenger/Rack/ThreadHandlerExtension.html">PhusionPassenger::Rack::ThreadHandlerExtension</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler.html">PhusionPassenger::RequestHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler.html">PhusionPassenger::RequestHandler::ThreadHandler</a>
+  
+    <li><a href="../PhusionPassenger/RequestHandler/ThreadHandler/Interrupted.html">PhusionPassenger::RequestHandler::ThreadHandler::Interrupted</a>
+  
+    <li><a href="../PhusionPassenger/SharedConstants.html">PhusionPassenger::SharedConstants</a>
+  
+    <li><a href="../PhusionPassenger/Standalone.html">PhusionPassenger::Standalone</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder.html">PhusionPassenger::Standalone::AppFinder</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/AppFinder/ConfigLoadError.html">PhusionPassenger::Standalone::AppFinder::ConfigLoadError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Command.html">PhusionPassenger::Standalone::Command</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile.html">PhusionPassenger::Standalone::ConfigFile</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/ConfigFile/DisallowedContextError.html">PhusionPassenger::Standalone::ConfigFile::DisallowedContextError</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/HelpCommand.html">PhusionPassenger::Standalone::HelpCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Main.html">PhusionPassenger::Standalone::Main</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/PackageRuntimeCommand.html">PhusionPassenger::Standalone::PackageRuntimeCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeInstaller.html">PhusionPassenger::Standalone::RuntimeInstaller</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/RuntimeLocator.html">PhusionPassenger::Standalone::RuntimeLocator</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StartCommand.html">PhusionPassenger::Standalone::StartCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StatusCommand.html">PhusionPassenger::Standalone::StatusCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/StopCommand.html">PhusionPassenger::Standalone::StopCommand</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/Utils.html">PhusionPassenger::Standalone::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Standalone/VersionCommand.html">PhusionPassenger::Standalone::VersionCommand</a>
+  
+    <li><a href="../PhusionPassenger/Utils.html">PhusionPassenger::Utils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/AnsiColors.html">PhusionPassenger::Utils::AnsiColors</a>
+  
+    <li><a href="../PhusionPassenger/Utils/Download.html">PhusionPassenger::Utils::Download</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher.html">PhusionPassenger::Utils::FileSystemWatcher</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/DirInfo.html">PhusionPassenger::Utils::FileSystemWatcher::DirInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/FileSystemWatcher/FileInfo.html">PhusionPassenger::Utils::FileSystemWatcher::FileInfo</a>
+  
+    <li><a href="../PhusionPassenger/Utils/GeneratorTest.html">PhusionPassenger::Utils::GeneratorTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/HostsFileParser.html">PhusionPassenger::Utils::HostsFileParser</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON.html">PhusionPassenger::Utils::JSON</a>
+  
+    <li><a href="../PhusionPassenger/Utils/JSON/Generator.html">PhusionPassenger::Utils::JSON::Generator</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils.html">PhusionPassenger::Utils::NativeSupportUtils</a>
+  
+    <li><a href="../PhusionPassenger/Utils/NativeSupportUtils/ProcessTimes.html">PhusionPassenger::Utils::NativeSupportUtils::ProcessTimes</a>
+  
+    <li><a href="../PhusionPassenger/Utils/ParserTest.html">PhusionPassenger::Utils::ParserTest</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TeeInput.html">PhusionPassenger::Utils::TeeInput</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu.html">PhusionPassenger::Utils::TerminalChoiceMenu</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TerminalChoiceMenu/Choice.html">PhusionPassenger::Utils::TerminalChoiceMenu::Choice</a>
+  
+    <li><a href="../PhusionPassenger/Utils/TmpIO.html">PhusionPassenger::Utils::TmpIO</a>
+  
+    <li><a href="../PhusionPassenger/Utils/UnseekableSocket.html">PhusionPassenger::Utils::UnseekableSocket</a>
+  
+    <li><a href="../CommonLibraryBuilder.html">CommonLibraryBuilder</a>
+  
+    <li><a href="../Exception.html">Exception</a>
+  
+    <li><a href="../GC.html">GC</a>
+  
+    <li><a href="../IO.html">IO</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Signal.html">Signal</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class PhusionPassenger::AbstractInstaller</h1>
+
+  <div id="description" class="description">
+    
+<p>Abstract base class for text mode installers. Used by
+passenger-install-apache2-module and passenger-install-nginx-module.</p>
+
+<p>Subclasses must at least implement the run_steps method which handles the
+installation itself.</p>
+
+<p>Usage:</p>
+
+<pre>installer = ConcereteInstallerClass.new(options...)
+installer.run</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="PASSENGER_WEBSITE">PASSENGER_WEBSITE
+        
+        <dd class="description">
+        
+      
+        <dt id="PHUSION_WEBSITE">PHUSION_WEBSITE
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an <a href="AbstractInstaller.html">AbstractInstaller</a>. All
+options will be stored as instance variables, for example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">installer</span> = <span class="ruby-constant">AbstractInstaller</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">foo</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;bar&quot;</span>)
+<span class="ruby-identifier">installer</span>.<span class="ruby-identifier">instance_variable_get</span>(:<span class="ruby-string">&quot;@foo&quot;</span>)   <span class="ruby-comment"># =&gt; &quot;bar&quot;</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+        <span class="ruby-ivar">@stdout</span> = <span class="ruby-constant">STDOUT</span>
+        <span class="ruby-ivar">@stderr</span> = <span class="ruby-constant">STDERR</span>
+        <span class="ruby-ivar">@auto</span>   = <span class="ruby-operator">!</span><span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">tty?</span>
+        <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:&quot;@#{key}&quot;</span>, <span class="ruby-identifier">value</span>)
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Start the installation by calling the install! method.</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+        <span class="ruby-identifier">before_install</span>
+        <span class="ruby-identifier">run_steps</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Abort</span>
+        <span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SignalException</span>, <span class="ruby-constant">SystemExit</span>
+        <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">PlatformInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">new_screen</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;red&gt;An error occurred&lt;/red&gt;&quot;</span>
+        <span class="ruby-identifier">puts</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">show_support_options_for_installer_bug</span>(<span class="ruby-identifier">e</span>)
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">2</span>
+<span class="ruby-keyword">ensure</span>
+        <span class="ruby-identifier">after_install</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-after_install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_install</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="after_install-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_install</span>
+        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span><span class="ruby-operator">::</span><span class="ruby-constant">RESET</span>)
+        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_install-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_install-method -->
+
+    
+      <div id="method-i-before_install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_install</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="before_install-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_install</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:set_encoding</span>)
+                <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">set_encoding</span>(<span class="ruby-string">&quot;UTF-8&quot;</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_TERMINAL_COLOR</span>)
+        <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_install-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_install-method -->
+
+    
+      <div id="method-i-check_dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_dependencies</span><span
+            class="method-args">(show_new_screen = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_dependencies-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_dependencies</span>(<span class="ruby-identifier">show_new_screen</span> = <span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">new_screen</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">show_new_screen</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;banner&gt;Checking for required software...&lt;/banner&gt;&quot;</span>
+        <span class="ruby-identifier">puts</span>
+        
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/depcheck'</span>
+        <span class="ruby-identifier">specs</span>, <span class="ruby-identifier">ids</span> = <span class="ruby-identifier">dependencies</span>
+        <span class="ruby-identifier">runner</span> = <span class="ruby-constant">PlatformInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">Depcheck</span><span class="ruby-operator">::</span><span class="ruby-constant">ConsoleRunner</span>.<span class="ruby-identifier">new</span>
+
+        <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+                <span class="ruby-constant">PlatformInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">Depcheck</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">spec</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">runner</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">id</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">runner</span>.<span class="ruby-identifier">check_all</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;red&gt;Some required software is not installed.&lt;/red&gt;&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;But don't worry, this installer will tell you how to install them.\n&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;b&gt;Press Enter to continue, or Ctrl-C to abort.&lt;/b&gt;&quot;</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">originally_packaged?</span>
+                        <span class="ruby-identifier">wait</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">wait</span>(<span class="ruby-value">10</span>)
+                <span class="ruby-keyword">end</span>
+
+                <span class="ruby-identifier">line</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;banner&gt;Installation instructions for required software&lt;/banner&gt;&quot;</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">runner</span>.<span class="ruby-identifier">missing_dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot; * To install &lt;yellow&gt;#{dep.name}&lt;/yellow&gt;:&quot;</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;   #{dep.install_instructions}&quot;</span>
+                        <span class="ruby-identifier">puts</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;If the aforementioned instructions didn't solve your problem, then please take&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;a look at the Users Guide:&quot;</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  &lt;yellow&gt;#{users_guide_path}&lt;/yellow&gt;&quot;</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  &lt;yellow&gt;#{users_guide_url}&lt;/yellow&gt;&quot;</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_dependencies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_dependencies-method -->
+
+    
+      <div id="method-i-check_directory_accessible_by_web_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_directory_accessible_by_web_server</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_directory_accessible_by_web_server-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_directory_accessible_by_web_server</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">natively_packaged?</span>
+        <span class="ruby-identifier">inaccessible_directories</span> = []
+        <span class="ruby-identifier">list_parent_directories</span>(<span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">build_system_dir</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">world_executable?</span>(<span class="ruby-identifier">path</span>)
+                        <span class="ruby-identifier">inaccessible_directories</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">path</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">inaccessible_directories</span>.<span class="ruby-identifier">empty?</span>
+                <span class="ruby-identifier">new_screen</span>
+                <span class="ruby-identifier">render_template</span> <span class="ruby-string">'installer_common/world_inaccessible_directories'</span>,
+                        <span class="ruby-value">:directories</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">inaccessible_directories</span>
+                <span class="ruby-identifier">wait</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_directory_accessible_by_web_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_directory_accessible_by_web_server-method -->
+
+    
+      <div id="method-i-check_gem_install_permission_problems" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_gem_install_permission_problems</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_gem_install_permission_problems-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_gem_install_permission_problems</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">natively_packaged?</span>
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">uid</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span>
+           <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">build_system_dir</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{Regexp.escape home_dir}\//</span> <span class="ruby-operator">&amp;&amp;</span>
+           <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">build_system_dir</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{Regexp.escape Gem.dir}\//</span> <span class="ruby-operator">&amp;&amp;</span>
+           <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">build_system_dir</span>).<span class="ruby-identifier">uid</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                <span class="ruby-identifier">new_screen</span>
+                <span class="ruby-identifier">render_template</span> <span class="ruby-string">'installer_common/gem_install_permission_problems'</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_gem_install_permission_problems-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_gem_install_permission_problems-method -->
+
+    
+      <div id="method-i-check_whether_os_is_broken" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_whether_os_is_broken</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_whether_os_is_broken-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_whether_os_is_broken</span>
+        <span class="ruby-comment"># No known broken OSes at the moment.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_whether_os_is_broken-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_whether_os_is_broken-method -->
+
+    
+      <div id="method-i-check_whether_system_has_enough_ram" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_whether_system_has_enough_ram</span><span
+            class="method-args">(required = 1024)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_whether_system_has_enough_ram-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_whether_system_has_enough_ram</span>(<span class="ruby-identifier">required</span> = <span class="ruby-value">1024</span>)
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">meminfo</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&quot;/proc/meminfo&quot;</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">meminfo</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^MemTotal: *(\d+) kB$/</span>
+                        <span class="ruby-identifier">ram_mb</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">/</span> <span class="ruby-value">1024</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">meminfo</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^SwapTotal: *(\d+) kB$/</span>
+                                <span class="ruby-identifier">swap_mb</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">/</span> <span class="ruby-value">1024</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">swap_mb</span> = <span class="ruby-value">0</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+                <span class="ruby-comment"># Don't do anything on systems without memory information.</span>
+                <span class="ruby-identifier">ram_mb</span> = <span class="ruby-keyword">nil</span>
+                <span class="ruby-identifier">swap_mb</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ram_mb</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">swap_mb</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ram_mb</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">swap_mb</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">required</span>
+                <span class="ruby-identifier">new_screen</span>
+                <span class="ruby-identifier">render_template</span> <span class="ruby-string">'installer_common/low_amount_of_memory_warning'</span>,
+                        <span class="ruby-value">:required</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">required</span>,
+                        <span class="ruby-value">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ram_mb</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">swap_mb</span>,
+                        <span class="ruby-value">:ram</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ram_mb</span>,
+                        <span class="ruby-value">:swap</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">swap_mb</span>,
+                        <span class="ruby-value">:doc_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">users_guide_path</span>,
+                        <span class="ruby-value">:doc_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">users_guide_url</span>
+                <span class="ruby-identifier">wait</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_whether_system_has_enough_ram-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_whether_system_has_enough_ram-method -->
+
+    
+      <div id="method-i-dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dependencies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dependencies-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dependencies</span>
+        <span class="ruby-keyword">return</span> [[], []]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dependencies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dependencies-method -->
+
+    
+      <div id="method-i-download" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">download</span><span
+            class="method-args">(url, output, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="download-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">download</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span> = {})
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:logger</span>] <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">logger</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+                <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+                <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">formatter</span> = <span class="ruby-identifier">proc</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">severity</span>, <span class="ruby-identifier">datetime</span>, <span class="ruby-identifier">progname</span>, <span class="ruby-identifier">msg</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;*** #{msg}\n&quot;</span> }
+                <span class="ruby-identifier">logger</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">PhusionPassenger</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">Download</span>.<span class="ruby-identifier">download</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- download-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- download-method -->
+
+    
+      <div id="method-i-home_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">home_dir</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="home_dir-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 380</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">home_dir</span>
+        <span class="ruby-constant">Etc</span>.<span class="ruby-identifier">getpwuid</span>(<span class="ruby-constant">Process</span>.<span class="ruby-identifier">uid</span>).<span class="ruby-identifier">dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- home_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- home_dir-method -->
+
+    
+      <div id="method-i-interactive-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interactive?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interactive-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interactive?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@auto</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interactive-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interactive-3F-method -->
+
+    
+      <div id="method-i-line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">line</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="line-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">line</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;--------------------------------------------&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- line-method -->
+
+    
+      <div id="method-i-list_parent_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_parent_directories</span><span
+            class="method-args">(dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_parent_directories-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 432</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_parent_directories</span>(<span class="ruby-identifier">dir</span>)
+        <span class="ruby-identifier">dirs</span> = []
+        <span class="ruby-identifier">components</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">dir</span>).<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)
+        <span class="ruby-identifier">components</span>.<span class="ruby-identifier">shift</span> <span class="ruby-comment"># Remove leading /</span>
+        <span class="ruby-identifier">components</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">dirs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">components</span>[<span class="ruby-value">0</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">i</span>].<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">reverse</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_parent_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_parent_directories-method -->
+
+    
+      <div id="method-i-new_screen" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_screen</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_screen-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_screen</span>
+        <span class="ruby-identifier">puts</span>
+        <span class="ruby-identifier">line</span>
+        <span class="ruby-identifier">puts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new_screen-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new_screen-method -->
+
+    
+      <div id="method-i-non_interactive-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">non_interactive?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="non_interactive-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">non_interactive?</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-identifier">interactive?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- non_interactive-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- non_interactive-3F-method -->
+
+    
+      <div id="method-i-print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="print-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print</span>(<span class="ruby-identifier">text</span>)
+        <span class="ruby-ivar">@stdout</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span>.<span class="ruby-identifier">ansi_colorize</span>(<span class="ruby-identifier">text</span>))
+        <span class="ruby-ivar">@stdout</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- print-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- print-method -->
+
+    
+      <div id="method-i-prompt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prompt</span><span
+            class="method-args">(message, default_value = nil) { |result| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="prompt-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 315</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prompt</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">default_value</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">done</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">done</span>
+                <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;#{message}: &quot;</span>
+                
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">non_interactive?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">default_value</span>
+                        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">default_value</span>
+                        <span class="ruby-keyword">return</span> <span class="ruby-identifier">default_value</span>
+                <span class="ruby-keyword">end</span>
+                
+                <span class="ruby-keyword">begin</span>
+                        <span class="ruby-identifier">result</span> = <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">readline</span>
+                <span class="ruby-keyword">rescue</span> <span class="ruby-constant">EOFError</span>
+                        <span class="ruby-identifier">exit</span> <span class="ruby-value">2</span>
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">result</span>.<span class="ruby-identifier">strip!</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">default_value</span>
+                                <span class="ruby-identifier">result</span> = <span class="ruby-identifier">default_value</span>
+                                <span class="ruby-identifier">done</span> = <span class="ruby-keyword">true</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-identifier">done</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">result</span>)
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">done</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">result</span>)
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Abort</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- prompt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- prompt-method -->
+
+    
+      <div id="method-i-prompt_confirmation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prompt_confirmation</span><span
+            class="method-args">(message)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="prompt_confirmation-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 347</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prompt_confirmation</span>(<span class="ruby-identifier">message</span>)
+        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">prompt</span>(<span class="ruby-node">&quot;#{message} [y/n]&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-string">'y'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-string">'n'</span>
+                        <span class="ruby-keyword">true</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-identifier">puts_error</span> <span class="ruby-node">&quot;Invalid input '#{value}'; please enter either 'y' or 'n'.&quot;</span>
+                        <span class="ruby-keyword">false</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-string">'y'</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Abort</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- prompt_confirmation-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- prompt_confirmation-method -->
+
+    
+      <div id="method-i-puts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">puts</span><span
+            class="method-args">(text = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="puts-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">puts</span>(<span class="ruby-identifier">text</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>
+                <span class="ruby-ivar">@stdout</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span>.<span class="ruby-identifier">ansi_colorize</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_s</span>))
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-ivar">@stdout</span>.<span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@stdout</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- puts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- puts-method -->
+
+    
+      <div id="method-i-puts_error" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">puts_error</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="puts_error-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">puts_error</span>(<span class="ruby-identifier">text</span>)
+        <span class="ruby-ivar">@stderr</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-constant">Utils</span><span class="ruby-operator">::</span><span class="ruby-constant">AnsiColors</span>.<span class="ruby-identifier">ansi_colorize</span>(<span class="ruby-node">&quot;&lt;red&gt;#{text}&lt;/red&gt;&quot;</span>))
+        <span class="ruby-ivar">@stderr</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- puts_error-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- puts_error-method -->
+
+    
+      <div id="method-i-rake" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rake</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rake-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rake</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/ruby'</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">rake_command</span>
+                <span class="ruby-identifier">puts_error</span> <span class="ruby-string">'Cannot find Rake.'</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">Abort</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">sh</span>(<span class="ruby-node">&quot;#{PlatformInfo.rake_command} #{args.join(' ')}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rake-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rake-method -->
+
+    
+      <div id="method-i-rake-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rake!</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rake-21-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 413</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rake!</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">require_passenger_lib</span> <span class="ruby-string">'platform_info/ruby'</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">PlatformInfo</span>.<span class="ruby-identifier">rake_command</span>
+                <span class="ruby-identifier">puts_error</span> <span class="ruby-string">'Cannot find Rake.'</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">Abort</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">sh!</span>(<span class="ruby-node">&quot;#{PlatformInfo.rake_command} #{args.join(' ')}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rake-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rake-21-method -->
+
+    
+      <div id="method-i-render_template" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render_template</span><span
+            class="method-args">(name, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render_template-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render_template</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+        <span class="ruby-identifier">puts</span> <span class="ruby-constant">ConsoleTextTemplate</span>.<span class="ruby-identifier">new</span>({ <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span> }, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render_template-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render_template-method -->
+
+    
+      <div id="method-i-sh" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sh</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sh-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 385</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sh</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# #{args.join(' ')}&quot;</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-identifier">system</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">$?</span>.<span class="ruby-identifier">signaled?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">$?</span>.<span class="ruby-identifier">termsig</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Signal</span>.<span class="ruby-identifier">list</span>[<span class="ruby-string">&quot;INT&quot;</span>]
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">Interrupt</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sh-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sh-method -->
+
+    
+      <div id="method-i-sh-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sh!</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sh-21-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 397</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sh!</span>(*<span class="ruby-identifier">args</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">sh</span>(*<span class="ruby-identifier">args</span>)
+                <span class="ruby-identifier">puts_error</span> <span class="ruby-node">&quot;*** Command failed: #{args.join(' ')}&quot;</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandError</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sh-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sh-21-method -->
+
+    
+      <div id="method-i-show_support_options_for_installer_bug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show_support_options_for_installer_bug</span><span
+            class="method-args">(e)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="show_support_options_for_installer_bug-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show_support_options_for_installer_bug</span>(<span class="ruby-identifier">e</span>)
+        <span class="ruby-comment"># We do not use template rendering here. Since we've determined that there's</span>
+        <span class="ruby-comment"># a bug, *anything* may be broken, so we use the safest codepath to ensure that</span>
+        <span class="ruby-comment"># the user sees the proper messages.</span>
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">line</span>
+                <span class="ruby-ivar">@stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;*** EXCEPTION: #{e} (#{e.class})\n    &quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n    &quot;</span>)
+                <span class="ruby-identifier">new_screen</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">'&lt;red&gt;Oops, something went wrong :-(&lt;/red&gt;'</span>
+                <span class="ruby-identifier">puts</span>
+                <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;We're sorry, but it looks like this installer ran into an unexpected problem.\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;Please visit the following website for support. We'll do our best to help you.\n\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-node">&quot;  &lt;b&gt;#{SUPPORT_URL}&lt;/b&gt;\n\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;When submitting a support inquiry, please copy and paste the entire installer\n&quot;</span> <span class="ruby-operator">+</span>
+                        <span class="ruby-string">&quot;output.&quot;</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e2</span>
+                <span class="ruby-comment"># Raise original exception so that it doesn't get lost.</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show_support_options_for_installer_bug-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show_support_options_for_installer_bug-method -->
+
+    
+      <div id="method-i-use_stderr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">use_stderr</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="use_stderr-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 272</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">use_stderr</span>
+        <span class="ruby-identifier">old_stdout</span> = <span class="ruby-ivar">@stdout</span>
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-ivar">@stdout</span> = <span class="ruby-ivar">@stderr</span>
+                <span class="ruby-keyword">yield</span>
+        <span class="ruby-keyword">ensure</span>
+                <span class="ruby-ivar">@stdout</span> = <span class="ruby-identifier">old_stdout</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- use_stderr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- use_stderr-method -->
+
+    
+      <div id="method-i-users_guide_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users_guide_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="users_guide_path-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">users_guide_path</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">PhusionPassenger</span>.<span class="ruby-identifier">index_doc_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- users_guide_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- users_guide_path-method -->
+
+    
+      <div id="method-i-users_guide_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users_guide_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="users_guide_url-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">users_guide_url</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">INDEX_DOC_URL</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- users_guide_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- users_guide_url-method -->
+
+    
+      <div id="method-i-wait" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wait</span><span
+            class="method-args">(timeout = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="wait-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 361</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wait</span>(<span class="ruby-identifier">timeout</span> = <span class="ruby-keyword">nil</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">interactive?</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-identifier">timeout</span>
+                        <span class="ruby-identifier">require</span> <span class="ruby-string">'timeout'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Timeout</span>)
+                        <span class="ruby-keyword">begin</span>
+                                <span class="ruby-constant">Timeout</span>.<span class="ruby-identifier">timeout</span>(<span class="ruby-identifier">timeout</span>) <span class="ruby-keyword">do</span>
+                                        <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">readline</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+                                <span class="ruby-comment"># Do nothing.</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">else</span>
+                        <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">readline</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Abort</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- wait-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wait-method -->
+
+    
+      <div id="method-i-world_executable-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">world_executable?</span><span
+            class="method-args">(dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="world_executable-3F-source">
+            <pre><span class="ruby-comment"># File lib/phusion_passenger/abstract_installer.rb, line 442</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">world_executable?</span>(<span class="ruby-identifier">dir</span>)
+        <span class="ruby-keyword">begin</span>
+                <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">dir</span>)
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCESS</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">mode</span> &amp; <span class="ruby-value">0000001</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- world_executable-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- world_executable-3F-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

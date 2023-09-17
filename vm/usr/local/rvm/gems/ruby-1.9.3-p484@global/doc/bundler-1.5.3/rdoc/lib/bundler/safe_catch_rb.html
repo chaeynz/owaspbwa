@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: safe_catch.rb [bundler-1.5.3 Documentation]</title>
+
+  <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+  <script src="../../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2014-03-17 01:01:33 -0400</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<p>SafeCatch provides a mechanism to safely deepen the stack, performing
+stack-unrolling similar to catch/throw, but using Fiber or Thread to avoid
+deepening the stack too quickly.</p>
+
+<p>The API is the same as that of catch/throw: SafeCatch#safe_catch takes a
+“tag” to be rescued when some code deeper in the process raises it. If the
+catch block completes successfully, that value is returned. If the tag is
+“thrown” by safe_throw, the tag’s value is returned. Other exceptions
+propagate out as normal.</p>
+
+<p>The implementation, however, uses fibers or threads along with raise/rescue
+to handle “deepening” the stack and unrolling it. On implementations where
+Fiber is available, it will be used. If Fiber is not available, Thread will
+be used. If neither of these classes are available, Proc will be used,
+effectively deepening the stack for each recursion as in normal
+catch/throw.</p>
+
+<p>In order to avoid causing a new issue of creating too many fibers or
+threads, especially on implementations where fibers are actually backed by
+native threads, the “safe” recursion mechanism is only used every 20
+recursions. Based on experiments with JRuby (which seems to suffer the most
+from excessively deep stacks), this appears to be a sufficient granularity
+to prevent stack overflow without spinning up excessive numbers of fibers
+or threads. This value can be adjusted with the BUNDLER_SAFE_RECURSE_EVERY
+env var; setting it to zero effectively disables safe recursion.</p>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

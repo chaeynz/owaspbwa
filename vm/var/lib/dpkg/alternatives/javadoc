@@ -1,0 +1,9 @@
+manual
+/usr/bin/javadoc
+javadoc.1.gz
+/usr/share/man/man1/javadoc.1.gz
+
+/usr/lib/jvm/java-6-openjdk/bin/javadoc
+1061
+/usr/lib/jvm/java-6-openjdk/man/man1/javadoc.1.gz
+

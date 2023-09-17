@@ -1,0 +1,10 @@
+/etc
+/etc/init.d
+/etc/init.d/sysklogd
+/etc/cron.daily
+/etc/cron.daily/sysklogd
+/etc/cron.weekly
+/etc/cron.weekly/sysklogd
+/etc/default
+/etc/default/syslogd
+/etc/syslog.conf

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.doxia</groupId>
+	<artifactId>doxia-site-renderer</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<parent>
+		<groupId>org.apache.maven.doxia</groupId>
+		<artifactId>doxia-sitetools</artifactId>
+		<version>debian</version>
+	</parent>
+	<properties>
+		<debian.originalVersion>1.1.1</debian.originalVersion>
+		<debian.package>libdoxia-sitetools-java</debian.package>
+	</properties>
+	
+	<name>Doxia Sitetools :: Site Renderer Component</name>
+	<description>The Site Renderer handles the rendering of sites.</description>
+	<contributors>
+		<contributor>
+			<name>Vincent Siveton</name>
+			<email>vsiveton@apache.org</email>
+			<organization>Apache Software Foundation</organization>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+			<timezone>-5</timezone>
+		</contributor>
+	</contributors>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-logging-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-sink-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-decoration-model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-module-xhtml</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-module-fml</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-i18n</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-velocity</artifactId>
+			<version>debian</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-collections</groupId>
+					<artifactId>commons-collections</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.codehaus.plexus</groupId>
+					<artifactId>plexus-component-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>velocity</groupId>
+					<artifactId>velocity</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.x</version>
+		</dependency>
+	</dependencies>
+</project>

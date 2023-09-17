@@ -1,0 +1,6 @@
+UtsRelease 2.6.8-24.14-smp
+ModVersion yes
+SMP yes 
+PageOffset C0000000
+Comment SuSE9.2, kernel update 2.6.8-24.14, smp 
+UtsMachine i386

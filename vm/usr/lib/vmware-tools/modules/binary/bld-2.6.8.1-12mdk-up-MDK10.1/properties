@@ -1,0 +1,6 @@
+UtsRelease 2.6.8.1-12mdk
+ModVersion no
+SMP no
+PageOffset C0000000
+Comment Mandrake 10.1, 2.6.8.1, up
+UtsMachine i386

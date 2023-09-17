@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>call (ActionController::Dispatcher)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/action_controller/dispatcher.rb, line 104</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@@cache_classes</span>
+        <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-constant">Reloader</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-comment cmt"># When class reloading is turned on, we will want to rebuild the</span>
+          <span class="ruby-comment cmt"># middleware stack every time we process a request. If we don't</span>
+          <span class="ruby-comment cmt"># rebuild the middleware stack, then the stack may contain references</span>
+          <span class="ruby-comment cmt"># to old classes metal classes, which will b0rk class reloading.</span>
+          <span class="ruby-identifier">build_middleware_stack</span>
+          <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

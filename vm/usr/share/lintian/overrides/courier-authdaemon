@@ -1,0 +1,1 @@
+courier-authdaemon: non-standard-file-perm etc/courier/authdaemonrc 0660 != 0644

@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN" "http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+<html xmlns="http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Introducing VMware Tools</title>
+  </head>
+  <body style="">
+    <table align="right">
+      <tr>
+        <td style="text-align: left; font-size: 16px; font-weight:bold">VMware Tools Help</td>
+      </tr>
+    </table>
+    <div style="text-align: left;">
+      <table cellspacing="0" summary="">
+        <tr>
+          <td>
+            <a href="toc.htm"><img src="images/toc.gif" alt="Table of Contents" border="0"></a>
+          </td>
+          <td>
+            <a href="index.htm"><img src="images/prev.gif" alt="Previous" border="0"></a>
+          </td>
+          <td>
+            <a href="tools_controlpanel.htm"><img src="images/next.gif" alt="Next" border="0"></a>
+          </td>
+          <td>
+            <a href="ix.htm"><img src="images/index.gif" alt="Index" border="0"></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br clear="all">
+    <br>
+    <div style="text-align: left;">Introducing VMware Tools</div>
+    <hr align="left">
+    <blockquote>
+      <p align="Left">
+        <font size="4" face="Arial, Sans-Serif" color="#000000"><strong><a name="1016390">Introducing VMware </a>Tools</strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004741">VMware Tools is a suite of utilities that enhances the performance of the virtual </a>machine’s guest operating system and improves management of the virtual machine by your VMware product. It is very important that you install VMware Tools in the guest operating system. Although a guest operating system can run without VMware Tools, you lose important functionality and convenience. </font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004748">When you install VMware Tools, you install:</a></font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004749">The VMware Tools service, called </a><font face="&quot;Courier New&quot;">vmware-guestd</font> on Linux, FreeBSD, and Solaris guests, that runs in the background of your virtual machine. For more information, see <a href="#1001052"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff">About the VMware Tools Service</font></a>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027954">A set of VMware device drivers that smooth operations such as sharing folders </a>and using the mouse. For more information, see <a href="#1004764"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff">About the VMware Device Drivers</font></a>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004913">The VMware user process, called </a><font face="&quot;Courier New&quot;">vmware-user</font> on Linux and Solaris guests. For more information, see <a href="#1028017"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff">About the VMware User Process</font></a>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1027982">The VMware Tools control panel that lets you modify settings, shrink virtual disks, </a>and connect and disconnect virtual devices. For more information, see <a href="tools_controlpanel.htm#1042270"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff">Using the VMware Tools Control Panel</font></a>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004752">A set of scripts that help automate guest operating system operations. The </a>scripts run when the virtual machine’s power state changes. For more information, see <a href="tools_scripts.htm#1001197"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff">Using Scripts</font></a>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005023">Installation files for VMware Tools for all supported Windows, Linux, NetWare, FreeBSD, </a>and Solaris guest operating systems are built into your VMware product. </font>
+      </p>
+      <p align="Left">
+        <font size="3" face="Arial, Sans-Serif" color="#000000"><strong><a name="1004764">About the VMware Device Drivers</a></strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1023711">Following is a description of the device drivers included with VMware Tools:</a></font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1028025"><font face="&quot;Myriad Pro Light&quot;">SVGA driver</font></a> – With the VMware SVGA driver installed, the virtual machine can utilize up to 32-bit displays and high display resolution, with significantly faster overall graphics performance. If you run a guest operating system without VMware Tools, the graphics environment within the virtual machine is limited to VGA mode graphics (640x480, 16-color) and display performance might be unsatisfactory.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004765"><font face="&quot;Myriad Pro Light&quot;">SCSI driver</font></a> – The VMware virtual SCSI driver is a BusLogic driver. Note that some recent guest operating systems contain LSI Logic drivers and can take advantage of the virtual LSI Logic adapter for better device performance. Windows Server 2008 defaults to LSI Logic SAS. You specify whether to use the BusLogic, LSI Logic SCSI, or LSI Logic SAS adapter when you create a virtual machine.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004766"><font face="&quot;Myriad Pro Light&quot;">VMXNet driver</font></a> – The <font face="&quot;Courier New&quot;">vmxnet</font> networking driver improves network performance. Search the VMware Knowledge Base for information on which guest operating systems are supported with the <font face="&quot;Courier New&quot;">vmxnet</font> driver. </font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1045071">When you create a virtual machine, by default the </a><font face="&quot;Courier New&quot;">vlance</font> driver is installed. Then when you install VMware Tools, the <font face="&quot;Courier New&quot;">vmxnet</font> driver is installed.</font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1004840"><font face="&quot;Myriad Pro Light&quot;">Mouse driver</font></a> – The VMware mouse driver improves mouse performance in some guest operating systems. It is necessary for use with third-party tools such as Microsoft’s Terminal Services.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1028063"><font face="&quot;Myriad Pro Light&quot;">Kernel module for sharing folders</font></a> – This module, called <font face="&quot;Courier New&quot;">vmhgfs</font> on Linux and Solaris, is recommended if you plan to use this virtual machine with Workstation or Fusion. Excluding this module prevents you from sharing a folder between your virtual machine and a Workstation or Fusion host.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005153"><font face="&quot;Myriad Pro Light&quot;">Memory driver</font></a> – The VMware memory control driver is recommended if you plan to use this virtual machine with ESX Server. Excluding this driver hinders the memory management capabilities of the virtual machine running on an ESX Server system.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049641">&nbsp;</a></font>
+      </p>
+      <p align="Left">
+        <font size="3" face="Arial, Sans-Serif" color="#000000"><strong><a name="1001052">About the VMware Tools Service</a></strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1003542">The VMware Tools service performs various duties within the guest operating system, </a>such as:</font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1003543">Passing messages from the host operating system or ESX Server to the guest </a>operating system.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005193">Passing information between the guest operating system and a VMware API </a>script.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1003544">Sending a heartbeat to the VMware product so that it knows the guest </a>operating system is running. When the virtual machine is running under ESX Server, GSX Server, or VMware Server, a gauge for this heartbeat appears in the VMware Management Interface.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1003518">Synchronizing the time in the guest operating system with the time in the host </a>operating system.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1005228">Running scripts in a virtual machine when the power state changes. See </a><a href="tools_scripts.htm#1001197"><font face="&quot;Myriad Pro Light&quot;" color="#0000ff">Using Scripts</font></a>.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049662">Executing commands in the virtual machine when you shut down or restart a </a>Linux, Solaris, or FreeBSD guest operating system.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1003519">The VMware Tools service starts automatically when the guest operating system </a>boots. For more information about the service, see your VMware product documentation.</font>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049667">The VMware Tools service is not installed on NetWare operating systems. </a>Instead, the <font face="&quot;Courier New&quot;">vmwtool</font> program is installed. It synchronizes time and allows you to turn the CPU idler on or off.</font></p>
+      <p align="Left">
+        <font size="3" face="Arial, Sans-Serif" color="#000000"><strong><a name="1028017">About the VMware User Process</a></strong></font>
+      </p>
+      <p align="Left">
+        <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1028116">The VMware Tools user process performs the following tasks in the guest operating </a>system:</font>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1028126">Enables you to copy and paste text between the guest and host operating </a>systems. For virtual machines run under Workstation or Fusion, it enables you to copy and paste files between the host operating systems and Windows, Linux, and Solaris guest operating systems.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1028127">(For virtual machines run under Workstation or Fusion) Enables you to drag and </a>drop files between the host operating systems and Windows, Linux, and Solaris guest operating systems.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049672">On Linux and Solaris guests, grabs and releases the mouse cursor when the </a>SVGA driver is not installed.</font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left">
+        <table border="0" cellspacing="0" cellpadding="0" summary="">
+          <tr valign="baseline">
+            <td width="25.439999999999997">
+              <div>
+                <nobr>•	</nobr>
+              </div>
+            </td>
+            <td>
+              <font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049673">On Linux and Solaris guests, fits the guest’s screen resolution to the host’s.</a></font>
+            </td>
+          </tr>
+        </table>
+      </p>
+      <p align="Left"><font face="&quot;Myriad Pro Light&quot;">Note: 	</font><font size="2" face="Arial, Sans-Serif" color="#000000"><a name="1049674">The VMware Tools user process is not installed on NetWare operating systems. </a>Instead, the <font face="&quot;Courier New&quot;">vmwtool</font> program is installed. It controls the grabbing and releasing of the mouse cursor. It also allows you to copy and paste text. You cannot drag and drop or copy and paste files between hosts and NetWare guest operating systems.</font></p>
+    </blockquote>
+    <hr align="left">
+    <table align="right" summary="">
+      <tr>
+        <td style="text-align: left; font-size: 16px ; font-weight: bold">VMware Tools Help</td>
+      </tr>
+    </table>
+  </body>
+</html>

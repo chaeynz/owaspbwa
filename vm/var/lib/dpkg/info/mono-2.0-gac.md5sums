@@ -1,0 +1,5 @@
+38c6bf4d46b4eccddf9c3cd57626996c  usr/bin/gacutil2
+4209b53746b04e9a0572905785abc41c  usr/lib/mono/2.0/gacutil.exe
+179bf0a3c9b40dbae9061590f7efd0c5  usr/share/doc/mono-2.0-gac/copyright
+623da1c6dd023680ea9babd7409a17b7  usr/share/doc/mono-2.0-gac/changelog.Debian.gz
+10b02f0600b1187d452d1e665a052d78  usr/share/man/man1/gacutil2.1.gz

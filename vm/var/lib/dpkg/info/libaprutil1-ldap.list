@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libaprutil1-ldap
+/usr/share/doc/libaprutil1-ldap/changelog.gz
+/usr/share/doc/libaprutil1-ldap/copyright
+/usr/share/doc/libaprutil1-ldap/changelog.Debian.gz
+/usr/lib
+/usr/lib/apr-util-1
+/usr/lib/apr-util-1/apr_ldap-1.so
+/usr/lib/apr-util-1/apr_ldap.so

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">Archive Rotation</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="backups.html" title="Chapter 18. Backups" />
+    <link rel="prev" href="backup-shellscripts.html" title="Shell Scripts" />
+    <link rel="next" href="bacula.html" title="Bacula" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="backups.html">Backups</a></span> &gt; <span class="breadcrumb-node">Archive Rotation</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="Archive Rotation">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="backups-shellscripts-rotation"></a>Archive Rotation</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    The shell script in section <a class="xref" href="backup-shellscripts.html" title="Shell Scripts">the section called “Shell Scripts”</a> only allows for seven different archives.  For
+    a server whose data doesn't change often this may be enough.  If the server has a large amount of data a more 
+    robust rotation scheme should be used.
+    </p>
+              <div class="sect2" title="Rotating NFS Archives">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="backups-nfs-rotation"></a>Rotating NFS Archives</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      In this section the shell script will be slightly modified to implement a grandfather-father-son rotation scheme 
+      (monthly-weekly-daily): 
+      </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          The rotation will do a <span class="emphasis"><em>daily</em></span> backup Sunday through Friday. 
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          On Saturday a <span class="emphasis"><em>weekly</em></span> backup is done giving you four weekly backups a month.  
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          The <span class="emphasis"><em>monthly</em></span> backup is done on the first of the month rotating two monthly backups based 
+          on if the month is odd or even.  
+          </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+      Here is the new script:
+      </p>
+                <pre class="programlisting">
+#!/bin/bash
+####################################
+#
+# Backup to NFS mount script with
+# grandfather-father-son rotation.
+#
+####################################
+
+# What to backup. 
+backup_files="/home /var/spool/mail /etc /root /boot /opt"
+
+# Where to backup to.
+dest="/mnt/backup"
+
+# Setup variables for the archive filename.
+day=$(date +%A)
+hostname=$(hostname -s)
+
+# Find which week of the month 1-4 it is.
+day_num=$(date +%d)
+if (( $day_num &lt;= 7 )); then
+        week_file="$hostname-week1.tgz"
+elif (( $day_num &gt; 7 &amp;&amp; $day_num &lt;= 14 )); then
+        week_file="$hostname-week2.tgz"
+elif (( $day_num &gt; 14 &amp;&amp; $day_num &lt;= 21 )); then
+        week_file="$hostname-week3.tgz"
+elif (( $day_num &gt; 21 &amp;&amp; $day_num &lt; 32 )); then
+        week_file="$hostname-week4.tgz"
+fi
+
+# Find if the Month is odd or even.
+month_num=$(date +%m)
+month=$(expr $month_num % 2)
+if [ $month -eq 0 ]; then
+        month_file="$hostname-month2.tgz"
+else
+        month_file="$hostname-month1.tgz"
+fi
+
+# Create archive filename.
+if [ $day_num == 1 ]; then
+	archive_file=$month_file
+elif [ $day != "Saturday" ]; then
+        archive_file="$hostname-$day.tgz"
+else 
+	archive_file=$week_file
+fi
+
+# Print start status message.
+echo "Backing up $backup_files to $dest/$archive_file"
+date
+echo
+
+# Backup the files using tar.
+tar czf $dest/$archive_file $backup_files
+
+# Print end status message.
+echo
+echo "Backup finished"
+date
+
+# Long listing of files in $dest to check file sizes.
+ls -lh $dest/
+</pre>
+                <p>
+      The script can be executed using the same methods as in <a class="xref" href="backup-shellscripts.html#backup-executing-shellscript" title="Executing the Script">the section called “Executing the Script”</a>.
+      </p>
+                <p> 
+      It is good practice to take backup media off site in case of a disaster.  In the shell script example the backup 
+      media is another server providing an NFS share.  In all likelihood taking the NFS server to another location would not
+      be practical.  
+      Depending upon connection speeds it may be an option to copy the archive file over a WAN link to a server in another location.
+      </p>
+                <p> 
+      Another option is to copy the archive file to an external hard drive which can then be taken off site.  
+      Since the price of external hard drives continue to decrease it may be cost affective to use two drives for each archive level.  
+      This would allow you to have one external drive attached to the backup server and one in another location.
+      </p>
+              </div>
+              <div class="sect2" title="Tape Drives">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="backup-shellscript-tapedrive"></a>Tape Drives</h3>
+                    </div>
+                  </div>
+                </div>
+                <p> 
+      A tape drive attached to the server can be used instead of a NFS share.  Using a tape drive simplifies archive rotation, and
+      taking the media off site as well.  
+      </p>
+                <p> 
+      When using a tape drive the filename portions of the script aren't needed because the date is sent directly to the tape device.
+      Some commands to manipulate the tape are needed.  This is accomplished using <span class="application"><strong>mt</strong></span>, a magnetic tape
+      control utility part of the <span class="application"><strong>cpio</strong></span> package.
+      </p>
+                <p> 
+      Here is the shell script modified to use a tape drive:
+      </p>
+                <pre class="programlisting">
+#!/bin/bash
+####################################
+#
+# Backup to tape drive script.
+#
+####################################
+
+# What to backup. 
+backup_files="/home /var/spool/mail /etc /root /boot /opt"
+
+# Where to backup to.
+dest="/dev/st0"
+
+# Print start status message.
+echo "Backing up $backup_files to $dest"
+date
+echo
+
+# Make sure the tape is rewound.
+mt -f $dest rewind
+
+# Backup the files using tar.
+tar czf $dest $backup_files
+
+# Rewind and eject the tape.
+mt -f $dest rewoffl
+
+# Print end status message.
+echo
+echo "Backup finished"
+date
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        The default device name for a SCSI tape drive is <code class="filename">/dev/st0</code>.  Use the appropriate device path for your 
+        system.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      Restoring from a tape drive is basically the same as restoring from a file.  Simply rewind the tape and use the device path 
+      instead of a file path.  For example to restore the <code class="filename">/etc/hosts</code> file to <code class="filename">/tmp/etc/hosts</code>:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>mt -f /dev/st0 rewind</strong></span>
+<span class="command"><strong>tar -xzf /dev/st0 -C /tmp etc/hosts</strong></span>
+</pre>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="backup-shellscripts.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="backups.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="bacula.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">Shell Scripts </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Bacula</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

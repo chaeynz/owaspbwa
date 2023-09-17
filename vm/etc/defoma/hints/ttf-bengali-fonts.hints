@@ -1,0 +1,63 @@
+category truetype
+begin /usr/share/fonts/truetype/ttf-bengali-fonts/ani.ttf
+  Family = Ani
+  FontName = Ani
+  Encoding = Unicode
+  Location = English Bengali
+  Charset = ISO10646-1
+  GeneralFamily = SansSerif
+  Weight = Medium
+  Width = Variable
+  Shape = Serif
+  Foundry = mitra_anirban
+  Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-bengali-fonts/LikhanNormal.ttf
+  Family = Likhan
+  FontName = LikhanNormal
+  Encoding = Unicode
+  Location = English Bengali
+  Charset = ISO10646-1
+  GeneralFamily = SansSerif
+  Weight = Medium
+  Width = Variable
+  Shape = Serif
+  Foundry = Majantali
+  Priority = 40
+end
+begin /usr/share/fonts/truetype/ttf-bengali-fonts/mitra.ttf
+  Family = Ani
+  FontName = mitra
+  Encoding = Unicode
+  Location = English Bengali
+  Charset = ISO10646-1
+  GeneralFamily = Serif
+  Weight = Medium
+  Width = Fixed
+  Shape = Serif
+  Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-bengali-fonts/JamrulNormal.ttf
+  Family = Jamrul
+  FontName = jamrul
+  Encoding = Unicode
+  Location = English Bengali
+  Charset = ISO10646-1
+  GeneralFamily = Serif
+  Weight = Medium
+  Width = Variable
+  Shape = Upright
+  Priority = 30
+end
+begin /usr/share/fonts/truetype/ttf-bengali-fonts/lohit_bn.ttf
+  Family = Lohit-Bengali
+  FontName = Lohit-Bengali
+  Encoding = Unicode
+  Location = English Bengali
+  Charset = ISO10646-1
+  GeneralFamily = Bengali
+  Weight = Book
+  Width = Variable
+  Shape = Upright
+  Priority = 30
+end

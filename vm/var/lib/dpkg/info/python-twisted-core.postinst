@@ -1,0 +1,37 @@
+#! /bin/sh
+
+set -e
+
+# Automatically added by dh_pycentral
+rm -f /var/lib/pycentral/python-twisted-core.pkgremove
+if which pycentral >/dev/null 2>&1; then
+	pycentral pkginstall python-twisted-core
+	if grep -qs '^python-twisted-core$' /var/lib/pycentral/delayed-pkgs; then
+		sed -i '/^python-twisted-core$/d' /var/lib/pycentral/delayed-pkgs
+	fi
+fi
+# End automatically added section
+
+
+rebuild_cache()
+{
+    # remove all cache files, then rebuild for the installed python versions
+    rm -f /usr/lib/python[23].?/*-packages/twisted/plugins/dropin.cache
+    for p in $(pyversions -i); do
+	$p -c 'from twisted.plugin import IPlugin, getPlugins; list(getPlugins(IPlugin))' \
+	  >/dev/null 2>&1 || true
+    done
+}
+
+case "$1" in
+    triggered)
+	if [ "$2" = twisted-plugins-cache ]; then
+	    rebuild_cache
+	fi
+	;;
+    configure)
+	rebuild_cache
+	;;
+esac
+
+exit 0

@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/channels/rpm_hdl_info.py

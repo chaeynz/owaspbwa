@@ -1,0 +1,7 @@
+mono-common
+magic
+0
+MZ
+
+/usr/bin/cli
+/usr/lib/cli/binfmt-detector-cli

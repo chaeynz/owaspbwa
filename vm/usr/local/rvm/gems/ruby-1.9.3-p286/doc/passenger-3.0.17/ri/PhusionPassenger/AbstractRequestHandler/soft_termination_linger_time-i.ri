@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"!soft_termination_linger_time:EFI"JPhusionPassenger::AbstractRequestHandler#soft_termination_linger_time;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LIf a soft termination signal was received, then the main loop will quit;TI"Othe given amount of seconds after the last time a connection was accepted.;TI"Defaults to 3 seconds.;T:
+@fileI"6lib/phusion_passenger/abstract_request_handler.rb;TF@

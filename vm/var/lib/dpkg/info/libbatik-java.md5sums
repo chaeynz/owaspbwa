@@ -1,0 +1,17 @@
+1426fa95d5f1d9d5433c3919b6e743ea  usr/share/java/batik-all-1.7.jar
+5d08a3f3c8e4d95393079e0b34a9a7c4  usr/share/java/batik-libs-1.7.jar
+e611087206949a77bb194b2e93fbcfd5  usr/share/java/batik-ext-1.7.jar
+5d623baf9c37cc8351183cb6b5226edc  usr/share/java/batik-transcoder-1.7.jar
+64c6ae3d084d1a0919e8267e9fbe1f68  usr/share/doc/libbatik-java/README
+aec187dea3412ac24804da1be1831047  usr/share/doc/libbatik-java/README.Debian
+956db388cc0974e56aa8c936b14f3eda  usr/share/doc/libbatik-java/copyright
+98549b45dc56894e6b3a8e2c97633e2c  usr/share/doc/libbatik-java/NEWS.Debian.gz
+ef61f3716b516bf06ee71208c8528d1a  usr/share/doc/libbatik-java/changelog.Debian.gz
+6b6153c2b861b1075d1131bf1f151025  usr/share/man/man1/svgpp.1.gz
+8f9e3de2ac2cabbe3108dd5f199686be  usr/share/man/man1/ttf2svg.1.gz
+10e98ea6d19dc5752e1a30e0bf856b22  usr/share/man/man1/rasterizer.1.gz
+e0936a10f4cbffedc39304f8416543e8  usr/share/man/man1/squiggle.1.gz
+d49e2a579b605b17b67103c96ed5a668  usr/bin/rasterizer
+f5189b3eaf509a7a535c5406e373717c  usr/bin/squiggle
+1bf372c46fd9bd37cf54734aaba2ef8f  usr/bin/svgpp
+5c9e0905c8a21ecb3c848027e3c55faa  usr/bin/ttf2svg

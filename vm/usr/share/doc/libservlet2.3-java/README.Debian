@@ -1,0 +1,13 @@
+Java Servlet 2.3 API for Debian
+===============================
+
+- The Servlet 2.3 and JSP 1.2 classes were originally written by Sun and are
+  part of the Java 2 Platform Enterprise Edition. They have been donated
+  to the Apache-Jakarta project for inclusion in the Tomcat reference
+  implementation.
+
+- For more information about Java servlets please take a look at the Tomcat
+  home page at http://jakarta.apache.org/tomcat/index.html
+
+- The official Servlet 2.3 and JSP 1.2 specifications can be found at
+  http://java.sun.com/products/servlet/ and http://java.sun.com/products/jsp/

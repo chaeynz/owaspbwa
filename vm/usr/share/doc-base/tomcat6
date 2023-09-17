@@ -1,0 +1,10 @@
+Document: tomcat6
+Title: Apache Tomcat 6.0 Documentation
+Author: Apache Software Foundation
+Abstract: Documentation bundle for Apache Tomcat 6.0 Servlet/JSP container.
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/tomcat6-docs/docs/index.html
+Files: /usr/share/doc/tomcat6-docs/docs/*
+

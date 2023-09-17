@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title xmlns="">OpenNebula</title>
+    <link rel="stylesheet" href="../../libs/ubuntu-book.css" type="text/css" />
+    <link rel="home" href="index.html" title="Ubuntu Server Guide" />
+    <link rel="up" href="virtualization.html" title="Chapter 19. Virtualization" />
+    <link rel="prev" href="uec.html" title="UEC" />
+    <link rel="next" href="clustering.html" title="Chapter 20. Clustering" />
+    <link rel="copyright" href="legal.html" title="Credits and License" />
+  </head>
+  <body>
+    <div id="round">
+      <img id="topcap" alt="" src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-top.png" />
+      <div id="layout" class="container clear-block">
+        <script xmlns="" src="https://ssl.google-analytics.com/urchin.js" type="text/javascript"></script>
+        <script xmlns="" type="text/javascript">
+_uacct = "UA-1018242-8";
+urchinTracker();
+</script>
+        <div id="header">
+          <div id="logo-floater">
+            <h1>
+              <a href="https://help.ubuntu.com" title="Ubuntu Documentation">
+                <img alt="Ubuntu" id="logo" src="https://help.ubuntu.com/htdocs/ubuntunew/img/logo.png" />
+              </a>
+            </h1>
+          </div>
+          <noscript>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+              <div>
+                <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input type="text" name="q" size="27" />
+                <input type="submit" name="sa" value="Search" />
+              </div>
+            </form>
+          </noscript>
+          <script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script>
+          <div id="sitename">
+            <a href="https://help.ubuntu.com/">
+              <img alt="Official Documentation" src="https://help.ubuntu.com/htdocs/ubuntunew/img/help-about.png" />
+              <span>Official Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div id="page">
+          <div id="content">
+            <div class="breadcrumbs"><a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/10.04">Ubuntu 10.04</a> &gt; <span class="breadcrumb-link"><a href="index.html">Ubuntu Server Guide</a></span> &gt; <span class="breadcrumb-link"><a href="virtualization.html">Virtualization</a></span> &gt; <span class="breadcrumb-node">OpenNebula</span></div>
+            <div xmlns="http://www.w3.org/1999/xhtml" class="sect1" title="OpenNebula">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h2 class="title" style="clear: both"><a id="opennebula"></a>OpenNebula</h2>
+                  </div>
+                </div>
+              </div>
+              <p>
+    <span class="application"><strong>OpenNebula</strong></span> allows virtual machines to be placed and re-placed dynamically on a pool of physical resources.
+    This allows a virtual machine to be hosted from any location available.  
+    </p>
+              <p>
+    This section will detail configuring an OpenNebula cluster using three machines: one <span class="emphasis"><em>Front-End</em></span> host, and two 
+    <span class="emphasis"><em>Compute Nodes</em></span> used to run the virtual machines. The Compute Nodes will also need a bridge configured to allow the 
+    virtual machines access to the local network.  For details see <a class="xref" href="network-configuration.html#bridging" title="Bridging">the section called “Bridging”</a>.
+    </p>
+              <div class="sect2" title="Installation">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="opennebula-installation"></a>Installation</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      First, from a terminal on the Front-End enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install opennebula</strong></span>
+</pre>
+                <p>
+      On each Compute Node install:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo apt-get install opennebula-node</strong></span>
+</pre>
+                <p>
+      In order to copy SSH keys, the <span class="emphasis"><em>oneadmin</em></span> user will need to have a password.  On each machine execute:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo passwd oneadmin</strong></span>
+</pre>
+                <p>
+      Next, copy the <span class="emphasis"><em>oneadmin</em></span> user's SSH key to the Compute Nodes, and to the Front-End's <code class="filename">authorized_keys</code> file:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo scp /var/lib/one/.ssh/id_rsa.pub oneadmin@node01:/var/lib/one/.ssh/authorized_keys</strong></span>
+<span class="command"><strong>sudo scp /var/lib/one/.ssh/id_rsa.pub oneadmin@node02:/var/lib/one/.ssh/authorized_keys</strong></span>
+<span class="command"><strong>sudo sh -c "cat /var/lib/one/.ssh/id_rsa.pub &gt;&gt; /var/lib/one/.ssh/authorized_keys"</strong></span>
+</pre>
+                <p>
+      The SSH key for the Compute Nodes needs to be added to the <code class="filename">/etc/ssh/ssh_known_hosts</code> file on the Front-End host.  To accomplish
+      this <span class="application"><strong>ssh</strong></span> to each Compute Node as a user other than <span class="emphasis"><em>oneadmin</em></span>.  Then exit from the SSH session, and 
+      execute the following to copy the SSH key from <code class="filename">~/.ssh/known_hosts</code> to <code class="filename">/etc/ssh/ssh_known_hosts</code>:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo sh -c "ssh-keygen -f .ssh/known_hosts -F node01 1&gt;&gt; /etc/ssh/ssh_known_hosts"</strong></span>
+<span class="command"><strong>sudo sh -c "ssh-keygen -f .ssh/known_hosts -F node02 1&gt;&gt; /etc/ssh/ssh_known_hosts"</strong></span>
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Replace <span class="emphasis"><em>node01</em></span> and <span class="emphasis"><em>node02</em></span> with the appropriate host names.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      This allows the <span class="emphasis"><em>oneadmin</em></span> to use <span class="application"><strong>scp</strong></span>, without a password or manual intervention, to deploy an
+      image to the Compute Nodes.
+      </p>
+                <p>
+      On the Front-End create a directory to store the VM images, giving the <span class="emphasis"><em>oneadmin</em></span> user access to the directory:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>sudo mkdir /var/lib/one/images</strong></span>
+<span class="command"><strong>sudo chown oneadmin /var/lib/one/images/</strong></span>
+</pre>
+                <p>
+      Finally, copy a virtual machine disk file into <code class="filename">/var/lib/one/images</code>.  You can create an Ubuntu virtual machine
+      using <span class="application"><strong>vmbuilder</strong></span>, see <a class="xref" href="jeos-and-vmbuilder.html" title="JeOS and vmbuilder">the section called “JeOS and vmbuilder”</a> for details.
+      </p>
+              </div>
+              <div class="sect2" title="Configuration">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="opennebula-configuration"></a>Configuration</h3>
+                    </div>
+                  </div>
+                </div>
+                <p>
+      The <span class="emphasis"><em>OpenNebula Cluster</em></span> is now ready to be configured, and virtual machines added to the cluster.
+      </p>
+                <p>
+      From a terminal prompt enter:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>onehost create node01 im_kvm vmm_kvm tm_ssh</strong></span>
+<span class="command"><strong>onehost create node02 im_kvm vmm_kvm tm_ssh</strong></span>
+</pre>
+                <p>
+      Next, create a <span class="emphasis"><em>Virtual Network</em></span> template file named <code class="filename">vnet01.template</code>:
+      </p>
+                <pre class="programlisting">
+NAME            = "LAN"
+TYPE            = RANGED
+BRIDGE          = br0
+NETWORK_SIZE    = C
+NETWORK_ADDRESS = 192.168.0.0
+</pre>
+                <div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="../../libs/admon/note.png" />
+                      </td>
+                      <th align="left"></th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+        Be sure to change <span class="emphasis"><em>192.168.0.0</em></span> to your local network.
+        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <p>
+      Using the <span class="application"><strong>onevnet</strong></span> utility, add the virtual network to OpenNebula:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>onevnet create vnet01.template</strong></span>
+</pre>
+                <p>
+      Now create a <span class="emphasis"><em>VM Template</em></span> file named <code class="filename">vm01.template</code>:
+      </p>
+                <pre class="programlisting">
+NAME   = vm01
+CPU    = 0.5
+MEMORY = 512
+
+OS      = [ BOOT   = hd ]
+
+DISK   = [
+  source   = "/var/lib/one/images/vm01.qcow2",
+  target   = "hda",
+  readonly = "no" ]
+
+NIC    = [ NETWORK="LAN" ]
+
+GRAPHICS = [type="vnc",listen="127.0.0.1",port="-1"]
+</pre>
+                <p>
+      Start the virtual machine using <span class="application"><strong>onevm</strong></span>:
+      </p>
+                <pre class="screen">
+<span class="command"><strong>onevm submit vm01.template</strong></span>
+</pre>
+                <p>
+      Use the <span class="application"><strong>onevm list</strong></span> option to view information about virtual machines.  Also, the <span class="application"><strong>onevm show vm01</strong></span> 
+      option will display more details about a specific virtual machine.
+      </p>
+              </div>
+              <div class="sect2" title="References">
+                <div class="titlepage">
+                  <div>
+                    <div>
+                      <h3 class="title"><a id="opennebula-references"></a>References</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" type="disc">
+                    <li class="listitem">
+                      <p>
+          See the <a class="ulink" href="http://www.opennebula.org/doku.php?id=start" target="_top">OpenNebula website</a> for more information.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          You can also find help in the <span class="emphasis"><em>#ubuntu-virt</em></span> and 
+          <span class="emphasis"><em>#ubuntu-server</em></span> IRC channels on <a class="ulink" href="http://freenode.net" target="_top">Freenode</a>.
+          </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+          Also, the <a class="ulink" href="https://help.ubuntu.com/community/OpenNebula" target="_top">OpenNebula Ubuntu Wiki</a> page has more details.
+          </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="navfooter">
+            <hr />
+            <table width="100%" summary="Navigation footer">
+              <tr>
+                <td width="40%" align="left"><a accesskey="p" href="uec.html"><img src="../../libs/navig/prev.png" alt="Prev" /></a> </td>
+                <td width="20%" align="center">
+                  <a accesskey="u" href="virtualization.html">
+                    <img src="../../libs/navig/up.png" alt="Up" />
+                  </a>
+                </td>
+                <td width="40%" align="right"> <a accesskey="n" href="clustering.html"><img src="../../libs/navig/next.png" alt="Next" /></a></td>
+              </tr>
+              <tr>
+                <td width="40%" align="left" valign="top">UEC </td>
+                <td width="20%" align="center">
+                  <a accesskey="h" href="index.html">
+                    <img src="../../libs/navig/home.png" alt="Home" />
+                  </a>
+                </td>
+                <td width="40%" align="right" valign="top"> Chapter 20. Clustering</td>
+              </tr>
+            </table>
+          </div>
+          <hr />
+          <div id="footer">
+            <div id="ubuntulinks">
+              <p>The material in this document is available under a free license, see <a href="/legal.html">Legal</a> for details<br />
+	For information on contributing see the <a href="https://wiki.ubuntu.com/DocumentationTeam">Ubuntu Documentation Team wiki page</a>. To report a problem, visit the <a href="https://bugs.launchpad.net/ubuntu/+source/ubuntu-docs">bug page for Ubuntu Documentation</a></p>
+            </div>
+          </div>
+          <div id="bottomcap">
+            <img src="https://help.ubuntu.com/htdocs/ubuntunew/img/cap-bottom.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

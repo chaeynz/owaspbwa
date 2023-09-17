@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.avalon</groupId>
+	<artifactId>avalon-framework</artifactId>
+	<version>debian</version>
+	<packaging>pom</packaging>
+	<properties>
+		<debian.originalVersion>4.2.0</debian.originalVersion>
+		<debian.package>libavalon-framework-java</debian.package>
+	</properties>
+	
+	<name>Avalon Framework [modules]</name>
+	<description>Avalon Framework</description>
+	<inceptionYear>1997</inceptionYear>
+	<modules>
+		<module>api</module>
+		<module>impl</module>
+	</modules>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/excalibur/trunk/framework</connection>
+		<url>http://svn.apache.org/viewcvs.cgi/excalibur/trunk/framework</url>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/excalibur/trunk/avalon-framework</developerConnection>
+	</scm>
+</project>

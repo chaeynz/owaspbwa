@@ -1,0 +1,4 @@
+{:ancestors{I"Noexec:EF[I"Object;F:attributes{I"Noexec;F[I"attr_reader bin;FI"attr_reader gemfile;FI"attr_reader rubygems_specs;F:class_methods{I"Noexec;F[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{I"Noexec;F[I"bin;FI"candidate?;FI"
+check;FI"gemfile;FI"log;FI"	log2;FI"rubygems_spec;FI"rubygems_specs;FI"
+setup;F:modules[I"Noexec;FI"RubygemsBundler;F

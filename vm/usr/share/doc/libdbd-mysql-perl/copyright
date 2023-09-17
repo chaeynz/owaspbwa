@@ -1,0 +1,27 @@
+The sources have been downloaded here:
+http://search.cpan.org/dist/DBD-mysql/
+
+AUTHORS
+    The current version of DBD::mysql is almost completely written by
+    Jochen Wiedmann, and is now being maintained by Patrick Galbraith
+    (patg@mysql.com). The first version's author was Alligator
+    Descartes, who was aided and abetted by Gary Shea, Andreas König
+    and Tim Bunce amongst others.
+
+    The Mysql module was originally written by Andreas König
+    <koenig@kulturbox.de>. The current version, mainly an emulation
+    layer, is from Jochen Wiedmann.
+
+COPYRIGHT
+    Large Portions Copyright (c) 2004-2006 MySQL Patrick Galbraith, Alexey Stroganov;
+    Large Portions Copyright (c) 2003-2005 Rudolf Lippan; 
+    Large Portions Copyright (c) 1997-2003 Jochen Wiedmann;
+    and code portions Copyright (c)1994-1997 their original authors. 
+    This module is released under the same license as Perl itself. See the
+    Perl README for details.
+
+Check the perl license in /usr/share/doc/perl/copyright.
+
+You can also read the General Public License and the Artistic License
+in /usr/share/common-licenses/GPL and /usr/share/common-licenses/Artistic
+respectively.

@@ -1,0 +1,15 @@
+fc32156c98f11df17b0b1f4f0389adb9  usr/share/samba/lowcase.dat
+e0677a7a3415f9b7717821b0db416520  usr/share/samba/panic-action
+f5cbb4b91385b828cf66b9230bf88ecf  usr/share/samba/smb.conf
+e58495e9b2f3132e0783be7f7b7b81ae  usr/share/samba/smb.conf.dapper
+caf6d16cf41cc090b6e3b88d3111db2c  usr/share/samba/smb.conf.etch
+21cc6e01bd897c71018c2c2c00d3d83f  usr/share/samba/smb.conf.gutsy
+6fa3db2468275286210751e869d36373  usr/share/samba/upcase.dat
+2305521cdd7be88855750f12993b6cc6  usr/share/samba/valid.dat
+b248e8ec8512db55bc168018d89bad6a  usr/share/doc/samba-common/Roadmap
+01817107761b582da6c1ba33467b26b8  usr/share/doc/samba-common/changelog.Debian.gz
+aef77e4b5acac75faa3ad0199e72c507  usr/share/doc/samba-common/copyright
+aa0cd78046301148409139d1857ce3a5  usr/share/doc/samba-common/NEWS.Debian.gz
+8ce684ad7635e22cf4795e648428a489  usr/share/doc/samba-common/README.gz
+a5a7077283fb272432f7eb9206fca36b  usr/share/doc/samba-common/WHATSNEW.txt.gz
+3c65c21df53159d328b0cab9348c7c29  usr/share/doc/samba-common/README.build.gz

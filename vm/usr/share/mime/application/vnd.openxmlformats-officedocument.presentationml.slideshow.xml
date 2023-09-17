@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.openxmlformats-officedocument.presentationml.slideshow">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PowerPoint 2007 show</comment>
+  <comment xml:lang="ca">Presentació del PowerPoint 2007</comment>
+  <comment xml:lang="en_GB">PowerPoint 2007 show</comment>
+  <comment xml:lang="es">Presentación de PowerPoint 2007</comment>
+  <comment xml:lang="fr">diaporama PowerPoint 2007</comment>
+  <comment xml:lang="hu">PowerPoint 2007 bemutató</comment>
+  <comment xml:lang="it">Solo presentazione PowerPoint 2007</comment>
+  <comment xml:lang="ja">PowerPoint 2007 プレゼンテーション</comment>
+  <comment xml:lang="kk">PowerPoint 2007 көрсетілімі</comment>
+  <comment xml:lang="oc">diaporama PowerPoint 2007</comment>
+  <comment xml:lang="pl">Pokaz PowerPoint 2007</comment>
+  <comment xml:lang="pt_BR">mostrar PowerPoint 2007</comment>
+  <comment xml:lang="ro">Prezentare PowerPoint 2007</comment>
+  <comment xml:lang="uk">показ слайдів PowerPoint 2007</comment>
+  <glob pattern="*.ppsx"/>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the SSL options hash.
+full_name: ActiveResource::Base::ssl_options
+is_singleton: true
+name: ssl_options
+params: ()
+visibility: public

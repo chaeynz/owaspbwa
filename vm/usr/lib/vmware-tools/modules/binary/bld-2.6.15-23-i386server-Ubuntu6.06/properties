@@ -1,0 +1,7 @@
+UtsRelease 2.6.15-23-server
+UtsVersion #1 SMP Tue May 23 15:10:35 UTC 2006
+UtsMachine i386
+ModVersion yes
+SMP yes
+PageOffset C0000000
+Comment Ubuntu6.06, 2.6.15-23, i386, server

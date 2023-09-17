@@ -1,0 +1,14 @@
+libxbean-java
+--------------
+
+This package does not contain the following XBean modules as they 
+rely on some additional dependencies:
+- maven-xbean-plugin
+- xbean-classloader
+- xbean-spring
+
+I would advise to package those additional modules in a separate package, to 
+avoid circular dependencies as Maven uses XBean
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Tue, 05 May 2009 18:10:17 +0100
+

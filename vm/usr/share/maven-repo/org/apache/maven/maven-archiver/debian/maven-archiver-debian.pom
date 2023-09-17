@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven</groupId>
+	<artifactId>maven-archiver</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>2.4</debian.originalVersion>
+		<debian.package>libmaven-archiver-java</debian.package>
+	</properties>
+	
+	<name>Maven Archiver</name>
+	<issueManagement>
+		<system>jira</system>
+		<url>http://jira.codehaus.org/browse/MSHARED/component/13268</url>
+	</issueManagement>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/maven-archiver-2.4</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/shared/tags/maven-archiver-2.4</developerConnection>
+		<url>http://svn.apache.org/viewvc/maven/shared/tags/maven-archiver-2.4</url>
+	</scm>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-project</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-archiver</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-interpolation</artifactId>
+			<version>debian</version>
+		</dependency>
+	</dependencies>
+</project>

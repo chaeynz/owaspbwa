@@ -1,0 +1,14 @@
+/dev/mapper/brokenwebapps-root / ext3 rw,relatime,errors=remount-ro 0 0
+proc /proc proc rw 0 0
+none /sys sysfs rw,noexec,nosuid,nodev 0 0
+none /sys/fs/fuse/connections fusectl rw 0 0
+none /sys/kernel/debug debugfs rw 0 0
+none /sys/kernel/security securityfs rw 0 0
+none /dev devtmpfs rw,mode=0755 0 0
+none /dev/pts devpts rw,noexec,nosuid,gid=5,mode=0620 0 0
+none /dev/shm tmpfs rw,nosuid,nodev 0 0
+none /var/run tmpfs rw,nosuid,mode=0755 0 0
+none /var/lock tmpfs rw,noexec,nosuid,nodev 0 0
+none /lib/init/rw tmpfs rw,nosuid,mode=0755 0 0
+/dev/sda5 /boot ext2 rw,relatime 0 0
+binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,noexec,nosuid,nodev 0 0

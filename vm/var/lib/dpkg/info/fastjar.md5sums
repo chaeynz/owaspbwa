@@ -1,0 +1,8 @@
+bb148fddc8309d55f0c34ba2a6572a1f  usr/bin/fastjar
+40ac7a5e28d1a6d04a7880be2474eca3  usr/bin/grepjar
+7d23c3711cb528b9ed3325382589c439  usr/share/info/fastjar.info.gz
+08c9ba0ff5583f4c73a49b9bc67c33d7  usr/share/man/man1/grepjar.1.gz
+97361ce5765b2efed20bc418260e7ca8  usr/share/man/man1/fastjar.1.gz
+8a0095f0e5bb65e79e90b9f49ce072db  usr/share/doc/fastjar/changelog.gz
+5b23373697995370f935c42befd878e3  usr/share/doc/fastjar/copyright
+023a69f4aa260bbdb07f88d80565db0d  usr/share/doc/fastjar/changelog.Debian.gz

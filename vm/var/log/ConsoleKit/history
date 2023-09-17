@@ -1,0 +1,51 @@
+1694718129.016 type=SEAT_ADDED : seat-id='Seat1' seat-kind=0
+1694718129.033 type=SEAT_SESSION_ADDED : seat-id='Seat1' session-id='Session1' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/tty1' session-remote-host-name='' session-is-local=TRUE session-unix-user=0 session-creation-time='2023-09-14T19:02:09.021610Z'
+1694718129.035 type=SEAT_ACTIVE_SESSION_CHANGED : seat-id='Seat1' session-id='Session1'
+1694718311.498 type=SEAT_ADDED : seat-id='Seat2' seat-kind=1
+1694718311.499 type=SEAT_SESSION_ADDED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='172.16.28.1' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-14T19:05:11.496592Z'
+1694718704.151 type=SEAT_SESSION_REMOVED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='172.16.28.1' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-14T19:05:11.496592Z'
+1694718704.153 type=SEAT_REMOVED : seat-id='Seat2' seat-kind=1
+1694718957.712 type=SEAT_ADDED : seat-id='Seat3' seat-kind=1
+1694718957.713 type=SEAT_SESSION_ADDED : seat-id='Seat3' session-id='Session3' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='172.16.28.1' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-14T19:15:57.710679Z'
+1694719053.497 type=SEAT_SESSION_REMOVED : seat-id='Seat3' session-id='Session3' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='172.16.28.1' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-14T19:15:57.710679Z'
+1694719053.500 type=SEAT_REMOVED : seat-id='Seat3' seat-kind=1
+1694750637.694 type=SEAT_ADDED : seat-id='Seat1' seat-kind=0
+1694750637.702 type=SEAT_SESSION_ADDED : seat-id='Seat1' session-id='Session1' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/tty1' session-remote-host-name='' session-is-local=TRUE session-unix-user=0 session-creation-time='2023-09-15T04:03:57.699618Z'
+1694750637.703 type=SEAT_ACTIVE_SESSION_CHANGED : seat-id='Seat1' session-id='Session1'
+1694750800.207 type=SEAT_ADDED : seat-id='Seat1' seat-kind=0
+1694750800.216 type=SEAT_SESSION_ADDED : seat-id='Seat1' session-id='Session1' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/tty1' session-remote-host-name='' session-is-local=TRUE session-unix-user=0 session-creation-time='2023-09-15T04:06:40.211901Z'
+1694750800.218 type=SEAT_ACTIVE_SESSION_CHANGED : seat-id='Seat1' session-id='Session1'
+1694750897.327 type=SEAT_ADDED : seat-id='Seat2' seat-kind=1
+1694750897.329 type=SEAT_SESSION_ADDED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T04:08:17.325787Z'
+1694750897.564 type=SEAT_SESSION_REMOVED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T04:08:17.325787Z'
+1694750897.566 type=SEAT_REMOVED : seat-id='Seat2' seat-kind=1
+1694751139.060 type=SEAT_ADDED : seat-id='Seat3' seat-kind=1
+1694751139.061 type=SEAT_SESSION_ADDED : seat-id='Seat3' session-id='Session3' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T04:12:19.058029Z'
+1694751139.285 type=SEAT_SESSION_REMOVED : seat-id='Seat3' session-id='Session3' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T04:12:19.058029Z'
+1694751139.286 type=SEAT_REMOVED : seat-id='Seat3' seat-kind=1
+1694752106.998 type=SEAT_ADDED : seat-id='Seat4' seat-kind=1
+1694752107.000 type=SEAT_SESSION_ADDED : seat-id='Seat4' session-id='Session4' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T04:28:26.996976Z'
+1694752107.700 type=SEAT_SESSION_REMOVED : seat-id='Seat4' session-id='Session4' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T04:28:26.996976Z'
+1694752107.702 type=SEAT_REMOVED : seat-id='Seat4' seat-kind=1
+1694802525.960 type=SEAT_ADDED : seat-id='Seat1' seat-kind=0
+1694802525.974 type=SEAT_SESSION_ADDED : seat-id='Seat1' session-id='Session1' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/tty1' session-remote-host-name='' session-is-local=TRUE session-unix-user=0 session-creation-time='2023-09-15T18:28:45.966547Z'
+1694802525.976 type=SEAT_ACTIVE_SESSION_CHANGED : seat-id='Seat1' session-id='Session1'
+1694802894.696 type=SEAT_ADDED : seat-id='Seat2' seat-kind=1
+1694802894.697 type=SEAT_SESSION_ADDED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T18:34:54.695617Z'
+1694802894.888 type=SEAT_SESSION_REMOVED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T18:34:54.695617Z'
+1694802894.890 type=SEAT_REMOVED : seat-id='Seat2' seat-kind=1
+1694802902.396 type=SEAT_ADDED : seat-id='Seat3' seat-kind=1
+1694802902.397 type=SEAT_SESSION_ADDED : seat-id='Seat3' session-id='Session3' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T18:35:02.394775Z'
+1694802902.634 type=SEAT_SESSION_REMOVED : seat-id='Seat3' session-id='Session3' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T18:35:02.394775Z'
+1694802902.636 type=SEAT_REMOVED : seat-id='Seat3' seat-kind=1
+1694802932.699 type=SEAT_ADDED : seat-id='Seat4' seat-kind=1
+1694802932.700 type=SEAT_SESSION_ADDED : seat-id='Seat4' session-id='Session4' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T18:35:32.697434Z'
+1694803363.768 type=SEAT_SESSION_REMOVED : seat-id='Seat4' session-id='Session4' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T18:35:32.697434Z'
+1694803363.775 type=SEAT_REMOVED : seat-id='Seat4' seat-kind=1
+1694805438.806 type=SEAT_ADDED : seat-id='Seat1' seat-kind=0
+1694805438.814 type=SEAT_SESSION_ADDED : seat-id='Seat1' session-id='Session1' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/tty1' session-remote-host-name='' session-is-local=TRUE session-unix-user=0 session-creation-time='2023-09-15T19:17:18.812038Z'
+1694805438.815 type=SEAT_ACTIVE_SESSION_CHANGED : seat-id='Seat1' session-id='Session1'
+1694810237.255 type=SEAT_ADDED : seat-id='Seat2' seat-kind=1
+1694810237.256 type=SEAT_SESSION_ADDED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T20:37:17.253245Z'
+1694811777.170 type=SEAT_SESSION_REMOVED : seat-id='Seat2' session-id='Session2' session-type='' session-x11-display='' session-x11-display-device='' session-display-device='/dev/ssh' session-remote-host-name='cryptcave.fritz.box' session-is-local=FALSE session-unix-user=0 session-creation-time='2023-09-15T20:37:17.253245Z'
+1694811777.171 type=SEAT_REMOVED : seat-id='Seat2' seat-kind=1

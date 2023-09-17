@@ -1,0 +1,6 @@
+UtsRelease 2.6.10-5-686
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Ubuntu5.04, 2.6.10-5-686, i686
+UtsMachine i386

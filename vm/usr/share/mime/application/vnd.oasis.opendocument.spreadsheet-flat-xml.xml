@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.spreadsheet-flat-xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODS spreadsheet (Flat XML)</comment>
+  <comment xml:lang="ca">Full de càlcul ODS (XML pla)</comment>
+  <comment xml:lang="en_GB">ODS spreadsheet (Flat XML)</comment>
+  <comment xml:lang="es">Hoja de cálculo ODS (XML plano)</comment>
+  <comment xml:lang="fr">feuille de calcul ODS (XML plat)</comment>
+  <comment xml:lang="hu">ODS-táblázat (egyszerű XML)</comment>
+  <comment xml:lang="it">Foglio di calcolo ODS (XML semplice)</comment>
+  <comment xml:lang="ja">ODS スプレッドシート (Flat XML)</comment>
+  <comment xml:lang="kk">ODS электрондық кестесі (Тек XML)</comment>
+  <comment xml:lang="oc">fuèlh de calcul ODS (XML plat)</comment>
+  <comment xml:lang="pt_BR">Planilha ODS (XML plano)</comment>
+  <comment xml:lang="ro">Foaie de calcul ODS (XML simplu)</comment>
+  <comment xml:lang="uk">ел. таблиця ODS (Flat XML)</comment>
+  <acronym>FODS</acronym>
+  <expanded-acronym>OpenDocument Spreadsheet (Flat XML)</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-spreadsheet"/>
+  <glob pattern="*.fods"/>
+</mime-type>

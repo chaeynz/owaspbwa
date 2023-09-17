@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Module: FileUtils</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "show source"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "hide source"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "width=400,height=400,scrollbars=yes" )
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Module</span><br />FileUtils</td>
+  <td align="right">
+    <table cellspacing=0 cellpadding=2>
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../files/lib/rake_rb.html">lib/rake.rb</a>
+        </td>
+      </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+This a <a href="FileUtils.html">FileUtils</a> extension that defines
+several additional commands to be added to the <a
+href="FileUtils.html">FileUtils</a> utility functions.
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <ul>
+  <li><a href="#M000019">ruby</a></li>
+  <li><a href="#M000020">safe_ln</a></li>
+  <li><a href="#M000018">sh</a></li>
+  <li><a href="#M000021">split_all</a></li>
+  </ul>
+
+
+
+
+  <div class="sectiontitle">Constants</div>
+  <table border='0' cellpadding='5'>
+  <tr valign='top'>
+    <td class="attr-name">RUBY_EXT</td>
+    <td>=</td>
+    <td class="attr-value">((Config::CONFIG['ruby_install_name'] =~ /\.(com|cmd|exe|bat|rb|sh)$/) ?     &quot;&quot; :     Config::CONFIG['EXEEXT'])</td>
+  </tr>
+  <tr valign='top'>
+    <td class="attr-name">RUBY</td>
+    <td>=</td>
+    <td class="attr-value">File.join(     Config::CONFIG['bindir'],     Config::CONFIG['ruby_install_name'] + RUBY_EXT).     sub(/.*\s.*/m, '&quot;\&amp;&quot;')</td>
+  </tr>
+  <tr valign='top'>
+    <td class="attr-name">LN_SUPPORTED</td>
+    <td>=</td>
+    <td class="attr-value">[true]</td>
+  </tr>
+  </table>
+
+
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000019"></a><b>ruby</b>(*args,&amp;block)
+  </div>
+  <div class="description">
+  <p>
+Run a Ruby interpreter with the given arguments.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  ruby %{-pe '$_.upcase!' &lt;README}
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000019_source')" id="l_M000019_source">show source</a> ]</p>
+  <div id="M000019_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1024</span>
+1024:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ruby</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+1025:     <span class="ruby-identifier">options</span> = (<span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+1026:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">then</span>
+1027:       <span class="ruby-identifier">sh</span>(<span class="ruby-operator">*</span>([<span class="ruby-constant">RUBY</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">options</span>]), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+1028:     <span class="ruby-keyword kw">else</span>
+1029:       <span class="ruby-identifier">sh</span>(<span class="ruby-node">&quot;#{RUBY} #{args.first}&quot;</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+1030:     <span class="ruby-keyword kw">end</span>
+1031:   <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000020"></a><b>safe_ln</b>(*args)
+  </div>
+  <div class="description">
+  <p>
+Attempt to do a normal file link, but fall back to a copy if the link
+fails.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show source</a> ]</p>
+  <div id="M000020_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1037</span>
+1037:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">safe_ln</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+1038:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">LN_SUPPORTED</span>[<span class="ruby-value">0</span>]
+1039:       <span class="ruby-identifier">cp</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+1040:     <span class="ruby-keyword kw">else</span>
+1041:       <span class="ruby-keyword kw">begin</span>
+1042:         <span class="ruby-identifier">ln</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+1043:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-constant">NotImplementedError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>
+1044:         <span class="ruby-constant">LN_SUPPORTED</span>[<span class="ruby-value">0</span>] = <span class="ruby-keyword kw">false</span>
+1045:         <span class="ruby-identifier">cp</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+1046:       <span class="ruby-keyword kw">end</span>
+1047:     <span class="ruby-keyword kw">end</span>
+1048:   <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000018"></a><b>sh</b>(*cmd, &amp;block)
+  </div>
+  <div class="description">
+  <p>
+Run the system command <tt>cmd</tt>. If multiple arguments are given the
+command is not run with the shell (same semantics as Kernel::exec and
+Kernel::system).
+</p>
+<p>
+Example:
+</p>
+<pre>
+  sh %{ls -ltr}
+
+  sh 'ls', 'file with spaces'
+
+  # check exit status after command runs
+  sh %{grep pattern file} do |ok, res|
+    if ! ok
+      puts &quot;pattern not found (status = #{res.exitstatus})&quot;
+    end
+  end
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show source</a> ]</p>
+  <div id="M000018_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 988</span>
+ 988:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sh</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">cmd</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+ 989:     <span class="ruby-identifier">options</span> = (<span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">last</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+ 990:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">block_given?</span>
+ 991:       <span class="ruby-identifier">show_command</span> = <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>)
+ 992:       <span class="ruby-identifier">show_command</span> = <span class="ruby-identifier">show_command</span>[<span class="ruby-value">0</span>,<span class="ruby-value">42</span>] <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;...&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$trace</span>
+ 993:       <span class="ruby-comment cmt"># TODO code application logic heref show_command.length &gt; 45</span>
+ 994:       <span class="ruby-identifier">block</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ok</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">|</span>
+ 995:         <span class="ruby-identifier">ok</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">fail</span> <span class="ruby-node">&quot;Command failed with status (#{status.exitstatus}): [#{show_command}]&quot;</span>
+ 996:       }
+ 997:     <span class="ruby-keyword kw">end</span>
+ 998:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RakeFileUtils</span>.<span class="ruby-identifier">verbose_flag</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:default</span>
+ 999:       <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:verbose</span>] = <span class="ruby-keyword kw">true</span>
+1000:     <span class="ruby-keyword kw">else</span>
+1001:       <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:verbose</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">RakeFileUtils</span>.<span class="ruby-identifier">verbose_flag</span>
+1002:     <span class="ruby-keyword kw">end</span>
+1003:     <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:noop</span>]    <span class="ruby-operator">||=</span> <span class="ruby-constant">RakeFileUtils</span>.<span class="ruby-identifier">nowrite_flag</span>
+1004:     <span class="ruby-identifier">rake_check_options</span> <span class="ruby-identifier">options</span>, <span class="ruby-identifier">:noop</span>, <span class="ruby-identifier">:verbose</span>
+1005:     <span class="ruby-identifier">rake_output_message</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot; &quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:verbose</span>]
+1006:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:noop</span>]
+1007:       <span class="ruby-identifier">res</span> = <span class="ruby-identifier">rake_system</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">cmd</span>)
+1008:       <span class="ruby-identifier">status</span> = <span class="ruby-identifier">$?</span>
+1009:       <span class="ruby-identifier">status</span> = <span class="ruby-constant">PseudoStatus</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">res</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">nil?</span>
+1010:       <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">res</span>, <span class="ruby-identifier">status</span>)
+1011:     <span class="ruby-keyword kw">end</span>
+1012:   <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000021"></a><b>split_all</b>(path)
+  </div>
+  <div class="description">
+  <p>
+Split a file path into individual directory names.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  split_all(&quot;a/b/c&quot;) =&gt;  ['a', 'b', 'c']
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000021_source')" id="l_M000021_source">show source</a> ]</p>
+  <div id="M000021_source" class="dyn-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rake.rb, line 1055</span>
+1055:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">split_all</span>(<span class="ruby-identifier">path</span>)
+1056:     <span class="ruby-identifier">head</span>, <span class="ruby-identifier">tail</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">path</span>)
+1057:     <span class="ruby-keyword kw">return</span> [<span class="ruby-identifier">tail</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">head</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'.'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tail</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'/'</span>
+1058:     <span class="ruby-keyword kw">return</span> [<span class="ruby-identifier">head</span>, <span class="ruby-identifier">tail</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">head</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'/'</span>
+1059:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">split_all</span>(<span class="ruby-identifier">head</span>) <span class="ruby-operator">+</span> [<span class="ruby-identifier">tail</span>]
+1060:   <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

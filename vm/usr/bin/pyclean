@@ -1,0 +1,246 @@
+#! /usr/bin/python
+# -*- coding: UTF-8 -*-
+# vim: et ts=4 sw=4
+
+# Copyright © 2010 Piotr Ożarowski <piotr@debian.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+import logging
+import optparse
+import sys
+from glob import glob1
+from os import environ, remove, rmdir, walk
+from os.path import dirname, exists, isdir, isfile, join
+from subprocess import Popen, PIPE
+
+SUPPORTED_VERSIONS = [(2, 5), (2, 6), (3, 1), (3, 2)]
+
+# initialize script
+logging.basicConfig()
+log = logging.getLogger('pyclean')
+
+"""TODO: move it to manpage
+Examples:
+    pyclean -p python-mako # all .py[co] files from package
+    pyclean -R -p python-mako # all .pyr dirs from package
+    pyclean /usr/lib/python2.6/dist-packages # python2.6
+    pyclean -V 2.7 /usr/lib/python2/dist-packages # python 2.7 only
+    pyclean -V 2.7 /usr/lib/foo/bar.py # bar.pyr/<2.7_magic>.py[co]
+    pyclean -R /usr/lib/python3/dist-packages # all Python 3.X
+"""
+
+
+def get_magic_numbers_map():
+    """Returns Python magic numbers for installed Python versions."""
+
+    cmd = ''
+    for v in ('.'.join(str(j) for j in i) for i in SUPPORTED_VERSIONS):
+        if not exists("/usr/bin/python%s" % v):
+            log.debug("version %s not installed, skipping", v)
+            continue
+
+        to_check = [v, "%s -O" % v, "%s -OO" % v]
+        if v.startswith('2.'): # Python 3.X doesn't have -U option
+            to_check.append("%s -U" % v)
+
+        for i in to_check:
+            cmd += "/usr/bin/python%s -c 'import binascii, imp; print(\"%s_\"+\
+str(binascii.hexlify(imp.get_magic())))' && " % (i, v)
+
+    result = {}
+    cmd = cmd[:-3] # cut last '&& '
+    log.debug("invoking %s", cmd)
+    p = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+    if p.wait() != 0:
+        log.debug(p.stderr.read())
+        log.error('cannot get magic numers')
+        sys.exit(3)
+    else:
+        for line in p.stdout:
+            version, magic_number = line.split('_', 2)
+            # Python 3.X returns bytes
+            magic_number = magic_number.strip().lstrip("b'").rstrip("'")
+            result.setdefault(version, set()).add(magic_number)
+    log.debug('magic numbers map: %s', result)
+    return result
+
+
+def get_magic_numbers_to_remove(pyversion):
+    """Returns set of numbers or True if all of them should be removed."""
+    map_ = get_magic_numbers_map()
+    if not map_.get(pyversion):
+        log.error('magic number for %s not recognized', pyversion)
+        sys.exit(4)
+
+    if len(map_) == 1:
+        # only one Python version installed, no need to check magic number
+        return True
+
+    result = set(map_[pyversion]) # make a copy
+    for version, numbers in map_.iteritems():
+        if version == pyversion:
+            continue
+        result = result.difference(numbers)
+
+    if not result:
+        log.info('magic number(s) used by another installed\
+Python version. Nothing to remove.')
+        sys.exit(0)
+
+    log.debug('magic numbers to remove: %s', result)
+    return result
+
+
+def destroyer(magic_numbers=None): # ;-)
+    """Removes every .py[co] file associated to received .py file.
+
+    :param magic_numbers: if True, removes .pyr directories,
+        if None, removes .py[co] files (PEP 3147 mode turned off),
+        otherwise removes set of magic numbers from .pyr directory
+    :type magic_numbers: None or set or True"""
+    if magic_numbers:
+        if magic_numbers is True:
+
+            # remove all files in .pyr directory
+            def find_files_to_remove(pyfile):
+                directory = "%sr" % pyfile
+                for fn in glob1(directory, '*'):
+                    yield join(directory, fn)
+        else:
+
+            # remove .pyc files for no longer needed magic numbers
+            def find_files_to_remove(pyfile):
+                directory = "%sr" % pyfile
+                for i in magic_numbers:
+                    for fn in glob1(directory, "%s.py[co]" % i):
+                        yield join(directory, fn)
+
+        def myremove(fname):
+            remove(fname)
+            directory = dirname(fname)
+            # remove .pyr directory if it's empty
+            try:
+                rmdir(directory)
+            except:
+                log.debug('%s not removed', directory)
+    else:
+        myremove = remove
+
+        def find_files_to_remove(pyfile):
+            for filename in ("%sc" % pyfile, "%so" % pyfile):
+                if exists(filename):
+                    yield filename
+
+    counter = 0
+    try:
+        while True:
+            pyfile = (yield)
+            for filename in find_files_to_remove(pyfile):
+                try:
+                    log.debug('removing %s', filename)
+                    myremove(filename)
+                    counter += 1
+                except:
+                    log.error('cannot remove %s', filename)
+    except GeneratorExit:
+        if counter:
+            log.info("removed files: %s", counter)
+
+
+def get_files(items):
+    for item in items:
+        if isfile(item) and item.endswith('.py'):
+            yield item
+        elif isdir(item):
+            # XXX: we don't want .pyc files here (think about .pyr)
+            for root, dirs, files in walk(item):
+                #for fn in glob1(root, '*.py'):
+                #    yield join(root, fn)
+                for fn in files:
+                    if fn.endswith('.py'):
+                        yield join(root, fn)
+
+
+def get_package_files(package_name):
+    process = Popen("/usr/bin/dpkg -L %s" % package_name, shell=True,\
+                    stdout=PIPE, stderr=PIPE)
+    if process.wait() != 0:
+        log.error('cannot get content of %s', package_name)
+        sys.exit(2)
+    for line in process.stdout:
+        line = line.strip('\n')
+        if line.endswith('.py'):
+            yield line
+
+
+def main():
+    usage = '%prog [-V VERSION] [-p PACKAGE | DIR_OR_FILE]'
+    parser = optparse.OptionParser(usage, version='%prog 0.1')
+    parser.add_option('-v', '--verbose', action='store_true', dest='verbose',
+        default=False, help='turn verbose more one')
+    parser.add_option('-q', '--quiet', action='store_false', dest='verbose',
+        default=True, help='be quiet')
+    parser.add_option('-p', '--package',
+        help='specify Debian package name to clean')
+    parser.add_option('-R', action='store_true', default=False,
+        dest='pyr_mode', help='cleans .pyr directories (aka PEP 3147 mode)')
+    parser.add_option('-V', dest='version',
+        help='specify Python version to clean (implies -R)')
+
+    (options, args) = parser.parse_args()
+
+    if options.verbose:
+        log.setLevel(logging.INFO)
+    else:
+        log.setLevel(logging.WARNING)
+
+    if environ.get('PYCLEAN_DEBUG') == '1':
+        log.setLevel(logging.DEBUG)
+        log.debug('argv: %s', sys.argv)
+        log.debug('options: %s', options)
+        log.debug('args: %s', args)
+
+    if options.version:
+        magic_numbers = get_magic_numbers_to_remove(options.version)
+        d = destroyer(magic_numbers)
+    elif options.pyr_mode:
+        d = destroyer(True)
+    else:
+        d = destroyer()
+    d.next() # initialize coroutine
+
+    if options.package and args:
+        parser.error('only one action is allowed at the same time (\
+cleaning directory or a package)')
+
+    if options.package:
+        log.info('cleaning package %s', options.package)
+        for filename in get_package_files(options.package):
+            d.send(filename)
+    elif args:
+        log.info('cleaning directories: %s', args)
+        for filename in get_files(args):
+            d.send(filename)
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+if __name__ == '__main__':
+    main()

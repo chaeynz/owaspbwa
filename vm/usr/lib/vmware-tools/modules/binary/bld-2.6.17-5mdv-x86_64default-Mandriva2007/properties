@@ -1,0 +1,6 @@
+UtsRelease 2.6.17-5mdv
+ModVersion no
+SMP yes
+PageOffset FFFF810000000000
+Comment Mandriva2007, 2.6.17-5mdv, amd64, default
+UtsMachine x86_64

@@ -1,0 +1,8 @@
+libdirect-1.2 0 libdirectfb-1.2-0
+libdirectfb-1.2 0 libdirectfb-1.2-0
+libfusion-1.2 0 libdirectfb-1.2-0
+libuniquewm-1.2 0 libdirectfb-1.2-0
+udeb: libdirect-1.2 0 libdirectfb-1.2-0-udeb
+udeb: libdirectfb-1.2 0 libdirectfb-1.2-0-udeb
+udeb: libfusion-1.2 0 libdirectfb-1.2-0-udeb
+udeb: libuniquewm-1.2 0 libdirectfb-1.2-0-udeb

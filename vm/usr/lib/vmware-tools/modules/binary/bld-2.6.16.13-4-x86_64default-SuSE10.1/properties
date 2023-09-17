@@ -1,0 +1,6 @@
+UtsRelease 2.6.16.13-4-default
+ModVersion yes
+SMP no
+PageOffset FFFF810000000000
+Comment SuSE10.1, 2.6.16.13-4, x86_64 default
+UtsMachine x86_64

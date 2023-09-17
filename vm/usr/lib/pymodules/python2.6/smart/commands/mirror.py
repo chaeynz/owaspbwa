@@ -1,0 +1,1 @@
+/usr/share/pyshared/smart/commands/mirror.py

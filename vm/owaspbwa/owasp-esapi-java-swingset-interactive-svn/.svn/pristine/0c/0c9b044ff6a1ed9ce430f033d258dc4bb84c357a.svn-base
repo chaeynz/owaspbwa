@@ -1,0 +1,6 @@
+# URL Access Rules
+#
+
+/SwingSet/admin_lab.jsp     | any      |allow  |
+/SwingSet/admin_solution.jsp    | admin    | allow  |
+

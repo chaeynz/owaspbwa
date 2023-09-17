@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/metalink+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Metalink file</comment>
+  <comment xml:lang="bg">Изтегляне — Metalink</comment>
+  <comment xml:lang="ca">Fitxer de metaenllaç</comment>
+  <comment xml:lang="cs">Soubor metalink</comment>
+  <comment xml:lang="en_GB">Metalink file</comment>
+  <comment xml:lang="es">Archivo Metalink</comment>
+  <comment xml:lang="fr">fichier metalink</comment>
+  <comment xml:lang="hu">Metalink fájl</comment>
+  <comment xml:lang="it">File Metalink</comment>
+  <comment xml:lang="ja">Metalink ファイル</comment>
+  <comment xml:lang="kk">Metalink файлы</comment>
+  <comment xml:lang="lt">Metalink failas</comment>
+  <comment xml:lang="nl">Metalink-bestand</comment>
+  <comment xml:lang="oc">fichièr metalink</comment>
+  <comment xml:lang="pl">Plik Metalink</comment>
+  <comment xml:lang="pt_BR">Arquivo metalink</comment>
+  <comment xml:lang="ro">Fișier Metalink</comment>
+  <comment xml:lang="sv">Metalink-fil</comment>
+  <comment xml:lang="uk">файл метапосилання</comment>
+  <sub-class-of type="application/xml"/>
+  <glob pattern="*.metalink"/>
+</mime-type>

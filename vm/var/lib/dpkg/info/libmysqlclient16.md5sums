@@ -1,0 +1,6 @@
+b51cc26bef9509f0e768708f4028f2a2  usr/share/doc/libmysqlclient16/copyright
+d4952f5aa9108dc245c4f477eb1e8a86  usr/share/doc/libmysqlclient16/EXCEPTIONS-CLIENT.gz
+049a617b56957b4b7c8c6188d1fac0a1  usr/share/doc/libmysqlclient16/changelog.Debian.gz
+3e90a399f0e36d97c3a96d9550efced9  usr/share/doc/libmysqlclient16/changelog.gz
+a98b63873a64889d609384d3d58cf91a  usr/lib/libmysqlclient.so.16.0.0
+3c78445edaa2833626b8eca396b36dcc  usr/lib/libmysqlclient_r.so.16.0.0

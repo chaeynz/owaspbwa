@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-spss-sav">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SPSS Data File</comment>
+  <comment xml:lang="bg">Данни — SPSS</comment>
+  <comment xml:lang="ca">Fitxer de dades SPSS</comment>
+  <comment xml:lang="cs">Datový soubor SPSS</comment>
+  <comment xml:lang="de">SPSS-Datendatei</comment>
+  <comment xml:lang="en_GB">SPSS Data File</comment>
+  <comment xml:lang="es">Archivo de datos SPSS</comment>
+  <comment xml:lang="eu">SPSS datuen fitxategia</comment>
+  <comment xml:lang="fr">fichier de données SPSS</comment>
+  <comment xml:lang="hu">SPSS adatfájl</comment>
+  <comment xml:lang="it">File dati SPSS</comment>
+  <comment xml:lang="ja">SPSS データファイル</comment>
+  <comment xml:lang="kk">SPSS ақпарат файлы</comment>
+  <comment xml:lang="lt">SPSS duomenų failas</comment>
+  <comment xml:lang="nl">SPSS-gegevensbestand</comment>
+  <comment xml:lang="oc">fichièr de donadas SPSS</comment>
+  <comment xml:lang="pl">Plik danych SPSS</comment>
+  <comment xml:lang="pt_BR">Arquivo de dado SPSS</comment>
+  <comment xml:lang="ro">Fișier date SPSS</comment>
+  <comment xml:lang="sv">SPSS Data-fil</comment>
+  <comment xml:lang="uk">файл даних SPSS</comment>
+  <alias type="application/x-spss-savefile"/>
+  <glob pattern="*.sav"/>
+</mime-type>

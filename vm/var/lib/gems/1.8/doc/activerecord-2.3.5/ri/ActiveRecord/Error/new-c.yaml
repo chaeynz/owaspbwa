@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActiveRecord::Error::new
+is_singleton: true
+name: new
+params: (base, attribute, type = nil, options = {})
+visibility: public

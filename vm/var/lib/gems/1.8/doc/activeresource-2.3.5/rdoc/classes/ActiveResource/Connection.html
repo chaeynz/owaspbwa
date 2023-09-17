@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ActiveResource::Connection</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ActiveResource::Connection</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/active_resource/http_mock_rb.html">
+                lib/active_resource/http_mock.rb
+                </a>
+        <br />
+                <a href="../../files/lib/active_resource/connection_rb.html">
+                lib/active_resource/connection.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Class to handle connections to remote web services. This class is used by
+<a href="Base.html">ActiveResource::Base</a> to interface with REST
+services.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M003295">delete</a>&nbsp;&nbsp;
+      <a href="#M003294">get</a>&nbsp;&nbsp;
+      <a href="#M003298">head</a>&nbsp;&nbsp;
+      <a href="#M003287">new</a>&nbsp;&nbsp;
+      <a href="#M003291">password=</a>&nbsp;&nbsp;
+      <a href="#M003297">post</a>&nbsp;&nbsp;
+      <a href="#M003289">proxy=</a>&nbsp;&nbsp;
+      <a href="#M003296">put</a>&nbsp;&nbsp;
+      <a href="#M003286">requests</a>&nbsp;&nbsp;
+      <a href="#M003288">site=</a>&nbsp;&nbsp;
+      <a href="#M003293">ssl_options=</a>&nbsp;&nbsp;
+      <a href="#M003292">timeout=</a>&nbsp;&nbsp;
+      <a href="#M003290">user=</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HTTP_FORMAT_HEADER_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">{  :get =&gt; 'Accept',       :put =&gt; 'Content-Type',       :post =&gt; 'Content-Type',       :delete =&gt; 'Accept',       :head =&gt; 'Accept'</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">format</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">password</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">proxy</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">site</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ssl_options</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">timeout</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">user</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M003287" class="method-detail">
+        <a name="M003287"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003287.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003287.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(site, format = ActiveResource::Formats[:xml])</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <tt>site</tt> parameter is required and will set the <tt>site</tt>
+attribute to the URI for the remote resource service.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003286" class="method-detail">
+        <a name="M003286"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003286.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003286.html');return false;">
+          <span class="method-name">requests</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M003295" class="method-detail">
+        <a name="M003295"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003295.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003295.html');return false;">
+          <span class="method-name">delete</span><span class="method-args">(path, headers = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Execute a DELETE request (see HTTP protocol documentation if unfamiliar).
+Used to <a href="Connection.html#M003295">delete</a> resources.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003294" class="method-detail">
+        <a name="M003294"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003294.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003294.html');return false;">
+          <span class="method-name">get</span><span class="method-args">(path, headers = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Execute a GET request. Used to <a href="Connection.html#M003294">get</a>
+(find) resources.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003298" class="method-detail">
+        <a name="M003298"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003298.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003298.html');return false;">
+          <span class="method-name">head</span><span class="method-args">(path, headers = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Execute a HEAD request. Used to obtain meta-information about resources,
+such as whether they exist and their size (via response headers).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003291" class="method-detail">
+        <a name="M003291"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003291.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003291.html');return false;">
+          <span class="method-name">password=</span><span class="method-args">(password)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set password for remote service.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003297" class="method-detail">
+        <a name="M003297"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003297.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003297.html');return false;">
+          <span class="method-name">post</span><span class="method-args">(path, body = '', headers = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Execute a POST request. Used to create <a
+href="Connection.html#M003287">new</a> resources.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003289" class="method-detail">
+        <a name="M003289"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003289.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003289.html');return false;">
+          <span class="method-name">proxy=</span><span class="method-args">(proxy)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the proxy for remote service.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003296" class="method-detail">
+        <a name="M003296"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003296.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003296.html');return false;">
+          <span class="method-name">put</span><span class="method-args">(path, body = '', headers = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Execute a PUT request (see HTTP protocol documentation if unfamiliar). Used
+to update resources.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003288" class="method-detail">
+        <a name="M003288"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003288.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003288.html');return false;">
+          <span class="method-name">site=</span><span class="method-args">(site)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set URI for remote service.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003293" class="method-detail">
+        <a name="M003293"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003293.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003293.html');return false;">
+          <span class="method-name">ssl_options=</span><span class="method-args">(opts={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Hash of options applied to Net::HTTP instance when <tt>site</tt> protocol
+is &#8216;https&#8217;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003292" class="method-detail">
+        <a name="M003292"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003292.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003292.html');return false;">
+          <span class="method-name">timeout=</span><span class="method-args">(timeout)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the number of seconds after which HTTP <a
+href="Connection.html#M003286">requests</a> to the remote service should
+time out.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M003290" class="method-detail">
+        <a name="M003290"></a>
+
+        <div class="method-heading">
+          <a href="Connection.src/M003290.html" target="Code" class="method-signature"
+            onclick="popupCode('Connection.src/M003290.html');return false;">
+          <span class="method-name">user=</span><span class="method-args">(user)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the user for remote service.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

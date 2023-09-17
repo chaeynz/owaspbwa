@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kexiproject-sqlite2">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kexi database file-based project</comment>
+  <comment xml:lang="bg">Проект с база от данни — Kexi</comment>
+  <comment xml:lang="cs">Projekt založený na souboru databáze Kexi</comment>
+  <comment xml:lang="en_GB">Kexi database file-based project</comment>
+  <comment xml:lang="es">Proyecto basado en archivos de base de datos Kexi</comment>
+  <comment xml:lang="fr">projet de base de données Kexi en mode fichier</comment>
+  <comment xml:lang="hu">Kexi adatbázisfájl-alapú projekt</comment>
+  <comment xml:lang="it">Progetto su file di database Kexi</comment>
+  <comment xml:lang="ja">Kexi データベース ファイルベースプロジェクト</comment>
+  <comment xml:lang="kk">Файл негізінде жоба үшін Kexi дерекқоры</comment>
+  <comment xml:lang="lt">Kexi duomenų bazės failu paremtas projektas</comment>
+  <comment xml:lang="nl">Kexi-database met bestandgebaseerd project</comment>
+  <comment xml:lang="oc">Projècte de banca de donadas Kexi</comment>
+  <comment xml:lang="pl">Projekt bazy danych Kexi oparty na pliku</comment>
+  <comment xml:lang="pt_BR">Projeto de bases de dados em arquivos do Kexi</comment>
+  <comment xml:lang="ro">Proiect bazat pe fișiere al bazei de date Kexi</comment>
+  <comment xml:lang="uk">проект файлової бази даних Kexi</comment>
+  <sub-class-of type="application/x-sqlite2"/>
+  <glob pattern="*.kexi"/>
+</mime-type>

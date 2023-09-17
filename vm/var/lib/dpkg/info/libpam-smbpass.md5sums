@@ -1,0 +1,14 @@
+962427a4898a92c4267b1fedd4f2f5df  lib/security/pam_smbpass.so
+a36d2e4684ba9165e11635318029396d  usr/share/pam-configs/smbpasswd-migrate
+938b5fed767daae6e6e4afe86fb24e7d  usr/share/doc/libpam-smbpass/README
+f6b11081d62614a99281a7f6dc5422d6  usr/share/doc/libpam-smbpass/TODO
+39063ce29ae4239ae1756461bf6e61ae  usr/share/doc/libpam-smbpass/changelog.gz
+aef77e4b5acac75faa3ad0199e72c507  usr/share/doc/libpam-smbpass/copyright
+5499c57dd0ccaf53c439424b88dcd8c2  usr/share/doc/libpam-smbpass/examples/README
+edcbfd38cd922799546318b31366c57d  usr/share/doc/libpam-smbpass/examples/kdc-pdc
+8dc5d6160b3c790bde867ae51d10182f  usr/share/doc/libpam-smbpass/examples/password-mature
+6d247027d4a7a96801bd3bcaac4e5601  usr/share/doc/libpam-smbpass/examples/password-migration
+4826434dc6e4e4a4378a5e9245dc4c85  usr/share/doc/libpam-smbpass/examples/password-sync
+aa0cd78046301148409139d1857ce3a5  usr/share/doc/libpam-smbpass/NEWS.Debian.gz
+3c65c21df53159d328b0cab9348c7c29  usr/share/doc/libpam-smbpass/README.build.gz
+01817107761b582da6c1ba33467b26b8  usr/share/doc/libpam-smbpass/changelog.Debian.gz

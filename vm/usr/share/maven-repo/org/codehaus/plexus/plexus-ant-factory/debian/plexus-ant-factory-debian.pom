@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.codehaus.plexus</groupId>
+	<artifactId>plexus-ant-factory</artifactId>
+	<version>debian</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.0-alpha-2.1</debian.originalVersion>
+		<debian.package>libplexus-ant-factory-java</debian.package>
+	</properties>
+	
+	<name>Plexus Ant Factory</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-launcher</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+			<version>debian</version>
+		</dependency>
+	</dependencies>
+	<scm>
+		<connection>scm:svn:http://svn.codehaus.org/plexus/tags/plexus-ant-factory-1.0-alpha-2.1</connection>
+		<developerConnection>scm:svn:https://svn.codehaus.org/plexus/tags/plexus-ant-factory-1.0-alpha-2.1</developerConnection>
+	</scm>
+</project>

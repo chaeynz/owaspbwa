@@ -1,0 +1,9 @@
+#! /bin/sh
+
+set -e
+
+if [ -h /usr/share/doc/openjdk-6-jre-headless ]; then
+	rm -f /usr/share/doc/openjdk-6-jre-headless
+fi
+
+

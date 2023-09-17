@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ActionController::Assertions::DomAssertions::strip_whitespace!
+is_singleton: true
+name: strip_whitespace!
+params: (nodes)
+visibility: public

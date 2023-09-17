@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/courier-authdaemon
+/usr/share/doc/courier-authdaemon/copyright
+/usr/share/doc/courier-authdaemon/changelog.Debian.gz
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/courier-authdaemon
+/usr/sbin
+/usr/sbin/authdaemond
+/etc
+/etc/courier
+/etc/courier/authdaemonrc
+/etc/init.d
+/etc/init.d/courier-authdaemon

@@ -1,0 +1,9 @@
+76045bb8951629aaf9b6372e55a95c60  usr/share/doc/liblua5.1-0-dev/copyright
+4d005694d896524f5b8e62d4480de5bb  usr/include/lua5.1/lua.h
+4a887a86efd726ba60d89e2bc9f51731  usr/include/lua5.1/luaconf.h
+03b9f9c3f7a82bee2f7eab03315eae7d  usr/include/lua5.1/lualib.h
+9ee455010892bdf666d56ba254ef06e5  usr/include/lua5.1/lauxlib.h
+9fac7d7bf2a86babec4b57d3904495c8  usr/include/lua5.1/lua.hpp
+9dcb5cf18c4e0db8443384e9b7ec7440  usr/lib/liblua5.1.la
+77aed6bf1ce2290d49d85f0db4e22c30  usr/lib/liblua5.1.a
+f4dad587b0d757281d071ee372342df4  usr/lib/pkgconfig/lua5.1.pc

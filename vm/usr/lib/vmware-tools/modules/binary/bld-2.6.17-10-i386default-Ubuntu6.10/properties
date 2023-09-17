@@ -1,0 +1,7 @@
+UtsRelease 2.6.17-10-386
+UtsVersion #2 Fri Oct 13 18:41:40 UTC 2006
+UtsMachine i386
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Ubuntu6.10, 2.6.17-10, i386, default

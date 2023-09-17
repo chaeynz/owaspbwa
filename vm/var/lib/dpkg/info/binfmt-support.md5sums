@@ -1,0 +1,10 @@
+6fff949777e68e146d0accfde2fe6531  usr/sbin/update-binfmts
+4a0ac769ef349b63c0f9a3e0d8838e80  usr/share/binfmt-support/run-detectors
+dc6374d32453be1acac67c31b869e20b  usr/share/perl5/Binfmt/Format.pm
+be74171d96fa383076f9f582f47c5ac6  usr/share/perl5/Binfmt/Lib.pm
+47ca654a81f422e0d6676a2f5b13d241  usr/share/doc/binfmt-support/detectors
+3f898b33348b1d4987a7f2825fa138a8  usr/share/doc/binfmt-support/README.Debian
+841ee2fec985de96a0667e5cae8a9432  usr/share/doc/binfmt-support/TODO
+32a2a9814aa5f8d6a5b1f6a0dd77a93f  usr/share/doc/binfmt-support/copyright
+2dd465dd61e9f877a646cf2b273f19a1  usr/share/doc/binfmt-support/changelog.gz
+51074784182f4aaefe699a84715e289e  usr/share/man/man8/update-binfmts.8.gz

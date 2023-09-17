@@ -1,0 +1,27 @@
+This package was debianized by Arnaud Vandyck <arnaud.vandyck@ulg.ac.be> on
+Sun, 13 Apr 2003 18:45:44 +0200.
+
+It was downloaded from http://commons.apache.org/fileupload/
+
+Upstream Authors: Martin Cooper <martinc@apache.org>
+                  dIon Gillard <dion@apache.org>,
+                  John McNally <jmcnally@collab.net>,
+                  Daniel Rall <dlr@finemaltcoding.com>,
+                  Jason van Zyl <jason@zenplex.com>,
+                  Robert Burrell Donkin <rdonkin@apache.org>,
+                  Sean C. Sullivan <sean@seansullivan.com>,
+                  Jochen Wiedmann <jochen.wiedmann@gmail.com>,
+                  Aaron Freeman <aaron@sendthisfile.com>,
+                  Gary Gregory <ggregory@seagullsw.com>,
+                  Michael Macaluso <michael.public@wavecorp.com>,
+                  Amichai Rothman <amichai2@amichais.net>,
+                  Alexander Sova <bird@noir.crocodile.org>,
+                  Thomas Vandahl <tv@apache.org>,
+                  Henry Yandell <bayard@apache.org>
+
+Copyright: © 2002-2008 The Apache Software Foundation
+
+License: Apache 2.0
+
+On Debian systems the full text of the Apache License can be found
+in `/usr/share/common-licenses/Apache-2.0'.

@@ -1,0 +1,6 @@
+UtsRelease 2.4.7-4GB-SMP
+ModVersion no
+SMP yes
+PageOffset C0000000
+Comment SuSE SLES 7 smp with 2.4.7 non PAE kernel
+UtsMachine i386

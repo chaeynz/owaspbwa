@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/bin
+/usr/bin/jsvc
+/usr/share
+/usr/share/doc
+/usr/share/doc/jsvc
+/usr/share/doc/jsvc/README.Debian
+/usr/share/doc/jsvc/copyright
+/usr/share/doc/jsvc/changelog.Debian.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/jsvc.1.gz

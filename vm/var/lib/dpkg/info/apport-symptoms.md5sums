@@ -1,0 +1,6 @@
+db28b4ee0744f98b5beba97ed935df11  usr/share/apport/symptoms/audio.py
+bc74edab074a30b77957d359dbf9d1f3  usr/share/apport/symptoms/display.py
+c1f0e95a00991c50cbc84ff9a40fe2af  usr/share/apport/symptoms/security.py
+f59015d1bd3916f87c51f3e11c9aec1e  usr/share/apport/symptoms/storage.py
+a51361f7766c5b96878ac60948154181  usr/share/doc/apport-symptoms/copyright
+066cf552a4bd1daff01112d9ebd86539  usr/share/doc/apport-symptoms/changelog.gz

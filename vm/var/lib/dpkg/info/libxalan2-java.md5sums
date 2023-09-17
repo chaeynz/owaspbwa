@@ -1,0 +1,8 @@
+38f30311f2a67bb273ea19c9eb1773f8  usr/share/java/xalan2-2.7.1.jar
+229962a905a1a17e61870b6b7c555ecd  usr/share/java/serializer-2.7.1.jar
+300d2b43a50f778bed242b28048e033d  usr/share/maven-repo/xalan/xalan/2.7.1/xalan-2.7.1.pom
+134f808615a6b06bd0e6ada91442e6e9  usr/share/maven-repo/xalan/xalan/debian/xalan-debian.pom
+da0f0f3e24c1d496c592e15f45c435af  usr/share/maven-repo/xalan/serializer/2.7.1/serializer-2.7.1.pom
+f38e3be1a75c65724cf48749f345bc2e  usr/share/maven-repo/xalan/serializer/debian/serializer-debian.pom
+15d6ff0cedaa6c82c650d04961cf16d1  usr/share/doc/libxalan2-java/copyright
+9b7c1c8642ec7073ed5be128bde5a5d2  usr/share/doc/libxalan2-java/changelog.Debian.gz

@@ -1,0 +1,5 @@
+courier-webadmin: non-standard-dir-perm etc/courier/webadmin/added/ 0700 != 0755
+courier-webadmin: non-standard-dir-perm etc/courier/webadmin/removed/ 0700 != 0755
+courier-webadmin: setuid-binary usr/lib/courier/courier/webmail/webadmin 4755 root/bin
+courier-webadmin: non-standard-dir-perm etc/courier/webadmin/ 0700 != 0755
+courier-webadmin: missing-debconf-dependency

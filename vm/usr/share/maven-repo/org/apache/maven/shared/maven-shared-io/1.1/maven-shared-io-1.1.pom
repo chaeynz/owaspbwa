@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.maven.shared</groupId>
+	<artifactId>maven-shared-io</artifactId>
+	<version>1.1</version>
+	<packaging>jar</packaging>
+	<properties>
+		<debian.originalVersion>1.1</debian.originalVersion>
+		<debian.package>libmaven-shared-io-java</debian.package>
+	</properties>
+	
+	<name>Maven Shared I/O API</name>
+	<description>API for I/O support like logging, download or file scanning.</description>
+	<contributors>
+		<contributor>
+			<name>Joakim Erdfelt</name>
+			<email>joakim@erdfelt.com</email>
+		</contributor>
+	</contributors>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact-manager</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-provider-api</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>debian</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-container-default</artifactId>
+			<version>debian</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+	<scm>
+		<connection>scm:svn:http://svn.apache.org/repos/asf/maven/shared/tags/maven-shared-io-1.1</connection>
+		<developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/shared/tags/maven-shared-io-1.1</developerConnection>
+		<url>http://svn.apache.org/viewcvs.cgi/maven/shared/tags/maven-shared-io-1.1</url>
+	</scm>
+</project>

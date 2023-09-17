@@ -1,0 +1,47 @@
+2000-2006,2008 Ola Lundqvist <opal@debian.org>
+	Main author and maintainer.
+
+2008 Norman Messtorff <normes@normes.org>
+	Support for webserver conf.d handling.
+
+2008 Bryan McLellan <btm@loftninjas.org>
+	Correction for hostopt in mysql.get file.
+
+2008 Morten Werner Forsbring <werner@debian.org>
+	Support for postgres 8.X.
+
+2006 Frederic Schutz <schutz@mathgen.ch>
+	Restart fix.
+
+2005 Christoph Martin <martin@uni-mainz.de>
+        Fixes for pgsql.
+
+2004 Hilko Bengen <bengen@debian.org>
+        Help with pgsql support.
+
+2004 Jeremy Lainé <jeremy.laine@m4x.org>
+        Mysql and apache changes.
+
+2003 Loic Dachary (OuoU) <loic@debian.org>
+        Changes in database manipulation.
+
+2003 Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+        Mysql changes.
+
+2003 Benoit Joly <benoit@debian.org>
+        Mysql changes.
+
+2003 Thomas Viehmann <tv@beamnet.de>
+	Contributed with a patch so mysql calls are prefixed with eval.
+
+2002 Stephen R. Darragh <srd@it.net.au>
+        Fix to tell if apache configuration is not found.
+
+2002 Arndt Schönewald 
+	Removed sudo dependency for postgres setup.
+
+2001 Luca De Vitis <luca@debian.org>
+	Extra fatures for mysql, apache, pgsql and exim support.
+
+I might have missed someone here. The patches directory contains code that
+people have contributed with.

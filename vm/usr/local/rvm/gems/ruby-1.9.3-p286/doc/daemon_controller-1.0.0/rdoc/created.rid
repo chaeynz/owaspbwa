@@ -1,0 +1,5 @@
+Tue, 23 Oct 2012 23:20:31 -0400
+lib/daemon_controller.rb	Tue, 23 Oct 2012 23:20:19 -0400
+lib/daemon_controller/version.rb	Tue, 23 Oct 2012 23:20:19 -0400
+lib/daemon_controller/spawn.rb	Tue, 23 Oct 2012 23:20:19 -0400
+lib/daemon_controller/lock_file.rb	Tue, 23 Oct 2012 23:20:19 -0400

@@ -1,0 +1,5 @@
+c88ca49ec18e6638318c89e61aa341d1  usr/share/doc/libplexus-compiler-manager-java/copyright
+2a4a712f02a92f4c9a0de08415e88230  usr/share/doc/libplexus-compiler-manager-java/changelog.Debian.gz
+e29233cc4a8e24fa2d07df02971b1948  usr/share/maven-repo/org/codehaus/plexus/plexus-compiler-manager/1.5.3/plexus-compiler-manager-1.5.3.pom
+a7e3c95e0fcda4b4019a5bb42ed39044  usr/share/maven-repo/org/codehaus/plexus/plexus-compiler-manager/debian/plexus-compiler-manager-debian.pom
+32deaed48d0bcd8405b01b196274a839  usr/share/java/plexus-compiler-manager-1.5.3.jar

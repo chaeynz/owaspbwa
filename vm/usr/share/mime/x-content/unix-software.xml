@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="x-content/unix-software">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>UNIX software</comment>
+  <comment xml:lang="bg">Софтуер за UNIX</comment>
+  <comment xml:lang="ca">Programari UNIX</comment>
+  <comment xml:lang="cs">Software UNIX</comment>
+  <comment xml:lang="de">UNIX Software</comment>
+  <comment xml:lang="en_GB">UNIX software</comment>
+  <comment xml:lang="es">Software para Unix</comment>
+  <comment xml:lang="eu">UNIXeko softwarea</comment>
+  <comment xml:lang="fr">logiciel UNIX</comment>
+  <comment xml:lang="hu">UNIX-szoftver</comment>
+  <comment xml:lang="it">Software UNIX</comment>
+  <comment xml:lang="ja">UNIX ソフトウェア</comment>
+  <comment xml:lang="kk">UNIX бағдарламасы</comment>
+  <comment xml:lang="lt">UNIX programinė įranga</comment>
+  <comment xml:lang="nl">UNIX-software</comment>
+  <comment xml:lang="oc">logicial UNIX</comment>
+  <comment xml:lang="pl">Oprogramowanie systemu UNIX</comment>
+  <comment xml:lang="pt_BR">Software UNIX</comment>
+  <comment xml:lang="ro">Software UNIX</comment>
+  <comment xml:lang="sv">UNIX-programvara</comment>
+  <comment xml:lang="uk">програмне забезпечення UNIX</comment>
+  <sub-class-of type="x-content/software"/>
+</mime-type>

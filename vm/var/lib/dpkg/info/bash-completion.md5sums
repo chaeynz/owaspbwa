@@ -1,0 +1,9 @@
+42d0692aeb1ea61734ea671855c24e2f  usr/bin/dh_bash-completion
+cda84d80e9b4b060f404d38a641675d1  usr/share/doc/bash-completion/TODO
+4dd657d97bf633a38c87e2051feca42a  usr/share/doc/bash-completion/AUTHORS
+ba42a3ccfb4efab9a694197601efb90d  usr/share/doc/bash-completion/copyright
+52f471ba7e7ac3aa2941cd0657aecf4f  usr/share/doc/bash-completion/changelog.gz
+f72b4667a4e9481aa6e0a66000ad3588  usr/share/doc/bash-completion/README.gz
+126ba6cc7af91be986eefae6c9c86d30  usr/share/doc/bash-completion/changelog.Debian.gz
+364457d03e41812a3826f319f94b380b  usr/share/perl5/Debian/Debhelper/Sequence/bash_completion.pm
+172098e294988345249d10ef9f904aad  usr/share/man/man1/dh_bash-completion.1.gz

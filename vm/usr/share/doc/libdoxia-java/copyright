@@ -1,0 +1,71 @@
+This package was debianized by
+    Trygve Laugstol <trygvis@inamo.no>
+    Paul Cager <paul-debian@home.paulcager.org>
+
+The Debian packaging is Copyright (c) 2007 Trygve Laugstol and is licensed under
+the GNU General Public License version 2. On Debian systems, the complete text
+of the GNU General Public License version 2 can be found in
+'/usr/share/common-licenses/GPL-2'.
+
+
+Doxia was downloaded from
+  http://maven.apache.org/doxia/
+
+Upstream Authors:  
+    The Apache Software Foundation
+    Brett Porter <brett@apache.org>
+    Emmanuel Venisse <evenisse@codehaus.org>
+    James Taylor <james@jamestaylor.org>
+    Lars Trieloff <lars@trieloff.net>
+    Vincent Siveton <vincent.siveton@gmail.com>
+    Juan F. Codagnone
+    Rod Johnson
+
+
+Copyright:
+    Copyright (C) 2002-2005 The Apache Software Foundation.
+    Copyright (C) 2005 Juan F. Codagnone <juam at users dot sourceforge dot net>
+    Copyright (C) 2005 Zauber <info /at/ zauber dot com dot ar>
+
+License:
+    A number of source files in this package have missing or invalid
+    license declarations. Upstream have fixed this in their SVN, and the
+    situation discussed in
+       http://lists.debian.org/debian-devel/2007/07/msg00042.html
+    The consensus was that it should not prevent the package
+    entering Debian.
+
+    The source files in question are:
+
+
+        These files have no copyright statement or license declaration:
+        doxia-sink-api/src/main/java/org/codehaus/doxia/sink/Sink.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/confluence/parser/table/TableRowBlock.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/confluence/parser/SectionBlock.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/common/ByLineReaderSource.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/common/ByLineSource.java
+       
+       
+        These files have "Copyright (c) 2005 Your Corporation. All Rights
+        Reserved"  with no license declaration:
+        doxia-core/src/main/java/org/apache/maven/doxia/module/confluence/parser/SectionBlockParser.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/confluence/parser/VerbatimBlock.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/confluence/parser/VerbatimBlockParser.java
+        doxia-core/src/main/java/org/apache/maven/doxia/module/confluence/parser/TextBlock.java
+
+    Otherwise the following license declaration is made:
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+         http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+On Debian systems, the complete text of the Apache License
+version 2.0 can be found in /usr/share/common-licenses/Apache-2.0

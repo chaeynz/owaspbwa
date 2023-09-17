@@ -1,0 +1,14 @@
+memtest86+ for Debian
+---------------------
+
+Binary image is /boot/memtest86+.bin
+
+It is automatically registered against grub2.  For other bootloaders
+you'll need to do some manual setup (see examples/grub-menu.lst for
+GRUB Legacy or examples/lilo.conf for LILO), or to make a boot-floppy,
+and reboot on this image.
+
+The make-memtest86+-boot-floppy utility will help you to create a
+boot floppy or floppy image using GRUB Legacy.
+
+ -- Yann Dirson <dirson@debian.org>, Wed, 23 Apr 2008 21:05:51 z

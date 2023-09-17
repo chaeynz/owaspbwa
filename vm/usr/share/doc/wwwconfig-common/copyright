@@ -1,0 +1,37 @@
+This package was debianized by Ola Lundqvist <opal@debian.org> on
+Mon, 19 Feb 2001 20:39:34 +0100.
+
+This is a native debian package. If you do not use debian you will probably
+have no use of it.
+
+Copyright:
+
+  Copyright (C) 2000-2006,2008 Ola Lundqvist <opal@debian.org>
+  Copyright (C) 2008      Bryan McLellan <btm@loftninjas.org>
+  Copyright (C) 2008      Morten Werner Forsbring <werner@debian.org>
+  Copyright (C) 2005      Christoph Martin <martin@uni-mainz.de>
+  Copyright (C) 2004      Hilko Bengen <bengen@debian.org>
+  Copyright (C) 2004      Jeremy Laine <jeremy.laine@m4x.org>
+  Copyright (C) 2003      Loic Dachary (OuoU) <loic@debian.org>
+  Copyright (C) 2003      Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+  Copyright (C) 2003      Benoit Joly <benoit@debian.org>
+  Copyright (C) 2003      Thomas Viehmann <tv@beamnet.de>
+  Copyright (C) 2002      Arndt Schönewald
+  Copyright (C) 2002      Stephen R. Darragh <srd@it.net.au>
+  Copyright (C) 2001      Luca De Vitis <luca@debian.org>
+
+wwwconfig-common is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2, or (at your option) any later
+version.
+
+wwwconfig-common is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU system, in /usr/share/common-licenses/GPL, or with the
+Debian GNU gnupg source package as the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+MA 02110-1301, USA.

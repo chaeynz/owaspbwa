@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.graphics-flat-xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODG drawing (Flat XML)</comment>
+  <comment xml:lang="ca">Dibuix ODG (XML pla)</comment>
+  <comment xml:lang="en_GB">ODG drawing (Flat XML)</comment>
+  <comment xml:lang="es">Dibujo ODG (XML plano)</comment>
+  <comment xml:lang="fr">dessin ODG (XML plat)</comment>
+  <comment xml:lang="hu">ODG-rajz (egyszerű XML)</comment>
+  <comment xml:lang="it">Disegno ODG (XML semplice)</comment>
+  <comment xml:lang="ja">ODG ドロー (Flat XML)</comment>
+  <comment xml:lang="kk">ODG сызбасы (Тек XML)</comment>
+  <comment xml:lang="oc">dessenh ODG (XML plat)</comment>
+  <comment xml:lang="pt_BR">Desenho ODG (XML plano)</comment>
+  <comment xml:lang="ro">Desen ODG (XML simplu)</comment>
+  <comment xml:lang="uk">малюнок ODG (Flat XML)</comment>
+  <acronym>FODG</acronym>
+  <expanded-acronym>OpenDocument Drawing (Flat XML)</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="image-x-generic"/>
+  <glob pattern="*.fodg"/>
+</mime-type>

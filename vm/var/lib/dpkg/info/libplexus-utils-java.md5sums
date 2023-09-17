@@ -1,0 +1,6 @@
+6294e10bea2a525da4d28acd762b0a38  usr/share/doc/libplexus-utils-java/README.Debian
+fbb553089ecff7401ffff2351990de8a  usr/share/doc/libplexus-utils-java/copyright
+f0002b2e1f7d3dabba54137234f81013  usr/share/doc/libplexus-utils-java/changelog.Debian.gz
+b9359591cb44402675f491b85b8f8588  usr/share/maven-repo/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+747922e7dbbb1d4f8e9361aa10790b8c  usr/share/maven-repo/org/codehaus/plexus/plexus-utils/debian/plexus-utils-debian.pom
+58a1e1524d526393e2bc40049b81724a  usr/share/java/plexus-utils-1.5.15.jar

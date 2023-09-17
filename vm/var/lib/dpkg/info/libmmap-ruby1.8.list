@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/lib
+/usr/lib/ruby
+/usr/lib/ruby/1.8
+/usr/lib/ruby/1.8/i486-linux
+/usr/lib/ruby/1.8/i486-linux/mmap.so
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmmap-ruby1.8
+/usr/share/doc/libmmap-ruby1.8/copyright
+/usr/share/doc/libmmap-ruby1.8/changelog.Debian.gz

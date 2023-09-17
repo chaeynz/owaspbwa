@@ -1,0 +1,6 @@
+UtsRelease 2.4.5-3
+ModVersion yes
+SMP no
+PageOffset C0000000
+Comment Turbo Linux Workstation 7.0 UP
+UtsMachine i386

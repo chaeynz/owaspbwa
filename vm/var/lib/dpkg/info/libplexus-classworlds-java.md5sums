@@ -1,0 +1,5 @@
+cb9ff5bb92eefa82cb4575404a182fc5  usr/share/doc/libplexus-classworlds-java/copyright
+2943c3cc733603fa64af65769bd2943a  usr/share/doc/libplexus-classworlds-java/changelog.Debian.gz
+59bc80c73793d3f7f2e7fb25e8177092  usr/share/maven-repo/org/codehaus/plexus/plexus-classworlds/1.5.0/plexus-classworlds-1.5.0.pom
+7c3b8722198d4702300a2878954948f8  usr/share/maven-repo/org/codehaus/plexus/plexus-classworlds/debian/plexus-classworlds-debian.pom
+cc0a4d59699fc210214c45c8754fd2f1  usr/share/java/plexus-classworlds-1.5.0.jar

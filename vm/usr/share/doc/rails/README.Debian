@@ -1,0 +1,72 @@
+Rails On Debian
+----------------
+
+To get started with your own Rails application
+----------------------------------------------
+
+NOTE: DEST_DIR == destination directory (you choose!)
+
+
+1. Install rails into a working directry by running `rails DEST_DIR`.
+2. Run the WEBrick servlet from DEST_DIR: script/server (run with --help for
+   options)
+3. Go to http://localhost:3000/ and get "Congratulations, you've put Ruby on
+   Rails!"
+4. Follow the guidelines on the "Congratulations, you've put Ruby on Rails!"
+   screen
+
+Complete API reference is also available (if you deploy ruby with
+documentation) in DEST_DIR/doc/api/index.html and well as at
+ http://www.rubyonrails.com. 
+
+
+To run a non-packaged Rails application
+---------------------------------------
+
+Debian puts all Ruby and Rails libraries into Debian Packages. Theses get
+installed at FHS compliant locations.
+
+In the case of Rails libraries under:
+
+  /usr/share/rails/
+
+In the case of Ruby libraries under:
+
+  /usr/lib/ruby/1.8/
+  /usr/lib/ruby/1.9/
+
+Non-packaged Rails applications normaly use `gem` to dynamically load the
+classes and modules they need. However `gem` does not know about the
+libraries provided by Debian and thus starting the application will fail
+with a message like the following:
+
+  $ ./script/server
+  Missing the Rails 2.0.2 gem. Please `gem install -v=2.0.2 rails`, update
+  your RAILS_GEM_VERSION setting in config/environment.rb for the Rails
+  version you do have installed, or comment out RAILS_GEM_VERSION to use the
+  latest version installed.
+
+The solution that Debian uses when its `rails` tool wrapper is used to create
+a new rails application is to add references to Debian's packaged libraries
+to the created Rails application. Thus:
+
+  $ rails my_project
+
+will create this:
+
+  $ ls -l my_project/vendor
+  lrwxrwxrwx 1 joe joe 29 2008-09-16 20:50 actionmailer -> /usr/share/rails/actionmailer
+  lrwxrwxrwx 1 joe joe 27 2008-09-16 20:50 actionpack -> /usr/share/rails/actionpack
+  lrwxrwxrwx 1 joe joe 28 2008-09-16 20:50 active_ldap -> /usr/share/rails/active_ldap
+  lrwxrwxrwx 1 joe joe 28 2008-09-16 20:50 activemodel -> /usr/share/rails/activemodel
+  lrwxrwxrwx 1 joe joe 29 2008-09-16 20:50 activerecord -> /usr/share/rails/activerecord
+  lrwxrwxrwx 1 joe joe 31 2008-09-16 20:50 activeresource -> /usr/share/rails/activeresource
+  lrwxrwxrwx 1 joe joe 30 2008-09-16 20:50 activesupport -> /usr/share/rails/activesupport
+  lrwxrwxrwx 1 joe joe 16 2008-09-16 20:50 rails -> /usr/share/rails
+  lrwxrwxrwx 1 joe joe 25 2008-09-16 20:50 railties -> /usr/share/rails/railties
+
+You can use the command rails-app-debianize to create those links.
+
+
+ -- Adam Majer <adamm@zombino.com>, Fri,  7 Mar 2005
+ -- Tomas Pospisek <tpo_deb@sourcepole.ch>, Thu, 16 Sep 2008

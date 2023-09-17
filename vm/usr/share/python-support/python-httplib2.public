@@ -1,0 +1,5 @@
+pyversions=2.4-
+
+/usr/share/pyshared/httplib2-0.6.0.egg-info
+/usr/share/pyshared/httplib2/__init__.py
+/usr/share/pyshared/httplib2/iri2uri.py

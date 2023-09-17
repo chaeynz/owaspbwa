@@ -1,0 +1,9 @@
+22e264cecc1b9e4a6fdf95dfd0c360e6  usr/share/doc/libsasl2-2/changelog.gz
+f6ca26587b4d1c4457b978f0d4f2c3cb  usr/share/doc/libsasl2-2/README.configure-options
+75ea1eaae79384ba165022b19e9a9a68  usr/share/doc/libsasl2-2/README.Debian
+8e394cfbe268aa1139812a149f7c5f06  usr/share/doc/libsasl2-2/copyright
+819a5c553c9dc921ac034a1fe41fc922  usr/share/doc/libsasl2-2/changelog.Debian.gz
+67e06b7155a7a946d7252968f4fb1324  usr/lib/sasl2/libsasldb.a
+b008ac134ad527df274ae0722d73af21  usr/lib/sasl2/libsasldb.la
+b47d923d62c2f5ffc38800a6d20f05a0  usr/lib/sasl2/libsasldb.so.2.0.23
+f22c04f241a0f3cb2c9cc87ca49a6248  usr/lib/libsasl2.so.2.0.23

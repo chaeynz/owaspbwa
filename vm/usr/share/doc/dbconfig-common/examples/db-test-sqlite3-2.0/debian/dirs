@@ -1,0 +1,4 @@
+usr/share/db-test-sqlite3
+usr/share/dbconfig-common/data/db-test-sqlite3/install
+usr/share/dbconfig-common/data/db-test-sqlite3/upgrade/sqlite3
+etc/db-test-sqlite3

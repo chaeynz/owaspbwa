@@ -1,0 +1,14 @@
+This package was debianized by Antonio Terceiro <terceiro@softwarelivre.org> on
+Tue, 24 Jul 2007 15:27:45 -0300.
+
+It was downloaded from http://mocha.rubyforge.org/
+
+Upstream Author: James Mead <jamesmead@reevoo.com> and others.
+
+Copyright © 2006 Revieworld Ltd.
+
+You may use, copy and redistribute this library under the same terms as Ruby
+itself or under the MIT license.
+
+The Debian packaging is © 2007-2009, Antonio Terceiro <terceiro@softwarelivre.org>
+and is licensed under the same terms as the original package.

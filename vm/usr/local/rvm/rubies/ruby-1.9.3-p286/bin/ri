@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+ENV['GEM_HOME']=ENV['GEM_HOME'] || '/usr/local/rvm/gems/ruby-1.9.3-p286'
+ENV['GEM_PATH']=ENV['GEM_PATH'] || '/usr/local/rvm/gems/ruby-1.9.3-p286:/usr/local/rvm/gems/ruby-1.9.3-p286@global'
+ENV['PATH']='/usr/local/rvm/gems/ruby-1.9.3-p286/bin:/usr/local/rvm/gems/ruby-1.9.3-p286@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p286/bin:' + ENV['PATH']
+
+
+begin
+  gem 'rdoc'
+rescue NameError => e # --disable-gems
+  raise unless e.name == :gem
+rescue Gem::LoadError
+end
+
+require 'rdoc/ri/driver'
+
+RDoc::RI::Driver.run ARGV
