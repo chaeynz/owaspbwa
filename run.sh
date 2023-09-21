@@ -1,5 +1,8 @@
 #!/bin/bash
+# Start Apache
+/usr/local/apache2/bin/apachectl start
 
-/etc/init.d/apache2 start
-/usr/sbin/mysqld
+# Start MySQL
+/usr/local/mysql/bin/mysqld_safe &
 
+tail -f /dev/null
